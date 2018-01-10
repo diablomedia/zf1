@@ -67,7 +67,9 @@ class Zend_Test_PHPUnit_Db_DataSet_DbRowsetTest extends PHPUnit_Framework_TestCa
     {
         $this->setExpectedException("Zend_Test_PHPUnit_Db_Exception");
 
-        $rowset = $this->getMock('Zend_Db_Table_Rowset_Abstract', array(), array(), '', false);
+        $rowset = $this->getMockBuilder('Zend_Db_Table_Rowset_Abstract')
+            ->disableOriginalConstructor()
+            ->getMock();
         $rowset->expects($this->once())
                ->method('getTable')
                ->will($this->returnValue(null));
@@ -79,13 +81,17 @@ class Zend_Test_PHPUnit_Db_DataSet_DbRowsetTest extends PHPUnit_Framework_TestCa
     {
         $columns = array("foo", "bar");
 
-        $tableMock = $this->getMock('Zend_Db_Table_Abstract', array(), array(), '', false);
+        $tableMock = $this->getMockBuilder('Zend_Db_Table_Abstract')
+            ->disableOriginalConstructor()
+            ->getMock();
         $tableMock->expects($this->once())
                   ->method('info')
                   ->with($this->equalTo('cols'))
                   ->will($this->returnValue($columns));
 
-        $rowset = $this->getMock('Zend_Db_Table_Rowset_Abstract', array(), array(), '', false);
+        $rowset = $this->getMockBuilder('Zend_Db_Table_Rowset_Abstract')
+            ->disableOriginalConstructor()
+            ->getMock();
         $rowset->expects($this->exactly(2))
                ->method('getTable')
                ->will($this->returnValue($tableMock));

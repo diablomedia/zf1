@@ -82,12 +82,16 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit_Framework_TestCase
      */
     protected function stubTwitter($path, $method, $responseFile = null, array $params = null)
     {
-        $client = $this->getMock('Zend_Oauth_Client', array(), array(), '', false);
+        $client = $this->getMockBuilder('Zend_Oauth_Client')
+            ->disableOriginalConstructor()
+            ->getMock();
         $client->expects($this->any())->method('resetParameters')
             ->will($this->returnValue($client));
         $client->expects($this->once())->method('setUri')
             ->with('https://api.twitter.com/1.1/' . $path);
-        $response = $this->getMock('Zend_Http_Response', array(), array(), '', false);
+        $response = $this->getMockBuilder('Zend_Http_Response')
+            ->disableOriginalConstructor()
+            ->getMock();
         if (!is_null($params)) {
             $setter = 'setParameter' . ucfirst(strtolower($method));
             $client->expects($this->once())->method($setter)->with($params);
@@ -107,8 +111,12 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit_Framework_TestCase
 
     public function testProvidingAccessTokenInOptionsSetsHttpClientFromAccessToken()
     {
-        $token = $this->getMock('Zend_Oauth_Token_Access', array(), array(), '', false);
-        $client = $this->getMock('Zend_Oauth_Client', array(), array(), '', false);
+        $token = $this->getMockBuilder('Zend_Oauth_Token_Access')
+            ->disableOriginalConstructor()
+            ->getMock();
+        $client = $this->getMockBuilder('Zend_Oauth_Client')
+            ->disableOriginalConstructor()
+            ->getMock();
         $token->expects($this->once())->method('getHttpClient')
             ->with(array('token'=>$token, 'siteUrl'=>'https://api.twitter.com/oauth'))
             ->will($this->returnValue($client));
@@ -125,8 +133,12 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit_Framework_TestCase
 
     public function testChecksAuthenticatedStateBasedOnAvailabilityOfAccessTokenBasedClient()
     {
-        $token = $this->getMock('Zend_Oauth_Token_Access', array(), array(), '', false);
-        $client = $this->getMock('Zend_Oauth_Client', array(), array(), '', false);
+        $token = $this->getMockBuilder('Zend_Oauth_Token_Access')
+            ->disableOriginalConstructor()
+            ->getMock();
+        $client = $this->getMockBuilder('Zend_Oauth_Client')
+            ->disableOriginalConstructor()
+            ->getMock();
         $token->expects($this->once())->method('getHttpClient')
             ->with(array('token'=>$token, 'siteUrl'=>'https://api.twitter.com/oauth'))
             ->will($this->returnValue($client));
@@ -137,7 +149,9 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit_Framework_TestCase
 
     public function testRelaysMethodsToInternalOAuthInstance()
     {
-        $oauth = $this->getMock('Zend_Oauth_Consumer', array(), array(), '', false);
+        $oauth = $this->getMockBuilder('Zend_Oauth_Consumer')
+            ->disableOriginalConstructor()
+            ->getMock();
         $oauth->expects($this->once())->method('getRequestToken')->will($this->returnValue('foo'));
         $oauth->expects($this->once())->method('getRedirectUrl')->will($this->returnValue('foo'));
         $oauth->expects($this->once())->method('redirect')->will($this->returnValue('foo'));
@@ -148,22 +162,34 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('foo', $twitter->getRequestToken());
         $this->assertEquals('foo', $twitter->getRedirectUrl());
         $this->assertEquals('foo', $twitter->redirect());
-        $this->assertEquals('foo', $twitter->getAccessToken(array(), $this->getMock('Zend_Oauth_Token_Request')));
+        $this->assertEquals('foo', $twitter->getAccessToken(
+            [],
+            $this->getMockBuilder('Zend_Oauth_Token_Request')->getMock()
+        ));
         $this->assertEquals('foo', $twitter->getToken());
     }
 
     public function testResetsHttpClientOnReceiptOfAccessTokenToOauthClient()
     {
         $this->markTestIncomplete('Problem with resolving classes for mocking');
-        $oauth = $this->getMock('Zend_Oauth_Consumer', array(), array(), '', false);
-        $client = $this->getMock('Zend_Oauth_Client', array(), array(), '', false);
-        $token = $this->getMock('Zend_Oauth_Token_Access', array(), array(), '', false);
+        $oauth = $this->getMockBuilder('Zend_Oauth_Consumer')
+            ->disableOriginalConstructor()
+            ->getMock();
+        $client = $this->getMockBuilder('Zend_Oauth_Client')
+            ->disableOriginalConstructor()
+            ->getMock();
+        $token = $this->getMockBuilder('Zend_Oauth_Token_Access')
+            ->disableOriginalConstructor()
+            ->getMock();
         $token->expects($this->once())->method('getHttpClient')->will($this->returnValue($client));
         $oauth->expects($this->once())->method('getAccessToken')->will($this->returnValue($token));
         $client->expects($this->once())->method('setHeaders')->with('Accept-Charset', 'ISO-8859-1,utf-8');
 
         $twitter = new Zend_Service_Twitter(array(), $oauth);
-        $twitter->getAccessToken(array(), $this->getMock('Zend_Oauth_Token_Request'));
+        $twitter->getAccessToken(
+            [],
+            $this->getMockBuilder('Zend_Oauth_Token_Request')->getMock()
+        );
         $this->assertTrue($client === $twitter->getHttpClient());
     }
 

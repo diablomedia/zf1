@@ -333,7 +333,7 @@ class Zend_Auth_Adapter_Http_AuthTest extends PHPUnit_Framework_TestCase
     protected function _doAuth($clientHeader, $scheme)
     {
         // Set up stub request and response objects
-        $request  = $this->getMock('Zend_Controller_Request_Http');
+        $request  = $this->getMockBuilder('Zend_Controller_Request_Http')->getMock();
         $response = new Zend_Controller_Response_Http;
         $response->setHttpResponseCode(200);
         $response->headersSentThrowsException = false;

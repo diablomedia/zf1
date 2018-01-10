@@ -775,20 +775,16 @@ class Zend_XmlRpc_ClientTest extends PHPUnit_Framework_TestCase
 
     public function mockIntrospector()
     {
-        $this->mockedIntrospector = $this->getMock(
-            'Zend_XmlRpc_Client_ServerIntrospection',
-            array(),
-            array(),
-            '',
-            false,
-            false
-        );
+        $this->mockedIntrospector = $this->getMockBuilder('Zend_XmlRpc_Client_ServerIntrospection')
+            ->disableOriginalConstructor()
+            ->disableOriginalClone()
+            ->getMock();
         $this->xmlrpcClient->setIntrospector($this->mockedIntrospector);
     }
 
     public function mockHttpClient()
     {
-        $this->mockedHttpClient = $this->getMock('Zend_Http_Client');
+        $this->mockedHttpClient = $this->getMockBuilder('Zend_Http_Client')->getMock();
         $this->xmlrpcClient->setHttpClient($this->mockedHttpClient);
     }
 }

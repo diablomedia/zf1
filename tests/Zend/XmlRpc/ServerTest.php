@@ -478,9 +478,14 @@ class Zend_XmlRpc_ServerTest extends PHPUnit_Framework_TestCase
 
     public function testLoadFunctionsReadsMethodsFromServerDefinitionObjects()
     {
-        $mockedMethod = $this->getMock('Zend_Server_Method_Definition', array(), array(), '', false,
-            false);
-        $mockedDefinition = $this->getMock('Zend_Server_Definition', array(), array(), '', false, false);
+        $mockedMethod = $this->getMockBuilder('Zend_Server_Method_Definition')
+            ->disableOriginalConstructor()
+            ->disableOriginalClone()
+            ->getMock();
+        $mockedDefinition = $this->getMockBuilder('Zend_Server_Definition')
+            ->disableOriginalConstructor()
+            ->disableOriginalClone()
+            ->getMock();
         $mockedDefinition->expects($this->once())
                          ->method('getMethods')
                          ->will($this->returnValue(array('bar' => $mockedMethod)));

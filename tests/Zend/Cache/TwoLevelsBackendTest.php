@@ -96,7 +96,9 @@ class Zend_Cache_TwoLevelsBackendTest extends Zend_Cache_CommonExtendedBackendTe
     public function testSaveOverwritesIfFastIsFull()
     {
         $slowBackend = 'File';
-        $fastBackend = $this->getMock('Zend_Cache_Backend_Apc', array('getFillingPercentage'));
+        $fastBackend = $this->getMockBuilder('Zend_Cache_Backend_Apc')
+            ->setMethods(['getFillingPercentage'])
+            ->getMock();
         $fastBackend->expects($this->at(0))
             ->method('getFillingPercentage')
             ->will($this->returnValue(0));
@@ -128,7 +130,9 @@ class Zend_Cache_TwoLevelsBackendTest extends Zend_Cache_CommonExtendedBackendTe
     public function testSaveReturnsTrueIfFastIsFullOnFirstSave()
     {
         $slowBackend = 'File';
-        $fastBackend = $this->getMock('Zend_Cache_Backend_Apc', array('getFillingPercentage'));
+        $fastBackend = $this->getMockBuilder('Zend_Cache_Backend_Apc')
+            ->setMethods(['getFillingPercentage'])
+            ->getMock();
         $fastBackend->expects($this->any())
             ->method('getFillingPercentage')
             ->will($this->returnValue(90));

@@ -40,7 +40,9 @@ class Zend_Test_PHPUnit_Db_DataSet_DbTableTest extends PHPUnit_Framework_TestCas
         $fixtureOffset = "offset";
         $fixtureOrderBy = "order";
 
-        $table = $this->getMock('Zend_Db_Table', array(), array(), '', false);
+        $table = $this->getMockBuilder('Zend_Db_Table')
+            ->disableOriginalConstructor()
+            ->getMock();
         $table->expects($this->once())
               ->method('fetchAll')
               ->with($fixtureWhere, $fixtureOrderBy, $fixtureLimit, $fixtureOffset)
@@ -54,7 +56,9 @@ class Zend_Test_PHPUnit_Db_DataSet_DbTableTest extends PHPUnit_Framework_TestCas
     {
         $fixtureTableName = "foo";
 
-        $table = $this->getMock('Zend_Db_Table', array(), array(), '', false);
+        $table = $this->getMockBuilder('Zend_Db_Table')
+            ->disableOriginalConstructor()
+            ->getMock();
         $table->expects($this->at(0))
               ->method('info')
               ->with($this->equalTo('name'))
@@ -75,7 +79,9 @@ class Zend_Test_PHPUnit_Db_DataSet_DbTableTest extends PHPUnit_Framework_TestCas
 
     public function testLoadDataOnlyCalledOnce()
     {
-        $table = $this->getMock('Zend_Db_Table', array(), array(), '', false);
+        $table = $this->getMockBuilder('Zend_Db_Table')
+            ->disableOriginalConstructor()
+            ->getMock();
         $table->expects($this->once())
               ->method('fetchAll')
               ->will($this->returnValue(array( array("foo" => 1, "bar" => 2) )));

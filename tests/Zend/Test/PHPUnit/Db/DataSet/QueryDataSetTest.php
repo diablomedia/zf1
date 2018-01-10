@@ -46,7 +46,7 @@ class Zend_Test_PHPUnit_Db_DataSet_QueryDataSetTest extends Zend_Test_PHPUnit_Db
 {
     public function testCreateQueryDataSetWithoutZendDbAdapterThrowsException()
     {
-        $connectionMock = $this->getMock('PHPUnit_Extensions_Database_DB_IDatabaseConnection');
+        $connectionMock = $this->getMockBuilder('PHPUnit_Extensions_Database_DB_IDatabaseConnection')->getMock();
         $this->setExpectedException('Zend_Test_PHPUnit_Db_Exception');
         $queryDataSet = new Zend_Test_PHPUnit_Db_DataSet_QueryDataSet($connectionMock);
     }
@@ -61,8 +61,10 @@ class Zend_Test_PHPUnit_Db_DataSet_QueryDataSetTest extends Zend_Test_PHPUnit_Db
     {
         $fixtureTableName = "foo";
 
-        $adapterMock = $this->getMock('Zend_Test_DbAdapter');
-        $selectMock = $this->getMock('Zend_Db_Select', array(), array($adapterMock));
+        $adapterMock = $this->getMockBuilder('Zend_Test_DbAdapter')->getMock();
+        $selectMock = $this->getMockBuilder('Zend_Db_Select')
+            ->setConstructorArgs([$adapterMock])
+            ->getMock();
 
         $adapterMock->expects($this->once())
                     ->method('select')

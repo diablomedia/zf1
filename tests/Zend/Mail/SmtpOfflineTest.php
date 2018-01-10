@@ -62,7 +62,7 @@ class Zend_Mail_SmtpOfflineTest extends PHPUnit_Framework_TestCase
      */
     public function testReturnPathIsUsedAsMailFrom()
     {
-        $connectionMock = $this->getMock('Zend_Mail_Protocol_Smtp');
+        $connectionMock = $this->getMockBuilder('Zend_Mail_Protocol_Smtp')->getMock();
         $connectionMock->expects($this->once())
                        ->method('mail')
                        ->with('return@example.com');

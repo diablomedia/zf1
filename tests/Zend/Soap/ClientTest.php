@@ -533,7 +533,10 @@ class Zend_Soap_ClientTest extends PHPUnit_Framework_TestCase
         $fixtureCookieKey = "foo";
         $fixtureCookieValue = "bar";
 
-        $clientMock = $this->getMock('SoapClient', array('__setCookie'), array(null, array('uri' => 'http://www.zend.com', 'location' => 'http://www.zend.com')));
+        $clientMock = $this->getMockBuilder('SoapClient')
+            ->setMethods(['__setCookie'])
+            ->setConstructorArgs([null, array('uri' => 'http://www.zend.com', 'location' => 'http://www.zend.com')])
+            ->getMock();
         $clientMock->expects($this->once())
                    ->method('__setCookie')
                    ->with($fixtureCookieKey, $fixtureCookieValue);
@@ -546,7 +549,10 @@ class Zend_Soap_ClientTest extends PHPUnit_Framework_TestCase
 
     public function testSetSoapClient()
     {
-        $clientMock = $this->getMock('SoapClient', array('__setCookie'), array(null, array('uri' => 'http://www.zend.com', 'location' => 'http://www.zend.com')));
+        $clientMock = $this->getMockBuilder('SoapClient')
+            ->setMethods(['__setCookie'])
+            ->setConstructorArgs([null, array('uri' => 'http://www.zend.com', 'location' => 'http://www.zend.com')])
+            ->getMock();
 
         $soap = new Zend_Soap_Client();
         $soap->setSoapClient($clientMock);

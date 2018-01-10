@@ -352,7 +352,9 @@ class Zend_Log_Writer_MailTest extends PHPUnit_Framework_TestCase
      */
     public function testFactoryShouldAcceptCustomMailClass()
     {
-        $this->getMock('Zend_Mail', array(), array(), 'Zend_Stub_Mail_Custom');
+        $this->getMockBuilder('Zend_Mail')
+            ->setMockClassName('Zend_Stub_Mail_Custom')
+            ->getMock();
         $config = array(
             'class' => 'Zend_Stub_Mail_Custom'
     	);
@@ -452,7 +454,9 @@ class Zend_Log_Writer_MailTest extends PHPUnit_Framework_TestCase
      */
     public function testFactoryWithCustomLayoutClass()
     {
-        $this->getMock('Zend_Layout', null, array(), 'Zend_Stub_Layout_Custom');
+        $this->getMockBuilder('Zend_Layout')
+            ->setMockClassName('Zend_Stub_Layout_Custom')
+            ->getMock();
     	$config = array(
     	    'layout' => 'Zend_Stub_Layout_Custom'
     	);
@@ -475,7 +479,9 @@ class Zend_Log_Writer_MailTest extends PHPUnit_Framework_TestCase
     {
         // Get a mock object for Zend_Mail so that no emails are actually
         // sent.
-        $mail = $this->getMock('Zend_Mail', array('send'));
+        $mail = $this->getMockBuilder('Zend_Mail')
+            ->setMethods(['send'])
+            ->getMock();
 
         // The send() method can be called any number of times.
         $mail->expects($this->any())
@@ -487,7 +493,9 @@ class Zend_Log_Writer_MailTest extends PHPUnit_Framework_TestCase
         // Setup a mock object for Zend_Layout because we can't rely on any
         // layout files being in place.
         if ($useLayout) {
-            $layout = $this->getMock('Zend_Layout', array('render'));
+            $layout = $this->getMockBuilder('Zend_Layout')
+                ->setMethods(['render'])
+                ->getMock();
             $writer = new Zend_Log_Writer_Mail($mail, $layout);
         } else {
             $writer = new Zend_Log_Writer_Mail($mail);

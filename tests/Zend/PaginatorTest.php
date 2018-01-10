@@ -1062,7 +1062,10 @@ class Zend_PaginatorTest extends PHPUnit_Framework_TestCase
     	$paginator       = new Zend_Paginator_TestCache($paginatorAdapter);
     	$expectedCacheId = md5($paginator->getCacheInternalId() . '_itemCount');
     
-    	$cache = $this->getMock('Zend_Cache_Core', array('load'), array(), '', false);
+    	$cache = $this->getMockBuilder('Zend_Cache_Core')
+            ->setMethods(['load'])
+            ->disableOriginalConstructor()
+            ->getMock();
     	$cache->expects($this->once())
     	       ->method('load')
     	       ->with($expectedCacheId)

@@ -341,13 +341,11 @@ class Zend_Feed_Pubsubhubbub_SubscriberTest extends PHPUnit_Framework_TestCase
             $stubMethods[] = $method->getName();
             }
         }
-        $mocked = $this->getMock(
-            $className,
-            $stubMethods,
-            array(),
-            $className . '_PubsubSubscriberMock_' . uniqid(),
-            false
-        );
+        $mocked = $this->getMockBuilder($className)
+            ->setMethods($stubMethods)
+            ->setMockClassName($className . '_PubsubSubscriberMock_' . uniqid())
+            ->disableOriginalConstructor()
+            ->getMock();
         return $mocked;
     }
 

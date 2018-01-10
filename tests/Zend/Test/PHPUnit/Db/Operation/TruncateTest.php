@@ -45,7 +45,7 @@ class Zend_Test_PHPUnit_Db_Operation_TruncateTest extends PHPUnit_Framework_Test
     {
         $dataSet = new PHPUnit_Extensions_Database_DataSet_FlatXmlDataSet(dirname(__FILE__)."/_files/truncateFixture.xml");
 
-        $testAdapter = $this->getMock('Zend_Test_DbAdapter');
+        $testAdapter = $this->getMockBuilder('Zend_Test_DbAdapter')->getMock();
         $testAdapter->expects($this->at(0))
                     ->method('quoteIdentifier')
                     ->with('bar')->will($this->returnValue('bar'));
@@ -70,7 +70,7 @@ class Zend_Test_PHPUnit_Db_Operation_TruncateTest extends PHPUnit_Framework_Test
 
         $dataSet = new PHPUnit_Extensions_Database_DataSet_FlatXmlDataSet(dirname(__FILE__)."/_files/insertFixture.xml");
 
-        $testAdapter = $this->getMock('Zend_Test_DbAdapter');
+        $testAdapter = $this->getMockBuilder('Zend_Test_DbAdapter')->getMock();
         $testAdapter->expects($this->any())->method('query')->will($this->throwException(new Exception()));
 
         $connection = new Zend_Test_PHPUnit_Db_Connection($testAdapter, "schema");
@@ -82,8 +82,8 @@ class Zend_Test_PHPUnit_Db_Operation_TruncateTest extends PHPUnit_Framework_Test
     {
         $this->setExpectedException("Zend_Test_PHPUnit_Db_Exception");
 
-        $dataSet = $this->getMock('PHPUnit_Extensions_Database_DataSet_IDataSet');
-        $connection = $this->getMock('PHPUnit_Extensions_Database_DB_IDatabaseConnection');
+        $dataSet = $this->getMockBuilder('PHPUnit_Extensions_Database_DataSet_IDataSet')->getMock();
+        $connection = $this->getMockBuilder('PHPUnit_Extensions_Database_DB_IDatabaseConnection')->getMock();
 
         $this->operation->execute($connection, $dataSet);
     }

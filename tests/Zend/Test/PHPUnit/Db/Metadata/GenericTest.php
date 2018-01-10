@@ -39,7 +39,7 @@ class Zend_Test_PHPUnit_Db_Metadata_GenericTest extends PHPUnit_Framework_TestCa
 
     public function setUp()
     {
-        $this->adapterMock = $this->getMock('Zend_Test_DbAdapter');
+        $this->adapterMock = $this->getMockBuilder('Zend_Test_DbAdapter')->getMock();
         $this->metadata = new Zend_Test_PHPUnit_Db_Metadata_Generic($this->adapterMock, "schema");
     }
 

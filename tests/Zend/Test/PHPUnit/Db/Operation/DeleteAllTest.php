@@ -45,7 +45,7 @@ class Zend_Test_PHPUnit_Db_Operation_DeleteAllTest extends PHPUnit_Framework_Tes
     {
         $dataSet = new PHPUnit_Extensions_Database_DataSet_FlatXmlDataSet(dirname(__FILE__)."/_files/truncateFixture.xml");
 
-        $testAdapter = $this->getMock('Zend_Test_DbAdapter');
+        $testAdapter = $this->getMockBuilder('Zend_Test_DbAdapter')->getMock();
         $testAdapter->expects($this->at(0))
                     ->method('delete')
                     ->with('foo');
@@ -64,7 +64,7 @@ class Zend_Test_PHPUnit_Db_Operation_DeleteAllTest extends PHPUnit_Framework_Tes
 
         $dataSet = new PHPUnit_Extensions_Database_DataSet_FlatXmlDataSet(dirname(__FILE__)."/_files/truncateFixture.xml");
 
-        $testAdapter = $this->getMock('Zend_Test_DbAdapter');
+        $testAdapter = $this->getMockBuilder('Zend_Test_DbAdapter')->getMock();
         $testAdapter->expects($this->any())
                     ->method('delete')
                     ->will($this->throwException(new Exception));
@@ -78,8 +78,8 @@ class Zend_Test_PHPUnit_Db_Operation_DeleteAllTest extends PHPUnit_Framework_Tes
     {
         $this->setExpectedException("Zend_Test_PHPUnit_Db_Exception");
 
-        $dataSet = $this->getMock('PHPUnit_Extensions_Database_DataSet_IDataSet');
-        $connection = $this->getMock('PHPUnit_Extensions_Database_DB_IDatabaseConnection');
+        $dataSet = $this->getMockBuilder('PHPUnit_Extensions_Database_DataSet_IDataSet')->getMock();
+        $connection = $this->getMockBuilder('PHPUnit_Extensions_Database_DB_IDatabaseConnection')->getMock();
 
         $this->operation->execute($connection, $dataSet);
     }
