@@ -354,6 +354,8 @@ class Zend_Validate_File_Size extends Zend_Validate_Abstract
             $value = substr($value, 0, -1);
         }
 
+        $value = trim($value);
+
         switch (strtoupper($type)) {
             case 'Y':
                 $value *= (1024 * 1024 * 1024 * 1024 * 1024 * 1024 * 1024 * 1024);
