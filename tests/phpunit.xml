@@ -1,7 +1,118 @@
-<phpunit bootstrap="./TestHelper.php">
-    <testsuite name="Zend Framework - Testsuite">
-        <directory>./</directory>
-    </testsuite>
+<phpunit bootstrap="./TestHelper.php" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true">
+    <testsuites>
+        <testsuite name="ZFTest_Zend_Acl">
+            <file>./Zend/Acl/AclTest.php</file>
+        </testsuite>
+        <testsuite name="ZFTest_Zend_Amf">
+            <file>./Zend/Amf/Adobe/IntrospectorTest.php</file>
+            <file>./Zend/Amf/RequestTest.php</file>
+            <file>./Zend/Amf/ResponseTest.php</file>
+            <file>./Zend/Amf/Response/HttpTest.php</file>
+            <file>./Zend/Amf/ServerTest.php</file>
+            <file>./Zend/Amf/TypeLoaderTest.php</file>
+            <file>./Zend/Amf/Util/BinaryStreamTest.php</file>
+            <file>./Zend/Amf/Value/MessageBodyTest.php</file>
+            <file>./Zend/Amf/Value/MessageHeaderTest.php</file>
+            <file>./Zend/Amf/AuthTest.php</file>
+            <file>./Zend/Amf/ResourceTest.php</file>
+        </testsuite>
+
+        <!-- Zend/Application -->
+        <testsuite name="ZFTest_Zend_Application">
+            <file>./Zend/Application/ApplicationTest.php</file>
+            <file>./Zend/Application/Bootstrap/BootstrapAbstractTest.php</file>
+            <file>./Zend/Application/Module/AutoloaderTest.php</file>
+            <file>./Zend/Application/Module/BootstrapTest.php</file>
+        </testsuite>
+        <testsuite name="ZFTest_Zend_Application_Resource">
+            <file>./Zend/Application/Resource/ResourceAbstractTest.php</file>
+            <file>./Zend/Application/Resource/CacheManagerTest.php</file>
+            <file>./Zend/Application/Resource/DbTest.php</file>
+            <file>./Zend/Application/Resource/DojoTest.php</file>
+            <file>./Zend/Application/Resource/FrontcontrollerTest.php</file>
+            <file>./Zend/Application/Resource/LayoutTest.php</file>
+            <file>./Zend/Application/Resource/LocaleTest.php</file>
+            <file>./Zend/Application/Resource/LogTest.php</file>
+            <file>./Zend/Application/Resource/MailTest.php</file>
+            <file>./Zend/Application/Resource/ModulesTest.php</file>
+            <file>./Zend/Application/Resource/MultidbTest.php</file>
+            <file>./Zend/Application/Resource/NavigationTest.php</file>
+            <file>./Zend/Application/Resource/RouterTest.php</file>
+            <file>./Zend/Application/Resource/SessionTest.php</file>
+            <file>./Zend/Application/Resource/TranslateTest.php</file>
+            <file>./Zend/Application/Resource/UseragentTest.php</file>
+            <file>./Zend/Application/Resource/ViewTest.php</file>
+        </testsuite>
+
+        <!-- Zend/Auth -->
+        <testsuite name="ZFTest_Zend_Auth_Adapter">
+            <file>./Zend/Auth/Adapter/DigestTest.php</file>
+        </testsuite>
+        <testsuite name="ZFTest_Zend_Auth_Adapter_DbTable">
+            <file>./Zend/Auth/Adapter/DbTable/BasicSqliteTest.php</file>
+        </testsuite>
+        <testsuite name="ZFTest_Zend_Auth_Adapter_Http">
+            <file>./Zend/Auth/Adapter/Http/AuthTest.php</file>
+            <file>./Zend/Auth/Adapter/Http/ObjectTest.php</file>
+            <file>./Zend/Auth/Adapter/Http/ProxyTest.php</file>
+        </testsuite>
+        <testsuite name="ZFTest_Zend_Auth_Adapter_Http_Resolver">
+            <file>./Zend/Auth/Adapter/Http/Resolver/FileTest.php</file>
+        </testsuite>
+        <testsuite name="ZFTest_Zend_Auth_Adapter_Ldap">
+            <file>./Zend/Auth/Adapter/Ldap/OfflineTest.php</file>
+            <file>./Zend/Auth/Adapter/Ldap/OnlineTest.php</file>
+        </testsuite>
+        <testsuite name="ZFTest_Zend_Auth_Adapter_OpenId">
+            <file>./Zend/Auth/Adapter/OpenIdTest.php</file>
+        </testsuite>
+
+        <!-- Zend/Http -->
+        <testsuite name="ZFTest_Zend_Http">
+            <file>./Zend/Http/ResponseTest.php</file>
+            <file>./Zend/Http/CookieTest.php</file>
+            <file>./Zend/Http/CookieJarTest.php</file>
+        </testsuite>
+        <testsuite name="ZFTest_Zend_Http_Client">
+            <file>./Zend/Http/Client/ClientTest.php</file>
+            <file>./Zend/Http/Client/StaticTest.php</file>
+            <file>./Zend/Http/Client/SocketTest.php</file>
+            <file>./Zend/Http/Client/SocketKeepaliveTest.php</file>
+            <file>./Zend/Http/Client/SocketPersistentTest.php</file>
+            <file>./Zend/Http/Client/TestAdapterTest.php</file>
+            <file>./Zend/Http/Client/ProxyAdapterTest.php</file>
+            <file>./Zend/Http/Client/CurlTest.php</file>
+        </testsuite>
+        <testsuite name="ZFTest_Zend_Http_Header">
+            <file>./Zend/Http/Header/HeaderValueTest.php</file>
+            <file>./Zend/Http/Header/SetCookieTest.php</file>
+        </testsuite>
+        <testsuite name="ZFTest_Zend_Http_UserAgent">
+            <file>./Zend/Http/UserAgentTest.php</file>
+            <file>./Zend/Http/UserAgent_AbstractDeviceTest.php</file>
+            <file>./Zend/Http/UserAgent_Features/Adapter/BrowscapTest.php</file>
+            <file>./Zend/Http/UserAgent_Features/Adapter/DeviceAtlasTest.php</file>
+            <file>./Zend/Http/UserAgent_Features/Adapter/TeraWurflTest.php</file>
+        </testsuite>
+
+        <!-- Zend/ProgressBar -->
+        <testsuite name="ZFTest_Zend_ProgressBar">
+            <file>./Zend/ProgressBar/ProgressBarTest.php</file>
+        </testsuite>
+        <testsuite name="ZFTest_Zend_ProgressBar_Adapter">
+            <file>./Zend/ProgressBar/Adapter/ConsoleTest.php</file>
+            <file>./Zend/ProgressBar/Adapter/JsPushTest.php</file>
+            <file>./Zend/ProgressBar/Adapter/JsPullTest.php</file>
+        </testsuite>
+
+        <!-- Zend/Session -->
+        <testsuite name="ZFTest_Zend_Session">
+            <file>./Zend/Session/SessionTest.php</file>
+        </testsuite>
+        <testsuite name="ZFTest_Zend_Session_SaveHandler">
+            <file>./Zend/Session/SaveHandler/DbTableTest.php</file>
+        </testsuite>
+    </testsuites>
 
     <!-- Enable this for proper unit testing code coverage reports
     <filter>

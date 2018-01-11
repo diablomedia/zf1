@@ -31,8 +31,7 @@ before_script:
   - cp ./tests/TestConfiguration.travis.php ./tests/TestConfiguration.php
 
 script:
- - cd tests/
- - php runalltests.php
+ - ./bin/phpunit -c tests/phpunit.xml --stderr
 
 matrix:
   allow_failures:

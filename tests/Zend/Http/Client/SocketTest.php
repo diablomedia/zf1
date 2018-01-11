@@ -56,6 +56,14 @@ class Zend_Http_Client_SocketTest extends Zend_Http_Client_CommonHttpTests
         'adapter' => 'Zend_Http_Client_Adapter_Socket'
     );
 
+    public function setUp()
+    {
+        if (!(defined('TESTS_ZEND_HTTP_CLIENT_BASEURI') && Zend_Uri_Http::check(TESTS_ZEND_HTTP_CLIENT_BASEURI))) {
+            $this->markTestSkipped("Zend_Http_Client dynamic tests are not enabled in TestConfiguration.php");
+            return;
+        }
+    }
+
     /**
      * Off-line common adapter tests
      */

@@ -85,3 +85,4 @@ unset($zfRoot, $zfCoreLibrary, $zfCoreTests, $path);
 // Suppress DateTime warnings
 date_default_timezone_set(@date_default_timezone_get());
 
+define('PHPUnit_MAIN_METHOD', 'dontuse');

@@ -54,6 +54,12 @@ class Zend_Auth_Adapter_Ldap_OnlineTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
+        if (!(defined('TESTS_ZEND_AUTH_ADAPTER_LDAP_ONLINE_ENABLED')
+            && constant('TESTS_ZEND_AUTH_ADAPTER_LDAP_ONLINE_ENABLED'))) {
+            $this->markTestSkipped('Zend_Auth_Adapter_Ldap online tests not enabled in TestConfiguration.php');
+            return;
+        }
+
         $this->_options = array(
             'host' => TESTS_ZEND_LDAP_HOST,
             'username' => TESTS_ZEND_LDAP_USERNAME,

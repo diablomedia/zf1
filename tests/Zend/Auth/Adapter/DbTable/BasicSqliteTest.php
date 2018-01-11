@@ -73,6 +73,18 @@ class Zend_Auth_Adapter_DbTable_BasicSqliteTest extends PHPUnit_Framework_TestCa
      */
     public function setUp()
     {
+        if (!defined('TESTS_ZEND_AUTH_ADAPTER_DBTABLE_PDO_SQLITE_ENABLED') ||
+            constant('TESTS_ZEND_AUTH_ADAPTER_DBTABLE_PDO_SQLITE_ENABLED') === false) {
+	        $this->markTestSkipped('Tests are not enabled in TestConfiguration.php');
+            return;
+        } else if (!extension_loaded('pdo')) {
+	        $this->markTestSkipped("Extension 'PDO' is not loaded");
+            return;
+        } else if (!in_array('sqlite', PDO::getAvailableDrivers())) {
+	        $this->markTestSkipped("PDO driver 'sqlite' is not available");
+            return;
+        }
+
         $this->_setupDbAdapter();
         $this->_setupAuthAdapter();
     }
