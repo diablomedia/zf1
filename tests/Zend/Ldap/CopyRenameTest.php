@@ -103,17 +103,18 @@ class Zend_Ldap_CopyRenameTest extends Zend_Ldap_OnlineTestCase
 
     protected function tearDown()
     {
-        if ($this->_getLdap()->exists($this->_newDn))
-            $this->_getLdap()->delete($this->_newDn, false);
-        if ($this->_getLdap()->exists($this->_orgDn))
-            $this->_getLdap()->delete($this->_orgDn, false);
-        if ($this->_getLdap()->exists($this->_orgSubTreeDn))
-            $this->_getLdap()->delete($this->_orgSubTreeDn, true);
-        if ($this->_getLdap()->exists($this->_newSubTreeDn))
-            $this->_getLdap()->delete($this->_newSubTreeDn, true);
-        if ($this->_getLdap()->exists($this->_targetSubTreeDn))
-            $this->_getLdap()->delete($this->_targetSubTreeDn, true);
-
+        if ($this->_getLdap() !== null) {
+            if ($this->_getLdap()->exists($this->_newDn))
+                $this->_getLdap()->delete($this->_newDn, false);
+            if ($this->_getLdap()->exists($this->_orgDn))
+                $this->_getLdap()->delete($this->_orgDn, false);
+            if ($this->_getLdap()->exists($this->_orgSubTreeDn))
+                $this->_getLdap()->delete($this->_orgSubTreeDn, true);
+            if ($this->_getLdap()->exists($this->_newSubTreeDn))
+                $this->_getLdap()->delete($this->_newSubTreeDn, true);
+            if ($this->_getLdap()->exists($this->_targetSubTreeDn))
+                $this->_getLdap()->delete($this->_targetSubTreeDn, true);
+        }
 
         $this->_cleanupLdapServer();
         parent::tearDown();
