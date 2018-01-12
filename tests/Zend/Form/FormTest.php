@@ -2790,9 +2790,10 @@ class Zend_Form_FormTest extends PHPUnit_Framework_TestCase
     */
     public function _setup9697()
     {
-        $callback = create_function('$value, $options',
-                                    'return (isset($options["bar"]["quo"]["foo"]) &&
-                                             "foo Value" === $options["bar"]["quo"]["foo"]);');
+        $callback = function ($value, $options) {
+            return (isset($options["bar"]["quo"]["foo"]) &&
+                    "foo Value" === $options["bar"]["quo"]["foo"]);
+        };
 
         $this->form->addElement('text', 'foo')
                    ->foo->setBelongsTo('bar[quo]');
@@ -4596,7 +4597,7 @@ class Zend_Form_FormTest extends PHPUnit_Framework_TestCase
         }
         $this->assertNotEquals($result,'');
     }
-    
+
     /**
      * @group ZF-11088
      */
@@ -4608,7 +4609,7 @@ class Zend_Form_FormTest extends PHPUnit_Framework_TestCase
         $errorMessages = $element->getErrorMessages();
         $this->assertSame(1, count($errorMessages));
         $this->assertSame($errorString, $errorMessages[0]);
-        
+
         $element2 = new Zend_Form_Element_Text('bar');
         $this->form->addElement($element2);
         $this->form->getElement('bar')->addError($errorString);
@@ -4616,7 +4617,7 @@ class Zend_Form_FormTest extends PHPUnit_Framework_TestCase
         $this->assertSame(1, count($errorMessages2));
         $this->assertSame($errorString, $errorMessages2[0]);
     }
-    
+
     /**
      * @group ZF-10865
      * @expectedException Zend_Form_Exception
@@ -4644,7 +4645,7 @@ class Zend_Form_FormTest extends PHPUnit_Framework_TestCase
         $count = substr_count($html, 'randomelementname-element');
         $this->assertEquals(1, $count, $html);
     }
-    
+
     /**
      * @group ZF-11831
      */
@@ -4659,7 +4660,7 @@ class Zend_Form_FormTest extends PHPUnit_Framework_TestCase
             'locale' => 'en'
         ));
         Zend_Registry::set('Zend_Translate', $trDefault);
-        
+
         // Translator to use for elements
         $trElement = new Zend_Translate(array(
             'adapter' => 'array',
@@ -4669,14 +4670,14 @@ class Zend_Form_FormTest extends PHPUnit_Framework_TestCase
             'locale' => 'en'
         ));
         Zend_Validate_Abstract::setDefaultTranslator($trElement);
-        
+
         // Change the form's translator
         $form = new Zend_Form();
         $form->addElement(new Zend_Form_Element_Text('foo', array(
             'required'   => true,
             'validators' => array('NotEmpty')
         )));
-        
+
         // Create a subform with it's own validator
         $sf1 = new Zend_Form_SubForm();
         $sf1->addElement(new Zend_Form_Element_Text('foosub', array(
@@ -4684,20 +4685,20 @@ class Zend_Form_FormTest extends PHPUnit_Framework_TestCase
             'validators' => array('NotEmpty')
         )));
         $form->addSubForm($sf1, 'Test1');
-        
+
         $form->isValid(array());
 
         $messages = $form->getMessages();
         $this->assertEquals(
-            'Element', 
-            @$messages['foo'][Zend_Validate_NotEmpty::IS_EMPTY], 
+            'Element',
+            @$messages['foo'][Zend_Validate_NotEmpty::IS_EMPTY],
             'Form element received wrong validator'
         );
         $this->assertEquals(
-            'Element', 
-            @$messages['Test1']['foosub'][Zend_Validate_NotEmpty::IS_EMPTY], 
+            'Element',
+            @$messages['Test1']['foosub'][Zend_Validate_NotEmpty::IS_EMPTY],
             'SubForm element received wrong validator'
-        );        
+        );
     }
 
     /**

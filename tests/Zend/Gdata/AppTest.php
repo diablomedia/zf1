@@ -608,7 +608,11 @@ class Zend_Gdata_AppTest extends PHPUnit_Framework_TestCase
     public function testLoadExtensionCausesFatalErrorWhenErrorHandlerIsOverridden()
     {
         // Override the error handler to throw an ErrorException
-        set_error_handler(create_function('$a, $b, $c, $d', 'throw new ErrorException($b, 0, $a, $c, $d);'), E_ALL);
+        set_error_handler(
+            function ($a, $b, $c, $d) { throw new ErrorException($b, 0, $a, $c, $d); },
+            E_ALL
+        );
+
         try {
             $eq = $this->service->newEventQuery();
             restore_error_handler();
