@@ -92,7 +92,7 @@
             <file>./Zend/Cache/SqliteBackendTest.php</file>
             <file>./Zend/Cache/ApcBackendTest.php</file>
             <file>./Zend/Cache/WinCacheBackendTest.php</file>
-            <file>./Zend/Cache/XCacheBackendTest.php</file>
+            <file>./Zend/Cache/XcacheBackendTest.php</file>
             <file>./Zend/Cache/MemcachedBackendTest.php</file>
             <file>./Zend/Cache/LibmemcachedBackendTest.php</file>
             <file>./Zend/Cache/ZendPlatformBackendTest.php</file>
