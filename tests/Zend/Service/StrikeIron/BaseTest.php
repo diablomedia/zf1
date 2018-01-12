@@ -38,6 +38,10 @@ class Zend_Service_StrikeIron_BaseTest extends PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
+        if (!extension_loaded('soap')) {
+            $this->markTestSkipped('soap extension is not loaded');
+        }
+
         $this->soapClient = new Zend_Service_StrikeIron_BaseTest_MockSoapClient;
         $this->base = new Zend_Service_StrikeIron_Base(array('client'   => $this->soapClient,
                                                              'username' => 'user',

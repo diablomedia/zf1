@@ -37,6 +37,13 @@ require_once 'Zend/Service/StrikeIron/Exception.php';
  */
 class Zend_Service_StrikeIron_ExceptionTest extends PHPUnit_Framework_TestCase
 {
+    public function setUp()
+    {
+        if (!extension_loaded('soap')) {
+            $this->markTestSkipped('soap extension is not loaded');
+        }
+    }
+
     public function testInheritsFromZendException()
     {
         $exception = new Zend_Service_StrikeIron_Exception();

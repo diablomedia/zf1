@@ -36,10 +36,27 @@ require_once 'Zend/Filter/Encrypt.php';
  */
 class Zend_Filter_DecryptTest extends PHPUnit_Framework_TestCase
 {
+    protected $errorReporting;
+
     public function setUp()
     {
+        // mcrypt is deprecated in PHP 7.1 (but still installed by default on Travis)
+        // hiding deprecated errors so tests pass.
+        if (substr(PHP_VERSION, 0, 3) === '7.1') {
+            $this->errorReporting = error_reporting(E_ALL & ~E_DEPRECATED);
+        }
+
         if (!extension_loaded('mcrypt') and !extension_loaded('openssl')) {
             $this->markTestSkipped('This filter needs the mcrypt or openssl extension');
+        }
+    }
+
+    public function tearDown()
+    {
+        // mcrypt is deprecated in PHP 7.1 (but still installed by default on Travis)
+        // hiding deprecated errors so tests pass.
+        if (substr(PHP_VERSION, 0, 3) === '7.1') {
+            error_reporting($this->errorReporting);
         }
     }
 

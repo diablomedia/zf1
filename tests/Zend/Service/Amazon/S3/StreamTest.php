@@ -49,6 +49,14 @@ class Zend_Service_Amazon_S3_StreamTest extends PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
+        if (!(defined('TESTS_ZEND_SERVICE_AMAZON_ONLINE_ENABLED') &&
+            constant('TESTS_ZEND_SERVICE_AMAZON_ONLINE_ENABLED') &&
+            defined('TESTS_ZEND_SERVICE_AMAZON_ONLINE_ACCESSKEYID') &&
+            defined('TESTS_ZEND_SERVICE_AMAZON_ONLINE_SECRETKEY'))) {
+                $this->markTestSkipped('Zend_Service_Amazon online tests not enabled with an access key ID in '
+                                         . 'TestConfiguration.php');
+        }
+
         $this->_amazon = new Zend_Service_Amazon_S3(constant('TESTS_ZEND_SERVICE_AMAZON_ONLINE_ACCESSKEYID'),
                                                     constant('TESTS_ZEND_SERVICE_AMAZON_ONLINE_SECRETKEY')
                                                     );

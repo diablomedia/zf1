@@ -50,6 +50,15 @@ class Zend_Cache_ZendServerShMemTest extends Zend_Cache_CommonBackendTest {
 
     public function setUp($notag = true)
     {
+        if (!defined('TESTS_ZEND_CACHE_ZENDSERVER_ENABLED') ||
+            constant('TESTS_ZEND_CACHE_ZENDSERVER_ENABLED') === false) {
+            $this->markTestSkipped('Tests are not enabled in TestConfiguration.php');
+            return;
+        } else if (!function_exists('zend_shm_cache_store')) {
+            $this->markTestSkipped("Zend Server caching environment is not available");
+            return;
+        }
+
         $this->_instance = new Zend_Cache_Backend_ZendServer_ShMem();
         parent::setUp(true);
     }
@@ -113,4 +122,3 @@ class Zend_Cache_ZendServerShMemTest extends Zend_Cache_CommonBackendTest {
         $this->_instance->setDirectives(array('logging' => true));
     }
 }
-

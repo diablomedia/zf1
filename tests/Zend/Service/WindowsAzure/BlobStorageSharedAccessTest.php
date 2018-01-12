@@ -47,12 +47,13 @@ require_once 'Zend/Service/WindowsAzure/Credentials/SharedAccessSignature.php';
 class Zend_Service_WindowsAzure_BlobStorageSharedAccessTest extends PHPUnit_Framework_TestCase
 {
     static $path;
-    
+    protected $skipped;
+
     public function __construct()
     {
         self::$path = dirname(__FILE__).'/_files/';
     }
-    
+
     public static function main()
     {
         if (TESTS_ZEND_SERVICE_WINDOWSAZURE_BLOB_RUNTESTS) {
@@ -60,25 +61,33 @@ class Zend_Service_WindowsAzure_BlobStorageSharedAccessTest extends PHPUnit_Fram
             $result = PHPUnit_TextUI_TestRunner::run($suite);
         }
     }
-   
+
     /**
      * Test setup
      */
-    protected function setUp()
-    {
-    }
-    
+     public function setUp()
+     {
+         $this->skipped = false;
+
+         if (!TESTS_ZEND_SERVICE_WINDOWSAZURE_BLOB_RUNTESTS) {
+             $this->skipped = true;
+             $this->markTestSkipped('Test not enabled in TestConfiguration.php');
+         }
+     }
+
     /**
      * Test teardown
      */
     protected function tearDown()
     {
-        $storageClient = $this->createAdministrativeStorageInstance();
-        for ($i = 1; $i <= self::$uniqId; $i++)
-        {
-            try { $storageClient->deleteContainer(TESTS_ZEND_SERVICE_WINDOWSAZURE_BLOBSA_CONTAINER_PREFIX . $i); } catch (Exception $e) { }
+        if ($this->skipped === false) {
+            $storageClient = $this->createAdministrativeStorageInstance();
+            for ($i = 1; $i <= self::$uniqId; $i++)
+            {
+                try { $storageClient->deleteContainer(TESTS_ZEND_SERVICE_WINDOWSAZURE_BLOBSA_CONTAINER_PREFIX . $i); } catch (Exception $e) { }
+            }
+            try { $storageClient->deleteContainer('$root'); } catch (Exception $e) { }
         }
-        try { $storageClient->deleteContainer('$root'); } catch (Exception $e) { }
     }
 
     protected function createStorageInstance()
@@ -95,14 +104,14 @@ class Zend_Service_WindowsAzure_BlobStorageSharedAccessTest extends PHPUnit_Fram
                 new Zend_Service_WindowsAzure_Credentials_SharedAccessSignature(TESTS_ZEND_SERVICE_WINDOWSAZURE_STORAGE_ACCOUNT_DEV, TESTS_ZEND_SERVICE_WINDOWSAZURE_STORAGE_KEY_DEV, true)
             );
         }
-        
+
         if (TESTS_ZEND_SERVICE_WINDOWSAZURE_STORAGE_USEPROXY) {
             $storageClient->setProxy(TESTS_ZEND_SERVICE_WINDOWSAZURE_STORAGE_USEPROXY, TESTS_ZEND_SERVICE_WINDOWSAZURE_STORAGE_PROXY, TESTS_ZEND_SERVICE_WINDOWSAZURE_STORAGE_PROXY_PORT, TESTS_ZEND_SERVICE_WINDOWSAZURE_STORAGE_PROXY_CREDENTIALS);
         }
 
         return $storageClient;
     }
-    
+
     protected function createAdministrativeStorageInstance()
     {
         $storageClient = null;
@@ -111,22 +120,22 @@ class Zend_Service_WindowsAzure_BlobStorageSharedAccessTest extends PHPUnit_Fram
         } else {
             $storageClient = new Zend_Service_WindowsAzure_Storage_Blob(TESTS_ZEND_SERVICE_WINDOWSAZURE_BLOB_HOST_DEV, TESTS_ZEND_SERVICE_WINDOWSAZURE_STORAGE_ACCOUNT_DEV, TESTS_ZEND_SERVICE_WINDOWSAZURE_STORAGE_KEY_DEV, true, Zend_Service_WindowsAzure_RetryPolicy_RetryPolicyAbstract::retryN(10, 250));
         }
-        
+
         if (TESTS_ZEND_SERVICE_WINDOWSAZURE_STORAGE_USEPROXY) {
             $storageClient->setProxy(TESTS_ZEND_SERVICE_WINDOWSAZURE_STORAGE_USEPROXY, TESTS_ZEND_SERVICE_WINDOWSAZURE_STORAGE_PROXY, TESTS_ZEND_SERVICE_WINDOWSAZURE_STORAGE_PROXY_PORT, TESTS_ZEND_SERVICE_WINDOWSAZURE_STORAGE_PROXY_CREDENTIALS);
         }
 
         return $storageClient;
     }
-    
+
     protected static $uniqId = 0;
-    
+
     protected function generateName()
     {
         self::$uniqId++;
         return TESTS_ZEND_SERVICE_WINDOWSAZURE_BLOBSA_CONTAINER_PREFIX . self::$uniqId;
     }
-    
+
     /**
      * Test shared access, only write
      */
@@ -134,21 +143,21 @@ class Zend_Service_WindowsAzure_BlobStorageSharedAccessTest extends PHPUnit_Fram
     {
     	if (TESTS_ZEND_SERVICE_WINDOWSAZURE_BLOB_RUNTESTS) {
             $containerName = $this->generateName();
-            
+
             // Account owner performs this part
             $administrativeStorageClient = $this->createAdministrativeStorageInstance();
             $administrativeStorageClient->createContainer($containerName);
-            
+
             $sharedAccessUrl = $administrativeStorageClient->generateSharedAccessUrl(
                 $containerName,
                 '',
-            	'c', 
+            	'c',
             	'w',
             	$administrativeStorageClient->isoDate(time() - 500),
             	$administrativeStorageClient->isoDate(time() + 3000)
             );
 
-            
+
             // Reduced permissions user performs this part
             $storageClient = $this->createStorageInstance();
             $credentials = $storageClient->getCredentials();
@@ -157,12 +166,12 @@ class Zend_Service_WindowsAzure_BlobStorageSharedAccessTest extends PHPUnit_Fram
             ));
 
             $result = $storageClient->putBlob($containerName, 'images/WindowsAzure.gif', self::$path . 'WindowsAzure.gif');
-    
+
             $this->assertEquals($containerName, $result->Container);
             $this->assertEquals('images/WindowsAzure.gif', $result->Name);
-            
-            
-            
+
+
+
             // Now make sure reduced permissions user can not view the uploaded blob
             $exceptionThrown = false;
             try {
@@ -173,7 +182,7 @@ class Zend_Service_WindowsAzure_BlobStorageSharedAccessTest extends PHPUnit_Fram
             $this->assertTrue($exceptionThrown);
         }
     }
-    
+
     /**
      * Test different accounts
      */
@@ -181,22 +190,22 @@ class Zend_Service_WindowsAzure_BlobStorageSharedAccessTest extends PHPUnit_Fram
     {
         if (TESTS_ZEND_SERVICE_WINDOWSAZURE_BLOB_RUNTESTS) {
             $containerName = $this->generateName();
-            
+
             // Account owner performs this part
             $administrativeStorageClient = $this->createAdministrativeStorageInstance();
             $administrativeStorageClient->createContainer($containerName);
-            
+
             $sharedAccessUrl1 = $administrativeStorageClient->generateSharedAccessUrl(
                 $containerName,
                 '',
-            	'c', 
+            	'c',
             	'w',
             	$administrativeStorageClient->isoDate(time() - 500),
             	$administrativeStorageClient->isoDate(time() + 3000)
             );
             $sharedAccessUrl2 = str_replace($administrativeStorageClient->getAccountName(), 'bogusaccount', $sharedAccessUrl1);
 
-            
+
             // Reduced permissions user performs this part and should fail,
             // because different accounts have been used
             $storageClient = $this->createStorageInstance();

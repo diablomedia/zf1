@@ -43,6 +43,11 @@ class Zend_Service_Ebay_Finding_OnlineTest extends PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
+        if (!(defined('TESTS_ZEND_SERVICE_EBAY_ONLINE_ENABLED') &&
+            constant('TESTS_ZEND_SERVICE_EBAY_ONLINE_ENABLED') !== false)) {
+            $this->markTestSkipped('Zend_Service_Ebay online tests not enabled with an APPID in TestConfiguration.php');
+        }
+
         $this->_finding = new Zend_Service_Ebay_Finding(constant('TESTS_ZEND_SERVICE_EBAY_ONLINE_APPID'));
         $this->_httpClientOriginal = Zend_Rest_Client::getHttpClient();
         Zend_Rest_Client::setHttpClient(new Zend_Http_Client());
@@ -168,26 +173,5 @@ class Zend_Service_Ebay_Finding_OnlineTest extends PHPUnit_Framework_TestCase
         // page #2
         $some = $page1->page($this->_finding, 2);
         $this->assertEquals(2, $some->paginationOutput->pageNumber);
-    }
-}
-
-/**
- * @category   Zend
- * @package    Zend_Service_Ebay
- * @subpackage UnitTests
- * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @group      Zend_Service
- * @group      Zend_Service_Ebay
- */
-class Zend_Service_Ebay_Finding_OnlineSkipTest extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->markTestSkipped('Zend_Service_Ebay online tests not enabled with an APPID in TestConfiguration.php');
-    }
-
-    public function testNothing()
-    {
     }
 }

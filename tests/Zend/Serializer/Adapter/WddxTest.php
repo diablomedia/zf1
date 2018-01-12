@@ -39,6 +39,12 @@ class Zend_Serializer_Adapter_WddxTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
+        if (!defined('TESTS_ZEND_SERIALIZER_ADAPTER_WDDX_ENABLED') || !TESTS_ZEND_SERIALIZER_ADAPTER_WDDX_ENABLED) {
+            $this->markTestSkipped('this Adapter is not enabled in TestConfiguration.php');
+        } elseif (!extension_loaded('wddx')) {
+            $this->markTestSkipped('extension "wddx" is not loaded');
+        }
+
         $this->_adapter = new Zend_Serializer_Adapter_Wddx();
     }
 
@@ -272,4 +278,3 @@ class Zend_Serializer_Adapter_WddxSkipTest extends PHPUnit_Framework_TestCase
     }
 
 }
-

@@ -74,6 +74,13 @@ class Zend_Service_Amazon_OnlineTest extends PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
+        if (!(defined('TESTS_ZEND_SERVICE_AMAZON_ONLINE_ENABLED') &&
+            constant('TESTS_ZEND_SERVICE_AMAZON_ONLINE_ENABLED') &&
+            defined('TESTS_ZEND_SERVICE_AMAZON_ONLINE_ACCESSKEYID'))) {
+            $this->markTestSkipped('Zend_Service_Amazon online tests not enabled with an access key ID in '
+                                     . 'TestConfiguration.php');
+        }
+
         if(!defined('TESTS_ZEND_SERVICE_AMAZON_ONLINE_ACCESSKEYID') || !defined('TESTS_ZEND_SERVICE_AMAZON_ONLINE_SECRETKEY')) {
             $this->markTestSkipped('Constants AccessKeyId and SecretKey have to be set.');
         }
@@ -325,28 +332,5 @@ class Zend_Service_Amazon_OnlineTest extends PHPUnit_Framework_TestCase
     {
         $item = $this->_query->asin('B0015T963C')->search();
         $this->assertTrue($item instanceof Zend_Service_Amazon_Item);
-    }
-}
-
-
-/**
- * @category   Zend
- * @package    Zend_Service_Amazon
- * @subpackage UnitTests
- * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @group      Zend_Service
- * @group      Zend_Service_Amazon
- */
-class Zend_Service_Amazon_OnlineTest_Skip extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->markTestSkipped('Zend_Service_Amazon online tests not enabled with an access key ID in '
-                             . 'TestConfiguration.php');
-    }
-
-    public function testNothing()
-    {
     }
 }

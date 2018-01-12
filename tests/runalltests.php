@@ -20,61 +20,77 @@
  * @version    $Id$
  */
 
-$PHPUNIT = null;
-if (!$PHPUNIT) {
-    if (!$PHPUNIT && strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-        $PHPUNIT = `for %i in (phpunit.bat) do @echo.   %~\$PATH:i)`;
-    } else {
-        $PHPUNIT = trim(`echo \$PHPUNIT`);
-        if ( empty($PHPUNIT) ) {
-            $PHPUNIT = `which phpunit`;
-            $PHPUNIT = trim($PHPUNIT);
-        }
-    }
-
-    $PHPUNIT = trim($PHPUNIT);
-    if (!$PHPUNIT) {
-        echo "PHPUnit was not found on your OS!" . PHP_EOL;
-        exit(1);
-    }
+if (!isset($_SERVER['TRAVIS_PHP_VERSION'])) {
+    list($phpMajor, $phpMinor) = explode('.', PHP_VERSION);
+    $_SERVER['TRAVIS_PHP_VERSION'] = $phpMajor . '.' . $phpMinor;
 }
+
+$PHPUNIT = '../bin/phpunit';
 
 if (!is_executable($PHPUNIT)) {
     echo "PHPUnit is not executable ($PHPUNIT)";
+    exit;
 }
 
-if ($_SERVER['TRAVIS_PHP_VERSION'] == '5.2') {
-    //PHPUnit from git clone
-    $PHPUNIT = 'php -d include_path=\'.:./phpunit/phpunit/:./phpunit/dbunit/:./phpunit/php-code-coverage/:./phpunit/php-file-iterator/:./phpunit/php-invoker/:./phpunit/php-text-template/:./phpunit/php-timer:./phpunit/php-token-stream:./phpunit/phpunit-mock-objects/:./phpunit/phpunit-selenium/:./phpunit/phpunit-story/:/usr/local/lib/php\' ./phpunit/phpunit/phpunit.php';
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$phpUnitXml = __DIR__ . '/phpunit.xml';
+$handle = fopen($phpUnitXml, 'r');
+
+$missingFiles = [];
+
+// Basic check to be sure all files defined in phpunit.xml actually exist
+// as PHPUnit will silently ignore missing files.
+if ($handle) {
+    while (($buffer = fgets($handle, 4096)) !== false) {
+        if (strpos($buffer, '<file>')) {
+            $file = trim(str_replace(['<file>./', '</file>'], ['', ''], $buffer));
+            if (!file_exists($file)) {
+                $missingFiles[] = $file;
+            }
+        }
+    }
+    fclose($handle);
 } else {
-    $PHPUNIT = '../bin/phpunit'; //PHPUnit from composer
+    echo 'Could not read phpunit.xml file at ' . $phpUnitXml . PHP_EOL;
+    exit(1);
 }
 
-// locate all tests
-$files = glob('{Zend/*/AllTests.php,Zend/*Test.php}', GLOB_BRACE);
-sort($files);
+if (!empty($missingFiles)) {
+    echo 'There are files defined in the phpunit.xml file that do not exist: ' . PHP_EOL;
+    echo "\t" . implode(PHP_EOL . "\t", $missingFiles) . PHP_EOL;
+    exit(1);
+}
 
-// we'll capture the result of each phpunit execution in this value, so we'll know if something broke
+$configuration = \PHPUnit_Util_Configuration::getInstance($phpUnitXml);
+$testSuites = $configuration->getTestSuiteNames();
+
 $result = 0;
+$failedSuites = [];
 
-// run through phpunit
-while(list(, $file)=each($files)) {
-    if ($_SERVER['TRAVIS_PHP_VERSION'] == 'hhvm' && $file == 'Zend/CodeGenerator/AllTests.php') {
-        echo "Skipping $file on HHVM" . PHP_EOL; //gets stuck on the HHVM
+foreach ($testSuites as $testSuite) {
+    if ($_SERVER['TRAVIS_PHP_VERSION'] === 'hhvm' && $testSuite === 'ZFTest_Zend_CodeGenerator') {
+        echo "Skipping $testSuite on HHVM" . PHP_EOL; //gets stuck on the HHVM
         continue;
     }
 
-    echo "Executing {$file}" . PHP_EOL;
-    system($PHPUNIT . ' --stderr -d memory_limit=-1 -d error_reporting=E_ALL\&E_STRICT -d display_errors=1 ' . escapeshellarg($file), $c_result);
+    echo "Executing Suite {$testSuite}" . PHP_EOL;
+    system($PHPUNIT . ' --testsuite=' . escapeshellarg($testSuite), $c_result);
     echo PHP_EOL;
-    echo "Finished executing {$file}" . PHP_EOL;
 
     if ($c_result) {
-        echo PHP_EOL . "Result of $file is $c_result" . PHP_EOL . PHP_EOL;
+        echo "Result of $testSuite is $c_result" . PHP_EOL;
         $result = $c_result;
+        $failedSuites[] = $testSuite;
     }
+
+    echo "Finished executing {$testSuite} Suite" . PHP_EOL . PHP_EOL;
 }
 
-
 echo PHP_EOL . "All done. Result: $result" . PHP_EOL;
+
+if ($result) {
+    echo 'Failed Test Suites: ' . implode(', ', $failedSuites) . PHP_EOL;
+}
+
 exit($result);

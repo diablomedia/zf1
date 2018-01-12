@@ -42,6 +42,12 @@ class Zend_Ldap_Node_OnlineTest extends Zend_Ldap_OnlineTestCase
 {
     protected function setUp()
     {
+        if (!(defined('TESTS_ZEND_LDAP_ONLINE_ENABLED')
+                && constant('TESTS_ZEND_LDAP_ONLINE_ENABLED'))) {
+            $this->markTestSkipped('Zend_Ldap online tests not enabled in TestConfiguration.php');
+            return;
+        }
+
         parent::setUp();
         $this->_prepareLdapServer();
     }

@@ -37,6 +37,13 @@ require_once 'Zend/Service/StrikeIron/Decorator.php';
  */
 class Zend_Service_StrikeIron_DecoratorTest extends PHPUnit_Framework_TestCase
 {
+    public function setUp()
+    {
+        if (!extension_loaded('soap')) {
+            $this->markTestSkipped('soap extension is not loaded');
+        }
+    }
+
     public function testNoNoticesWhenDecoratedObjectIsNotAnObject()
     {
         $decorator = new Zend_Service_StrikeIron_Decorator(3.1415);

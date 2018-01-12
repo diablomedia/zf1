@@ -36,8 +36,14 @@ require_once 'Zend/Filter/File/Encrypt.php';
  */
 class Zend_Filter_File_DecryptTest extends PHPUnit_Framework_TestCase
 {
+    protected $errorReporting;
+
     public function setUp()
     {
+        if (substr(PHP_VERSION, 0, 3) === '7.1') {
+            $this->errorReporting = error_reporting(E_ALL & ~E_DEPRECATED);
+        }
+
         if (!extension_loaded('mcrypt')) {
             $this->markTestSkipped('This filter needs the mcrypt extension');
         }
@@ -53,6 +59,10 @@ class Zend_Filter_File_DecryptTest extends PHPUnit_Framework_TestCase
 
     public function tearDown()
     {
+        if (substr(PHP_VERSION, 0, 3) === '7.1') {
+            error_reporting($this->errorReporting);
+        }
+
         if (file_exists(dirname(__FILE__).'/../_files/newencryption.txt')) {
             unlink(dirname(__FILE__).'/../_files/newencryption.txt');
         }

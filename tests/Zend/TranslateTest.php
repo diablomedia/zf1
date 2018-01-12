@@ -716,7 +716,8 @@ class Zend_TranslateTest extends PHPUnit_Framework_TestCase
             'auto',
             array(
                 'scan' => Zend_Translate::LOCALE_FILENAME,
-                'ignore' => array('.', 'ignoreme', 'LC_TEST')
+                'ignore' => array('.', 'ignoreme', 'LC_TEST'),
+                'disableNotices' => true,
             )
         );
 
@@ -731,11 +732,13 @@ class Zend_TranslateTest extends PHPUnit_Framework_TestCase
             'auto',
             array(
                 'scan' => Zend_Translate::LOCALE_FILENAME,
-                'ignore' => array('.', 'regex_1' => '/de_DE/', 'regex' => '/ja/')
+                'ignore' => array('.', 'regex_1' => '/de_DE/', 'regex' => '/translation-ja/'),
+                'disableNotices' => true,
             )
         );
 
         $langs = $translate2->getList();
+
         $this->assertFalse(array_key_exists('de_DE', $langs));
         $this->assertFalse(array_key_exists('ja', $langs));
         $this->assertTrue(array_key_exists('en_US', $langs));
@@ -786,6 +789,7 @@ class Zend_TranslateTest extends PHPUnit_Framework_TestCase
                 'scan'    => Zend_Translate::LOCALE_FILENAME,
                 'ignore'  => array('.', 'ignoreme', 'LC_TEST'),
                 'route'   => array('ja' => 'en_US', 'en_US' => 'ja'),
+                'disableNotices' => true,
             )
         );
 
@@ -820,6 +824,7 @@ class Zend_TranslateTest extends PHPUnit_Framework_TestCase
                 'scan'    => Zend_Translate::LOCALE_FILENAME,
                 'ignore'  => array('.', 'ignoreme', 'LC_TEST'),
                 'route'   => array('ja' => 'en_US', 'en_US' => 'ja'),
+                'disableNotices' => true,
             )
         );
 

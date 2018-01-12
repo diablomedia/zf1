@@ -52,6 +52,10 @@ class Zend_Service_Flickr_OnlineTest extends PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
+        if (!(defined('TESTS_ZEND_SERVICE_FLICKR_ONLINE_ENABLED') &&
+            constant('TESTS_ZEND_SERVICE_FLICKR_ONLINE_ENABLED'))) {
+            $this->markTestSkipped('Zend_Service_Flickr online tests not enabled in TestConfiguration.php');
+        }
         /**
          * @see Zend_Service_Flickr
          */
@@ -211,22 +215,5 @@ class Zend_Service_Flickr_OnlineTest extends PHPUnit_Framework_TestCase
     function testTotalForEmptyResultSet()
     {
         $this->assertEquals(0, $this->_flickr->tagSearch('zendflickrtesttagnoresults')->totalResults());
-    }
-}
-
-/**
- * @category   Zend
- * @package    Zend_Service_Flickr
- * @subpackage UnitTests
- * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @group      Zend_Service
- * @group      Zend_Service_Flickr
- */
-class Zend_Service_Flickr_OnlineTest_Skip extends PHPUnit_Framework_TestCase
-{
-    public function testNothing()
-    {
-        $this->markTestSkipped('Zend_Service_Flickr online tests not enabled in TestConfiguration.php');
     }
 }

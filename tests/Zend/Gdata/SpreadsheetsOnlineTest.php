@@ -38,6 +38,16 @@ class Zend_Gdata_SpreadsheetsOnlineTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
+        if (!(defined('TESTS_ZEND_GDATA_ONLINE_ENABLED') &&
+            constant('TESTS_ZEND_GDATA_ONLINE_ENABLED') == true &&
+            defined('TESTS_ZEND_GDATA_CLIENTLOGIN_ENABLED') &&
+            constant('TESTS_ZEND_GDATA_CLIENTLOGIN_ENABLED') == true &&
+            defined('TESTS_ZEND_GDATA_SPREADSHEETS_ONLINE_ENABLED') &&
+            constant('TESTS_ZEND_GDATA_SPREADSHEETS_ONLINE_ENABLED') == true)) {
+            $this->markTestSkipped("Zend_Gdata online tests are not enabled in TestConfiguration.php");
+            return;
+        }
+
         $user = constant('TESTS_ZEND_GDATA_CLIENTLOGIN_EMAIL');
         $pass = constant('TESTS_ZEND_GDATA_CLIENTLOGIN_PASSWORD');
         $this->sprKey = constant('TESTS_ZEND_GDATA_SPREADSHEETS_SPREADSHEETKEY');

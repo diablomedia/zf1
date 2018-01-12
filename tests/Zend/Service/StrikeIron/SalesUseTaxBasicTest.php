@@ -44,6 +44,10 @@ class Zend_Service_StrikeIron_SalesUseTaxBasicTest extends PHPUnit_Framework_Tes
 {
     public function setUp()
     {
+        if (!extension_loaded('soap')) {
+            $this->markTestSkipped('soap extension is not loaded');
+        }
+
         $this->soapClient = new stdclass();
         $this->service = new Zend_Service_StrikeIron_SalesUseTaxBasic(array('client' => $this->soapClient));
     }

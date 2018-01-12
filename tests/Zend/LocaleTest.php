@@ -85,6 +85,8 @@ class Zend_LocaleTest extends PHPUnit_Framework_TestCase
             return;
         }
         setlocale(LC_ALL, $this->_locale);
+        Zend_LocaleTestHelper::resetObject();
+        putenv("HTTP_ACCEPT_LANGUAGE");
     }
 
     /**

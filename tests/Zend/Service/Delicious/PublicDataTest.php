@@ -52,6 +52,11 @@ class Zend_Service_Delicious_PublicDataTest extends PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
+        if (!(defined('TESTS_ZEND_SERVICE_DELICIOUS_ENABLED') &&
+            constant('TESTS_ZEND_SERVICE_DELICIOUS_ENABLED'))) {
+            $this->markTestSkipped('Zend_Service_Delicious tests not enabled in TestConfiguration.php');
+        }
+
         $httpClient = new Zend_Http_Client();
         $httpClient->setConfig(array(
                 'useragent' => 'Zend_Service_Delicious - Unit tests/0.1',

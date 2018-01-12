@@ -44,6 +44,14 @@ class Zend_Service_Amazon_Authentication_S3Test extends PHPUnit_Framework_TestCa
      */
     protected function setUp()
     {
+        if (!(defined('TESTS_ZEND_SERVICE_AMAZON_ONLINE_ENABLED')
+            && constant('TESTS_ZEND_SERVICE_AMAZON_ONLINE_ENABLED')
+            && defined('TESTS_ZEND_SERVICE_AMAZON_ONLINE_ACCESSKEY')
+            && defined('TESTS_ZEND_SERVICE_AMAZON_ONLINE_SECRETKEY'))
+        ) {
+            $this->markTestSkipped('Zend_Service_Amazon online tests not enabled with an access key ID in '
+                                     . 'TestConfiguration.php');
+        }
         parent::setUp();
 
         // TODO Auto-generated Zend_Service_Amazon_Authentication_S3Test::setUp()
@@ -177,4 +185,3 @@ x-amz-meta-reviewedby:joe@johnsmith.net,jane@johnsmith.net
     }
 
 }
-

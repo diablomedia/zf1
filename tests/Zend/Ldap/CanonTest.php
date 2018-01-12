@@ -45,6 +45,12 @@ class Zend_Ldap_CanonTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
+        if (!(defined('TESTS_ZEND_LDAP_ONLINE_ENABLED')
+                && constant('TESTS_ZEND_LDAP_ONLINE_ENABLED'))) {
+            $this->markTestSkipped('Zend_Ldap online tests not enabled in TestConfiguration.php');
+            return;
+        }
+
         $this->_options = array(
             'host' => TESTS_ZEND_LDAP_HOST,
             'username' => TESTS_ZEND_LDAP_USERNAME,

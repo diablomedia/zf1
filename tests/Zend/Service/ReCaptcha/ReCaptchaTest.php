@@ -45,6 +45,12 @@ class Zend_Service_ReCaptcha_ReCaptchaTest extends PHPUnit_Framework_TestCase
     protected $_reCaptcha = null;
 
     public function setUp()  {
+        if (!(defined('TESTS_ZEND_SERVICE_RECAPTCHA_ENABLED') &&
+            constant('TESTS_ZEND_SERVICE_RECAPTCHA_ENABLED') &&
+            defined('TESTS_ZEND_SERVICE_RECAPTCHA_PUBLIC_KEY') &&
+            defined('TESTS_ZEND_SERVICE_RECAPTCHA_PRIVATE_KEY'))) {
+            $this->markTestSkipped('Test not enabled in TestConfiguration.php');
+        }
         $this->_reCaptcha = new Zend_Service_ReCaptcha();
     }
 

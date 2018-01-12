@@ -59,6 +59,49 @@ abstract class Zend_Db_TestSetup extends PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
+        if (!defined('TESTS_ZEND_DB_ADAPTER_STATIC_ENABLED')) {
+            define('TESTS_ZEND_DB_ADAPTER_STATIC_ENABLED', true);
+        }
+
+        $driver = $this->getDriver();
+        $DRIVER = strtoupper($driver);
+        $enabledConst = "TESTS_ZEND_DB_ADAPTER_{$DRIVER}_ENABLED";
+        if (!defined($enabledConst) || constant($enabledConst) != true) {
+            $this->markTestSkipped("{$driver} database Adapter is not enabled in TestConfiguration.php");
+            return;
+        }
+
+        $ext = array(
+            'Oracle' => 'oci8',
+            'Db2'    => 'ibm_db2',
+            'Mysqli' => 'mysqli',
+            'Sqlsrv' => 'sqlsrv',
+            /**
+             * @todo  'Odbc'
+             */
+        );
+
+        if (isset($ext[$driver]) && !extension_loaded($ext[$driver])) {
+            $this->markTestSkipped("extension '{$ext[$driver]}' is not loaded");
+            return;
+        }
+
+        if (preg_match('/^pdo_(.*)/i', $driver, $matches)) {
+            // check for PDO extension
+            if (!extension_loaded('pdo')) {
+                $this->markTestSkipped("extension 'PDO' is not loaded");
+                return;
+            }
+
+            // check the PDO driver is available
+            $pdo_driver = strtolower($matches[1]);
+            if (!in_array($pdo_driver, PDO::getAvailableDrivers())) {
+                $this->markTestSkipped("PDO driver '{$pdo_driver}' is not available");
+                return;
+            }
+        }
+
+
         $this->_setUpTestUtil();
         $this->_setUpAdapter();
         $this->_util->setUp($this->_db);

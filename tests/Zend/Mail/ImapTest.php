@@ -50,6 +50,10 @@ class Zend_Mail_ImapTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
+        if (!(defined('TESTS_ZEND_MAIL_IMAP_ENABLED') && constant('TESTS_ZEND_MAIL_IMAP_ENABLED') == true)) {
+            $this->markTestSkipped("Test not enabled in TestConfiguration.php");
+        }
+
         $this->_params = array('host'     => TESTS_ZEND_MAIL_IMAP_HOST,
                                'user'     => TESTS_ZEND_MAIL_IMAP_USER,
                                'password' => TESTS_ZEND_MAIL_IMAP_PASSWORD);

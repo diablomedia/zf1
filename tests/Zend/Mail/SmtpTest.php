@@ -47,6 +47,10 @@ class Zend_Mail_SmtpTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
+        if (!(defined('TESTS_ZEND_MAIL_SMTP_ENABLED') && constant('TESTS_ZEND_MAIL_SMTP_ENABLED') == true)) {
+            $this->markTestSkipped("Test not enabled in TestConfiguration.php");
+        }
+
         $this->_params = array('host'     => TESTS_ZEND_MAIL_SMTP_HOST,
                                'port'     => TESTS_ZEND_MAIL_SMTP_PORT,
                                'username' => TESTS_ZEND_MAIL_SMTP_USER,

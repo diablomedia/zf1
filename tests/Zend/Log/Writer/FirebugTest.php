@@ -75,6 +75,10 @@ class Zend_Log_Writer_FirebugTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
+        if (PHP_OS === 'AIX') {
+            $this->markTestSkipped('Cannot run on AIX');
+        }
+
         date_default_timezone_set('America/Los_Angeles');
 
         // Reset front controller to reset registered plugins and

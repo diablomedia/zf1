@@ -62,6 +62,11 @@ class Zend_Service_Yahoo_OnlineTest extends PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
+        if (!(defined('TESTS_ZEND_SERVICE_YAHOO_ONLINE_ENABLED') &&
+            constant('TESTS_ZEND_SERVICE_YAHOO_ONLINE_ENABLED') !== false)) {
+            $this->markTestSkipped('Zend_Service_Yahoo online tests not enabled with an APPID in TestConfiguration.php');
+        }
+
         $this->_yahoo = new Zend_Service_Yahoo(constant('TESTS_ZEND_SERVICE_YAHOO_ONLINE_APPID'));
 
         $this->_httpClientAdapterSocket = new Zend_Http_Client_Adapter_Socket();
@@ -359,26 +364,5 @@ class Zend_Service_Yahoo_OnlineTest extends PHPUnit_Framework_TestCase
         foreach ($webResultSet as $webResult) {
             $this->assertTrue($webResult instanceof Zend_Service_Yahoo_WebResult);
         }
-    }
-}
-
-/**
- * @category   Zend
- * @package    Zend_Service_Yahoo
- * @subpackage UnitTests
- * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @group      Zend_Service
- * @group      Zend_Service_Yahoo
- */
-class Zend_Service_Yahoo_OnlineTest_Skip extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->markTestSkipped('Zend_Service_Yahoo online tests not enabled with an APPID in TestConfiguration.php');
-    }
-
-    public function testNothing()
-    {
     }
 }

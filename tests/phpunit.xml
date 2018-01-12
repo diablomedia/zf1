@@ -1,8 +1,9 @@
-<phpunit bootstrap="./TestHelper.php" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true">
+<phpunit bootstrap="./TestHelper.php" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" stderr="true">
     <testsuites>
         <testsuite name="ZFTest_Zend_Acl">
             <file>./Zend/Acl/AclTest.php</file>
         </testsuite>
+
         <testsuite name="ZFTest_Zend_Amf">
             <file>./Zend/Amf/Adobe/IntrospectorTest.php</file>
             <file>./Zend/Amf/RequestTest.php</file>
@@ -17,14 +18,11 @@
             <file>./Zend/Amf/ResourceTest.php</file>
         </testsuite>
 
-        <!-- Zend/Application -->
         <testsuite name="ZFTest_Zend_Application">
             <file>./Zend/Application/ApplicationTest.php</file>
             <file>./Zend/Application/Bootstrap/BootstrapAbstractTest.php</file>
             <file>./Zend/Application/Module/AutoloaderTest.php</file>
             <file>./Zend/Application/Module/BootstrapTest.php</file>
-        </testsuite>
-        <testsuite name="ZFTest_Zend_Application_Resource">
             <file>./Zend/Application/Resource/ResourceAbstractTest.php</file>
             <file>./Zend/Application/Resource/CacheManagerTest.php</file>
             <file>./Zend/Application/Resource/DbTest.php</file>
@@ -44,36 +42,606 @@
             <file>./Zend/Application/Resource/ViewTest.php</file>
         </testsuite>
 
-        <!-- Zend/Auth -->
-        <testsuite name="ZFTest_Zend_Auth_Adapter">
+        <testsuite name="ZFTest_Zend_Auth">
             <file>./Zend/Auth/Adapter/DigestTest.php</file>
-        </testsuite>
-        <testsuite name="ZFTest_Zend_Auth_Adapter_DbTable">
             <file>./Zend/Auth/Adapter/DbTable/BasicSqliteTest.php</file>
-        </testsuite>
-        <testsuite name="ZFTest_Zend_Auth_Adapter_Http">
             <file>./Zend/Auth/Adapter/Http/AuthTest.php</file>
             <file>./Zend/Auth/Adapter/Http/ObjectTest.php</file>
             <file>./Zend/Auth/Adapter/Http/ProxyTest.php</file>
-        </testsuite>
-        <testsuite name="ZFTest_Zend_Auth_Adapter_Http_Resolver">
             <file>./Zend/Auth/Adapter/Http/Resolver/FileTest.php</file>
-        </testsuite>
-        <testsuite name="ZFTest_Zend_Auth_Adapter_Ldap">
             <file>./Zend/Auth/Adapter/Ldap/OfflineTest.php</file>
             <file>./Zend/Auth/Adapter/Ldap/OnlineTest.php</file>
-        </testsuite>
-        <testsuite name="ZFTest_Zend_Auth_Adapter_OpenId">
-            <file>./Zend/Auth/Adapter/OpenIdTest.php</file>
+            <file>./Zend/Auth/Adapter/OpenId/OpenIdTest.php</file>
         </testsuite>
 
-        <!-- Zend/Http -->
+        <testsuite name="ZFTest_Zend_Barcode">
+            <file>./Zend/Barcode/FactoryTest.php</file>
+            <file>./Zend/Barcode/Object/Code39Test.php</file>
+            <file>./Zend/Barcode/Object/Code128Test.php</file>
+            <file>./Zend/Barcode/Object/Code25Test.php</file>
+            <file>./Zend/Barcode/Object/Code25interleavedTest.php</file>
+            <file>./Zend/Barcode/Object/Itf14Test.php</file>
+            <file>./Zend/Barcode/Object/IdentcodeTest.php</file>
+            <file>./Zend/Barcode/Object/LeitcodeTest.php</file>
+            <file>./Zend/Barcode/Object/Ean13Test.php</file>
+            <file>./Zend/Barcode/Object/Ean2Test.php</file>
+            <file>./Zend/Barcode/Object/Ean5Test.php</file>
+            <file>./Zend/Barcode/Object/Ean8Test.php</file>
+            <file>./Zend/Barcode/Object/UpcaTest.php</file>
+            <file>./Zend/Barcode/Object/UpceTest.php</file>
+            <file>./Zend/Barcode/Object/ErrorTest.php</file>
+            <file>./Zend/Barcode/Object/PostnetTest.php</file>
+            <file>./Zend/Barcode/Object/PlanetTest.php</file>
+            <file>./Zend/Barcode/Object/RoyalmailTest.php</file>
+            <file>./Zend/Barcode/Renderer/ImageTest.php</file>
+            <file>./Zend/Barcode/Renderer/PdfTest.php</file>
+            <file>./Zend/Barcode/Renderer/SvgTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Cache">
+            <file>./Zend/Cache/FactoryTest.php</file>
+            <file>./Zend/Cache/CoreTest.php</file>
+            <file>./Zend/Cache/FileBackendTest.php</file>
+            <file>./Zend/Cache/StaticBackendTest.php</file>
+            <file>./Zend/Cache/OutputFrontendTest.php</file>
+            <file>./Zend/Cache/FunctionFrontendTest.php</file>
+            <file>./Zend/Cache/ClassFrontendTest.php</file>
+            <file>./Zend/Cache/FileFrontendTest.php</file>
+            <file>./Zend/Cache/PageFrontendTest.php</file>
+            <file>./Zend/Cache/ManagerTest.php</file>
+            <file>./Zend/Cache/SqliteBackendTest.php</file>
+            <file>./Zend/Cache/ApcBackendTest.php</file>
+            <file>./Zend/Cache/WinCacheBackendTest.php</file>
+            <file>./Zend/Cache/XCacheBackendTest.php</file>
+            <file>./Zend/Cache/MemcachedBackendTest.php</file>
+            <file>./Zend/Cache/LibmemcachedBackendTest.php</file>
+            <file>./Zend/Cache/ZendPlatformBackendTest.php</file>
+            <file>./Zend/Cache/TwoLevelsBackendTest.php</file>
+            <file>./Zend/Cache/ZendServerDiskTest.php</file>
+            <file>./Zend/Cache/ZendServerShMemTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Captcha">
+            <file>./Zend/Captcha/DumbTest.php</file>
+            <file>./Zend/Captcha/FigletTest.php</file>
+            <file>./Zend/Captcha/ImageTest.php</file>
+            <file>./Zend/Captcha/ReCaptchaTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Cloud">
+            <file>./Zend/Cloud/DocumentService/FactoryTest.php</file>
+            <file>./Zend/Cloud/DocumentService/Adapter/SimpleDbTest.php</file>
+            <file>./Zend/Cloud/DocumentService/Adapter/WindowsAzureTest.php</file>
+            <file>./Zend/Cloud/QueueService/FactoryTest.php</file>
+            <file>./Zend/Cloud/QueueService/Adapter/SqsTest.php</file>
+            <file>./Zend/Cloud/QueueService/Adapter/WindowsAzureTest.php</file>
+            <file>./Zend/Cloud/QueueService/Adapter/ZendQueueTest.php</file>
+            <file>./Zend/Cloud/StorageService/FactoryTest.php</file>
+            <file>./Zend/Cloud/StorageService/Adapter/WindowsAzureTest.php</file>
+            <file>./Zend/Cloud/StorageService/Adapter/RackspaceTest.php</file>
+            <file>./Zend/Cloud/StorageService/Adapter/FileSystemTest.php</file>
+            <file>./Zend/Cloud/StorageService/Adapter/S3Test.php</file>
+            <file>./Zend/Cloud/Infrastructure/FactoryTest.php</file>
+            <file>./Zend/Cloud/Infrastructure/Adapter/Ec2Test.php</file>
+            <file>./Zend/Cloud/Infrastructure/Adapter/RackspaceTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_CodeGenerator">
+            <file>./Zend/CodeGenerator/Php/ClassTest.php</file>
+            <file>./Zend/CodeGenerator/Php/DocblockTest.php</file>
+            <file>./Zend/CodeGenerator/Php/Docblock/TagTest.php</file>
+            <file>./Zend/CodeGenerator/Php/Docblock/Tag/ParamTest.php</file>
+            <file>./Zend/CodeGenerator/Php/Docblock/Tag/ReturnTest.php</file>
+            <file>./Zend/CodeGenerator/Php/FileTest.php</file>
+            <file>./Zend/CodeGenerator/Php/MethodTest.php</file>
+            <file>./Zend/CodeGenerator/Php/ParameterTest.php</file>
+            <file>./Zend/CodeGenerator/Php/PropertyTest.php</file>
+            <file>./Zend/CodeGenerator/Php/Property/DefaultValueTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Config">
+            <file>./Zend/Config/Writer/ArrayTest.php</file>
+            <file>./Zend/Config/Writer/IniTest.php</file>
+            <file>./Zend/Config/Writer/JsonTest.php</file>
+            <file>./Zend/Config/Writer/XmlTest.php</file>
+            <file>./Zend/Config/Writer/YamlTest.php</file>
+            <file>./Zend/Config/IniTest.php</file>
+            <file>./Zend/Config/JsonTest.php</file>
+            <file>./Zend/Config/XmlTest.php</file>
+            <file>./Zend/Config/YamlTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Console">
+            <file>./Zend/Console/GetoptTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Controller">
+            <file>./Zend/Controller/ActionTest.php</file>
+            <file>./Zend/Controller/Action/HelperBrokerTest.php</file>
+            <file>./Zend/Controller/Dispatcher/StandardTest.php</file>
+            <file>./Zend/Controller/FrontTest.php</file>
+            <file>./Zend/Controller/Plugin/ActionStackTest.php</file>
+            <file>./Zend/Controller/Plugin/BrokerTest.php</file>
+            <file>./Zend/Controller/Plugin/ErrorHandlerTest.php</file>
+            <file>./Zend/Controller/Plugin/PutHandlerTest.php</file>
+            <file>./Zend/Controller/Request/Apache404Test.php</file>
+            <file>./Zend/Controller/Request/HttpTest.php</file>
+            <file>./Zend/Controller/Request/HttpTestCaseTest.php</file>
+            <file>./Zend/Controller/Request/SimpleTest.php</file>
+            <file>./Zend/Controller/Response/HttpTest.php</file>
+            <file>./Zend/Controller/Response/HttpTestCaseTest.php</file>
+            <file>./Zend/Controller/Router/RouteTest.php</file>
+            <file>./Zend/Controller/Router/Route/ModuleTest.php</file>
+            <file>./Zend/Controller/Router/Route/RegexTest.php</file>
+            <file>./Zend/Controller/Router/Route/StaticTest.php</file>
+            <file>./Zend/Controller/Router/Route/HostnameTest.php</file>
+            <file>./Zend/Controller/Router/Route/ChainTest.php</file>
+            <file>./Zend/Controller/Router/RewriteTest.php</file>
+            <file>./Zend/Controller/Action/Helper/ActionStackTest.php</file>
+            <file>./Zend/Controller/Action/Helper/AutoCompleteTest.php</file>
+            <file>./Zend/Controller/Action/Helper/CacheTest.php</file>
+            <file>./Zend/Controller/Action/Helper/ContextSwitchTest.php</file>
+            <file>./Zend/Controller/Action/Helper/AjaxContextTest.php</file>
+            <file>./Zend/Controller/Action/Helper/FlashMessengerTest.php</file>
+            <file>./Zend/Controller/Action/Helper/JsonTest.php</file>
+            <file>./Zend/Controller/Action/Helper/RedirectorTest.php</file>
+            <file>./Zend/Controller/Action/Helper/UrlTest.php</file>
+            <file>./Zend/Controller/Action/Helper/ViewRendererTest.php</file>
+            <file>./Zend/Controller/Action/Helper/NamespaceTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Crypt">
+            <file>./Zend/Crypt/DiffieHellmanTest.php</file>
+            <file>./Zend/Crypt/HmacTest.php</file>
+            <file>./Zend/Crypt/MathTest.php</file>
+            <file>./Zend/Crypt/Rsa/RsaTest.php</file>
+            <file>./Zend/Crypt/Math/BigInteger/BcmathTest.php</file>
+            <file>./Zend/Crypt/Math/BigInteger/GmpTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Date">
+            <file>./Zend/Date/DateObjectTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Db">
+            <file>./Zend/Db/Adapter/StaticTest.php</file>
+            <file>./Zend/Db/Profiler/StaticTest.php</file>
+            <file>./Zend/Db/Statement/StaticTest.php</file>
+            <file>./Zend/Db/Select/StaticTest.php</file>
+            <file>./Zend/Db/Table/StaticTest.php</file>
+            <file>./Zend/Db/Table/Select/StaticTest.php</file>
+            <file>./Zend/Db/Table/Rowset/StaticTest.php</file>
+            <file>./Zend/Db/Table/Row/StaticTest.php</file>
+            <file>./Zend/Db/Table/Relationships/StaticTest.php</file>
+            <file>./Zend/Db/Adapter/Db2Test.php</file>
+            <file>./Zend/Db/Profiler/Db2Test.php</file>
+            <file>./Zend/Db/Statement/Db2Test.php</file>
+            <file>./Zend/Db/Select/Db2Test.php</file>
+            <file>./Zend/Db/Table/Db2Test.php</file>
+            <file>./Zend/Db/Table/Select/Db2Test.php</file>
+            <file>./Zend/Db/Table/Rowset/Db2Test.php</file>
+            <file>./Zend/Db/Table/Row/Db2Test.php</file>
+            <file>./Zend/Db/Table/Relationships/Db2Test.php</file>
+            <file>./Zend/Db/Adapter/MysqliTest.php</file>
+            <file>./Zend/Db/Profiler/MysqliTest.php</file>
+            <file>./Zend/Db/Statement/MysqliTest.php</file>
+            <file>./Zend/Db/Select/MysqliTest.php</file>
+            <file>./Zend/Db/Table/MysqliTest.php</file>
+            <file>./Zend/Db/Table/Select/MysqliTest.php</file>
+            <file>./Zend/Db/Table/Rowset/MysqliTest.php</file>
+            <file>./Zend/Db/Table/Row/MysqliTest.php</file>
+            <file>./Zend/Db/Table/Relationships/MysqliTest.php</file>
+            <file>./Zend/Db/Adapter/OracleTest.php</file>
+            <file>./Zend/Db/Profiler/OracleTest.php</file>
+            <file>./Zend/Db/Statement/OracleTest.php</file>
+            <file>./Zend/Db/Select/OracleTest.php</file>
+            <file>./Zend/Db/Table/OracleTest.php</file>
+            <file>./Zend/Db/Table/Select/OracleTest.php</file>
+            <file>./Zend/Db/Table/Rowset/OracleTest.php</file>
+            <file>./Zend/Db/Table/Row/OracleTest.php</file>
+            <file>./Zend/Db/Table/Relationships/OracleTest.php</file>
+            <file>./Zend/Db/Adapter/SqlsrvTest.php</file>
+            <file>./Zend/Db/Profiler/SqlsrvTest.php</file>
+            <file>./Zend/Db/Statement/SqlsrvTest.php</file>
+            <file>./Zend/Db/Select/SqlsrvTest.php</file>
+            <file>./Zend/Db/Table/SqlsrvTest.php</file>
+            <file>./Zend/Db/Table/Select/SqlsrvTest.php</file>
+            <file>./Zend/Db/Table/Rowset/SqlsrvTest.php</file>
+            <file>./Zend/Db/Table/Row/SqlsrvTest.php</file>
+            <file>./Zend/Db/Table/Relationships/SqlsrvTest.php</file>
+            <file>./Zend/Db/Adapter/Pdo/IbmTest.php</file>
+            <file>./Zend/Db/Profiler/Pdo/IbmTest.php</file>
+            <file>./Zend/Db/Statement/Pdo/IbmTest.php</file>
+            <file>./Zend/Db/Select/Pdo/IbmTest.php</file>
+            <file>./Zend/Db/Table/Pdo/IbmTest.php</file>
+            <file>./Zend/Db/Table/Select/Pdo/IbmTest.php</file>
+            <file>./Zend/Db/Table/Rowset/Pdo/IbmTest.php</file>
+            <file>./Zend/Db/Table/Row/Pdo/IbmTest.php</file>
+            <file>./Zend/Db/Table/Relationships/Pdo/IbmTest.php</file>
+            <file>./Zend/Db/Adapter/Pdo/MssqlTest.php</file>
+            <file>./Zend/Db/Profiler/Pdo/MssqlTest.php</file>
+            <file>./Zend/Db/Statement/Pdo/MssqlTest.php</file>
+            <file>./Zend/Db/Select/Pdo/MssqlTest.php</file>
+            <file>./Zend/Db/Table/Pdo/MssqlTest.php</file>
+            <file>./Zend/Db/Table/Select/Pdo/MssqlTest.php</file>
+            <file>./Zend/Db/Table/Rowset/Pdo/MssqlTest.php</file>
+            <file>./Zend/Db/Table/Row/Pdo/MssqlTest.php</file>
+            <file>./Zend/Db/Table/Relationships/Pdo/MssqlTest.php</file>
+            <file>./Zend/Db/Adapter/Pdo/MysqlTest.php</file>
+            <file>./Zend/Db/Profiler/Pdo/MysqlTest.php</file>
+            <file>./Zend/Db/Statement/Pdo/MysqlTest.php</file>
+            <file>./Zend/Db/Select/Pdo/MysqlTest.php</file>
+            <file>./Zend/Db/Table/Pdo/MysqlTest.php</file>
+            <file>./Zend/Db/Table/Select/Pdo/MysqlTest.php</file>
+            <file>./Zend/Db/Table/Rowset/Pdo/MysqlTest.php</file>
+            <file>./Zend/Db/Table/Row/Pdo/MysqlTest.php</file>
+            <file>./Zend/Db/Table/Relationships/Pdo/MysqlTest.php</file>
+            <file>./Zend/Db/Adapter/Pdo/OciTest.php</file>
+            <file>./Zend/Db/Profiler/Pdo/OciTest.php</file>
+            <file>./Zend/Db/Statement/Pdo/OciTest.php</file>
+            <file>./Zend/Db/Select/Pdo/OciTest.php</file>
+            <file>./Zend/Db/Table/Pdo/OciTest.php</file>
+            <file>./Zend/Db/Table/Select/Pdo/OciTest.php</file>
+            <file>./Zend/Db/Table/Rowset/Pdo/OciTest.php</file>
+            <file>./Zend/Db/Table/Row/Pdo/OciTest.php</file>
+            <file>./Zend/Db/Table/Relationships/Pdo/OciTest.php</file>
+            <file>./Zend/Db/Adapter/Pdo/PgsqlTest.php</file>
+            <file>./Zend/Db/Profiler/Pdo/PgsqlTest.php</file>
+            <file>./Zend/Db/Statement/Pdo/PgsqlTest.php</file>
+            <file>./Zend/Db/Select/Pdo/PgsqlTest.php</file>
+            <file>./Zend/Db/Table/Pdo/PgsqlTest.php</file>
+            <file>./Zend/Db/Table/Select/Pdo/PgsqlTest.php</file>
+            <file>./Zend/Db/Table/Rowset/Pdo/PgsqlTest.php</file>
+            <file>./Zend/Db/Table/Row/Pdo/PgsqlTest.php</file>
+            <file>./Zend/Db/Table/Relationships/Pdo/PgsqlTest.php</file>
+            <file>./Zend/Db/Adapter/Pdo/SqliteTest.php</file>
+            <file>./Zend/Db/Profiler/Pdo/SqliteTest.php</file>
+            <file>./Zend/Db/Statement/Pdo/SqliteTest.php</file>
+            <file>./Zend/Db/Select/Pdo/SqliteTest.php</file>
+            <file>./Zend/Db/Table/Pdo/SqliteTest.php</file>
+            <file>./Zend/Db/Table/Select/Pdo/SqliteTest.php</file>
+            <file>./Zend/Db/Table/Rowset/Pdo/SqliteTest.php</file>
+            <file>./Zend/Db/Table/Row/Pdo/SqliteTest.php</file>
+            <file>./Zend/Db/Table/Relationships/Pdo/SqliteTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Dojo">
+            <file>./Zend/Dojo/BuildLayerTest.php</file>
+            <file>./Zend/Dojo/DojoTest.php</file>
+            <file>./Zend/Dojo/DataTest.php</file>
+            <file>./Zend/Dojo/Form/Decorator/AccordionContainerTest.php</file>
+            <file>./Zend/Dojo/Form/Decorator/AccordionPaneTest.php</file>
+            <file>./Zend/Dojo/Form/Decorator/BorderContainerTest.php</file>
+            <file>./Zend/Dojo/Form/Decorator/DijitContainerTest.php</file>
+            <file>./Zend/Dojo/Form/Decorator/DijitElementTest.php</file>
+            <file>./Zend/Dojo/Form/Decorator/DijitFormTest.php</file>
+            <file>./Zend/Dojo/Form/Decorator/SplitContainerTest.php</file>
+            <file>./Zend/Dojo/Form/Decorator/StackContainerTest.php</file>
+            <file>./Zend/Dojo/Form/Decorator/TabContainerTest.php</file>
+            <file>./Zend/Dojo/Form/Element/CheckBoxTest.php</file>
+            <file>./Zend/Dojo/Form/Element/ComboBoxTest.php</file>
+            <file>./Zend/Dojo/Form/Element/CurrencyTextBoxTest.php</file>
+            <file>./Zend/Dojo/Form/Element/DateTextBoxTest.php</file>
+            <file>./Zend/Dojo/Form/Element/DijitTest.php</file>
+            <file>./Zend/Dojo/Form/Element/EditorTest.php</file>
+            <file>./Zend/Dojo/Form/Element/FilteringSelectTest.php</file>
+            <file>./Zend/Dojo/Form/Element/HorizontalSliderTest.php</file>
+            <file>./Zend/Dojo/Form/Element/NumberSpinnerTest.php</file>
+            <file>./Zend/Dojo/Form/Element/NumberTextBoxTest.php</file>
+            <file>./Zend/Dojo/Form/Element/PasswordTextBoxTest.php</file>
+            <file>./Zend/Dojo/Form/Element/RadioButtonTest.php</file>
+            <file>./Zend/Dojo/Form/Element/SimpleTextareaTest.php</file>
+            <file>./Zend/Dojo/Form/Element/SubmitButtonTest.php</file>
+            <file>./Zend/Dojo/Form/Element/TextBoxTest.php</file>
+            <file>./Zend/Dojo/Form/Element/TextareaTest.php</file>
+            <file>./Zend/Dojo/Form/Element/TimeTextBoxTest.php</file>
+            <file>./Zend/Dojo/Form/Element/ValidationTextBoxTest.php</file>
+            <file>./Zend/Dojo/Form/Element/VerticalSliderTest.php</file>
+            <file>./Zend/Dojo/Form/FormTest.php</file>
+            <file>./Zend/Dojo/Form/SubFormTest.php</file>
+            <file>./Zend/Dojo/View/Helper/DojoTest.php</file>
+            <file>./Zend/Dojo/View/Helper/AccordionContainerTest.php</file>
+            <file>./Zend/Dojo/View/Helper/AccordionPaneTest.php</file>
+            <file>./Zend/Dojo/View/Helper/BorderContainerTest.php</file>
+            <file>./Zend/Dojo/View/Helper/ButtonTest.php</file>
+            <file>./Zend/Dojo/View/Helper/CheckBoxTest.php</file>
+            <file>./Zend/Dojo/View/Helper/ComboBoxTest.php</file>
+            <file>./Zend/Dojo/View/Helper/ContentPaneTest.php</file>
+            <file>./Zend/Dojo/View/Helper/CurrencyTextBoxTest.php</file>
+            <file>./Zend/Dojo/View/Helper/CustomDijitTest.php</file>
+            <file>./Zend/Dojo/View/Helper/DateTextBoxTest.php</file>
+            <file>./Zend/Dojo/View/Helper/FilteringSelectTest.php</file>
+            <file>./Zend/Dojo/View/Helper/FormTest.php</file>
+            <file>./Zend/Dojo/View/Helper/HorizontalSliderTest.php</file>
+            <file>./Zend/Dojo/View/Helper/NumberSpinnerTest.php</file>
+            <file>./Zend/Dojo/View/Helper/NumberTextBoxTest.php</file>
+            <file>./Zend/Dojo/View/Helper/PasswordTextBoxTest.php</file>
+            <file>./Zend/Dojo/View/Helper/RadioButtonTest.php</file>
+            <file>./Zend/Dojo/View/Helper/SimpleTextareaTest.php</file>
+            <file>./Zend/Dojo/View/Helper/SubmitButtonTest.php</file>
+            <file>./Zend/Dojo/View/Helper/SplitContainerTest.php</file>
+            <file>./Zend/Dojo/View/Helper/StackContainerTest.php</file>
+            <file>./Zend/Dojo/View/Helper/TabContainerTest.php</file>
+            <file>./Zend/Dojo/View/Helper/TextareaTest.php</file>
+            <file>./Zend/Dojo/View/Helper/TextBoxTest.php</file>
+            <file>./Zend/Dojo/View/Helper/TimeTextBoxTest.php</file>
+            <file>./Zend/Dojo/View/Helper/ValidationTextBoxTest.php</file>
+            <file>./Zend/Dojo/View/Helper/VerticalSliderTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Dom">
+            <file>./Zend/Dom/QueryTest.php</file>
+            <file>./Zend/Dom/Query/Css2XpathTest.php</file>
+            <file>./Zend/Dom/Query/ResultTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_EventManager">
+            <file>./Zend/EventManager/EventManagerTest.php</file>
+            <file>./Zend/EventManager/FilterChainTest.php</file>
+            <file>./Zend/EventManager/GlobalEventManagerTest.php</file>
+            <file>./Zend/EventManager/StaticEventManagerTest.php</file>
+            <file>./Zend/EventManager/StaticIntegrationTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Feed">
+            <file>./Zend/Feed/ArrayAccessTest.php</file>
+            <file>./Zend/Feed/AtomEntryOnlyTest.php</file>
+            <file>./Zend/Feed/AtomPublishingTest.php</file>
+            <file>./Zend/Feed/CountTest.php</file>
+            <file>./Zend/Feed/ElementTest.php</file>
+            <file>./Zend/Feed/ImportTest.php</file>
+            <file>./Zend/Feed/IteratorTest.php</file>
+            <file>./Zend/Feed/Entry/RssTest.php</file>
+            <file>./Zend/Feed/AtomTest.php</file>
+            <file>./Zend/Feed/RssTest.php</file>
+            <file>./Zend/Feed/ReaderTest.php</file>
+            <file>./Zend/Feed/Reader/Feed/RssTest.php</file>
+            <file>./Zend/Feed/Reader/Entry/RssTest.php</file>
+            <file>./Zend/Feed/Reader/Feed/AtomTest.php</file>
+            <file>./Zend/Feed/Reader/Entry/AtomTest.php</file>
+            <file>./Zend/Feed/Reader/Feed/CommonTest.php</file>
+            <file>./Zend/Feed/Reader/Entry/CommonTest.php</file>
+            <file>./Zend/Feed/Reader/Feed/AtomSourceTest.php</file>
+            <file>./Zend/Feed/Reader/Entry/AtomStandaloneEntryTest.php</file>
+            <file>./Zend/Feed/Reader/Integration/WordpressRss2DcAtomTest.php</file>
+            <file>./Zend/Feed/Reader/Integration/WordpressAtom10Test.php</file>
+            <file>./Zend/Feed/Reader/Integration/LautDeRdfTest.php</file>
+            <file>./Zend/Feed/Reader/Integration/H-OnlineComAtom10Test.php</file>
+            <file>./Zend/Feed/Writer/FeedTest.php</file>
+            <file>./Zend/Feed/Writer/EntryTest.php</file>
+            <file>./Zend/Feed/Writer/DeletedTest.php</file>
+            <file>./Zend/Feed/Writer/Renderer/Feed/AtomTest.php</file>
+            <file>./Zend/Feed/Writer/Renderer/Feed/RssTest.php</file>
+            <file>./Zend/Feed/Writer/Renderer/Entry/AtomTest.php</file>
+            <file>./Zend/Feed/Writer/Renderer/Entry/RssTest.php</file>
+            <file>./Zend/Feed/Writer/Extension/ITunes/EntryTest.php</file>
+            <file>./Zend/Feed/Writer/Extension/ITunes/FeedTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_File">
+            <file>./Zend/File/ClassFileLocatorTest.php</file>
+            <file>./Zend/File/Transfer/Adapter/AbstractTest.php</file>
+            <file>./Zend/File/Transfer/Adapter/HttpTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Filter">
+            <file>./Zend/Filter/AlnumTest.php</file>
+            <file>./Zend/Filter/AlphaTest.php</file>
+            <file>./Zend/Filter/BaseNameTest.php</file>
+            <file>./Zend/Filter/BooleanTest.php</file>
+            <file>./Zend/Filter/CallbackTest.php</file>
+            <file>./Zend/Filter/CompressTest.php</file>
+            <file>./Zend/Filter/DecompressTest.php</file>
+            <file>./Zend/Filter/DecryptTest.php</file>
+            <file>./Zend/Filter/DigitsTest.php</file>
+            <file>./Zend/Filter/DirTest.php</file>
+            <file>./Zend/Filter/EncryptTest.php</file>
+            <file>./Zend/Filter/HtmlEntitiesTest.php</file>
+            <file>./Zend/Filter/InflectorTest.php</file>
+            <file>./Zend/Filter/InputTest.php</file>
+            <file>./Zend/Filter/IntTest.php</file>
+            <file>./Zend/Filter/LocalizedToNormalizedTest.php</file>
+            <file>./Zend/Filter/NormalizedToLocalizedTest.php</file>
+            <file>./Zend/Filter/NullTest.php</file>
+            <file>./Zend/Filter/PregReplaceTest.php</file>
+            <file>./Zend/Filter/RealPathTest.php</file>
+            <file>./Zend/Filter/StringToLowerTest.php</file>
+            <file>./Zend/Filter/StringToUpperTest.php</file>
+            <file>./Zend/Filter/StringTrimTest.php</file>
+            <file>./Zend/Filter/StripNewlinesTest.php</file>
+            <file>./Zend/Filter/StripTagsTest.php</file>
+            <file>./Zend/Filter/Compress/Bz2Test.php</file>
+            <file>./Zend/Filter/Compress/GzTest.php</file>
+            <file>./Zend/Filter/Compress/LzfTest.php</file>
+            <file>./Zend/Filter/Compress/RarTest.php</file>
+            <file>./Zend/Filter/Compress/TarTest.php</file>
+            <file>./Zend/Filter/Compress/ZipTest.php</file>
+            <file>./Zend/Filter/Encrypt/McryptTest.php</file>
+            <file>./Zend/Filter/Encrypt/OpensslTest.php</file>
+            <file>./Zend/Filter/File/DecryptTest.php</file>
+            <file>./Zend/Filter/File/EncryptTest.php</file>
+            <file>./Zend/Filter/File/LowerCaseTest.php</file>
+            <file>./Zend/Filter/File/RenameTest.php</file>
+            <file>./Zend/Filter/File/UpperCaseTest.php</file>
+            <file>./Zend/Filter/Word/CamelCaseToDashTest.php</file>
+            <file>./Zend/Filter/Word/CamelCaseToSeparatorTest.php</file>
+            <file>./Zend/Filter/Word/CamelCaseToUnderscoreTest.php</file>
+            <file>./Zend/Filter/Word/DashToCamelCaseTest.php</file>
+            <file>./Zend/Filter/Word/DashToSeparatorTest.php</file>
+            <file>./Zend/Filter/Word/DashToUnderscoreTest.php</file>
+            <file>./Zend/Filter/Word/SeparatorToCamelCaseTest.php</file>
+            <file>./Zend/Filter/Word/SeparatorToDashTest.php</file>
+            <file>./Zend/Filter/Word/SeparatorToSeparatorTest.php</file>
+            <file>./Zend/Filter/Word/UnderscoreToCamelCaseTest.php</file>
+            <file>./Zend/Filter/Word/UnderscoreToDashTest.php</file>
+            <file>./Zend/Filter/Word/UnderscoreToSeparatorTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Form">
+            <file>./Zend/Form/Decorator/AbstractTest.php</file>
+            <file>./Zend/Form/Decorator/CallbackTest.php</file>
+            <file>./Zend/Form/Decorator/DescriptionTest.php</file>
+            <file>./Zend/Form/Decorator/ErrorsTest.php</file>
+            <file>./Zend/Form/Decorator/FieldsetTest.php</file>
+            <file>./Zend/Form/Decorator/FileTest.php</file>
+            <file>./Zend/Form/Decorator/FormErrorsTest.php</file>
+            <file>./Zend/Form/Decorator/FormTest.php</file>
+            <file>./Zend/Form/Decorator/HtmlTagTest.php</file>
+            <file>./Zend/Form/Decorator/ImageTest.php</file>
+            <file>./Zend/Form/Decorator/LabelTest.php</file>
+            <file>./Zend/Form/Decorator/ReCaptchaTest.php</file>
+            <file>./Zend/Form/Decorator/ViewHelperTest.php</file>
+            <file>./Zend/Form/Decorator/ViewScriptTest.php</file>
+            <file>./Zend/Form/DisplayGroupTest.php</file>
+            <file>./Zend/Form/ElementTest.php</file>
+            <file>./Zend/Form/FormTest.php</file>
+            <file>./Zend/Form/SubFormTest.php</file>
+            <file>./Zend/Form/Element/ButtonTest.php</file>
+            <file>./Zend/Form/Element/CaptchaTest.php</file>
+            <file>./Zend/Form/Element/CheckboxTest.php</file>
+            <file>./Zend/Form/Element/FileTest.php</file>
+            <file>./Zend/Form/Element/HashTest.php</file>
+            <file>./Zend/Form/Element/HiddenTest.php</file>
+            <file>./Zend/Form/Element/ImageTest.php</file>
+            <file>./Zend/Form/Element/MultiCheckboxTest.php</file>
+            <file>./Zend/Form/Element/MultiselectTest.php</file>
+            <file>./Zend/Form/Element/NoteTest.php</file>
+            <file>./Zend/Form/Element/PasswordTest.php</file>
+            <file>./Zend/Form/Element/RadioTest.php</file>
+            <file>./Zend/Form/Element/ResetTest.php</file>
+            <file>./Zend/Form/Element/SelectTest.php</file>
+            <file>./Zend/Form/Element/SubmitTest.php</file>
+            <file>./Zend/Form/Element/TextareaTest.php</file>
+            <file>./Zend/Form/Element/TextTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Gdata">
+            <file>./Zend/Gdata/AuthSubTest.php</file>
+            <file>./Zend/Gdata/AppTest.php</file>
+            <file>./Zend/Gdata/App/UtilTest.php</file>
+            <file>./Zend/Gdata/App/BaseTest.php</file>
+            <file>./Zend/Gdata/App/AuthorTest.php</file>
+            <file>./Zend/Gdata/App/CategoryTest.php</file>
+            <file>./Zend/Gdata/App/ContentTest.php</file>
+            <file>./Zend/Gdata/App/ControlTest.php</file>
+            <file>./Zend/Gdata/App/EntryTest.php</file>
+            <file>./Zend/Gdata/App/FeedTest.php</file>
+            <file>./Zend/Gdata/App/GeneratorTest.php</file>
+            <file>./Zend/Gdata/App/CaptchaRequiredExceptionTest.php</file>
+            <file>./Zend/Gdata/GdataTest.php</file>
+            <file>./Zend/Gdata/QueryTest.php</file>
+            <file>./Zend/Gdata/AttendeeStatusTest.php</file>
+            <file>./Zend/Gdata/AttendeeTypeTest.php</file>
+            <file>./Zend/Gdata/CommentsTest.php</file>
+            <file>./Zend/Gdata/EntryTest.php</file>
+            <file>./Zend/Gdata/FeedTest.php</file>
+            <file>./Zend/Gdata/EntryLinkTest.php</file>
+            <file>./Zend/Gdata/EventStatusTest.php</file>
+            <file>./Zend/Gdata/ExtendedPropertyTest.php</file>
+            <file>./Zend/Gdata/FeedLinkTest.php</file>
+            <file>./Zend/Gdata/OpenSearchItemsPerPageTest.php</file>
+            <file>./Zend/Gdata/OpenSearchStartIndexTest.php</file>
+            <file>./Zend/Gdata/OpenSearchTotalResultsTest.php</file>
+            <file>./Zend/Gdata/OriginalEventTest.php</file>
+            <file>./Zend/Gdata/RecurrenceTest.php</file>
+            <file>./Zend/Gdata/RecurrenceExceptionTest.php</file>
+            <file>./Zend/Gdata/ReminderTest.php</file>
+            <file>./Zend/Gdata/TransparencyTest.php</file>
+            <file>./Zend/Gdata/VisibilityTest.php</file>
+            <file>./Zend/Gdata/WhenTest.php</file>
+            <file>./Zend/Gdata/WhereTest.php</file>
+            <file>./Zend/Gdata/WhoTest.php</file>
+            <file>./Zend/Gdata/CalendarTest.php</file>
+            <file>./Zend/Gdata/CalendarFeedTest.php</file>
+            <file>./Zend/Gdata/CalendarEventTest.php</file>
+            <file>./Zend/Gdata/CalendarFeedCompositeTest.php</file>
+            <file>./Zend/Gdata/Calendar/EventQueryTest.php</file>
+            <file>./Zend/Gdata/Calendar/EventQueryExceptionTest.php</file>
+            <file>./Zend/Gdata/Calendar/EventEntryTest.php</file>
+            <file>./Zend/Gdata/Calendar/AccessLevelTest.php</file>
+            <file>./Zend/Gdata/Calendar/ColorTest.php</file>
+            <file>./Zend/Gdata/Calendar/HiddenTest.php</file>
+            <file>./Zend/Gdata/Calendar/LinkTest.php</file>
+            <file>./Zend/Gdata/Calendar/SelectedTest.php</file>
+            <file>./Zend/Gdata/Calendar/SendEventNotificationsTest.php</file>
+            <file>./Zend/Gdata/Calendar/TimezoneTest.php</file>
+            <file>./Zend/Gdata/Calendar/WebContentTest.php</file>
+            <file>./Zend/Gdata/Calendar/QuickAddTest.php</file>
+            <file>./Zend/Gdata/Spreadsheets/ColCountTest.php</file>
+            <file>./Zend/Gdata/Spreadsheets/RowCountTest.php</file>
+            <file>./Zend/Gdata/Spreadsheets/CellTest.php</file>
+            <file>./Zend/Gdata/Spreadsheets/CustomTest.php</file>
+            <file>./Zend/Gdata/Spreadsheets/WorksheetEntryTest.php</file>
+            <file>./Zend/Gdata/Spreadsheets/CellEntryTest.php</file>
+            <file>./Zend/Gdata/Spreadsheets/ListEntryTest.php</file>
+            <file>./Zend/Gdata/Spreadsheets/SpreadsheetFeedTest.php</file>
+            <file>./Zend/Gdata/Spreadsheets/WorksheetFeedTest.php</file>
+            <file>./Zend/Gdata/Spreadsheets/CellFeedTest.php</file>
+            <file>./Zend/Gdata/Spreadsheets/ListFeedTest.php</file>
+            <file>./Zend/Gdata/Spreadsheets/DocumentQueryTest.php</file>
+            <file>./Zend/Gdata/Spreadsheets/CellQueryTest.php</file>
+            <file>./Zend/Gdata/Spreadsheets/ListQueryTest.php</file>
+            <file>./Zend/Gdata/Docs/DocumentListFeedTest.php</file>
+            <file>./Zend/Gdata/Docs/DocumentListEntryTest.php</file>
+            <file>./Zend/Gdata/Docs/QueryTest.php</file>
+            <file>./Zend/Gdata/Photos/PhotosAlbumEntryTest.php</file>
+            <file>./Zend/Gdata/Photos/PhotosAlbumFeedTest.php</file>
+            <file>./Zend/Gdata/Photos/PhotosAlbumQueryTest.php</file>
+            <file>./Zend/Gdata/Photos/PhotosCommentEntryTest.php</file>
+            <file>./Zend/Gdata/Photos/PhotosPhotoEntryTest.php</file>
+            <file>./Zend/Gdata/Photos/PhotosPhotoFeedTest.php</file>
+            <file>./Zend/Gdata/Photos/PhotosPhotoQueryTest.php</file>
+            <file>./Zend/Gdata/Photos/PhotosTagEntryTest.php</file>
+            <file>./Zend/Gdata/Photos/PhotosUserEntryTest.php</file>
+            <file>./Zend/Gdata/Photos/PhotosUserFeedTest.php</file>
+            <file>./Zend/Gdata/Photos/PhotosUserQueryTest.php</file>
+            <file>./Zend/Gdata/GappsTest.php</file>
+            <file>./Zend/Gdata/Gapps/EmailListEntryTest.php</file>
+            <file>./Zend/Gdata/Gapps/EmailListFeedTest.php</file>
+            <file>./Zend/Gdata/Gapps/EmailListQueryTest.php</file>
+            <file>./Zend/Gdata/Gapps/EmailListRecipientEntryTest.php</file>
+            <file>./Zend/Gdata/Gapps/EmailListRecipientFeedTest.php</file>
+            <file>./Zend/Gdata/Gapps/EmailListRecipientQueryTest.php</file>
+            <file>./Zend/Gdata/Gapps/EmailListTest.php</file>
+            <file>./Zend/Gdata/Gapps/ErrorTest.php</file>
+            <file>./Zend/Gdata/Gapps/GroupEntryTest.php</file>
+            <file>./Zend/Gdata/Gapps/GroupFeedTest.php</file>
+            <file>./Zend/Gdata/Gapps/GroupQueryTest.php</file>
+            <file>./Zend/Gdata/Gapps/LoginTest.php</file>
+            <file>./Zend/Gdata/Gapps/MemberEntryTest.php</file>
+            <file>./Zend/Gdata/Gapps/MemberFeedTest.php</file>
+            <file>./Zend/Gdata/Gapps/MemberQueryTest.php</file>
+            <file>./Zend/Gdata/Gapps/NameTest.php</file>
+            <file>./Zend/Gdata/Gapps/NicknameEntryTest.php</file>
+            <file>./Zend/Gdata/Gapps/NicknameFeedTest.php</file>
+            <file>./Zend/Gdata/Gapps/NicknameQueryTest.php</file>
+            <file>./Zend/Gdata/Gapps/NicknameTest.php</file>
+            <file>./Zend/Gdata/Gapps/OwnerEntryTest.php</file>
+            <file>./Zend/Gdata/Gapps/OwnerFeedTest.php</file>
+            <file>./Zend/Gdata/Gapps/OwnerQueryTest.php</file>
+            <file>./Zend/Gdata/Gapps/PropertyTest.php</file>
+            <file>./Zend/Gdata/Gapps/QuotaTest.php</file>
+            <file>./Zend/Gdata/Gapps/ServiceExceptionTest.php</file>
+            <file>./Zend/Gdata/Gapps/UserEntryTest.php</file>
+            <file>./Zend/Gdata/Gapps/UserFeedTest.php</file>
+            <file>./Zend/Gdata/Gapps/UserQueryTest.php</file>
+            <file>./Zend/Gdata/Books/CollectionEntryTest.php</file>
+            <file>./Zend/Gdata/Books/CollectionFeedTest.php</file>
+            <file>./Zend/Gdata/Books/VolumeEntryTest.php</file>
+            <file>./Zend/Gdata/Books/VolumeFeedTest.php</file>
+            <file>./Zend/Gdata/GdataOnlineTest.php</file>
+            <file>./Zend/Gdata/CalendarOnlineTest.php</file>
+            <file>./Zend/Gdata/SpreadsheetsOnlineTest.php</file>
+            <file>./Zend/Gdata/DocsOnlineTest.php</file>
+            <file>./Zend/Gdata/PhotosOnlineTest.php</file>
+            <file>./Zend/Gdata/BooksOnlineTest.php</file>
+            <file>./Zend/Gdata/GappsOnlineTest.php</file>
+        </testsuite>
+
         <testsuite name="ZFTest_Zend_Http">
             <file>./Zend/Http/ResponseTest.php</file>
             <file>./Zend/Http/CookieTest.php</file>
             <file>./Zend/Http/CookieJarTest.php</file>
-        </testsuite>
-        <testsuite name="ZFTest_Zend_Http_Client">
             <file>./Zend/Http/Client/ClientTest.php</file>
             <file>./Zend/Http/Client/StaticTest.php</file>
             <file>./Zend/Http/Client/SocketTest.php</file>
@@ -82,36 +650,678 @@
             <file>./Zend/Http/Client/TestAdapterTest.php</file>
             <file>./Zend/Http/Client/ProxyAdapterTest.php</file>
             <file>./Zend/Http/Client/CurlTest.php</file>
-        </testsuite>
-        <testsuite name="ZFTest_Zend_Http_Header">
             <file>./Zend/Http/Header/HeaderValueTest.php</file>
             <file>./Zend/Http/Header/SetCookieTest.php</file>
-        </testsuite>
-        <testsuite name="ZFTest_Zend_Http_UserAgent">
             <file>./Zend/Http/UserAgentTest.php</file>
-            <file>./Zend/Http/UserAgent_AbstractDeviceTest.php</file>
-            <file>./Zend/Http/UserAgent_Features/Adapter/BrowscapTest.php</file>
-            <file>./Zend/Http/UserAgent_Features/Adapter/DeviceAtlasTest.php</file>
-            <file>./Zend/Http/UserAgent_Features/Adapter/TeraWurflTest.php</file>
+            <file>./Zend/Http/UserAgent/AbstractDeviceTest.php</file>
+            <file>./Zend/Http/UserAgent/Features/Adapter/BrowscapTest.php</file>
+            <file>./Zend/Http/UserAgent/Features/Adapter/DeviceAtlasTest.php</file>
+            <file>./Zend/Http/UserAgent/Features/Adapter/TeraWurflTest.php</file>
         </testsuite>
 
-        <!-- Zend/ProgressBar -->
+        <testsuite name="ZFTest_Zend_Json">
+            <file>./Zend/Json/JsonXMLTest.php</file>
+            <file>./Zend/Json/ServerTest.php</file>
+            <file>./Zend/Json/Server/CacheTest.php</file>
+            <file>./Zend/Json/Server/ErrorTest.php</file>
+            <file>./Zend/Json/Server/RequestTest.php</file>
+            <file>./Zend/Json/Server/ResponseTest.php</file>
+            <file>./Zend/Json/Server/SmdTest.php</file>
+            <file>./Zend/Json/Server/Smd/ServiceTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Layout">
+            <file>./Zend/Layout/LayoutTest.php</file>
+            <file>./Zend/Layout/HelperTest.php</file>
+            <file>./Zend/Layout/PluginTest.php</file>
+            <file>./Zend/Layout/FunctionalTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Ldap">
+            <file>./Zend/Ldap/OfflineTest.php</file>
+            <file>./Zend/Ldap/AttributeTest.php</file>
+            <file>./Zend/Ldap/ConverterTest.php</file>
+            <file>./Zend/Ldap/Dn/EscapingTest.php</file>
+            <file>./Zend/Ldap/Dn/ExplodingTest.php</file>
+            <file>./Zend/Ldap/Dn/ImplodingTest.php</file>
+            <file>./Zend/Ldap/Dn/CreationTest.php</file>
+            <file>./Zend/Ldap/Dn/ModificationTest.php</file>
+            <file>./Zend/Ldap/Dn/MiscTest.php</file>
+            <file>./Zend/Ldap/FilterTest.php</file>
+            <file>./Zend/Ldap/Node/OfflineTest.php</file>
+            <file>./Zend/Ldap/Node/AttributeIterationTest.php</file>
+            <file>./Zend/Ldap/Node/OnlineTest.php</file>
+            <file>./Zend/Ldap/Node/ChildrenTest.php</file>
+            <file>./Zend/Ldap/Node/ChildrenIterationTest.php</file>
+            <file>./Zend/Ldap/Node/UpdateTest.php</file>
+            <file>./Zend/Ldap/Node/RootDseTest.php</file>
+            <file>./Zend/Ldap/Node/SchemaTest.php</file>
+            <file>./Zend/Ldap/Ldif/SimpleEncoderTest.php</file>
+            <file>./Zend/Ldap/Ldif/SimpleDecoderTest.php</file>
+            <file>./Zend/Ldap/ConnectTest.php</file>
+            <file>./Zend/Ldap/BindTest.php</file>
+            <file>./Zend/Ldap/CanonTest.php</file>
+            <file>./Zend/Ldap/SearchTest.php</file>
+            <file>./Zend/Ldap/CrudTest.php</file>
+            <file>./Zend/Ldap/CopyRenameTest.php</file>
+            <file>./Zend/Ldap/ChangePasswordTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Loader">
+            <file>./Zend/Loader/AutoloaderTest.php</file>
+            <file>./Zend/Loader/AutoloaderFactoryClassMapLoaderTest.php</file>
+            <file>./Zend/Loader/AutoloaderFactoryTest.php</file>
+            <file>./Zend/Loader/AutoloaderMultiVersionTest.php</file>
+            <file>./Zend/Loader/Autoloader/ResourceTest.php</file>
+            <file>./Zend/Loader/ClassMapAutoloaderTest.php</file>
+            <file>./Zend/Loader/PluginLoaderTest.php</file>
+            <file>./Zend/Loader/StandardAutoloaderTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Locale">
+            <file>./Zend/Locale/DataTest.php</file>
+            <file>./Zend/Locale/FormatTest.php</file>
+            <file>./Zend/Locale/MathTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Log">
+            <file>./Zend/Log/LogTest.php</file>
+            <file>./Zend/Log/Filter/ChainingTest.php</file>
+            <file>./Zend/Log/Filter/MessageTest.php</file>
+            <file>./Zend/Log/Filter/PriorityTest.php</file>
+            <file>./Zend/Log/Filter/SuppressTest.php</file>
+            <file>./Zend/Log/Formatter/FirebugTest.php</file>
+            <file>./Zend/Log/Formatter/SimpleTest.php</file>
+            <file>./Zend/Log/Formatter/XmlTest.php</file>
+            <file>./Zend/Log/Writer/AbstractTest.php</file>
+            <file>./Zend/Log/Writer/DbTest.php</file>
+            <file>./Zend/Log/Writer/FirebugTest.php</file>
+            <file>./Zend/Log/Writer/MailTest.php</file>
+            <file>./Zend/Log/Writer/MockTest.php</file>
+            <file>./Zend/Log/Writer/NullTest.php</file>
+            <file>./Zend/Log/Writer/StreamTest.php</file>
+            <file>./Zend/Log/Writer/SyslogTest.php</file>
+            <file>./Zend/Log/Writer/ZendMonitorTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Mail">
+            <file>./Zend/Mail/Header/HeaderNameTest.php</file>
+            <file>./Zend/Mail/Header/HeaderValueTest.php</file>
+            <file>./Zend/Mail/MailTest.php</file>
+            <file>./Zend/Mail/MessageTest.php</file>
+            <file>./Zend/Mail/InterfaceTest.php</file>
+            <file>./Zend/Mail/MboxTest.php</file>
+            <file>./Zend/Mail/MboxMessageOldTest.php</file>
+            <file>./Zend/Mail/MboxFolderTest.php</file>
+            <file>./Zend/Mail/Pop3Test.php</file>
+            <file>./Zend/Mail/ImapTest.php</file>
+            <file>./Zend/Mail/MaildirTest.php</file>
+            <file>./Zend/Mail/MaildirMessageOldTest.php</file>
+            <file>./Zend/Mail/MaildirFolderTest.php</file>
+            <file>./Zend/Mail/MaildirWritableTest.php</file>
+    	    <file>./Zend/Mail/SmtpOfflineTest.php</file>
+    	    <file>./Zend/Mail/SmtpProtocolTest.php</file>
+            <file>./Zend/Mail/SmtpTest.php</file>
+            <file>./Zend/Mail/FileTransportTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Markup">
+            <file>./Zend/Markup/BbcodeAndHtmlTest.php</file>
+            <file>./Zend/Markup/ParserIntegrityTest.php</file>
+            <file>./Zend/Markup/FactoryTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Measure">
+            <file>./Zend/Measure/Cooking/VolumeTest.php</file>
+            <file>./Zend/Measure/Cooking/WeightTest.php</file>
+            <file>./Zend/Measure/Flow/MassTest.php</file>
+            <file>./Zend/Measure/Flow/MoleTest.php</file>
+            <file>./Zend/Measure/Flow/VolumeTest.php</file>
+            <file>./Zend/Measure/Viscosity/DynamicTest.php</file>
+            <file>./Zend/Measure/Viscosity/KinematicTest.php</file>
+            <file>./Zend/Measure/AccelerationTest.php</file>
+            <file>./Zend/Measure/AngleTest.php</file>
+            <file>./Zend/Measure/AreaTest.php</file>
+            <file>./Zend/Measure/BinaryTest.php</file>
+            <file>./Zend/Measure/CapacitanceTest.php</file>
+            <file>./Zend/Measure/CurrentTest.php</file>
+            <file>./Zend/Measure/DensityTest.php</file>
+            <file>./Zend/Measure/EnergyTest.php</file>
+            <file>./Zend/Measure/ForceTest.php</file>
+            <file>./Zend/Measure/FrequencyTest.php</file>
+            <file>./Zend/Measure/IlluminationTest.php</file>
+            <file>./Zend/Measure/LengthTest.php</file>
+            <file>./Zend/Measure/LightnessTest.php</file>
+            <file>./Zend/Measure/NumberTest.php</file>
+            <file>./Zend/Measure/PowerTest.php</file>
+            <file>./Zend/Measure/PressureTest.php</file>
+            <file>./Zend/Measure/SpeedTest.php</file>
+            <file>./Zend/Measure/TemperatureTest.php</file>
+            <file>./Zend/Measure/TimeTest.php</file>
+            <file>./Zend/Measure/TorqueTest.php</file>
+            <file>./Zend/Measure/VolumeTest.php</file>
+            <file>./Zend/Measure/WeightTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Mime">
+            <file>./Zend/Mime/PartTest.php</file>
+            <file>./Zend/Mime/MessageTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Memory">
+            <file>./Zend/Memory/MemoryTest.php</file>
+            <file>./Zend/Memory/ValueTest.php</file>
+            <file>./Zend/Memory/MovableTest.php</file>
+            <file>./Zend/Memory/LockedTest.php</file>
+            <file>./Zend/Memory/AccessControllerTest.php</file>
+            <file>./Zend/Memory/MemoryManagerTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Mobile">
+            <file>./Zend/Mobile/Push/Message/Mpns/RawTest.php</file>
+            <file>./Zend/Mobile/Push/Message/Mpns/TileTest.php</file>
+            <file>./Zend/Mobile/Push/Message/Mpns/ToastTest.php</file>
+            <file>./Zend/Mobile/Push/Message/AbstractTest.php</file>
+            <file>./Zend/Mobile/Push/Message/ApnsTest.php</file>
+            <file>./Zend/Mobile/Push/Message/GcmTest.php</file>
+            <file>./Zend/Mobile/Push/AbstractTest.php</file>
+            <file>./Zend/Mobile/Push/ApnsTest.php</file>
+            <file>./Zend/Mobile/Push/GcmTest.php</file>
+            <file>./Zend/Mobile/Push/MpnsTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Navigation">
+            <file>./Zend/Navigation/ContainerTest.php</file>
+            <file>./Zend/Navigation/PageFactoryTest.php</file>
+            <file>./Zend/Navigation/PageTest.php</file>
+            <file>./Zend/Navigation/Page/MvcTest.php</file>
+            <file>./Zend/Navigation/Page/UriTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Oauth">
+            <file>./Zend/Oauth/OauthTest.php</file>
+            <file>./Zend/Oauth/ClientTest.php</file>
+            <file>./Zend/Oauth/ConfigTest.php</file>
+            <file>./Zend/Oauth/Oauth/ConsumerTest.php</file>
+            <file>./Zend/Oauth/Oauth/Signature/AbstractTest.php</file>
+            <file>./Zend/Oauth/Oauth/Signature/PlaintextTest.php</file>
+            <file>./Zend/Oauth/Oauth/Signature/HmacTest.php</file>
+            <file>./Zend/Oauth/Oauth/Signature/RsaTest.php</file>
+            <file>./Zend/Oauth/Oauth/Http/RequestTokenTest.php</file>
+            <file>./Zend/Oauth/Oauth/Http/UserAuthorizationTest.php</file>
+            <file>./Zend/Oauth/Oauth/Http/AccessTokenTest.php</file>
+            <file>./Zend/Oauth/Oauth/Http/UtilityTest.php</file>
+            <file>./Zend/Oauth/Oauth/Token/RequestTest.php</file>
+            <file>./Zend/Oauth/Oauth/Token/AuthorizedRequestTest.php</file>
+            <file>./Zend/Oauth/Oauth/Token/AccessTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_OpenId">
+            <file>./Zend/OpenId/ConsumerTest.php</file>
+            <file>./Zend/OpenId/Consumer/Storage/FileTest.php</file>
+            <file>./Zend/OpenId/ProviderTest.php</file>
+            <file>./Zend/OpenId/Provider/Storage/FileTest.php</file>
+            <file>./Zend/OpenId/Provider/User/SessionTest.php</file>
+            <file>./Zend/OpenId/ExtensionTest.php</file>
+            <file>./Zend/OpenId/Extension/SregTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Paginator">
+            <file>./Zend/PaginatorTest.php</file>
+            <file>./Zend/Paginator/Adapter/ArrayTest.php</file>
+            <file>./Zend/Paginator/Adapter/DbSelectTest.php</file>
+            <file>./Zend/Paginator/Adapter/DbTableSelectTest.php</file>
+            <file>./Zend/Paginator/Adapter/IteratorTest.php</file>
+            <file>./Zend/Paginator/Adapter/NullTest.php</file>
+            <file>./Zend/Paginator/Adapter/DbSelect/OracleTest.php</file>
+            <file>./Zend/Paginator/Adapter/DbTableSelect/OracleTest.php</file>
+            <file>./Zend/Paginator/ScrollingStyle/AllTest.php</file>
+            <file>./Zend/Paginator/ScrollingStyle/ElasticTest.php</file>
+            <file>./Zend/Paginator/ScrollingStyle/JumpingTest.php</file>
+            <file>./Zend/Paginator/ScrollingStyle/SlidingTest.php</file>
+            <file>./Zend/View/Helper/PaginationControlTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Pdf">
+            <file>./Zend/Pdf/ActionTest.php</file>
+            <file>./Zend/Pdf/DestinationTest.php</file>
+            <file>./Zend/Pdf/DrawingTest.php</file>
+            <file>./Zend/Pdf/FactoryTest.php</file>
+            <file>./Zend/Pdf/NamedDestinationsTest.php</file>
+            <file>./Zend/Pdf/ProcessingTest.php</file>
+            <file>./Zend/Pdf/Element/ArrayTest.php</file>
+            <file>./Zend/Pdf/Element/BooleanTest.php</file>
+            <file>./Zend/Pdf/Element/DictionaryTest.php</file>
+            <file>./Zend/Pdf/Element/NameTest.php</file>
+            <file>./Zend/Pdf/Element/NullTest.php</file>
+            <file>./Zend/Pdf/Element/NumericTest.php</file>
+            <file>./Zend/Pdf/Element/ObjectTest.php</file>
+            <file>./Zend/Pdf/Element/Object/StreamTest.php</file>
+            <file>./Zend/Pdf/Element/StreamTest.php</file>
+            <file>./Zend/Pdf/Element/StringTest.php</file>
+            <file>./Zend/Pdf/Element/String/BinaryTest.php</file>
+            <file>./Zend/Pdf/Filter/Ascii85Test.php</file>
+            <file>./Zend/Pdf/Filter/RunLengthTest.php</file>
+        </testsuite>
+
         <testsuite name="ZFTest_Zend_ProgressBar">
             <file>./Zend/ProgressBar/ProgressBarTest.php</file>
-        </testsuite>
-        <testsuite name="ZFTest_Zend_ProgressBar_Adapter">
             <file>./Zend/ProgressBar/Adapter/ConsoleTest.php</file>
             <file>./Zend/ProgressBar/Adapter/JsPushTest.php</file>
             <file>./Zend/ProgressBar/Adapter/JsPullTest.php</file>
         </testsuite>
 
-        <!-- Zend/Session -->
+        <testsuite name="ZFTest_Zend_Queue">
+            <file>./Zend/Queue/FactoryTest.php</file>
+            <file>./Zend/Queue/Queue1Test.php</file>
+            <file>./Zend/Queue/Queue2Test.php</file>
+            <file>./Zend/Queue/MessageTest.php</file>
+            <file>./Zend/Queue/Message/IteratorTest.php</file>
+            <file>./Zend/Queue/Adapter/ArrayTest.php</file>
+            <file>./Zend/Queue/Adapter/MemcacheqTest.php</file>
+            <file>./Zend/Queue/Adapter/DbTest.php</file>
+            <file>./Zend/Queue/Adapter/NullTest.php</file>
+            <file>./Zend/Queue/Adapter/PlatformJobQueueTest.php</file>
+            <file>./Zend/Queue/Stomp/FrameTest.php</file>
+            <file>./Zend/Queue/Stomp/ClientTest.php</file>
+            <file>./Zend/Queue/Adapter/ActivemqTest.php</file>
+            <file>./Zend/Queue/Adapter/ActivemqOfflineTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Reflection">
+            <file>./Zend/Reflection/ClassTest.php</file>
+            <file>./Zend/Reflection/Docblock/TagTest.php</file>
+            <file>./Zend/Reflection/Docblock/Tag/ParamTest.php</file>
+            <file>./Zend/Reflection/Docblock/Tag/ReturnTest.php</file>
+            <file>./Zend/Reflection/DocblockTest.php</file>
+            <file>./Zend/Reflection/ExtensionTest.php</file>
+            <file>./Zend/Reflection/FileTest.php</file>
+            <file>./Zend/Reflection/FunctionTest.php</file>
+            <file>./Zend/Reflection/MethodTest.php</file>
+            <file>./Zend/Reflection/ParameterTest.php</file>
+            <file>./Zend/Reflection/PropertyTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Rest">
+            <file>./Zend/Rest/ControllerTest.php</file>
+            <file>./Zend/Rest/RouteTest.php</file>
+            <file>./Zend/Rest/ServerTest.php</file>
+            <file>./Zend/Rest/ClientTest.php</file>
+            <file>./Zend/Rest/ResultTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Search">
+            <file>./Zend/Search/Lucene/LuceneTest.php</file>
+            <file>./Zend/Search/Lucene/DocumentTest.php</file>
+            <file>./Zend/Search/Lucene/FSMTest.php</file>
+            <file>./Zend/Search/Lucene/FieldTest.php</file>
+            <file>./Zend/Search/Lucene/PriorityQueueTest.php</file>
+            <file>./Zend/Search/Lucene/AnalysisTest.php</file>
+            <file>./Zend/Search/Lucene/Index/DictionaryLoaderTest.php</file>
+            <file>./Zend/Search/Lucene/Index/FieldInfoTest.php</file>
+            <file>./Zend/Search/Lucene/Index/TermsPriorityQueueTest.php</file>
+            <file>./Zend/Search/Lucene/Index/SegmentInfoTest.php</file>
+            <file>./Zend/Search/Lucene/Index/SegmentMergerTest.php</file>
+            <file>./Zend/Search/Lucene/Index/TermInfoTest.php</file>
+            <file>./Zend/Search/Lucene/Index/TermTest.php</file>
+            <file>./Zend/Search/Lucene/Storage/DirectoryTest.php</file>
+            <file>./Zend/Search/Lucene/Storage/FileTest.php</file>
+            <file>./Zend/Search/Lucene/SearchHighlightTest.php</file>
+            <file>./Zend/Search/Lucene/SearchTest.php</file>
+            <file>./Zend/Search/Lucene/Search23Test.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Serializer">
+            <file>./Zend/Serializer/Adapter/PhpSerializeTest.php</file>
+            <file>./Zend/Serializer/Adapter/PhpCodeTest.php</file>
+            <file>./Zend/Serializer/Adapter/JsonTest.php</file>
+            <file>./Zend/Serializer/Adapter/Amf0Test.php</file>
+            <file>./Zend/Serializer/Adapter/Amf3Test.php</file>
+            <file>./Zend/Serializer/Adapter/WddxTest.php</file>
+            <file>./Zend/Serializer/Adapter/IgbinaryTest.php</file>
+            <file>./Zend/Serializer/Adapter/PythonPickleSerializeProtocol0Test.php</file>
+            <file>./Zend/Serializer/Adapter/PythonPickleSerializeProtocol1Test.php</file>
+            <file>./Zend/Serializer/Adapter/PythonPickleUnserializeTest.php</file>
+            <file>./Zend/Serializer/SerializerTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Server">
+            <file>./Zend/Server/DefinitionTest.php</file>
+            <file>./Zend/Server/Method/DefinitionTest.php</file>
+            <file>./Zend/Server/Method/CallbackTest.php</file>
+            <file>./Zend/Server/Method/ParameterTest.php</file>
+            <file>./Zend/Server/Method/PrototypeTest.php</file>
+            <file>./Zend/Server/ReflectionTest.php</file>
+            <file>./Zend/Server/Reflection/ClassTest.php</file>
+            <file>./Zend/Server/Reflection/FunctionTest.php</file>
+            <file>./Zend/Server/Reflection/MethodTest.php</file>
+            <file>./Zend/Server/Reflection/NodeTest.php</file>
+            <file>./Zend/Server/Reflection/ParameterTest.php</file>
+            <file>./Zend/Server/Reflection/PrototypeTest.php</file>
+            <file>./Zend/Server/Reflection/ReturnValueTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Service">
+            <file>./Zend/Service/AkismetTest.php</file>
+            <file>./Zend/Service/Amazon/OnlineTest.php</file>
+            <file>./Zend/Service/Amazon/Authentication/S3Test.php</file>
+            <file>./Zend/Service/Amazon/Authentication/V1Test.php</file>
+            <file>./Zend/Service/Amazon/Authentication/V2Test.php</file>
+            <file>./Zend/Service/Amazon/Ec2/AvailabilityzonesTest.php</file>
+            <file>./Zend/Service/Amazon/Ec2/EbsTest.php</file>
+            <file>./Zend/Service/Amazon/Ec2/Ec2Test.php</file>
+            <file>./Zend/Service/Amazon/Ec2/ElasticipTest.php</file>
+            <file>./Zend/Service/Amazon/Ec2/ImageTest.php</file>
+            <file>./Zend/Service/Amazon/Ec2/InstanceTest.php</file>
+            <file>./Zend/Service/Amazon/Ec2/KeypairTest.php</file>
+            <file>./Zend/Service/Amazon/Ec2/RegionTest.php</file>
+            <file>./Zend/Service/Amazon/Ec2/SecuritygroupsTest.php</file>
+            <file>./Zend/Service/Amazon/S3/OfflineTest.php</file>
+            <file>./Zend/Service/Amazon/S3/OnlineTest.php</file>
+            <file>./Zend/Service/Amazon/S3/StreamTest.php</file>
+            <file>./Zend/Service/Amazon/SimpleDb/OnlineTest.php</file>
+            <file>./Zend/Service/Amazon/SimpleDb/PageTest.php</file>
+            <file>./Zend/Service/Amazon/Sqs/OfflineTest.php</file>
+            <file>./Zend/Service/Amazon/Sqs/OnlineTest.php</file>
+            <file>./Zend/Service/Audioscrobbler/AudioscrobblerTest.php</file>
+            <file>./Zend/Service/Audioscrobbler/ProfileTest.php</file>
+            <file>./Zend/Service/Audioscrobbler/ArtistTest.php</file>
+            <file>./Zend/Service/Audioscrobbler/AlbumDataTest.php</file>
+            <file>./Zend/Service/Audioscrobbler/TrackDataTest.php</file>
+            <file>./Zend/Service/Audioscrobbler/TagDataTest.php</file>
+            <file>./Zend/Service/Audioscrobbler/GroupTest.php</file>
+            <file>./Zend/Service/Delicious/PublicDataTest.php</file>
+            <file>./Zend/Service/Delicious/PrivateDataTest.php</file>
+            <file>./Zend/Service/Delicious/SimplePostTest.php</file>
+            <file>./Zend/Service/Delicious/PostTest.php</file>
+            <file>./Zend/Service/Ebay/AbstractTest.php</file>
+            <file>./Zend/Service/Ebay/Finding/OfflineTest.php</file>
+            <file>./Zend/Service/Ebay/Finding/OnlineTest.php</file>
+            <file>./Zend/Service/Flickr/OfflineTest.php</file>
+            <file>./Zend/Service/Flickr/OnlineTest.php</file>
+            <file>./Zend/Service/LiveDocx/LiveDocxTest.php</file>
+            <file>./Zend/Service/LiveDocx/MailMergeTest.php</file>
+            <file>./Zend/Service/ReCaptcha/ReCaptchaTest.php</file>
+            <file>./Zend/Service/ReCaptcha/ResponseTest.php</file>
+            <file>./Zend/Service/ReCaptcha/MailHideTest.php</file>
+            <file>./Zend/Service/ShortUrl/IsGdTest.php</file>
+            <file>./Zend/Service/ShortUrl/JdemCzTest.php</file>
+            <file>./Zend/Service/ShortUrl/MetamarkNetTest.php</file>
+            <file>./Zend/Service/ShortUrl/TinyUrlComTest.php</file>
+            <file>./Zend/Service/ShortUrl/BitLyTest.php</file>
+            <file>./Zend/Service/SlideShareTest.php</file>
+            <file>./Zend/Service/StrikeIron/NoSoapTest.php</file>
+            <file>./Zend/Service/StrikeIron/StrikeIronTest.php</file>
+            <file>./Zend/Service/StrikeIron/DecoratorTest.php</file>
+            <file>./Zend/Service/StrikeIron/ExceptionTest.php</file>
+            <file>./Zend/Service/StrikeIron/BaseTest.php</file>
+            <file>./Zend/Service/StrikeIron/SalesUseTaxBasicTest.php</file>
+            <file>./Zend/Service/StrikeIron/USAddressVerificationTest.php</file>
+            <file>./Zend/Service/StrikeIron/ZipCodeInfoTest.php</file>
+            <file>./Zend/Service/Twitter/TwitterTest.php</file>
+            <file>./Zend/Service/WindowsAzure/Credentials/SharedKeyTest.php</file>
+            <file>./Zend/Service/WindowsAzure/Credentials/SharedKeyLiteTest.php</file>
+            <file>./Zend/Service/WindowsAzure/Credentials/SharedAccessSignatureTest.php</file>
+            <file>./Zend/Service/WindowsAzure/Diagnostics/ManagerTest.php</file>
+            <file>./Zend/Service/WindowsAzure/Management/ManagementClientTest.php</file>
+            <file>./Zend/Service/WindowsAzure/RetryPolicyTest.php</file>
+            <file>./Zend/Service/WindowsAzure/StorageTest.php</file>
+            <file>./Zend/Service/WindowsAzure/BlobStorageTest.php</file>
+            <file>./Zend/Service/WindowsAzure/BlobStorageSharedAccessTest.php</file>
+            <file>./Zend/Service/WindowsAzure/BlobStreamTest.php</file>
+            <file>./Zend/Service/WindowsAzure/TableEntityTest.php</file>
+            <file>./Zend/Service/WindowsAzure/DynamicTableEntityTest.php</file>
+            <file>./Zend/Service/WindowsAzure/TableEntityQueryTest.php</file>
+            <file>./Zend/Service/WindowsAzure/TableStorageTest.php</file>
+            <file>./Zend/Service/WindowsAzure/QueueStorageTest.php</file>
+            <file>./Zend/Service/WindowsAzure/TableSessionHandlerTest.php</file>
+            <file>./Zend/Service/WindowsAzure/BlobSessionHandlerTest.php</file>
+            <file>./Zend/Service/Yahoo/OfflineTest.php</file>
+            <file>./Zend/Service/Yahoo/OnlineTest.php</file>
+        </testsuite>
+
         <testsuite name="ZFTest_Zend_Session">
             <file>./Zend/Session/SessionTest.php</file>
-        </testsuite>
-        <testsuite name="ZFTest_Zend_Session_SaveHandler">
             <file>./Zend/Session/SaveHandler/DbTableTest.php</file>
         </testsuite>
+
+        <testsuite name="ZFTest_Zend_Soap">
+            <file>./Zend/Soap/ServerTest.php</file>
+            <file>./Zend/Soap/WsdlTest.php</file>
+            <file>./Zend/Soap/Wsdl/ArrayOfTypeComplexStrategyTest.php</file>
+            <file>./Zend/Soap/Wsdl/ArrayOfTypeSequenceStrategyTest.php</file>
+            <file>./Zend/Soap/AutoDiscoverTest.php</file>
+            <file>./Zend/Soap/AutoDiscover/OnlineTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Stdlib">
+            <file>./Zend/Stdlib/CallbackHandlerTest.php</file>
+            <file>./Zend/Stdlib/PriorityQueueTest.php</file>
+            <file>./Zend/Stdlib/SplPriorityQueueTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Tag">
+            <file>./Zend/Tag/ItemTest.php</file>
+            <file>./Zend/Tag/ItemListTest.php</file>
+            <file>./Zend/Tag/Cloud/CloudTest.php</file>
+            <file>./Zend/Tag/Cloud/Decorator/HtmlCloudTest.php</file>
+            <file>./Zend/Tag/Cloud/Decorator/HtmlTagTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Test">
+            <file>./Zend/Test/DbAdapterTest.php</file>
+            <file>./Zend/Test/DbStatementTest.php</file>
+            <file>./Zend/Test/PHPUnit/ControllerTestCaseTest.php</file>
+            <file>./Zend/Test/PHPUnit/Db/TestCaseTest.php</file>
+            <file>./Zend/Test/PHPUnit/Db/ConnectionTest.php</file>
+            <file>./Zend/Test/PHPUnit/Db/SimpleTesterTest.php</file>
+            <file>./Zend/Test/PHPUnit/Db/DataSet/DbRowsetTest.php</file>
+            <file>./Zend/Test/PHPUnit/Db/DataSet/QueryDataSetTest.php</file>
+            <file>./Zend/Test/PHPUnit/Db/DataSet/QueryTableTest.php</file>
+            <file>./Zend/Test/PHPUnit/Db/DataSet/DbTableTest.php</file>
+            <file>./Zend/Test/PHPUnit/Db/DataSet/DbTableDataSetTest.php</file>
+            <file>./Zend/Test/PHPUnit/Db/Operation/InsertTest.php</file>
+            <file>./Zend/Test/PHPUnit/Db/Operation/TruncateTest.php</file>
+            <file>./Zend/Test/PHPUnit/Db/Operation/DeleteAllTest.php</file>
+            <file>./Zend/Test/PHPUnit/Db/Metadata/GenericTest.php</file>
+            <file>./Zend/Test/PHPUnit/Db/Integration/SqLiteIntegrationTest.php</file>
+            <file>./Zend/Test/PHPUnit/Db/Integration/MysqlIntegrationTest.php</file>
+            <file>./Zend/Test/PHPUnit/Constraint/DomQueryTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Text">
+            <file>./Zend/Text/FigletTest.php</file>
+            <file>./Zend/Text/TableTest.php</file>
+            <file>./Zend/Text/MultiByteTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Tool">
+            <file>./Zend/Tool/Framework/RegistryTest.php</file>
+            <file>./Zend/Tool/Framework/Action/BaseTest.php</file>
+            <file>./Zend/Tool/Framework/Action/RepositoryTest.php</file>
+            <file>./Zend/Tool/Framework/Client/RequestTest.php</file>
+            <file>./Zend/Tool/Framework/Client/ResponseTest.php</file>
+            <file>./Zend/Tool/Framework/Manifest/RepositoryTest.php</file>
+            <file>./Zend/Tool/Framework/Provider/AbstractTest.php</file>
+            <file>./Zend/Tool/Framework/Provider/RepositoryTest.php</file>
+            <file>./Zend/Tool/Framework/Provider/SignatureTest.php</file>
+            <file>./Zend/Tool/Project/ProfileTest.php</file>
+            <file>./Zend/Tool/Project/Context/RegistryTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Translate">
+            <file>./Zend/Translate/Adapter/ArrayTest.php</file>
+            <file>./Zend/Translate/Adapter/CsvTest.php</file>
+            <file>./Zend/Translate/Adapter/GettextTest.php</file>
+            <file>./Zend/Translate/Adapter/IniTest.php</file>
+            <file>./Zend/Translate/Adapter/QtTest.php</file>
+            <file>./Zend/Translate/Adapter/TbxTest.php</file>
+            <file>./Zend/Translate/Adapter/TmxTest.php</file>
+            <file>./Zend/Translate/Adapter/XliffTest.php</file>
+            <file>./Zend/Translate/Adapter/XmlTmTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Uri">
+            <file>./Zend/Uri/HttpTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Validate">
+            <file>./Zend/Validate/AbstractTest.php</file>
+            <file>./Zend/Validate/AlnumTest.php</file>
+            <file>./Zend/Validate/AlphaTest.php</file>
+            <file>./Zend/Validate/BarcodeTest.php</file>
+            <file>./Zend/Validate/BetweenTest.php</file>
+            <file>./Zend/Validate/CallbackTest.php</file>
+            <file>./Zend/Validate/CcnumTest.php</file>
+            <file>./Zend/Validate/CreditCardTest.php</file>
+            <file>./Zend/Validate/DateTest.php</file>
+            <file>./Zend/Validate/Db/RecordExistsTest.php</file>
+            <file>./Zend/Validate/Db/NoRecordExistsTest.php</file>
+            <file>./Zend/Validate/DigitsTest.php</file>
+            <file>./Zend/Validate/EmailAddressTest.php</file>
+            <file>./Zend/Validate/File/CountTest.php</file>
+            <file>./Zend/Validate/File/Crc32Test.php</file>
+            <file>./Zend/Validate/File/ExcludeExtensionTest.php</file>
+            <file>./Zend/Validate/File/ExcludeMimeTypeTest.php</file>
+            <file>./Zend/Validate/File/ExistsTest.php</file>
+            <file>./Zend/Validate/File/ExtensionTest.php</file>
+            <file>./Zend/Validate/File/FilesSizeTest.php</file>
+            <file>./Zend/Validate/File/HashTest.php</file>
+            <file>./Zend/Validate/File/ImageSizeTest.php</file>
+            <file>./Zend/Validate/File/IsCompressedTest.php</file>
+            <file>./Zend/Validate/File/IsImageTest.php</file>
+            <file>./Zend/Validate/File/Md5Test.php</file>
+            <file>./Zend/Validate/File/MimeTypeTest.php</file>
+            <file>./Zend/Validate/File/NotExistsTest.php</file>
+            <file>./Zend/Validate/File/Sha1Test.php</file>
+            <file>./Zend/Validate/File/SizeTest.php</file>
+            <file>./Zend/Validate/File/UploadTest.php</file>
+            <file>./Zend/Validate/File/WordCountTest.php</file>
+            <file>./Zend/Validate/FloatTest.php</file>
+            <file>./Zend/Validate/GreaterThanTest.php</file>
+            <file>./Zend/Validate/HexTest.php</file>
+            <file>./Zend/Validate/HostnameTest.php</file>
+            <file>./Zend/Validate/IbanTest.php</file>
+            <file>./Zend/Validate/IdenticalTest.php</file>
+            <file>./Zend/Validate/InArrayTest.php</file>
+            <file>./Zend/Validate/IntTest.php</file>
+            <file>./Zend/Validate/IpTest.php</file>
+            <file>./Zend/Validate/IsbnTest.php</file>
+            <file>./Zend/Validate/LessThanTest.php</file>
+            <file>./Zend/Validate/MessageTest.php</file>
+            <file>./Zend/Validate/NotEmptyTest.php</file>
+            <file>./Zend/Validate/PostCodeTest.php</file>
+            <file>./Zend/Validate/RegexTest.php</file>
+            <file>./Zend/Validate/Sitemap/ChangefreqTest.php</file>
+            <file>./Zend/Validate/Sitemap/LastmodTest.php</file>
+            <file>./Zend/Validate/Sitemap/LocTest.php</file>
+            <file>./Zend/Validate/Sitemap/PriorityTest.php</file>
+            <file>./Zend/Validate/StringLengthTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_View">
+            <file>./Zend/View/Helper/ActionTest.php</file>
+            <file>./Zend/View/Helper/BaseUrlTest.php</file>
+            <file>./Zend/View/Helper/CurrencyTest.php</file>
+            <file>./Zend/View/Helper/CycleTest.php</file>
+            <file>./Zend/View/Helper/DeclareVarsTest.php</file>
+            <file>./Zend/View/Helper/DoctypeTest.php</file>
+            <file>./Zend/View/Helper/FieldsetTest.php</file>
+            <file>./Zend/View/Helper/FormButtonTest.php</file>
+            <file>./Zend/View/Helper/FormCheckboxTest.php</file>
+            <file>./Zend/View/Helper/FormErrorsTest.php</file>
+            <file>./Zend/View/Helper/FormFileTest.php</file>
+            <file>./Zend/View/Helper/FormImageTest.php</file>
+            <file>./Zend/View/Helper/FormLabelTest.php</file>
+            <file>./Zend/View/Helper/FormMultiCheckboxTest.php</file>
+            <file>./Zend/View/Helper/FormPasswordTest.php</file>
+            <file>./Zend/View/Helper/FormRadioTest.php</file>
+            <file>./Zend/View/Helper/FormResetTest.php</file>
+            <file>./Zend/View/Helper/FormSelectTest.php</file>
+            <file>./Zend/View/Helper/FormSubmitTest.php</file>
+            <file>./Zend/View/Helper/FormTest.php</file>
+            <file>./Zend/View/Helper/FormTextTest.php</file>
+            <file>./Zend/View/Helper/FormTextareaTest.php</file>
+            <file>./Zend/View/Helper/GravatarTest.php</file>
+            <file>./Zend/View/Helper/HeadLinkTest.php</file>
+            <file>./Zend/View/Helper/HeadMetaTest.php</file>
+            <file>./Zend/View/Helper/HeadScriptTest.php</file>
+            <file>./Zend/View/Helper/HeadStyleTest.php</file>
+            <file>./Zend/View/Helper/HeadTitleTest.php</file>
+            <file>./Zend/View/Helper/HtmlFlashTest.php</file>
+            <file>./Zend/View/Helper/HtmlListTest.php</file>
+            <file>./Zend/View/Helper/HtmlObjectTest.php</file>
+            <file>./Zend/View/Helper/HtmlPageTest.php</file>
+            <file>./Zend/View/Helper/HtmlQuicktimeTest.php</file>
+            <file>./Zend/View/Helper/InlineScriptTest.php</file>
+            <file>./Zend/View/Helper/JsonTest.php</file>
+            <file>./Zend/View/Helper/LayoutTest.php</file>
+            <file>./Zend/View/Helper/Navigation/BreadcrumbsTest.php</file>
+            <file>./Zend/View/Helper/Navigation/LinksTest.php</file>
+            <file>./Zend/View/Helper/Navigation/MenuTest.php</file>
+            <file>./Zend/View/Helper/Navigation/NavigationTest.php</file>
+            <file>./Zend/View/Helper/Navigation/SitemapTest.php</file>
+            <file>./Zend/View/Helper/PaginationControlTest.php</file>
+            <file>./Zend/View/Helper/PartialTest.php</file>
+            <file>./Zend/View/Helper/PartialLoopTest.php</file>
+            <file>./Zend/View/Helper/PlaceholderTest.php</file>
+            <file>./Zend/View/Helper/Placeholder/ContainerTest.php</file>
+            <file>./Zend/View/Helper/Placeholder/RegistryTest.php</file>
+            <file>./Zend/View/Helper/Placeholder/StandaloneContainerTest.php</file>
+            <file>./Zend/View/Helper/ServerUrlTest.php</file>
+            <file>./Zend/View/Helper/TranslateTest.php</file>
+            <file>./Zend/View/Helper/UrlTest.php</file>
+            <file>./Zend/View/Helper/UserAgentTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Wildfire">
+            <file>./Zend/Wildfire/WildfireTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Xml">
+            <file>./Zend/Xml/SecurityTest.php</file>
+            <file>./Zend/Xml/MultibyteTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_XmlRpc">
+            <file>./Zend/XmlRpc/BigIntegerValueTest.php</file>
+            <file>./Zend/XmlRpc/ValueTest.php</file>
+            <file>./Zend/XmlRpc/RequestTest.php</file>
+            <file>./Zend/XmlRpc/Request/HttpTest.php</file>
+            <file>./Zend/XmlRpc/ResponseTest.php</file>
+            <file>./Zend/XmlRpc/FaultTest.php</file>
+            <file>./Zend/XmlRpc/ClientTest.php</file>
+            <file>./Zend/XmlRpc/ServerTest.php</file>
+            <file>./Zend/XmlRpc/GeneratorTest.php</file>
+            <file>./Zend/XmlRpc/Server/CacheTest.php</file>
+            <file>./Zend/XmlRpc/Server/FaultTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend">
+            <file>./Zend/AuthTest.php</file>
+            <file>./Zend/ConfigTest.php</file>
+            <file>./Zend/CurrencyTest.php</file>
+            <file>./Zend/DateTest.php</file>
+            <file>./Zend/DebugTest.php</file>
+            <file>./Zend/ExceptionTest.php</file>
+            <file>./Zend/FilterTest.php</file>
+            <file>./Zend/JsonTest.php</file>
+            <file>./Zend/LoaderTest.php</file>
+            <file>./Zend/LocaleTest.php</file>
+            <file>./Zend/MimeTest.php</file>
+            <file>./Zend/NavigationTest.php</file>
+            <file>./Zend/OpenIdTest.php</file>
+            <file>./Zend/PaginatorTest.php</file>
+            <file>./Zend/PdfTest.php</file>
+            <file>./Zend/RegistryTest.php</file>
+            <file>./Zend/TimeSyncTest.php</file>
+            <file>./Zend/TranslateTest.php</file>
+            <file>./Zend/UriTest.php</file>
+            <file>./Zend/ValidateTest.php</file>
+            <file>./Zend/VersionTest.php</file>
+            <file>./Zend/ViewTest.php</file>
+        </testsuite>
+
     </testsuites>
 
     <!-- Enable this for proper unit testing code coverage reports

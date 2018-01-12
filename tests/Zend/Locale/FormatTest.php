@@ -35,6 +35,14 @@ require_once 'Zend/Locale/Format.php';
  */
 class Zend_Locale_FormatTest extends PHPUnit_Framework_TestCase
 {
+    public function setUp()
+    {
+        if (defined('TESTS_ZEND_LOCALE_FORMAT_SETLOCALE') && TESTS_ZEND_LOCALE_FORMAT_SETLOCALE) {
+            // run all tests in a special locale
+            setlocale(LC_ALL, TESTS_ZEND_LOCALE_FORMAT_SETLOCALE);
+        }
+    }
+
     /**
      * teardown / cleanup
      */

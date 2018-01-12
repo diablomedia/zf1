@@ -41,6 +41,11 @@ class Zend_Locale_DataTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
+        if (defined('TESTS_ZEND_LOCALE_FORMAT_SETLOCALE') && TESTS_ZEND_LOCALE_FORMAT_SETLOCALE) {
+            // run all tests in a special locale
+            setlocale(LC_ALL, TESTS_ZEND_LOCALE_FORMAT_SETLOCALE);
+        }
+
         require_once 'Zend/Cache.php';
         $this->_cache = Zend_Cache::factory('Core', 'File',
                  array('lifetime' => 1, 'automatic_serialization' => true),

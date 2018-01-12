@@ -42,6 +42,7 @@ require_once 'CommonExtendedBackendTest.php';
 class Zend_Cache_MemcachedBackendTest extends Zend_Cache_CommonExtendedBackendTest {
 
     protected $_instance;
+    protected $skipped;
 
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
@@ -50,7 +51,29 @@ class Zend_Cache_MemcachedBackendTest extends Zend_Cache_CommonExtendedBackendTe
 
     public function setUp($notag = true)
     {
+        if (!defined('TESTS_ZEND_CACHE_MEMCACHED_ENABLED') ||
+            constant('TESTS_ZEND_CACHE_MEMCACHED_ENABLED') === false) {
+            $this->skipped = true;
+            $this->markTestSkipped('Tests are not enabled in TestConfiguration.php');
+            return;
+        } else if (!extension_loaded('memcache')) {
+            $this->skipped = true;
+            $this->markTestSkipped("Extension 'memcache' is not loaded");
+            return;
+        } else {
+            if (!defined('TESTS_ZEND_CACHE_MEMCACHED_HOST')) {
+                define('TESTS_ZEND_CACHE_MEMCACHED_HOST', '127.0.0.1');
+            }
+            if (!defined('TESTS_ZEND_CACHE_MEMCACHED_PORT')) {
+                define('TESTS_ZEND_CACHE_MEMCACHED_PORT', 11211);
+            }
+            if (!defined('TESTS_ZEND_CACHE_MEMCACHED_PERSISTENT')) {
+                define('TESTS_ZEND_CACHE_MEMCACHED_PERSISTENT', true);
+            }
+        }
+
         if(!class_exists('Memcached')) {
+            $this->skipped = true;
             $this->markTestSkipped('Memcached is not installed, skipping test');
             return;
         }
@@ -76,8 +99,10 @@ class Zend_Cache_MemcachedBackendTest extends Zend_Cache_CommonExtendedBackendTe
     {
         parent::tearDown();
         unset($this->_instance);
-        // We have to wait after a memcache flush
-        sleep(1);
+        if ($this->skipped === false) {
+            // We have to wait after a memcache flush
+            sleep(1);
+        }
     }
 
     public function testConstructorCorrectCall()
@@ -174,5 +199,3 @@ class Zend_Cache_MemcachedBackendTest extends Zend_Cache_CommonExtendedBackendTe
     }
 
 }
-
-

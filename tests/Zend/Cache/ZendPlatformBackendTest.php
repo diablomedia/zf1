@@ -50,6 +50,15 @@ class Zend_Cache_ZendPlatformBackendTest extends Zend_Cache_CommonBackendTest {
 
     public function setUp($notag = false)
     {
+        if (!defined('TESTS_ZEND_CACHE_PLATFORM_ENABLED') ||
+            constant('TESTS_ZEND_CACHE_PLATFORM_ENABLED') === false) {
+            $this->markTestSkipped('Tests are not enabled in TestConfiguration.php');
+            return;
+        } else if (!function_exists('accelerator_license_info')) {
+            $this->markTestSkipped('Extension for Zend Platform is not loaded');
+            return;
+        }
+
         if(!function_exists('output_cache_get')) {
             $this->markTestSkipped('Zend Platform is not installed, skipping test');
             return;
@@ -92,5 +101,3 @@ class Zend_Cache_ZendPlatformBackendTest extends Zend_Cache_CommonBackendTest {
     public function testCleanModeOld() {}
     public function testCleanModeNotMatchingTags() {}
 }
-
-

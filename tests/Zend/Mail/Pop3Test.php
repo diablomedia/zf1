@@ -49,6 +49,10 @@ class Zend_Mail_Pop3Test extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
+        if (!(defined('TESTS_ZEND_MAIL_POP3_ENABLED') && constant('TESTS_ZEND_MAIL_POP3_ENABLED') == true)) {
+            $this->markTestSkipped("Test not enabled in TestConfiguration.php");
+        }
+
         $this->_params = array('host'     => TESTS_ZEND_MAIL_POP3_HOST,
                                'user'     => TESTS_ZEND_MAIL_POP3_USER,
                                'password' => TESTS_ZEND_MAIL_POP3_PASSWORD);

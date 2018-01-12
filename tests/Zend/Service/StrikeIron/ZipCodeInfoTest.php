@@ -44,6 +44,9 @@ class Zend_Service_StrikeIron_ZipCodeInfoTest extends PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
+        if (!extension_loaded('soap')) {
+            $this->markTestSkipped('soap extension is not loaded');
+        }
         $this->soapClient = new stdclass();
         $this->service = new Zend_Service_StrikeIron_ZipCodeInfo(array('client' => $this->soapClient));
     }

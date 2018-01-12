@@ -50,6 +50,15 @@ class Zend_Cache_XcacheBackendTest extends Zend_Cache_CommonBackendTest {
 
     public function setUp($notag = true)
     {
+        if (!defined('TESTS_ZEND_CACHE_XCACHE_ENABLED') ||
+            constant('TESTS_ZEND_CACHE_XCACHE_ENABLED') === false) {
+            $this->markTestSkipped('Tests are not enabled in TestConfiguration.php');
+            return;
+        } else if (!extension_loaded('xcache')) {
+            $this->markTestSkipped("Extension 'XCache' is not loaded");
+            return;
+        }
+
         $this->_instance = new Zend_Cache_Backend_Xcache(array(
             'user' => TESTS_ZEND_CACHE_XCACHE_USER,
             'password' => TESTS_ZEND_CACHE_XCACHE_PASSWORD
@@ -117,5 +126,3 @@ class Zend_Cache_XcacheBackendTest extends Zend_Cache_CommonBackendTest {
     }
 
 }
-
-

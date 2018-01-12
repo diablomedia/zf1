@@ -42,6 +42,7 @@ require_once 'CommonExtendedBackendTest.php';
 class Zend_Cache_LibmemcachedBackendTest extends Zend_Cache_CommonExtendedBackendTest {
 
     protected $_instance;
+    protected $skipped;
 
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
@@ -50,7 +51,31 @@ class Zend_Cache_LibmemcachedBackendTest extends Zend_Cache_CommonExtendedBacken
 
     public function setUp($notag = true)
     {
+        $this->skipped = false;
+
+        if (!defined('TESTS_ZEND_CACHE_LIBMEMCACHED_ENABLED') ||
+            constant('TESTS_ZEND_CACHE_LIBMEMCACHED_ENABLED') === false) {
+            $this->skipped = true;
+            $this->markTestSkipped('Tests are not enabled in TestConfiguration.php');
+            return;
+        } else if (!extension_loaded('memcached')) {
+            $this->skipped = true;
+            $this->markTestSkipped("Extension 'Memcached' is not loaded");
+            return;
+        } else {
+            if (!defined('TESTS_ZEND_CACHE_LIBMEMCACHED_HOST')) {
+                define('TESTS_ZEND_CACHE_LIBMEMCACHED_HOST', '127.0.0.1');
+            }
+            if (!defined('TESTS_ZEND_CACHE_LIBMEMCACHED_PORT')) {
+                define('TESTS_ZEND_CACHE_LIBMEMCACHED_PORT', 11211);
+            }
+            if (!defined('TESTS_ZEND_CACHE_LIBMEMCACHED_WEIGHT')) {
+                define('TESTS_ZEND_CACHE_LIBMEMCACHED_WEIGHT', 1);
+            }
+        }
+
         if(!class_exists('Memcached')) {
+            $this->skipped = true;
             $this->markTestSkipped('Memcached is not installed, skipping test');
             return;
         }
@@ -75,8 +100,10 @@ class Zend_Cache_LibmemcachedBackendTest extends Zend_Cache_CommonExtendedBacken
     {
         parent::tearDown();
         $this->_instance = null;
-        // We have to wait after a memcached flush
-        sleep(1);
+        if ($this->skipped === false) {
+            // We have to wait after a memcached flush
+            sleep(1);
+        }
     }
 
     public function testConstructorCorrectCall()
@@ -173,5 +200,3 @@ class Zend_Cache_LibmemcachedBackendTest extends Zend_Cache_CommonExtendedBacken
     }
 
 }
-
-

@@ -50,6 +50,15 @@ class Zend_Cache_ApcBackendTest extends Zend_Cache_CommonExtendedBackendTest {
 
     public function setUp($notag = true)
     {
+        if (!defined('TESTS_ZEND_CACHE_APC_ENABLED') ||
+            constant('TESTS_ZEND_CACHE_APC_ENABLED') === false) {
+            $this->markTestSkipped('Tests are not enabled in TestConfiguration.php');
+            return;
+        } else if (!extension_loaded('apc')) {
+            $this->markTestSkipped("Extension 'APC' is not loaded");
+            return;
+        }
+
         $this->_instance = new Zend_Cache_Backend_Apc(array());
         parent::setUp($notag);
     }
@@ -128,5 +137,3 @@ class Zend_Cache_ApcBackendTest extends Zend_Cache_CommonExtendedBackendTest {
     }
 
 }
-
-

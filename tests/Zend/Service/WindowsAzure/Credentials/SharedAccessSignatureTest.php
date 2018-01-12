@@ -48,7 +48,14 @@ class Zend_Service_WindowsAzure_Credentials_SharedAccessSignatureTest extends PH
         $suite  = new PHPUnit_Framework_TestSuite("Zend_Service_WindowsAzure_Credentials_SharedAccessSignatureTest");
         $result = PHPUnit_TextUI_TestRunner::run($suite);
     }
-    
+
+    public function setUp()
+    {
+        if (!TESTS_ZEND_SERVICE_WINDOWSAZURE_CREDENTIALS_RUNTESTS) {
+            $this->markTestSkipped('Test not enabled in TestConfiguration.php');
+        }
+    }
+
     /**
      * Test signing a container
      */
@@ -65,7 +72,7 @@ class Zend_Service_WindowsAzure_Credentials_SharedAccessSignatureTest extends PH
         );
         $this->assertEquals('TEfqYYiY9Qrb7fH7nhiRCP9o5BzfO/VL8oYgfVpUl6s=', $result);
     }
-    
+
     /**
      * Test signing a blob
      */
@@ -81,7 +88,7 @@ class Zend_Service_WindowsAzure_Credentials_SharedAccessSignatureTest extends PH
         );
         $this->assertEquals('hk78uZGGWd8B2NYoBwKSPs5gen3xYqsd3DPO8BQhgTU=', $result);
     }
-    
+
     /**
      * Test container signed query string
      */
@@ -99,7 +106,7 @@ class Zend_Service_WindowsAzure_Credentials_SharedAccessSignatureTest extends PH
         );
         $this->assertEquals('st=2009-02-09&se=2009-02-10&sr=c&sp=r&si=YWJjZGVmZw%3D%3D&sig=iLe%2BC%2Be85l8%2BMneC9psdTCg7hJxKh314aRq3SnqPuyM%3D', $result);
     }
-    
+
     /**
      * Test blob signed query string
      */
@@ -116,7 +123,7 @@ class Zend_Service_WindowsAzure_Credentials_SharedAccessSignatureTest extends PH
         );
         $this->assertEquals('st=2009-02-09&se=2009-02-10&sr=b&sp=w&sig=MUrHltHOJkj4425gorWWKr%2FO6mHC3XeRQ2MD6jn8jI8%3D', $result);
     }
-    
+
     /**
      * Test sign request URL
      */
@@ -124,14 +131,14 @@ class Zend_Service_WindowsAzure_Credentials_SharedAccessSignatureTest extends PH
     {
         $credentials = new Zend_Service_WindowsAzure_Credentials_SharedAccessSignature('myaccount', '', false);
         $queryString = $credentials->createSignedQueryString('pictures/blob.txt', '', 'b', 'r', '2009-02-09', '2009-02-10');
-        
+
         $credentials->setPermissionSet(array(
             'http://blob.core.windows.net/myaccount/pictures/blob.txt?' . $queryString
         ));
 
         $requestUrl = 'http://blob.core.windows.net/myaccount/pictures/blob.txt?comp=metadata';
         $result = $credentials->signRequestUrl($requestUrl, Zend_Service_WindowsAzure_Storage::RESOURCE_BLOB);
-        
+
         $this->assertEquals('http://blob.core.windows.net/myaccount/pictures/blob.txt?comp=metadata&' . $queryString, $result);
     }
 }

@@ -48,6 +48,10 @@ class Zend_Mail_MaildirFolderTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
+        if (!(defined('TESTS_ZEND_MAIL_MAILDIR_ENABLED') && constant('TESTS_ZEND_MAIL_MAILDIR_ENABLED'))) {
+            $this->markTestSkipped("Test not enabled in TestConfiguration.php");
+        }
+
         $this->_originalDir = dirname(__FILE__) . '/_files/test.maildir/';
 
         if (!is_dir($this->_originalDir . '/cur/')) {

@@ -45,6 +45,12 @@ class Zend_Ldap_ConnectTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
+        if (!(defined('TESTS_ZEND_LDAP_ONLINE_ENABLED')
+                && constant('TESTS_ZEND_LDAP_ONLINE_ENABLED'))) {
+            $this->markTestSkipped('Zend_Ldap online tests not enabled in TestConfiguration.php');
+            return;
+        }
+
         $this->_options = array('host' => TESTS_ZEND_LDAP_HOST);
         if (defined('TESTS_ZEND_LDAP_PORT') && TESTS_ZEND_LDAP_PORT != 389)
             $this->_options['port'] = TESTS_ZEND_LDAP_PORT;

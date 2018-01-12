@@ -42,6 +42,16 @@ class Zend_Gdata_CalendarOnlineTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
+        if (!(defined('TESTS_ZEND_GDATA_ONLINE_ENABLED') &&
+            constant('TESTS_ZEND_GDATA_ONLINE_ENABLED') == true &&
+            defined('TESTS_ZEND_GDATA_CLIENTLOGIN_ENABLED') &&
+            constant('TESTS_ZEND_GDATA_CLIENTLOGIN_ENABLED') == true &&
+            defined('TESTS_ZEND_GDATA_CALENDAR_ONLINE_ENABLED') &&
+            constant('TESTS_ZEND_GDATA_CALENDAR_ONLINE_ENABLED') == true)) {
+            $this->markTestSkipped("Zend_Gdata online tests are not enabled in TestConfiguration.php");
+            return;
+        }
+
         $user = constant('TESTS_ZEND_GDATA_CLIENTLOGIN_EMAIL');
         $pass = constant('TESTS_ZEND_GDATA_CLIENTLOGIN_PASSWORD');
         $service = Zend_Gdata_Calendar::AUTH_SERVICE_NAME;

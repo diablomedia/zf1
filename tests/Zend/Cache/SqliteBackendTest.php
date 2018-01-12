@@ -51,6 +51,15 @@ class Zend_Cache_sqliteBackendTest extends Zend_Cache_CommonExtendedBackendTest 
 
     public function setUp($notag = false)
     {
+        if (!defined('TESTS_ZEND_CACHE_SQLITE_ENABLED') ||
+            constant('TESTS_ZEND_CACHE_SQLITE_ENABLED') === false) {
+            $this->markTestSkipped('Tests are not enabled in TestConfiguration.php');
+            return;
+        } else if (!extension_loaded('sqlite')) {
+            $this->markTestSkipped("Extension 'sqlite' is not loaded");
+            return;
+        }
+
         @mkdir($this->getTmpDir());
         $this->_cache_dir = $this->getTmpDir() . DIRECTORY_SEPARATOR;
         $this->_instance = new Zend_Cache_Backend_Sqlite(array(
@@ -128,5 +137,3 @@ class Zend_Cache_sqliteBackendTest extends Zend_Cache_CommonExtendedBackendTest 
     }
 
 }
-
-
