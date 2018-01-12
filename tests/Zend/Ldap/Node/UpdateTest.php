@@ -48,8 +48,10 @@ class Zend_Ldap_Node_UpdateTest extends Zend_Ldap_OnlineTestCase
 
     protected function tearDown()
     {
-        foreach ($this->_getLdap()->getBaseNode()->searchChildren('objectClass=*') as $child) {
-            $this->_getLdap()->delete($child->getDn(), true);
+        if ($this->_getLdap() !== null) {
+            foreach ($this->_getLdap()->getBaseNode()->searchChildren('objectClass=*') as $child) {
+                $this->_getLdap()->delete($child->getDn(), true);
+            }
         }
 
         parent::tearDown();
