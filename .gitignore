@@ -10,6 +10,7 @@ tests/Zend/Translate/Adapter/_files/zend_cache---testid
 tests/TestConfiguration.php
 tests/Zend/Session/_files/*
 tests/Zend/Cache/zend_cache_tmp_dir_*
+tests/Zend/Config/Writer/temp/*
 vendor/*
 composer.lock
 bin/dbunit
