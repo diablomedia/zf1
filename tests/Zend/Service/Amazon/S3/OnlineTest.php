@@ -521,33 +521,11 @@ class Zend_Service_Amazon_S3_OnlineTest extends PHPUnit_Framework_TestCase
     }
     public function tearDown()
     {
-        unset($this->_amazon->debug);
-        $this->_amazon->cleanBucket($this->_bucket);
-        $this->_amazon->removeBucket($this->_bucket);
-        sleep(1);
-    }
-}
-
-
-/**
- * @category   Zend
- * @package    Zend_Service_Amazon
- * @subpackage UnitTests
- * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @group      Zend_Service
- * @group      Zend_Service_Amazon
- * @group      Zend_Service_Amazon_S3
- */
-class Zend_Service_Amazon_S3_OnlineTest_Skip extends PHPUnit_Framework_TestCase
-{
-    public function setUp()
-    {
-        $this->markTestSkipped('Zend_Service_Amazon_S3 online tests not enabled with an access key ID in '
-                             . 'TestConfiguration.php');
-    }
-
-    public function testNothing()
-    {
+        if ($this->_amazon !== null) {
+            unset($this->_amazon->debug);
+            $this->_amazon->cleanBucket($this->_bucket);
+            $this->_amazon->removeBucket($this->_bucket);
+            sleep(1);
+        }
     }
 }

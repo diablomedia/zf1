@@ -51,6 +51,8 @@ abstract class Zend_Db_TestSetup extends PHPUnit_Framework_TestCase
      */
     protected $_db = null;
 
+    protected $skipped;
+
     public abstract function getDriver();
 
     /**
@@ -59,6 +61,8 @@ abstract class Zend_Db_TestSetup extends PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
+        $this->skipped = false;
+
         if (!defined('TESTS_ZEND_DB_ADAPTER_STATIC_ENABLED')) {
             define('TESTS_ZEND_DB_ADAPTER_STATIC_ENABLED', true);
         }
@@ -67,6 +71,7 @@ abstract class Zend_Db_TestSetup extends PHPUnit_Framework_TestCase
         $DRIVER = strtoupper($driver);
         $enabledConst = "TESTS_ZEND_DB_ADAPTER_{$DRIVER}_ENABLED";
         if (!defined($enabledConst) || constant($enabledConst) != true) {
+            $this->skipped = true;
             $this->markTestSkipped("{$driver} database Adapter is not enabled in TestConfiguration.php");
             return;
         }
@@ -82,6 +87,7 @@ abstract class Zend_Db_TestSetup extends PHPUnit_Framework_TestCase
         );
 
         if (isset($ext[$driver]) && !extension_loaded($ext[$driver])) {
+            $this->skipped = true;
             $this->markTestSkipped("extension '{$ext[$driver]}' is not loaded");
             return;
         }
@@ -89,6 +95,7 @@ abstract class Zend_Db_TestSetup extends PHPUnit_Framework_TestCase
         if (preg_match('/^pdo_(.*)/i', $driver, $matches)) {
             // check for PDO extension
             if (!extension_loaded('pdo')) {
+                $this->skipped = true;
                 $this->markTestSkipped("extension 'PDO' is not loaded");
                 return;
             }
@@ -96,11 +103,11 @@ abstract class Zend_Db_TestSetup extends PHPUnit_Framework_TestCase
             // check the PDO driver is available
             $pdo_driver = strtolower($matches[1]);
             if (!in_array($pdo_driver, PDO::getAvailableDrivers())) {
+                $this->skipped = true;
                 $this->markTestSkipped("PDO driver '{$pdo_driver}' is not available");
                 return;
             }
         }
-
 
         $this->_setUpTestUtil();
         $this->_setUpAdapter();
@@ -140,8 +147,10 @@ abstract class Zend_Db_TestSetup extends PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-        $this->_util->tearDown();
-        $this->_db->closeConnection();
+        if ($this->skipped === false) {
+            $this->_util->tearDown();
+            $this->_db->closeConnection();
+        }
         $this->_db = null;
     }
 
