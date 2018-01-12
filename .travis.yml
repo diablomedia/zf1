@@ -7,7 +7,6 @@ php:
   - 7
   - 7.1
   - 7.2
-  - hhvm
 
 env: TMPDIR=/tmp
 
@@ -37,4 +36,3 @@ script:
 matrix:
   allow_failures:
    - php: 7.2
-   - php: hhvm
