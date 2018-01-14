@@ -364,7 +364,11 @@ abstract class Zend_Db_Select_TestCommon extends Zend_Db_TestSetup
             ->query();
         $result = $stmt->fetchAll();
 
-        $this->assertNull($result);
+        if (is_array($result)) {
+            $this->assertEquals(0, count($result));
+        } else {
+            $this->assertNull($result);
+        }
     }
 
     /**
