@@ -342,6 +342,10 @@ class Zend_Loader_AutoloaderTest extends PHPUnit_Framework_TestCase
 
     public function testAutoloadShouldNotSuppressParseErrorWhenSuppressNotFoundWarningsFlagIsDisabled()
     {
+        if (version_compare(PHP_VERSION, '7.0.0', '<')) {
+            $this->markTestSkipped(__METHOD__ . ' requires PHP version 7.0.0 or greater');
+        }
+
         $this->addTestIncludePath();
         $this->autoloader->suppressNotFoundWarnings(false);
         $this->autoloader->registerNamespace('ZendLoaderAutoloader');
@@ -355,13 +359,13 @@ class Zend_Loader_AutoloaderTest extends PHPUnit_Framework_TestCase
 
     public function testAutoloadShouldSuppressParseErrorWhenSuppressNotFoundWarningsFlagIsEnabled()
     {
+        if (version_compare(PHP_VERSION, '7.0.0', '<')) {
+            $this->markTestSkipped(__METHOD__ . ' requires PHP version 7.0.0 or greater');
+        }
         $this->addTestIncludePath();
         $this->autoloader->suppressNotFoundWarnings(true);
         $this->autoloader->registerNamespace('ZendLoaderAutoloader');
-        set_error_handler(array($this, 'handleErrors'));
         $this->assertFalse(Zend_Loader_Autoloader::autoload('ZendLoaderAutoloader_ZFAutoloadParseError'));
-        restore_error_handler();
-        $this->assertNull($this->error);
     }
 
     public function testAutoloadShouldReturnTrueIfFunctionBasedAutoloaderMatchesAndReturnsNonFalseValue()
