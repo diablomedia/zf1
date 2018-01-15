@@ -340,15 +340,28 @@ class Zend_Loader_AutoloaderTest extends PHPUnit_Framework_TestCase
         $this->assertTrue(class_exists('ZendLoaderAutoloader_Foo', false));
     }
 
-    public function testAutoloadShouldNotSuppressFileNotFoundWarningsWhenFlagIsDisabled()
+    public function testAutoloadShouldNotSuppressParseErrorWhenSuppressNotFoundWarningsFlagIsDisabled()
     {
         $this->addTestIncludePath();
         $this->autoloader->suppressNotFoundWarnings(false);
         $this->autoloader->registerNamespace('ZendLoaderAutoloader');
+        try {
+            $this->assertFalse(Zend_Loader_Autoloader::autoload('ZendLoaderAutoloader_ZFAutoloadParseError'));
+        } catch (ParseError $e) {
+        }
+
+        $this->assertInstanceOf('ParseError', $e);
+    }
+
+    public function testAutoloadShouldSuppressParseErrorWhenSuppressNotFoundWarningsFlagIsEnabled()
+    {
+        $this->addTestIncludePath();
+        $this->autoloader->suppressNotFoundWarnings(true);
+        $this->autoloader->registerNamespace('ZendLoaderAutoloader');
         set_error_handler(array($this, 'handleErrors'));
-        $this->assertFalse(Zend_Loader_Autoloader::autoload('ZendLoaderAutoloader_Bar'));
+        $this->assertFalse(Zend_Loader_Autoloader::autoload('ZendLoaderAutoloader_ZFAutoloadParseError'));
         restore_error_handler();
-        $this->assertNotNull($this->error);
+        $this->assertNull($this->error);
     }
 
     public function testAutoloadShouldReturnTrueIfFunctionBasedAutoloaderMatchesAndReturnsNonFalseValue()

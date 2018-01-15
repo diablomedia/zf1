@@ -239,7 +239,8 @@ class Zend_Barcode_FactoryTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException PHPUnit_Framework_Error
+     * @expectedException Zend_Exception
+     * @expectedExceptionMessage does not exist or class "Zend_Barcode_Object_Zf123" was not found in the file
      */
     public function testBarcodeObjectFactoryWithUnexistantBarcode()
     {
@@ -338,7 +339,8 @@ class Zend_Barcode_FactoryTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException PHPUnit_Framework_Error
+     * @expectedException Zend_Exception
+     * @expectedExceptionMessage does not exist or class "Zend_Barcode_Renderer_Zend" was not found in the file
      */
     public function testBarcodeRendererFactoryWithUnexistantRenderer()
     {

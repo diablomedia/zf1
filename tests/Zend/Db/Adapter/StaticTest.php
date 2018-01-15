@@ -342,7 +342,8 @@ class Zend_Db_Adapter_StaticTest extends PHPUnit_Framework_TestCase
                 );
         } catch (Exception $e) {
             set_include_path($oldIncludePath);
-            $this->assertContains('failed to open stream', $e->getMessage());
+            $this->assertInstanceOf('Zend_Exception', $e);
+            $this->assertContains('does not exist or class "Test_MyCompany2_Dbadapter" was not found in the file', $e->getMessage());
             return;
         }
 

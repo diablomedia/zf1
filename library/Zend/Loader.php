@@ -130,10 +130,13 @@ class Zend_Loader
         /**
          * Try finding for the plain filename in the include_path.
          */
-        if ($once) {
-            include_once $filename;
-        } else {
-            include $filename;
+        $absPath = stream_resolve_include_path($filename);
+        if ($absPath !== false) {
+            if ($once) {
+                include_once $absPath;
+            } else {
+                include $absPath;
+            }
         }
 
         /**
@@ -308,10 +311,13 @@ class Zend_Loader
      */
     protected static function _includeFile($filespec, $once = false)
     {
-        if ($once) {
-            return include_once $filespec;
-        } else {
-            return include $filespec ;
+        $absPath = stream_resolve_include_path($filespec);
+        if ($absPath !== false) {
+            if ($once) {
+                return include_once $absPath;
+            } else {
+                return include $absPath;
+            }
         }
     }
 
