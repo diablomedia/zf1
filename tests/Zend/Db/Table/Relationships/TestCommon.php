@@ -158,7 +158,8 @@ abstract class Zend_Db_Table_Relationships_TestCommon extends Zend_Db_Table_Test
     }
 
     /**
-     * @expectedException PHPUnit_Framework_Error
+     * @expectedException Zend_Exception
+     * @expectedExceptionMessage does not exist or class "nonexistant_class" was not found in the file
      */
     public function testTableRelationshipFindParentRowErrorOnBadString()
     {
@@ -265,7 +266,8 @@ abstract class Zend_Db_Table_Relationships_TestCommon extends Zend_Db_Table_Test
     }
 
     /**
-     * @expectedException PHPUnit_Framework_Error
+     * @expectedException Zend_Exception
+     * @expectedExceptionMessage does not exist or class "nonexistant_class" was not found in the file
      */
     public function testTableRelationshipFindManyToManyRowsetErrorOnBadClassNameAsString()
     {
@@ -280,7 +282,8 @@ abstract class Zend_Db_Table_Relationships_TestCommon extends Zend_Db_Table_Test
     }
 
     /**
-     * @expectedException PHPUnit_Framework_Error
+     * @expectedException Zend_Exception
+     * @expectedExceptionMessage does not exist or class "nonexistant_class" was not found in the file
      */
     public function testTableRelationshipFindManyToManyRowsetErrorOnBadClassNameAsStringForIntersection()
     {
@@ -425,7 +428,8 @@ abstract class Zend_Db_Table_Relationships_TestCommon extends Zend_Db_Table_Test
     }
 
     /**
-     * @expectedException PHPUnit_Framework_Error
+     * @expectedException Zend_Exception
+     * @expectedExceptionMessage does not exist or class "nonexistant_class" was not found in the file
      */
     public function testTableRelationshipFindDependentRowsetPhpError()
     {
