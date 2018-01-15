@@ -30,6 +30,12 @@ if (!defined('PHPUnit_MAIN_METHOD')) {
 require_once 'Zend/Loader/AutoloaderFactory.php';
 require_once 'Zend/Loader/ClassMapAutoloader.php';
 require_once 'Zend/Loader/StandardAutoloader.php';
+// Trigger autoloader for these
+class_exists('PHPUnit_Framework_Constraint_IsNull');
+class_exists('PHPUnit_Framework_Constraint_IsTrue');
+class_exists('SebastianBergmann\Exporter\Exporter');
+class_exists('PHPUnit_Framework_Constraint_IsEqual');
+class_exists('PHPUnit_Framework_Constraint_Exception');
 
 /**
  * @package    Zend_Loader
