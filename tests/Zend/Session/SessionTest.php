@@ -1089,13 +1089,13 @@ class Zend_SessionTest extends PHPUnit_Framework_TestCase
         if ( !is_dir($sessionStore) ) @mkdir($sessionStore, 0755, true);
         ini_set('session.save_path', "1;666;" . $sessionStore);
 
-        session_start();
-
         // When using subdirs for session.save_path, the directory structure
         // is your own responsibility...set it up, or else bad things happen
         foreach ( $sessionCharSet as $subdir ) {
             @mkdir($sessionStore . DIRECTORY_SEPARATOR . $subdir);
         }
+
+        session_start();
 
         // Set session ID to invalid value
         session_id('xxx');
