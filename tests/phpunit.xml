@@ -52,6 +52,7 @@
             <file>./Zend/Auth/Adapter/Ldap/OfflineTest.php</file>
             <file>./Zend/Auth/Adapter/Ldap/OnlineTest.php</file>
             <file>./Zend/Auth/Adapter/OpenId/OpenIdTest.php</file>
+            <file>./Zend/AuthTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Barcode">
@@ -149,6 +150,7 @@
             <file>./Zend/Config/JsonTest.php</file>
             <file>./Zend/Config/XmlTest.php</file>
             <file>./Zend/Config/YamlTest.php</file>
+            <file>./Zend/ConfigTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Console">
@@ -199,8 +201,13 @@
             <file>./Zend/Crypt/Math/BigInteger/GmpTest.php</file>
         </testsuite>
 
+        <testsuite name="ZFTest_Zend_Currency">
+            <file>./Zend/CurrencyTest.php</file>
+        </testsuite>
+
         <testsuite name="ZFTest_Zend_Date">
             <file>./Zend/Date/DateObjectTest.php</file>
+            <file>./Zend/DateTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Db">
@@ -305,6 +312,10 @@
             <file>./Zend/Db/Table/Relationships/Pdo/SqliteTest.php</file>
         </testsuite>
 
+        <testsuite name="ZFTest_Zend_Debug">
+            <file>./Zend/DebugTest.php</file>
+        </testsuite>
+
         <testsuite name="ZFTest_Zend_Dojo">
             <file>./Zend/Dojo/BuildLayerTest.php</file>
             <file>./Zend/Dojo/DojoTest.php</file>
@@ -381,6 +392,10 @@
             <file>./Zend/EventManager/GlobalEventManagerTest.php</file>
             <file>./Zend/EventManager/StaticEventManagerTest.php</file>
             <file>./Zend/EventManager/StaticIntegrationTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Exception">
+            <file>./Zend/ExceptionTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Feed">
@@ -475,6 +490,7 @@
             <file>./Zend/Filter/Word/UnderscoreToCamelCaseTest.php</file>
             <file>./Zend/Filter/Word/UnderscoreToDashTest.php</file>
             <file>./Zend/Filter/Word/UnderscoreToSeparatorTest.php</file>
+            <file>./Zend/FilterTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Form">
@@ -668,6 +684,7 @@
             <file>./Zend/Json/Server/ResponseTest.php</file>
             <file>./Zend/Json/Server/SmdTest.php</file>
             <file>./Zend/Json/Server/Smd/ServiceTest.php</file>
+            <file>./Zend/JsonTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Layout">
@@ -716,12 +733,14 @@
             <file>./Zend/Loader/ClassMapAutoloaderTest.php</file>
             <file>./Zend/Loader/PluginLoaderTest.php</file>
             <file>./Zend/Loader/StandardAutoloaderTest.php</file>
+            <file>./Zend/LoaderTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Locale">
             <file>./Zend/Locale/DataTest.php</file>
             <file>./Zend/Locale/FormatTest.php</file>
             <file>./Zend/Locale/MathTest.php</file>
+            <file>./Zend/LocaleTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Log">
@@ -806,6 +825,7 @@
         <testsuite name="ZFTest_Zend_Mime">
             <file>./Zend/Mime/PartTest.php</file>
             <file>./Zend/Mime/MessageTest.php</file>
+            <file>./Zend/MimeTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Memory">
@@ -836,6 +856,7 @@
             <file>./Zend/Navigation/PageTest.php</file>
             <file>./Zend/Navigation/Page/MvcTest.php</file>
             <file>./Zend/Navigation/Page/UriTest.php</file>
+            <file>./Zend/NavigationTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Oauth">
@@ -864,6 +885,7 @@
             <file>./Zend/OpenId/Provider/User/SessionTest.php</file>
             <file>./Zend/OpenId/ExtensionTest.php</file>
             <file>./Zend/OpenId/Extension/SregTest.php</file>
+            <file>./Zend/OpenIdTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Paginator">
@@ -880,6 +902,7 @@
             <file>./Zend/Paginator/ScrollingStyle/JumpingTest.php</file>
             <file>./Zend/Paginator/ScrollingStyle/SlidingTest.php</file>
             <file>./Zend/View/Helper/PaginationControlTest.php</file>
+            <file>./Zend/PaginatorTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Pdf">
@@ -902,6 +925,7 @@
             <file>./Zend/Pdf/Element/String/BinaryTest.php</file>
             <file>./Zend/Pdf/Filter/Ascii85Test.php</file>
             <file>./Zend/Pdf/Filter/RunLengthTest.php</file>
+            <file>./Zend/PdfTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_ProgressBar">
@@ -940,6 +964,10 @@
             <file>./Zend/Reflection/MethodTest.php</file>
             <file>./Zend/Reflection/ParameterTest.php</file>
             <file>./Zend/Reflection/PropertyTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Registry">
+            <file>./Zend/RegistryTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Rest">
@@ -1135,6 +1163,10 @@
             <file>./Zend/Text/MultiByteTest.php</file>
         </testsuite>
 
+        <testsuite name="ZFTest_Zend_TimeSync">
+            <file>./Zend/TimeSyncTest.php</file>
+        </testsuite>
+
         <testsuite name="ZFTest_Zend_Tool">
             <file>./Zend/Tool/Framework/RegistryTest.php</file>
             <file>./Zend/Tool/Framework/Action/BaseTest.php</file>
@@ -1159,10 +1191,12 @@
             <file>./Zend/Translate/Adapter/TmxTest.php</file>
             <file>./Zend/Translate/Adapter/XliffTest.php</file>
             <file>./Zend/Translate/Adapter/XmlTmTest.php</file>
+            <file>./Zend/TranslateTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Uri">
             <file>./Zend/Uri/HttpTest.php</file>
+            <file>./Zend/UriTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Validate">
@@ -1217,6 +1251,11 @@
             <file>./Zend/Validate/Sitemap/LocTest.php</file>
             <file>./Zend/Validate/Sitemap/PriorityTest.php</file>
             <file>./Zend/Validate/StringLengthTest.php</file>
+            <file>./Zend/ValidateTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Version">
+            <file>./Zend/VersionTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_View">
@@ -1272,6 +1311,7 @@
             <file>./Zend/View/Helper/TranslateTest.php</file>
             <file>./Zend/View/Helper/UrlTest.php</file>
             <file>./Zend/View/Helper/UserAgentTest.php</file>
+            <file>./Zend/ViewTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Wildfire">
@@ -1296,39 +1336,11 @@
             <file>./Zend/XmlRpc/Server/CacheTest.php</file>
             <file>./Zend/XmlRpc/Server/FaultTest.php</file>
         </testsuite>
-
-        <testsuite name="ZFTest_Zend">
-            <file>./Zend/AuthTest.php</file>
-            <file>./Zend/ConfigTest.php</file>
-            <file>./Zend/CurrencyTest.php</file>
-            <file>./Zend/DateTest.php</file>
-            <file>./Zend/DebugTest.php</file>
-            <file>./Zend/ExceptionTest.php</file>
-            <file>./Zend/FilterTest.php</file>
-            <file>./Zend/JsonTest.php</file>
-            <file>./Zend/LoaderTest.php</file>
-            <file>./Zend/LocaleTest.php</file>
-            <file>./Zend/MimeTest.php</file>
-            <file>./Zend/NavigationTest.php</file>
-            <file>./Zend/OpenIdTest.php</file>
-            <file>./Zend/PaginatorTest.php</file>
-            <file>./Zend/PdfTest.php</file>
-            <file>./Zend/RegistryTest.php</file>
-            <file>./Zend/TimeSyncTest.php</file>
-            <file>./Zend/TranslateTest.php</file>
-            <file>./Zend/UriTest.php</file>
-            <file>./Zend/ValidateTest.php</file>
-            <file>./Zend/VersionTest.php</file>
-            <file>./Zend/ViewTest.php</file>
-        </testsuite>
-
     </testsuites>
 
-    <!-- Enable this for proper unit testing code coverage reports
     <filter>
-        <whitelist>
+        <whitelist addUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">../library/Zend</directory>
         </whitelist>
     </filter>
-    -->
 </phpunit>

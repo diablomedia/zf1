@@ -75,7 +75,11 @@ foreach ($testSuites as $testSuite) {
     }
 
     echo "Executing Suite {$testSuite}" . PHP_EOL;
-    system($PHPUNIT . ' --testsuite=' . escapeshellarg($testSuite), $c_result);
+    if (isset($argv[1]) && $argv[1] === '--coverage') {
+        system($PHPUNIT . ' --coverage-php=../build/coverage/' . escapeshellarg($testSuite . '.cov') . ' --testsuite=' . escapeshellarg($testSuite), $c_result);
+    } else {
+        system($PHPUNIT . ' --testsuite=' . escapeshellarg($testSuite), $c_result);
+    }
     echo PHP_EOL;
 
     if ($c_result) {

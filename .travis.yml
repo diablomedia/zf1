@@ -7,6 +7,7 @@ php:
   - 7
   - 7.1
   - 7.2
+  - nightly
 
 env: TMPDIR=/tmp
 
@@ -16,8 +17,13 @@ install:
 services:
   - memcached
 
+stages:
+  - test
+  - test with coverage
+
 before_script:
   - phpenv config-rm xdebug.ini || return 0
+  - phpenv config-add tests/travis.ini
   - travis_retry composer self-update
   - travis_retry composer install --no-interaction --prefer-source
 
@@ -30,8 +36,20 @@ before_script:
   - cp ./tests/TestConfiguration.travis.php ./tests/TestConfiguration.php
 
 script:
- - cd tests/
- - php runalltests.php
+  - cd tests/
+  - php runalltests.php
+
+jobs:
+  include:
+    - stage: test with coverage
+      php: 7.1
+      script:
+        - cd tests/
+        - php runalltests.php --coverage
+      after_success:
+        - ./bin/phpcov merge ./build/coverage --clover=./build/coverage/clover.xml
+        - bash <(curl -s https://codecov.io/bash) -f ./build/coverage/clover.xml
 
 matrix:
   allow_failures:
+    - nightly
