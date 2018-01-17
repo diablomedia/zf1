@@ -9,7 +9,9 @@ php:
   - 7.2
   - nightly
 
-env: TMPDIR=/tmp
+global:
+  - TMPDIR=/tmp
+  - USE_XDEBUG=false
 
 install:
  - phpenv rehash
@@ -22,7 +24,7 @@ stages:
   - test with coverage
 
 before_script:
-  - phpenv config-rm xdebug.ini || return 0
+  - if [[ "$USE_XDEBUG" == false ]]; then phpenv config-rm xdebug.ini || return 0; fi
   - phpenv config-add tests/travis.ini
   - travis_retry composer self-update
   - travis_retry composer install --no-interaction --prefer-source
@@ -46,6 +48,9 @@ jobs:
   include:
     - stage: test with coverage
       php: 7.1
+      global:
+        - USE_XDEBUG=true
+        - TMPDIR=/tmp
       script:
         - cd tests/
         - php runalltests.php --coverage
