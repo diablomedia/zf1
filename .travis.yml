@@ -9,9 +9,7 @@ php:
   - 7.2
   - nightly
 
-global:
-  - TMPDIR=/tmp
-  - USE_XDEBUG=false
+env: TMPDIR=/tmp USE_XDEBUG=false
 
 install:
  - phpenv rehash
@@ -48,12 +46,11 @@ jobs:
   include:
     - stage: test with coverage
       php: 7.1
-      global:
-        - USE_XDEBUG=true
-        - TMPDIR=/tmp
+      env: TMPDIR=/tmp USE_XDEBUG=true
       script:
         - cd tests/
         - php runalltests.php --coverage
       after_success:
+        - cd ..
         - ./bin/phpcov merge ./build/coverage --clover=./build/coverage/clover.xml
         - bash <(curl -s https://codecov.io/bash) -f ./build/coverage/clover.xml
