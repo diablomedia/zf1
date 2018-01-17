@@ -40,6 +40,9 @@ script:
   - php runalltests.php
 
 jobs:
+  fast_finish: true
+  allow_failures:
+    - php: nightly
   include:
     - stage: test with coverage
       php: 7.1
@@ -49,7 +52,3 @@ jobs:
       after_success:
         - ./bin/phpcov merge ./build/coverage --clover=./build/coverage/clover.xml
         - bash <(curl -s https://codecov.io/bash) -f ./build/coverage/clover.xml
-
-matrix:
-  allow_failures:
-    - nightly
