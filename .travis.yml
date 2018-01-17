@@ -11,6 +11,10 @@ php:
 
 env: TMPDIR=/tmp USE_XDEBUG=false
 
+branches:
+  only:
+    master
+
 install:
  - phpenv rehash
 
