@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Log_LogTest::main');
-}
-
 /** Zend_Log */
 require_once 'Zend/Log.php';
 
@@ -46,12 +42,6 @@ require_once 'Zend/Log/FactoryInterface.php';
  */
 class Zend_Log_LogTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         $this->log = fopen('php://memory', 'w+');
@@ -612,7 +602,3 @@ class Custom_Formatter_Mock extends Zend_Log_Formatter_Abstract
  */
 class ZLTest_My_Log extends Zend_Log {}
 class ZLTest_My_LogNotExtending {}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Log_LogTest::main') {
-    Zend_Log_LogTest::main();
-}

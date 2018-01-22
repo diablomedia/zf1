@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Controller_Action_HelperBrokerTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Controller_Action_HelperBrokerTest::main");
-}
-
 require_once 'Zend/Controller/Front.php';
 require_once 'Zend/Controller/Request/Http.php';
 require_once 'Zend/Controller/Response/Cli.php';
@@ -49,19 +44,6 @@ class Zend_Controller_Action_HelperBrokerTest extends PHPUnit_Framework_TestCase
      * @var Zend_Controller_Front
      */
     protected $front;
-
-    /**
-     * Runs the test methods of this class.
-     *
-     * @access public
-     * @static
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Controller_Action_HelperBrokerTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     public function setUp()
     {
@@ -376,9 +358,4 @@ class Zend_Controller_Action_HelperBrokerController extends Zend_Controller_Acti
     {
         $this->_helper->getHelper('testHelper');
     }
-}
-
-// Call Zend_Controller_Action_HelperBrokerTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Controller_Action_HelperBrokerTest::main") {
-    Zend_Controller_Action_HelperBrokerTest::main();
 }

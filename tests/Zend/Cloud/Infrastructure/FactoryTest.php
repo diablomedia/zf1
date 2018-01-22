@@ -19,11 +19,6 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-// Call Zend_Cloud_Infrastructure_FactoryTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Cloud_Infrastructure_FactoryTest::main");
-}
-
 /**
  * @see Zend_Config_Ini
  */
@@ -51,17 +46,6 @@ require_once 'Zend/Cloud/Infrastructure/Adapter/Ec2.php';
  */
 class Zend_Cloud_Infrastructure_FactoryTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function testGetInfrastructureAdapterKey()
     {
         $this->assertTrue(is_string(Zend_Cloud_Infrastructure_Factory::INFRASTRUCTURE_ADAPTER_KEY));
@@ -74,7 +58,7 @@ class Zend_Cloud_Infrastructure_FactoryTest extends PHPUnit_Framework_TestCase
                                 );
 
         $this->assertEquals('Zend_Cloud_Infrastructure_Adapter_Ec2', get_class($Ec2Adapter));
-        
+
         // Rackspace adapter
         $rackspaceAdapter = Zend_Cloud_Infrastructure_Factory::getAdapter(
                                     new Zend_Config(Zend_Cloud_Infrastructure_Adapter_RackspaceTest::getConfigArray())
@@ -82,9 +66,4 @@ class Zend_Cloud_Infrastructure_FactoryTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals('Zend_Cloud_Infrastructure_Adapter_Rackspace', get_class($rackspaceAdapter));
     }
-}
-
-// Call Zend_Cloud_Infrastructure_FactoryTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Cloud_Infrastructure_FactoryTest::main") {
-    Zend_Cloud_Infrastructure_FactoryTest::main();
 }

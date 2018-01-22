@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_View_Helper_FormRadioTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_View_Helper_FormRadioTest::main");
-}
-
 require_once 'Zend/View/Helper/FormRadio.php';
 require_once 'Zend/View.php';
 
@@ -43,19 +38,6 @@ require_once 'Zend/View.php';
  */
 class Zend_View_Helper_FormRadioTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @access public
-     * @static
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_View_Helper_FormRadioTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         $this->view   = new Zend_View();
@@ -405,7 +387,7 @@ class Zend_View_Helper_FormRadioTest extends PHPUnit_Framework_TestCase
 
         $this->assertSame($expected, $actual);
     }
-    
+
     /**
      * @group ZF-4191
      */
@@ -417,7 +399,7 @@ class Zend_View_Helper_FormRadioTest extends PHPUnit_Framework_TestCase
              0 => 'Test 0',
              1 => 'Test 1'
         );
-        
+
         $formRadio = new Zend_View_Helper_FormRadio();
         $formRadio->setView(new Zend_View());
         $html = $formRadio->formRadio($name, -1, null, $options);
@@ -425,11 +407,11 @@ class Zend_View_Helper_FormRadioTest extends PHPUnit_Framework_TestCase
             $fid = "{$name}-{$key}";
             $this->assertRegExp('/<input([^>]*)(id="'.$fid.'")/', $html);
         }
-        
+
         // Assert that radio for value -1 is the selected one
         $this->assertRegExp('/<input([^>]*)(id="'.$name.'--1")([^>]*)(checked="checked")/', $html);
     }
-    
+
     /**
      * @group ZF-11477
      */
@@ -486,12 +468,12 @@ class Zend_View_Helper_FormRadioTest extends PHPUnit_Framework_TestCase
              'value'   => 'bar',
              'options' => $options,
          ));
- 
+
          $this->assertContains('<br />', $html);
          $count = substr_count($html, '<br />');
          $this->assertEquals(2, $count);
      }
- 
+
      /**
       * @group ZF-11620
       */
@@ -508,16 +490,10 @@ class Zend_View_Helper_FormRadioTest extends PHPUnit_Framework_TestCase
              'value'   => 'bar',
              'options' => $options,
          ));
- 
+
          $this->assertContains('<br>', $html);
          $count = substr_count($html, '<br>');
          $this->assertEquals(2, $count);
      }
 
 }
-
-// Call Zend_View_Helper_FormRadioTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_View_Helper_FormRadioTest::main") {
-    Zend_View_Helper_FormRadioTest::main();
-}
-

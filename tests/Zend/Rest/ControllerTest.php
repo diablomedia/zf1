@@ -29,11 +29,6 @@ require_once 'Zend/Controller/Request/HttpTestCase.php';
 /** Zend_Controller_Response_HttpTestCase */
 require_once 'Zend/Controller/Response/HttpTestCase.php';
 
-// Call Zend_Rest_ControllerTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Rest_ControllerTest::main");
-}
-
 /**
  * @category   Zend
  * @package    Zend_Rest
@@ -88,19 +83,6 @@ class Zend_Rest_ControllerTest extends PHPUnit_Framework_TestCase
 {
     protected $_testController;
 
-    /**
-     * Runs the test methods of this class.
-     *
-     * @access public
-     * @static
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Rest_ControllerTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         $request = new Zend_Controller_Request_HttpTestCase();
@@ -123,9 +105,4 @@ class Zend_Rest_ControllerTest extends PHPUnit_Framework_TestCase
         $this->_testController->deleteAction();
         $this->assertEquals('deleteAction', $this->_testController->testValue);
     }
-}
-
-// Call Zend_Rest_ControllerTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Rest_ControllerTest::main") {
-    Zend_Rest_ControllerTest::main();
 }

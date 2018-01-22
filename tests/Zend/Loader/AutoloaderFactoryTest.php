@@ -19,10 +19,6 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Loader_AutoloaderFactoryTest::main');
-}
-
 /*
  * Preload a number of classes to ensure they're available once we've disabled
  * other autoloaders.
@@ -46,12 +42,6 @@ class_exists('PHPUnit_Framework_Constraint_Exception');
  */
 class Zend_Loader_AutoloaderFactoryTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         // Store original autoloaders
@@ -232,8 +222,4 @@ class Zend_Loader_AutoloaderFactoryTest extends PHPUnit_Framework_TestCase
         }
         $this->assertTrue($found, 'StandardAutoloader not registered with spl_autoload');
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Loader_AutoloaderFactoryTest::main') {
-    Zend_Loader_AutoloaderFactoryTest::main();
 }

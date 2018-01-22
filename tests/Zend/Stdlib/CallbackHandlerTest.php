@@ -20,10 +20,6 @@
  * @version    $Id:$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Stdlib_CallbackHandlerTest::main');
-}
-
 require_once 'Zend/Stdlib/CallbackHandler.php';
 require_once 'Zend/Stdlib/TestAsset/SignalHandlers/InstanceMethod.php';
 require_once 'Zend/Stdlib/TestAsset/SignalHandlers/ObjectCallback.php';
@@ -39,12 +35,6 @@ require_once 'Zend/Stdlib/TestAsset/SignalHandlers/ObjectCallback.php';
  */
 class Zend_Stdlib_CallbackHandlerTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         if (isset($this->args)) {
@@ -142,8 +132,4 @@ class Zend_Stdlib_CallbackHandlerTest extends PHPUnit_Framework_TestCase
     {
         $this->args = func_get_args();
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Stdlib_CallbackHandlerTest::main') {
-    Zend_Stdlib_CallbackHandlerTest::main();
 }

@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Log_Writer_FirebugTest::main');
-}
-
 /** Zend_Log */
 require_once 'Zend/Log.php';
 
@@ -60,18 +56,6 @@ class Zend_Log_Writer_FirebugTest extends PHPUnit_Framework_TestCase
     protected $_response = null;
     protected $_writer = null;
     protected $_logger = null;
-
-    /**
-     * Runs the test methods of this class.
-     *
-     * @access public
-     * @static
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     public function setUp()
     {
@@ -418,8 +402,4 @@ class Zend_Log_Writer_FirebugTest_Response extends Zend_Controller_Response_Http
 
         return true;
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Log_Writer_FirebugTest::main') {
-    Zend_Log_Writer_FirebugTest::main();
 }

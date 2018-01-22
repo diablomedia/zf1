@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Tag_Cloud_Decorator_HtmlTagTest::main');
-}
-
 require_once 'Zend/Tag/Item.php';
 require_once 'Zend/Tag/ItemList.php';
 require_once 'Zend/Tag/Cloud/Decorator/HtmlTag.php';
@@ -40,12 +36,6 @@ require_once 'Zend/Config.php';
  */
 class Zend_Tag_Cloud_Decorator_HtmlTagTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function testDefaultOutput()
     {
         $decorator = new Zend_Tag_Cloud_Decorator_HtmlTag();
@@ -196,8 +186,4 @@ class Zend_Tag_Cloud_Decorator_HtmlTagTest extends PHPUnit_Framework_TestCase
 
         return $list;
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Tag_Cloud_Decorator_HtmlTagTest::main') {
-    Zend_Tag_Cloud_Decorator_HtmlTagTest::main();
 }

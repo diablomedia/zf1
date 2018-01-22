@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Validate_File_NotExistsTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Validate_File_NotExistsTest::main");
-}
-
 /**
  * @see Zend_Validate_File_Size
  */
@@ -42,17 +37,6 @@ require_once 'Zend/Validate/File/NotExists.php';
  */
 class Zend_Validate_File_NotExistsTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Validate_File_NotExistsTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Ensures that the validator follows expected behavior
      *
@@ -198,9 +182,4 @@ class Zend_Validate_File_NotExistsTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('temp,gif,jpg,to,zip,ti', $validator->getDirectory());
         $this->assertEquals(array('temp', 'gif', 'jpg', 'to', 'zip', 'ti'), $validator->getDirectory(true));
     }
-}
-
-// Call Zend_Validate_File_NotExistsTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Validate_File_NotExistsTest::main") {
-    Zend_Validate_File_NotExistsTest::main();
 }

@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Form_Element_HashTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Form_Element_HashTest::main");
-}
-
 require_once 'Zend/Form/Element/Hash.php';
 
 /**
@@ -39,18 +34,6 @@ require_once 'Zend/Form/Element/Hash.php';
  */
 class Zend_Form_Element_HashTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Form_Element_HashTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -260,9 +243,4 @@ class Zend_Form_Element_HashTest_SessionContainer
             default:
         }
     }
-}
-
-// Call Zend_Form_Element_HashTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Form_Element_HashTest::main") {
-    Zend_Form_Element_HashTest::main();
 }

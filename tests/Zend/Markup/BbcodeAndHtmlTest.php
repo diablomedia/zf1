@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Markup_BbcodeAndHtmlTest::main");
-}
-
 require_once 'Zend/Markup.php';
 require_once 'Zend/Filter/StringToUpper.php';
 
@@ -44,19 +40,6 @@ class Zend_Markup_BbcodeAndHtmlTest extends PHPUnit_Framework_TestCase
      * @var Zend_Markup_Renderer_RendererAbstract
      */
     protected $_markup;
-
-
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Markup_MarkupTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     /**
      * Sets up the fixture
@@ -537,10 +520,4 @@ BBCODE;
         $this->assertEquals('<h1>&lt;script&gt;alert(&quot;hi&quot;);&lt;/script&gt;</h1>',
             $m->render('[h1]<script>alert("hi");</script>[/h1]'));
     }
-}
-
-// Call Zend_Markup_BbcodeAndHtmlTest::main()
-// if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Markup_BbcodeAndHtmlTest::main") {
-    Zend_Markup_BbcodeAndHtmlTest::main();
 }

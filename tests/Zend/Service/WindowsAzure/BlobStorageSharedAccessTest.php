@@ -20,10 +20,6 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Service_WindowsAzure_BlobStorageSharedAccessTest::main');
-}
-
 /**
  * Test helpers
  */
@@ -52,14 +48,6 @@ class Zend_Service_WindowsAzure_BlobStorageSharedAccessTest extends PHPUnit_Fram
     public function __construct()
     {
         self::$path = dirname(__FILE__).'/_files/';
-    }
-
-    public static function main()
-    {
-        if (TESTS_ZEND_SERVICE_WINDOWSAZURE_BLOB_RUNTESTS) {
-            $suite  = new PHPUnit_Framework_TestSuite("Zend_Service_WindowsAzure_BlobStorageSharedAccessTest");
-            $result = PHPUnit_TextUI_TestRunner::run($suite);
-        }
     }
 
     /**
@@ -223,9 +211,4 @@ class Zend_Service_WindowsAzure_BlobStorageSharedAccessTest extends PHPUnit_Fram
             $this->assertTrue($exceptionThrown);
         }
     }
-}
-
-// Call Zend_Service_WindowsAzure_BlobStorageSharedAccessTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Service_WindowsAzure_BlobStorageSharedAccessTest::main") {
-    Zend_Service_WindowsAzure_BlobStorageSharedAccessTest::main();
 }

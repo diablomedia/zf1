@@ -20,10 +20,6 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Service_WindowsAzure_QueueStorageTest::main');
-}
-
 /**
  * Test helpers
  */
@@ -43,14 +39,6 @@ require_once 'Zend/Service/WindowsAzure/Storage/Queue.php';
  */
 class Zend_Service_WindowsAzure_QueueStorageTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        if (TESTS_ZEND_SERVICE_WINDOWSAZURE_QUEUE_RUNTESTS)  {
-            $suite  = new PHPUnit_Framework_TestSuite("Zend_Service_WindowsAzure_QueueStorageTest");
-            $result = PHPUnit_TextUI_TestRunner::run($suite);
-        }
-    }
-
     /**
      * Test setup
      */
@@ -388,9 +376,4 @@ class Zend_Service_WindowsAzure_QueueStorageTest extends PHPUnit_Framework_TestC
             $this->assertEquals(2, count($messages2));
         }
     }
-}
-
-// Call Zend_Service_WindowsAzure_QueueStorageTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Service_WindowsAzure_QueueStorageTest::main") {
-    Zend_Service_WindowsAzure_QueueStorageTest::main();
 }

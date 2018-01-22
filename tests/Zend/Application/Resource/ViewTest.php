@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Application_Resource_ViewTest::main');
-}
-
 /**
  * Zend_Loader_Autoloader
  */
@@ -41,12 +37,6 @@ require_once 'Zend/Application/Resource/View.php';
  */
 class Zend_Application_Resource_ViewTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         // Store original autoloaders
@@ -208,7 +198,7 @@ class Zend_Application_Resource_ViewTest extends PHPUnit_Framework_TestCase
         $registry->deleteContainer('Zend_View_Helper_HeadMeta');
         $registry->deleteContainer('Zend_View_Helper_Doctype');
     }
-    
+
     /**
      * @group ZF-10042
      */
@@ -222,7 +212,7 @@ class Zend_Application_Resource_ViewTest extends PHPUnit_Framework_TestCase
         );
         $resource = new Zend_Application_Resource_View($options);
         $view = $resource->init();
- 
+
         $this->assertEquals('barbapapa', $view->foo);
         $this->assertEquals('barbazoo', $view->bar);
     }
@@ -241,9 +231,4 @@ class Zend_Application_Resource_ViewTest extends PHPUnit_Framework_TestCase
 
         $this->assertSame($view, $viewRenderer->view);
     }
-}
-
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Application_Resource_ViewTest::main') {
-    Zend_Application_Resource_ViewTest::main();
 }

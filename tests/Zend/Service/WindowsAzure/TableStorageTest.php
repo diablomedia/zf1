@@ -20,10 +20,6 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Service_WindowsAzure_TableStorageTest::main');
-}
-
 /**
  * Test helpers
  */
@@ -45,14 +41,6 @@ class Zend_Service_WindowsAzure_TableStorageTest extends PHPUnit_Framework_TestC
 {
     public function __construct()
     {
-    }
-
-    public static function main()
-    {
-        if (TESTS_ZEND_SERVICE_WINDOWSAZURE_TABLE_RUNTESTS) {
-            $suite  = new PHPUnit_Framework_TestSuite("Zend_Service_WindowsAzure_TableStorageTest");
-            $result = PHPUnit_TextUI_TestRunner::run($suite);
-        }
     }
 
     /**
@@ -928,9 +916,4 @@ class TSTest_TestEntity2 extends Zend_Service_WindowsAzure_Storage_TableEntity
      * @azure Name
      */
     public $FullName;
-}
-
-// Call Zend_Service_WindowsAzure_TableStorageTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Service_WindowsAzure_TableStorageTest::main") {
-    Zend_Service_WindowsAzure_TableStorageTest::main();
 }

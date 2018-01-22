@@ -19,10 +19,6 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_EventManager_GlobalEventManagerTest::main');
-}
-
 require_once 'Zend/EventManager/GlobalEventManager.php';
 require_once 'Zend/EventManager/EventManager.php';
 
@@ -36,12 +32,6 @@ require_once 'Zend/EventManager/EventManager.php';
  */
 class Zend_EventManager_GlobalEventManagerTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         Zend_EventManager_GlobalEventManager::setEventCollection(null);
@@ -115,8 +105,4 @@ class Zend_EventManager_GlobalEventManagerTest extends PHPUnit_Framework_TestCas
     {
         return is_array($result);
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_EventManager_GlobalEventManagerTest::main') {
-    Zend_EventManager_GlobalEventManagerTest::main();
 }

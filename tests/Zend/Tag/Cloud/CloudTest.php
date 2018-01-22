@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Tag_Cloud_CloudTest::main');
-}
-
 require_once 'Zend/Config.php';
 require_once 'Zend/Loader/PluginLoader.php';
 require_once 'Zend/Tag/Cloud.php';
@@ -42,12 +38,6 @@ require_once dirname(__FILE__) . '/_classes/TagDummy.php';
  */
 class Zend_Tag_Cloud_CloudTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function testGetAndSetItemList()
     {
         $cloud = $this->_getCloud();
@@ -339,7 +329,3 @@ class Zend_Tag_Cloud_CloudTest extends PHPUnit_Framework_TestCase
 }
 
 class Zend_Tag_ItemListDummy extends Zend_Tag_ItemList {}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Tag_Cloud_CloudTest::main') {
-    Zend_Tag_Cloud_CloudTest::main();
-}

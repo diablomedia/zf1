@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Dojo_Form_Element_ValidationTextBoxTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Dojo_Form_Element_ValidationTextBoxTest::main");
-}
-
 /** Zend_Dojo_Form_Element_ValidationTextBox */
 require_once 'Zend/Dojo/Form/Element/ValidationTextBox.php';
 
@@ -50,17 +45,6 @@ require_once 'Zend/Dojo/View/Helper/Dojo.php';
  */
 class Zend_Dojo_Form_Element_ValidationTextBoxTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Dojo_Form_Element_ValidationTextBoxTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -178,18 +162,13 @@ class Zend_Dojo_Form_Element_ValidationTextBoxTest extends PHPUnit_Framework_Tes
         $html = $this->element->render();
         $this->assertContains('dojoType="dijit.form.ValidationTextBox"', $html);
     }
-    
+
     public function testSettingMultipleConstraintsShouldNotOverridePreviousConstraints()
     {
         $this->element->setConstraint('foo', 'bar');
-        
+
         $this->element->setConstraints(array('spam' => 'ham'));
-        
+
         $this->assertEquals('bar', $this->element->getConstraint('foo'));
     }
-}
-
-// Call Zend_Dojo_Form_Element_ValidationTextBoxTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Dojo_Form_Element_ValidationTextBoxTest::main") {
-    Zend_Dojo_Form_Element_ValidationTextBoxTest::main();
 }

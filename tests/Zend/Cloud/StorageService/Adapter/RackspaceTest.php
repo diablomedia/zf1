@@ -19,11 +19,6 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-// Call Zend_Cloud_StorageService_Adapter_RackspaceTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Cloud_StorageService_Adapter_RackspaceTest::main");
-}
-
 require_once 'Zend/Service/Rackspace/Files.php';
 require_once 'Zend/Config.php';
 require_once 'Zend/Cloud/StorageService/TestCase.php';
@@ -64,16 +59,16 @@ class Zend_Cloud_StorageService_Adapter_RackspaceTest extends Zend_Cloud_Storage
 
         parent::setUp();
         $this->_waitPeriod = 5;
-        
+
         // Create the container here
         $rackspace= new Zend_Service_Rackspace_Files(
             $this->_config->get(Zend_Cloud_StorageService_Adapter_Rackspace::USER),
             $this->_config->get(Zend_Cloud_StorageService_Adapter_Rackspace::API_KEY)
         );
-        $rackspace->createContainer( 
+        $rackspace->createContainer(
             $this->_config->get(Zend_Cloud_StorageService_Adapter_Rackspace::REMOTE_CONTAINER)
         );
-        
+
     }
 
     /**
@@ -94,19 +89,19 @@ class Zend_Cloud_StorageService_Adapter_RackspaceTest extends Zend_Cloud_Storage
         );
         $files = $rackspace->getObjects(
             $this->_config->get(Zend_Cloud_StorageService_Adapter_Rackspace::REMOTE_CONTAINER)
-        );             
+        );
         if ($files==!false) {
             foreach ($files as $file) {
                 $rackspace->deleteObject(
                     $this->_config->get(Zend_Cloud_StorageService_Adapter_Rackspace::REMOTE_CONTAINER),
-                    $file->getName()    
+                    $file->getName()
                 );
             }
-        }    
+        }
         $rackspace->deleteContainer(
-            $this->_config->get(Zend_Cloud_StorageService_Adapter_Rackspace::REMOTE_CONTAINER)   
+            $this->_config->get(Zend_Cloud_StorageService_Adapter_Rackspace::REMOTE_CONTAINER)
         );
-        
+
         parent::tearDown();
     }
 
@@ -129,8 +124,4 @@ class Zend_Cloud_StorageService_Adapter_RackspaceTest extends Zend_Cloud_Storage
 
         return $config;
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Cloud_StorageService_Adapter_RackspaceTest::main') {
-    Zend_Cloud_StorageService_Adapter_RackspaceTest::main();
 }

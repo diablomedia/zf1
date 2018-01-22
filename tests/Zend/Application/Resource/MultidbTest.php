@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Application_Resource_MultidbTest::main');
-}
-
 /**
  * Zend_Loader_Autoloader
  */
@@ -49,12 +45,6 @@ class Zend_Application_Resource_MultidbTest extends PHPUnit_Framework_TestCase
 {
     protected $_dbOptions = array('db1' => array('adapter' => 'pdo_mysql','dbname' => 'db1','password' => 'XXXX','username' => 'webuser'),
                                 'db2' => array('adapter' => 'pdo_pgsql', 'dbname' => 'db2', 'password' => 'notthatpublic', 'username' => 'dba'));
-
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     public function setUp()
     {
@@ -242,8 +232,4 @@ class Zend_Application_Resource_MultidbTest extends PHPUnit_Framework_TestCase
         $resource->init();
         $this->assertTrue(Zend_Db_Table::getDefaultMetadataCache() instanceof Zend_Cache_Core);
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Application_Resource_MultidbTest::main') {
-    Zend_Application_Resource_MultidbTest::main();
 }

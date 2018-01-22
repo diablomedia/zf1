@@ -20,10 +20,6 @@
  * @version    $Id: $
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Filter_Compress_GzTest::main');
-}
-
 /**
  * @see Zend_Filter_Compress_Gz
  */
@@ -39,17 +35,6 @@ require_once 'Zend/Filter/Compress/Gz.php';
  */
 class Zend_Filter_Compress_GzTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs this test suite
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite('Zend_Filter_Compress_GzTest');
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         if (!extension_loaded('zlib')) {
@@ -221,8 +206,4 @@ class Zend_Filter_Compress_GzTest extends PHPUnit_Framework_TestCase
         $filter = new Zend_Filter_Compress_Gz();
         $this->assertEquals('Gz', $filter->toString());
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Filter_Compress_GzTest::main') {
-    Zend_Filter_Compress_GzTest::main();
 }

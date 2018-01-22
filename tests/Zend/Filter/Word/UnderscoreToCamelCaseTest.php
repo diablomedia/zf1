@@ -20,12 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Filter_Word_UnderscoreToCamelCaseTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Filter_Word_UnderscoreToCamelCaseTest::main");
-}
-
-
 require_once 'Zend/Filter/Word/UnderscoreToCamelCase.php';
 
 /**
@@ -40,19 +34,6 @@ require_once 'Zend/Filter/Word/UnderscoreToCamelCase.php';
  */
 class Zend_Filter_Word_UnderscoreToCamelCaseTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @access public
-     * @static
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Filter_Word_UnderscoreToCamelCaseTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function testFilterSeparatesCamelCasedWordsWithDashes()
     {
         $string   = 'camel_cased_words';
@@ -100,9 +81,4 @@ class Zend_Filter_Word_UnderscoreToCamelCaseTest extends PHPUnit_Framework_TestC
         $this->assertNotEquals($string, $filtered);
         $this->assertEquals('ZendFramework', $filtered);
     }
-}
-
-// Call Zend_Filter_Word_UnderscoreToCamelCaseTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Filter_Word_UnderscoreToCamelCaseTest::main") {
-    Zend_Filter_Word_UnderscoreToCamelCaseTest::main();
 }

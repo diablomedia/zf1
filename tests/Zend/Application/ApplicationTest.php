@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Application_ApplicationTest::main');
-}
-
 /** Zend_Loader_Autoloader */
 require_once 'Zend/Loader/Autoloader.php';
 
@@ -40,12 +36,6 @@ require_once 'Zend/Application.php';
  */
 class Zend_Application_ApplicationTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         // Store original autoloaders
@@ -347,7 +337,7 @@ class Zend_Application_ApplicationTest extends PHPUnit_Framework_TestCase
         $application = new Zend_Application('testing', dirname(__FILE__) . '/_files/appconfig.json');
         $this->assertTrue($application->hasOption('foo'));
     }
-    
+
     /**
      * @group ZF-11425
      */
@@ -539,8 +529,4 @@ class Zend_Application_ApplicationTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals('baz', $application->getOption('foo'));
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Application_ApplicationTest::main') {
-    Zend_Application_ApplicationTest::main();
 }

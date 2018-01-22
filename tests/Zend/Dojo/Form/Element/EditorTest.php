@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Dojo_Form_Element_EditorTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Dojo_Form_Element_EditorTest::main");
-}
-
 /** Zend_Dojo_Form_Element_Editor */
 require_once 'Zend/Dojo/Form/Element/Editor.php';
 
@@ -50,17 +45,6 @@ require_once 'Zend/Dojo/View/Helper/Dojo.php';
  */
 class Zend_Dojo_Form_Element_EditorTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Dojo_Form_Element_EditorTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -262,29 +246,29 @@ class Zend_Dojo_Form_Element_EditorTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($this->element->getDijitParam('updateInterval'), $this->element->getUpdateInterval());
         $this->assertEquals(300, $this->element->getUpdateInterval());
     }
-    
+
     public function testCanAddMultipleSeparatorsToEditor()
     {
         $this->element->setPlugins(array('undo', '|', 'bold', '|', 'italic'));
-        
+
         $plugins = $this->element->getPlugins();
         $this->assertEquals(5, count($plugins));
     }
-    
+
     public function testMinHeightCanBeSetToPixels()
     {
         $this->element->setMinHeight('250px');
         $this->assertEquals($this->element->getDijitParam('minHeight'), $this->element->getMinHeight());
         $this->assertEquals('250px', $this->element->getMinHeight());
     }
-    
+
     public function testMinHeightCanBeSetToPercentage()
     {
         $this->element->setMinHeight('50%');
         $this->assertEquals($this->element->getDijitParam('minHeight'), $this->element->getMinHeight());
         $this->assertEquals('50%', $this->element->getMinHeight());
     }
-    
+
     public function testMinHeightDefaultMeasurementIsEm()
     {
         $this->element->setMinHeight('10');
@@ -312,9 +296,4 @@ class Zend_Dojo_Form_Element_EditorTest extends PHPUnit_Framework_TestCase
         $extraPlugins = $this->element->getDijitParam('extraPlugins');
         $this->assertNotContains('bold', $extraPlugins, var_export($extraPlugins, 1));
     }
-}
-
-// Call Zend_Dojo_Form_Element_EditorTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Dojo_Form_Element_EditorTest::main") {
-    Zend_Dojo_Form_Element_EditorTest::main();
 }

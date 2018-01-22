@@ -20,12 +20,6 @@
  * @version    $Id$
  */
 
-
-// Call Zend_Filter_InflectorTest::main() if this source file is executed directly.
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Filter_InflectorTest::main');
-}
-
 /**
  * @see Zend_Filter_Inflector
  */
@@ -49,17 +43,6 @@ require_once 'Zend/Config.php';
  */
 class Zend_Filter_InflectorTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite('Zend_Filter_InflectorTest');
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -541,9 +524,4 @@ class Zend_Filter_InflectorTest extends PHPUnit_Framework_TestCase
         $inflector->setOptions($config);
         $this->_testOptions($inflector);
     }
-}
-
-// Call Zend_Filter_InflectorTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == 'Zend_Filter_InflectorTest::main') {
-    Zend_Filter_InflectorTest::main();
 }

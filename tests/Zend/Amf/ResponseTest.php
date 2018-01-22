@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Amf_ResponseTest::main');
-}
-
 require_once 'Zend/Amf/Response.php';
 require_once 'Zend/Amf/Request.php';
 require_once 'Zend/Amf/Value/MessageBody.php';
@@ -54,17 +50,6 @@ class Zend_Amf_ResponseTest extends PHPUnit_Framework_TestCase
      * @var Zend_Amf_Request
      */
     protected $_response;
-
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Amf_ResponseTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     /**
      * Setup environment
@@ -1059,8 +1044,3 @@ class ReferenceTest {
 class TestObject {
     public $recursive;
 }
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Amf_ResponseTest::main') {
-    Zend_Amf_ResponseTest::main();
-}
-

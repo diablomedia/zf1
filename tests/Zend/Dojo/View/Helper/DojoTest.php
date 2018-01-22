@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Dojo_View_Helper_DojoTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Dojo_View_Helper_DojoTest::main");
-}
-
 /** Zend_Dojo_View_Helper_Dojo */
 require_once 'Zend/Dojo/View/Helper/Dojo.php';
 
@@ -54,17 +49,6 @@ class Zend_Dojo_View_Helper_DojoTest extends PHPUnit_Framework_TestCase
      * @var Zend_Dojo_View_Helper_Dojo_Container
      */
     protected $helper;
-
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Dojo_View_Helper_DojoTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -971,9 +955,4 @@ function() {
                      ->addStylesheet('/css/custom.css')
                      ->addOnLoad('foo');
     }
-}
-
-// Call Zend_Dojo_View_Helper_DojoTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Dojo_View_Helper_DojoTest::main") {
-    Zend_Dojo_View_Helper_DojoTest::main();
 }

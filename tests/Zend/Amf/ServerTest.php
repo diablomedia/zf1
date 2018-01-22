@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Amf_ServerTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Amf_ServerTest::main");
-}
-
 require_once 'Zend/Config.php';
 require_once 'Zend/Amf/Server.php';
 require_once 'Zend/Amf/Request.php';
@@ -48,12 +43,6 @@ require_once 'Zend/Session.php';
 class Zend_Amf_ServerTest extends PHPUnit_Framework_TestCase
 {
     protected $_server;
-
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Amf_ServerTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     public function setUp()
     {
@@ -1178,10 +1167,6 @@ class Zend_Amf_ServerTest extends PHPUnit_Framework_TestCase
         $this->assertNotEquals(1, $employee->id);
         $this->assertRegexp('/[a-z0-9]{3,}/', $employee->id);
     }
-}
-
-if (PHPUnit_MAIN_METHOD == "Zend_Amf_ServerTest::main") {
-    Zend_Amf_ServerTest::main();
 }
 
 /**

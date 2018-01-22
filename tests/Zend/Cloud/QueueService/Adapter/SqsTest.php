@@ -19,11 +19,6 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-// Call Zend_Cloud_QueueService_Adapter_SqsTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Cloud_QueueService_Adapter_SqsTest::main");
-}
-
 /**
  * @see Zend_Cloud_QueueServiceTestCase
  */
@@ -51,18 +46,6 @@ class Zend_Cloud_QueueService_Adapter_SqsTest extends Zend_Cloud_QueueService_Te
      */
     protected $_waitPeriod = 10;
 	protected $_clientType = 'Zend_Service_Amazon_Sqs';
-
-	/**
-     * Runs the test methods of this class.
-     *
-     * @access public
-     * @static
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     /**
      * Sets up this test case
@@ -146,8 +129,4 @@ class Zend_Cloud_QueueService_Adapter_SqsTest extends Zend_Cloud_QueueService_Te
 
         return $config;
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Cloud_QueueService_Adapter_SqsTest::main') {
-    Zend_Cloud_QueueService_Adapter_SqsTest::main();
 }

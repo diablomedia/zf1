@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_View_Helper_ActionTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_View_Helper_ActionTest::main");
-}
-
 /** Zend_View_Helper_Action */
 require_once 'Zend/View/Helper/Action.php';
 
@@ -53,17 +48,6 @@ require_once 'Zend/View.php';
  */
 class Zend_View_Helper_ActionTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_View_Helper_ActionTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -331,9 +315,4 @@ class Zend_View_Helper_ActionTest extends PHPUnit_Framework_TestCase
         $value = $this->helper->action('bar-one', 'baz', 'foo');
         $this->assertRegexp('/Baz-Three-View-Script\s+Baz-Two-View-Script\s+Baz-One-View-Script/s', $value);
     }
-}
-
-// Call Zend_View_Helper_ActionTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_View_Helper_ActionTest::main") {
-    Zend_View_Helper_ActionTest::main();
 }

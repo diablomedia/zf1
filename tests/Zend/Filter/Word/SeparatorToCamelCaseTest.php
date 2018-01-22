@@ -20,12 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Filter_SeparatorToCamelCaseTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Filter_Word_SeparatorToCamelCaseTest::main");
-}
-
-
 require_once 'Zend/Filter/Word/SeparatorToCamelCase.php';
 
 /**
@@ -40,18 +34,6 @@ require_once 'Zend/Filter/Word/SeparatorToCamelCase.php';
  */
 class Zend_Filter_Word_SeparatorToCamelCaseTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @access public
-     * @static
-     */
-    public static function main() {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Filter_Word_SeparatorToCamelCaseTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function testFilterSeparatesCamelCasedWordsWithSpacesByDefault()
     {
         $string   = 'camel cased words';
@@ -71,9 +53,4 @@ class Zend_Filter_Word_SeparatorToCamelCaseTest extends PHPUnit_Framework_TestCa
         $this->assertNotEquals($string, $filtered);
         $this->assertEquals('CamelCasedWords', $filtered);
     }
-}
-
-// Call Zend_Filter_Word_SeparatorToCamelCaseTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Filter_Word_SeparatorToCamelCaseTest::main") {
-    Zend_Filter_Word_SeparatorToCamelCaseTest::main();
 }

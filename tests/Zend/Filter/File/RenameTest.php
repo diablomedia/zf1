@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Filter_File_RenameTest::main");
-}
-
 /**
  * @see Zend_Filter_File_Rename
  */
@@ -80,17 +76,6 @@ class Zend_Filter_File_RenameTest extends PHPUnit_Framework_TestCase
      * @var string
      */
     protected $_newDirFile;
-
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Filter_File_RenameTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     /**
      * Sets the path to test files
@@ -466,8 +451,4 @@ class Zend_Filter_File_RenameTest extends PHPUnit_Framework_TestCase
             $this->assertContains('Invalid options', $e->getMessage());
         }
     }
-}
-
-if (PHPUnit_MAIN_METHOD == "Zend_Filter_File_RenameTest::main") {
-    Zend_Filter_File_RenameTest::main();
 }

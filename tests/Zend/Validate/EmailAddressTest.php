@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Validate_EmailAddressTest::main');
-}
-
 /**
  * @see Zend_Validate_EmailAddress
  */
@@ -45,17 +41,6 @@ class Zend_Validate_EmailAddressTest extends PHPUnit_Framework_TestCase
      * @var Zend_Validate_EmailAddress
      */
     protected $_validator;
-
-    /**
-     * Runs this test suite
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     /**
      * Creates a new Zend_Validate_EmailAddress object for each test method
@@ -644,8 +629,4 @@ class Zend_Validate_EmailAddressTest extends PHPUnit_Framework_TestCase
         $validator = new Zend_Validate_EmailAddress(Zend_Validate_Hostname::ALLOW_IP);
         $this->assertTrue($validator->isValid('bob@192.162.33.24'));
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Validate_EmailAddressTest::main') {
-    Zend_Validate_EmailAddressTest::main();
 }

@@ -20,10 +20,6 @@
  * @version    $Id: $
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Filter_Compress_RarTest::main');
-}
-
 /**
  * @see Zend_Filter_Compress_Rar
  */
@@ -39,17 +35,6 @@ require_once 'Zend/Filter/Compress/Rar.php';
  */
 class Zend_Filter_Compress_RarTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs this test suite
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite('Zend_Filter_Compress_RarTest');
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         if (!extension_loaded('rar')) {
@@ -335,8 +320,4 @@ class Zend_Filter_Compress_RarTest extends PHPUnit_Framework_TestCase
     {
         return true;
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Filter_Compress_RarTest::main') {
-    Zend_Filter_Compress_RarTest::main();
 }

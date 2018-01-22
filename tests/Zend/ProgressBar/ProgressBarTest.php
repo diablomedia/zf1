@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Console_ProgressBarTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_ProgressBar_ProgressBarTest::main");
-}
-
 /**
  * Zend_ProgressBar
  */
@@ -45,17 +40,6 @@ require_once 'Zend/ProgressBar/Adapter.php';
  */
 class Zend_ProgressBar_ProgressBarTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_ProgressBar_ProgressBarTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function testGreaterMin()
     {
         try {
@@ -227,9 +211,4 @@ class Zend_ProgressBar_Adapter_MockUp extends Zend_ProgressBar_Adapter
     {
         return $this->_text;
     }
-}
-
-// Call Zend_ProgressBar_ProgressBarTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_ProgressBar_ProgressBarTest::main") {
-    Zend_ProgressBar_ProgressBarTest::main();
 }

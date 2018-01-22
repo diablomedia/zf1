@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_View_Helper_FormSubmitTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_View_Helper_FormSubmitTest::main");
-}
-
 require_once 'Zend/View/Helper/FormSubmit.php';
 require_once 'Zend/View.php';
 require_once 'Zend/Registry.php';
@@ -42,17 +37,6 @@ require_once 'Zend/Registry.php';
  */
 class Zend_View_Helper_FormSubmitTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_View_Helper_FormSubmitTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -136,9 +120,4 @@ class Zend_View_Helper_FormSubmitTest extends PHPUnit_Framework_TestCase
         $test = $this->helper->formSubmit('', 'bar');
         $this->assertNotContains('id=""', $test);
     }
-}
-
-// Call Zend_View_Helper_FormSubmitTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_View_Helper_FormSubmitTest::main") {
-    Zend_View_Helper_FormSubmitTest::main();
 }

@@ -20,10 +20,6 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Service_WindowsAzure_TableSessionHandlerTest::main');
-}
-
 /**
  * Test helpers
  */
@@ -48,14 +44,6 @@ class Zend_Service_WindowsAzure_TableSessionHandlerTest extends PHPUnit_Framewor
 {
     public function __construct()
     {
-    }
-
-    public static function main()
-    {
-        if (TESTS_ZEND_SERVICE_WINDOWSAZURE_SESSIONHANDLER_RUNTESTS) {
-            $suite  = new PHPUnit_Framework_TestSuite("Zend_Service_WindowsAzure_TableSessionHandlerTest");
-            $result = PHPUnit_TextUI_TestRunner::run($suite);
-        }
     }
 
     /**
@@ -287,9 +275,4 @@ class Zend_Service_WindowsAzure_TableSessionHandlerTest extends PHPUnit_Framewor
     {
         return md5(self::$uniqId);
     }
-}
-
-// Call Zend_Service_WindowsAzure_TableSessionHandlerTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Service_WindowsAzure_TableSessionHandlerTest::main") {
-    Zend_Service_WindowsAzure_TableSessionHandlerTest::main();
 }

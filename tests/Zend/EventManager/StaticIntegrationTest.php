@@ -19,10 +19,6 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_EventManager_StaticIntegrationTest::main');
-}
-
 require_once 'Zend/EventManager/EventManager.php';
 require_once 'Zend/EventManager/StaticEventManager.php';
 require_once 'Zend/EventManager/TestAsset/ClassWithEvents.php';
@@ -38,12 +34,6 @@ require_once 'Zend/EventManager/TestAsset/StaticEventsMock.php';
  */
 class Zend_EventManager_StaticIntegrationTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         Zend_EventManager_StaticEventManager::resetInstance();
@@ -53,8 +43,8 @@ class Zend_EventManager_StaticIntegrationTest extends PHPUnit_Framework_TestCase
     {
         $this->counter = (object) array('count' => 0);
         Zend_EventManager_StaticEventManager::getInstance()->attach(
-            'Zend_EventManager_TestAsset_ClassWithEvents', 
-            'foo', 
+            'Zend_EventManager_TestAsset_ClassWithEvents',
+            'foo',
             array($this, 'advanceCounter')
         );
         $class = new Zend_EventManager_TestAsset_ClassWithEvents();
@@ -66,8 +56,8 @@ class Zend_EventManager_StaticIntegrationTest extends PHPUnit_Framework_TestCase
     {
         $this->test = (object) array('results' => array());
         Zend_EventManager_StaticEventManager::getInstance()->attach(
-            'Zend_EventManager_TestAsset_ClassWithEvents', 
-            'foo', 
+            'Zend_EventManager_TestAsset_ClassWithEvents',
+            'foo',
             array($this, 'aggregateStatic')
         );
         $class = new Zend_EventManager_TestAsset_ClassWithEvents();
@@ -80,8 +70,8 @@ class Zend_EventManager_StaticIntegrationTest extends PHPUnit_Framework_TestCase
     {
         $this->test = (object) array('results' => array());
         Zend_EventManager_StaticEventManager::getInstance()->attach(
-            'Zend_EventManager_TestAsset_ClassWithEvents', 
-            'foo', 
+            'Zend_EventManager_TestAsset_ClassWithEvents',
+            'foo',
             array($this, 'aggregateStatic'),
             10000 // high priority
         );
@@ -97,8 +87,8 @@ class Zend_EventManager_StaticIntegrationTest extends PHPUnit_Framework_TestCase
     {
         $this->counter = (object) array('count' => 0);
         Zend_EventManager_StaticEventManager::getInstance()->attach(
-            'Zend_EventManager_TestAsset_ClassWithEvents', 
-            'foo', 
+            'Zend_EventManager_TestAsset_ClassWithEvents',
+            'foo',
             array($this, 'advanceCounter')
         );
         $class = new Zend_EventManager_TestAsset_ClassWithEvents();
@@ -111,8 +101,8 @@ class Zend_EventManager_StaticIntegrationTest extends PHPUnit_Framework_TestCase
     {
         $this->counter = (object) array('count' => 0);
         Zend_EventManager_StaticEventManager::getInstance()->attach(
-            'Zend_EventManager_TestAsset_ClassWithEvents', 
-            'foo', 
+            'Zend_EventManager_TestAsset_ClassWithEvents',
+            'foo',
             array($this, 'advanceCounter')
         );
         $mockStaticEvents = new Zend_EventManager_TestAsset_StaticEventsMock();
@@ -127,8 +117,8 @@ class Zend_EventManager_StaticIntegrationTest extends PHPUnit_Framework_TestCase
     {
         $this->test = (object) array('results' => array());
         Zend_EventManager_StaticEventManager::getInstance()->attach(
-            'Zend_EventManager_TestAsset_ClassWithEvents', 
-            'foo', 
+            'Zend_EventManager_TestAsset_ClassWithEvents',
+            'foo',
             array($this, 'aggregateStatic'),
             100
         );
@@ -166,8 +156,4 @@ class Zend_EventManager_StaticIntegrationTest extends PHPUnit_Framework_TestCase
     {
         $this->test->results[] = 'local3';
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_EventManager_StaticIntegrationTest::main') {
-    Zend_EventManager_StaticIntegrationTest::main();
 }

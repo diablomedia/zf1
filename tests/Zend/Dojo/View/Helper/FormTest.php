@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Dojo_View_Helper_FormTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Dojo_View_Helper_FormTest::main");
-}
-
 /** Zend_Dojo_View_Helper_Form */
 require_once 'Zend/Dojo/View/Helper/Form.php';
 
@@ -50,17 +45,6 @@ require_once 'Zend/Dojo/View/Helper/Dojo.php';
  */
 class Zend_Dojo_View_Helper_FormTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Dojo_View_Helper_FormTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -127,15 +111,10 @@ class Zend_Dojo_View_Helper_FormTest extends PHPUnit_Framework_TestCase
         $html = $this->helper->form('foo', array('id' => 'bar'));
         $this->assertRegexp('/<form[^>]*(id="bar")/', $html);
     }
-    
+
     public function testShouldNotRenderClosingTagIfContentIsFalse()
     {
         $html = $this->helper->form('foo');
         $this->assertNotRegexp('/<\/form>/', $html);
     }
-}
-
-// Call Zend_Dojo_View_Helper_FormTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Dojo_View_Helper_FormTest::main") {
-    Zend_Dojo_View_Helper_FormTest::main();
 }

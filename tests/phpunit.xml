@@ -5,21 +5,23 @@
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Amf">
-            <file>./Zend/Amf/Adobe/IntrospectorTest.php</file>
             <file>./Zend/Amf/RequestTest.php</file>
             <file>./Zend/Amf/ResponseTest.php</file>
             <file>./Zend/Amf/Response/HttpTest.php</file>
             <file>./Zend/Amf/ServerTest.php</file>
             <file>./Zend/Amf/TypeLoaderTest.php</file>
             <file>./Zend/Amf/Util/BinaryStreamTest.php</file>
+            <file>./Zend/Amf/Value/ArrayCollectionTest.php</file>
             <file>./Zend/Amf/Value/MessageBodyTest.php</file>
             <file>./Zend/Amf/Value/MessageHeaderTest.php</file>
             <file>./Zend/Amf/AuthTest.php</file>
             <file>./Zend/Amf/ResourceTest.php</file>
+            <file>./Zend/Amf/Adobe/IntrospectorTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Application">
             <file>./Zend/Application/ApplicationTest.php</file>
+            <file>./Zend/Application/Bootstrap/BootstrapTest.php</file>
             <file>./Zend/Application/Bootstrap/BootstrapAbstractTest.php</file>
             <file>./Zend/Application/Module/AutoloaderTest.php</file>
             <file>./Zend/Application/Module/BootstrapTest.php</file>
@@ -160,6 +162,7 @@
         <testsuite name="ZFTest_Zend_Controller">
             <file>./Zend/Controller/ActionTest.php</file>
             <file>./Zend/Controller/Action/HelperBrokerTest.php</file>
+            <file>./Zend/Controller/Action/HelperBroker/PriorityStackTest.php</file>
             <file>./Zend/Controller/Dispatcher/StandardTest.php</file>
             <file>./Zend/Controller/FrontTest.php</file>
             <file>./Zend/Controller/Plugin/ActionStackTest.php</file>
@@ -329,6 +332,7 @@
             <file>./Zend/Dojo/Form/Decorator/SplitContainerTest.php</file>
             <file>./Zend/Dojo/Form/Decorator/StackContainerTest.php</file>
             <file>./Zend/Dojo/Form/Decorator/TabContainerTest.php</file>
+            <file>./Zend/Dojo/Form/Element/ButtonTest.php</file>
             <file>./Zend/Dojo/Form/Element/CheckBoxTest.php</file>
             <file>./Zend/Dojo/Form/Element/ComboBoxTest.php</file>
             <file>./Zend/Dojo/Form/Element/CurrencyTextBoxTest.php</file>
@@ -361,6 +365,7 @@
             <file>./Zend/Dojo/View/Helper/CurrencyTextBoxTest.php</file>
             <file>./Zend/Dojo/View/Helper/CustomDijitTest.php</file>
             <file>./Zend/Dojo/View/Helper/DateTextBoxTest.php</file>
+            <file>./Zend/Dojo/View/Helper/EditorTest.php</file>
             <file>./Zend/Dojo/View/Helper/FilteringSelectTest.php</file>
             <file>./Zend/Dojo/View/Helper/FormTest.php</file>
             <file>./Zend/Dojo/View/Helper/HorizontalSliderTest.php</file>
@@ -422,6 +427,7 @@
             <file>./Zend/Feed/Reader/Integration/WordpressAtom10Test.php</file>
             <file>./Zend/Feed/Reader/Integration/LautDeRdfTest.php</file>
             <file>./Zend/Feed/Reader/Integration/H-OnlineComAtom10Test.php</file>
+            <file>./Zend/Feed/Reader/Integration/PodcastRss2Test.php</file>
             <file>./Zend/Feed/Writer/FeedTest.php</file>
             <file>./Zend/Feed/Writer/EntryTest.php</file>
             <file>./Zend/Feed/Writer/DeletedTest.php</file>
@@ -431,6 +437,12 @@
             <file>./Zend/Feed/Writer/Renderer/Entry/RssTest.php</file>
             <file>./Zend/Feed/Writer/Extension/ITunes/EntryTest.php</file>
             <file>./Zend/Feed/Writer/Extension/ITunes/FeedTest.php</file>
+            <file>./Zend/Feed/Pubsubhubbub/PubsubhubbubTest.php</file>
+            <file>./Zend/Feed/Pubsubhubbub/PublisherTest.php</file>
+            <file>./Zend/Feed/Pubsubhubbub/SubscriberTest.php</file>
+            <file>./Zend/Feed/Pubsubhubbub/SubscriberHttpTest.php</file>
+            <file>./Zend/Feed/Pubsubhubbub/Model/SubscriptionTest.php</file>
+            <file>./Zend/Feed/Pubsubhubbub/Subscriber/CallbackTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_File">
@@ -505,6 +517,7 @@
             <file>./Zend/Form/Decorator/HtmlTagTest.php</file>
             <file>./Zend/Form/Decorator/ImageTest.php</file>
             <file>./Zend/Form/Decorator/LabelTest.php</file>
+            <file>./Zend/Form/Decorator/PrepareElementsTest.php</file>
             <file>./Zend/Form/Decorator/ReCaptchaTest.php</file>
             <file>./Zend/Form/Decorator/ViewHelperTest.php</file>
             <file>./Zend/Form/Decorator/ViewScriptTest.php</file>
@@ -532,6 +545,10 @@
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Gdata">
+            <file>./Zend/Gdata/Analytics/AccountFeedTest.php</file>
+            <file>./Zend/Gdata/Analytics/AccountQueryTest.php</file>
+            <file>./Zend/Gdata/Analytics/DataFeedTest.php</file>
+            <file>./Zend/Gdata/Analytics/DataQueryTest.php</file>
             <file>./Zend/Gdata/AuthSubTest.php</file>
             <file>./Zend/Gdata/AppTest.php</file>
             <file>./Zend/Gdata/App/UtilTest.php</file>
@@ -543,6 +560,7 @@
             <file>./Zend/Gdata/App/EntryTest.php</file>
             <file>./Zend/Gdata/App/FeedTest.php</file>
             <file>./Zend/Gdata/App/GeneratorTest.php</file>
+            <file>./Zend/Gdata/App/HttpExceptionTest.php</file>
             <file>./Zend/Gdata/App/CaptchaRequiredExceptionTest.php</file>
             <file>./Zend/Gdata/GdataTest.php</file>
             <file>./Zend/Gdata/QueryTest.php</file>
@@ -646,11 +664,15 @@
             <file>./Zend/Gdata/Books/VolumeEntryTest.php</file>
             <file>./Zend/Gdata/Books/VolumeFeedTest.php</file>
             <file>./Zend/Gdata/GdataOnlineTest.php</file>
+            <file>./Zend/Gdata/MediaMimeStreamTest.php</file>
             <file>./Zend/Gdata/CalendarOnlineTest.php</file>
             <file>./Zend/Gdata/SpreadsheetsOnlineTest.php</file>
+            <file>./Zend/Gdata/SpreadsheetsTest.php</file>
             <file>./Zend/Gdata/DocsOnlineTest.php</file>
+            <file>./Zend/Gdata/DocsTest.php</file>
             <file>./Zend/Gdata/PhotosOnlineTest.php</file>
             <file>./Zend/Gdata/BooksOnlineTest.php</file>
+            <file>./Zend/Gdata/BooksTest.php</file>
             <file>./Zend/Gdata/GappsOnlineTest.php</file>
         </testsuite>
 
@@ -848,6 +870,7 @@
             <file>./Zend/Mobile/Push/ApnsTest.php</file>
             <file>./Zend/Mobile/Push/GcmTest.php</file>
             <file>./Zend/Mobile/Push/MpnsTest.php</file>
+            <file>./Zend/Mobile/Push/Response/GcmTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Navigation">
@@ -936,7 +959,9 @@
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Queue">
+            <file>./Zend/Queue/CustomTest.php</file>
             <file>./Zend/Queue/FactoryTest.php</file>
+            <file>./Zend/Queue/QueueTest.php</file>
             <file>./Zend/Queue/Queue1Test.php</file>
             <file>./Zend/Queue/Queue2Test.php</file>
             <file>./Zend/Queue/MessageTest.php</file>
@@ -1031,20 +1056,25 @@
 
         <testsuite name="ZFTest_Zend_Service">
             <file>./Zend/Service/AkismetTest.php</file>
+            <file>./Zend/Service/Amazon/AbstractTest.php</file>
             <file>./Zend/Service/Amazon/OnlineTest.php</file>
+            <file>./Zend/Service/Amazon/OfflineTest.php</file>
             <file>./Zend/Service/Amazon/Authentication/S3Test.php</file>
             <file>./Zend/Service/Amazon/Authentication/V1Test.php</file>
             <file>./Zend/Service/Amazon/Authentication/V2Test.php</file>
+            <file>./Zend/Service/Amazon/Ec2/AbstractTest.php</file>
             <file>./Zend/Service/Amazon/Ec2/AvailabilityzonesTest.php</file>
+            <file>./Zend/Service/Amazon/Ec2/CloudWatchTest.php</file>
             <file>./Zend/Service/Amazon/Ec2/EbsTest.php</file>
             <file>./Zend/Service/Amazon/Ec2/Ec2Test.php</file>
             <file>./Zend/Service/Amazon/Ec2/ElasticipTest.php</file>
             <file>./Zend/Service/Amazon/Ec2/ImageTest.php</file>
             <file>./Zend/Service/Amazon/Ec2/InstanceTest.php</file>
+            <file>./Zend/Service/Amazon/Ec2/InstanceReservedTest.php</file>
+            <file>./Zend/Service/Amazon/Ec2/InstanceWindowsTest.php</file>
             <file>./Zend/Service/Amazon/Ec2/KeypairTest.php</file>
             <file>./Zend/Service/Amazon/Ec2/RegionTest.php</file>
             <file>./Zend/Service/Amazon/Ec2/SecuritygroupsTest.php</file>
-            <file>./Zend/Service/Amazon/S3/OfflineTest.php</file>
             <file>./Zend/Service/Amazon/S3/OnlineTest.php</file>
             <file>./Zend/Service/Amazon/S3/StreamTest.php</file>
             <file>./Zend/Service/Amazon/SimpleDb/OnlineTest.php</file>
@@ -1069,6 +1099,11 @@
             <file>./Zend/Service/Flickr/OnlineTest.php</file>
             <file>./Zend/Service/LiveDocx/LiveDocxTest.php</file>
             <file>./Zend/Service/LiveDocx/MailMergeTest.php</file>
+            <file>./Zend/Service/Rackspace/Files/OfflineTest.php</file>
+            <file>./Zend/Service/Rackspace/Files/OnlineTest.php</file>
+            <file>./Zend/Service/Rackspace/Servers/OfflineTest.php</file>
+            <file>./Zend/Service/Rackspace/Servers/OnlineTest.php</file>
+            <file>./Zend/Service/Rackspace/OfflineTest.php</file>
             <file>./Zend/Service/ReCaptcha/ReCaptchaTest.php</file>
             <file>./Zend/Service/ReCaptcha/ResponseTest.php</file>
             <file>./Zend/Service/ReCaptcha/MailHideTest.php</file>
@@ -1077,6 +1112,7 @@
             <file>./Zend/Service/ShortUrl/MetamarkNetTest.php</file>
             <file>./Zend/Service/ShortUrl/TinyUrlComTest.php</file>
             <file>./Zend/Service/ShortUrl/BitLyTest.php</file>
+            <file>./Zend/Service/SqlAzure/Management/ManagementClientTest.php</file>
             <file>./Zend/Service/SlideShareTest.php</file>
             <file>./Zend/Service/StrikeIron/NoSoapTest.php</file>
             <file>./Zend/Service/StrikeIron/StrikeIronTest.php</file>
@@ -1114,10 +1150,13 @@
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Soap">
+            <file>./Zend/Soap/ClientTest.php</file>
             <file>./Zend/Soap/ServerTest.php</file>
             <file>./Zend/Soap/WsdlTest.php</file>
             <file>./Zend/Soap/Wsdl/ArrayOfTypeComplexStrategyTest.php</file>
             <file>./Zend/Soap/Wsdl/ArrayOfTypeSequenceStrategyTest.php</file>
+            <file>./Zend/Soap/Wsdl/CompositeStrategyTest.php</file>
+            <file>./Zend/Soap/Wsdl/DefaultComplexTypeTest.php</file>
             <file>./Zend/Soap/AutoDiscoverTest.php</file>
             <file>./Zend/Soap/AutoDiscover/OnlineTest.php</file>
         </testsuite>
@@ -1174,9 +1213,13 @@
             <file>./Zend/Tool/Framework/Client/RequestTest.php</file>
             <file>./Zend/Tool/Framework/Client/ResponseTest.php</file>
             <file>./Zend/Tool/Framework/Manifest/RepositoryTest.php</file>
+            <file>./Zend/Tool/Framework/Manifest/ProviderMetadataTest.php</file>
+            <file>./Zend/Tool/Framework/Metadata/ActionMetadataTest.php</file>
+            <file>./Zend/Tool/Framework/Metadata/MetadataTest.php</file>
             <file>./Zend/Tool/Framework/Provider/AbstractTest.php</file>
             <file>./Zend/Tool/Framework/Provider/RepositoryTest.php</file>
             <file>./Zend/Tool/Framework/Provider/SignatureTest.php</file>
+            <file>./Zend/Tool/Project/Provider/ControllerTest.php</file>
             <file>./Zend/Tool/Project/ProfileTest.php</file>
             <file>./Zend/Tool/Project/Context/RegistryTest.php</file>
         </testsuite>
@@ -1260,6 +1303,7 @@
 
         <testsuite name="ZFTest_Zend_View">
             <file>./Zend/View/Helper/ActionTest.php</file>
+            <file>./Zend/View/Helper/AttributeJsEscapingTest.php</file>
             <file>./Zend/View/Helper/BaseUrlTest.php</file>
             <file>./Zend/View/Helper/CurrencyTest.php</file>
             <file>./Zend/View/Helper/CycleTest.php</file>
@@ -1307,6 +1351,7 @@
             <file>./Zend/View/Helper/Placeholder/ContainerTest.php</file>
             <file>./Zend/View/Helper/Placeholder/RegistryTest.php</file>
             <file>./Zend/View/Helper/Placeholder/StandaloneContainerTest.php</file>
+            <file>./Zend/View/Helper/RenderToPlaceholderTest.php</file>
             <file>./Zend/View/Helper/ServerUrlTest.php</file>
             <file>./Zend/View/Helper/TranslateTest.php</file>
             <file>./Zend/View/Helper/UrlTest.php</file>
@@ -1335,6 +1380,10 @@
             <file>./Zend/XmlRpc/GeneratorTest.php</file>
             <file>./Zend/XmlRpc/Server/CacheTest.php</file>
             <file>./Zend/XmlRpc/Server/FaultTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_resources">
+            <file>./resources/languages/Zend_ValidateTest.php</file>
         </testsuite>
     </testsuites>
 

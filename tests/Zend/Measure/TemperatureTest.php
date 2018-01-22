@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Measure_TemperatureTest::main');
-}
-
 /**
  * Zend_Measure_Temperature
  */
@@ -44,12 +40,6 @@ require_once 'Zend/Registry.php';
  */
 class Zend_Measure_TemperatureTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setup()
     {
         if (Zend_Registry::isRegistered('Zend_Locale')) {
@@ -440,8 +430,4 @@ class Zend_Measure_TemperatureTest extends PHPUnit_Framework_TestCase
         $unit= new Zend_Measure_Temperature(100, Zend_Measure_Temperature::FAHRENHEIT, 'de');
         $this->assertSame('311 °K', $unit->convertTo(Zend_Measure_Temperature::KELVIN, 0));
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Measure_TemperatureTest::main') {
-    Zend_Measure_TemperatureTest::main();
 }

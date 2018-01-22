@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_File_Transfer_Adapter_HttpTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_File_Transfer_Adapter_HttpTest::main");
-}
-
 require_once 'Zend/File/Transfer/Adapter/Http.php';
 require_once 'Zend/Filter/BaseName.php';
 require_once 'Zend/Filter/StringToLower.php';
@@ -45,17 +40,6 @@ require_once 'Zend/Validate/File/Upload.php';
  */
 class Zend_File_Transfer_Adapter_HttpTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_File_Transfer_Adapter_HttpTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -355,9 +339,4 @@ class Zend_File_Transfer_Adapter_HttpTest_MockAdapter extends Zend_File_Transfer
         self::$_callbackApc = null;
         self::$_callbackUploadProgress = array('Zend_File_Transfer_Adapter_HttpTest_MockAdapter', 'uPTest');
     }
-}
-
-// Call Zend_File_Transfer_Adapter_HttpTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_File_Transfer_Adapter_HttpTest::main") {
-    Zend_File_Transfer_Adapter_HttpTest::main();
 }

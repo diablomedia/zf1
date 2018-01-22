@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Application_Bootstrap_BootstrapTest::main');
-}
-
 /**
  * Zend_Loader_Autoloader
  */
@@ -39,12 +35,6 @@ require_once 'Zend/Loader/Autoloader.php';
  */
 class Zend_Application_Bootstrap_BootstrapTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         // Store original autoloaders
@@ -208,8 +198,4 @@ class Zend_Application_Bootstrap_BootstrapTest extends PHPUnit_Framework_TestCas
         $result = $this->bootstrap->run();
         $this->assertTrue($result instanceof Zend_Controller_Response_Abstract);
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Application_Bootstrap_BootstrapTest::main') {
-    Zend_Application_Bootstrap_BootstrapTest::main();
 }

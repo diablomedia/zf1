@@ -108,8 +108,6 @@ class InstanceWindowsTest extends PHPUnit_Framework_TestCase
 
         $return = $this->Zend_Service_Amazon_Ec2_Instance_Windows->bundle('i-12345678', 'my-bucket', 'my-new-image');
 
-        print_r($return);
-
         $arrReturn = array(
                 "instanceId" => "i-12345678",
                 "bundleId" => "bun-cla322b9",
@@ -244,4 +242,3 @@ class InstanceWindowsTest extends PHPUnit_Framework_TestCase
     }
 
 }
-

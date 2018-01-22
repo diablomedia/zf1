@@ -40,17 +40,6 @@ require_once 'Zend/Translate/Plural.php';
  */
 class Zend_TranslateTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_TranslateTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         if (Zend_Translate::hasCache()) {
@@ -924,9 +913,4 @@ class Zend_TranslateTest extends PHPUnit_Framework_TestCase
     public function customPlural($number) {
         return 1;
     }
-}
-
-// Call Zend_TranslateTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_TranslateTest::main") {
-    Zend_TranslateTest::main();
 }

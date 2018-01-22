@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_FormErrorsTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_View_Helper_FormErrorsTest::main");
-}
-
 require_once 'Zend/View/Helper/FormErrors.php';
 require_once 'Zend/View.php';
 
@@ -41,18 +36,6 @@ require_once 'Zend/View.php';
  */
 class Zend_View_Helper_FormErrorsTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_View_Helper_FormErrorsTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -190,9 +173,4 @@ class Zend_View_Helper_FormErrorsTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals('<p>foo<br>bar<br>baz</p>', $actual);
     }
-}
-
-// Call Zend_View_Helper_FormErrorsTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_View_Helper_FormErrorsTest::main") {
-    Zend_View_Helper_FormErrorsTest::main();
 }

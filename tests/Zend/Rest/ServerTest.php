@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Rest_ServerTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Rest_ServerTest::main");
-}
-
 /**
  * Zend_Rest_Server
  */
@@ -43,18 +38,6 @@ require_once 'Zend/Rest/Server.php';
  */
 class Zend_Rest_ServerTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Rest_ServerTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         if (isset($this->request)) {
@@ -898,8 +881,3 @@ class Zend_Rest_Server_Test2
 }
 
 class Zend_Rest_TestException extends Exception { }
-
-// Call Zend_Rest_ServerTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Rest_ServerTest::main") {
-    Zend_Rest_ServerTest::main();
-}

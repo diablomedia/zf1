@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Form_Element_CaptchaTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Form_Element_CaptchaTest::main");
-}
-
 /** Zend_Form_Element_Captcha */
 require_once 'Zend/Form/Element/Captcha.php';
 
@@ -44,13 +39,6 @@ require_once 'Zend/Captcha/ReCaptcha.php';
  */
 class Zend_Form_Element_CaptchaTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite('Zend_Form_Element_CaptchaTest');
-        PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         $this->element = new Zend_Form_Element_Captcha(
@@ -196,7 +184,7 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit_Framework_TestCase
     {
         $this->assertSame($this->element, $this->element->loadDefaultDecorators());
     }
-    
+
     /**
      * @group ZF-11609
      */
@@ -205,7 +193,7 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit_Framework_TestCase
         /**
          * Dumb captcha
          */
-        
+
         // Before rendering
         $decorators = array_keys($this->element->getDecorators());
         $this->assertSame(
@@ -218,9 +206,9 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit_Framework_TestCase
             $decorators,
             var_export($decorators, true)
         );
-        
+
         $this->element->render();
-        
+
         // After rendering
         $decorators = array_keys($this->element->getDecorators());
         $this->assertSame(
@@ -235,14 +223,14 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit_Framework_TestCase
             $decorators,
             var_export($decorators, true)
         );
-   
+
         /**
          * ReCaptcha
          */
-        
+
         // Reset element
         $this->setUp();
-        
+
         $options = array(
             'privKey' => 'privateKey',
             'pubKey'  => 'publicKey',
@@ -250,7 +238,7 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit_Framework_TestCase
             'xhtml'   => true,
         );
         $this->element->setCaptcha(new Zend_Captcha_ReCaptcha($options));
-        
+
         // Before rendering
         $decorators = array_keys($this->element->getDecorators());
         $this->assertSame(
@@ -263,9 +251,9 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit_Framework_TestCase
             $decorators,
             var_export($decorators, true)
         );
-        
+
         $this->element->render();
-        
+
         // After rendering
         $decorators = array_keys($this->element->getDecorators());
         $this->assertSame(
@@ -280,7 +268,7 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit_Framework_TestCase
             var_export($decorators, true)
         );
     }
-    
+
     /**
      * @group ZF-11609
      */
@@ -296,18 +284,18 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit_Framework_TestCase
                 'disableLoadDefaultDecorators' => true,
             )
         );
-        
+
         // Before rendering
         $decorators = $element->getDecorators();
         $this->assertTrue(empty($decorators));
-        
+
         $element->render();
-        
+
         // After rendering
         $decorators = $element->getDecorators();
         $this->assertTrue(empty($decorators));
     }
-    
+
     /**
      * @group ZF-11609
      */
@@ -331,7 +319,7 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit_Framework_TestCase
                 ),
             )
         );
-        
+
         // Before rendering
         $decorators = array_keys($element->getDecorators());
         $this->assertSame(
@@ -345,9 +333,9 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit_Framework_TestCase
             $decorators,
             var_export($decorators, true)
         );
-        
+
         $element->render();
-        
+
         // After rendering
         $decorators = array_keys($element->getDecorators());
         $this->assertSame(
@@ -361,7 +349,7 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit_Framework_TestCase
             $decorators,
             var_export($decorators, true)
         );
-        
+
         // Disable default decorators is false
         $element = new Zend_Form_Element_Captcha(
             'foo',
@@ -379,7 +367,7 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit_Framework_TestCase
                 ),
             )
         );
-        
+
         // Before rendering
         $decorators = array_keys($element->getDecorators());
         $this->assertSame(
@@ -393,9 +381,9 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit_Framework_TestCase
             $decorators,
             var_export($decorators, true)
         );
-        
+
         $element->render();
-        
+
         // After rendering
         $decorators = array_keys($element->getDecorators());
         $this->assertSame(
@@ -410,7 +398,7 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit_Framework_TestCase
             var_export($decorators, true)
         );
     }
-    
+
     /**
      * @group ZF-12173
      */
@@ -425,7 +413,7 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit_Framework_TestCase
         $paths  = $loader->getPaths('My\Captcha');
         $this->assertTrue(is_array($paths));
     }
-    
+
     /**
      * @group ZF-12173
      */
@@ -491,9 +479,4 @@ class Zend_Form_Element_CaptchaTest_SessionContainer
             default:
         }
     }
-}
-
-// Call Zend_Form_Element_CaptchaTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Form_Element_CaptchaTest::main") {
-    Zend_Form_Element_CaptchaTest::main();
 }

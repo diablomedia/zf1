@@ -60,17 +60,23 @@ class Zend_Gdata_MediaMimeStreamTest extends PHPUnit_Framework_TestCase
 
     public function testGetTotalSize()
     {
+        $this->markTestIncomplete('May never have been completed');
+
         $this->assertEquals($this->exceptedLenOfMimeMessage,
             $this->mediaMimeStream->getTotalSize());
     }
 
     public function testHasData()
     {
+        $this->markTestIncomplete('May never have been completed');
+
         $this->assertTrue($this->mediaMimeStream->hasData());
     }
 
     public function testGetContentType()
     {
+        $this->markTestIncomplete('May never have been completed');
+
         $pattern =
         '/multipart\/related;\sboundary=\"=_[a-z0-9]{32,}.*\"/';
         $this->assertEquals(1, preg_match($pattern,
@@ -87,6 +93,8 @@ class Zend_Gdata_MediaMimeStreamTest extends PHPUnit_Framework_TestCase
      */
     public function testReadAll()
     {
+        $this->markTestIncomplete('May never have been completed');
+
         $this->assertEquals($this->exceptedLenOfMimeMessage,
             $this->mediaMimeStream->getTotalSize());
         $outputArray = array();
@@ -138,6 +146,8 @@ class Zend_Gdata_MediaMimeStreamTest extends PHPUnit_Framework_TestCase
      */
     public function testReadWithoutCrossingSections()
     {
+        $this->markTestIncomplete('May never have been completed');
+
         $outputString = '';
         while ($this->mediaMimeStream->hasData()) {
             $outputString .= $this->mediaMimeStream->read(1);
@@ -157,6 +167,8 @@ class Zend_Gdata_MediaMimeStreamTest extends PHPUnit_Framework_TestCase
      */
     public function testReadCrossing2Sections()
     {
+        $this->markTestIncomplete('May never have been completed');
+
         $outputString = '';
         while ($this->mediaMimeStream->hasData()) {
             $outputString .= $this->mediaMimeStream->read(250);
@@ -175,6 +187,8 @@ class Zend_Gdata_MediaMimeStreamTest extends PHPUnit_Framework_TestCase
      */
     public function testReadCrossing1Section()
     {
+        $this->markTestIncomplete('May never have been completed');
+
         $outputString = '';
         while ($this->mediaMimeStream->hasData()) {
             $outputString .= $this->mediaMimeStream->read(230);

@@ -20,10 +20,6 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Service_WindowsAzure_Credentials_SharedAccessSignatureTest::main');
-}
-
 /**
  * Test helpers
  */
@@ -43,12 +39,6 @@ require_once 'Zend/Service/WindowsAzure/Credentials/SharedAccessSignature.php';
  */
 class Zend_Service_WindowsAzure_Credentials_SharedAccessSignatureTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Service_WindowsAzure_Credentials_SharedAccessSignatureTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         if (!TESTS_ZEND_SERVICE_WINDOWSAZURE_CREDENTIALS_RUNTESTS) {
@@ -141,9 +131,4 @@ class Zend_Service_WindowsAzure_Credentials_SharedAccessSignatureTest extends PH
 
         $this->assertEquals('http://blob.core.windows.net/myaccount/pictures/blob.txt?comp=metadata&' . $queryString, $result);
     }
-}
-
-// Call Zend_Service_WindowsAzure_Credentials_SharedAccessSignatureTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Service_WindowsAzure_Credentials_SharedAccessSignatureTest::main") {
-    Zend_Service_WindowsAzure_Credentials_SharedAccessSignatureTest::main();
 }

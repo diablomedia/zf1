@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_VersionTest::main');
-}
-
 /**
  * @see Zend_Version
  */
@@ -39,12 +35,6 @@ require_once 'Zend/Version.php';
  */
 class Zend_VersionTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Tests that version_compare() and its "proxy"
      * Zend_Version::compareVersion() work as expected.
@@ -103,8 +93,4 @@ class Zend_VersionTest extends PHPUnit_Framework_TestCase
 
         $this->assertRegExp('/^[1-2](\.[0-9]+){2}/', $actual);
     }
-}
-
-if (PHPUnit_MAIN_METHOD == "Zend_VersionTest::main") {
-    Zend_VersionTest::main();
 }

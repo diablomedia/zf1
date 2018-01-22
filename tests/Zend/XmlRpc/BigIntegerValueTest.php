@@ -177,8 +177,3 @@ class Zend_XmlRpc_BigIntegerValueTest extends PHPUnit_Framework_TestCase
         return $xml . "\n";
     }
 }
-
-// Call Zend_XmlRpc_ValueTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_XmlRpc_BigIntegerValueTest::main") {
-    Zend_XmlRpc_ValueTest::main();
-}

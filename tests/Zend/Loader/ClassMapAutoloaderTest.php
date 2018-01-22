@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Loader_ClassMapAutoloaderTest::main');
-}
-
 require_once 'Zend/Loader/ClassMapAutoloader.php';
 
 /**
@@ -36,12 +32,6 @@ require_once 'Zend/Loader/ClassMapAutoloader.php';
  */
 class Zend_Loader_ClassMapAutoloaderTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         // Store original autoloaders
@@ -115,7 +105,7 @@ class Zend_Loader_ClassMapAutoloaderTest extends PHPUnit_Framework_TestCase
         $map = $this->loader->getAutoloadMap();
         $this->assertTrue(is_array($map));
         $this->assertEquals(2, count($map));
-        // Just to make sure nothing changes after loading the same map again 
+        // Just to make sure nothing changes after loading the same map again
         // (loadMapFromFile should just return)
         $this->loader->registerAutoloadMap(dirname(__FILE__) . '/_files/goodmap.php');
         $map = $this->loader->getAutoloadMap();
@@ -225,8 +215,4 @@ class Zend_Loader_ClassMapAutoloaderTest extends PHPUnit_Framework_TestCase
         $this->loader->autoload('some\namespacedclass');
         $this->assertTrue(class_exists('some\namespacedclass', false));
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Loader_ClassMapAutoloaderTest::main') {
-    Zend_Loader_ClassMapAutoloaderTest::main();
 }

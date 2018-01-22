@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_LoaderTest::main() if this source file is executed directly.
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_LoaderTest::main');
-}
-
 /**
  * Zend_Loader
  */
@@ -45,18 +40,6 @@ require_once 'Zend/Loader/Autoloader.php';
  */
 class Zend_LoaderTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_LoaderTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         // Store original autoloaders
@@ -542,9 +525,4 @@ class Zend_LoaderTest extends PHPUnit_Framework_TestCase
         $path = 'C:/this/file/should/not/exist.php';
         $this->assertFalse(Zend_Loader::isReadable($path));
     }
-}
-
-// Call Zend_LoaderTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD === 'Zend_LoaderTest::main') {
-    Zend_LoaderTest::main();
 }

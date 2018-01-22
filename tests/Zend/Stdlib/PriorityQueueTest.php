@@ -19,10 +19,6 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Stdlib_PriorityQueueTest::main');
-}
-
 require_once 'Zend/Stdlib/PriorityQueue.php';
 
 /**
@@ -35,12 +31,6 @@ require_once 'Zend/Stdlib/PriorityQueue.php';
  */
 class Zend_Stdlib_PriorityQueueTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         $this->queue = new Zend_Stdlib_PriorityQueue();
@@ -139,8 +129,4 @@ class Zend_Stdlib_PriorityQueueTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($this->queue->hasPriority(3));
         $this->assertFalse($this->queue->hasPriority(1000));
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Stdlib_PriorityQueueTest::main') {
-    Zend_Stdlib_PriorityQueueTest::main();
 }

@@ -19,12 +19,6 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-
-// Call Zend_Cloud_Document_Adapter_WindowsAzureTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Cloud_DocumentService_Adapter_WindowsAzureTest::main");
-}
-
 /**
  * @see Zend_Cloud_DocumentServiceTestCase
  */
@@ -62,18 +56,6 @@ class Zend_Cloud_DocumentService_Adapter_WindowsAzureTest
     protected $_waitPeriod = 10;
 
     protected $_clientType = 'Zend_Service_WindowsAzure_Storage_Table';
-
-	/**
-     * Runs the test methods of this class.
-     *
-     * @access public
-     * @static
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     public function testQueryStructOrder()
     {
@@ -155,8 +137,4 @@ class Zend_Cloud_DocumentService_Adapter_WindowsAzureTest
         $k2 = $s2[1];
         return "RowKey eq '$k1' or RowKey eq '$k2'";
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Cloud_DocumentService_Adapter_WindowsAzureTest::main') {
-    Zend_Cloud_DocumentService_Adapter_WindowsAzureTest::main();
 }

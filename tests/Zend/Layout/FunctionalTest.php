@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Layout_FunctionalTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Layout_FunctionalTest::main");
-}
-
 require_once 'Zend/Test/PHPUnit/ControllerTestCase.php';
 
 require_once 'Zend/Controller/Plugin/ErrorHandler.php';
@@ -39,18 +34,6 @@ require_once 'Zend/Controller/Plugin/ErrorHandler.php';
  */
 class Zend_Layout_FunctionalTest extends Zend_Test_PHPUnit_ControllerTestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         $this->bootstrap = array($this, 'appBootstrap');
@@ -85,9 +68,4 @@ class Zend_Layout_FunctionalTest extends Zend_Test_PHPUnit_ControllerTestCase
         $this->assertEquals(trim($this->response->getBody()), "[DEFAULT_LAYOUT_START]\n[DEFAULT_LAYOUT_START]\n[DEFAULT_LAYOUT_END]\n(ErrorController::errorAction output)[DEFAULT_LAYOUT_END]");
     }
 
-}
-
-// Call Zend_Layout_FunctionalTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Layout_FunctionalTest::main") {
-    Zend_Layout_FunctionalTest::main();
 }

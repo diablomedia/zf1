@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_View_Helper_Placeholder_Container_AbstractTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_View_Helper_Placeholder_ContainerTest::main");
-}
-
 /** Zend_View_Helper_Placeholder_Container */
 require_once 'Zend/View/Helper/Placeholder/Container.php';
 
@@ -45,18 +40,6 @@ class Zend_View_Helper_Placeholder_ContainerTest extends PHPUnit_Framework_TestC
      * @var Zend_View_Helper_Placeholder_Container
      */
     public $container;
-
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_View_Helper_Placeholder_ContainerTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -462,9 +445,4 @@ class Zend_View_Helper_Placeholder_ContainerTest extends PHPUnit_Framework_TestC
         $this->container->setPrefix('</li></ul>');
         $this->assertEquals('', (string) $this->container);
     }
-}
-
-// Call Zend_View_Helper_Placeholder_ContainerTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_View_Helper_Placeholder_ContainerTest::main") {
-    Zend_View_Helper_Placeholder_ContainerTest::main();
 }

@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Controller_Action_Helper_RedirectorTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Controller_Action_Helper_RedirectorTest::main");
-}
-
 require_once 'Zend/Controller/Front.php';
 require_once 'Zend/Controller/Action.php';
 require_once 'Zend/Controller/Action/HelperBroker.php';
@@ -65,16 +60,6 @@ class Zend_Controller_Action_Helper_RedirectorTest extends PHPUnit_Framework_Tes
      * @var Zend_Controller_Action
      */
     public $controller;
-
-    /**
-     * Runs the test methods of this class.
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Controller_Action_Helper_RedirectorTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     /**
      * Set up redirector
@@ -575,11 +560,3 @@ class Zend_Controller_Action_Helper_RedirectorTest extends PHPUnit_Framework_Tes
 class Zend_Controller_Action_Helper_Redirector_TestController extends Zend_Controller_Action
 {
 }
-
-// Call Zend_Controller_Action_Helper_RedirectorTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Controller_Action_Helper_RedirectorTest::main") {
-    Zend_Controller_Action_Helper_RedirectorTest::main();
-}
-
-
-

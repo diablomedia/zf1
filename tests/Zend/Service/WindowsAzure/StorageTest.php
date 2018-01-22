@@ -20,10 +20,6 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Service_WindowsAzure_StorageTest::main');
-}
-
 /**
  * Test helpers
  */
@@ -43,12 +39,6 @@ require_once 'Zend/Service/WindowsAzure/Storage.php';
  */
 class Zend_Service_WindowsAzure_StorageTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Service_WindowsAzure_BlobStorageTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Test constructor for devstore
      */
@@ -57,7 +47,7 @@ class Zend_Service_WindowsAzure_StorageTest extends PHPUnit_Framework_TestCase
         $storage = new Zend_Service_WindowsAzure_Storage();
         $this->assertEquals('http://127.0.0.1:10000/devstoreaccount1', $storage->getBaseUrl());
     }
-    
+
     /**
      * Test constructor for production
      */
@@ -66,9 +56,4 @@ class Zend_Service_WindowsAzure_StorageTest extends PHPUnit_Framework_TestCase
         $storage = new Zend_Service_WindowsAzure_Storage(Zend_Service_WindowsAzure_Storage::URL_CLOUD_BLOB, 'testing', '');
         $this->assertEquals('http://testing.blob.core.windows.net', $storage->getBaseUrl());
     }
-}
-
-// Call Zend_Service_WindowsAzure_StorageTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Service_WindowsAzure_StorageTest::main") {
-    Zend_Service_WindowsAzure_StorageTest::main();
 }

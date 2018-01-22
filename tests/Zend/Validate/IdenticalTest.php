@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Validate_IdenticalTest::main() if this source file is executed directly.
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Validate_IdenticalTest::main');
-}
-
 /** Zend_Validate_Identical */
 require_once 'Zend/Validate/Identical.php';
 
@@ -45,12 +40,6 @@ class Zend_Validate_IdenticalTest extends PHPUnit_Framework_TestCase
      * @var Zend_Validate_Identical
      */
     private $validator;
-
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite('Zend_Validate_IdenticalTest');
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     public function setUp()
     {
@@ -144,9 +133,4 @@ class Zend_Validate_IdenticalTest extends PHPUnit_Framework_TestCase
         $validator->setStrict(true);
         $this->assertFalse($validator->isValid(array('token' => '123')));
     }
-}
-
-// Call Zend_Validate_IdenticalTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == 'Zend_Validate_IdenticalTest::main') {
-    Zend_Validate_IdenticalTest::main();
 }

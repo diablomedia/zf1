@@ -20,12 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Form_Element_MultiselectTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Form_Element_MultiselectTest::main");
-}
-
-
 require_once 'Zend/Form/Element/Multiselect.php';
 require_once 'Zend/Translate.php';
 
@@ -41,17 +35,6 @@ require_once 'Zend/Translate.php';
  */
 class Zend_Form_Element_MultiselectTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Form_Element_MultiselectTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * @var Zend_Form_Element_Multiselect
      */
@@ -376,9 +359,4 @@ class Zend_Form_Element_MultiselectTest extends PHPUnit_Framework_TestCase
             $this->element->getMessages()
         );
     }
-}
-
-// Call Zend_Form_Element_MultiselectTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Form_Element_MultiselectTest::main") {
-    Zend_Form_Element_MultiselectTest::main();
 }

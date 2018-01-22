@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Application_Resource_ModulesTest::main');
-}
-
 /**
  * Zend_Loader_Autoloader
  */
@@ -39,12 +35,6 @@ require_once 'Zend/Loader/Autoloader.php';
  */
 class Zend_Application_Resource_ModulesTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         // Store original autoloaders
@@ -169,7 +159,7 @@ class Zend_Application_Resource_ModulesTest extends PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('foo',     (array)$bootstraps);
         $this->assertArrayHasKey('default', (array)$bootstraps);
     }
-    
+
     public function testBootstrapBootstrapsIsOwnMethod()
     {
         require_once 'Zend/Application/Resource/Modules.php';
@@ -203,15 +193,11 @@ class Zend_Application_Resource_ModulesTest extends PHPUnit_Framework_TestCase
 
 require_once 'Zend/Application/Resource/Modules.php';
 class ZendTest_Application_Resource_ModulesHalf
-    extends Zend_Application_Resource_Modules 
+    extends Zend_Application_Resource_Modules
 {
     protected function bootstrapBootstraps($bootstraps)
     {
         array_pop($bootstraps);
         return parent::bootstrapBootstraps($bootstraps);
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Application_Resource_ModulesTest::main') {
-    Zend_Application_Resource_ModulesTest::main();
 }

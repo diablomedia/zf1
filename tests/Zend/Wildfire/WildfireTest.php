@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Wildfire_WildfireTest::main');
-}
-
 /** Zend_Wildfire_Channel_HttpHeaders */
 require_once 'Zend/Wildfire/Channel/HttpHeaders.php';
 
@@ -68,18 +64,6 @@ class Zend_Wildfire_WildfireTest extends PHPUnit_Framework_TestCase
     protected $_controller = null;
     protected $_request = null;
     protected $_response = null;
-
-    /**
-     * Runs the test methods of this class.
-     *
-     * @access public
-     * @static
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Wildfire_WildfireTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     public function setUp()
     {
@@ -609,7 +593,7 @@ class Zend_Wildfire_WildfireTest extends PHPUnit_Framework_TestCase
     public function testMessageGroupsWithCollapsedTrueOption()
     {
         $this->_setupWithFrontController();
- 
+
         Zend_Wildfire_Plugin_FirePhp::group('Test Group', array('Collapsed' => true));
         Zend_Wildfire_Plugin_FirePhp::send('Test Message');
         Zend_Wildfire_Plugin_FirePhp::groupEnd();
@@ -633,7 +617,7 @@ class Zend_Wildfire_WildfireTest extends PHPUnit_Framework_TestCase
     public function testMessageGroupsWithCollapsedFalseOption()
     {
         $this->_setupWithFrontController();
- 
+
         Zend_Wildfire_Plugin_FirePhp::group('Test Group', array('Collapsed' => false));
         Zend_Wildfire_Plugin_FirePhp::send('Test Message');
         Zend_Wildfire_Plugin_FirePhp::groupEnd();
@@ -1203,8 +1187,4 @@ class Zend_Wildfire_WildfireTest_Response extends Zend_Controller_Response_HttpT
         return true;
     }
 
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Wildfire_WildfireTest::main') {
-    Zend_Wildfire_WildfireTest::main();
 }

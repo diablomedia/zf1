@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Validate_File_Crc32Test::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Validate_File_Crc32Test::main");
-}
-
 /**
  * @see Zend_Validate_File_Crc32
  */
@@ -42,17 +37,6 @@ require_once 'Zend/Validate/File/Crc32.php';
  */
 class Zend_Validate_File_Crc32Test extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Validate_File_Crc32Test");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Ensures that the validator follows expected behavior
      *
@@ -200,9 +184,4 @@ class Zend_Validate_File_Crc32Test extends PHPUnit_Framework_TestCase
         $validator->addHash(array('12321', '12121'));
         $this->assertEquals(array('12345' => 'crc32', '12344' => 'crc32', '12321' => 'crc32', '12121' => 'crc32'), $validator->getCrc32());
     }
-}
-
-// Call Zend_Validate_File_Crc32Test::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Validate_File_Crc32Test::main") {
-    Zend_Validate_File_Crc32Test::main();
 }

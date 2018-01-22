@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Log_Formatter_XmlTest::main');
-}
-
 /** Zend_Log_Formatter_Xml */
 require_once 'Zend/Log/Formatter/Xml.php';
 
@@ -37,12 +33,6 @@ require_once 'Zend/Log/Formatter/Xml.php';
  */
 class Zend_Log_Formatter_XmlTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function testDefaultFormat()
     {
         $f = new Zend_Log_Formatter_Xml();
@@ -137,7 +127,7 @@ class Zend_Log_Formatter_XmlTest extends PHPUnit_Framework_TestCase
         $formatter = Zend_Log_Formatter_Xml::factory($options);
         $this->assertTrue($formatter instanceof Zend_Log_Formatter_Xml);
     }
-    
+
     /**
      * @group ZF-11161
      */
@@ -158,7 +148,7 @@ class Zend_Log_Formatter_XmlTest extends PHPUnit_Framework_TestCase
         $output = $formatter->format($event);
         $this->assertContains($expected, $output);
     }
-    
+
     /**
      * @group ZF-11161
      */
@@ -187,8 +177,4 @@ class Zend_Log_Formatter_XmlTest_SerializableObject
     {
         return __CLASS__;
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Log_Formatter_XmlTest::main') {
-    Zend_Log_Formatter_XmlTest::main();
 }

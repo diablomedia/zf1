@@ -20,10 +20,6 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Service_WindowsAzure_Diagnostics_ManagerTest::main');
-}
-
 /**
  * Test helpers
  */
@@ -49,12 +45,6 @@ require_once 'Zend/Service/WindowsAzure/Diagnostics/ConfigurationInstance.php';
  */
 class Zend_Service_WindowsAzure_Diagnostics_ManagerTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Service_WindowsAzure_Diagnostics_ManagerTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         if (!TESTS_ZEND_SERVICE_WINDOWSAZURE_DIAGNOSTICS_RUNTESTS) {
@@ -190,9 +180,4 @@ class Zend_Service_WindowsAzure_Diagnostics_ManagerTest extends PHPUnit_Framewor
             $this->assertTrue($result);
     	}
     }
-}
-
-// Call Zend_Service_WindowsAzure_Credentials_SharedKeyTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Service_WindowsAzure_Diagnostics_ManagerTest::main") {
-    Zend_Service_WindowsAzure_Diagnostics_ManagerTest::main();
 }

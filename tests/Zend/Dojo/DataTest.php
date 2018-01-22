@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Dojo_DataTest::main');
-}
-
 require_once 'Zend/Dojo/Data.php';
 
 /**
@@ -37,12 +33,6 @@ require_once 'Zend/Dojo/Data.php';
 class Zend_Dojo_DataTest extends PHPUnit_Framework_TestCase
 {
     public $dojoData;
-
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Dojo_DataTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -578,8 +568,4 @@ class Zend_Dojo_DataTest_DataCollection implements Iterator
     {
         return (bool) $this->current();
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Dojo_DataTest::main') {
-    Zend_Dojo_DataTest::main();
 }

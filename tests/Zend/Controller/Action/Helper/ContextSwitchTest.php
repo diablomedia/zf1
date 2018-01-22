@@ -20,12 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Controller_Action_Helper_ContextSwitchTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Controller_Action_Helper_ContextSwitchTest::main");
-}
-
-
 require_once 'Zend/Controller/Action/Helper/ContextSwitch.php';
 
 require_once 'Zend/Config.php';
@@ -53,19 +47,6 @@ require_once 'Zend/View/Interface.php';
  */
 class Zend_Controller_Action_Helper_ContextSwitchTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @access public
-     * @static
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Controller_Action_Helper_ContextSwitchTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -998,9 +979,4 @@ class Zend_Controller_Action_Helper_ContextSwitchText_CustomView implements Zend
 
     public function render($name)
     {}
-}
-
-// Call Zend_Controller_Action_Helper_ContextSwitchTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Controller_Action_Helper_ContextSwitchTest::main") {
-    Zend_Controller_Action_Helper_ContextSwitchTest::main();
 }

@@ -315,8 +315,3 @@ class Zend_Translate_Adapter_GettextTest extends PHPUnit_Framework_TestCase
         $this->_errorOccurred = true;
     }
 }
-
-// Call Zend_Translate_Adapter_GettextTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Translate_Adapter_GettextTest::main") {
-    Zend_Translate_GettextTest::main();
-}

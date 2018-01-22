@@ -29,11 +29,6 @@ require_once 'Zend/Controller/Front.php';
 /** Zend_Controller_Request_HttpTestCase */
 require_once 'Zend/Controller/Request/HttpTestCase.php';
 
-// Call Zend_Rest_RouteTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Rest_RouteTest::main");
-}
-
 /**
  * @category   Zend
  * @package    Zend_Rest
@@ -48,19 +43,6 @@ class Zend_Rest_RouteTest extends PHPUnit_Framework_TestCase
     protected $_front;
     protected $_request;
     protected $_dispatcher;
-
-    /**
-     * Runs the test methods of this class.
-     *
-     * @access public
-     * @static
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Rest_RouteTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     public function setUp()
     {
@@ -964,9 +946,4 @@ class Zend_Rest_RouteTest extends PHPUnit_Framework_TestCase
         $values = $route->match($request);
         return $values;
     }
-}
-
-// Call Zend_Rest_RouteTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Rest_RouteTest::main") {
-    Zend_Rest_RouteTest::main();
 }

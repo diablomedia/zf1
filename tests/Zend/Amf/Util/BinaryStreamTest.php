@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Amf_Util_BinaryStreamTest::main');
-}
-
 require_once 'Zend/Amf/Util/BinaryStream.php';
 
 /**
@@ -38,17 +34,6 @@ require_once 'Zend/Amf/Util/BinaryStream.php';
  */
 class Zend_Amf_Util_BinaryStreamTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Amf_Util_BinaryStreamTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * @expectedException Zend_Amf_Exception
      */
@@ -86,8 +71,4 @@ class Zend_Amf_Util_BinaryStreamTest extends PHPUnit_Framework_TestCase
         $test = $stream->getStream();
         $this->assertContains($string, $test);
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Amf_Util_BinaryStreamTest::main') {
-    Zend_Amf_Util_BinaryStreamTest::main();
 }

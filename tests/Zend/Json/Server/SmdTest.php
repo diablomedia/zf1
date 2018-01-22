@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Json_Server_SmdTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Json_Server_SmdTest::main");
-}
-
 require_once 'Zend/Json/Server/Smd.php';
 require_once 'Zend/Json/Server/Smd/Service.php';
 require_once 'Zend/Json.php';
@@ -42,18 +37,6 @@ require_once 'Zend/Json.php';
  */
 class Zend_Json_Server_SmdTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Json_Server_SmdTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -422,9 +405,4 @@ class Zend_Json_Server_SmdTest extends PHPUnit_Framework_TestCase
         $this->assertTrue(array_key_exists('foo', $services));
         $this->assertTrue(array_key_exists('bar', $services));
     }
-}
-
-// Call Zend_Json_Server_SmdTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Json_Server_SmdTest::main") {
-    Zend_Json_Server_SmdTest::main();
 }

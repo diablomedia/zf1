@@ -20,12 +20,6 @@
  * @version    $Id$
  */
 
-
-// Call Zend_Filter_PregReplaceTest::main() if this source file is executed directly.
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Filter_PregReplaceTest::main');
-}
-
 /**
  * @see Zend_Filter_PregReplace
  */
@@ -44,17 +38,6 @@ require_once 'Zend/Filter/PregReplace.php';
  */
 class Zend_Filter_PregReplaceTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite('Zend_Filter_PregReplaceTest');
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         $this->filter = new Zend_Filter_PregReplace();
@@ -143,9 +126,4 @@ class Zend_Filter_PregReplaceTest extends PHPUnit_Framework_TestCase
 class XPregReplace extends Zend_Filter_PregReplace
 {
     protected $_matchPattern = '~(&gt;){3,}~i';
-}
-
-// Call Zend_Filter_PregReplaceTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == 'Zend_Filter_PregReplaceTest::main') {
-    Zend_Filter_PregReplaceTest::main();
 }

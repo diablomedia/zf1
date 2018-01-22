@@ -20,12 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Filter_DashToSeparatorTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Filter_Word_DashToSeparatorTest::main");
-}
-
-
 require_once 'Zend/Filter/Word/DashToSeparator.php';
 
 /**
@@ -40,19 +34,6 @@ require_once 'Zend/Filter/Word/DashToSeparator.php';
  */
 class Zend_Filter_Word_DashToSeparatorTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @access public
-     * @static
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Filter_Word_DashToSeparatorTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function testFilterSeparatesDashedWordsWithDefaultSpaces()
     {
         $string   = 'dash-separated-words';
@@ -73,9 +54,4 @@ class Zend_Filter_Word_DashToSeparatorTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('dash:-:separated:-:words', $filtered);
     }
 
-}
-
-// Call Zend_Filter_Word_DashToSeparatorTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Filter_Word_DashToSeparatorTest::main") {
-    Zend_Filter_Word_DashToSeparatorTest::main();
 }

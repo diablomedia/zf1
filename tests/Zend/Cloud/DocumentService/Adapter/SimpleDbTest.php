@@ -19,11 +19,6 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-// Call Zend_Cloud_DocumentService_Adapter_SimpleDbTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Cloud_DocumentService_Adapter_SimpleDbTest::main");
-}
-
 /**
  * @see Zend_Cloud_DocumentServiceTestCase
  */
@@ -57,18 +52,6 @@ class Zend_Cloud_DocumentService_Adapter_SimpleDbTest
     protected $_waitPeriod = 10;
 
     protected $_clientType = 'Zend_Service_Amazon_SimpleDb';
-
-	/**
-     * Runs the test methods of this class.
-     *
-     * @access public
-     * @static
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     public function testUpdateDocumentMergeAll()
     {
@@ -185,8 +168,4 @@ class Zend_Cloud_DocumentService_Adapter_SimpleDbTest
         return "select * from $domain where itemName() = '$s1' OR itemName() = '$s2'";
     }
 
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Cloud_DocumentService_Adapter_SimpleDbTest::main') {
-    Zend_Cloud_DocumentService_Adapter_SimpleDbTest::main();
 }

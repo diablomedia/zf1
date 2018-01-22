@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Amf_Response_HttpTest::main');
-}
-
 /**
  * @see Zend_Amf_Response_Http
  */
@@ -42,18 +38,6 @@ require_once 'Zend/Amf/Response/Http.php';
  */
 class Zend_Amf_Response_HttpTest extends PHPUnit_Framework_TestCase
 {
-    
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Amf_Response_HttpTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-    
     /**
      * Ensure isIeOverSsl() does not emit a notice when $_SERVER['HTTPS'] not set
      * @group ZF-11783
@@ -77,10 +61,3 @@ class ZF11783_ExposeIsIeOverSsl extends Zend_Amf_Response_Http
         return parent::isIeOverSsl();
     }
 }
-
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Amf_Response_HttpTest::main') {
-    Zend_Amf_Response_HttpTest::main();
-}
-
-

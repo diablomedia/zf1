@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Dom_QueryTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Dom_QueryTest::main");
-}
-
 /** Zend_Dom_Query */
 require_once 'Zend/Dom/Query.php';
 
@@ -41,17 +36,6 @@ require_once 'Zend/Dom/Query.php';
 class Zend_Dom_QueryTest extends PHPUnit_Framework_TestCase
 {
     public $html;
-
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Dom_QueryTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -329,7 +313,7 @@ EOF;
         $this->assertTrue($doc instanceof DOMDocument);
         $this->assertEquals('utf-8', $doc->encoding);
     }
-    
+
     /**
      * @group ZF-11376
      */
@@ -345,7 +329,7 @@ EOB;
         $this->query->setDocument($xhtmlWithXmlDecl, 'utf-8');
         $this->assertEquals(1, $this->query->query('//p')->count());
     }
-    
+
     /**
      * @group ZF-12106
      */
@@ -353,7 +337,7 @@ EOB;
     {
         $xhtmlWithXmlDecl = <<<EOB
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html 
+<!DOCTYPE html
      PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -382,9 +366,4 @@ XML;
         $this->setExpectedException("Zend_Dom_Exception");
         $this->query->queryXpath('/');
     }
-}
-
-// Call Zend_Dom_QueryTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Dom_QueryTest::main") {
-    Zend_Dom_QueryTest::main();
 }

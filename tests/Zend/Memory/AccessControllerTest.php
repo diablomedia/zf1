@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Memory_AccessControllerTest::main');
-}
-
 /** Zend_Memory */
 require_once 'Zend/Memory.php';
 
@@ -43,12 +39,6 @@ class Zend_Memory_Container_AccessControllerTest extends PHPUnit_Framework_TestC
      * @var Zend_Memory_Manager
      */
     private $_memoryManager = null;
-
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     public function setUp()
     {
@@ -154,8 +144,4 @@ class Zend_Memory_Container_AccessControllerTest extends PHPUnit_Framework_TestC
         $memObject->unlock();
         $this->assertFalse((boolean)$memObject->isLocked());
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Memory_AccessControllerTest::main') {
-    Zend_Memory_AccessControllerTest::main();
 }

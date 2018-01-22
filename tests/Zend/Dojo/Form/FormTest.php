@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Dojo_Form_FormTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Dojo_Form_FormTest::main");
-}
-
 /** Zend_Dojo_Form */
 require_once 'Zend/Dojo/Form.php';
 
@@ -44,17 +39,6 @@ require_once 'Zend/View.php';
  */
 class Zend_Dojo_Form_FormTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Dojo_Form_FormTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -138,9 +122,4 @@ class Zend_Dojo_Form_FormTest extends PHPUnit_Framework_TestCase
         $decorator = $this->form->getDecorator('HtmlTag');
         $this->assertEquals('zend_form_dojo', $decorator->getOption('class'));
     }
-}
-
-// Call Zend_Dojo_Form_FormTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Dojo_Form_FormTest::main") {
-    Zend_Dojo_Form_FormTest::main();
 }

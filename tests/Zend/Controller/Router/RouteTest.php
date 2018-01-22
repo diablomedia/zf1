@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Controller_Router_RouteTest::main');
-}
-
 /** @see Zend_Controller_Request_Http */
 require_once 'Zend/Controller/Request/Http.php';
 
@@ -795,8 +791,4 @@ class Zend_Controller_Router_RouteTest extends PHPUnit_Framework_TestCase
         $values = $route->match(':foo/@bar/en_foo');
         $this->assertEquals($values['myvar'], 'foo');
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Controller_Router_RouteTests::main') {
-    Zend_Controller_Router_RouteTests::main();
 }

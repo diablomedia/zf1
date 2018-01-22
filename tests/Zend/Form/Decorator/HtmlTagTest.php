@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Form_Decorator_HtmlTagTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Form_Decorator_HtmlTagTest::main");
-}
-
 require_once 'Zend/Form/Decorator/HtmlTag.php';
 
 require_once 'Zend/Form/Element.php';
@@ -42,18 +37,6 @@ require_once 'Zend/View.php';
  */
 class Zend_Form_Decorator_HtmlTagTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Form_Decorator_HtmlTagTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -234,9 +217,4 @@ class Zend_Form_Decorator_HtmlTagTest extends PHPUnit_Framework_TestCase
         $this->decorator->setOption('tag', 'dl');
         $this->assertEquals('dl', $this->decorator->getTag());
     }
-}
-
-// Call Zend_Form_Decorator_HtmlTagTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Form_Decorator_HtmlTagTest::main") {
-    Zend_Form_Decorator_HtmlTagTest::main();
 }

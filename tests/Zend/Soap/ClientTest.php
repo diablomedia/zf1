@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Soap_ClientTest::main');
-}
-
 /** Zend_Soap_Server */
 require_once 'Zend/Soap/Server.php';
 
@@ -42,17 +38,6 @@ require_once 'Zend/Config.php';
  */
 class Zend_Soap_ClientTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs this test suite
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         if (!extension_loaded('soap')) {
@@ -702,8 +687,4 @@ function Zend_Soap_Client_TestFunc5()
 function Zend_Soap_Client_TestFunc6()
 {
     return "string";
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Soap_ClientTest::main') {
-    Zend_Soap_ClientTest::main();
 }

@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Tag_Cloud_Decorator_HtmlCloudTest::main');
-}
-
 require_once 'Zend/Config.php';
 require_once 'Zend/Tag/Cloud/Decorator/HtmlCloud.php';
 
@@ -38,12 +34,6 @@ require_once 'Zend/Tag/Cloud/Decorator/HtmlCloud.php';
  */
 class Zend_Tag_Cloud_Decorator_HtmlCloudTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function testDefaultOutput()
     {
         $decorator = new Zend_Tag_Cloud_Decorator_HtmlCloud();
@@ -95,10 +85,3 @@ class Zend_Tag_Cloud_Decorator_HtmlCloudTest extends PHPUnit_Framework_TestCase
         // In case would fail due to an error
     }
 }
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Tag_Cloud_Decorator_HtmlCloudTest::main') {
-    Zend_Tag_Cloud_Decorator_HtmlCloudTest::main();
-}
-/**
- *
- */

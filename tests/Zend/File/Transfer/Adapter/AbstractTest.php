@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_File_Transfer_Adapter_AbstractTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_File_Transfer_Adapter_AbstractTest::main");
-}
-
 require_once 'Zend/File/Transfer/Adapter/Abstract.php';
 require_once 'Zend/Filter/BaseName.php';
 require_once 'Zend/Filter/StringToLower.php';
@@ -49,17 +44,6 @@ class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit_Framework_TestCase
      * @var Zend_File_Transfer_Adapter_AbstractTest_MockAdapter
      */
     protected $adapter;
-
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_File_Transfer_Adapter_AbstractTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -1018,9 +1002,4 @@ class Zend_File_Transfer_Adapter_AbstractTest_MockAdapter extends Zend_File_Tran
             )
         );
     }
-}
-
-// Call Zend_File_Transfer_Adapter_AbstractTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_File_Transfer_Adapter_AbstractTest::main") {
-    Zend_File_Transfer_Adapter_AbstractTest::main();
 }

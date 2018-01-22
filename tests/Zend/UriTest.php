@@ -20,10 +20,6 @@
  * @version    $Id $
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_UriTest::main');
-}
-
 /**
  * Zend_Uri
  */
@@ -44,12 +40,6 @@ require_once 'Zend/Config.php';
  */
 class Zend_UriTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_UriTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         $this->notices = array();
@@ -228,9 +218,4 @@ class Zend_Uri_ExceptionCausing extends Zend_Uri
 }
 class Fake_Zend_Uri
 {
-}
-
-// Call Zend_UriTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_UriTest::main") {
-    Zend_UriTest::main();
 }

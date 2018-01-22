@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Amf_Value_MessageHeaderTest::main');
-}
-
 require_once 'Zend/Amf/Value/MessageHeader.php';
 
 /**
@@ -38,17 +34,6 @@ require_once 'Zend/Amf/Value/MessageHeader.php';
  */
 class Zend_Amf_Value_MessageHeaderTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Amf_Value_MessageHeaderTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function testConstructorShouldSetMessageHeaderName()
     {
         $messageHeader = new Zend_Amf_Value_MessageHeader('foo', true, 'content');
@@ -91,8 +76,4 @@ class Zend_Amf_Value_MessageHeaderTest extends PHPUnit_Framework_TestCase
         $messageHeader = new Zend_Amf_Value_MessageHeader('foo', 'foo', 'content', '2');
         $this->assertSame(2, $messageHeader->length);
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Amf_Value_MessageHeaderTest::main') {
-    Zend_Amf_Value_MessageHeaderTest::main();
 }

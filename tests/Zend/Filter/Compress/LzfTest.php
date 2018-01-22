@@ -20,10 +20,6 @@
  * @version    $Id: $
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Filter_Compress_LzfTest::main');
-}
-
 /**
  * @see Zend_Filter_Compress_Lzf
  */
@@ -39,17 +35,6 @@ require_once 'Zend/Filter/Compress/Lzf.php';
  */
 class Zend_Filter_Compress_LzfTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs this test suite
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite('Zend_Filter_Compress_LzfTest');
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         if (!extension_loaded('lzf')) {
@@ -84,8 +69,4 @@ class Zend_Filter_Compress_LzfTest extends PHPUnit_Framework_TestCase
         $filter = new Zend_Filter_Compress_Lzf();
         $this->assertEquals('Lzf', $filter->toString());
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Filter_Compress_LzfTest::main') {
-    Zend_Filter_Compress_LzfTest::main();
 }

@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_ProgressBar_Adapter_jsPushTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_ProgressBar_Adapter_jsPushTest::main");
-}
-
 /**
  * Zend_ProgressBar_Adapter_JsPush
  */
@@ -40,17 +35,6 @@ require_once 'Zend/ProgressBar/Adapter/JsPush.php';
  */
 class Zend_ProgressBar_Adapter_jsPushTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_ProgressBar_Adapter_jsPushTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function testJson()
     {
         $result = array();
@@ -92,9 +76,4 @@ class Zend_ProgressBar_Adapter_jsPush_Stub extends Zend_ProgressBar_Adapter_jsPu
     {
         $this->_lastOutput = $data;
     }
-}
-
-// Call Zend_ProgressBar_Adapter_jsPushTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_ProgressBar_Adapter_jsPushTest::main") {
-    Zend_ProgressBar_Adapter_jsPushTest::main();
 }

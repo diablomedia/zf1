@@ -20,11 +20,6 @@
  * @version $Id$
  */
 
-// Call Zend_XmlRpc_Request_HttpTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_XmlRpc_Request_HttpTest::main");
-}
-
 require_once 'Zend/AllTests/StreamWrapper/PhpInput.php';
 require_once 'Zend/XmlRpc/Request/Http.php';
 
@@ -40,17 +35,6 @@ require_once 'Zend/XmlRpc/Request/Http.php';
  */
 class Zend_XmlRpc_Request_HttpTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_XmlRpc_Request_HttpTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Setup environment
      */
@@ -189,9 +173,4 @@ class Zend_XmlRpc_Request_HttpTest_Extension extends Zend_XmlRpc_Request_Http
         $this->method = $method;
         $this->params = (array) $params;
     }
-}
-
-// Call Zend_XmlRpc_Request_HttpTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_XmlRpc_Request_HttpTest::main") {
-    Zend_XmlRpc_Request_HttpTest::main();
 }

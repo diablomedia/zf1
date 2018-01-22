@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_View_Helper_FormLabelTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_View_Helper_FormLabelTest::main");
-}
-
 require_once 'Zend/View.php';
 require_once 'Zend/View/Helper/FormLabel.php';
 
@@ -42,19 +37,6 @@ require_once 'Zend/View/Helper/FormLabel.php';
  */
 class Zend_View_Helper_FormLabelTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @access public
-     * @static
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_View_Helper_FormLabelTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -140,9 +122,4 @@ class Zend_View_Helper_FormLabelTest extends PHPUnit_Framework_TestCase
         $label = $this->helper->formLabel('foo', 'bar', array('disableFor' => true));
         $this->assertNotContains('disableFor=', $label, 'Output contains disableFor attribute!');
     }
-}
-
-// Call Zend_View_Helper_FormLabelTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_View_Helper_FormLabelTest::main") {
-    Zend_View_Helper_FormLabelTest::main();
 }

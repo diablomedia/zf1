@@ -20,12 +20,6 @@
  * @version $Id$
  */
 
-// Call Zend_XmlRpc_Server_FaultTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_XmlRpc_Server_FaultTest::main");
-}
-
-
 require_once 'Zend/XmlRpc/Server.php';
 require_once 'Zend/XmlRpc/Server/Fault.php';
 require_once 'Zend/XmlRpc/Server/Exception.php';
@@ -42,19 +36,6 @@ require_once 'Zend/XmlRpc/Server/Exception.php';
  */
 class Zend_XmlRpc_Server_FaultTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @access public
-     * @static
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_XmlRpc_Server_FaultTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Zend_XmlRpc_Server_Fault::getInstance() test
      */
@@ -286,9 +267,4 @@ class zxrs_fault_observer
     {
         return self::getInstance()->observed;
     }
-}
-
-// Call Zend_XmlRpc_Server_FaultTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_XmlRpc_Server_FaultTest::main") {
-    Zend_XmlRpc_Server_FaultTest::main();
 }

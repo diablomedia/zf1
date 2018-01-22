@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Controller_Action_Helper_FlashMessengerTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Controller_Action_Helper_FlashMessengerTest::main");
-}
-
 require_once 'Zend/Controller/Front.php';
 require_once 'Zend/Controller/Request/Http.php';
 require_once 'Zend/Controller/Response/Cli.php';
@@ -70,18 +65,6 @@ class Zend_Controller_Action_Helper_FlashMessengerTest extends PHPUnit_Framework
      * @var Zend_Controller_Response_Cli
      */
     public $response;
-
-    /**
-     * Runs the test methods of this class.
-     *
-     * @access public
-     * @static
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Controller_Action_Helper_FlashMessengerTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     public function setUp()
     {
@@ -233,9 +216,4 @@ class FlashMessengerControllerActionHelper extends Zend_Controller_Action_Helper
         self::$_session = NULL;
         self::$_messageAdded = false;
     }
-}
-
-// Call Zend_Controller_Action_Helper_FlashMessengerTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Controller_Action_Helper_FlashMessengerTest::main") {
-    Zend_Controller_Action_Helper_FlashMessengerTest::main();
 }

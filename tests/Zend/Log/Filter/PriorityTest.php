@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Log_Filter_PriorityTest::main');
-}
-
 /** Zend_Log */
 require_once 'Zend/Log.php';
 
@@ -40,12 +36,6 @@ require_once 'Zend/Log/Filter/Priority.php';
  */
 class Zend_Log_Filter_PriorityTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function testComparisonDefaultsToLessThanOrEqual()
     {
         // accept at or below priority 2
@@ -102,8 +92,4 @@ class Zend_Log_Filter_PriorityTest extends PHPUnit_Framework_TestCase
             $this->assertRegExp('/must be an integer/', $e->getMessage());
         }
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Log_Filter_PriorityTest::main') {
-    Zend_Log_Filter_PriorityTest::main();
 }

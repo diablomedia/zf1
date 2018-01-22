@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Text_FigletTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Text_TableTest::main");
-}
-
 require_once 'Zend/Text/Table.php';
 require_once 'Zend/Text/Table/Row.php';
 require_once 'Zend/Text/Table/Column.php';
@@ -41,17 +36,6 @@ require_once 'Zend/Text/Table/Decorator/Ascii.php';
  */
 class Zend_Text_TableTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Text_TableTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function tearDown()
     {
         Zend_Text_Table::setInputCharset('utf-8');
@@ -495,9 +479,4 @@ class Zend_Text_TableTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals($chars, '+++-++++|++');
     }
-}
-
-// Call Zend_Text_TableTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Text_TableTest::main") {
-    Zend_Text_TableTest::main();
 }

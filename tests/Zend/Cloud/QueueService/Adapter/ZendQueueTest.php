@@ -19,11 +19,6 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-// Call Zend_Cloud_QueueService_Adapter_ZendQueueTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Cloud_QueueService_Adapter_ZendQueueTest::main");
-}
-
 /**
  * @see Zend_Cloud_QueueServiceTestCase
  */
@@ -53,18 +48,6 @@ class Zend_Cloud_QueueService_Adapter_ZendQueueTest
     protected $_waitPeriod = 0;
 	protected $_clientType = 'Zend_Queue';
 
-	/**
-     * Runs the test methods of this class.
-     *
-     * @access public
-     * @static
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function testPeekMessages()
     {
         $this->markTestSkipped('ZendQueue does not currently support peeking messages');
@@ -80,8 +63,4 @@ class Zend_Cloud_QueueService_Adapter_ZendQueueTest
         return $config;
     }
 
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Cloud_QueueService_Adapter_ZendQueueTest::main') {
-    Zend_Cloud_QueueService_Adapter_ZendQueueTest::main();
 }

@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_View_Helper_FormButtonTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_View_Helper_FormButtonTest::main");
-}
-
 require_once 'Zend/View.php';
 require_once 'Zend/View/Helper/FormButton.php';
 
@@ -41,19 +36,6 @@ require_once 'Zend/View/Helper/FormButton.php';
  */
 class Zend_View_Helper_FormButtonTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @access public
-     * @static
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_View_Helper_FormButtonTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -131,9 +113,4 @@ class Zend_View_Helper_FormButtonTest extends PHPUnit_Framework_TestCase
         $button = $this->helper->formButton(array('name' => 'foo', 'value' => 'bar', 'attribs' => array('type' => 'bogus')));
         $this->assertContains('type="button"', $button);
     }
-}
-
-// Call Zend_View_Helper_FormButtonTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_View_Helper_FormButtonTest::main") {
-    Zend_View_Helper_FormButtonTest::main();
 }

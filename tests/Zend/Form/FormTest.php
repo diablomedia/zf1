@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Form_FormTest::main');
-}
-
 require_once 'Zend/Form.php';
 
 require_once 'Zend/Config.php';
@@ -53,12 +49,6 @@ class Zend_Form_FormTest extends PHPUnit_Framework_TestCase
      * @var Zend_Form
      */
     public $form;
-
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite('Zend_Form_FormTest');
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     public function clearRegistry()
     {
@@ -4905,8 +4895,4 @@ class Zend_Form_FormTest_AddToDisplayGroup extends Zend_Form_FormTest_WithDispla
 class MyTestView extends Zend_View
 {
 
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Form_FormTest::main') {
-    Zend_Form_FormTest::main();
 }

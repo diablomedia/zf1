@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_View_Helper_HeadMetaTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_View_Helper_HeadMetaTest::main");
-}
-
 /** Zend_View_Helper_HeadMeta */
 require_once 'Zend/View/Helper/HeadMeta.php';
 
@@ -59,17 +54,6 @@ class Zend_View_Helper_HeadMetaTest extends PHPUnit_Framework_TestCase
      * @var string
      */
     public $basePath;
-
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_View_Helper_HeadMetaTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -521,14 +505,14 @@ class Zend_View_Helper_HeadMetaTest extends PHPUnit_Framework_TestCase
 			'<meta charset="utf-8"/>',
 			$view->headMeta()->toString());
 	}
-    
+
     /**
      * @group ZF-11835
      */
-    public function testConditional() 
+    public function testConditional()
     {
         $html = $this->helper->appendHttpEquiv('foo', 'bar', array('conditional' => 'lt IE 7'))->toString();
-        
+
         $this->assertRegExp("|^<!--\[if lt IE 7\]>|", $html);
         $this->assertRegExp("|<!\[endif\]-->$|", $html);
     }
@@ -563,9 +547,4 @@ class Zend_View_Helper_HeadMetaTest extends PHPUnit_Framework_TestCase
         $this->assertContains('<!--[if ! IE]><!--><', $html);
         $this->assertContains('<!--<![endif]-->', $html);
     }
-}
-
-// Call Zend_View_Helper_HeadMetaTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_View_Helper_HeadMetaTest::main") {
-    Zend_View_Helper_HeadMetaTest::main();
 }

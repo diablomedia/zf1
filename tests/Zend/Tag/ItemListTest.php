@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Tag_ItemListTest::main');
-}
-
 require_once 'Zend/Tag/Item.php';
 require_once 'Zend/Tag/ItemList.php';
 
@@ -37,12 +33,6 @@ require_once 'Zend/Tag/ItemList.php';
  */
 class Zend_Tag_ItemListTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function testArrayAccessAndCount()
     {
         $list = new Zend_Tag_ItemList();
@@ -153,8 +143,4 @@ class Zend_Tag_ItemListTest extends PHPUnit_Framework_TestCase
     {
         return new Zend_Tag_Item(array('title' => $title, 'weight' => $weight));
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Tag_ItemListTest::main') {
-    Zend_Tag_ItemListTest::main();
 }

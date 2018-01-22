@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Server_Method_PrototypeTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Server_Method_PrototypeTest::main");
-}
-
 /** Zend_Server_Method_Prototype */
 require_once 'Zend/Server/Method/Prototype.php';
 
@@ -40,17 +35,6 @@ require_once 'Zend/Server/Method/Prototype.php';
  */
 class Zend_Server_Method_PrototypeTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Server_Method_PrototypeTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -194,9 +178,4 @@ class Zend_Server_Method_PrototypeTest extends PHPUnit_Framework_TestCase
         $test = $prototype->toArray();
         $this->assertSame($options, $test);
     }
-}
-
-// Call Zend_Server_Method_PrototypeTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Server_Method_PrototypeTest::main") {
-    Zend_Server_Method_PrototypeTest::main();
 }

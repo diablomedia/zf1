@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Search_Lucene_LuceneTest::main');
-}
-
 /**
  * Zend_Search_Lucene
  */
@@ -39,12 +35,6 @@ require_once 'Zend/Search/Lucene.php';
  */
 class Zend_Search_Lucene_LuceneTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     private function _clearDirectory($dirName)
     {
         if (!file_exists($dirName) || !is_dir($dirName))  {
@@ -574,8 +564,4 @@ class Zend_Search_Lucene_LuceneTest extends PHPUnit_Framework_TestCase
 
         $this->_clearDirectory(dirname(__FILE__) . '/_index/_files');
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Search_Lucene_LuceneTest::main') {
-    Zend_Search_Lucene_LuceneTest::main();
 }

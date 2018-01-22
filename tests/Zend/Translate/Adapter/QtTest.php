@@ -35,17 +35,6 @@ require_once 'Zend/Translate/Adapter/Qt.php';
  */
 class Zend_Translate_Adapter_QtTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Translate_Adapter_QtTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function testCreate()
     {
         $adapter = new Zend_Translate_Adapter_Qt(dirname(__FILE__) . '/_files/translation_en.ts');
@@ -78,7 +67,7 @@ class Zend_Translate_Adapter_QtTest extends PHPUnit_Framework_TestCase
             $this->assertContains('nofile.ts', $e->getMessage());
         }
     }
-    
+
     public function testToString()
     {
         $adapter = new Zend_Translate_Adapter_Qt(dirname(__FILE__) . '/_files/translation_en.ts');
@@ -244,9 +233,4 @@ class Zend_Translate_Adapter_QtTest extends PHPUnit_Framework_TestCase
     {
         $this->_errorOccurred = true;
     }
-}
-
-// Call Zend_Translate_Adapter_QtTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Translate_Adapter_QtTest::main") {
-    Zend_Translate_Adapter_QtTest::main();
 }

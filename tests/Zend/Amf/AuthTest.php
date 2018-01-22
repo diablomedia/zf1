@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Amf_AuthTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Amf_AuthTest::main");
-}
-
 require_once 'Zend/Amf/Server.php';
 require_once 'Zend/Amf/Request.php';
 require_once 'Zend/Amf/Parse/TypeLoader.php';
@@ -52,12 +47,6 @@ class Zend_Amf_AuthTest extends PHPUnit_Framework_TestCase
      * @var Zend_Amf_Server
      */
     protected $_server;
-
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Amf_AuthTest");
-        PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     public function setUp()
     {
@@ -340,8 +329,3 @@ class Zend_Amf_Auth_testclass_NoAcl {
         return false;
     }
 }
-
-if (PHPUnit_MAIN_METHOD == "Zend_Amf_AuthTest::main") {
-    Zend_Amf_AuthTest::main();
-}
-

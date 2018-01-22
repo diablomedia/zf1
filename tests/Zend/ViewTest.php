@@ -20,10 +20,6 @@
  * @version    $Id $
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_ViewTest::main');
-}
-
 /**
  * Zend_View
  */
@@ -49,12 +45,6 @@ require_once 'Zend/Loader.php';
  */
 class Zend_ViewTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_ViewTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         $this->notices = array();
@@ -1145,7 +1135,7 @@ class Zend_ViewTest extends PHPUnit_Framework_TestCase
         $paths = $view->getScriptPaths();
         $this->assertContains($path, $paths, var_export($paths, 1));
     }
-    
+
     /**
      * @group ZF-10042
      */
@@ -1170,9 +1160,4 @@ class Zend_ViewTest_Extension extends Zend_View
         $this->assign('foo', 'bar');
         $this->setScriptPath(dirname(__FILE__) . '/View/_templates');
     }
-}
-
-// Call Zend_ViewTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_ViewTest::main") {
-    Zend_ViewTest::main();
 }

@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Captcha_ImageTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Captcha_ImageTest::main");
-}
-
 require_once 'Zend/Form/Element/Captcha.php';
 require_once 'Zend/Captcha/Adapter.php';
 
@@ -39,18 +34,6 @@ require_once 'Zend/Captcha/Adapter.php';
 class Zend_Captcha_ImageTest extends PHPUnit_Framework_TestCase
 {
     protected $_tmpDir;
-
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Captcha_ImageTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -346,19 +329,19 @@ class Zend_Captcha_ImageTest extends PHPUnit_Framework_TestCase
         $input = array("id" => $this->captcha->getId(), "input" => $this->captcha->getWord());
         $this->assertTrue($this->element->isValid($input));
     }
-    
+
     /**
      * @group ZF-11483
      */
     public function testImageTagRenderedProperlyBasedUponDoctype()
     {
-        $this->testCaptchaIsRendered();        
+        $this->testCaptchaIsRendered();
         $view = new Zend_View();
-        
-        $view->doctype('XHTML1_STRICT');        
+
+        $view->doctype('XHTML1_STRICT');
         $this->assertRegExp('#/>$#', $this->captcha->render($view));
-        
-        $view->doctype('HTML4_STRICT');        
+
+        $view->doctype('HTML4_STRICT');
         $this->assertRegExp('#[^/]>$#', $this->captcha->render($view));
     }
 }
@@ -404,9 +387,4 @@ class Zend_Captcha_ImageTest_SessionContainer
             default:
         }
     }
-}
-
-// Call Zend_Captcha_ImageTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Captcha_ImageTest::main") {
-    Zend_Captcha_ImageTest::main();
 }

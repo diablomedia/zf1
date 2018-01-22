@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Application_Resource_CacheManagerTest::main');
-}
-
 /**
  * Zend_Loader_Autoloader
  */
@@ -59,12 +55,6 @@ require_once 'Zend/Cache/Core.php';
  */
 class Zend_Application_Resource_CacheManagerTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         // Store original autoloaders
@@ -278,8 +268,4 @@ class Zend_Cache_Backend_Custom_Naming extends Zend_Cache_Backend
 
 class Zend_Cache_Frontend_CustomNaming extends Zend_Cache_Core
 {
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Application_Resource_CacheManagerTest::main') {
-    Zend_Application_Resource_CacheManagerTest::main();
 }

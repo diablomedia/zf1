@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Dojo_Form_Element_SubmitButtonTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Dojo_Form_Element_SubmitButtonTest::main");
-}
-
 /** Zend_Dojo_Form_Element_SubmitButton */
 require_once 'Zend/Dojo/Form/Element/SubmitButton.php';
 
@@ -53,17 +48,6 @@ require_once 'Zend/Dojo/View/Helper/Dojo.php';
  */
 class Zend_Dojo_Form_Element_SubmitButtonTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Dojo_Form_Element_SubmitButtonTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -192,9 +176,4 @@ class Zend_Dojo_Form_Element_SubmitButtonTest extends PHPUnit_Framework_TestCase
         $html = $this->element->render();
         $this->assertRegexp('/<input[^>]*(value="Label!")/', $html, $html);
     }
-}
-
-// Call Zend_Dojo_Form_Element_SubmitButtonTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Dojo_Form_Element_SubmitButtonTest::main") {
-    Zend_Dojo_Form_Element_SubmitButtonTest::main();
 }

@@ -20,11 +20,6 @@
  * @version $Id$
  */
 
-// Call Zend_View_Helper_UrlTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_View_Helper_UrlTest::main");
-}
-
 require_once 'Zend/View.php';
 require_once 'Zend/View/Helper/Url.php';
 
@@ -48,19 +43,6 @@ require_once 'Zend/Controller/Request/Http.php';
  */
 class Zend_View_Helper_UrlTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @access public
-     * @static
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_View_Helper_UrlTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -89,9 +71,4 @@ class Zend_View_Helper_UrlTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('/ctrl/act', $url);
     }
 
-}
-
-// Call Zend_View_Helper_UrlTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_View_Helper_UrlTest::main") {
-    Zend_View_Helper_UrlTest::main();
 }

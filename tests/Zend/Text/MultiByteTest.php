@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Text_MultiByteTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Text_MultiByteTest::main");
-}
-
 /**
  * Zend_Text_MultiByte
  */
@@ -40,17 +35,6 @@ require_once 'Zend/Text/MultiByte.php';
  */
 class Zend_Text_MultiByteTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Text_MultiByteTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Standard cut tests
      */
@@ -107,7 +91,7 @@ class Zend_Text_MultiByteTest extends PHPUnit_Framework_TestCase
         $line = Zend_Text_MultiByte::wordWrap('äöüäöü ', 3, '-', true);
         $this->assertEquals('äöü-äöü-', $line);
     }
-    
+
     public function testWordWrapCutEndingTwoSpaces()
     {
         $line = Zend_Text_MultiByte::wordWrap('äüöäöü  ', 3, ' ', true);
@@ -125,7 +109,7 @@ class Zend_Text_MultiByteTest extends PHPUnit_Framework_TestCase
         $line = Zend_Text_MultiByte::wordWrap('12345  ', 5, '-', false);
         $this->assertEquals('12345- ', $line);
     }
-    
+
     public function testWordWrapCutEndingThreeSpaces()
     {
         $line = Zend_Text_MultiByte::wordWrap('äüöäöü  ', 3, ' ', true);
@@ -290,9 +274,4 @@ class Zend_Text_MultiByteTest extends PHPUnit_Framework_TestCase
         $text = Zend_Text_MultiByte::strPad('äääöö', -2, 'ö');
         $this->assertEquals('äääöö', $text);
     }
-}
-
-// Call Zend_Text_MultiByteTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Text_MultiByteTest::main") {
-    Zend_Text_MultiByteTest::main();
 }

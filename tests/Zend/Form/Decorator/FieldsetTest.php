@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Form_Decorator_FieldsetTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Form_Decorator_FieldsetTest::main");
-}
-
 require_once 'Zend/Form/Decorator/Fieldset.php';
 
 require_once 'Zend/Form.php';
@@ -43,18 +38,6 @@ require_once 'Zend/Form/SubForm.php';
  */
 class Zend_Form_Decorator_FieldsetTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Form_Decorator_FieldsetTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -243,7 +226,7 @@ class Zend_Form_Decorator_FieldsetTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals('<fieldset></fieldset>', $html);
     }
-    
+
     /**
      * @group ZF-10803
      */
@@ -252,14 +235,9 @@ class Zend_Form_Decorator_FieldsetTest extends PHPUnit_Framework_TestCase
         $form = new Zend_Form();
         $form->setAttrib('id', 'form-id')
              ->setView($this->getView());
-        
+
         $html = $this->decorator->setElement($form)->render('content');
-        
+
         $this->assertContains('<fieldset id="fieldset-form-id"', $html);
     }
-}
-
-// Call Zend_Form_Decorator_FieldsetTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Form_Decorator_FieldsetTest::main") {
-    Zend_Form_Decorator_FieldsetTest::main();
 }

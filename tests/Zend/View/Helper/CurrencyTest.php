@@ -20,11 +20,6 @@
  * @version    $Id: TranslateTest.php 18387 2010-09-23 21:00:00Z thomas $
  */
 
-// Call Zend_View_Helper_CurrencyTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_View_Helper_CurrencyTest::main");
-}
-
 /** Zend_View_Helper_Currency */
 require_once 'Zend/View/Helper/Currency.php';
 
@@ -51,18 +46,6 @@ class Zend_View_Helper_CurrencyTest extends PHPUnit_Framework_TestCase
      * @var Zend_View_Helper_Currency
      */
     public $helper;
-
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_View_Helper_CurrencyTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     public function clearRegistry()
     {
@@ -192,9 +175,4 @@ class Zend_View_Helper_CurrencyTest extends PHPUnit_Framework_TestCase
         $helper = $this->helper->currency();
         $this->assertSame($this->helper, $helper);
     }
-}
-
-// Call Zend_View_Helper_TranslateTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_View_Helper_TranslateTest::main") {
-    Zend_View_Helper_TranslateTest::main();
 }

@@ -20,10 +20,6 @@
  * @version    $Id: $
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Filter_Compress_TarTest::main');
-}
-
 /**
  * @see Zend_Filter_Compress_Tar
  */
@@ -39,17 +35,6 @@ require_once 'Zend/Filter/Compress/Tar.php';
  */
 class Zend_Filter_Compress_TarTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs this test suite
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite('Zend_Filter_Compress_TarTest');
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         if (!class_exists('Archive_Tar')) {
@@ -263,8 +248,4 @@ class Zend_Filter_Compress_TarTest extends PHPUnit_Framework_TestCase
         $filter = new Zend_Filter_Compress_Tar();
         $this->assertEquals('Tar', $filter->toString());
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Filter_Compress_TarTest::main') {
-    Zend_Filter_Compress_TarTest::main();
 }

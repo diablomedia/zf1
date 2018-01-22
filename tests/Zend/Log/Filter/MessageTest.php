@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Log_Filter_MessageTest::main');
-}
-
 /** Zend_Log */
 require_once 'Zend/Log.php';
 
@@ -40,12 +36,6 @@ require_once 'Zend/Log/Filter/Message.php';
  */
 class Zend_Log_Filter_MessageTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function testMessageFilterRecognizesInvalidRegularExpression()
     {
         try {
@@ -92,8 +82,4 @@ class Zend_Log_Filter_MessageTest extends PHPUnit_Framework_TestCase
         $filter = Zend_Log_Filter_Message::factory($config->log->memory->filterParams);
         $this->assertTrue($filter instanceof Zend_Log_Filter_Message);
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Log_Filter_MessageTest::main') {
-    Zend_Log_Filter_MessageTest::main();
 }

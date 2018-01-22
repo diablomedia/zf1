@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Form_SubFormTest::main');
-}
-
 // error_reporting(E_ALL);
 
 require_once 'Zend/Form/SubForm.php';
@@ -40,12 +36,6 @@ require_once 'Zend/Version.php';
  */
 class Zend_Form_SubFormTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite('Zend_Form_SubFormTest');
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         Zend_Form::setDefaultTranslator(null);
@@ -165,8 +155,4 @@ class Zend_Form_SubFormTest_SubForm extends Zend_Form_SubForm
     {
         $this->setDisableLoadDefaultDecorators(true);
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Form_SubFormTest::main') {
-    Zend_Form_SubFormTest::main();
 }

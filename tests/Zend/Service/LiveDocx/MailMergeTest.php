@@ -20,10 +20,6 @@
  * @version    $Id: $
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Service_LiveDocx_MailMergeTest::main');
-}
-
 require_once 'Zend/Service/LiveDocx/MailMerge.php';
 
 /**
@@ -50,12 +46,6 @@ class Zend_Service_LiveDocx_MailMergeTest extends PHPUnit_Framework_TestCase
     public $phpLiveDocx;
 
     // -------------------------------------------------------------------------
-
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     public function setUp()
     {
@@ -702,8 +692,4 @@ class Zend_Service_LiveDocx_MailMergeTest extends PHPUnit_Framework_TestCase
         $actualResults = Zend_Service_LiveDocx_MailMerge::multiAssocArrayToArrayOfArrayOfString($testValues);
         $this->assertEquals($expectedResults, $actualResults);
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Service_LiveDocx_MailMergeTest::main') {
-    Zend_Service_LiveDocx_MailMergeTest::main();
 }

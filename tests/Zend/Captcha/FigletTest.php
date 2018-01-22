@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Captcha_FigletTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Captcha_FigletTest::main");
-}
-
 require_once 'Zend/Form/Element/Captcha.php';
 require_once 'Zend/Captcha/Adapter.php';
 require_once 'Zend/Config.php';
@@ -39,17 +34,6 @@ require_once 'Zend/Config.php';
  */
 class Zend_Captcha_FigletTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Captcha_FigletTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -355,9 +339,4 @@ class Zend_Captcha_FigletTest_SessionContainer
             default:
         }
     }
-}
-
-// Call Zend_Captcha_FigletTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Captcha_FigletTest::main") {
-    Zend_Captcha_FigletTest::main();
 }

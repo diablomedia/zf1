@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Controller_Action_Helper_MultiPageFormTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Amf_Adobe_IntrospectorTest::main");
-}
-
 /**
  * @see Zend_Amf_Adobe_Introspector
  */
@@ -40,12 +35,6 @@ require_once 'Zend/Amf/Adobe/Introspector.php';
  */
 class Zend_Amf_Adobe_IntrospectorTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         $this->introspector = new Zend_Amf_Adobe_Introspector();
@@ -221,10 +210,4 @@ class com_zend_framework_IntrospectorTestCustomType
 class com_zend_framework_IntrospectorTestExplicitType
 {
     public $_explicitType = 'explicit';
-}
-
-
-// Call Zend_Amf_Adobe_IntrospectorTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Amf_Adobe_IntrospectorTest::main") {
-    Zend_Amf_Adobe_IntrospectorTest::main();
 }

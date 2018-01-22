@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Application_Resource_FrontcontrollerTest::main');
-}
-
 /**
  * Zend_Loader_Autoloader
  */
@@ -44,12 +40,6 @@ require_once 'Zend/Controller/Front.php';
  */
 class Zend_Application_Resource_FrontcontrollerTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         // Store original autoloaders
@@ -388,7 +378,7 @@ class Zend_Application_Resource_FrontcontrollerTest extends PHPUnit_Framework_Te
         $front = $resource->getFrontController();
         $this->assertTrue($front->returnResponse());
     }
-    
+
     /**
      * @group ZF-9724
      */
@@ -412,7 +402,3 @@ class Zend_Application_Resource_FrontcontrollerTest extends PHPUnit_Framework_Te
 
 require_once 'Zend/Controller/Dispatcher/Standard.php';
 class ZF9724_Dispatcher extends Zend_Controller_Dispatcher_Standard {}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Application_Resource_FrontcontrollerTest::main') {
-    Zend_Application_Resource_FrontcontrollerTest::main();
-}

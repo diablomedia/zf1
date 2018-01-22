@@ -20,10 +20,6 @@
  * @version    $Id: $
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Filter_Compress_Bz2Test::main');
-}
-
 /**
  * @see Zend_Filter_Compress_Bz2
  */
@@ -39,17 +35,6 @@ require_once 'Zend/Filter/Compress/Bz2.php';
  */
 class Zend_Filter_Compress_Bz2Test extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs this test suite
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite('Zend_Filter_Compress_Bz2Test');
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         if (!extension_loaded('bz2')) {
@@ -202,8 +187,4 @@ class Zend_Filter_Compress_Bz2Test extends PHPUnit_Framework_TestCase
         $content2 = $filter2->decompress($archive);
         $this->assertEquals('compress me', $content2);
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Filter_Compress_Bz2Test::main') {
-    Zend_Filter_Compress_Bz2Test::main();
 }

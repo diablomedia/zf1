@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Json_Server_ResponseTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Json_Server_ResponseTest::main");
-}
-
 require_once 'Zend/Json/Server/Response.php';
 require_once 'Zend/Json/Server/Error.php';
 require_once 'Zend/Json.php';
@@ -42,18 +37,6 @@ require_once 'Zend/Json.php';
  */
 class Zend_Json_Server_ResponseTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Json_Server_ResponseTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -190,9 +173,4 @@ class Zend_Json_Server_ResponseTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($test['result']);
         $this->assertEquals($this->response->getId(), $test['id']);
     }
-}
-
-// Call Zend_Json_Server_ResponseTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Json_Server_ResponseTest::main") {
-    Zend_Json_Server_ResponseTest::main();
 }

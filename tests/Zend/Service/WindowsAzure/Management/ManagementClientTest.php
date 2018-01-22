@@ -22,10 +22,6 @@
 
 date_default_timezone_set('UTC');
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Service_WindowsAzure_Management_ManagementClientTest::main');
-}
-
 /**
  * Test helpers
  */
@@ -53,14 +49,6 @@ class Zend_Service_WindowsAzure_Management_ManagementClientTest extends PHPUnit_
     public function __construct()
     {
         self::$path = dirname(__FILE__).'/_files/';
-    }
-
-    public static function main()
-    {
-        if (TESTS_ZEND_SERVICE_WINDOWSAZURE_MANAGEMENT_RUNTESTS) {
-            $suite  = new PHPUnit_Framework_TestSuite("Zend_Service_WindowsAzure_Management_ManagementClientTest");
-            $result = PHPUnit_TextUI_TestRunner::run($suite);
-        }
     }
 
     /**
@@ -189,9 +177,4 @@ class Zend_Service_WindowsAzure_Management_ManagementClientTest extends PHPUnit_
             $this->assertTrue(true);
         }
     }
-}
-
-// Call Zend_Service_WindowsAzure_Management_ManagementClientTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Service_WindowsAzure_Management_ManagementClientTest::main") {
-    Zend_Service_WindowsAzure_Management_ManagementClientTest::main();
 }

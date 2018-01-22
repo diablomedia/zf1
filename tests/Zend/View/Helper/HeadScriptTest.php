@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_View_Helper_HeadScriptTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_View_Helper_HeadScriptTest::main");
-}
-
 /** Zend_View_Helper_HeadScript */
 require_once 'Zend/View/Helper/HeadScript.php';
 
@@ -56,17 +51,6 @@ class Zend_View_Helper_HeadScriptTest extends PHPUnit_Framework_TestCase
      * @var string
      */
     public $basePath;
-
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_View_Helper_HeadScriptTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -450,7 +434,7 @@ document.write(bar.strlen());');
 
         $this->assertEquals($expected, $test);
     }
-    
+
     /**
      * @group ZF-12048
      */
@@ -459,7 +443,7 @@ document.write(bar.strlen());');
         $this->helper->appendFile('foo.js');
         $this->helper->appendFile('bar.js');
         $this->helper->setFile('foo.js');
-        
+
         $expected = '<script type="text/javascript" src="foo.js"></script>';
         $test = $this->helper->toString();
         $this->assertEquals($expected, $test);
@@ -534,9 +518,4 @@ document.write(bar.strlen());');
         $this->assertContains('<!--[if !IE]><!--><', $test);
         $this->assertContains('<!--<![endif]-->', $test);
     }
-}
-
-// Call Zend_View_Helper_HeadScriptTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_View_Helper_HeadScriptTest::main") {
-    Zend_View_Helper_HeadScriptTest::main();
 }

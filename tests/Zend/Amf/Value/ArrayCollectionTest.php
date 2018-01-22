@@ -19,9 +19,6 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @version    $Id$
  */
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Amf_Value_ArrayCollectionTest::main');
-}
 
 require_once 'Zend/Amf/Value/Messaging/ArrayCollection.php';
 
@@ -49,16 +46,6 @@ class Zend_Amf_Value_ArrayCollectionTest extends PHPUnit_Framework_TestCase
      * Data to be used to populate the ArrayCollection
      */
     protected $_data;
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Amf_Value_ArrayCollectionTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     public function setUp()
     {
@@ -211,8 +198,4 @@ class Zend_Amf_Value_ArrayCollectionTest_SerializableData
     {
         return __CLASS__;
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Amf_Value_ArrayCollectionTest::main') {
-    Zend_Amf_Value_ArrayCollectionTest::main();
 }

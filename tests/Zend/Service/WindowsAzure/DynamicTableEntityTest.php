@@ -20,10 +20,6 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Service_WindowsAzure_DynamicTableEntityTest::main');
-}
-
 /**
  * Test helpers
  */
@@ -46,12 +42,6 @@ require_once 'Zend/Service/WindowsAzure/Storage/DynamicTableEntity.php';
  */
 class Zend_Service_WindowsAzure_DynamicTableEntityTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Service_WindowsAzure_DynamicTableEntityTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         if (!TESTS_ZEND_SERVICE_WINDOWSAZURE_TABLE_RUNTESTS) {
@@ -187,9 +177,4 @@ class Zend_Service_WindowsAzure_DynamicTableEntityTest extends PHPUnit_Framework
             $this->assertEquals($entity->getAzureValues(), $result->getAzureValues());
         }
     }
-}
-
-// Call Zend_Service_WindowsAzure_DynamicTableEntityTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Service_WindowsAzure_DynamicTableEntityTest::main") {
-    Zend_Service_WindowsAzure_DynamicTableEntityTest::main();
 }

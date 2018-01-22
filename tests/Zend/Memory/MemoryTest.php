@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Memory_MemoryTest::main');
-}
-
 /** Zend_Memory */
 require_once 'Zend/Memory.php';
 
@@ -37,12 +33,6 @@ require_once 'Zend/Memory.php';
  */
 class Zend_Memory_MemoryTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         $tmpDir = sys_get_temp_dir() . '/zend_memory';
@@ -121,8 +111,4 @@ class Zend_Memory_MemoryTest extends PHPUnit_Framework_TestCase
             array('ZendServer_ShMem')
         );
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Memory_MemoryTest::main') {
-    Zend_Memory_MemoryTest::main();
 }

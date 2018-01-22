@@ -19,10 +19,6 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_File_ClassFileLocatorTest::main');
-}
-
 require_once 'Zend/File/ClassFileLocator.php';
 
 /**
@@ -167,8 +163,4 @@ class Zend_File_ClassFileLocatorTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($foundThird);
         $this->assertTrue($foundFourth);
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_File_ClassFileLocatorTest::main') {
-    Zend_File_ClassFileLocatorTest::main();
 }

@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Dojo_BuildLayerTest::main');
-}
-
 require_once 'Zend/Dojo/BuildLayer.php';
 require_once 'Zend/Dojo.php';
 require_once 'Zend/View.php';
@@ -39,12 +35,6 @@ require_once 'Zend/Json.php';
  */
 class Zend_Dojo_BuildLayerTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -372,8 +362,4 @@ class Zend_Dojo_BuildLayerTest extends PHPUnit_Framework_TestCase
         $profile = preg_replace('/^dependencies = (.*?);$/s', '$1', $profile);
         return Zend_Json::decode($profile);
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Dojo_BuildLayerTest::main') {
-    Zend_Dojo_BuildLayerTest::main();
 }

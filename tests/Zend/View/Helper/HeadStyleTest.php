@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_View_Helper_HeadStyleTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_View_Helper_HeadStyleTest::main");
-}
-
 /** Zend_View_Helper_HeadStyle */
 require_once 'Zend/View/Helper/HeadStyle.php';
 
@@ -56,18 +51,6 @@ class Zend_View_Helper_HeadStyleTest extends PHPUnit_Framework_TestCase
      * @var string
      */
     public $basePath;
-
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_View_Helper_HeadStyleTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -484,9 +467,4 @@ a {
         $this->assertContains('<!--[if ! IE]><!--><', $test);
         $this->assertContains('<!--<![endif]-->', $test);
     }
-}
-
-// Call Zend_View_Helper_HeadStyleTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_View_Helper_HeadStyleTest::main") {
-    Zend_View_Helper_HeadStyleTest::main();
 }

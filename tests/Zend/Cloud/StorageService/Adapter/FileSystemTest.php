@@ -19,11 +19,6 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-// Call Zend_Cloud_StorageService_Adapter_FileSystemTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Cloud_StorageService_Adapter_FileSystemTest::main");
-}
-
 /**
  * @see Zend_Cloud_StorageService_TestCase
  */
@@ -44,18 +39,6 @@ require_once 'Zend/Cloud/StorageService/Adapter/FileSystem.php';
 class Zend_Cloud_StorageService_Adapter_FileSystemTest
     extends Zend_Cloud_StorageService_TestCase
 {
-	/**
-     * Runs the test methods of this class.
-     *
-     * @access public
-     * @static
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Sets up this test case
      *
@@ -146,8 +129,4 @@ class Zend_Cloud_StorageService_Adapter_FileSystemTest
 
         return $config;
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Cloud_StorageService_Adapter_FileSystemTest::main') {
-    Zend_Cloud_StorageService_Adapter_FileSystemTest::main();
 }

@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Form_DisplayGroupTest::main');
-}
-
 require_once 'Zend/Form/DisplayGroup.php';
 
 require_once 'Zend/Config.php';
@@ -48,12 +44,6 @@ require_once 'Zend/View.php';
  */
 class Zend_Form_DisplayGroupTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite('Zend_Form_DisplayGroupTest');
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         Zend_Registry::_unsetInstance();
@@ -837,8 +827,4 @@ class Zend_Form_DisplayGroupTest_DisplayGroup extends Zend_Form_DisplayGroup
     {
         $this->setDisableLoadDefaultDecorators(true);
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Form_DisplayGroupTest::main') {
-    Zend_Form_DisplayGroupTest::main();
 }

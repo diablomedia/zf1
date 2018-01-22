@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Form_Decorator_FileTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Form_Decorator_FileTest::main");
-}
-
 require_once 'Zend/Form/Decorator/File.php';
 
 require_once 'Zend/Form/Element/File.php';
@@ -43,18 +38,6 @@ require_once 'Zend/View/Helper/FormElement.php';
  */
 class Zend_Form_Decorator_FileTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Form_Decorator_FileTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -170,7 +153,7 @@ class Zend_Form_Decorator_FileTest extends PHPUnit_Framework_TestCase
         $file = $this->decorator->render('content');
         $this->assertRegexp('#<input[^>]*>.*?(content)#s', $file, $file);
     }
-    
+
     /**
      * @group ZF-10519
      */
@@ -178,14 +161,14 @@ class Zend_Form_Decorator_FileTest extends PHPUnit_Framework_TestCase
     {
         $element = new Zend_Form_Element_File('foo');
         $element->setView($this->getView());
-        
+
         // Get output using default view helper
         $defaultOutput = $element->render();
-        
+
         // Get output using mock view helper
         $element->helper = "formFileMock";
         $mockOutput = $element->render();
-        
+
         // Ensure the view helper was changed
         $this->assertRegexp('/FormFileMock/s', $mockOutput);
         $this->assertNotEquals($defaultOutput, $mockOutput);
@@ -221,9 +204,4 @@ class Zend_View_Helper_FormFileMock extends Zend_View_Helper_FormElement
     {
         return "FormFileMock";
     }
-}
-
-// Call Zend_Form_Decorator_FileTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Form_Decorator_FileTest::main") {
-    Zend_Form_Decorator_FileTest::main();
 }

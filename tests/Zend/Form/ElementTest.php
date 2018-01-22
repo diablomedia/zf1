@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Form_ElementTest::main');
-}
-
 require_once 'Zend/Form/Element.php';
 
 require_once 'Zend/Config.php';
@@ -48,12 +44,6 @@ require_once 'Zend/View.php';
  */
 class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite('Zend_Form_ElementTest');
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         Zend_Registry::_unsetInstance();
@@ -2202,7 +2192,7 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
         $validator = $username->getValidator('regex');
         $this->assertTrue($validator->zfBreakChainOnFailure);
     }
-    
+
     /**
      * @group ZF-12173
      */
@@ -2273,8 +2263,4 @@ class Zend_Form_ElementTest_ArrayFilter implements Zend_Filter_Interface
         }
         return (strstr($value, 'ba'));
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Form_ElementTest::main') {
-    Zend_Form_ElementTest::main();
 }

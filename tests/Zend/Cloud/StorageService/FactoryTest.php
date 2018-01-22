@@ -19,11 +19,6 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-// Call Zend_Cloud_StorageService_FactoryTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Cloud_StorageService_FactoryTest::main");
-}
-
 /**
  * @see Zend_Config_Ini
  */
@@ -54,17 +49,6 @@ require_once 'Zend/Http/Client/Adapter/Test.php';
  */
 class Zend_Cloud_StorageService_FactoryTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function testGetStorageAdapterKey()
     {
         $this->assertTrue(is_string(Zend_Cloud_StorageService_Factory::STORAGE_ADAPTER_KEY));
@@ -123,9 +107,4 @@ class Zend_Cloud_StorageService_FactoryTest extends PHPUnit_Framework_TestCase
         $fileSystemAdapter = Zend_Cloud_StorageService_Factory::getAdapter($fileSystemConfig);
         $this->assertEquals('Zend_Cloud_StorageService_Adapter_FileSystem', get_class($fileSystemAdapter));
     }
-}
-
-// Call Zend_Cloud_StorageService_FactoryTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Cloud_StorageService_FactoryTest::main") {
-    Zend_Cloud_StorageService_FactoryTest::main();
 }

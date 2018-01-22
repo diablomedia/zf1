@@ -35,17 +35,6 @@ require_once 'Zend/Translate/Adapter/XmlTm.php';
  */
 class Zend_Translate_Adapter_XmlTmTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Translate_Adapter_XmlTmTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function testCreate()
     {
         $adapter = new Zend_Translate_Adapter_XmlTm(dirname(__FILE__) . '/_files/translation_en.xmltm');
@@ -65,7 +54,7 @@ class Zend_Translate_Adapter_XmlTmTest extends PHPUnit_Framework_TestCase
             $this->assertContains('Mismatched tag at line', $e->getMessage());
         }
     }
-    
+
     /**
      * @group ZF-12012
      */
@@ -250,9 +239,4 @@ class Zend_Translate_Adapter_XmlTmTest extends PHPUnit_Framework_TestCase
     {
         $this->_errorOccurred = true;
     }
-}
-
-// Call Zend_Translate_Adapter_XmlTmTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Translate_Adapter_XmlTmTest::main") {
-    Zend_Translate_Adapter_XmlTmTest::main();
 }

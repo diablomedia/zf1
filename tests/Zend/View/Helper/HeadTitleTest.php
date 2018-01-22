@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_View_Helper_HeadTitleTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_View_Helper_HeadTitleTest::main");
-}
-
 /** Zend_View_Helper_HeadTitle */
 require_once 'Zend/View/Helper/HeadTitle.php';
 
@@ -56,17 +51,6 @@ class Zend_View_Helper_HeadTitleTest extends PHPUnit_Framework_TestCase
      * @var string
      */
     public $basePath;
-
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_View_Helper_HeadTitleTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -245,9 +229,4 @@ class Zend_View_Helper_HeadTitleTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($this->helper->setDefaultAttachOrder('PREPEND') instanceof  Zend_View_Helper_HeadTitle);
         $this->assertEquals('PREPEND', $this->helper->getDefaultAttachOrder());
     }
-}
-
-// Call Zend_View_Helper_HeadTitleTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_View_Helper_HeadTitleTest::main") {
-    Zend_View_Helper_HeadTitleTest::main();
 }

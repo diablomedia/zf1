@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Xml_SecurityTest::main');
-}
-
 /**
  * @see Zend_Xml_Security
  */
@@ -41,12 +37,6 @@ require_once 'Zend/Xml/Exception.php';
  */
 class Zend_Xml_SecurityTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
- 
     public function testScanForXEE()
     {
         $xml = <<<XML
@@ -163,8 +153,4 @@ XML;
 XML;
 
     }
-}
-
-if (PHPUnit_MAIN_METHOD == "Zend_Xml_SecurityTest::main") {
-    Zend_Xml_SecurityTest::main();
 }

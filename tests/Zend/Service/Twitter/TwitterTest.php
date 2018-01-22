@@ -20,10 +20,6 @@
  * @version    $Id: TwitterTest.php 22318 2010-05-29 18:24:27Z padraic $
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Service_Twitter_TwitterTest::main');
-}
-
 /** Zend_Service_Twitter */
 require_once 'Zend/Service/Twitter.php';
 require_once 'Zend/Service/Twitter/Response.php';
@@ -50,18 +46,6 @@ require_once 'Zend/Oauth/Consumer.php';
  */
 class Zend_Service_Twitter_TwitterTest extends PHPUnit_Framework_TestCase
 {
-
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Quick reusable Twitter Service stub setup. Its purpose is to fake
      * interactions with Twitter so the component can focus on what matters:
@@ -598,8 +582,4 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit_Framework_TestCase
         $response = $twitter->users->search('Zend');
         $this->assertTrue($response instanceof Zend_Service_Twitter_Response);
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Service_TwitterTest::main') {
-    Zend_Service_TwitterTest::main();
 }

@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Markup_FactoryTest::main");
-}
-
 require_once 'Zend/Markup.php';
 
 /**
@@ -45,9 +41,4 @@ class Zend_Markup_FactoryTest extends PHPUnit_Framework_TestCase
         Zend_Markup::factory('MockParser', 'MockRenderer');
     }
 
-}
-
-// Call Zend_Markup_BbcodeTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Markup_FactoryTest::main") {
-    Zend_Markup_BbcodeTest::main();
 }

@@ -19,11 +19,6 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-// Call Zend_Cloud_StorageService_Adapter_WindowsAzureTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Cloud_StorageService_Adapter_WindowsAzureTest::main");
-}
-
 /**
  * @see Zend_Cloud_StorageService_TestCase
  */
@@ -45,17 +40,6 @@ require_once 'Zend/Cloud/StorageService/Adapter/WindowsAzure.php';
 class Zend_Cloud_StorageService_Adapter_WindowsAzureTest extends Zend_Cloud_StorageService_TestCase
 {
 	protected $_clientType = 'Zend_Service_WindowsAzure_Storage_Blob';
-	/**
-     * Runs the test methods of this class.
-     *
-     * @access public
-     * @static
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     protected function _getConfig()
     {
@@ -81,8 +65,4 @@ class Zend_Cloud_StorageService_Adapter_WindowsAzureTest extends Zend_Cloud_Stor
 
         return $config;
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Cloud_StorageService_Adapter_WindowsAzureTest::main') {
-    Zend_Cloud_StorageService_Adapter_WindowsAzureTest::main();
 }

@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Log_Writer_MockTest::main');
-}
-
 /** Zend_Log_Writer_Mock */
 require_once 'Zend/Log/Writer/Mock.php';
 
@@ -37,12 +33,6 @@ require_once 'Zend/Log/Writer/Mock.php';
  */
 class Zend_Log_Writer_MockTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function testWrite()
     {
         $writer = new Zend_Log_Writer_Mock();
@@ -63,8 +53,4 @@ class Zend_Log_Writer_MockTest extends PHPUnit_Framework_TestCase
         $logger = Zend_Log::factory($cfg['log']);
         $this->assertTrue($logger instanceof Zend_Log);
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Log_Writer_MockTest::main') {
-    Zend_Log_Writer_MockTest::main();
 }

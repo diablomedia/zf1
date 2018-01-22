@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Controller_Request_HttpTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Controller_Request_HttpTest::main");
-}
-
 require_once 'Zend/Controller/Request/Http.php';
 
 /**
@@ -48,18 +43,6 @@ class Zend_Controller_Request_HttpTest extends PHPUnit_Framework_TestCase
      * @var array
      */
     protected $_origServer;
-
-    /**
-     * Runs the test methods of this class.
-     *
-     * @access public
-     * @static
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Controller_Request_HttpTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     public function setUp()
     {
@@ -1005,9 +988,4 @@ class Zend_Controller_Request_HttpTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('', $request->getHttpHost(), 'HttpHost should be :');
     }
 
-}
-
-// Call Zend_Controller_Request_HttpTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Controller_Request_HttpTest::main") {
-    Zend_Controller_Request_HttpTest::main();
 }

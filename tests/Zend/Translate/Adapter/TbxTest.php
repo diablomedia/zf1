@@ -35,17 +35,6 @@ require_once 'Zend/Translate/Adapter/Tbx.php';
  */
 class Zend_Translate_Adapter_TbxTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Translate_Adapter_TbxTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function testCreate()
     {
         $adapter = new Zend_Translate_Adapter_Tbx(dirname(__FILE__) . '/_files/translation_en.tbx', 'en');
@@ -78,7 +67,7 @@ class Zend_Translate_Adapter_TbxTest extends PHPUnit_Framework_TestCase
             $this->assertContains('nofile.tbx', $e->getMessage());
         }
     }
-    
+
     public function testToString()
     {
         $adapter = new Zend_Translate_Adapter_Tbx(dirname(__FILE__) . '/_files/translation_en.tbx', 'fr');
@@ -248,9 +237,4 @@ class Zend_Translate_Adapter_TbxTest extends PHPUnit_Framework_TestCase
     {
         $this->_errorOccurred = true;
     }
-}
-
-// Call Zend_Translate_Adapter_TbxTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Translate_Adapter_TbxTest::main") {
-    Zend_Translate_Adapter_TbxTest::main();
 }

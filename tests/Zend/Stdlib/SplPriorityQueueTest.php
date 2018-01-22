@@ -20,10 +20,6 @@
  * @version    $Id:$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Stdlib_SplPriorityQueueTest::main');
-}
-
 require_once 'Zend/Stdlib/SplPriorityQueue.php';
 
 /**
@@ -36,12 +32,6 @@ require_once 'Zend/Stdlib/SplPriorityQueue.php';
  */
 class Zend_Stdlib_SplPriorityQueueTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         $this->queue = new Zend_Stdlib_SplPriorityQueue();
@@ -88,16 +78,12 @@ class Zend_Stdlib_SplPriorityQueueTest extends PHPUnit_Framework_TestCase
     public function testCanRetrieveQueueAsArray()
     {
         $expected = array(
-            'bar', 
-            'foo', 
-            'baz', 
+            'bar',
+            'foo',
+            'baz',
             'bat',
         );
         $test     = $this->queue->toArray();
         $this->assertSame($expected, $test, var_export($test, 1));
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Stdlib_SplPriorityQueueTest::main') {
-    Zend_Stdlib_SplPriorityQueueTest::main();
 }

@@ -19,11 +19,6 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-// Call Zend_Cloud_StorageService_FactoryTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Cloud_StorageService_FactoryTest::main");
-}
-
 /**
  * @see Zend_Config_Ini
  */
@@ -48,17 +43,6 @@ require_once 'Zend/Cloud/QueueService/Adapter/ZendQueue.php';
  */
 class Zend_Cloud_QueueService_FactoryTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function testGetQueueAdapterKey()
     {
         $this->assertTrue(is_string(Zend_Cloud_QueueService_Factory::QUEUE_ADAPTER_KEY));
@@ -93,9 +77,4 @@ class Zend_Cloud_QueueService_FactoryTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals('Zend_Cloud_QueueService_Adapter_ZendQueue', get_class($zq));
     }
-}
-
-// Call Zend_Cloud_QueueService_FactoryTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Cloud_QueueService_FactoryTest::main") {
-    Zend_Cloud_QueueService_FactoryTest::main();
 }

@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Dojo_Form_Element_CurrencyTextBoxTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Dojo_Form_Element_CurrencyTextBoxTest::main");
-}
-
 /** Zend_Dojo_Form_Element_CurrencyTextBox */
 require_once 'Zend/Dojo/Form/Element/CurrencyTextBox.php';
 
@@ -50,17 +45,6 @@ require_once 'Zend/Dojo/View/Helper/Dojo.php';
  */
 class Zend_Dojo_Form_Element_CurrencyTextBoxTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Dojo_Form_Element_CurrencyTextBoxTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -161,9 +145,4 @@ class Zend_Dojo_Form_Element_CurrencyTextBoxTest extends PHPUnit_Framework_TestC
         $html = $this->element->render();
         $this->assertContains('dojoType="dijit.form.CurrencyTextBox"', $html);
     }
-}
-
-// Call Zend_Dojo_Form_Element_CurrencyTextBoxTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Dojo_Form_Element_CurrencyTextBoxTest::main") {
-    Zend_Dojo_Form_Element_CurrencyTextBoxTest::main();
 }

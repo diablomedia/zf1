@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Log_Writer_SyslogTest::main');
-}
-
 /** Zend_Log_Writer_Syslog */
 require_once 'Zend/Log/Writer/Syslog.php';
 
@@ -37,12 +33,6 @@ require_once 'Zend/Log/Writer/Syslog.php';
  */
 class Zend_Log_Writer_SyslogTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function testWrite()
     {
         $fields = array('message' => 'foo', 'priority' => LOG_NOTICE);
@@ -138,8 +128,4 @@ class WriterSyslogCustom extends Zend_Log_Writer_Syslog
     {
         return $this->_facility;
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Log_Writer_SyslogTest::main') {
-    Zend_Log_Writer_SyslogTest::main();
 }

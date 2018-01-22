@@ -20,10 +20,6 @@
  * @version    $Id:$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_EventManager_FilterChainTest::main');
-}
-
 require_once 'Zend/EventManager/FilterChain.php';
 require_once 'Zend/Stdlib/CallbackHandler.php';
 
@@ -37,12 +33,6 @@ require_once 'Zend/Stdlib/CallbackHandler.php';
  */
 class Zend_EventManager_FilterChainTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         if (isset($this->message)) {
@@ -161,8 +151,4 @@ class Zend_EventManager_FilterChainTest extends PHPUnit_Framework_TestCase
         $string = isset($params['string']) ? $params['string'] : '';
         return hash('md5', $string);
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_EventManager_FilterChainTest::main') {
-    Zend_EventManager_FilterChainTest::main();
 }

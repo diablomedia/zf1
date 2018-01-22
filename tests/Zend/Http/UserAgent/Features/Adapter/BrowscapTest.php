@@ -19,10 +19,6 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Http_UserAgent_Features_Adapter_Browscap::main');
-}
-
 require_once 'Zend/Http/UserAgent/Features/Adapter/Browscap.php';
 
 /**
@@ -34,12 +30,6 @@ require_once 'Zend/Http/UserAgent/Features/Adapter/Browscap.php';
  */
 class Zend_Http_UserAgent_Features_Adapter_BrowscapTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite(__CLASS__);
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         $browscap = ini_get('browscap');
@@ -66,8 +56,4 @@ class Zend_Http_UserAgent_Features_Adapter_BrowscapTest extends PHPUnit_Framewor
         $this->assertEquals('SEMC Browser',              $adapter['mobile_browser']);
         $this->assertEquals('^.*semc-browser/.*$',       $adapter['browser_name_regex']);
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Http_UserAgent_Features_Adapter_Browscap::main') {
-    Zend_Http_UserAgent_Features_Adapter_Browscap::main();
 }

@@ -47,6 +47,11 @@ class Zend_Tool_Project_ProfileTest extends PHPUnit_Framework_TestCase
     public function setup()
     {
         $this->_projectDirectory   = dirname(__FILE__) . '/_files/project1/';
+
+        if (!file_exists($this->_projectDirectory)) {
+            mkdir($this->_projectDirectory);
+        }
+
         $this->_projectProfileFile = dirname(__FILE__) . '/_files/.zfproject.xml.orig';
 
         $this->_removeProjectFiles();

@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Validate_File_SizeTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Validate_File_SizeTest::main");
-}
-
 /**
  * @see Zend_Validate_File_Size
  */
@@ -40,17 +35,6 @@ require_once 'Zend/Validate/File/Size.php';
  */
 class Zend_Validate_File_SizeTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Validate_File_SizeTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Ensures that the validator follows expected behavior
      *
@@ -211,9 +195,4 @@ class Zend_Validate_File_SizeTest extends PHPUnit_Framework_TestCase
         $this->assertContains('9999', current($validator->getMessages()));
         $this->assertContains('794', current($validator->getMessages()));
     }
-}
-
-// Call Zend_Validate_File_SizeTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Validate_File_SizeTest::main") {
-    Zend_Validate_File_SizeTest::main();
 }

@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Amf_TypeloaderTest::main');
-}
-
 require_once 'Zend/Amf/Parse/TypeLoader.php';
 
 /**
@@ -36,12 +32,6 @@ require_once 'Zend/Amf/Parse/TypeLoader.php';
  */
 class Zend_Amf_TypeloaderTest extends PHPUnit_Framework_TestCase
 {
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Amf_ResponseTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * test that we can get the server name from the client name for deserialization.
      *
@@ -87,8 +77,3 @@ class Zend_Amf_TypeloaderTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('stdClass', $class);
     }
 }
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Amf_TypeloaderTest::main') {
-    Zend_Amf_ResponseTest::main();
-}
-

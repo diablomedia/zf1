@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_View_Helper_JsonTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_View_Helper_JsonTest::main");
-}
-
 require_once 'Zend/View/Helper/Json.php';
 require_once 'Zend/Controller/Front.php';
 require_once 'Zend/Controller/Response/Http.php';
@@ -44,18 +39,6 @@ require_once 'Zend/Layout.php';
  */
 class Zend_View_Helper_JsonTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_View_Helper_JsonTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -163,7 +146,7 @@ class Zend_View_Helper_JsonTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($layout->isEnabled());
         $this->assertSame(array('foobar'), $data);
     }
-    
+
     /**
      * @group ZF-10977
      */
@@ -172,7 +155,7 @@ class Zend_View_Helper_JsonTest extends PHPUnit_Framework_TestCase
         $data = $this->helper->json(Zend_Json::encode(array('f')), false, false);
         $this->assertEquals('["f"]', $data);
     }
-    
+
     /**
      * @group ZF-10977
      */
@@ -192,9 +175,4 @@ class Zend_View_Helper_JsonTest_Layout extends Zend_Layout
     {
         self::$_mvcInstance = null;
     }
-}
-
-// Call Zend_View_Helper_JsonTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_View_Helper_JsonTest::main") {
-    Zend_View_Helper_JsonTest::main();
 }

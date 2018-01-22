@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-// Call Zend_Dojo_Form_Element_NumberSpinnerTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "Zend_Dojo_Form_Element_NumberSpinnerTest::main");
-}
-
 /** Zend_Dojo_Form_Element_NumberSpinner */
 require_once 'Zend/Dojo/Form/Element/NumberSpinner.php';
 
@@ -50,17 +45,6 @@ require_once 'Zend/Dojo/View/Helper/Dojo.php';
  */
 class Zend_Dojo_Form_Element_NumberSpinnerTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs the test methods of this class.
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Dojo_Form_Element_NumberSpinnerTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -200,27 +184,22 @@ class Zend_Dojo_Form_Element_NumberSpinnerTest extends PHPUnit_Framework_TestCas
         $this->assertRegexp('/\'min\':\s*5/', $html, $html);
         $this->assertRegexp('/\'max\':\s*10/', $html, $html);
     }
-    
+
     public function testSmallAndLargeDeltaCanBeSetAsDecimalValues()
     {
         $this->element->setSmallDelta(20.5);
         $this->assertEquals(20.5, $this->element->getSmallDelta());
-        
+
         $this->element->setLargeDelta(50.5);
         $this->assertEquals(50.5, $this->element->getLargeDelta());
     }
-    
+
     public function testMinAndMaxValuesCanBeSetAsDecimalValues()
     {
         $this->element->setMin(20.5);
         $this->assertEquals(20.5, $this->element->getMin());
-        
+
         $this->element->setMax(50.5);
         $this->assertEquals(50.5, $this->element->getMax());
     }
-}
-
-// Call Zend_Dojo_Form_Element_NumberSpinnerTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_Dojo_Form_Element_NumberSpinnerTest::main") {
-    Zend_Dojo_Form_Element_NumberSpinnerTest::main();
 }

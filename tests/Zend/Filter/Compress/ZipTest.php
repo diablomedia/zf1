@@ -20,10 +20,6 @@
  * @version    $Id: $
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Filter_Compress_ZipTest::main');
-}
-
 /**
  * @see Zend_Filter_Compress_Zip
  */
@@ -39,17 +35,6 @@ require_once 'Zend/Filter/Compress/Zip.php';
  */
 class Zend_Filter_Compress_ZipTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs this test suite
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite('Zend_Filter_Compress_ZipTest');
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     public function setUp()
     {
         if (!extension_loaded('zip')) {
@@ -345,8 +330,4 @@ class Zend_Filter_Compress_ZipTest extends PHPUnit_Framework_TestCase
 
         $filter->decompress(dirname(__FILE__) . '/../_files/evil.zip');
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Filter_Compress_ZipTest::main') {
-    Zend_Filter_Compress_ZipTest::main();
 }

@@ -778,8 +778,3 @@ class Zend_XmlRpc_Server_testResponse extends Zend_XmlRpc_Response
 class Zend_XmlRpc_Server_testRequest extends Zend_XmlRpc_Request
 {
 }
-
-// Call Zend_XmlRpc_ServerTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "Zend_XmlRpc_ServerTest::main") {
-    Zend_XmlRpc_ServerTest::main();
-}

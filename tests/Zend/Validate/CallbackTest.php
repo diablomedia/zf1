@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'Zend_Validate_CallbackTest::main');
-}
-
 /**
  * @see Zend_Validate_Callback
  */
@@ -39,17 +35,6 @@ require_once 'Zend/Validate/Callback.php';
  */
 class Zend_Validate_CallbackTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * Runs this test suite
-     *
-     * @return void
-     */
-    public static function main()
-    {
-        $suite  = new PHPUnit_Framework_TestSuite('Zend_Validate_CallbackTest');
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
-
     /**
      * Ensures that the validator follows expected behavior
      *
@@ -124,8 +109,4 @@ class Zend_Validate_CallbackTest extends PHPUnit_Framework_TestCase
         $this->assertContains('something', $args);
         return $args;
     }
-}
-
-if (PHPUnit_MAIN_METHOD == 'Zend_Validate_CallbackTest::main') {
-    Zend_Validate_CallbackTest::main();
 }
