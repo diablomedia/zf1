@@ -37,7 +37,7 @@ require_once 'Zend/Layout.php';
  * @group      Zend_View
  * @group      Zend_View_Helper
  */
-class Zend_View_Helper_JsonTest extends PHPUnit_Framework_TestCase
+class Zend_View_Helper_JsonTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -107,7 +107,7 @@ class Zend_View_Helper_JsonTest extends PHPUnit_Framework_TestCase
     public function testJsonHelperReturnsJsonEncodedString()
     {
         $data = $this->helper->json(array('foobar'));
-        $this->assertTrue(is_string($data));
+        $this->assertInternalType('string', $data);
         $this->assertEquals(array('foobar'), Zend_Json::decode($data));
     }
 

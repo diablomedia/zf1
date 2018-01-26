@@ -23,10 +23,10 @@
 /**
  * Include PHPUnit dependencies
  */
-if (version_compare(PHPUnit_Runner_Version::id(), '4.0.0', '<')) {
+if (version_compare(PHPUnit\Runner\Version::id(), '4.0.0', '<')) {
     require_once 'PHPUnit/Runner/Version.php';
 
-    $phpunitVersion = PHPUnit_Runner_Version::id();
+    $phpunitVersion = PHPUnit\Runner\Version::id();
     if ($phpunitVersion == '@package_version@' || version_compare($phpunitVersion, '3.5.5', '>=')) {
         require_once 'PHPUnit/Autoload.php'; // >= PHPUnit 3.5.5
     } else {

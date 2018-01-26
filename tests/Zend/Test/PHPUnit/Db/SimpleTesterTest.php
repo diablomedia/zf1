@@ -33,7 +33,7 @@ require_once "Zend/Test/PHPUnit/Db/Exception.php";
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Test
  */
-class Zend_Test_PHPUnit_Db_SimpleTesterTest extends PHPUnit_Framework_TestCase
+class Zend_Test_PHPUnit_Db_SimpleTesterTest extends PHPUnit\Framework\TestCase
 {
     public function testGetConnection()
     {
@@ -60,7 +60,7 @@ class Zend_Test_PHPUnit_Db_SimpleTesterTest extends PHPUnit_Framework_TestCase
 
         $databaseTester = new Zend_Test_PHPUnit_Db_SimpleTester($connection);
 
-        $dataSet = $this->getMockBuilder('PHPUnit_Extensions_Database_DataSet_IDataSet')->getMock();
+        $dataSet = $this->getMockBuilder('PHPUnit\DbUnit\DataSet\IDataSet')->getMock();
         $dataSet->expects($this->any())
                 ->method('getIterator')
                 ->will($this->returnValue($this->getMockBuilder('Iterator')->getMock()));
@@ -72,9 +72,9 @@ class Zend_Test_PHPUnit_Db_SimpleTesterTest extends PHPUnit_Framework_TestCase
 
     public function testInvalidConnectionGivenThrowsException()
     {
-        $this->setExpectedException("Zend_Test_PHPUnit_Db_Exception");
+        $this->expectException("Zend_Test_PHPUnit_Db_Exception");
 
-        $connection = $this->getMockBuilder('PHPUnit_Extensions_Database_DB_IDatabaseConnection')->getMock();
+        $connection = $this->getMockBuilder('PHPUnit\DbUnit\Database\Connection')->getMock();
 
         $databaseTester = new Zend_Test_PHPUnit_Db_SimpleTester($connection);
     }

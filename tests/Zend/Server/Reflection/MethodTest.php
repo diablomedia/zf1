@@ -34,7 +34,7 @@ require_once 'Zend/Server/Reflection.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Server
  */
-class Zend_Server_Reflection_MethodTest extends PHPUnit_Framework_TestCase
+class Zend_Server_Reflection_MethodTest extends PHPUnit\Framework\TestCase
 {
     protected $_classRaw;
     protected $_class;

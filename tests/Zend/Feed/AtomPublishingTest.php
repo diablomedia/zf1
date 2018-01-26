@@ -38,7 +38,7 @@ require_once 'Zend/Http/Client.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Feed
  */
-class Zend_Feed_AtomPublishingTest extends PHPUnit_Framework_TestCase
+class Zend_Feed_AtomPublishingTest extends PHPUnit\Framework\TestCase
 {
     protected $_uri;
 

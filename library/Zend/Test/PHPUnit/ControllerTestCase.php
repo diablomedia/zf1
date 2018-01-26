@@ -37,14 +37,14 @@ require_once 'Zend/Registry.php';
 /**
  * Functional testing scaffold for MVC applications
  *
- * @uses       PHPUnit_Framework_TestCase
+ * @uses       PHPUnit\Framework\TestCase
  * @category   Zend
  * @package    Zend_Test
  * @subpackage PHPUnit
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-abstract class Zend_Test_PHPUnit_ControllerTestCase extends PHPUnit_Framework_TestCase
+abstract class Zend_Test_PHPUnit_ControllerTestCase extends PHPUnit\Framework\TestCase
 {
     /**
      * @var mixed Bootstrap file path or callback
@@ -1149,15 +1149,9 @@ abstract class Zend_Test_PHPUnit_ControllerTestCase extends PHPUnit_Framework_Te
         $stack = debug_backtrace();
         foreach ($stack as $step) {
             if (isset($step['object'])
-                && $step['object'] instanceof PHPUnit_Framework_TestCase
+                && $step['object'] instanceof PHPUnit\Framework\TestCase
             ) {
-                if (version_compare(PHPUnit_Runner_Version::id(), '3.3.0', 'lt')) {
-                    break;
-                } elseif (version_compare(PHPUnit_Runner_Version::id(), '3.3.3', 'lt')) {
-                    $step['object']->incrementAssertionCounter();
-                } else {
-                    $step['object']->addToAssertionCount(1);
-                }
+                $step['object']->addToAssertionCount(1);
                 break;
             }
         }

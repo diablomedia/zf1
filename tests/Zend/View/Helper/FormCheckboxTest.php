@@ -37,7 +37,7 @@ require_once 'Zend/Registry.php';
  * @group      Zend_View
  * @group      Zend_View_Helper
  */
-class Zend_View_Helper_FormCheckboxTest extends PHPUnit_Framework_TestCase
+class Zend_View_Helper_FormCheckboxTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {

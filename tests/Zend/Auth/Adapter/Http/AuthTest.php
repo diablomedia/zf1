@@ -22,7 +22,7 @@
 
 
 /**
- * PHPUnit_Framework_TestCase
+ * PHPUnit\Framework\TestCase
  */
 
 
@@ -58,7 +58,7 @@ require_once 'Zend/Controller/Response/Http.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Auth
  */
-class Zend_Auth_Adapter_Http_AuthTest extends PHPUnit_Framework_TestCase
+class Zend_Auth_Adapter_Http_AuthTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Path to test files
@@ -107,7 +107,7 @@ class Zend_Auth_Adapter_Http_AuthTest extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    public function __construct()
+    public function setUp()
     {
         $this->_filesPath      = dirname(__FILE__) . '/_files';
         $this->_basicResolver  = new Zend_Auth_Adapter_Http_Resolver_File("{$this->_filesPath}/htbasic.1");

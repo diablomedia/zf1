@@ -43,7 +43,7 @@ require_once 'Zend/Dojo/View/Helper/Dojo.php';
  * @group      Zend_Dojo
  * @group      Zend_Dojo_Form
  */
-class Zend_Dojo_Form_Element_DijitTest extends PHPUnit_Framework_TestCase
+class Zend_Dojo_Form_Element_DijitTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -107,8 +107,8 @@ class Zend_Dojo_Form_Element_DijitTest extends PHPUnit_Framework_TestCase
         $this->assertFalse($this->element->hasDijitParam('foo'));
         $this->element->clearDijitParams();
         $params = $this->element->getDijitParams();
-        $this->assertTrue(empty($params));
-        $this->assertTrue(empty($this->element->dijitParams));
+        $this->assertEmpty($params);
+        $this->assertEmpty($this->element->dijitParams);
     }
 
     public function testDijitElementDecoratorShouldBeEnabledByDefault()
@@ -138,6 +138,6 @@ class Zend_Dojo_Form_Element_DijitTest extends PHPUnit_Framework_TestCase
         $view = $this->element->getView();
         $loader = $view->getPluginLoader('helper');
         $paths = $loader->getPaths('Zend_Dojo_View_Helper');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
     }
 }

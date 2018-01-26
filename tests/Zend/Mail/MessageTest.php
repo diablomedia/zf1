@@ -43,7 +43,7 @@ require_once 'Zend/Mime/Decode.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Mail
  */
-class Zend_Mail_MessageTest extends PHPUnit_Framework_TestCase
+class Zend_Mail_MessageTest extends PHPUnit\Framework\TestCase
 {
     protected $_file;
 
@@ -537,7 +537,8 @@ class Zend_Mail_MessageTest extends PHPUnit_Framework_TestCase
     public function testRaisesExceptionWhenProvidedWithHeaderContainingCRLFInjection($name, $value)
     {
         $headers = array($name => $value);
-        $this->setExpectedException('Zend_Mail_Exception', 'valid');
+        $this->expectException('Zend_Mail_Exception');
+        $this->expectExceptionMessage('valid');
         $message = new Zend_Mail_Message(array(
             'headers' => $headers,
         ));

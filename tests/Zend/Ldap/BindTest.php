@@ -39,7 +39,7 @@ require_once 'Zend/Ldap.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Ldap
  */
-class Zend_Ldap_BindTest extends PHPUnit_Framework_TestCase
+class Zend_Ldap_BindTest extends PHPUnit\Framework\TestCase
 {
     protected $_options = null;
     protected $_principalName = TESTS_ZEND_LDAP_PRINCIPAL_NAME;
@@ -263,7 +263,7 @@ class Zend_Ldap_BindTest extends PHPUnit_Framework_TestCase
     {
         $ldap = new Zend_Ldap($this->_options);
         $this->assertNotNull($ldap->getResource());
-        $this->assertTrue(is_resource($ldap->getResource()));
+        $this->assertInternalType('resource', $ldap->getResource());
         $this->assertEquals(TESTS_ZEND_LDAP_USERNAME, $ldap->getBoundUser());
     }
 
@@ -273,7 +273,8 @@ class Zend_Ldap_BindTest extends PHPUnit_Framework_TestCase
     public function testBindWithNullPassword()
     {
         $ldap = new Zend_Ldap($this->_options);
-        $this->setExpectedException('Zend_Ldap_Exception', 'Invalid credentials');
+        $this->expectException('Zend_Ldap_Exception');
+        $this->expectExceptionMessage('Invalid credentials');
         $ldap->bind($this->_altUsername, "\0invalidpassword");
     }
 }

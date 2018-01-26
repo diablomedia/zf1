@@ -48,7 +48,7 @@ require_once 'Zend/Controller/Response/Http.php';
  * @group      Zend_Db
  * @group      Zend_Db_Profiler
  */
-class Zend_Db_Profiler_FirebugTest extends PHPUnit_Framework_TestCase
+class Zend_Db_Profiler_FirebugTest extends PHPUnit\Framework\TestCase
 {
 
     protected $_controller = null;
@@ -66,8 +66,8 @@ class Zend_Db_Profiler_FirebugTest extends PHPUnit_Framework_TestCase
     public static function main()
     {
 
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Db_Profiler_FirebugTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
+        $suite  = new PHPUnit\Framework\TestSuite("Zend_Db_Profiler_FirebugTest");
+        $result = PHPUnit\TextUI\TestRunner::run($suite);
     }
 
     public function setUp()

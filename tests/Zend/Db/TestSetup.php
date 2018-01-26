@@ -39,7 +39,7 @@ require_once 'Zend/Db.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Db
  */
-abstract class Zend_Db_TestSetup extends PHPUnit_Framework_TestCase
+abstract class Zend_Db_TestSetup extends PHPUnit\Framework\TestCase
 {
     /**
      * @var Zend_Db_TestUtil_Common

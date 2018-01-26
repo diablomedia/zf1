@@ -41,14 +41,14 @@ class Zend_Test_PHPUnit_Db_TestCaseTest extends Zend_Test_PHPUnit_DatabaseTestCa
     /**
      * Contains a Database Connection
      *
-     * @var PHPUnit_Extensions_Database_DB_IDatabaseConnection
+     * @var PHPUnit\DbUnit\Database\Connection
      */
     protected $_connectionMock = null;
 
     /**
      * Returns the test database connection.
      *
-     * @return PHPUnit_Extensions_Database_DB_IDatabaseConnection
+     * @return PHPUnit\DbUnit\Database\Connection
      */
     protected function getConnection()
     {
@@ -63,21 +63,21 @@ class Zend_Test_PHPUnit_Db_TestCaseTest extends Zend_Test_PHPUnit_DatabaseTestCa
     /**
      * Returns the test dataset.
      *
-     * @return PHPUnit_Extensions_Database_DataSet_IDataSet
+     * @return PHPUnit\DbUnit\DataSet\IDataSet
      */
     protected function getDataSet()
     {
-        return new PHPUnit_Extensions_Database_DataSet_CompositeDataSet(array());
+        return new PHPUnit\DbUnit\DataSet\CompositeDataSet(array());
     }
 
     public function testDatabaseTesterIsInitialized()
     {
-        $this->assertTrue($this->databaseTester instanceof PHPUnit_Extensions_Database_ITester);
+        $this->assertTrue($this->databaseTester instanceof PHPUnit\DbUnit\Tester);
     }
 
     public function testDatabaseTesterNestsDefaultConnection()
     {
-        $this->assertTrue($this->databaseTester->getConnection() instanceof PHPUnit_Extensions_Database_DB_IDatabaseConnection);
+        $this->assertTrue($this->databaseTester->getConnection() instanceof PHPUnit\DbUnit\Database\Connection);
     }
 
     public function testCheckZendDbConnectionConvenienceMethodReturnType()

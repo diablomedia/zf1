@@ -32,7 +32,7 @@ require_once 'Zend/Mobile/Push/Message/Mpns/Raw.php';
  * @group      Zend_Mobile_Push
  * @group      Zend_Mobile_Push_Mpns
  */
-class Zend_Mobile_Push_Message_Mpns_RawTest extends PHPUnit_Framework_TestCase
+class Zend_Mobile_Push_Message_Mpns_RawTest extends PHPUnit\Framework\TestCase
 {
     private $_msg;
 
@@ -49,19 +49,21 @@ class Zend_Mobile_Push_Message_Mpns_RawTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Mobile_Push_Message_Exception
      */
     public function testSetTokenNonStringThrowsException()
     {
+        $this->expectException(\Zend_Mobile_Push_Message_Exception::class);
+
         $token = array('foo' => 'bar');
         $this->_msg->setToken($token);
     }
 
     /**
-     * @expectedException Zend_Mobile_Push_Message_Exception
      */
     public function testSetTokenInvalidUrlThrowsException()
     {
+        $this->expectException(\Zend_Mobile_Push_Message_Exception::class);
+
         $token = 'notaurl';
         $this->_msg->setToken($token);
     }
@@ -79,19 +81,21 @@ class Zend_Mobile_Push_Message_Mpns_RawTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Mobile_Push_Message_Exception
      */
     public function testSetMessageThrowsExceptionOnNonString()
     {
+        $this->expectException(\Zend_Mobile_Push_Message_Exception::class);
+
         $msg = array('foo' => 'bar');
         $this->_msg->setMessage($msg);
     }
 
     /**
-     * @expectedException Zend_Mobile_Push_Message_Exception 
      */
     public function testSetMessageThrowsExceptionOnNonXml()
     {
+        $this->expectException(\Zend_Mobile_Push_Message_Exception::class);
+
         $msg = 'foo';
         $this->_msg->setMessage($msg);
     }
@@ -112,10 +116,11 @@ class Zend_Mobile_Push_Message_Mpns_RawTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Mobile_Push_Message_Exception
      */
     public function testSetDelayThrowsExceptionOnInvalidDelay()
     {
+        $this->expectException(\Zend_Mobile_Push_Message_Exception::class);
+
         $delay = 'foo';
         $this->_msg->setDelay($delay);
     }

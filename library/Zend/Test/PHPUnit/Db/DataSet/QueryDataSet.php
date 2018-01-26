@@ -33,21 +33,21 @@ require_once "Zend/Db/Select.php";
 /**
  * Uses several query strings or Zend_Db_Select objects to form a dataset of tables for assertion with other datasets.
  *
- * @uses       PHPUnit_Extensions_Database_DataSet_QueryDataSet
+ * @uses       PHPUnit\DbUnit\DataSet\QueryDataSet
  * @category   Zend
  * @package    Zend_Test
  * @subpackage PHPUnit
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Test_PHPUnit_Db_DataSet_QueryDataSet extends PHPUnit_Extensions_Database_DataSet_QueryDataSet
+class Zend_Test_PHPUnit_Db_DataSet_QueryDataSet extends PHPUnit\DbUnit\DataSet\QueryDataSet
 {
     /**
      * Creates a new dataset using the given database connection.
      *
-     * @param PHPUnit_Extensions_Database_DB_IDatabaseConnection $databaseConnection
+     * @param PHPUnit\DbUnit\Database\Connection $databaseConnection
      */
-    public function __construct(PHPUnit_Extensions_Database_DB_IDatabaseConnection $databaseConnection)
+    public function __construct(PHPUnit\DbUnit\Database\Connection $databaseConnection)
     {
         if( !($databaseConnection instanceof Zend_Test_PHPUnit_Db_Connection) ) {
             require_once "Zend/Test/PHPUnit/Db/Exception.php";

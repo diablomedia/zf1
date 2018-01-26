@@ -23,7 +23,7 @@ require_once 'Zend/Http/Client/Adapter/Test.php';
 require_once 'Zend/Cloud/Infrastructure/Adapter/Rackspace.php';
 require_once 'Zend/Cloud/Infrastructure/Factory.php';
 
-class Zend_Cloud_Infrastructure_Adapter_RackspaceTest extends PHPUnit_Framework_TestCase
+class Zend_Cloud_Infrastructure_Adapter_RackspaceTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Timeout in seconds for status change
@@ -131,8 +131,10 @@ class Zend_Cloud_Infrastructure_Adapter_RackspaceTest extends PHPUnit_Framework_
      */
     public function testConstructExceptionMissingParams()
     {
-        $this->setExpectedException(
-            'Zend_Cloud_Infrastructure_Exception',
+        $this->expectException(
+            'Zend_Cloud_Infrastructure_Exception'
+        );
+        $this->expectExceptionMessage(
             'Invalid options provided'
         );
         $instance = new Zend_Cloud_Infrastructure_Adapter_Rackspace('foo');

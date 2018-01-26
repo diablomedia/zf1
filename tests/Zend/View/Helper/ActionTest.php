@@ -46,7 +46,7 @@ require_once 'Zend/View.php';
  * @group      Zend_View
  * @group      Zend_View_Helper
  */
-class Zend_View_Helper_ActionTest extends PHPUnit_Framework_TestCase
+class Zend_View_Helper_ActionTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -133,7 +133,7 @@ class Zend_View_Helper_ActionTest extends PHPUnit_Framework_TestCase
         $this->helper->response->setBody('foobarbaz');
         $this->helper->resetObjects();
         $body = $this->helper->response->getBody();
-        $this->assertTrue(empty($body));
+        $this->assertEmpty($body);
     }
 
     /**
@@ -146,8 +146,8 @@ class Zend_View_Helper_ActionTest extends PHPUnit_Framework_TestCase
         $this->helper->resetObjects();
         $headers    = $this->helper->response->getHeaders();
         $rawHeaders = $this->helper->response->getRawHeaders();
-        $this->assertTrue(empty($headers));
-        $this->assertTrue(empty($rawHeaders));
+        $this->assertEmpty($headers);
+        $this->assertEmpty($rawHeaders);
     }
 
     /**

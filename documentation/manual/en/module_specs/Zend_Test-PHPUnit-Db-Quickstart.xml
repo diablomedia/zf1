@@ -13,7 +13,7 @@
             setup a test-class that extends
             <classname>Zend_Test_PHPUnit_DatabaseTestCase</classname>. This class extends the
             PHPUnit Database Extension, which in turn extends the basic
-            <classname>PHPUnit_Framework_TestCase</classname>. A database testcase contains two
+            <classname>PHPUnit\Framework\TestCase</classname>. A database testcase contains two
             abstract methods that have to be implemented, one for the database connection and
             one for the initial dataset that should be used as seed or fixture.
         </para>
@@ -34,7 +34,7 @@ class BugsTest extends Zend_Test_PHPUnit_DatabaseTestCase
     /**
      * Returns the test database connection.
      *
-     * @return PHPUnit_Extensions_Database_DB_IDatabaseConnection
+     * @return PHPUnit\DbUnit\Database\Connection
      */
     protected function getConnection()
     {
@@ -49,7 +49,7 @@ class BugsTest extends Zend_Test_PHPUnit_DatabaseTestCase
     }
 
     /**
-     * @return PHPUnit_Extensions_Database_DataSet_IDataSet
+     * @return PHPUnit\DbUnit\DataSet\IDataSet
      */
     protected function getDataSet()
     {
@@ -94,7 +94,7 @@ class BugsTest extends Zend_Test_PHPUnit_DatabaseTestCase
             <listitem>
                 <para>
                     DataSets have to implement the interface
-                    <classname>PHPUnit_Extensions_Database_DataSet_IDataSet</classname>.
+                    <classname>PHPUnit\DbUnit\DataSet\IDataSet</classname>.
                     There is a wide range of <acronym>XML</acronym> and YAML configuration file
                     types included in PHPUnit which allows to specifiy how the tables and datasets
                     should look like and you should look into the PHPUnit documentation to get the

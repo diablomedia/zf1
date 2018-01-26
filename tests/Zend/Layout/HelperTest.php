@@ -35,7 +35,7 @@ require_once 'Zend/Controller/Action/HelperBroker.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Layout
  */
-class Zend_Layout_HelperTest extends PHPUnit_Framework_TestCase
+class Zend_Layout_HelperTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.

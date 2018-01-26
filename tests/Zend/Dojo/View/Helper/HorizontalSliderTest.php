@@ -49,7 +49,7 @@ require_once 'Zend/Dojo/View/Helper/Dojo.php';
  * @group      Zend_Dojo
  * @group      Zend_Dojo_View
  */
-class Zend_Dojo_View_Helper_HorizontalSliderTest extends PHPUnit_Framework_TestCase
+class Zend_Dojo_View_Helper_HorizontalSliderTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -210,10 +210,11 @@ class Zend_Dojo_View_Helper_HorizontalSliderTest extends PHPUnit_Framework_TestC
     }
 
     /**
-     * @expectedException Zend_Dojo_View_Exception
      */
     public function testSliderShouldRaiseExceptionIfMissingRequiredParameters()
     {
+        $this->expectException(\Zend_Dojo_View_Exception::class);
+
         $this->helper->prepareSlider('foo', 4);
     }
 

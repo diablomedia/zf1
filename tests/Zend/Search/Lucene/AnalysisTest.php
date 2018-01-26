@@ -33,7 +33,7 @@ require_once 'Zend/Search/Lucene/Analysis/Analyzer.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Search_Lucene
  */
-class Zend_Search_Lucene_AnalysisTest extends PHPUnit_Framework_TestCase
+class Zend_Search_Lucene_AnalysisTest extends PHPUnit\Framework\TestCase
 {
     public function testAnalyzer()
     {

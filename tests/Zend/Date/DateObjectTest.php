@@ -33,7 +33,7 @@ require_once 'Zend/Date.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Date
  */
-class Zend_Date_DateObjectTest extends PHPUnit_Framework_TestCase
+class Zend_Date_DateObjectTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp()
@@ -361,8 +361,8 @@ class Zend_Date_DateObjectTest extends PHPUnit_Framework_TestCase
     public function testGetDate()
     {
         $date = new Zend_Date_DateObjectTestHelper(0);
-        $this->assertTrue(is_array($date->getDateParts()));
-        $this->assertTrue(is_array($date->getDateParts(1000000)));
+        $this->assertInternalType('array', $date->getDateParts());
+        $this->assertInternalType('array', $date->getDateParts(1000000));
 
         $test = array(             'seconds' =>   40,      'minutes' => 46,
             'hours'   => 14,       'mday'    =>   12,      'wday'    =>  1,

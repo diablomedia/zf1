@@ -41,7 +41,7 @@ require_once 'Zend/Db/Table.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Application
  */
-class Zend_Application_Resource_MultidbTest extends PHPUnit_Framework_TestCase
+class Zend_Application_Resource_MultidbTest extends PHPUnit\Framework\TestCase
 {
     protected $_dbOptions = array('db1' => array('adapter' => 'pdo_mysql','dbname' => 'db1','password' => 'XXXX','username' => 'webuser'),
                                 'db2' => array('adapter' => 'pdo_pgsql', 'dbname' => 'db2', 'password' => 'notthatpublic', 'username' => 'dba'));

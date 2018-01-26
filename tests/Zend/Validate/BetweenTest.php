@@ -34,7 +34,7 @@ require_once 'Zend/Validate/Between.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Validate
  */
-class Zend_Validate_BetweenTest extends PHPUnit_Framework_TestCase
+class Zend_Validate_BetweenTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Ensures that the validator follows expected behavior

@@ -35,7 +35,7 @@ require_once 'Zend/Validate/File/ExcludeExtension.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Validate
  */
-class Zend_Validate_File_ExcludeExtensionTest extends PHPUnit_Framework_TestCase
+class Zend_Validate_File_ExcludeExtensionTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Ensures that the validator follows expected behavior
@@ -64,7 +64,7 @@ class Zend_Validate_File_ExcludeExtensionTest extends PHPUnit_Framework_TestCase
 
         $validator = new Zend_Validate_File_ExcludeExtension('mo');
         $this->assertEquals(false, $validator->isValid(dirname(__FILE__) . '/_files/nofile.mo'));
-        $this->assertTrue(array_key_exists('fileExcludeExtensionNotFound', $validator->getMessages()));
+        $this->assertArrayHasKey('fileExcludeExtensionNotFound', $validator->getMessages());
 
         $files = array(
             'name'     => 'test1',
@@ -75,7 +75,7 @@ class Zend_Validate_File_ExcludeExtensionTest extends PHPUnit_Framework_TestCase
         );
         $validator = new Zend_Validate_File_ExcludeExtension('mo');
         $this->assertEquals(false, $validator->isValid(dirname(__FILE__) . '/_files/nofile.mo', $files));
-        $this->assertTrue(array_key_exists('fileExcludeExtensionNotFound', $validator->getMessages()));
+        $this->assertArrayHasKey('fileExcludeExtensionNotFound', $validator->getMessages());
 
         $files = array(
             'name'     => 'testsize.mo',
@@ -86,7 +86,7 @@ class Zend_Validate_File_ExcludeExtensionTest extends PHPUnit_Framework_TestCase
         );
         $validator = new Zend_Validate_File_ExcludeExtension('mo');
         $this->assertEquals(false, $validator->isValid(dirname(__FILE__) . '/_files/testsize.mo', $files));
-        $this->assertTrue(array_key_exists('fileExcludeExtensionFalse', $validator->getMessages()));
+        $this->assertArrayHasKey('fileExcludeExtensionFalse', $validator->getMessages());
 
         $files = array(
             'name'     => 'testsize.mo',

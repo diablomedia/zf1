@@ -35,7 +35,7 @@ require_once 'Zend/Json.php';
  * @group      Zend_Json
  * @group      Zend_Json_Server
  */
-class Zend_Json_Server_Smd_ServiceTest extends PHPUnit_Framework_TestCase
+class Zend_Json_Server_Smd_ServiceTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -142,7 +142,7 @@ class Zend_Json_Server_Smd_ServiceTest extends PHPUnit_Framework_TestCase
         $this->testTargetShouldBeNullInitially();
         $this->service->setTarget(123);
         $value = $this->service->getTarget();
-        $this->assertTrue(is_string($value));
+        $this->assertInternalType('string', $value);
         $this->assertEquals((string) 123, $value);
     }
 
@@ -169,7 +169,7 @@ class Zend_Json_Server_Smd_ServiceTest extends PHPUnit_Framework_TestCase
     public function testShouldHaveNoParamsByDefault()
     {
         $params = $this->service->getParams();
-        $this->assertTrue(empty($params));
+        $this->assertEmpty($params);
     }
 
     public function testShouldBeAbleToAddParamsByTypeOnly()
@@ -188,7 +188,7 @@ class Zend_Json_Server_Smd_ServiceTest extends PHPUnit_Framework_TestCase
         $params = $this->service->getParams();
         $param  = array_shift($params);
         $test   = $param['type'];
-        $this->assertTrue(is_array($test));
+        $this->assertInternalType('array', $test);
         $this->assertEquals($type, $test);
     }
 
@@ -317,8 +317,8 @@ class Zend_Json_Server_Smd_ServiceTest extends PHPUnit_Framework_TestCase
         $json = $this->service->toJson();
         $smd  = Zend_Json::decode($json);
 
-        $this->assertTrue(array_key_exists('foo', $smd));
-        $this->assertTrue(is_array($smd['foo']));
+        $this->assertArrayHasKey('foo', $smd);
+        $this->assertInternalType('array', $smd['foo']);
 
         $this->validateSmdArray($smd['foo']);
     }
@@ -337,13 +337,13 @@ class Zend_Json_Server_Smd_ServiceTest extends PHPUnit_Framework_TestCase
 
     public function validateSmdArray(array $smd)
     {
-        $this->assertTrue(array_key_exists('transport', $smd));
+        $this->assertArrayHasKey('transport', $smd);
         $this->assertEquals('POST', $smd['transport']);
 
-        $this->assertTrue(array_key_exists('envelope', $smd));
+        $this->assertArrayHasKey('envelope', $smd);
         $this->assertEquals(Zend_Json_Server_Smd::ENV_JSONRPC_2, $smd['envelope']);
 
-        $this->assertTrue(array_key_exists('parameters', $smd));
+        $this->assertArrayHasKey('parameters', $smd);
         $params = $smd['parameters'];
         $this->assertEquals(3, count($params));
         $param = array_shift($params);
@@ -353,7 +353,7 @@ class Zend_Json_Server_Smd_ServiceTest extends PHPUnit_Framework_TestCase
         $param = array_shift($params);
         $this->assertEquals('object', $param['type']);
 
-        $this->assertTrue(array_key_exists('returns', $smd));
+        $this->assertArrayHasKey('returns', $smd);
         $this->assertEquals('boolean', $smd['returns']);
     }
 }

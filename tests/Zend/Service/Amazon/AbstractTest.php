@@ -33,7 +33,7 @@ require_once 'Zend/Service/Amazon/Abstract.php';
  * @group      Zend_Service
  * @group      Zend_Service_Amazon
  */
-class AmamzonAbstract extends PHPUnit_Framework_TestCase
+class AmamzonAbstract extends PHPUnit\Framework\TestCase
 {
     /**
      * Prepares the environment before running a test.

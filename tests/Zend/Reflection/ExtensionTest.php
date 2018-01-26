@@ -32,7 +32,7 @@ require_once 'Zend/Reflection/Extension.php';
  * @group      Zend_Reflection
  * @group      Zend_Reflection_Extension
  */
-class Zend_Reflection_ExtensionTest extends PHPUnit_Framework_TestCase
+class Zend_Reflection_ExtensionTest extends PHPUnit\Framework\TestCase
 {
 
     public function testClassReturn()

@@ -37,7 +37,7 @@ require_once 'Zend/Registry.php';
  * @group      Zend_View
  * @group      Zend_View_Helper
  */
-class Zend_View_Helper_DoctypeTest extends PHPUnit_Framework_TestCase
+class Zend_View_Helper_DoctypeTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @var Zend_View_Helper_Doctype
@@ -83,7 +83,7 @@ class Zend_View_Helper_DoctypeTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($doctype instanceof ArrayObject);
         $this->assertTrue(isset($doctype['doctype']));
         $this->assertTrue(isset($doctype['doctypes']));
-        $this->assertTrue(is_array($doctype['doctypes']));
+        $this->assertInternalType('array', $doctype['doctypes']);
     }
 
     public function testDoctypeMethodReturnsObjectInstance()

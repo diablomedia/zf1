@@ -43,7 +43,7 @@ require_once 'Zend/Dojo/View/Helper/Dojo.php';
  * @group      Zend_Dojo
  * @group      Zend_Dojo_View
  */
-class Zend_Dojo_View_Helper_AccordionContainerTest extends PHPUnit_Framework_TestCase
+class Zend_Dojo_View_Helper_AccordionContainerTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -127,10 +127,11 @@ class Zend_Dojo_View_Helper_AccordionContainerTest extends PHPUnit_Framework_Tes
     }
 
     /**
-     * @expectedException Zend_Dojo_View_Exception
      */
     public function testCapturingShouldRaiseErrorWhenDuplicateIdDiscovered()
     {
+        $this->expectException(\Zend_Dojo_View_Exception::class);
+
         $this->helper->captureStart('foo', array(), array('style' => 'height: 200px; width: 100px;'));
         $this->view->accordionPane()->captureStart('bar', array('title' => 'Captured Pane'));
         $this->view->accordionPane()->captureStart('bar', array('title' => 'Captured Pane'));
@@ -141,10 +142,11 @@ class Zend_Dojo_View_Helper_AccordionContainerTest extends PHPUnit_Framework_Tes
     }
 
     /**
-     * @expectedException Zend_Dojo_View_Exception
      */
     public function testCapturingShouldRaiseErrorWhenNonexistentIdPassedToEnd()
     {
+        $this->expectException(\Zend_Dojo_View_Exception::class);
+
         $this->helper->captureStart('foo', array(), array('style' => 'height: 200px; width: 100px;'));
         $html = $this->helper->captureEnd('bar');
     }

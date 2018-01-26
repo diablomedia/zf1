@@ -52,7 +52,7 @@ require_once 'Zend/Uri/Http.php';
  * @group      Zend_Http
  * @group      Zend_Http_Client
  */
-abstract class Zend_Http_Client_CommonHttpTests extends PHPUnit_Framework_TestCase
+abstract class Zend_Http_Client_CommonHttpTests extends PHPUnit\Framework\TestCase
 {
     /**
      * The bast URI for this test, containing all files in the _files directory
@@ -1148,7 +1148,7 @@ abstract class Zend_Http_Client_CommonHttpTests extends PHPUnit_Framework_TestCa
         $response = $this->client->request();
 
         $this->assertTrue($response instanceof Zend_Http_Response_Stream, 'Request did not return stream response!');
-        $this->assertTrue(is_resource($response->getStream()), 'Request does not contain stream!');
+        $this->assertInternalType('resource', $response->getStream(), 'Request does not contain stream!');
 
         $stream_name = $response->getStreamName();
 
@@ -1173,7 +1173,7 @@ abstract class Zend_Http_Client_CommonHttpTests extends PHPUnit_Framework_TestCa
         $response = $this->client->request();
 
         $this->assertTrue($response instanceof Zend_Http_Response_Stream, 'Request did not return stream response!');
-        $this->assertTrue(is_resource($response->getStream()), 'Request does not contain stream!');
+        $this->assertInternalType('resource', $response->getStream(), 'Request does not contain stream!');
 
         $body = $response->getBody();
 
@@ -1194,7 +1194,7 @@ abstract class Zend_Http_Client_CommonHttpTests extends PHPUnit_Framework_TestCa
         $response = $this->client->request();
 
         $this->assertTrue($response instanceof Zend_Http_Response_Stream, 'Request did not return stream response!');
-        $this->assertTrue(is_resource($response->getStream()), 'Request does not contain stream!');
+        $this->assertInternalType('resource', $response->getStream(), 'Request does not contain stream!');
 
         $this->assertEquals($outfile, $response->getStreamName());
 

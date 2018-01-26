@@ -42,7 +42,7 @@ class FooBarTestFrontend extends Zend_Cache_Core { }
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Cache
  */
-class Zend_Cache_FactoryTest extends PHPUnit_Framework_TestCase
+class Zend_Cache_FactoryTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp()

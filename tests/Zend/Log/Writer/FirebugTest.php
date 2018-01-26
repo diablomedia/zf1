@@ -49,7 +49,7 @@ require_once 'Zend/Controller/Response/Http.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Log
  */
-class Zend_Log_Writer_FirebugTest extends PHPUnit_Framework_TestCase
+class Zend_Log_Writer_FirebugTest extends PHPUnit\Framework\TestCase
 {
     protected $_controller = null;
     protected $_request = null;

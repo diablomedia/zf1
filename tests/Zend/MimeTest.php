@@ -34,7 +34,7 @@ require_once 'Zend/Mime.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Mime
  */
-class Zend_MimeTest extends PHPUnit_Framework_TestCase
+class Zend_MimeTest extends PHPUnit\Framework\TestCase
 {
     public function testBoundary()
     {

@@ -33,7 +33,7 @@ require_once 'Zend/Filter/LocalizedToNormalized.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Filter
  */
-class Zend_Filter_LocalizedToNormalizedTest extends PHPUnit_Framework_TestCase
+class Zend_Filter_LocalizedToNormalizedTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Ensures that the filter follows expected behavior

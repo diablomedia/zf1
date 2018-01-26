@@ -32,7 +32,7 @@ require_once 'Zend/Gdata.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Gapps
  */
-class Zend_Gdata_Gapps_NicknameTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_Gapps_NicknameTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -43,24 +43,24 @@ class Zend_Gdata_Gapps_NicknameTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyNicknameShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->nickname->extensionElements));
+        $this->assertInternalType('array', $this->nickname->extensionElements);
         $this->assertTrue(count($this->nickname->extensionElements) == 0);
     }
 
     public function testEmptyNicknameShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->nickname->extensionAttributes));
+        $this->assertInternalType('array', $this->nickname->extensionAttributes);
         $this->assertTrue(count($this->nickname->extensionAttributes) == 0);
     }
 
     public function testSampleNicknameShouldHaveNoExtensionElements() {
         $this->nickname->transferFromXML($this->nicknameText);
-        $this->assertTrue(is_array($this->nickname->extensionElements));
+        $this->assertInternalType('array', $this->nickname->extensionElements);
         $this->assertTrue(count($this->nickname->extensionElements) == 0);
     }
 
     public function testSampleNicknameShouldHaveNoExtensionAttributes() {
         $this->nickname->transferFromXML($this->nicknameText);
-        $this->assertTrue(is_array($this->nickname->extensionAttributes));
+        $this->assertInternalType('array', $this->nickname->extensionAttributes);
         $this->assertTrue(count($this->nickname->extensionAttributes) == 0);
     }
 

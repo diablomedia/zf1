@@ -34,7 +34,7 @@ require_once 'Zend/View/Helper/ServerUrl.php';
  * @group      Zend_View
  * @group      Zend_View_Helper
  */
-class Zend_View_Helper_ServerUrlTest extends PHPUnit_Framework_TestCase
+class Zend_View_Helper_ServerUrlTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Back up of $_SERVER

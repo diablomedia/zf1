@@ -118,7 +118,7 @@ class Zend_Mail_Transport_Sendmail_Mock extends Zend_Mail_Transport_Sendmail
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Mail
  */
-class Zend_Mail_MailTest extends PHPUnit_Framework_TestCase
+class Zend_Mail_MailTest extends PHPUnit\Framework\TestCase
 {
     protected $numAssertions;
 
@@ -909,9 +909,10 @@ class Zend_Mail_MailTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Mail_Exception
      */
     public function testReplyToCantBeSetTwice() {
+        $this->expectException(\Zend_Mail_Exception::class);
+
         $mail = new Zend_Mail();
         $mail->setReplyTo('user@example.com');
         $mail->setReplyTo('user2@example.com');

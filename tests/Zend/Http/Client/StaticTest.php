@@ -38,7 +38,7 @@ require_once 'Zend/Http/Client/Adapter/Test.php';
  * @group      Zend_Http
  * @group      Zend_Http_Client
  */
-class Zend_Http_Client_StaticTest extends PHPUnit_Framework_TestCase
+class Zend_Http_Client_StaticTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Common HTTP client
@@ -84,7 +84,7 @@ class Zend_Http_Client_StaticTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($uri->__toString(), $uristr, 'Returned Uri object does not hold the expected URI');
 
         $uri = $this->_client->getUri(true);
-        $this->assertTrue(is_string($uri), 'Returned value expected to be a string, ' . gettype($uri) . ' returned');
+        $this->assertInternalType('string', $uri, 'Returned value expected to be a string, ' . gettype($uri) . ' returned');
         $this->assertEquals($uri, $uristr, 'Returned string is not the expected URI');
     }
 
@@ -106,10 +106,11 @@ class Zend_Http_Client_StaticTest extends PHPUnit_Framework_TestCase
     /**
      * Test that passing an invalid URI string throws an exception
      *
-     * @expectedException Zend_Uri_Exception
      */
     public function testInvalidUriStringException()
     {
+        $this->expectException(\Zend_Uri_Exception::class);
+
         $this->_client->setUri('httpp://__invalid__.com');
     }
 
@@ -155,10 +156,11 @@ class Zend_Http_Client_StaticTest extends PHPUnit_Framework_TestCase
     /**
      * Make sure an exception is thrown if an invalid header name is used
      *
-     * @expectedException Zend_Http_Client_Exception
      */
     public function testInvalidHeaderExcept()
     {
+        $this->expectException(\Zend_Http_Client_Exception::class);
+
         $this->_client->setHeaders('Ina_lid* Hea%der', 'is not good');
     }
 
@@ -208,10 +210,11 @@ class Zend_Http_Client_StaticTest extends PHPUnit_Framework_TestCase
      * Test setAuth (dynamic method) fails when trying to use an unsupported
      * authentication scheme
      *
-     * @expectedException Zend_Http_Client_Exception
      */
     public function testExceptUnsupportedAuthDynamic()
     {
+        $this->expectException(\Zend_Http_Client_Exception::class);
+
         $this->_client->setAuth('shahar', '1234', 'SuperStrongAlgo');
     }
 
@@ -219,10 +222,11 @@ class Zend_Http_Client_StaticTest extends PHPUnit_Framework_TestCase
      * Test encodeAuthHeader (static method) fails when trying to use an
      * unsupported authentication scheme
      *
-     * @expectedException Zend_Http_Client_Exception
      */
     public function testExceptUnsupportedAuthStatic()
     {
+        $this->expectException(\Zend_Http_Client_Exception::class);
+
         Zend_Http_Client::encodeAuthHeader('shahar', '1234', 'SuperStrongAlgo');
     }
 
@@ -283,10 +287,11 @@ class Zend_Http_Client_StaticTest extends PHPUnit_Framework_TestCase
     /**
      * Make sure using an invalid cookie jar object throws an exception
      *
-     * @expectedException Zend_Http_Client_Exception
      */
     public function testSetInvalidCookieJar()
     {
+        $this->expectException(\Zend_Http_Client_Exception::class);
+
         $this->_client->setCookieJar('cookiejar');
     }
 
@@ -384,10 +389,11 @@ class Zend_Http_Client_StaticTest extends PHPUnit_Framework_TestCase
      * Test that passing invalid variables to setConfig() causes an exception
      *
      * @dataProvider      invalidConfigProvider
-     * @expectedException Zend_Http_Client_Exception
      */
     public function testConfigSetInvalid($config)
     {
+        $this->expectException(\Zend_Http_Client_Exception::class);
+
         $this->_client->setConfig($config);
     }
 
@@ -457,10 +463,11 @@ class Zend_Http_Client_StaticTest extends PHPUnit_Framework_TestCase
      * Check we get an exception when trying to send a POST request with an
      * invalid content-type header
      *
-     * @expectedException Zend_Http_Client_Exception
      */
     public function testInvalidPostContentType()
     {
+        $this->expectException(\Zend_Http_Client_Exception::class);
+
         $this->_client->setEncType('x-foo/something-fake');
         $this->_client->setParameterPost('parameter', 'value');
 
@@ -471,10 +478,11 @@ class Zend_Http_Client_StaticTest extends PHPUnit_Framework_TestCase
     /**
      * Check we get an exception if there's an error in the socket
      *
-     * @expectedException Zend_Http_Client_Adapter_Exception
      */
     public function testSocketErrorException()
     {
+        $this->expectException(\Zend_Http_Client_Adapter_Exception::class);
+
         // Try to connect to an invalid host
         $this->_client->setUri('http://255.255.255.255');
 
@@ -504,10 +512,11 @@ class Zend_Http_Client_StaticTest extends PHPUnit_Framework_TestCase
      * the request method.
      *
      * @dataProvider invalidMethodProvider
-     * @expectedException Zend_Http_Client_Exception
      */
     public function testSettingInvalidMethodThrowsException($method)
     {
+        $this->expectException(\Zend_Http_Client_Exception::class);
+
         $this->_client->setMethod($method);
     }
 

@@ -34,7 +34,7 @@ require_once 'Zend/Controller/Response/HttpTestCase.php';
  * @group      Zend_Controller
  * @group      Zend_Controller_Response
  */
-class Zend_Controller_Response_HttpTestCaseTest extends PHPUnit_Framework_TestCase
+class Zend_Controller_Response_HttpTestCaseTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -64,7 +64,7 @@ class Zend_Controller_Response_HttpTestCaseTest extends PHPUnit_Framework_TestCa
         ob_start();
         $this->response->sendResponse();
         $test = ob_get_clean();
-        $this->assertTrue(empty($test));
+        $this->assertEmpty($test);
     }
 
     public function testSendResponseShouldRenderHeaders()
@@ -83,8 +83,8 @@ class Zend_Controller_Response_HttpTestCaseTest extends PHPUnit_Framework_TestCa
         ob_start();
         $content = $this->response->outputBody();
         $test = ob_get_clean();
-        $this->assertTrue(empty($test));
-        $this->assertFalse(empty($content));
+        $this->assertEmpty($test);
+        $this->assertNotEmpty($content);
         $this->assertContains("Baz Content\nFoo Content\nBar Content\n", $content, $content);
     }
 
@@ -95,7 +95,7 @@ class Zend_Controller_Response_HttpTestCaseTest extends PHPUnit_Framework_TestCa
                        ->setHeader('Content-Type', 'text/html', true)
                        ->setHeader('X-Foo-Bar', 'baz');
         $test = $this->response->sendHeaders();
-        $this->assertTrue(is_array($test));
+        $this->assertInternalType('array', $test);
         $this->assertEquals(3, count($test));
         $this->assertNotContains('Content-Type: text/xml', $test);
         $this->assertContains('Content-Type: text/html', $test);

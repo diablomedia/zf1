@@ -39,7 +39,7 @@ require_once 'Zend/Controller/Response/Http.php';
  * @group      Zend_Controller_Action
  * @group      Zend_Controller_Action_Helper
  */
-class Zend_Controller_Action_Helper_RedirectorTest extends PHPUnit_Framework_TestCase
+class Zend_Controller_Action_Helper_RedirectorTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @var Zend_Controller_Action_Helper_Redirector

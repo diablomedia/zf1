@@ -31,7 +31,7 @@ require_once 'Zend/Gdata.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Gdata
  */
-class Zend_Gdata_EventStatusTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_EventStatusTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -42,24 +42,24 @@ class Zend_Gdata_EventStatusTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyEventStatusShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->eventStatus->extensionElements));
+        $this->assertInternalType('array', $this->eventStatus->extensionElements);
         $this->assertTrue(count($this->eventStatus->extensionElements) == 0);
     }
 
     public function testEmptyEventStatusShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->eventStatus->extensionAttributes));
+        $this->assertInternalType('array', $this->eventStatus->extensionAttributes);
         $this->assertTrue(count($this->eventStatus->extensionAttributes) == 0);
     }
 
     public function testSampleEventStatusShouldHaveNoExtensionElements() {
         $this->eventStatus->transferFromXML($this->eventStatusText);
-        $this->assertTrue(is_array($this->eventStatus->extensionElements));
+        $this->assertInternalType('array', $this->eventStatus->extensionElements);
         $this->assertTrue(count($this->eventStatus->extensionElements) == 0);
     }
 
     public function testSampleEventStatusShouldHaveNoExtensionAttributes() {
         $this->eventStatus->transferFromXML($this->eventStatusText);
-        $this->assertTrue(is_array($this->eventStatus->extensionAttributes));
+        $this->assertInternalType('array', $this->eventStatus->extensionAttributes);
         $this->assertTrue(count($this->eventStatus->extensionAttributes) == 0);
     }
 

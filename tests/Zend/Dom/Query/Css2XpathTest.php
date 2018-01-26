@@ -32,7 +32,7 @@ require_once 'Zend/Dom/Query/Css2Xpath.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Dom
  */
-class Zend_Dom_Query_Css2XpathTest extends PHPUnit_Framework_TestCase
+class Zend_Dom_Query_Css2XpathTest extends PHPUnit\Framework\TestCase
 {
     public function testTransformShouldBeCalledStatically()
     {
@@ -42,7 +42,7 @@ class Zend_Dom_Query_Css2XpathTest extends PHPUnit_Framework_TestCase
     public function testTransformShouldReturnStringByDefault()
     {
         $test = Zend_Dom_Query_Css2Xpath::transform('');
-        $this->assertTrue(is_string($test));
+        $this->assertInternalType('string', $test);
     }
 
     /**
@@ -51,7 +51,7 @@ class Zend_Dom_Query_Css2XpathTest extends PHPUnit_Framework_TestCase
     public function testTransformShouldReturnMultiplePathsWhenExpressionContainsCommas()
     {
         $test = Zend_Dom_Query_Css2Xpath::transform('#foo, #bar');
-        $this->assertTrue(is_string($test));
+        $this->assertInternalType('string', $test);
         $this->assertContains('|', $test);
         $this->assertEquals(2, count(explode('|', $test)));
     }
@@ -93,7 +93,7 @@ class Zend_Dom_Query_Css2XpathTest extends PHPUnit_Framework_TestCase
     public function testMultipleComplexCssSpecificationShouldTransformToExpectedXpath()
     {
         $test = Zend_Dom_Query_Css2Xpath::transform('div#foo span.bar, #bar li.baz a');
-        $this->assertTrue(is_string($test));
+        $this->assertInternalType('string', $test);
         $this->assertContains('|', $test);
         $actual   = explode('|', $test);
         $expected = array(

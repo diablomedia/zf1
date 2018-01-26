@@ -41,7 +41,7 @@ require_once 'Zend/Config.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Filter
  */
-class Zend_Filter_InflectorTest extends PHPUnit_Framework_TestCase
+class Zend_Filter_InflectorTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -72,7 +72,7 @@ class Zend_Filter_InflectorTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($loader instanceof Zend_Loader_PluginLoader_Interface);
         $paths = $loader->getPaths();
         $this->assertEquals(1, count($paths));
-        $this->assertTrue(array_key_exists('Zend_Filter_', $paths));
+        $this->assertArrayHasKey('Zend_Filter_', $paths);
     }
 
     public function testSetPluginLoaderAllowsSettingAlternatePluginLoader()
@@ -90,7 +90,7 @@ class Zend_Filter_InflectorTest extends PHPUnit_Framework_TestCase
         $this->inflector->addFilterPrefixPath('Foo_Bar', 'Zend/View/');
         $loader = $this->inflector->getPluginLoader();
         $paths  = $loader->getPaths();
-        $this->assertTrue(array_key_exists('Foo_Bar_', $paths));
+        $this->assertArrayHasKey('Foo_Bar_', $paths);
     }
 
     public function testTargetAccessorsWork()

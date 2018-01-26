@@ -40,7 +40,7 @@ require_once 'Zend/Controller/Front.php';
  * @group      Zend_View
  * @group      Zend_View_Helper
  */
-class Zend_View_Helper_PartialLoopTest extends PHPUnit_Framework_TestCase
+class Zend_View_Helper_PartialLoopTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @var Zend_View_Helper_PartialLoop

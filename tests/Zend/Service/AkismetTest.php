@@ -39,7 +39,7 @@ require_once 'Zend/Http/Client/Adapter/Test.php';
  * @group      Zend_Service
  * @group      Zend_Service_Akismet
  */
-class Zend_Service_AkismetTest extends PHPUnit_Framework_TestCase
+class Zend_Service_AkismetTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {

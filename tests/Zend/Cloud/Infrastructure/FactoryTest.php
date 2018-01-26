@@ -44,11 +44,11 @@ require_once 'Zend/Cloud/Infrastructure/Adapter/Ec2.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Cloud
  */
-class Zend_Cloud_Infrastructure_FactoryTest extends PHPUnit_Framework_TestCase
+class Zend_Cloud_Infrastructure_FactoryTest extends PHPUnit\Framework\TestCase
 {
     public function testGetInfrastructureAdapterKey()
     {
-        $this->assertTrue(is_string(Zend_Cloud_Infrastructure_Factory::INFRASTRUCTURE_ADAPTER_KEY));
+        $this->assertInternalType('string', Zend_Cloud_Infrastructure_Factory::INFRASTRUCTURE_ADAPTER_KEY);
     }
 
     public function testGetAdapterWithConfig() {

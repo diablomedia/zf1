@@ -54,7 +54,7 @@ require_once 'Zend/Service/Yahoo/WebResult.php';
  * @group      Zend_Service
  * @group      Zend_Service_Yahoo
  */
-class Zend_Service_Yahoo_OfflineTest extends PHPUnit_Framework_TestCase
+class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Reference to Yahoo service consumer object

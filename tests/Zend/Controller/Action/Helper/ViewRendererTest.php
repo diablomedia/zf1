@@ -42,7 +42,7 @@ require_once dirname(__FILE__) . '/../../_files/modules/bar/controllers/IndexCon
  * @group      Zend_Controller_Action
  * @group      Zend_Controller_Action_Helper
  */
-class Zend_Controller_Action_Helper_ViewRendererTest extends PHPUnit_Framework_TestCase
+class Zend_Controller_Action_Helper_ViewRendererTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Base path to controllers, views
@@ -399,7 +399,7 @@ class Zend_Controller_Action_Helper_ViewRendererTest extends PHPUnit_Framework_T
 
         $content = $this->response->getBody();
         $this->assertNotContains('Rendered index/test.phtml in bar module', $content);
-        $this->assertTrue(empty($content));
+        $this->assertEmpty($content);
     }
 
     public function testPostDispatchDoesNothingOnRedirect()
@@ -415,7 +415,7 @@ class Zend_Controller_Action_Helper_ViewRendererTest extends PHPUnit_Framework_T
 
         $content = $this->response->getBody();
         $this->assertNotContains('Rendered index/test.phtml in bar module', $content);
-        $this->assertTrue(empty($content));
+        $this->assertEmpty($content);
     }
 
     public function testPostDispatchDoesNothingWithNoController()
@@ -428,7 +428,7 @@ class Zend_Controller_Action_Helper_ViewRendererTest extends PHPUnit_Framework_T
 
         $content = $this->response->getBody();
         $this->assertNotContains('Rendered index/test.phtml in bar module', $content);
-        $this->assertTrue(empty($content));
+        $this->assertEmpty($content);
     }
 
     public function testPostDispatchDoesNothingWithNeverController()
@@ -442,7 +442,7 @@ class Zend_Controller_Action_Helper_ViewRendererTest extends PHPUnit_Framework_T
 
         $content = $this->response->getBody();
         $this->assertNotContains('Rendered index/test.phtml in bar module', $content);
-        $this->assertTrue(empty($content));
+        $this->assertEmpty($content);
     }
 
     public function testDirectProxiesToSetRender()
@@ -650,7 +650,7 @@ class Zend_Controller_Action_Helper_ViewRendererTest extends PHPUnit_Framework_T
         $controller = new Bar_IndexController($this->request, $this->response, array());
         $this->helper->postDispatch();
         $body = $this->response->getBody();
-        $this->assertTrue(empty($body));
+        $this->assertEmpty($body);
     }
 
     public function testRenderNormalizationIsCorrect()

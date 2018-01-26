@@ -43,7 +43,7 @@ require_once 'Zend/Dojo/View/Helper/Dojo.php';
  * @group      Zend_Dojo
  * @group      Zend_Dojo_Form
  */
-class Zend_Dojo_Form_Element_CurrencyTextBoxTest extends PHPUnit_Framework_TestCase
+class Zend_Dojo_Form_Element_CurrencyTextBoxTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -110,7 +110,7 @@ class Zend_Dojo_Form_Element_CurrencyTextBoxTest extends PHPUnit_Framework_TestC
     public function testFractionalAccessorsShouldProxyToConstraints()
     {
         $this->assertFalse($this->element->getFractional());
-        $this->assertFalse(array_key_exists('constraints', $this->element->dijitParams));
+        $this->assertArrayNotHasKey('constraints', $this->element->dijitParams);
         $this->element->setFractional(true);
         $this->assertTrue($this->element->getFractional());
         $this->assertEquals('true', $this->element->dijitParams['constraints']['fractional']);
@@ -133,10 +133,11 @@ class Zend_Dojo_Form_Element_CurrencyTextBoxTest extends PHPUnit_Framework_TestC
     }
 
     /**
-     * @expectedException Zend_Form_Element_Exception
      */
     public function testSymbolMutatorShouldRaiseExceptionWhenFewerThan3CharsProvided()
     {
+        $this->expectException(\Zend_Form_Element_Exception::class);
+
         $this->element->setSymbol('$');
     }
 

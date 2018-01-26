@@ -36,7 +36,7 @@ require_once 'Contact.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Amf
  */
-class Zend_Amf_RequestTest extends PHPUnit_Framework_TestCase
+class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Zend_Amf_Request object
@@ -87,7 +87,7 @@ class Zend_Amf_RequestTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('RoundTrip', $message->source);
         $data = $message->body;
         // Make sure that we are dealing with a PHP null
-        $this->assertTrue(is_null($data[0]));
+        $this->assertNull($data[0]);
     }
 
     /**
@@ -114,7 +114,7 @@ class Zend_Amf_RequestTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('RoundTrip', $message->source);
         $data = $message->body;
         // Make sure that we are dealing with a PHP string
-        $this->assertTrue(is_string($data[0]));
+        $this->assertInternalType('string', $data[0]);
         // Make sure that the string was deserialized properly and check its value
         $this->assertEquals('abcdefghijklmpqrstuvwxyz', $data[0]);
     }
@@ -143,7 +143,7 @@ class Zend_Amf_RequestTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('RoundTrip', $message->source);
         $data = $message->body;
         // Make sure that we are dealing with a PHP array
-        $this->assertTrue(is_array($data[0]));
+        $this->assertInternalType('array', $data[0]);
         // Make sure that the array was deserialized properly and check its value
         $this->assertEquals('a', $data[0][0]);
         $this->assertEquals('g', $data[0][6]);
@@ -173,7 +173,7 @@ class Zend_Amf_RequestTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('RoundTrip', $message->source);
         $data = $message->body;
         // Make sure that we are dealing with a PHP float
-        $this->assertTrue(is_float($data[0]));
+        $this->assertInternalType('float', $data[0]);
         // Make sure that the float was deserialized properly and check its value
         $this->assertEquals(31.57, $data[0]);
     }
@@ -230,7 +230,7 @@ class Zend_Amf_RequestTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('RoundTrip', $message->source);
         $data = $message->body;
         // Make sure that we are dealing with a PHP array
-        $this->assertTrue(is_int($data[0]));
+        $this->assertInternalType('int', $data[0]);
         // Make sure that the array was deserialized properly and check its value
         $this->assertEquals(268435455, $data[0]);
     }
@@ -257,7 +257,7 @@ class Zend_Amf_RequestTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('RoundTrip', $message->source);
         $data = $message->body;
         // Make sure that we are dealing with a PHP array
-        $this->assertTrue(is_bool($data[0]));
+        $this->assertInternalType('bool', $data[0]);
         // Make sure that the Bool was deserialized properly and check its value
         $this->assertEquals(true, $data[0]);
     }
@@ -284,7 +284,7 @@ class Zend_Amf_RequestTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('RoundTrip', $message->source);
         $data = $message->body;
         // Make sure that we are dealing with a PHP array
-        $this->assertTrue(is_bool($data[0]));
+        $this->assertInternalType('bool', $data[0]);
         // Make sure that the Bool was deserialized properly and check its value
         $this->assertEquals(false, $data[0]);
     }
@@ -327,7 +327,7 @@ class Zend_Amf_RequestTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($requestBody[0] instanceof Zend_Amf_Value_MessageBody);
         $data = $requestBody[0]->getData();
         // Make sure that we are dealing with a PHP string
-        $this->assertTrue(is_string($data[0]));
+        $this->assertInternalType('string', $data[0]);
         // Make sure that the string was deserialized properly and check its value
         $byteArray = file_get_contents(dirname(__FILE__) .'/Request/bytearray.bin');
         $this->assertEquals($byteArray, $data[0]);
@@ -351,7 +351,7 @@ class Zend_Amf_RequestTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('RoundTrip.returnString', $requestBody[0]->getTargetURI());
         $data = $requestBody[0]->getData();
         // Make sure that we are dealing with a PHP string
-        $this->assertTrue(is_string($data[0]));
+        $this->assertInternalType('string', $data[0]);
         // Make sure that the string was deserialized properly and check its value
         $this->assertEquals('abcdefghijklmpqrstuvwxyz', $data[0]);
     }
@@ -422,9 +422,9 @@ class Zend_Amf_RequestTest extends PHPUnit_Framework_TestCase
         // keys. In PHP 7.2+ array_key_exists on this particular object returns false
         // https://3v4l.org/ui8Fm
         if (version_compare(PHP_VERSION, '7.0.0', '>=')) {
-            $this->assertTrue(array_key_exists(1, get_object_vars($data[0])));
+            $this->assertArrayHasKey(1, get_object_vars($data[0]));
         } else {
-            $this->assertTrue(array_key_exists(1, $data[0]));
+            $this->assertArrayHasKey(1, $data[0]);
         }
         $this->assertEquals('two', $data[0]->two);
     }
@@ -446,7 +446,7 @@ class Zend_Amf_RequestTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($bodies[0] instanceof Zend_Amf_Value_MessageBody);
         $data = $bodies[0]->getData();
         // Make sure that the string was deserialized properly and check its value
-        $this->assertTrue(is_float($data[0]));
+        $this->assertInternalType('float', $data[0]);
         $this->assertEquals(31.57, $data[0]);
     }
 
@@ -508,7 +508,7 @@ class Zend_Amf_RequestTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($bodies[0] instanceof Zend_Amf_Value_MessageBody);
         $data = $bodies[0]->getData();
         // Make sure that the string was deserialized properly and check its value
-        $this->assertTrue(is_bool($data[0]));
+        $this->assertInternalType('bool', $data[0]);
         $this->assertEquals(true, $data[0]);
     }
 
@@ -529,7 +529,7 @@ class Zend_Amf_RequestTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($bodies[0] instanceof Zend_Amf_Value_MessageBody);
         $data = $bodies[0]->getData();
         // Make sure that the string was deserialized properly and check its value
-        $this->assertTrue(is_bool($data[0]));
+        $this->assertInternalType('bool', $data[0]);
         $this->assertEquals(false, $data[0]);
     }
 
@@ -546,7 +546,7 @@ class Zend_Amf_RequestTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($bodies[0] instanceof Zend_Amf_Value_MessageBody);
         $data = $bodies[0]->getData();
         // Make sure that the string was deserialized properly and check its value
-        $this->assertTrue(is_null($data[0]));
+        $this->assertNull($data[0]);
     }
 
    public function testAmf0UndefinedDeserializedToNativePhpNull()
@@ -562,7 +562,7 @@ class Zend_Amf_RequestTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($bodies[0] instanceof Zend_Amf_Value_MessageBody);
         $data = $bodies[0]->getData();
         // Make sure that the string was deserialized properly and check its value
-        $this->assertTrue(is_null($data[0]));
+        $this->assertNull($data[0]);
     }
 
     public function testAmf0XmlParameterDeserializedToNativePhpSimpleXml()

@@ -37,21 +37,17 @@ require_once 'Zend/Service/WindowsAzure/Storage/Blob.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_WindowsAzure_BlobStorageTest extends PHPUnit_Framework_TestCase
+class Zend_Service_WindowsAzure_BlobStorageTest extends PHPUnit\Framework\TestCase
 {
     static $path;
     protected $skipped;
-
-    public function __construct()
-    {
-        self::$path = dirname(__FILE__).'/_files/';
-    }
 
     /**
      * Test setup
      */
      public function setUp()
      {
+        self::$path = dirname(__FILE__).'/_files/';
          $this->skipped = false;
 
          if (!TESTS_ZEND_SERVICE_WINDOWSAZURE_BLOB_RUNTESTS) {
@@ -380,7 +376,7 @@ class Zend_Service_WindowsAzure_BlobStorageTest extends PHPUnit_Framework_TestCa
             $fileName = tempnam('', 'tst');
             $storageClient->getBlob($containerName, 'images/WindowsAzure.gif', $fileName);
 
-            $this->assertTrue(file_exists($fileName));
+            $this->assertFileExists($fileName);
             $this->assertEquals(
                 file_get_contents(self::$path . 'WindowsAzure.gif'),
                 file_get_contents($fileName)
@@ -430,7 +426,7 @@ class Zend_Service_WindowsAzure_BlobStorageTest extends PHPUnit_Framework_TestCa
             $fileName = tempnam('', 'tst');
             $storageClient->getBlob($containerName, 'images/WindowsAzure.gif', $fileName, $snapshotId);
 
-            $this->assertTrue(file_exists($fileName));
+            $this->assertFileExists($fileName);
             $this->assertEquals(
                 file_get_contents(self::$path . 'WindowsAzure.gif'),
                 file_get_contents($fileName)
@@ -694,7 +690,7 @@ class Zend_Service_WindowsAzure_BlobStorageTest extends PHPUnit_Framework_TestCa
             $fileName = tempnam('', 'tst');
             $storageClient->getBlob($containerName, 'WindowsAzure.gif', $fileName);
 
-            $this->assertTrue(file_exists($fileName));
+            $this->assertFileExists($fileName);
             $this->assertEquals(
                 file_get_contents(self::$path . 'WindowsAzure.gif'),
                 file_get_contents($fileName)

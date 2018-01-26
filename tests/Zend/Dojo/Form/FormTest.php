@@ -37,7 +37,7 @@ require_once 'Zend/View.php';
  * @group      Zend_Dojo
  * @group      Zend_Dojo_Form
  */
-class Zend_Dojo_Form_FormTest extends PHPUnit_Framework_TestCase
+class Zend_Dojo_Form_FormTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -66,25 +66,25 @@ class Zend_Dojo_Form_FormTest extends PHPUnit_Framework_TestCase
     public function testDojoFormDecoratorPathShouldBeRegisteredByDefault()
     {
         $paths = $this->form->getPluginLoader('decorator')->getPaths('Zend_Dojo_Form_Decorator');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
     }
 
     public function testDojoFormElementPathShouldBeRegisteredByDefault()
     {
         $paths = $this->form->getPluginLoader('element')->getPaths('Zend_Dojo_Form_Element');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
     }
 
     public function testDojoFormElementDecoratorPathShouldBeRegisteredByDefault()
     {
         $paths = $this->form->foo->getPluginLoader('decorator')->getPaths('Zend_Dojo_Form_Decorator');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
     }
 
     public function testDojoFormDisplayGroupDecoratorPathShouldBeRegisteredByDefault()
     {
         $paths = $this->form->dg->getPluginLoader()->getPaths('Zend_Dojo_Form_Decorator');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
     }
 
     public function testDefaultDisplayGroupClassShouldBeDojoDisplayGroupByDefault()
@@ -102,7 +102,7 @@ class Zend_Dojo_Form_FormTest extends PHPUnit_Framework_TestCase
         $view   = $this->form->getView();
         $loader = $view->getPluginLoader('helper');
         $paths  = $loader->getPaths('Zend_Dojo_View_Helper');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
     }
 
     public function testDisplayGroupShouldRegisterDojoViewHelperPath()
@@ -111,7 +111,7 @@ class Zend_Dojo_Form_FormTest extends PHPUnit_Framework_TestCase
         $view   = $this->form->dg->getView();
         $loader = $view->getPluginLoader('helper');
         $paths  = $loader->getPaths('Zend_Dojo_View_Helper');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
     }
 
     /**

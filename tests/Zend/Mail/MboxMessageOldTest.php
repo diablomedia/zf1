@@ -56,7 +56,7 @@ class Zend_Mail_Storage_Mbox_OldMessage extends Zend_Mail_Storage_Mbox
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Mail
  */
-class Zend_Mail_MboxMessageOldTest extends PHPUnit_Framework_TestCase
+class Zend_Mail_MboxMessageOldTest extends PHPUnit\Framework\TestCase
 {
     protected $_mboxOriginalFile;
     protected $_mboxFile;

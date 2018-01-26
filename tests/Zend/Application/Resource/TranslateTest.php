@@ -33,7 +33,7 @@ require_once 'Zend/Loader/Autoloader.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Application
  */
-class Zend_Application_Resource_TranslateTest extends PHPUnit_Framework_TestCase
+class Zend_Application_Resource_TranslateTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @var array
@@ -208,10 +208,11 @@ class Zend_Application_Resource_TranslateTest extends PHPUnit_Framework_TestCase
 
     /**
      * @group ZF-10352
-     * @expectedException Zend_Application_Resource_Exception
      */
     public function testToUseTheTwoKeysContentAndDataShouldThrowsException()
     {
+        $this->expectException(\Zend_Application_Resource_Exception::class);
+
         $options = array(
             'adapter' => 'array',
             'content' => array(
@@ -245,8 +246,8 @@ class Zend_Application_Resource_TranslateTest extends PHPUnit_Framework_TestCase
         $resource->init()->translate('untranslated');
         $event = current($options['log'][0]->events);
 
-        $this->assertTrue(is_array($event));
-        $this->assertTrue(array_key_exists('message', $event));
+        $this->assertInternalType('array', $event);
+        $this->assertArrayHasKey('message', $event);
         $this->assertEquals(
             "Untranslated message within 'en': untranslated",
             $event['message']

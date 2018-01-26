@@ -34,7 +34,7 @@ require_once 'Zend/Http/Client/Adapter/Test.php';
  * @group      Zend_Http
  * @group      Zend_Http_Client
  */
-class Zend_Http_Client_TestAdapterTest extends PHPUnit_Framework_TestCase
+class Zend_Http_Client_TestAdapterTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Test adapter
@@ -64,10 +64,11 @@ class Zend_Http_Client_TestAdapterTest extends PHPUnit_Framework_TestCase
     /**
      * Make sure an exception is thrown on invalid cofiguration
      *
-     * @expectedException Zend_Http_Client_Adapter_Exception
      */
     public function testSetConfigThrowsOnInvalidConfig()
     {
+        $this->expectException(\Zend_Http_Client_Adapter_Exception::class);
+
         $this->adapter->setConfig('foo');
     }
 

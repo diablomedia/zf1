@@ -41,7 +41,7 @@ require_once 'Zend/Layout.php';
  * @group      Zend_Controller_Action
  * @group      Zend_Controller_Action_Helper
  */
-class Zend_Controller_Action_Helper_JsonTest extends PHPUnit_Framework_TestCase
+class Zend_Controller_Action_Helper_JsonTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -101,7 +101,7 @@ class Zend_Controller_Action_Helper_JsonTest extends PHPUnit_Framework_TestCase
     public function testJsonHelperReturnsJsonEncodedString()
     {
         $data = $this->helper->encodeJson(array('foobar'));
-        $this->assertTrue(is_string($data));
+        $this->assertInternalType('string', $data);
         $this->assertEquals(array('foobar'), Zend_Json::decode($data));
     }
 
@@ -147,7 +147,7 @@ class Zend_Controller_Action_Helper_JsonTest extends PHPUnit_Framework_TestCase
         $this->assertSame(array('foobar'), Zend_Json::decode($data));
         $this->verifyJsonHeader();
         $response = $this->response->getBody();
-        $this->assertTrue(empty($response));
+        $this->assertEmpty($response);
     }
 
     public function testCanKeepLayoutsWhenUsingDirect()

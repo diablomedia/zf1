@@ -31,7 +31,7 @@ require_once 'Zend/Crypt/Rsa.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Crypt
  */
-class Zend_Crypt_RsaTest extends PHPUnit_Framework_TestCase
+class Zend_Crypt_RsaTest extends PHPUnit\Framework\TestCase
 {
 
     protected $_testPemString = null;

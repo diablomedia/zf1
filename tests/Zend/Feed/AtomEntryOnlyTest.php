@@ -38,7 +38,7 @@ require_once 'Zend/Feed/Atom.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Feed
  */
-class Zend_Feed_AtomEntryOnlyTest extends PHPUnit_Framework_TestCase
+class Zend_Feed_AtomEntryOnlyTest extends PHPUnit\Framework\TestCase
 {
 
     public function testEntryOnly()

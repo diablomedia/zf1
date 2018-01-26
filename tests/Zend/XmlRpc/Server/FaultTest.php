@@ -34,7 +34,7 @@ require_once 'Zend/XmlRpc/Server/Exception.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_XmlRpc
  */
-class Zend_XmlRpc_Server_FaultTest extends PHPUnit_Framework_TestCase
+class Zend_XmlRpc_Server_FaultTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Zend_XmlRpc_Server_Fault::getInstance() test
@@ -160,7 +160,7 @@ class Zend_XmlRpc_Server_FaultTest extends PHPUnit_Framework_TestCase
         $e = new Zend_XmlRpc_Server_Exception('Checking observers', 411);
         $fault = Zend_XmlRpc_Server_Fault::getInstance($e);
         $observed = zxrs_fault_observer::getObserved();
-        $this->assertTrue(empty($observed));
+        $this->assertEmpty($observed);
 
         $this->assertFalse(Zend_XmlRpc_Server_Fault::detachObserver('foo'));
     }

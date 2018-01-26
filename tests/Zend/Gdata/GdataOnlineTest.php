@@ -35,7 +35,7 @@ require_once 'Zend/Gdata/App/InvalidArgumentException.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Gdata
  */
-class Zend_Gdata_GdataOnlineTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_GdataOnlineTest extends PHPUnit\Framework\TestCase
 {
     private $blog = null; // blog ID from config
 

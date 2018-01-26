@@ -33,7 +33,7 @@ require_once 'Zend/Tool/Project/Profile.php';
  * @group Zend_Tool_Framework
  * @group Zend_Tool_Framework_Action
  */
-class Zend_Tool_Project_ProfileTest extends PHPUnit_Framework_TestCase
+class Zend_Tool_Project_ProfileTest extends PHPUnit\Framework\TestCase
 {
 
     protected $_projectDirectory   = null;
@@ -171,7 +171,7 @@ class Zend_Tool_Project_ProfileTest extends PHPUnit_Framework_TestCase
         $this->_standardProfileFromData->loadFromData();
         $this->_standardProfileFromData->setAttribute('projectProfileFile', $this->_projectDirectory . 'my-xml-file.xml');
         $this->_standardProfileFromData->storeToFile();
-        $this->assertTrue(file_exists($this->_projectDirectory . 'my-xml-file.xml'));
+        $this->assertFileExists($this->_projectDirectory . 'my-xml-file.xml');
     }
 
     public function testProfileCanFindResource()
@@ -202,7 +202,7 @@ class Zend_Tool_Project_ProfileTest extends PHPUnit_Framework_TestCase
             $resource->getContext()->create();
         }
 
-        $this->assertTrue(file_exists($this->_projectDirectory . 'public/index.php'));
+        $this->assertFileExists($this->_projectDirectory . 'public/index.php');
     }
 
     public function testProfileCanDelete()
@@ -213,27 +213,28 @@ class Zend_Tool_Project_ProfileTest extends PHPUnit_Framework_TestCase
             $resource->getContext()->create();
         }
 
-        $this->assertTrue(file_exists($this->_projectDirectory . 'public/index.php'));
+        $this->assertFileExists($this->_projectDirectory . 'public/index.php');
 
         $publicIndexFile = $this->_standardProfileFromData->search('publicIndexFile');
         $publicIndexFile->getContext()->delete();
 
-        $this->assertFalse(file_exists($this->_projectDirectory . 'public/index.php'));
+        $this->assertFileNotExists($this->_projectDirectory . 'public/index.php');
 
         $appConfigFile = $this->_standardProfileFromData->search('applicationConfigFile');
         $appConfigFile->getContext()->delete();
         $configsDirectory = $this->_standardProfileFromData->search('configsDirectory');
         $configsDirectory->getContext()->delete();
 
-        $this->assertFalse(file_exists($this->_projectDirectory . 'application/configs'));
+        $this->assertFileNotExists($this->_projectDirectory . 'application/configs');
     }
 
     /**
      *
-     * @expectedException Zend_Tool_Project_Exception
      */
     public function testProfileThrowsExceptionOnLoadFromData()
     {
+        $this->expectException(\Zend_Tool_Project_Exception::class);
+
         $profile = new Zend_Tool_Project_Profile();
 
         // missing data from attributes should throw exception here
@@ -242,10 +243,11 @@ class Zend_Tool_Project_ProfileTest extends PHPUnit_Framework_TestCase
 
     /**
      *
-     * @expectedException Zend_Tool_Project_Exception
      */
     public function testProfileThrowsExceptionOnLoadFromFile()
     {
+        $this->expectException(\Zend_Tool_Project_Exception::class);
+
         $profile = new Zend_Tool_Project_Profile();
 
         // missing file path or project path
@@ -254,10 +256,11 @@ class Zend_Tool_Project_ProfileTest extends PHPUnit_Framework_TestCase
 
     /**
      *
-     * @expectedException Zend_Tool_Project_Exception
      */
     public function testProfileThrowsExceptionOnStoreToFile()
     {
+        $this->expectException(\Zend_Tool_Project_Exception::class);
+
         $profile = new Zend_Tool_Project_Profile();
 
         // missing file path or project path
@@ -266,10 +269,11 @@ class Zend_Tool_Project_ProfileTest extends PHPUnit_Framework_TestCase
 
     /**
      *
-     * @expectedException Zend_Tool_Project_Exception
      */
     public function testProfileThrowsExceptionOnLoadFromFileWithBadPathForProfileFile()
     {
+        $this->expectException(\Zend_Tool_Project_Exception::class);
+
         $profile = new Zend_Tool_Project_Profile();
         $profile->setAttribute('projectProfileFile', '/path/should/not/exist');
 

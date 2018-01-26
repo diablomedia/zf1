@@ -34,7 +34,7 @@ require_once 'Zend/Gdata/ClientLogin.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_App
  */
-class Zend_Gdata_App_HttpExceptionTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_App_HttpExceptionTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp()

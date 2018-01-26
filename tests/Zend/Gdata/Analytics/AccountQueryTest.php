@@ -31,7 +31,7 @@ require_once 'Zend/Gdata/Analytics.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Analytics
  */
-class Zend_GData_Analytics_AccountQueryTest extends PHPUnit_Framework_TestCase
+class Zend_GData_Analytics_AccountQueryTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @var Zend_GData_Analytics_AccountQuery

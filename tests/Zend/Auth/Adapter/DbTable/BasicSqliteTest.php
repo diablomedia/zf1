@@ -50,7 +50,7 @@ require_once 'Zend/Auth/Adapter/DbTable.php';
  * @group      Zend_Auth
  * @group      Zend_Db_Table
  */
-class Zend_Auth_Adapter_DbTable_BasicSqliteTest extends PHPUnit_Framework_TestCase
+class Zend_Auth_Adapter_DbTable_BasicSqliteTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sqlite database connection
@@ -260,10 +260,11 @@ class Zend_Auth_Adapter_DbTable_BasicSqliteTest extends PHPUnit_Framework_TestCa
     /**
      * Ensure that exceptions are caught
      *
-     * @expectedException Zend_Auth_Exception
      */
     public function testCatchExceptionNoTable()
     {
+        $this->expectException(\Zend_Auth_Exception::class);
+
         $adapter = new Zend_Auth_Adapter_DbTable($this->_db);
         $result = $adapter->authenticate();
         //  $this->assertEquals($e->getMessage(), 'A table must be supplied for the Zend_Auth_Adapter_DbTable authentication adapter.');
@@ -272,10 +273,11 @@ class Zend_Auth_Adapter_DbTable_BasicSqliteTest extends PHPUnit_Framework_TestCa
     /**
      * Ensure that exceptions are caught
      *
-     * @expectedException Zend_Auth_Exception
      */
     public function testCatchExceptionNoIdentityColumn()
     {
+        $this->expectException(\Zend_Auth_Exception::class);
+
         $adapter = new Zend_Auth_Adapter_DbTable($this->_db, 'users');
         $result = $adapter->authenticate();
         // $this->assertEquals($e->getMessage(), 'An identity column must be supplied for the Zend_Auth_Adapter_DbTable authentication adapter.');
@@ -284,10 +286,11 @@ class Zend_Auth_Adapter_DbTable_BasicSqliteTest extends PHPUnit_Framework_TestCa
     /**
      * Ensure that exceptions are caught
      *
-     * @expectedException Zend_Auth_Exception
      */
     public function testCatchExceptionNoCredentialColumn()
     {
+        $this->expectException(\Zend_Auth_Exception::class);
+
         $adapter = new Zend_Auth_Adapter_DbTable($this->_db, 'users', 'username');
         $result = $adapter->authenticate();
         // $this->assertEquals($e->getMessage(), 'A credential column must be supplied for the Zend_Auth_Adapter_DbTable authentication adapter.');
@@ -296,10 +299,11 @@ class Zend_Auth_Adapter_DbTable_BasicSqliteTest extends PHPUnit_Framework_TestCa
     /**
      * Ensure that exceptions are caught
      *
-     * @expectedException Zend_Auth_Exception
      */
     public function testCatchExceptionNoIdentity()
     {
+        $this->expectException(\Zend_Auth_Exception::class);
+
         $result = $this->_adapter->authenticate();
         // $this->assertEquals($e->getMessage(), 'A value for the identity was not provided prior to authentication with Zend_Auth_Adapter_DbTable.');
     }
@@ -307,10 +311,11 @@ class Zend_Auth_Adapter_DbTable_BasicSqliteTest extends PHPUnit_Framework_TestCa
     /**
      * Ensure that exceptions are caught
      *
-     * @expectedException Zend_Auth_Exception
      */
     public function testCatchExceptionNoCredential()
     {
+        $this->expectException(\Zend_Auth_Exception::class);
+
         $this->_adapter->setIdentity('my_username');
         $result = $this->_adapter->authenticate();
         // $this->assertEquals($e->getMessage(), 'A credential value was not provided prior to authentication with Zend_Auth_Adapter_DbTable.');
@@ -319,10 +324,11 @@ class Zend_Auth_Adapter_DbTable_BasicSqliteTest extends PHPUnit_Framework_TestCa
     /**
      * Ensure that exceptions are caught
      *
-     * @expectedException Zend_Auth_Exception
      */
     public function testCatchExceptionBadSql()
     {
+        $this->expectException(\Zend_Auth_Exception::class);
+
         $this->_adapter->setTableName('bad_table_name');
         $this->_adapter->setIdentity('value');
         $this->_adapter->setCredential('value');
@@ -350,11 +356,12 @@ class Zend_Auth_Adapter_DbTable_BasicSqliteTest extends PHPUnit_Framework_TestCa
     /**
      * Test fallback to default database adapter, when no such adapter set
      *
-     * @expectedException Zend_Auth_Adapter_Exception
      * @group ZF-7510
      */
     public function testAuthenticateWithDefaultDbAdapterNoAdapterException()
     {
+        $this->expectException(\Zend_Auth_Adapter_Exception::class);
+
         require_once('Zend/Db/Table/Abstract.php');
         // preserve default db adapter between cases
         $tmp = Zend_Db_Table_Abstract::getDefaultAdapter();

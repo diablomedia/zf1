@@ -33,7 +33,7 @@ require_once 'Zend/Ldap/Node.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Ldap
  */
-abstract class Zend_Ldap_TestCase extends PHPUnit_Framework_TestCase
+abstract class Zend_Ldap_TestCase extends PHPUnit\Framework\TestCase
 {
     /**
      * @return array

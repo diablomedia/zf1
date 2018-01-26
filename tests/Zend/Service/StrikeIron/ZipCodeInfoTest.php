@@ -40,7 +40,7 @@ require_once 'Zend/Service/StrikeIron/ZipCodeInfo.php';
  * @group      Zend_Service
  * @group      Zend_Service_StrikeIron
  */
-class Zend_Service_StrikeIron_ZipCodeInfoTest extends PHPUnit_Framework_TestCase
+class Zend_Service_StrikeIron_ZipCodeInfoTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {

@@ -32,7 +32,7 @@ require_once 'Zend/Server/Reflection/Parameter.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Server
  */
-class Zend_Server_Reflection_ParameterTest extends PHPUnit_Framework_TestCase
+class Zend_Server_Reflection_ParameterTest extends PHPUnit\Framework\TestCase
 {
     protected function _getParameter()
     {
@@ -77,8 +77,8 @@ class Zend_Server_Reflection_ParameterTest extends PHPUnit_Framework_TestCase
         $r = new Zend_Server_Reflection_Parameter($this->_getParameter());
 
         // just test a few call proxies...
-        $this->assertTrue(is_bool($r->allowsNull()));
-        $this->assertTrue(is_bool($r->isOptional()));
+        $this->assertInternalType('bool', $r->allowsNull());
+        $this->assertInternalType('bool', $r->isOptional());
     }
 
     /**

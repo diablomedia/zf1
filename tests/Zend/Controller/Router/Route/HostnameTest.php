@@ -35,7 +35,7 @@ require_once 'Zend/Controller/Request/Http.php';
  * @group      Zend_Controller
  * @group      Zend_Controller_Router
  */
-class Zend_Controller_Router_Route_HostnameTest extends PHPUnit_Framework_TestCase
+class Zend_Controller_Router_Route_HostnameTest extends PHPUnit\Framework\TestCase
 {
     public function testCorrectStaticHostMatch()
     {

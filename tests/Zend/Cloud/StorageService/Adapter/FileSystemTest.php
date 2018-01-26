@@ -60,7 +60,7 @@ class Zend_Cloud_StorageService_Adapter_FileSystemTest
 
     public function testGetClient()
     {
-    	$this->assertTrue(is_string($this->_commonStorage->getClient()));
+    	$this->assertInternalType('string', $this->_commonStorage->getClient());
     }
 
     public function testNoParams()

@@ -32,7 +32,7 @@ require_once 'Zend/Cache.php';
  * @group      Zend_Feed
  * @group      Zend_Feed_Reader
  */
-class Zend_Feed_ReaderTest extends PHPUnit_Framework_TestCase
+class Zend_Feed_ReaderTest extends PHPUnit\Framework\TestCase
 {
 
     protected $_feedSamplePath = null;
@@ -168,10 +168,11 @@ class Zend_Feed_ReaderTest extends PHPUnit_Framework_TestCase
     
     /**
      * @group ZF-8328
-     * @expectedException Zend_Feed_Exception
      */
     public function testImportsUriAndThrowsExceptionIfNotAFeed()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         if (!defined('TESTS_ZEND_FEED_READER_ONLINE_ENABLED')
             || !constant('TESTS_ZEND_FEED_READER_ONLINE_ENABLED')
         ) {
@@ -332,7 +333,8 @@ class Zend_Feed_ReaderTest extends PHPUnit_Framework_TestCase
             'adapter'=>$testAdapter
         )));
         
-        $this->setExpectedException('Zend_Feed_Exception', 'Feed failed to load');
+        $this->expectException('Zend_Feed_Exception');
+        $this->expectExceptionMessage('Feed failed to load');
         $result = Zend_Feed_Reader::import('http://www.example.com');
     }
 
@@ -340,7 +342,7 @@ class Zend_Feed_ReaderTest extends PHPUnit_Framework_TestCase
      {
          $string = file_get_contents($this->_feedSamplePath.'/Reader/xxe-atom10.xml');
          $string = str_replace('XXE_URI', $this->_feedSamplePath.'/Reader/xxe-info.txt', $string);
-         $this->setExpectedException('Zend_Feed_Exception');
+         $this->expectException('Zend_Feed_Exception');
          $feed = Zend_Feed_Reader::importString($string);
      }
  

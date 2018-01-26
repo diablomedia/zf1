@@ -35,7 +35,7 @@ require_once 'Zend/Stdlib/CallbackHandler.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_EventManager_EventManagerTest extends PHPUnit_Framework_TestCase
+class Zend_EventManager_EventManagerTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {
@@ -63,10 +63,10 @@ class Zend_EventManager_EventManagerTest extends PHPUnit_Framework_TestCase
     public function testAttachShouldAddEventIfItDoesNotExist()
     {
         $events = $this->events->getEvents();
-        $this->assertTrue(empty($events), var_export($events, 1));
+        $this->assertEmpty($events, var_export($events, 1));
         $listener = $this->events->attach('test', array($this, __METHOD__));
         $events = $this->events->getEvents();
-        $this->assertFalse(empty($events));
+        $this->assertNotEmpty($events);
         $this->assertContains('test', $events);
     }
 
@@ -89,7 +89,7 @@ class Zend_EventManager_EventManagerTest extends PHPUnit_Framework_TestCase
         $callback = array($this, 'returnName');
         $listeners = $this->events->attach(array('foo', 'bar'), $callback);
 
-        $this->assertTrue(is_array($listeners));
+        $this->assertInternalType('array', $listeners);
 
         foreach ($listeners as $listener) {
             $this->assertTrue($listener instanceof Zend_Stdlib_CallbackHandler);
@@ -555,10 +555,11 @@ class Zend_EventManager_EventManagerTest extends PHPUnit_Framework_TestCase
 
     /**
      * @group ZF-12185
-     * @expectedException Zend_EventManager_Exception_InvalidArgumentException
      */
     public function testInvalidArgumentExceptionCanBeThrown()
     {
+        $this->expectException(\Zend_EventManager_Exception_InvalidArgumentException::class);
+
         require_once "Zend/EventManager/Exception/InvalidArgumentException.php";
         throw new Zend_EventManager_Exception_InvalidArgumentException();
     }

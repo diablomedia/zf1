@@ -28,22 +28,22 @@ require_once "Zend/Test/PHPUnit/Db/Connection.php";
 /**
  * Operation for Truncating on setup or teardown of a database tester.
  *
- * @uses       PHPUnit_Extensions_Database_Operation_IDatabaseOperation
+ * @uses       PHPUnit\DbUnit\Operation\Operation
  * @category   Zend
  * @package    Zend_Test
  * @subpackage PHPUnit
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Test_PHPUnit_Db_Operation_Truncate implements PHPUnit_Extensions_Database_Operation_IDatabaseOperation
+class Zend_Test_PHPUnit_Db_Operation_Truncate implements PHPUnit\DbUnit\Operation\Operation
 {
     /**
      *
-     * @param PHPUnit_Extensions_Database_DB_IDatabaseConnection $connection
-     * @param PHPUnit_Extensions_Database_DataSet_IDataSet $dataSet
+     * @param PHPUnit\DbUnit\Database\Connection $connection
+     * @param PHPUnit\DbUnit\DataSet\IDataSet $dataSet
      * @return void
      */
-    public function execute(PHPUnit_Extensions_Database_DB_IDatabaseConnection $connection, PHPUnit_Extensions_Database_DataSet_IDataSet $dataSet)
+    public function execute(PHPUnit\DbUnit\Database\Connection $connection, PHPUnit\DbUnit\DataSet\IDataSet $dataSet)
     {
         if(!($connection instanceof Zend_Test_PHPUnit_Db_Connection)) {
             require_once "Zend/Test/PHPUnit/Db/Exception.php";
@@ -55,7 +55,7 @@ class Zend_Test_PHPUnit_Db_Operation_Truncate implements PHPUnit_Extensions_Data
                 $tableName = $table->getTableMetaData()->getTableName();
                 $this->_truncate($connection->getConnection(), $tableName);
             } catch (Exception $e) {
-                throw new PHPUnit_Extensions_Database_Operation_Exception('TRUNCATE', 'TRUNCATE '.$tableName.'', array(), $table, $e->getMessage());
+                throw new PHPUnit\DbUnit\Operation\Exception('TRUNCATE', 'TRUNCATE '.$tableName.'', array(), $table, $e->getMessage());
             }
         }
     }

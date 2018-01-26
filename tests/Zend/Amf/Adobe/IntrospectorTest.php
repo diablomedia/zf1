@@ -33,7 +33,7 @@ require_once 'Zend/Amf/Adobe/Introspector.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Amf
  */
-class Zend_Amf_Adobe_IntrospectorTest extends PHPUnit_Framework_TestCase
+class Zend_Amf_Adobe_IntrospectorTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {

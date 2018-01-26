@@ -37,7 +37,7 @@ require_once 'Zend/Captcha/ReCaptcha.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Form
  */
-class Zend_Form_Element_CaptchaTest extends PHPUnit_Framework_TestCase
+class Zend_Form_Element_CaptchaTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {
@@ -61,10 +61,11 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Form_Exception
      */
     public function testConstructionShouldRequireCaptchaDetails()
     {
+        $this->expectException(\Zend_Form_Exception::class);
+
         $this->element = new Zend_Form_Element_Captcha('foo');
     }
 
@@ -81,7 +82,7 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit_Framework_TestCase
         $this->element->addPrefixPath('My_Captcha', 'My/Captcha/', 'captcha');
         $loader = $this->element->getPluginLoader('captcha');
         $paths  = $loader->getPaths('My_Captcha');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
     }
 
     public function testAddingNullPrefixPathShouldAddCaptchaPrefixPath()
@@ -89,7 +90,7 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit_Framework_TestCase
         $this->element->addPrefixPath('My', 'My');
         $loader = $this->element->getPluginLoader('captcha');
         $paths  = $loader->getPaths('My_Captcha');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
     }
 
     /**
@@ -158,11 +159,11 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit_Framework_TestCase
     public function testDefaultDecoratorsShouldIncludeErrorsDescriptionHtmlTagAndLabel()
     {
         $decorators = $this->element->getDecorators();
-        $this->assertTrue(is_array($decorators));
-        $this->assertTrue(array_key_exists('Zend_Form_Decorator_Errors', $decorators), 'Missing Errors decorator' . var_export(array_keys($decorators), 1));
-        $this->assertTrue(array_key_exists('Zend_Form_Decorator_Description', $decorators), 'Missing Description decorator' . var_export(array_keys($decorators), 1));
-        $this->assertTrue(array_key_exists('Zend_Form_Decorator_HtmlTag', $decorators), 'Missing HtmlTag decorator' . var_export(array_keys($decorators), 1));
-        $this->assertTrue(array_key_exists('Zend_Form_Decorator_Label', $decorators), 'Missing Label decorator' . var_export(array_keys($decorators), 1));
+        $this->assertInternalType('array', $decorators);
+        $this->assertArrayHasKey('Zend_Form_Decorator_Errors', $decorators, 'Missing Errors decorator' . var_export(array_keys($decorators), 1));
+        $this->assertArrayHasKey('Zend_Form_Decorator_Description', $decorators, 'Missing Description decorator' . var_export(array_keys($decorators), 1));
+        $this->assertArrayHasKey('Zend_Form_Decorator_HtmlTag', $decorators, 'Missing HtmlTag decorator' . var_export(array_keys($decorators), 1));
+        $this->assertArrayHasKey('Zend_Form_Decorator_Label', $decorators, 'Missing Label decorator' . var_export(array_keys($decorators), 1));
     }
 
     /**
@@ -171,7 +172,7 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit_Framework_TestCase
     public function testHelperDoesNotShowUpInAttribs()
     {
         require_once 'Zend/View.php';
-        $this->assertFalse(array_key_exists('helper', $this->element->getAttribs()));
+        $this->assertArrayNotHasKey('helper', $this->element->getAttribs());
     }
 
     /**
@@ -287,13 +288,13 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit_Framework_TestCase
 
         // Before rendering
         $decorators = $element->getDecorators();
-        $this->assertTrue(empty($decorators));
+        $this->assertEmpty($decorators);
 
         $element->render();
 
         // After rendering
         $decorators = $element->getDecorators();
-        $this->assertTrue(empty($decorators));
+        $this->assertEmpty($decorators);
     }
 
     /**
@@ -411,7 +412,7 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit_Framework_TestCase
         $this->element->addPrefixPath('My\Captcha', 'My/Captcha/', 'captcha');
         $loader = $this->element->getPluginLoader('captcha');
         $paths  = $loader->getPaths('My\Captcha');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
     }
 
     /**
@@ -426,7 +427,7 @@ class Zend_Form_Element_CaptchaTest extends PHPUnit_Framework_TestCase
         $this->element->addPrefixPath('My\\', 'My/');
         $loader = $this->element->getPluginLoader('captcha');
         $paths  = $loader->getPaths('My\Captcha');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
     }
 }
 

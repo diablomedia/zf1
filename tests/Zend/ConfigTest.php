@@ -33,7 +33,7 @@ require_once 'Zend/Config.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Config
  */
-class Zend_ConfigTest extends PHPUnit_Framework_TestCase
+class Zend_ConfigTest extends PHPUnit\Framework\TestCase
 {
     protected $_iniFileConfig;
     protected $_iniFileNested;

@@ -43,7 +43,7 @@ require_once 'Zend/View.php';
  * @group      Zend_View
  * @group      Zend_View_Helper
  */
-class Zend_View_Helper_HeadMetaTest extends PHPUnit_Framework_TestCase
+class Zend_View_Helper_HeadMetaTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @var Zend_View_Helper_HeadMeta
@@ -259,9 +259,9 @@ class Zend_View_Helper_HeadMetaTest extends PHPUnit_Framework_TestCase
 
         $this->assertObjectHasAttribute('modifiers', $value);
         $modifiers = $value->modifiers;
-        $this->assertTrue(array_key_exists('lang', $modifiers));
+        $this->assertArrayHasKey('lang', $modifiers);
         $this->assertEquals('us_en', $modifiers['lang']);
-        $this->assertTrue(array_key_exists('scheme', $modifiers));
+        $this->assertArrayHasKey('scheme', $modifiers);
         $this->assertEquals('foo', $modifiers['scheme']);
     }
 
@@ -299,7 +299,7 @@ class Zend_View_Helper_HeadMetaTest extends PHPUnit_Framework_TestCase
         set_error_handler(array($this, 'handleErrors'));
         $string = @$this->helper->toString();
         $this->assertEquals('', $string);
-        $this->assertTrue(is_string($this->error));
+        $this->assertInternalType('string', $this->error);
     }
 
     public function testHeadMetaHelperCreatesItemEntry()
@@ -318,7 +318,7 @@ class Zend_View_Helper_HeadMetaTest extends PHPUnit_Framework_TestCase
         $this->helper->offsetSetName(100, 'keywords', 'foo');
         $values = $this->helper->getArrayCopy();
         $this->assertEquals(1, count($values));
-        $this->assertTrue(array_key_exists(100, $values));
+        $this->assertArrayHasKey(100, $values);
         $item = $values[100];
         $this->assertEquals('foo', $item->content);
         $this->assertEquals('name', $item->type);

@@ -33,7 +33,7 @@ require_once 'Zend/Feed/Entry/Atom.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Feed
  */
-class Zend_Feed_ElementTest extends PHPUnit_Framework_TestCase
+class Zend_Feed_ElementTest extends PHPUnit\Framework\TestCase
 {
 
     public function testIsInitialized()
@@ -78,8 +78,8 @@ class Zend_Feed_ElementTest extends PHPUnit_Framework_TestCase
 
         $this->assertTrue($entry->summary instanceof Zend_Feed_Element, '__get access should return an Zend_Feed_Element instance');
         $this->assertFalse($entry->summary() instanceof Zend_Feed_Element, 'method access should not return an Zend_Feed_Element instance');
-        $this->assertTrue(is_string($entry->summary()), 'method access should return a string');
-        $this->assertFalse(is_string($entry->summary), '__get access should not return a string');
+        $this->assertInternalType('string', $entry->summary(), 'method access should return a string');
+        $this->assertNotInternalType('string', $entry->summary, '__get access should not return a string');
     }
 
     public function testSetNamespacedAttributes()

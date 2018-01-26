@@ -36,7 +36,7 @@ require_once 'Zend/Tool/Framework/Action/Base.php';
  * @group Zend_Tool_Framework
  * @group Zend_Tool_Framework_Action
  */
-class Zend_Tool_Framework_Action_BaseTest extends PHPUnit_Framework_TestCase
+class Zend_Tool_Framework_Action_BaseTest extends PHPUnit\Framework\TestCase
 {
 
     public function testBaseActionCanGetNameViaConstructor()

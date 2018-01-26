@@ -32,7 +32,7 @@ require_once 'Zend/Gdata/Gapps/MemberFeed.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Gapps
  */
-class Zend_Gdata_Gapps_MemberFeedTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_Gapps_MemberFeedTest extends PHPUnit\Framework\TestCase
 {
     protected $memberFeed = null;
 
@@ -49,22 +49,22 @@ class Zend_Gdata_Gapps_MemberFeedTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyFeedShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->emptyMemberFeed->extensionElements));
+        $this->assertInternalType('array', $this->emptyMemberFeed->extensionElements);
         $this->assertTrue(count($this->emptyMemberFeed->extensionElements) == 0);
     }
 
     public function testEmptyFeedShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->emptyMemberFeed->extensionAttributes));
+        $this->assertInternalType('array', $this->emptyMemberFeed->extensionAttributes);
         $this->assertTrue(count($this->emptyMemberFeed->extensionAttributes) == 0);
     }
 
     public function testSampleFeedShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->memberFeed->extensionElements));
+        $this->assertInternalType('array', $this->memberFeed->extensionElements);
         $this->assertTrue(count($this->memberFeed->extensionElements) == 0);
     }
 
     public function testSampleFeedShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->memberFeed->extensionAttributes));
+        $this->assertInternalType('array', $this->memberFeed->extensionAttributes);
         $this->assertTrue(count($this->memberFeed->extensionAttributes) == 0);
     }
 

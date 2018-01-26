@@ -34,7 +34,7 @@ require_once 'Zend/Validate/Identical.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Validate
  */
-class Zend_Validate_IdenticalTest extends PHPUnit_Framework_TestCase
+class Zend_Validate_IdenticalTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @var Zend_Validate_Identical
@@ -73,7 +73,7 @@ class Zend_Validate_IdenticalTest extends PHPUnit_Framework_TestCase
     {
         $this->testValidatingWhenTokenNullReturnsFalse();
         $messages = $this->validator->getMessages();
-        $this->assertTrue(array_key_exists('missingToken', $messages));
+        $this->assertArrayHasKey('missingToken', $messages);
     }
 
     public function testValidatingAgainstTokenWithNonMatchingValueReturnsFalse()
@@ -86,7 +86,7 @@ class Zend_Validate_IdenticalTest extends PHPUnit_Framework_TestCase
     {
         $this->testValidatingAgainstTokenWithNonMatchingValueReturnsFalse();
         $messages = $this->validator->getMessages();
-        $this->assertTrue(array_key_exists('notSame', $messages));
+        $this->assertArrayHasKey('notSame', $messages);
     }
 
     public function testValidatingAgainstTokenWithMatchingValueReturnsTrue()

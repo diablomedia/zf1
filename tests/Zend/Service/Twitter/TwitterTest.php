@@ -44,7 +44,7 @@ require_once 'Zend/Oauth/Consumer.php';
  * @group      Zend_Service
  * @group      Zend_Service_Twitter
  */
-class Zend_Service_Twitter_TwitterTest extends PHPUnit_Framework_TestCase
+class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Quick reusable Twitter Service stub setup. Its purpose is to fake
@@ -179,7 +179,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit_Framework_TestCase
 
     public function testAuthorisationFailureWithUsernameAndNoAccessToken()
     {
-        $this->setExpectedException('Zend_Service_Twitter_Exception');
+        $this->expectException('Zend_Service_Twitter_Exception');
         $twitter = new Zend_Service_Twitter(array('username'=>'me'));
         $twitter->statusesPublicTimeline();
     }
@@ -217,7 +217,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit_Framework_TestCase
      */
     public function testRetrievingStatusesWithInvalidScreenNameCharacterThrowsInvalidScreenNameException()
     {
-        $this->setExpectedException('Zend_Service_Twitter_Exception');
+        $this->expectException('Zend_Service_Twitter_Exception');
         $twitter = new Zend_Service_Twitter();
         $twitter->statuses->userTimeline(array('screen_name' => 'abc.def'));
     }
@@ -227,7 +227,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit_Framework_TestCase
      */
     public function testRetrievingStatusesWithInvalidScreenNameLengthThrowsInvalidScreenNameException()
     {
-        $this->setExpectedException('Zend_Service_Twitter_Exception');
+        $this->expectException('Zend_Service_Twitter_Exception');
         $twitter = new Zend_Service_Twitter();
         $twitter->statuses->userTimeline(array('screen_name' => 'abcdef_abc123_abc123x'));
     }
@@ -268,14 +268,14 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit_Framework_TestCase
 
     public function testOverloadingGetShouldthrowExceptionWithInvalidMethodType()
     {
-        $this->setExpectedException('Zend_Service_Twitter_Exception');
+        $this->expectException('Zend_Service_Twitter_Exception');
         $twitter = new Zend_Service_Twitter;
         $return = $twitter->foo;
     }
 
     public function testOverloadingGetShouldthrowExceptionWithInvalidFunction()
     {
-        $this->setExpectedException('Zend_Service_Twitter_Exception');
+        $this->expectException('Zend_Service_Twitter_Exception');
         $twitter = new Zend_Service_Twitter;
         $return = $twitter->foo();
     }
@@ -291,7 +291,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit_Framework_TestCase
 
     public function testMethodProxyingThrowExceptionsWithInvalidMethods()
     {
-        $this->setExpectedException('Zend_Service_Twitter_Exception');
+        $this->expectException('Zend_Service_Twitter_Exception');
         $twitter = new Zend_Service_Twitter;
         $twitter->statuses->foo();
     }
@@ -393,14 +393,14 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit_Framework_TestCase
 
     public function testPostStatusUpdateToLongShouldThrowException()
     {
-        $this->setExpectedException('Zend_Service_Twitter_Exception');
+        $this->expectException('Zend_Service_Twitter_Exception');
         $twitter = new Zend_Service_Twitter;
         $twitter->statuses->update('Test Message - ' . str_repeat(' Hello ', 140));
     }
 
     public function testPostStatusUpdateEmptyShouldThrowException()
     {
-        $this->setExpectedException('Zend_Service_Twitter_Exception');
+        $this->expectException('Zend_Service_Twitter_Exception');
         $twitter = new Zend_Service_Twitter;
         $twitter->statuses->update('');
     }

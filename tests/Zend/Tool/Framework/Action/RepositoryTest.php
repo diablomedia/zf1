@@ -39,7 +39,7 @@ require_once '_files/Foo.php';
  * @group Zend_Tool_Framework
  * @group Zend_Tool_Framework_Action
  */
-class Zend_Tool_Framework_Action_RepositoryTest extends PHPUnit_Framework_TestCase
+class Zend_Tool_Framework_Action_RepositoryTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @var Zend_Tool_Framework_Action_Repository
@@ -78,19 +78,21 @@ class Zend_Tool_Framework_Action_RepositoryTest extends PHPUnit_Framework_TestCa
     }
 
     /**
-     * @expectedException Zend_Tool_Framework_Action_Exception
      */
     public function testAddActionThrowsExceptionOnDuplicateNameAction()
     {
+        $this->expectException(\Zend_Tool_Framework_Action_Exception::class);
+
         $this->_repository->addAction(new Zend_Tool_Framework_Action_Foo());
         $this->_repository->addAction(new Zend_Tool_Framework_Action_Foo());
     }
 
     /**
-     * @expectedException Zend_Tool_Framework_Action_Exception
      */
     public function testAddActionThrowsExceptionOnActionWithNoName()
     {
+        $this->expectException(\Zend_Tool_Framework_Action_Exception::class);
+
         $this->_repository->addAction(new Zend_Tool_Framework_Action_Base());
     }
 

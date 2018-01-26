@@ -31,7 +31,7 @@ require_once 'Zend/Filter/StringToUpper.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Markup_BbcodeAndHtmlTest extends PHPUnit_Framework_TestCase
+class Zend_Markup_BbcodeAndHtmlTest extends PHPUnit\Framework\TestCase
 {
 
     /**
@@ -102,7 +102,7 @@ class Zend_Markup_BbcodeAndHtmlTest extends PHPUnit_Framework_TestCase
      */
     public function testExceptionParserWrongInputType()
     {
-        $this->setExpectedException('Zend_Markup_Parser_Exception');
+        $this->expectException('Zend_Markup_Parser_Exception');
 
         $this->_markup->getParser()->parse(array());
     }
@@ -114,7 +114,7 @@ class Zend_Markup_BbcodeAndHtmlTest extends PHPUnit_Framework_TestCase
      */
     public function testExceptionParserEmptyInput()
     {
-        $this->setExpectedException('Zend_Markup_Parser_Exception');
+        $this->expectException('Zend_Markup_Parser_Exception');
 
         $this->_markup->getParser()->parse('');
     }

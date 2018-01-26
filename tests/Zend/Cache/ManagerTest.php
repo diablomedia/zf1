@@ -29,7 +29,7 @@ require_once 'Zend/Config.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Cache_ManagerTest extends PHPUnit_Framework_TestCase
+class Zend_Cache_ManagerTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp()
@@ -63,7 +63,7 @@ class Zend_Cache_ManagerTest extends PHPUnit_Framework_TestCase
         $manager = new Zend_Cache_Manager();
         $caches  = $manager->getCaches();
 
-        $this->assertTrue(is_array($caches));
+        $this->assertInternalType('array', $caches);
         $this->assertArrayHasKey('default', $caches);
     }
 

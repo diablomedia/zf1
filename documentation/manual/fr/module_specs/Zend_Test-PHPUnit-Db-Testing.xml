@@ -33,7 +33,7 @@
 
         <para>
             La classe <classname>Zend_Test_PHPUnit_DatabaseTestCase</classname> étend
-            <classname>PHPUnit_Extensions_Database_TestCase</classname>, celle-ci permet de configurer
+            <classname>PHPUnit\DbUnit\TestCase</classname>, celle-ci permet de configurer
             un jeu de données concernant la base, pour chaque test. L'implementation du Zend Framework
             offre quelques fonctionalités supplémentaires par rapport à l'extension PHPUnit concernant
             les bases de données, ceci dans le but d'utiliser des ressources provenant de
@@ -101,7 +101,7 @@
 
         <para>
             Le tableau suivant liste uniquement les nouvelles méthodes par rapport à la classe
-            <classname>PHPUnit_Extensions_Database_TestCase</classname>, dont l'<ulink
+            <classname>PHPUnit\DbUnit\TestCase</classname>, dont l'<ulink
                 url="http://www.phpunit.de/manual/current/en/database.html">API est documentée dans
                 la documentation de PHPUnit</ulink>.
         </para>
@@ -223,7 +223,7 @@ class UserControllerTest extends Zend_Test_PHPUnit_ControllerTestCase
         $databaseTester = new Zend_Test_PHPUnit_Db_SimpleTester($connection);
 
         $databaseFixture =
-                    new PHPUnit_Extensions_Database_DataSet_FlatXmlDataSet(
+                    new PHPUnit\DbUnit\DataSet\FlatXmlDataSet(
                         dirname(__FILE__) . '/_files/initialUserFixture.xml'
                     );
 

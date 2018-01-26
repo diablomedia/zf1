@@ -43,7 +43,7 @@ require_once 'Zend/Dojo/View/Helper/Dojo.php';
  * @group      Zend_Dojo
  * @group      Zend_Dojo_Form
  */
-class Zend_Dojo_Form_Element_VerticalSliderTest extends PHPUnit_Framework_TestCase
+class Zend_Dojo_Form_Element_VerticalSliderTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -102,7 +102,7 @@ class Zend_Dojo_Form_Element_VerticalSliderTest extends PHPUnit_Framework_TestCa
         $test = $this->element->getLeftDecoration();
         $this->assertSame($leftDecoration, $test);
 
-        $this->assertTrue(array_key_exists('dijit', $leftDecoration));
+        $this->assertArrayHasKey('dijit', $leftDecoration);
         $this->assertEquals('VerticalRule', $leftDecoration['dijit']);
     }
 
@@ -115,7 +115,7 @@ class Zend_Dojo_Form_Element_VerticalSliderTest extends PHPUnit_Framework_TestCa
         $test = $this->element->getLeftDecoration();
         $this->assertSame($leftDecoration, $test);
 
-        $this->assertTrue(array_key_exists('container', $leftDecoration));
+        $this->assertArrayHasKey('container', $leftDecoration);
         $this->assertEquals('left', $leftDecoration['container']);
     }
 
@@ -129,7 +129,7 @@ class Zend_Dojo_Form_Element_VerticalSliderTest extends PHPUnit_Framework_TestCa
         $test = $this->element->getLeftDecoration();
         $this->assertSame($leftDecoration, $test);
 
-        $this->assertTrue(array_key_exists('labels', $leftDecoration));
+        $this->assertArrayHasKey('labels', $leftDecoration);
         $this->assertSame($labels, $leftDecoration['labels']);
     }
 
@@ -150,7 +150,7 @@ class Zend_Dojo_Form_Element_VerticalSliderTest extends PHPUnit_Framework_TestCa
         $test = $this->element->getLeftDecoration();
         $this->assertSame($leftDecoration, $test);
 
-        $this->assertTrue(array_key_exists('params', $leftDecoration));
+        $this->assertArrayHasKey('params', $leftDecoration);
         $this->assertSame($params, $leftDecoration['params']);
     }
 
@@ -171,7 +171,7 @@ class Zend_Dojo_Form_Element_VerticalSliderTest extends PHPUnit_Framework_TestCa
         $test = $this->element->getLeftDecoration();
         $this->assertSame($leftDecoration, $test);
 
-        $this->assertTrue(array_key_exists('attribs', $leftDecoration));
+        $this->assertArrayHasKey('attribs', $leftDecoration);
         $this->assertSame($attribs, $leftDecoration['attribs']);
     }
 
@@ -184,7 +184,7 @@ class Zend_Dojo_Form_Element_VerticalSliderTest extends PHPUnit_Framework_TestCa
         $test = $this->element->getRightDecoration();
         $this->assertSame($rightDecoration, $test);
 
-        $this->assertTrue(array_key_exists('dijit', $rightDecoration));
+        $this->assertArrayHasKey('dijit', $rightDecoration);
         $this->assertEquals('VerticalRule', $rightDecoration['dijit']);
     }
 
@@ -197,7 +197,7 @@ class Zend_Dojo_Form_Element_VerticalSliderTest extends PHPUnit_Framework_TestCa
         $test = $this->element->getRightDecoration();
         $this->assertSame($rightDecoration, $test);
 
-        $this->assertTrue(array_key_exists('container', $rightDecoration));
+        $this->assertArrayHasKey('container', $rightDecoration);
         $this->assertEquals('right', $rightDecoration['container']);
     }
 
@@ -211,7 +211,7 @@ class Zend_Dojo_Form_Element_VerticalSliderTest extends PHPUnit_Framework_TestCa
         $test = $this->element->getRightDecoration();
         $this->assertSame($rightDecoration, $test);
 
-        $this->assertTrue(array_key_exists('labels', $rightDecoration));
+        $this->assertArrayHasKey('labels', $rightDecoration);
         $this->assertSame($labels, $rightDecoration['labels']);
     }
 
@@ -232,7 +232,7 @@ class Zend_Dojo_Form_Element_VerticalSliderTest extends PHPUnit_Framework_TestCa
         $test = $this->element->getRightDecoration();
         $this->assertSame($rightDecoration, $test);
 
-        $this->assertTrue(array_key_exists('params', $rightDecoration));
+        $this->assertArrayHasKey('params', $rightDecoration);
         $this->assertSame($params, $rightDecoration['params']);
     }
 
@@ -253,7 +253,7 @@ class Zend_Dojo_Form_Element_VerticalSliderTest extends PHPUnit_Framework_TestCa
         $test = $this->element->getRightDecoration();
         $this->assertSame($rightDecoration, $test);
 
-        $this->assertTrue(array_key_exists('attribs', $rightDecoration));
+        $this->assertArrayHasKey('attribs', $rightDecoration);
         $this->assertSame($attribs, $rightDecoration['attribs']);
     }
 

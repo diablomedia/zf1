@@ -39,7 +39,7 @@ require_once 'Zend/Config.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Text
  */
-class Zend_Text_FigletTest extends PHPUnit_Framework_TestCase
+class Zend_Text_FigletTest extends PHPUnit\Framework\TestCase
 {
     public function testStandardAlignLeft()
     {
@@ -117,10 +117,11 @@ class Zend_Text_FigletTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Text_Figlet_Exception
      */
     public function testIncorrectEncoding()
     {
+        $this->expectException(\Zend_Text_Figlet_Exception::class);
+
         $this->markTestSkipped('Test case not reproducible on all setups');
         $figlet  = new Zend_Text_Figlet();
 

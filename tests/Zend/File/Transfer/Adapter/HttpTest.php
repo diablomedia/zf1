@@ -38,7 +38,7 @@ require_once 'Zend/Validate/File/Upload.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_File
  */
-class Zend_File_Transfer_Adapter_HttpTest extends PHPUnit_Framework_TestCase
+class Zend_File_Transfer_Adapter_HttpTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -86,18 +86,20 @@ class Zend_File_Transfer_Adapter_HttpTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_File_Transfer_Exception
      */
     public function testSendingFiles()
     {
+        $this->expectException(\Zend_File_Transfer_Exception::class);
+
         $this->adapter->send();
     }
 
     /**
-     * @expectedException Zend_File_Transfer_Exception
      */
     public function testFileIsSent()
     {
+        $this->expectException(\Zend_File_Transfer_Exception::class);
+
         $this->adapter->isSent();
     }
 
@@ -271,22 +273,22 @@ class Zend_File_Transfer_Adapter_HttpTest extends PHPUnit_Framework_TestCase
         $adapter = new Zend_ProgressBar_Adapter_Console();
         $status = array('progress' => $adapter, 'session' => 'upload');
         $status = Zend_File_Transfer_Adapter_HttpTest_MockAdapter::getProgress($status);
-        $this->assertTrue(array_key_exists('total', $status));
-        $this->assertTrue(array_key_exists('current', $status));
-        $this->assertTrue(array_key_exists('rate', $status));
-        $this->assertTrue(array_key_exists('id', $status));
-        $this->assertTrue(array_key_exists('message', $status));
-        $this->assertTrue(array_key_exists('progress', $status));
+        $this->assertArrayHasKey('total', $status);
+        $this->assertArrayHasKey('current', $status);
+        $this->assertArrayHasKey('rate', $status);
+        $this->assertArrayHasKey('id', $status);
+        $this->assertArrayHasKey('message', $status);
+        $this->assertArrayHasKey('progress', $status);
         $this->assertTrue($status['progress'] instanceof Zend_ProgressBar);
 
         $this->adapter->switchApcToUP();
         $status = Zend_File_Transfer_Adapter_HttpTest_MockAdapter::getProgress($status);
-        $this->assertTrue(array_key_exists('total', $status));
-        $this->assertTrue(array_key_exists('current', $status));
-        $this->assertTrue(array_key_exists('rate', $status));
-        $this->assertTrue(array_key_exists('id', $status));
-        $this->assertTrue(array_key_exists('message', $status));
-        $this->assertTrue(array_key_exists('progress', $status));
+        $this->assertArrayHasKey('total', $status);
+        $this->assertArrayHasKey('current', $status);
+        $this->assertArrayHasKey('rate', $status);
+        $this->assertArrayHasKey('id', $status);
+        $this->assertArrayHasKey('message', $status);
+        $this->assertArrayHasKey('progress', $status);
         $this->assertTrue($status['progress'] instanceof Zend_ProgressBar);
     }
 

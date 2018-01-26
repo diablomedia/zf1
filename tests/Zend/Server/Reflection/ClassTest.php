@@ -34,7 +34,7 @@ require_once 'Zend/Server/Reflection.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Server
  */
-class Zend_Server_Reflection_ClassTest extends PHPUnit_Framework_TestCase
+class Zend_Server_Reflection_ClassTest extends PHPUnit\Framework\TestCase
 {
     /**
      * __construct() test
@@ -55,7 +55,7 @@ class Zend_Server_Reflection_ClassTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('', $r->getNamespace());
 
         $methods = $r->getMethods();
-        $this->assertTrue(is_array($methods));
+        $this->assertInternalType('array', $methods);
         foreach ($methods as $m) {
             $this->assertTrue($m instanceof Zend_Server_Reflection_Method);
         }
@@ -78,7 +78,7 @@ class Zend_Server_Reflection_ClassTest extends PHPUnit_Framework_TestCase
     public function test__call()
     {
         $r = new Zend_Server_Reflection_Class(new ReflectionClass('Zend_Server_Reflection'));
-        $this->assertTrue(is_string($r->getName()));
+        $this->assertInternalType('string', $r->getName());
         $this->assertEquals('Zend_Server_Reflection', $r->getName());
     }
 
@@ -104,7 +104,7 @@ class Zend_Server_Reflection_ClassTest extends PHPUnit_Framework_TestCase
         $r = new Zend_Server_Reflection_Class(new ReflectionClass('Zend_Server_Reflection'));
 
         $methods = $r->getMethods();
-        $this->assertTrue(is_array($methods));
+        $this->assertInternalType('array', $methods);
         foreach ($methods as $m) {
             $this->assertTrue($m instanceof Zend_Server_Reflection_Method);
         }

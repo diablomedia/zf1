@@ -31,7 +31,7 @@ require_once 'Zend/Crypt/Math/BigInteger.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Crypt
  */
-class Zend_Crypt_DiffieHellmanTest extends PHPUnit_Framework_TestCase
+class Zend_Crypt_DiffieHellmanTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {

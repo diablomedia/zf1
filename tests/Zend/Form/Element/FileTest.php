@@ -38,7 +38,7 @@ require_once 'Zend/View.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Form
  */
-class Zend_Form_Element_FileTest extends PHPUnit_Framework_TestCase
+class Zend_Form_Element_FileTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @var Zend_Form_Element_File
@@ -77,7 +77,7 @@ class Zend_Form_Element_FileTest extends PHPUnit_Framework_TestCase
     {
         $loader = $this->element->getPluginLoader('decorator');
         $paths = $loader->getPaths('Zend_Form_Decorator');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
 
         $loader = new Zend_Loader_PluginLoader;
         $this->element->setPluginLoader($loader, 'decorator');
@@ -90,7 +90,7 @@ class Zend_Form_Element_FileTest extends PHPUnit_Framework_TestCase
         $this->element->addPrefixPath('Foo_Decorator', 'Foo/Decorator/', 'decorator');
         $loader = $this->element->getPluginLoader('decorator');
         $paths = $loader->getPaths('Foo_Decorator');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
     }
 
     public function testElementShouldAddToAllPluginLoadersWhenAddingNullPrefixPath()
@@ -103,7 +103,7 @@ class Zend_Form_Element_FileTest extends PHPUnit_Framework_TestCase
             $string = str_replace(' ', '_', $string);
             $prefix = 'Foo_' . $string;
             $paths  = $loader->getPaths($prefix);
-            $this->assertTrue(is_array($paths), "Failed asserting paths found for prefix $prefix");
+            $this->assertInternalType('array', $paths, "Failed asserting paths found for prefix $prefix");
         }
     }
 
@@ -122,10 +122,11 @@ class Zend_Form_Element_FileTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Form_Element_Exception
      */
     public function testElementShouldThrowExceptionWhenAddingAdapterOfInvalidType()
     {
+        $this->expectException(\Zend_Form_Element_Exception::class);
+
         $this->element->setTransferAdapter(new stdClass);
     }
 
@@ -134,7 +135,7 @@ class Zend_Form_Element_FileTest extends PHPUnit_Framework_TestCase
         $loader = $this->element->getPluginLoader('transfer_adapter');
         $this->assertTrue($loader instanceof Zend_Loader_PluginLoader_Interface);
         $paths = $loader->getPaths('Zend_File_Transfer_Adapter');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
     }
 
     public function testElementShouldAllowSpecifyingAdapterUsingPluginLoader()
@@ -156,7 +157,7 @@ class Zend_Form_Element_FileTest extends PHPUnit_Framework_TestCase
         $validators = $this->element->getValidators();
         $test       = $this->element->getTransferAdapter()->getValidators();
         $this->assertEquals($validators, $test);
-        $this->assertTrue(is_array($test));
+        $this->assertInternalType('array', $test);
         $this->assertEquals(3, count($test));
 
         $validator = $this->element->getValidator('count');
@@ -175,12 +176,12 @@ class Zend_Form_Element_FileTest extends PHPUnit_Framework_TestCase
         $validators = $this->element->getValidators();
         $test       = $this->element->getTransferAdapter()->getValidators();
         $this->assertSame($validators, $test);
-        $this->assertTrue(is_array($test));
+        $this->assertInternalType('array', $test);
         $this->assertEquals(3, count($test), var_export($test, 1));
 
         $this->element->clearValidators();
         $validators = $this->element->getValidators();
-        $this->assertTrue(is_array($validators));
+        $this->assertInternalType('array', $validators);
         $this->assertEquals(0, count($validators));
         $test = $this->element->getTransferAdapter()->getValidators();
         $this->assertSame($validators, $test);

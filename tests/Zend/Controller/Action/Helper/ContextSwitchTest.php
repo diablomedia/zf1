@@ -45,7 +45,7 @@ require_once 'Zend/View/Interface.php';
  * @group      Zend_Controller_Action
  * @group      Zend_Controller_Action_Helper
  */
-class Zend_Controller_Action_Helper_ContextSwitchTest extends PHPUnit_Framework_TestCase
+class Zend_Controller_Action_Helper_ContextSwitchTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -309,7 +309,7 @@ class Zend_Controller_Action_Helper_ContextSwitchTest extends PHPUnit_Framework_
         ));
         $context = $this->helper->getContext('foobar');
         $this->assertNotNull($context);
-        $this->assertTrue(is_array($context));
+        $this->assertInternalType('array', $context);
         $this->assertTrue(isset($context['suffix']));
         $this->assertTrue(isset($context['headers']));
         $this->assertTrue(isset($context['callbacks']));
@@ -395,7 +395,7 @@ class Zend_Controller_Action_Helper_ContextSwitchTest extends PHPUnit_Framework_
         $this->helper->clearContexts();
         $received = $this->helper->getContexts();
         $this->assertNotEquals($contexts, $received);
-        $this->assertTrue(empty($received));
+        $this->assertEmpty($received);
     }
 
     public function testDefaultContextParam()
@@ -447,7 +447,7 @@ class Zend_Controller_Action_Helper_ContextSwitchTest extends PHPUnit_Framework_
     {
         $this->assertEquals('phtml', $this->viewRenderer->getViewSuffix());
         $headers = $this->response->getHeaders();
-        $this->assertTrue(empty($headers));
+        $this->assertEmpty($headers);
     }
 
     public function testInitContextDoesNothingIfNoContextsSet()
@@ -654,7 +654,7 @@ class Zend_Controller_Action_Helper_ContextSwitchTest extends PHPUnit_Framework_
 
         $body = $this->response->getBody();
         $result = Zend_Json::decode($body);
-        $this->assertTrue(is_array($result), var_export($body, 1));
+        $this->assertInternalType('array', $result, var_export($body, 1));
         $this->assertTrue(isset($result['foo']));
         $this->assertTrue(isset($result['bar']));
         $this->assertEquals('bar', $result['foo']);
@@ -683,7 +683,7 @@ class Zend_Controller_Action_Helper_ContextSwitchTest extends PHPUnit_Framework_
         $this->assertTrue($found, 'JSON content type header not found');
 
         $body = $this->response->getBody();
-        $this->assertTrue(empty($body), $body);
+        $this->assertEmpty($body, $body);
     }
 
     public function testCanAddOneOrMoreActionContexts()
@@ -761,7 +761,7 @@ class Zend_Controller_Action_Helper_ContextSwitchTest extends PHPUnit_Framework_
     {
         $this->helper->clearActionContexts();
         $contexts = $this->helper->getActionContexts();
-        $this->assertTrue(empty($contexts));
+        $this->assertEmpty($contexts);
     }
 
     public function getOptions()

@@ -33,7 +33,7 @@ require_once 'Zend/Gdata/ClientLogin.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Docs
  */
-class Zend_Gdata_DocsOnlineTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_DocsOnlineTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp()

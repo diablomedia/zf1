@@ -34,7 +34,7 @@ require_once 'Zend/Validate/NotEmpty.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Validate
  */
-class Zend_Validate_NotEmptyTest extends PHPUnit_Framework_TestCase
+class Zend_Validate_NotEmptyTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Zend_Validate_NotEmpty object
@@ -551,7 +551,7 @@ class Zend_Validate_NotEmptyTest extends PHPUnit_Framework_TestCase
 
         $this->assertFalse($valid->isValid(''));
         $messages = $valid->getMessages();
-        $this->assertTrue(array_key_exists('isEmpty', $messages));
+        $this->assertArrayHasKey('isEmpty', $messages);
         $this->assertContains("can't be empty", $messages['isEmpty']);
     }
 

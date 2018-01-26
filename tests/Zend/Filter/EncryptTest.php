@@ -34,7 +34,7 @@ require_once 'Zend/Filter/Decrypt.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Filter
  */
-class Zend_Filter_EncryptTest extends PHPUnit_Framework_TestCase
+class Zend_Filter_EncryptTest extends PHPUnit\Framework\TestCase
 {
     protected $errorReporting;
 

@@ -36,7 +36,7 @@ require_once 'Zend/Server/Reflection/ReturnValue.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Server
  */
-class Zend_Server_Reflection_PrototypeTest extends PHPUnit_Framework_TestCase
+class Zend_Server_Reflection_PrototypeTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Zend_Server_Reflection_Prototype object
@@ -151,7 +151,7 @@ class Zend_Server_Reflection_PrototypeTest extends PHPUnit_Framework_TestCase
         $r = new Zend_Server_Reflection_Prototype($this->_r->getReturnValue(), $this->_parameters);
         $p = $r->getParameters();
 
-        $this->assertTrue(is_array($p));
+        $this->assertInternalType('array', $p);
         foreach ($p as $parameter) {
             $this->assertTrue($parameter instanceof Zend_Server_Reflection_Parameter);
         }

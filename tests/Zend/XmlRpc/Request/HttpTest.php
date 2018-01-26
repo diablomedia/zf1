@@ -33,7 +33,7 @@ require_once 'Zend/XmlRpc/Request/Http.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_XmlRpc
  */
-class Zend_XmlRpc_Request_HttpTest extends PHPUnit_Framework_TestCase
+class Zend_XmlRpc_Request_HttpTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Setup environment

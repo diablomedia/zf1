@@ -36,7 +36,7 @@ require_once 'Zend/Tool/Framework/Manifest/ProviderMetadata.php';
  * @group Zend_Tool_Framework
  * @group Zend_Tool_Framework_Manifest
  */
-class Zend_Tool_Framework_Manifest_ProviderMetadataTest extends PHPUnit_Framework_TestCase
+class Zend_Tool_Framework_Manifest_ProviderMetadataTest extends PHPUnit\Framework\TestCase
 {
 
     /**

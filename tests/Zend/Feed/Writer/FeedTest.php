@@ -31,7 +31,7 @@ require_once 'Zend/Feed/Writer/Feed.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Feed_Writer_FeedTest extends PHPUnit_Framework_TestCase
+class Zend_Feed_Writer_FeedTest extends PHPUnit\Framework\TestCase
 {
 
     protected $_feedSamplePath = null;
@@ -295,13 +295,13 @@ class Zend_Feed_Writer_FeedTest extends PHPUnit_Framework_TestCase
     public function testGetDateCreatedReturnsNullIfDateNotSet()
     {
         $writer = new Zend_Feed_Writer_Feed;
-        $this->assertTrue(is_null($writer->getDateCreated()));
+        $this->assertNull($writer->getDateCreated());
     }
 
     public function testGetDateModifiedReturnsNullIfDateNotSet()
     {
         $writer = new Zend_Feed_Writer_Feed;
-        $this->assertTrue(is_null($writer->getDateModified()));
+        $this->assertNull($writer->getDateModified());
     }
 
     public function testSetLastBuildDateDefaultsToCurrentTime()
@@ -363,13 +363,13 @@ class Zend_Feed_Writer_FeedTest extends PHPUnit_Framework_TestCase
     public function testGetLastBuildDateReturnsNullIfDateNotSet()
     {
         $writer = new Zend_Feed_Writer_Feed;
-        $this->assertTrue(is_null($writer->getLastBuildDate()));
+        $this->assertNull($writer->getLastBuildDate());
     }
 
     public function testGetCopyrightReturnsNullIfDateNotSet()
     {
         $writer = new Zend_Feed_Writer_Feed;
-        $this->assertTrue(is_null($writer->getCopyright()));
+        $this->assertNull($writer->getCopyright());
     }
 
     public function testSetsDescription()
@@ -392,7 +392,7 @@ class Zend_Feed_Writer_FeedTest extends PHPUnit_Framework_TestCase
     public function testGetDescriptionReturnsNullIfDateNotSet()
     {
         $writer = new Zend_Feed_Writer_Feed;
-        $this->assertTrue(is_null($writer->getDescription()));
+        $this->assertNull($writer->getDescription());
     }
 
     public function testSetsId()
@@ -446,7 +446,7 @@ class Zend_Feed_Writer_FeedTest extends PHPUnit_Framework_TestCase
     public function testGetIdReturnsNullIfDateNotSet()
     {
         $writer = new Zend_Feed_Writer_Feed;
-        $this->assertTrue(is_null($writer->getId()));
+        $this->assertNull($writer->getId());
     }
 
     public function testSetsLanguage()
@@ -469,7 +469,7 @@ class Zend_Feed_Writer_FeedTest extends PHPUnit_Framework_TestCase
     public function testGetLanguageReturnsNullIfDateNotSet()
     {
         $writer = new Zend_Feed_Writer_Feed;
-        $this->assertTrue(is_null($writer->getLanguage()));
+        $this->assertNull($writer->getLanguage());
     }
 
     public function testSetsLink()
@@ -502,7 +502,7 @@ class Zend_Feed_Writer_FeedTest extends PHPUnit_Framework_TestCase
     public function testGetLinkReturnsNullIfDateNotSet()
     {
         $writer = new Zend_Feed_Writer_Feed;
-        $this->assertTrue(is_null($writer->getLink()));
+        $this->assertNull($writer->getLink());
     }
 
     public function testSetsEncoding()
@@ -548,7 +548,7 @@ class Zend_Feed_Writer_FeedTest extends PHPUnit_Framework_TestCase
     public function testGetTitleReturnsNullIfDateNotSet()
     {
         $writer = new Zend_Feed_Writer_Feed;
-        $this->assertTrue(is_null($writer->getTitle()));
+        $this->assertNull($writer->getTitle());
     }
 
     public function testSetsGeneratorName()
@@ -674,7 +674,7 @@ class Zend_Feed_Writer_FeedTest extends PHPUnit_Framework_TestCase
     public function testGetGeneratorReturnsNullIfDateNotSet()
     {
         $writer = new Zend_Feed_Writer_Feed;
-        $this->assertTrue(is_null($writer->getGenerator()));
+        $this->assertNull($writer->getGenerator());
     }
 
     public function testSetsFeedLink()
@@ -707,7 +707,7 @@ class Zend_Feed_Writer_FeedTest extends PHPUnit_Framework_TestCase
     public function testGetFeedLinksReturnsNullIfNotSet()
     {
         $writer = new Zend_Feed_Writer_Feed;
-        $this->assertTrue(is_null($writer->getFeedLinks()));
+        $this->assertNull($writer->getFeedLinks());
     }
 
     public function testSetsBaseUrl()
@@ -730,7 +730,7 @@ class Zend_Feed_Writer_FeedTest extends PHPUnit_Framework_TestCase
     public function testGetBaseUrlReturnsNullIfNotSet()
     {
         $writer = new Zend_Feed_Writer_Feed;
-        $this->assertTrue(is_null($writer->getBaseUrl()));
+        $this->assertNull($writer->getBaseUrl());
     }
 
     public function testAddsHubUrl()
@@ -760,7 +760,7 @@ class Zend_Feed_Writer_FeedTest extends PHPUnit_Framework_TestCase
     public function testAddingHubUrlReturnsNullIfNotSet()
     {
         $writer = new Zend_Feed_Writer_Feed;
-        $this->assertTrue(is_null($writer->getHubs()));
+        $this->assertNull($writer->getHubs());
     }
 
     public function testCreatesNewEntryDataContainer()
@@ -818,10 +818,11 @@ class Zend_Feed_Writer_FeedTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetsImageUriThrowsExceptionOnEmptyUri()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $writer = new Zend_Feed_Writer_Feed;
         $writer->setImage(array(
             'uri' => ''
@@ -829,19 +830,21 @@ class Zend_Feed_Writer_FeedTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetsImageUriThrowsExceptionOnMissingUri()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $writer = new Zend_Feed_Writer_Feed;
         $writer->setImage(array());
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetsImageUriThrowsExceptionOnInvalidUri()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $writer = new Zend_Feed_Writer_Feed;
         $writer->setImage(array(
             'uri' => 'http://'
@@ -927,10 +930,11 @@ class Zend_Feed_Writer_FeedTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetsIconUriThrowsExceptionOnEmptyUri()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $writer = new Zend_Feed_Writer_Feed;
         $writer->setIcon(array(
             'uri' => ''
@@ -938,19 +942,21 @@ class Zend_Feed_Writer_FeedTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetsIconUriThrowsExceptionOnMissingUri()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $writer = new Zend_Feed_Writer_Feed;
         $writer->setIcon(array());
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetsIconUriThrowsExceptionOnInvalidUri()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $writer = new Zend_Feed_Writer_Feed;
         $writer->setIcon(array(
             'uri' => 'http://'
@@ -960,7 +966,7 @@ class Zend_Feed_Writer_FeedTest extends PHPUnit_Framework_TestCase
     public function testGetCategoriesReturnsNullIfNotSet()
     {
         $writer = new Zend_Feed_Writer_Feed;
-        $this->assertTrue(is_null($writer->getCategories()));
+        $this->assertNull($writer->getCategories());
     }
 
     public function testAddsAndOrdersEntriesByDateIfRequested()

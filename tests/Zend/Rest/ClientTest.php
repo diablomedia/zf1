@@ -37,7 +37,7 @@ require_once 'Zend/Http/Client/Adapter/Test.php';
  * @group      Zend_Rest
  * @group      Zend_Rest_Client
  */
-class Zend_Rest_ClientTest extends PHPUnit_Framework_TestCase
+class Zend_Rest_ClientTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {

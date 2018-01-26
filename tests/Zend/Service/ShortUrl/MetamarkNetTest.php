@@ -27,7 +27,7 @@ require_once 'Zend/Service/ShortUrl/MetamarkNet.php';
  * @subpackage  UnitTests
  * @see http://metamark.net/docs/api/rest.html
  */
-class Zend_Service_ShortUrl_MetamarkNetTest extends PHPUnit_Framework_TestCase
+class Zend_Service_ShortUrl_MetamarkNetTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Zend_Service_ShortUrl_MetamarkNet object
@@ -56,13 +56,13 @@ class Zend_Service_ShortUrl_MetamarkNetTest extends PHPUnit_Framework_TestCase
 
     public function testShortenEmptyUrlException()
     {
-        $this->setExpectedException('Zend_Service_ShortUrl_Exception');
+        $this->expectException('Zend_Service_ShortUrl_Exception');
         $this->_s->shorten('');
     }
 
     public function testShortenIncorrectUrlException()
     {
-        $this->setExpectedException('Zend_Service_ShortUrl_Exception');
+        $this->expectException('Zend_Service_ShortUrl_Exception');
         $this->_s->shorten('wrongAdress.cccc');
     }
 
@@ -92,19 +92,19 @@ class Zend_Service_ShortUrl_MetamarkNetTest extends PHPUnit_Framework_TestCase
 
     public function testUnshortenEmptyUrlException()
     {
-        $this->setExpectedException('Zend_Service_ShortUrl_Exception');
+        $this->expectException('Zend_Service_ShortUrl_Exception');
         $this->_s->unshorten('');
     }
 
     public function testUnshortenIncorrectUrlException()
     {
-        $this->setExpectedException('Zend_Service_ShortUrl_Exception');
+        $this->expectException('Zend_Service_ShortUrl_Exception');
         $this->_s->unshorten('wrongAdress.cccc');
     }
 
     public function testUnshortenWrongUrlException()
     {
-        $this->setExpectedException('Zend_Service_ShortUrl_Exception');
+        $this->expectException('Zend_Service_ShortUrl_Exception');
         $this->_s->unshorten('http://www.zend.com');
     }
 }

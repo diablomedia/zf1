@@ -32,7 +32,7 @@ require_once 'Zend/Gdata/Calendar.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Calendar
  */
-class Zend_Gdata_Calendar_SendEventNotificationsTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_Calendar_SendEventNotificationsTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -43,24 +43,24 @@ class Zend_Gdata_Calendar_SendEventNotificationsTest extends PHPUnit_Framework_T
     }
 
     public function testEmptySendEventNotificationsShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->sendEventNotifications->extensionElements));
+        $this->assertInternalType('array', $this->sendEventNotifications->extensionElements);
         $this->assertTrue(count($this->sendEventNotifications->extensionElements) == 0);
     }
 
     public function testEmptySendEventNotificationsShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->sendEventNotifications->extensionAttributes));
+        $this->assertInternalType('array', $this->sendEventNotifications->extensionAttributes);
         $this->assertTrue(count($this->sendEventNotifications->extensionAttributes) == 0);
     }
 
     public function testSampleSendEventNotificationsShouldHaveNoExtensionElements() {
         $this->sendEventNotifications->transferFromXML($this->sendEventNotificationsText);
-        $this->assertTrue(is_array($this->sendEventNotifications->extensionElements));
+        $this->assertInternalType('array', $this->sendEventNotifications->extensionElements);
         $this->assertTrue(count($this->sendEventNotifications->extensionElements) == 0);
     }
 
     public function testSampleSendEventNotificationsShouldHaveNoExtensionAttributes() {
         $this->sendEventNotifications->transferFromXML($this->sendEventNotificationsText);
-        $this->assertTrue(is_array($this->sendEventNotifications->extensionAttributes));
+        $this->assertInternalType('array', $this->sendEventNotifications->extensionAttributes);
         $this->assertTrue(count($this->sendEventNotifications->extensionAttributes) == 0);
     }
 

@@ -32,7 +32,7 @@ require_once 'Zend/Server/Reflection/Function.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Server
  */
-class Zend_Server_Reflection_FunctionTest extends PHPUnit_Framework_TestCase
+class Zend_Server_Reflection_FunctionTest extends PHPUnit\Framework\TestCase
 {
     public function test__construct()
     {
@@ -53,11 +53,11 @@ class Zend_Server_Reflection_FunctionTest extends PHPUnit_Framework_TestCase
 
         $argv = array('string1', 'string2');
         $r = new Zend_Server_Reflection_Function($function, 'namespace', $argv);
-        $this->assertTrue(is_array($r->getInvokeArguments()));
+        $this->assertInternalType('array', $r->getInvokeArguments());
         $this->assertTrue($argv === $r->getInvokeArguments());
 
         $prototypes = $r->getPrototypes();
-        $this->assertTrue(is_array($prototypes));
+        $this->assertInternalType('array', $prototypes);
         $this->assertTrue(0 < count($prototypes));
     }
 
@@ -95,7 +95,7 @@ class Zend_Server_Reflection_FunctionTest extends PHPUnit_Framework_TestCase
         $r = new Zend_Server_Reflection_Function($function);
 
         $prototypes = $r->getPrototypes();
-        $this->assertTrue(is_array($prototypes));
+        $this->assertInternalType('array', $prototypes);
         $this->assertTrue(0 < count($prototypes));
         $this->assertEquals(8, count($prototypes));
 
@@ -110,7 +110,7 @@ class Zend_Server_Reflection_FunctionTest extends PHPUnit_Framework_TestCase
         $r = new Zend_Server_Reflection_Function($function);
 
         $prototypes = $r->getPrototypes();
-        $this->assertTrue(is_array($prototypes));
+        $this->assertInternalType('array', $prototypes);
         $this->assertTrue(0 < count($prototypes));
         $this->assertEquals(1, count($prototypes));
 
@@ -125,13 +125,13 @@ class Zend_Server_Reflection_FunctionTest extends PHPUnit_Framework_TestCase
         $function = new ReflectionFunction('Zend_Server_Reflection_FunctionTest_function');
         $r = new Zend_Server_Reflection_Function($function);
         $args = $r->getInvokeArguments();
-        $this->assertTrue(is_array($args));
+        $this->assertInternalType('array', $args);
         $this->assertEquals(0, count($args));
 
         $argv = array('string1', 'string2');
         $r = new Zend_Server_Reflection_Function($function, null, $argv);
         $args = $r->getInvokeArguments();
-        $this->assertTrue(is_array($args));
+        $this->assertInternalType('array', $args);
         $this->assertEquals(2, count($args));
         $this->assertTrue($argv === $args);
     }
@@ -152,13 +152,13 @@ class Zend_Server_Reflection_FunctionTest extends PHPUnit_Framework_TestCase
         $r = new Zend_Server_Reflection_Function($function);
 
         $prototypes = $r->getPrototypes();
-        $this->assertTrue(is_array($prototypes));
+        $this->assertInternalType('array', $prototypes);
         $this->assertTrue(0 < count($prototypes));
         $this->assertEquals(1, count($prototypes));
 
         $proto = $prototypes[0];
         $params = $proto->getParameters();
-        $this->assertTrue(is_array($params));
+        $this->assertInternalType('array', $params);
         $this->assertEquals(1, count($params));
         $this->assertEquals('string', $params[0]->getType());
     }

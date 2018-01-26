@@ -35,7 +35,7 @@ require_once 'Zend/Json.php';
  * @group      Zend_Json
  * @group      Zend_Json_Server
  */
-class Zend_Json_Server_SmdTest extends PHPUnit_Framework_TestCase
+class Zend_Json_Server_SmdTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -185,8 +185,8 @@ class Zend_Json_Server_SmdTest extends PHPUnit_Framework_TestCase
     public function testServicesShouldBeEmptyByDefault()
     {
         $services = $this->smd->getServices();
-        $this->assertTrue(is_array($services));
-        $this->assertTrue(empty($services));
+        $this->assertInternalType('array', $services);
+        $this->assertEmpty($services);
     }
 
     public function testShouldBeAbleToUseServiceObjectToAddService()
@@ -310,11 +310,11 @@ class Zend_Json_Server_SmdTest extends PHPUnit_Framework_TestCase
         $this->smd->setOptions($options);
         $smd = $this->smd->toDojoArray();
 
-        $this->assertTrue(is_array($smd));
+        $this->assertInternalType('array', $smd);
 
-        $this->assertTrue(array_key_exists('SMDVersion', $smd));
-        $this->assertTrue(array_key_exists('serviceType', $smd));
-        $this->assertTrue(array_key_exists('methods', $smd));
+        $this->assertArrayHasKey('SMDVersion', $smd);
+        $this->assertArrayHasKey('serviceType', $smd);
+        $this->assertArrayHasKey('methods', $smd);
 
         $this->assertEquals('.1', $smd['SMDVersion']);
         $this->assertEquals('JSON-RPC', $smd['serviceType']);
@@ -322,21 +322,21 @@ class Zend_Json_Server_SmdTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(2, count($methods));
 
         $foo = array_shift($methods);
-        $this->assertTrue(array_key_exists('name', $foo));
-        $this->assertTrue(array_key_exists('serviceURL', $foo));
-        $this->assertTrue(array_key_exists('parameters', $foo));
+        $this->assertArrayHasKey('name', $foo);
+        $this->assertArrayHasKey('serviceURL', $foo);
+        $this->assertArrayHasKey('parameters', $foo);
         $this->assertEquals('foo', $foo['name']);
         $this->assertEquals($this->smd->getTarget(), $foo['serviceURL']);
-        $this->assertTrue(is_array($foo['parameters']));
+        $this->assertInternalType('array', $foo['parameters']);
         $this->assertEquals(1, count($foo['parameters']));
 
         $bar = array_shift($methods);
-        $this->assertTrue(array_key_exists('name', $bar));
-        $this->assertTrue(array_key_exists('serviceURL', $bar));
-        $this->assertTrue(array_key_exists('parameters', $bar));
+        $this->assertArrayHasKey('name', $bar);
+        $this->assertArrayHasKey('serviceURL', $bar);
+        $this->assertArrayHasKey('parameters', $bar);
         $this->assertEquals('bar', $bar['name']);
         $this->assertEquals($this->smd->getTarget(), $bar['serviceURL']);
-        $this->assertTrue(is_array($bar['parameters']));
+        $this->assertInternalType('array', $bar['parameters']);
         $this->assertEquals(1, count($bar['parameters']));
     }
 
@@ -384,15 +384,15 @@ class Zend_Json_Server_SmdTest extends PHPUnit_Framework_TestCase
 
     public function validateServiceArray(array $smd, array $options)
     {
-        $this->assertTrue(is_array($smd));
+        $this->assertInternalType('array', $smd);
 
-        $this->assertTrue(array_key_exists('SMDVersion', $smd));
-        $this->assertTrue(array_key_exists('target', $smd));
-        $this->assertTrue(array_key_exists('id', $smd));
-        $this->assertTrue(array_key_exists('transport', $smd));
-        $this->assertTrue(array_key_exists('envelope', $smd));
-        $this->assertTrue(array_key_exists('contentType', $smd));
-        $this->assertTrue(array_key_exists('services', $smd));
+        $this->assertArrayHasKey('SMDVersion', $smd);
+        $this->assertArrayHasKey('target', $smd);
+        $this->assertArrayHasKey('id', $smd);
+        $this->assertArrayHasKey('transport', $smd);
+        $this->assertArrayHasKey('envelope', $smd);
+        $this->assertArrayHasKey('contentType', $smd);
+        $this->assertArrayHasKey('services', $smd);
 
         $this->assertEquals(Zend_Json_Server_Smd::SMD_VERSION, $smd['SMDVersion']);
         $this->assertEquals($options['target'], $smd['target']);
@@ -402,7 +402,7 @@ class Zend_Json_Server_SmdTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($this->smd->getContentType(), $smd['contentType']);
         $services = $smd['services'];
         $this->assertEquals(2, count($services));
-        $this->assertTrue(array_key_exists('foo', $services));
-        $this->assertTrue(array_key_exists('bar', $services));
+        $this->assertArrayHasKey('foo', $services);
+        $this->assertArrayHasKey('bar', $services);
     }
 }

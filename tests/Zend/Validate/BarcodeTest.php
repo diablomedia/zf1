@@ -34,7 +34,7 @@ require_once 'Zend/Validate/Barcode.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Validate
  */
-class Zend_Validate_BarcodeTest extends PHPUnit_Framework_TestCase
+class Zend_Validate_BarcodeTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Test if EAN-13 contains only numeric characters
@@ -85,7 +85,7 @@ class Zend_Validate_BarcodeTest extends PHPUnit_Framework_TestCase
         require_once dirname(__FILE__) . "/_files/MyBarcode1.php";
         $barcode = new Zend_Validate_Barcode('MyBarcode1');
         $this->assertFalse($barcode->isValid('0000000'));
-        $this->assertTrue(array_key_exists('barcodeFailed', $barcode->getMessages()));
+        $this->assertArrayHasKey('barcodeFailed', $barcode->getMessages());
         $this->assertFalse($barcode->getAdapter()->checksum('0000000'));
     }
 
@@ -436,7 +436,7 @@ class Zend_Validate_BarcodeTest extends PHPUnit_Framework_TestCase
         $barcode = new Zend_Validate_Barcode('ean8');
         $this->assertFalse($barcode->isValid('123'));
         $message = $barcode->getMessages();
-        $this->assertTrue(array_key_exists('barcodeInvalidLength', $message));
+        $this->assertArrayHasKey('barcodeInvalidLength', $message);
         $this->assertContains("length of 7/8 characters", $message['barcodeInvalidLength']);
     }
 }

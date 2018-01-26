@@ -38,7 +38,7 @@ require_once 'Zend/ProgressBar/Adapter.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_ProgressBar
  */
-class Zend_ProgressBar_ProgressBarTest extends PHPUnit_Framework_TestCase
+class Zend_ProgressBar_ProgressBarTest extends PHPUnit\Framework\TestCase
 {
     public function testGreaterMin()
     {

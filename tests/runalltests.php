@@ -62,7 +62,7 @@ if (!empty($missingFiles)) {
     exit(1);
 }
 
-$configuration = \PHPUnit_Util_Configuration::getInstance($phpUnitXml);
+$configuration = \PHPUnit\Util\Configuration::getInstance($phpUnitXml);
 $testSuites = $configuration->getTestSuiteNames();
 
 $result = 0;

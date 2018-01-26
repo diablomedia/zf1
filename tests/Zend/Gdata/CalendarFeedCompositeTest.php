@@ -34,7 +34,7 @@ require_once 'Zend/Http/Client/Adapter/Test.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Calendar
  */
-class Zend_Gdata_CalendarFeedCompositeTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_CalendarFeedCompositeTest extends PHPUnit\Framework\TestCase
 {
     protected $eventFeed = null;
 

@@ -42,7 +42,7 @@ require_once 'Zend/Server/Method/Prototype.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Server
  */
-class Zend_Server_DefinitionTest extends PHPUnit_Framework_TestCase
+class Zend_Server_DefinitionTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -68,8 +68,8 @@ class Zend_Server_DefinitionTest extends PHPUnit_Framework_TestCase
     public function testMethodsShouldBeEmptyArrayByDefault()
     {
         $methods = $this->definition->getMethods();
-        $this->assertTrue(is_array($methods));
-        $this->assertTrue(empty($methods));
+        $this->assertInternalType('array', $methods);
+        $this->assertEmpty($methods);
     }
 
     public function testDefinitionShouldAllowAddingSingleMethods()
@@ -131,7 +131,7 @@ class Zend_Server_DefinitionTest extends PHPUnit_Framework_TestCase
         $this->testDefinitionShouldAllowAddingMultipleMethods();
         $this->definition->clearMethods();
         $test = $this->definition->getMethods();
-        $this->assertTrue(empty($test));
+        $this->assertEmpty($test);
     }
 
     public function testDefinitionShouldSerializeToArray()

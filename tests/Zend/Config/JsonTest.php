@@ -32,7 +32,7 @@ require_once 'Zend/Config/Json.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Config_JsonTest extends PHPUnit_Framework_TestCase
+class Zend_Config_JsonTest extends PHPUnit\Framework\TestCase
 {
     protected $_iniFileConfig;
     protected $_iniFileAllSectionsConfig;
@@ -81,7 +81,7 @@ class Zend_Config_JsonTest extends PHPUnit_Framework_TestCase
     {
         $config = new Zend_Config_Json($this->_iniFileConfig, 'debug');
 
-        $this->assertTrue(is_string($config->special->no));
+        $this->assertInternalType('string', $config->special->no);
         $this->assertEquals('no', $config->special->no);
         $this->assertNull($config->special->null);
         $this->assertFalse($config->special->false);
@@ -105,7 +105,8 @@ class Zend_Config_JsonTest extends PHPUnit_Framework_TestCase
 
     public function testRaisesExceptionWhenSectionNotFound()
     {
-        $this->setExpectedException('Zend_Config_Exception', 'cannot be found');
+        $this->expectException('Zend_Config_Exception');
+        $this->expectExceptionMessage('cannot be found');
         $config = new Zend_Config_Json($this->_iniFileConfig, 'extendserror');
     }
 
@@ -142,19 +143,22 @@ class Zend_Config_JsonTest extends PHPUnit_Framework_TestCase
 
     public function testDetectsCircularInheritance()
     {
-        $this->setExpectedException('Zend_Config_Exception', 'circular inheritance');
+        $this->expectException('Zend_Config_Exception');
+        $this->expectExceptionMessage('circular inheritance');
         $config = new Zend_Config_Json($this->_iniFileCircularConfig, null);
     }
 
     public function testRaisesErrorWhenNoFileProvided()
     {
-        $this->setExpectedException('Zend_Config_Exception', 'not set');
+        $this->expectException('Zend_Config_Exception');
+        $this->expectExceptionMessage('not set');
         $config = new Zend_Config_Json('','');
     }
 
     public function testRaisesErrorOnAttemptsToExtendMultipleSectionsAtOnce()
     {
-        $this->setExpectedException('Zend_Config_Exception', 'Invalid');
+        $this->expectException('Zend_Config_Exception');
+        $this->expectExceptionMessage('Invalid');
         $config = new Zend_Config_Json($this->_iniFileMultipleInheritanceConfig, 'multiinherit');
     }
 
@@ -188,7 +192,8 @@ class Zend_Config_JsonTest extends PHPUnit_Framework_TestCase
 
     public function testRaisesExceptionOnInvalidJsonMarkup()
     {
-        $this->setExpectedException('Zend_Config_Exception', 'Error parsing JSON data');
+        $this->expectException('Zend_Config_Exception');
+        $this->expectExceptionMessage('Error parsing JSON data');
         $config = new Zend_Config_Json($this->_iniFileInvalid);
     }
 
@@ -275,7 +280,8 @@ EOJ;
         }
         $json = '{"env":"ZEND_CONFIG_JSON_ENV","path":"ZEND_CONFIG_JSON_ENV_PATH/tests","int":ZEND_CONFIG_JSON_ENV_INT}';
 
-        $this->setExpectedException('Zend_Config_Exception', 'Error parsing JSON data');
+        $this->expectException('Zend_Config_Exception');
+        $this->expectExceptionMessage('Error parsing JSON data');
         $config = new Zend_Config_Json($json, null, array('ignore_constants' => true));
     }
 }

@@ -44,7 +44,7 @@ require_once 'Zend/View.php';
  * @group      Zend_Controller_Action
  * @group      Zend_Controller_Action_Helper
  */
-class Zend_Controller_Action_Helper_AjaxContextTest extends PHPUnit_Framework_TestCase
+class Zend_Controller_Action_Helper_AjaxContextTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -105,14 +105,14 @@ class Zend_Controller_Action_Helper_AjaxContextTest extends PHPUnit_Framework_Te
         $this->assertTrue(isset($contexts['html']));
         $this->assertEquals('ajax.phtml', $this->helper->getSuffix('html'));
         $header = $this->helper->getHeaders('html');
-        $this->assertTrue(empty($header));
+        $this->assertEmpty($header);
     }
 
     public function checkNothingIsDone()
     {
         $this->assertEquals('phtml', $this->viewRenderer->getViewSuffix());
         $headers = $this->response->getHeaders();
-        $this->assertTrue(empty($headers));
+        $this->assertEmpty($headers);
     }
 
     public function testInitContextFailsOnNonXhrRequests()

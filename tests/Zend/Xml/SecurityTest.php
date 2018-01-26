@@ -35,7 +35,7 @@ require_once 'Zend/Xml/Exception.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Xml
  */
-class Zend_Xml_SecurityTest extends PHPUnit_Framework_TestCase
+class Zend_Xml_SecurityTest extends PHPUnit\Framework\TestCase
 {
     public function testScanForXEE()
     {
@@ -47,7 +47,7 @@ class Zend_Xml_SecurityTest extends PHPUnit_Framework_TestCase
 </results>
 XML;
 
-        $this->setExpectedException('Zend_Xml_Exception');
+        $this->expectException('Zend_Xml_Exception');
         $result = Zend_Xml_Security::scan($xml);
     }
 

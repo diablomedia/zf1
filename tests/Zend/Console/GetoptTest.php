@@ -33,7 +33,7 @@ require_once 'Zend/Console/Getopt.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Console_Getopt
  */
-class Zend_Console_GetoptTest extends PHPUnit_Framework_TestCase
+class Zend_Console_GetoptTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {

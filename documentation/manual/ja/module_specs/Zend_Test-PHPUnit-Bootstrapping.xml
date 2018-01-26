@@ -10,7 +10,7 @@
         テストケースは
         <classname>Zend_Test_PHPUnit_ControllerTestCase</classname>
         を継承しなければなりません。このクラスは
-        <classname>PHPUnit_Framework_TestCase</classname> を継承しており、
+        <classname>PHPUnit\Framework\TestCase</classname> を継承しており、
         PHPUnit が提供する仕組みやアサーションをすべて使用できます。
         またそれに加えて、Zend Framework の
         <acronym>MVC</acronym> 実装に特化した scaffold 機能やアサーションもあります。

@@ -38,7 +38,7 @@ require_once 'Zend/Controller/Action/Helper/ViewRenderer.php';
  * @group      Zend_Controller
  * @group      Zend_Controller_Front
  */
-class Zend_Controller_FrontTest extends PHPUnit_Framework_TestCase
+class Zend_Controller_FrontTest extends PHPUnit\Framework\TestCase
 {
     protected $_controller = null;
 
@@ -78,13 +78,13 @@ class Zend_Controller_FrontTest extends PHPUnit_Framework_TestCase
         Zend_Controller_Action_HelperBroker::addHelper(new Zend_Controller_Action_Helper_ViewRenderer());
         Zend_Controller_Action_HelperBroker::addHelper(new Zend_Controller_Action_Helper_Url());
         $helpers = Zend_Controller_Action_HelperBroker::getExistingHelpers();
-        $this->assertTrue(is_array($helpers));
-        $this->assertFalse(empty($helpers));
+        $this->assertInternalType('array', $helpers);
+        $this->assertNotEmpty($helpers);
 
         $this->_controller->resetInstance();
         $helpers = Zend_Controller_Action_HelperBroker::getExistingHelpers();
-        $this->assertTrue(is_array($helpers));
-        $this->assertTrue(empty($helpers));
+        $this->assertInternalType('array', $helpers);
+        $this->assertEmpty($helpers);
     }
 
     public function testSetGetRequest()
@@ -574,7 +574,7 @@ class Zend_Controller_FrontTest extends PHPUnit_Framework_TestCase
         $this->_controller->removeControllerDirectory('foo');
         $test = $this->_controller->getControllerDirectory();
         $this->assertNotEquals($controllerDirs, $test);
-        $this->assertFalse(array_key_exists('foo', $test));
+        $this->assertArrayNotHasKey('foo', $test);
     }
 
     public function testAddModuleDirectoryThrowsExceptionForInvalidDirectory()

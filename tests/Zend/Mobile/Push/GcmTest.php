@@ -34,7 +34,7 @@ require_once 'Zend/Http/Client/Adapter/Test.php';
  * @group      Zend_Mobile_Push
  * @group      Zend_Mobile_Push_Gcm
  */
-class Zend_Mobile_Push_gcmTest extends PHPUnit_Framework_TestCase
+class Zend_Mobile_Push_gcmTest extends PHPUnit\Framework\TestCase
 {
 
     protected function _createJSONResponse($id, $success, $failure, $ids, $results)
@@ -62,10 +62,11 @@ class Zend_Mobile_Push_gcmTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Mobile_Push_Exception
      */
     public function testSetApiKeyThrowsExceptionOnNonString()
     {
+        $this->expectException(\Zend_Mobile_Push_Exception::class);
+
         $this->gcm->setApiKey(array());
     }
 
@@ -91,47 +92,52 @@ class Zend_Mobile_Push_gcmTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Mobile_Push_Exception
      */
     public function testSendThrowsExceptionWithNonValidMessage()
     {
+        $this->expectException(\Zend_Mobile_Push_Exception::class);
+
         $msg = new Zend_Mobile_Push_Message_Gcm();
         $this->gcm->send($msg);
     }
 
     /**
-     * @expectedException Zend_Mobile_Push_Exception
      */
     public function testSendThrowsExceptionWithTtlNoId()
     {
+        $this->expectException(\Zend_Mobile_Push_Exception::class);
+
         $msg = $this->message;
         $msg->setTtl(300);
         $this->gcm->send($msg);
     }
 
     /**
-     * @expectedException Zend_Mobile_Push_Exception_ServerUnavailable
      */
     public function testSendThrowsExceptionWhenServerUnavailable()
     {
+        $this->expectException(\Zend_Mobile_Push_Exception_ServerUnavailable::class);
+
         $this->adapter->setResponse('HTTP/1.1 500 Internal Server Error' . "\r\n\r\n");
         $this->gcm->send($this->message);
     }
 
     /**
-     * @expectedException Zend_Mobile_Push_Exception_InvalidAuthToken
      */
     public function testSendThrowsExceptionWhenInvalidAuthToken()
     {
+        $this->expectException(\Zend_Mobile_Push_Exception_InvalidAuthToken::class);
+
         $this->adapter->setResponse('HTTP/1.1 401 Unauthorized' . "\r\n\r\n");
         $this->gcm->send($this->message);
     }
 
     /**
-     * @expectedException Zend_Mobile_Push_Exception_InvalidPayload
      */
     public function testSendThrowsExceptionWhenInvalidPayload()
     {
+        $this->expectException(\Zend_Mobile_Push_Exception_InvalidPayload::class);
+
         $this->adapter->setResponse('HTTP/1.1 400 Bad Request' . "\r\n\r\n");
         $this->gcm->send($this->message);
     }

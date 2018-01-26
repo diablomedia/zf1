@@ -34,7 +34,7 @@ require_once 'Zend/Service/StrikeIron.php';
  * @group      Zend_Service
  * @group      Zend_Service_StrikeIron
  */
-class Zend_Service_StrikeIron_StrikeIronTest extends PHPUnit_Framework_TestCase
+class Zend_Service_StrikeIron_StrikeIronTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {

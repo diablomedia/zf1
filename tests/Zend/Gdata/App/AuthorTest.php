@@ -32,7 +32,7 @@ require_once 'Zend/Gdata/App.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_App
  */
-class Zend_Gdata_App_AuthorTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_App_AuthorTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -43,7 +43,7 @@ class Zend_Gdata_App_AuthorTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyAuthorShouldHaveEmptyExtensionsList() {
-        $this->assertTrue(is_array($this->author->extensionElements));
+        $this->assertInternalType('array', $this->author->extensionElements);
         $this->assertTrue(count($this->author->extensionElements) == 0);
     }
 

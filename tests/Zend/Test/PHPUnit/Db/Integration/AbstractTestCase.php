@@ -38,7 +38,7 @@ require_once "Zend/Test/PHPUnit/Db/DataSet/DbRowset.php";
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Test
  */
-abstract class Zend_Test_PHPUnit_Db_Integration_AbstractTestCase extends PHPUnit_Framework_TestCase
+abstract class Zend_Test_PHPUnit_Db_Integration_AbstractTestCase extends PHPUnit\Framework\TestCase
 {
     /**
      * @var Zend_Db_Adapter_Abstract
@@ -71,7 +71,7 @@ abstract class Zend_Test_PHPUnit_Db_Integration_AbstractTestCase extends PHPUnit
         $dataSet = new Zend_Test_PHPUnit_Db_DataSet_DbTableDataSet();
         $dataSet->addTable($fooTable);
 
-        $xmlDataSet = new PHPUnit_Extensions_Database_DataSet_FlatXmlDataSet(
+        $xmlDataSet = new PHPUnit\DbUnit\DataSet\FlatXmlDataSet(
             dirname(__FILE__)."/_files/sqliteIntegrationFixture.xml"
         );
 
@@ -92,7 +92,7 @@ abstract class Zend_Test_PHPUnit_Db_Integration_AbstractTestCase extends PHPUnit
 
     public function testSimpleTesterSetupAndRowsetEquals()
     {
-        $dataSet = new PHPUnit_Extensions_Database_DataSet_FlatXmlDataSet(
+        $dataSet = new PHPUnit\DbUnit\DataSet\FlatXmlDataSet(
             dirname(__FILE__)."/_files/sqliteIntegrationFixture.xml"
         );
         $fooDataTable = $dataSet->getTable("foo");

@@ -33,7 +33,7 @@ require_once 'Zend/Text/MultiByte.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Text
  */
-class Zend_Text_MultiByteTest extends PHPUnit_Framework_TestCase
+class Zend_Text_MultiByteTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Standard cut tests

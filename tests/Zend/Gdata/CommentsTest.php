@@ -31,7 +31,7 @@ require_once 'Zend/Gdata.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Gdata
  */
-class Zend_Gdata_CommentsTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_CommentsTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -42,24 +42,24 @@ class Zend_Gdata_CommentsTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyCommentsShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->comments->extensionElements));
+        $this->assertInternalType('array', $this->comments->extensionElements);
         $this->assertTrue(count($this->comments->extensionElements) == 0);
     }
 
     public function testEmptyCommentsShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->comments->extensionAttributes));
+        $this->assertInternalType('array', $this->comments->extensionAttributes);
         $this->assertTrue(count($this->comments->extensionAttributes) == 0);
     }
 
     public function testSampleCommentsShouldHaveNoExtensionElements() {
         $this->comments->transferFromXML($this->commentsText);
-        $this->assertTrue(is_array($this->comments->extensionElements));
+        $this->assertInternalType('array', $this->comments->extensionElements);
         $this->assertTrue(count($this->comments->extensionElements) == 0);
     }
 
     public function testSampleCommentsShouldHaveNoExtensionAttributes() {
         $this->comments->transferFromXML($this->commentsText);
-        $this->assertTrue(is_array($this->comments->extensionAttributes));
+        $this->assertInternalType('array', $this->comments->extensionAttributes);
         $this->assertTrue(count($this->comments->extensionAttributes) == 0);
     }
 

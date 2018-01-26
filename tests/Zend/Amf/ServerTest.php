@@ -40,7 +40,7 @@ require_once 'Zend/Session.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Amf
  */
-class Zend_Amf_ServerTest extends PHPUnit_Framework_TestCase
+class Zend_Amf_ServerTest extends PHPUnit\Framework\TestCase
 {
     protected $_server;
 
@@ -93,26 +93,29 @@ class Zend_Amf_ServerTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Amf_Server_Exception
      */
     public function testSetClassShouldRaiseExceptionOnInvalidClassname()
     {
+        $this->expectException(\Zend_Amf_Server_Exception::class);
+
         $this->_server->setClass('foobar');
     }
 
     /**
-     * @expectedException Zend_Amf_Server_Exception
      */
     public function testSetClassShouldRaiseExceptionOnInvalidClasstype()
     {
+        $this->expectException(\Zend_Amf_Server_Exception::class);
+
         $this->_server->setClass(array('foobar'));
     }
 
     /**
-     * @expectedException Zend_Amf_Server_Exception
      */
     public function testSetClassShouldRaiseExceptionOnDuplicateMethodName()
     {
+        $this->expectException(\Zend_Amf_Server_Exception::class);
+
         $this->_server->setClass('Zend_Amf_testclass', 'tc');
         $this->_server->setClass('Zend_Amf_testclassPrivate', 'tc');
     }
@@ -174,18 +177,20 @@ class Zend_Amf_ServerTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Amf_Server_Exception
      */
     public function testAddFunctionShouldRaiseExceptionForInvalidFunctionName()
     {
+        $this->expectException(\Zend_Amf_Server_Exception::class);
+
         $this->_server->addFunction(true);
     }
 
     /**
-     * @expectedException Zend_Amf_Server_Exception
      */
     public function testAddFunctionShouldRaiseExceptionOnDuplicateMethodName()
     {
+        $this->expectException(\Zend_Amf_Server_Exception::class);
+
         $this->_server->addFunction('Zend_Amf_Server_testFunction', 'tc');
         $this->_server->addFunction('Zend_Amf_Server_testFunction', 'tc');
     }
@@ -209,7 +214,7 @@ class Zend_Amf_ServerTest extends PHPUnit_Framework_TestCase
         $responseBody = $response->getAmfBodies();
         // Now check if the return data was properly set.
         $this->assertTrue(0 < count($responseBody), var_export($responseBody, 1));
-        $this->assertTrue(array_key_exists(0, $responseBody), var_export($responseBody, 1));
+        $this->assertArrayHasKey(0, $responseBody, var_export($responseBody, 1));
         $this->assertEquals("String: 12345", $responseBody[0]->getData(), var_export($responseBody, 1));
     }
 
@@ -227,7 +232,7 @@ class Zend_Amf_ServerTest extends PHPUnit_Framework_TestCase
         $responseBody = $response->getAmfBodies();
         // Now check if the return data was properly set.
         $this->assertTrue(0 < count($responseBody), var_export($responseBody, 1));
-        $this->assertTrue(array_key_exists(0, $responseBody), var_export($responseBody, 1));
+        $this->assertArrayHasKey(0, $responseBody, var_export($responseBody, 1));
         $this->assertEquals("bar: foo", $responseBody[0]->getData(), var_export($responseBody, 1));
     }
 
@@ -252,7 +257,7 @@ class Zend_Amf_ServerTest extends PHPUnit_Framework_TestCase
         $responseBody = $response->getAmfBodies();
         // Now check if the return data was properly set.
         $this->assertTrue(0 < count($responseBody), var_export($responseBody, 1));
-        $this->assertTrue(array_key_exists(0, $responseBody), var_export($responseBody, 1));
+        $this->assertArrayHasKey(0, $responseBody, var_export($responseBody, 1));
         $this->assertEquals("String: 12345", $responseBody[0]->getData(), var_export($responseBody, 1));
 
     }
@@ -277,7 +282,7 @@ class Zend_Amf_ServerTest extends PHPUnit_Framework_TestCase
         $responseBody = $response->getAmfBodies();
         // Now check if the return data was properly set.
         $this->assertTrue(0 < count($responseBody), var_export($responseBody, 1));
-        $this->assertTrue(array_key_exists(0, $responseBody), var_export($responseBody, 1));
+        $this->assertArrayHasKey(0, $responseBody, var_export($responseBody, 1));
         $this->assertEquals("bar: foo", $responseBody[0]->getData(), var_export($responseBody, 1));
     }
 
@@ -307,7 +312,7 @@ class Zend_Amf_ServerTest extends PHPUnit_Framework_TestCase
         $response = $this->_server->getResponse();
         $responseBody = $response->getAmfBodies();
         $this->assertTrue(0 < count($responseBody), var_export($responseBody, 1));
-        $this->assertTrue(array_key_exists(0, $responseBody), var_export($responseBody, 1));
+        $this->assertArrayHasKey(0, $responseBody, var_export($responseBody, 1));
         // Now check if the return data was properly set.
         $acknowledgeMessage = $responseBody[0]->getData();
         // check that we have a message beening returned
@@ -342,7 +347,7 @@ class Zend_Amf_ServerTest extends PHPUnit_Framework_TestCase
         $response = $this->_server->getResponse();
         $responseBody = $response->getAmfBodies();
         $this->assertTrue(0 < count($responseBody), var_export($responseBody, 1));
-        $this->assertTrue(array_key_exists(0, $responseBody), var_export($responseBody, 1));
+        $this->assertArrayHasKey(0, $responseBody, var_export($responseBody, 1));
         // Now check if the return data was properly set.
         $acknowledgeMessage = $responseBody[0]->getData();
         // check that we have a message beening returned
@@ -371,7 +376,7 @@ class Zend_Amf_ServerTest extends PHPUnit_Framework_TestCase
         $response = $this->_server->getResponse();
         $responseBody = $response->getAmfBodies();
         $this->assertTrue(0 < count($responseBody), var_export($responseBody, 1));
-        $this->assertTrue(array_key_exists(0, $responseBody), var_export($responseBody, 1));
+        $this->assertArrayHasKey(0, $responseBody, var_export($responseBody, 1));
         // Now check if the return data was properly set.
         $acknowledgeMessage = $responseBody[0]->getData();
         // check that we have a message beening returned
@@ -427,7 +432,7 @@ class Zend_Amf_ServerTest extends PHPUnit_Framework_TestCase
         $response = $this->_server->getResponse();
         $responseBody = $response->getAmfBodies();
         $this->assertTrue(0 < count($responseBody), var_export($responseBody, 1));
-        $this->assertTrue(array_key_exists(0, $responseBody), var_export($responseBody, 1));
+        $this->assertArrayHasKey(0, $responseBody, var_export($responseBody, 1));
 
         // Now check if the return data was properly set.
         $message = $responseBody[0]->getData();
@@ -722,10 +727,11 @@ class Zend_Amf_ServerTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Amf_Server_Exception
      */
     public function testSetRequestShouldRaiseExceptionOnInvalidStringClassName()
     {
+        $this->expectException(\Zend_Amf_Server_Exception::class);
+
         $this->_server->setRequest('Zend_Amf_ServerTest_BogusRequest');
     }
 
@@ -737,10 +743,11 @@ class Zend_Amf_ServerTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Amf_Server_Exception
      */
     public function testSetRequestShouldRaiseExceptionOnInvalidRequestObjects()
     {
+        $this->expectException(\Zend_Amf_Server_Exception::class);
+
         require_once 'Zend/XmlRpc/Request.php';
         $request = new Zend_XmlRpc_Request;
         $this->_server->setRequest($request);
@@ -755,10 +762,11 @@ class Zend_Amf_ServerTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Amf_Server_Exception
      */
     public function testSetResponseShouldRaiseExceptionOnInvalidStringClassName()
     {
+        $this->expectException(\Zend_Amf_Server_Exception::class);
+
         $this->_server->setResponse('Zend_Amf_ServerTest_BogusResponse');
     }
 
@@ -770,10 +778,11 @@ class Zend_Amf_ServerTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Amf_Server_Exception
      */
     public function testSetResponseShouldRaiseExceptionOnInvalidResponseObjects()
     {
+        $this->expectException(\Zend_Amf_Server_Exception::class);
+
         require_once 'Zend/XmlRpc/Response.php';
         $response = new Zend_XmlRpc_Response;
         $this->_server->setResponse($response);
@@ -785,7 +794,7 @@ class Zend_Amf_ServerTest extends PHPUnit_Framework_TestCase
                       ->setClass('Zend_Amf_testclass', 'tc')
                       ->setClass('Zend_Amf_testclassPrivate', 'tcp');
         $functions = $this->_server->getFunctions();
-        $this->assertTrue(is_array($functions));
+        $this->assertInternalType('array', $functions);
         $this->assertTrue(0 < count($functions));
         $namespaces = array('tf', 'tc', 'tcp');
         foreach ($functions as $key => $value) {
@@ -836,7 +845,7 @@ class Zend_Amf_ServerTest extends PHPUnit_Framework_TestCase
         $response = $this->_server->getResponse();
         $responseBody = $response->getAmfBodies();
         $this->assertTrue(0 < count($responseBody), var_export($responseBody, 1));
-        $this->assertTrue(array_key_exists(0, $responseBody), var_export($responseBody, 1));
+        $this->assertArrayHasKey(0, $responseBody, var_export($responseBody, 1));
         // Now check if the return data was properly set.
         $acknowledgeMessage = $responseBody[0]->getData();
         // check that we have a message beening returned
@@ -862,7 +871,7 @@ class Zend_Amf_ServerTest extends PHPUnit_Framework_TestCase
         $responseBody = $response->getAmfBodies();
         // Now check if the return data was properly set.
         $this->assertTrue(0 < count($responseBody), var_export($responseBody, 1));
-        $this->assertTrue(array_key_exists(0, $responseBody), var_export($responseBody, 1));
+        $this->assertArrayHasKey(0, $responseBody, var_export($responseBody, 1));
         $this->assertTrue($responseBody[0]->getData(), var_export($responseBody, 1));
     }
 
@@ -892,7 +901,7 @@ class Zend_Amf_ServerTest extends PHPUnit_Framework_TestCase
         $response = $this->_server->getResponse();
         $responseBody = $response->getAmfBodies();
         $this->assertTrue(0 < count($responseBody), var_export($responseBody, 1));
-        $this->assertTrue(array_key_exists(0, $responseBody), var_export($responseBody, 1));
+        $this->assertArrayHasKey(0, $responseBody, var_export($responseBody, 1));
         // Now check if the return data was properly set.
         $acknowledgeMessage = $responseBody[0]->getData();
         // check that we have a message beening returned
@@ -919,7 +928,7 @@ class Zend_Amf_ServerTest extends PHPUnit_Framework_TestCase
         $responseBody = $response->getAmfBodies();
         // Now check if the return data was properly set.
         $this->assertTrue(0 < count($responseBody), var_export($responseBody, 1));
-        $this->assertTrue(array_key_exists(0, $responseBody), var_export($responseBody, 1));
+        $this->assertArrayHasKey(0, $responseBody, var_export($responseBody, 1));
         $this->assertEquals(4, count($responseBody[0]->getData()), var_export($responseBody, 1));
     }
 
@@ -948,7 +957,7 @@ class Zend_Amf_ServerTest extends PHPUnit_Framework_TestCase
         $response = $this->_server->getResponse();
         $responseBody = $response->getAmfBodies();
         $this->assertTrue(0 < count($responseBody), var_export($responseBody, 1));
-        $this->assertTrue(array_key_exists(0, $responseBody), var_export($responseBody, 1));
+        $this->assertArrayHasKey(0, $responseBody, var_export($responseBody, 1));
         // Now check if the return data was properly set.
         $acknowledgeMessage = $responseBody[0]->getData();
         // check that we have a message beening returned

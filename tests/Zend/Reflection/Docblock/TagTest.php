@@ -32,7 +32,7 @@ require_once 'Zend/Reflection/File.php';
  * @group      Zend_Reflection_Docblock
  * @group      Zend_Reflection_Docblock_Tag
  */
-class Zend_Reflection_Docblock_TagTest extends PHPUnit_Framework_TestCase
+class Zend_Reflection_Docblock_TagTest extends PHPUnit\Framework\TestCase
 {
 
 

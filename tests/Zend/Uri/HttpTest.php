@@ -39,7 +39,7 @@ require_once 'Zend/Uri/Http.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Uri
  */
-class Zend_Uri_HttpTest extends PHPUnit_Framework_TestCase
+class Zend_Uri_HttpTest extends PHPUnit\Framework\TestCase
 {
 
     public function setup()
@@ -81,10 +81,11 @@ class Zend_Uri_HttpTest extends PHPUnit_Framework_TestCase
      *
      * @group ZF-4395
      *
-     * @expectedException Zend_Uri_Exception
      */
     public function testFromStringInvalidScheme()
     {
+        $this->expectException(\Zend_Uri_Exception::class);
+
         Zend_Uri_Http::fromString('ftp://example.com/file');
     }
 
@@ -95,7 +96,7 @@ class Zend_Uri_HttpTest extends PHPUnit_Framework_TestCase
      */
     public function testFromStringWithInvalidVariableType()
     {
-        $this->setExpectedException('Zend_Uri_Exception');
+        $this->expectException('Zend_Uri_Exception');
         Zend_Uri_Http::fromString(0);
     }
 
@@ -362,14 +363,14 @@ class Zend_Uri_HttpTest extends PHPUnit_Framework_TestCase
     public function testSetInvalidUsername()
     {
         $uri = Zend_Uri::factory('http://example.com');
-        $this->setExpectedException('Zend_Uri_Exception');
+        $this->expectException('Zend_Uri_Exception');
         $uri->setUsername('alice?');
     }
 
     public function testSetInvalidPassword()
     {
         $uri = Zend_Uri::factory('http://example.com');
-        $this->setExpectedException('Zend_Uri_Exception');
+        $this->expectException('Zend_Uri_Exception');
         $uri->setUsername('alice');
         $uri->setPassword('secret?');
     }
@@ -378,7 +379,7 @@ class Zend_Uri_HttpTest extends PHPUnit_Framework_TestCase
     {
         $uri = Zend_Uri::factory('http://example.com');
         $host = '';
-        $this->setExpectedException('Zend_Uri_Exception');
+        $this->expectException('Zend_Uri_Exception');
         $uri->setHost($host);
     }
 
@@ -386,7 +387,7 @@ class Zend_Uri_HttpTest extends PHPUnit_Framework_TestCase
     {
         $uri = Zend_Uri::factory('http://example.com');
         $host = 'example§com';
-        $this->setExpectedException('Zend_Uri_Exception');
+        $this->expectException('Zend_Uri_Exception');
         $uri->setHost($host);
     }
 

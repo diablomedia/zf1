@@ -36,7 +36,7 @@ require_once 'Zend/Controller/Response/Cli.php';
  * @group      Zend_Controller
  * @group      Zend_Controller_Dispatcher
  */
-class Zend_Controller_Dispatcher_StandardTest extends PHPUnit_Framework_TestCase
+class Zend_Controller_Dispatcher_StandardTest extends PHPUnit\Framework\TestCase
 {
     protected $_dispatcher;
 
@@ -591,7 +591,7 @@ class Zend_Controller_Dispatcher_StandardTest extends PHPUnit_Framework_TestCase
         $this->_dispatcher->removeControllerDirectory('foo');
         $test = $this->_dispatcher->getControllerDirectory();
         $this->assertNotEquals($dirs, $test);
-        $this->assertFalse(array_key_exists('foo', $test));
+        $this->assertArrayNotHasKey('foo', $test);
     }
 
     /**

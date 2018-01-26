@@ -36,7 +36,7 @@ require_once 'Zend/Tool/Framework/Manifest/Metadata.php';
  * @group Zend_Tool_Framework
  * @group Zend_Tool_Framework_Manifest
  */
-class Zend_Tool_Framework_Manifest_MetadataTest extends PHPUnit_Framework_TestCase
+class Zend_Tool_Framework_Manifest_MetadataTest extends PHPUnit\Framework\TestCase
 {
 
     /**

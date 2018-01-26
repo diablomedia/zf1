@@ -32,7 +32,7 @@ require_once 'Zend/Queue/Stomp/Frame.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Queue
  */
-class Zend_Queue_Adapter_ActivemqOfflineTest extends PHPUnit_Framework_TestCase
+class Zend_Queue_Adapter_ActivemqOfflineTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @group ZF-7948

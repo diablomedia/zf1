@@ -31,7 +31,7 @@ require_once 'Zend/Gdata.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Gdata
  */
-class Zend_Gdata_TransparencyTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_TransparencyTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -42,24 +42,24 @@ class Zend_Gdata_TransparencyTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyTransparencyShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->transparency->extensionElements));
+        $this->assertInternalType('array', $this->transparency->extensionElements);
         $this->assertTrue(count($this->transparency->extensionElements) == 0);
     }
 
     public function testEmptyTransparencyShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->transparency->extensionAttributes));
+        $this->assertInternalType('array', $this->transparency->extensionAttributes);
         $this->assertTrue(count($this->transparency->extensionAttributes) == 0);
     }
 
     public function testSampleTransparencyShouldHaveNoExtensionElements() {
         $this->transparency->transferFromXML($this->transparencyText);
-        $this->assertTrue(is_array($this->transparency->extensionElements));
+        $this->assertInternalType('array', $this->transparency->extensionElements);
         $this->assertTrue(count($this->transparency->extensionElements) == 0);
     }
 
     public function testSampleTransparencyShouldHaveNoExtensionAttributes() {
         $this->transparency->transferFromXML($this->transparencyText);
-        $this->assertTrue(is_array($this->transparency->extensionAttributes));
+        $this->assertInternalType('array', $this->transparency->extensionAttributes);
         $this->assertTrue(count($this->transparency->extensionAttributes) == 0);
     }
 

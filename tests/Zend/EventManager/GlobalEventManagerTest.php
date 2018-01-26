@@ -30,7 +30,7 @@ require_once 'Zend/EventManager/EventManager.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_EventManager_GlobalEventManagerTest extends PHPUnit_Framework_TestCase
+class Zend_EventManager_GlobalEventManagerTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {

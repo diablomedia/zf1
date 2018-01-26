@@ -34,7 +34,7 @@ require_once 'Zend/Gdata/HttpClient.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_App
  */
-class Zend_Gdata_App_EntryTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_App_EntryTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp()
@@ -66,7 +66,7 @@ class Zend_Gdata_App_EntryTest extends PHPUnit_Framework_TestCase
 
     public function testEmptyEntryShouldHaveEmptyExtensionsList()
     {
-        $this->assertTrue(is_array($this->enry->extensionElements));
+        $this->assertInternalType('array', $this->enry->extensionElements);
         $this->assertTrue(count($this->enry->extensionElements) == 0);
     }
 
@@ -501,7 +501,7 @@ class Zend_Gdata_App_EntryTest extends PHPUnit_Framework_TestCase
     {
         $expectedVersion = 0;
         $entry = $this->service->newEntry();
-        $this->setExpectedException('Zend_Gdata_App_InvalidArgumentException');
+        $this->expectException('Zend_Gdata_App_InvalidArgumentException');
         $entry->setMajorProtocolVersion($expectedVersion);
     }
 
@@ -509,7 +509,7 @@ class Zend_Gdata_App_EntryTest extends PHPUnit_Framework_TestCase
     {
         $expectedVersion = -1;
         $entry = $this->service->newEntry();
-        $this->setExpectedException('Zend_Gdata_App_InvalidArgumentException');
+        $this->expectException('Zend_Gdata_App_InvalidArgumentException');
         $entry->setMajorProtocolVersion($expectedVersion);
     }
 
@@ -535,7 +535,7 @@ class Zend_Gdata_App_EntryTest extends PHPUnit_Framework_TestCase
     {
         $expectedVersion = -1;
         $entry = $this->service->newEntry();
-        $this->setExpectedException('Zend_Gdata_App_InvalidArgumentException');
+        $this->expectException('Zend_Gdata_App_InvalidArgumentException');
         $entry->setMinorProtocolVersion($expectedVersion);
     }
 

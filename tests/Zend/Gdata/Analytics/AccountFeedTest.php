@@ -32,7 +32,7 @@ require_once 'Zend/Http/Client.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Analytics
  */
-class Zend_Gdata_Analytics_AccountFeedTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_Analytics_AccountFeedTest extends PHPUnit\Framework\TestCase
 {
     /** @var AccountFeed */
     public $accountFeed;

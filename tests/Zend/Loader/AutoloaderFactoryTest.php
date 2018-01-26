@@ -27,11 +27,12 @@ require_once 'Zend/Loader/AutoloaderFactory.php';
 require_once 'Zend/Loader/ClassMapAutoloader.php';
 require_once 'Zend/Loader/StandardAutoloader.php';
 // Trigger autoloader for these
-class_exists('PHPUnit_Framework_Constraint_IsNull');
-class_exists('PHPUnit_Framework_Constraint_IsTrue');
+class_exists('PHPUnit\Framework\Constraint\IsNull');
+class_exists('PHPUnit\Framework\Constraint\IsTrue');
+class_exists('PHPUnit\Framework\Constraint\IsType');
 class_exists('SebastianBergmann\Exporter\Exporter');
-class_exists('PHPUnit_Framework_Constraint_IsEqual');
-class_exists('PHPUnit_Framework_Constraint_Exception');
+class_exists('PHPUnit\Framework\Constraint\IsEqual');
+class_exists('PHPUnit\Framework\Constraint\Exception');
 
 /**
  * @package    Zend_Loader
@@ -40,7 +41,7 @@ class_exists('PHPUnit_Framework_Constraint_Exception');
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Loader
  */
-class Zend_Loader_AutoloaderFactoryTest extends PHPUnit_Framework_TestCase
+class Zend_Loader_AutoloaderFactoryTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {
@@ -90,17 +91,18 @@ class Zend_Loader_AutoloaderFactoryTest extends PHPUnit_Framework_TestCase
         ));
         $loader = Zend_Loader_AutoloaderFactory::getRegisteredAutoloader('Zend_Loader_ClassMapAutoloader');
         $map = $loader->getAutoloadMap();
-        $this->assertTrue(is_array($map));
+        $this->assertInternalType('array', $map);
         $this->assertEquals(2, count($map));
     }
 
     /**
      * This tests checks if invalid autoloaders cause exceptions
      *
-     * @expectedException Zend_Loader_Exception_InvalidArgumentException
      */
     public function testFactoryCatchesInvalidClasses()
     {
+        $this->expectException(\Zend_Loader_Exception_InvalidArgumentException::class);
+
         if (!version_compare(PHP_VERSION, '5.3.7', '>=')) {
             $this->markTestSkipped('Cannot test invalid interface loader with versions less than 5.3.7');
         }
@@ -181,19 +183,19 @@ class Zend_Loader_AutoloaderFactoryTest extends PHPUnit_Framework_TestCase
 
     public function testGetInvalidAutoloaderThrowsException()
     {
-        $this->setExpectedException('Zend_Loader_Exception_InvalidArgumentException');
+        $this->expectException('Zend_Loader_Exception_InvalidArgumentException');
         $loader = Zend_Loader_AutoloaderFactory::getRegisteredAutoloader('InvalidAutoloader');
     }
 
     public function testFactoryWithInvalidArgumentThrowsException()
     {
-        $this->setExpectedException('Zend_Loader_Exception_InvalidArgumentException');
+        $this->expectException('Zend_Loader_Exception_InvalidArgumentException');
         Zend_Loader_AutoloaderFactory::factory('InvalidArgument');
     }
 
     public function testFactoryWithInvalidAutoloaderClassThrowsException()
     {
-        $this->setExpectedException('Zend_Loader_Exception_InvalidArgumentException');
+        $this->expectException('Zend_Loader_Exception_InvalidArgumentException');
         Zend_Loader_AutoloaderFactory::factory(array('InvalidAutoloader' => array()));
     }
 

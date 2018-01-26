@@ -33,7 +33,7 @@ require_once 'Zend/Filter/Compress/Rar.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Filter_Compress_RarTest extends PHPUnit_Framework_TestCase
+class Zend_Filter_Compress_RarTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {
@@ -291,11 +291,11 @@ class Zend_Filter_Compress_RarTest extends PHPUnit_Framework_TestCase
 
         $base = dirname(__FILE__) . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '_files'
               . DIRECTORY_SEPARATOR . '_compress' . DIRECTORY_SEPARATOR . 'Compress' . DIRECTORY_SEPARATOR;
-        $this->assertTrue(file_exists($base));
-        $this->assertTrue(file_exists($base . 'zipextracted.txt'));
-        $this->assertTrue(file_exists($base . 'First' . DIRECTORY_SEPARATOR . 'zipextracted.txt'));
-        $this->assertTrue(file_exists($base . 'First' . DIRECTORY_SEPARATOR .
-                          'Second' . DIRECTORY_SEPARATOR . 'zipextracted.txt'));
+        $this->assertFileExists($base);
+        $this->assertFileExists($base . 'zipextracted.txt');
+        $this->assertFileExists($base . 'First' . DIRECTORY_SEPARATOR . 'zipextracted.txt');
+        $this->assertFileExists($base . 'First' . DIRECTORY_SEPARATOR .
+                          'Second' . DIRECTORY_SEPARATOR . 'zipextracted.txt');
         $content = file_get_contents(dirname(__FILE__) . '/../_files/Compress/zipextracted.txt');
         $this->assertEquals('compress me', $content);
     }

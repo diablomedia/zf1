@@ -35,7 +35,7 @@ require_once 'Zend/Registry.php';
  * @group      Zend_Controller
  * @group      Zend_Controller_Plugin
  */
-class Zend_Controller_Plugin_ActionStackTest extends PHPUnit_Framework_TestCase
+class Zend_Controller_Plugin_ActionStackTest extends PHPUnit\Framework\TestCase
 {
     public $key       = 'Zend_Controller_Plugin_ActionStack';
     public $registry;
@@ -147,8 +147,8 @@ class Zend_Controller_Plugin_ActionStackTest extends PHPUnit_Framework_TestCase
     {
         $plugin = new Zend_Controller_Plugin_ActionStack();
         $stack  = $plugin->getStack();
-        $this->assertTrue(is_array($stack));
-        $this->assertTrue(empty($stack));
+        $this->assertInternalType('array', $stack);
+        $this->assertEmpty($stack);
     }
 
     /**
@@ -161,14 +161,14 @@ class Zend_Controller_Plugin_ActionStackTest extends PHPUnit_Framework_TestCase
         $request1 = new Zend_Controller_Request_Simple();
         $plugin->pushStack($request1);
         $received = $plugin->getStack();
-        $this->assertTrue(is_array($received));
+        $this->assertInternalType('array', $received);
         $this->assertEquals(1, count($received));
         $this->assertSame($request1, $received[0]);
 
         $request2 = new Zend_Controller_Request_Simple();
         $plugin->pushStack($request2);
         $received = $plugin->getStack();
-        $this->assertTrue(is_array($received));
+        $this->assertInternalType('array', $received);
         $this->assertEquals(2, count($received));
         $this->assertSame($request2, $received[1]);
         $this->assertSame($request1, $received[0]);

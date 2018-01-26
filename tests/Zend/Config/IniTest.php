@@ -33,7 +33,7 @@ require_once 'Zend/Config/Ini.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Config
  */
-class Zend_Config_IniTest extends PHPUnit_Framework_TestCase
+class Zend_Config_IniTest extends PHPUnit\Framework\TestCase
 {
     protected $_iniFileConfig;
     protected $_iniFileAllSectionsConfig;
@@ -76,9 +76,9 @@ class Zend_Config_IniTest extends PHPUnit_Framework_TestCase
     {
         $config = new Zend_Config_Ini($this->_iniFileConfig, 'debug');
 
-        $this->assertTrue(is_string($config->debug));
+        $this->assertInternalType('string', $config->debug);
         $this->assertEquals('1', $config->debug);
-        $this->assertTrue(is_string($config->values->changed));
+        $this->assertInternalType('string', $config->values->changed);
         $this->assertEquals('1', $config->values->changed);
     }
 
@@ -86,11 +86,11 @@ class Zend_Config_IniTest extends PHPUnit_Framework_TestCase
     {
         $config = new Zend_Config_Ini($this->_iniFileConfig, 'debug');
 
-        $this->assertTrue(is_string($config->special->no));
+        $this->assertInternalType('string', $config->special->no);
         $this->assertEquals('', $config->special->no);
-        $this->assertTrue(is_string($config->special->null));
+        $this->assertInternalType('string', $config->special->null);
         $this->assertEquals('', $config->special->null);
-        $this->assertTrue(is_string($config->special->false));
+        $this->assertInternalType('string', $config->special->false);
         $this->assertEquals('', $config->special->false);
     }
 

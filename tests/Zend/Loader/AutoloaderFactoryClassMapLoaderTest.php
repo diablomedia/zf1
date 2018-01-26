@@ -28,7 +28,7 @@ require_once 'Zend/Loader/AutoloaderFactory.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Loader
  */
-class Zend_Loader_AutoloaderFactoryClassMapLoaderTest extends PHPUnit_Framework_TestCase
+class Zend_Loader_AutoloaderFactoryClassMapLoaderTest extends PHPUnit\Framework\TestCase
 {
 
     /**
@@ -93,7 +93,7 @@ class Zend_Loader_AutoloaderFactoryClassMapLoaderTest extends PHPUnit_Framework_
             'Zend_Loader_ClassMapAutoloader'
         );
         $map = $loader->getAutoloadMap();
-        $this->assertTrue(is_array($map));
+        $this->assertInternalType('array', $map);
         $this->assertEquals(2, count($map));
     }
 }

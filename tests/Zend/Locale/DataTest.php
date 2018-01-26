@@ -34,7 +34,7 @@ require_once 'Zend/Locale/Data.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Locale
  */
-class Zend_Locale_DataTest extends PHPUnit_Framework_TestCase
+class Zend_Locale_DataTest extends PHPUnit\Framework\TestCase
 {
 
     private $_cache = null;
@@ -74,7 +74,7 @@ class Zend_Locale_DataTest extends PHPUnit_Framework_TestCase
      */
     public function testNoLocale()
     {
-        $this->assertTrue(is_array(Zend_Locale_Data::getList(null, 'language')));
+        $this->assertInternalType('array', Zend_Locale_Data::getList(null, 'language'));
 
         try {
             $value = Zend_Locale_Data::getList('nolocale','language');
@@ -84,7 +84,7 @@ class Zend_Locale_DataTest extends PHPUnit_Framework_TestCase
         }
 
         $locale = new Zend_Locale('de');
-        $this->assertTrue(is_array(Zend_Locale_Data::getList($locale, 'language')));
+        $this->assertInternalType('array', Zend_Locale_Data::getList($locale, 'language'));
     }
 
 
@@ -7212,8 +7212,8 @@ class Zend_Locale_DataTest extends PHPUnit_Framework_TestCase
     public function testGetListNonexistentTypeReturnsEmptyArray()
     {
         $result = Zend_Locale_Data::getList('de_AT', 'type', 'ddd');
-        $this->assertTrue(is_array($result));
-        $this->assertTrue(empty($result));
+        $this->assertInternalType('array', $result);
+        $this->assertEmpty($result);
     }
 
     /**
@@ -7222,7 +7222,7 @@ class Zend_Locale_DataTest extends PHPUnit_Framework_TestCase
     public function testGetListValidTypeReturnsNonemptyArray()
     {
         $result = Zend_Locale_Data::getList('de_AT', 'type', 'calendar');
-        $this->assertTrue(is_array($result));
+        $this->assertInternalType('array', $result);
         $this->assertTrue(count($result) > 0);
     }
 
@@ -7232,7 +7232,7 @@ class Zend_Locale_DataTest extends PHPUnit_Framework_TestCase
     public function testGetListEmptyTypeReturnsNonemptyArray()
     {
         $result = Zend_Locale_Data::getList('de_AT', 'type', '');
-        $this->assertTrue(is_array($result));
+        $this->assertInternalType('array', $result);
         $this->assertTrue(count($result) > 0);
     }
 

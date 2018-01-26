@@ -34,7 +34,7 @@ require_once 'Zend/View/Helper/Placeholder/Container.php';
  * @group      Zend_View
  * @group      Zend_View_Helper
  */
-class Zend_View_Helper_Placeholder_ContainerTest extends PHPUnit_Framework_TestCase
+class Zend_View_Helper_Placeholder_ContainerTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @var Zend_View_Helper_Placeholder_Container

@@ -35,7 +35,7 @@ require_once 'Zend/Reflection/File.php';
  * @group Zend_CodeGenerator_Php
  * @group Zend_CodeGenerator_Php_File
  */
-class Zend_CodeGenerator_Php_FileTest extends PHPUnit_Framework_TestCase
+class Zend_CodeGenerator_Php_FileTest extends PHPUnit\Framework\TestCase
 {
 
     public function testConstruction()

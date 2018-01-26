@@ -35,7 +35,7 @@ require_once 'Zend/Validate/File/Sha1.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Validate
  */
-class Zend_Validate_File_Sha1Test extends PHPUnit_Framework_TestCase
+class Zend_Validate_File_Sha1Test extends PHPUnit\Framework\TestCase
 {
     /**
      * Ensures that the validator follows expected behavior
@@ -62,7 +62,7 @@ class Zend_Validate_File_Sha1Test extends PHPUnit_Framework_TestCase
 
         $validator = new Zend_Validate_File_Sha1('b2a5334847b4328e7d19d9b41fd874dffa911c98');
         $this->assertFalse($validator->isValid(dirname(__FILE__) . '/_files/nofile.mo'));
-        $this->assertTrue(array_key_exists('fileSha1NotFound', $validator->getMessages()));
+        $this->assertArrayHasKey('fileSha1NotFound', $validator->getMessages());
 
         $files = array(
             'name'     => 'test1',
@@ -73,7 +73,7 @@ class Zend_Validate_File_Sha1Test extends PHPUnit_Framework_TestCase
         );
         $validator = new Zend_Validate_File_Sha1('b2a5334847b4328e7d19d9b41fd874dffa911c98');
         $this->assertFalse($validator->isValid(dirname(__FILE__) . '/_files/nofile.mo', $files));
-        $this->assertTrue(array_key_exists('fileSha1NotFound', $validator->getMessages()));
+        $this->assertArrayHasKey('fileSha1NotFound', $validator->getMessages());
 
         $files = array(
             'name'     => 'testsize.mo',
@@ -94,7 +94,7 @@ class Zend_Validate_File_Sha1Test extends PHPUnit_Framework_TestCase
         );
         $validator = new Zend_Validate_File_Sha1('42a5334847b4328e7d19d9b41fd874dffa911c98');
         $this->assertFalse($validator->isValid(dirname(__FILE__) . '/_files/picture.jpg', $files));
-        $this->assertTrue(array_key_exists('fileSha1DoesNotMatch', $validator->getMessages()));
+        $this->assertArrayHasKey('fileSha1DoesNotMatch', $validator->getMessages());
     }
 
     /**

@@ -32,7 +32,7 @@ require_once 'Zend/Gdata.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Gapps
  */
-class Zend_Gdata_Gapps_EmailListTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_Gapps_EmailListTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -43,24 +43,24 @@ class Zend_Gdata_Gapps_EmailListTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyEmailListShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->emailList->extensionElements));
+        $this->assertInternalType('array', $this->emailList->extensionElements);
         $this->assertTrue(count($this->emailList->extensionElements) == 0);
     }
 
     public function testEmptyEmailListShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->emailList->extensionAttributes));
+        $this->assertInternalType('array', $this->emailList->extensionAttributes);
         $this->assertTrue(count($this->emailList->extensionAttributes) == 0);
     }
 
     public function testSampleEmailListShouldHaveNoExtensionElements() {
         $this->emailList->transferFromXML($this->emailListText);
-        $this->assertTrue(is_array($this->emailList->extensionElements));
+        $this->assertInternalType('array', $this->emailList->extensionElements);
         $this->assertTrue(count($this->emailList->extensionElements) == 0);
     }
 
     public function testSampleEmailListShouldHaveNoExtensionAttributes() {
         $this->emailList->transferFromXML($this->emailListText);
-        $this->assertTrue(is_array($this->emailList->extensionAttributes));
+        $this->assertInternalType('array', $this->emailList->extensionAttributes);
         $this->assertTrue(count($this->emailList->extensionAttributes) == 0);
     }
 

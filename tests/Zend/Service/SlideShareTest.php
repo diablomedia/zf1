@@ -34,7 +34,7 @@ require_once 'Zend/Service/SlideShare.php';
  * @group      Zend_Service
  * @group      Zend_Service_SlideShare
  */
-class Zend_Service_SlideShareTest extends PHPUnit_Framework_TestCase
+class Zend_Service_SlideShareTest extends PHPUnit\Framework\TestCase
 {
     /**
      * The Slide share object instance
@@ -121,7 +121,7 @@ class Zend_Service_SlideShareTest extends PHPUnit_Framework_TestCase
             $this->fail("Exception Caught retrieving Slideshow List (tag)");
         }
 
-        $this->assertTrue(is_array($results));
+        $this->assertInternalType('array', $results);
         $this->assertTrue(count($results) == 1);
         $this->assertTrue(
             $results[0] instanceof Zend_Service_SlideShare_SlideShow
@@ -143,7 +143,7 @@ class Zend_Service_SlideShareTest extends PHPUnit_Framework_TestCase
             $this->fail("Exception Caught retrieving Slideshow List (tag)");
         }
 
-        $this->assertTrue(is_array($results));
+        $this->assertInternalType('array', $results);
 
         if (!empty($results)) {
             $this->assertTrue(count($results) == 1);
@@ -165,7 +165,7 @@ class Zend_Service_SlideShareTest extends PHPUnit_Framework_TestCase
             $this->fail("Exception Caught retrieving Slideshow List (tag)");
         }
 
-        $this->assertTrue(is_array($results));
+        $this->assertInternalType('array', $results);
         $this->assertTrue(count($results) == 1);
         $this->assertTrue(
             $results[0] instanceof Zend_Service_SlideShare_SlideShow

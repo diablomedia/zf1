@@ -34,7 +34,7 @@ require_once 'Zend/Debug.php';
  * @group Zend_Tool
  * @group Zend_Tool_Project
  */
-class Zend_Tool_Project_Context_RepositoryTest extends PHPUnit_Framework_TestCase
+class Zend_Tool_Project_Context_RepositoryTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp()
@@ -66,19 +66,21 @@ class Zend_Tool_Project_Context_RepositoryTest extends PHPUnit_Framework_TestCas
     }
 
     /**
-     * @expectedException Zend_Tool_Project_Context_Exception
      */
     public function testRegistryThrowsExceptionOnUnallowedContextOverwrite()
     {
+        $this->expectException(\Zend_Tool_Project_Context_Exception::class);
+
 
         Zend_Tool_Project_Context_Repository::getInstance()->addContextClass('Zend_Tool_Project_Context_System_ProjectDirectory');
     }
 
     /**
-     * @expectedException Zend_Tool_Project_Context_Exception
      */
     public function testRegistryThrowsExceptionOnUnknownContextRequest()
     {
+        $this->expectException(\Zend_Tool_Project_Context_Exception::class);
+
         Zend_Tool_Project_Context_Repository::getInstance()->getContext('somethingUnknown');
     }
 

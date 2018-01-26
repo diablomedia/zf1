@@ -35,7 +35,7 @@ require_once 'Zend/Http/Client.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Gapps
  */
-class Zend_Gdata_GappsOnlineTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_GappsOnlineTest extends PHPUnit\Framework\TestCase
 {
 
     const GIVEN_NAME = 'Zend_Gdata';

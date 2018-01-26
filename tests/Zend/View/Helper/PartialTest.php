@@ -40,7 +40,7 @@ require_once 'Zend/Controller/Front.php';
  * @group      Zend_View
  * @group      Zend_View_Helper
  */
-class Zend_View_Helper_PartialTest extends PHPUnit_Framework_TestCase
+class Zend_View_Helper_PartialTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @var Zend_View_Helper_Partial
@@ -170,7 +170,7 @@ class Zend_View_Helper_PartialTest extends PHPUnit_Framework_TestCase
         $clone = $this->helper->cloneView();
         $clonedVars = $clone->getVars();
 
-        $this->assertTrue(empty($clonedVars));
+        $this->assertEmpty($clonedVars);
         $this->assertNull($clone->foo);
     }
 

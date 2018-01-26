@@ -33,7 +33,7 @@ require_once 'Zend/Gdata/App.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_App
  */
-class Zend_Gdata_App_FeedTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_App_FeedTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -44,7 +44,7 @@ class Zend_Gdata_App_FeedTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyFeedShouldHaveEmptyExtensionsList() {
-        $this->assertTrue(is_array($this->feed->extensionElements));
+        $this->assertInternalType('array', $this->feed->extensionElements);
         $this->assertTrue(count($this->feed->extensionElements) == 0);
     }
 
@@ -147,10 +147,10 @@ class Zend_Gdata_App_FeedTest extends PHPUnit_Framework_TestCase
         // Set null service instance and test for propagation
         $s = null;
         $this->feed->setService($s);
-        $this->assertFalse(is_object($this->feed->getService()));
+        $this->assertNotInternalType('object', $this->feed->getService());
         foreach ($entries as $entry) {
             $service = $entry->getService();
-            $this->assertFalse(is_object($service));
+            $this->assertNotInternalType('object', $service);
         }
     }
 

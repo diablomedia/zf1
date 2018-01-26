@@ -33,7 +33,7 @@ require_once 'Zend/Ldap/Converter.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Ldap
  */
-class Zend_Ldap_ConverterTest extends PHPUnit_Framework_TestCase
+class Zend_Ldap_ConverterTest extends PHPUnit\Framework\TestCase
 {
     public function testAsc2hex32()
     {
@@ -175,7 +175,7 @@ class Zend_Ldap_ConverterTest extends PHPUnit_Framework_TestCase
 
     public function testFromLdapUnserializeThrowsException ()
     {
-        $this->setExpectedException('UnexpectedValueException');
+        $this->expectException('UnexpectedValueException');
         Zend_Ldap_Converter::fromLdapUnserialize('--');
     }
 
@@ -191,7 +191,7 @@ class Zend_Ldap_ConverterTest extends PHPUnit_Framework_TestCase
     {
         $this->assertTrue(Zend_Ldap_Converter::fromLdapBoolean('TRUE'));
         $this->assertFalse(Zend_Ldap_Converter::fromLdapBoolean('FALSE'));
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException('InvalidArgumentException');
         Zend_Ldap_Converter::fromLdapBoolean('test');
     }
 
@@ -222,11 +222,12 @@ class Zend_Ldap_ConverterTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException	InvalidArgumentException
      * @dataProvider		fromLdapDateTimeException
      */
     public function testFromLdapDateTimeThrowsException ($value)
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         Zend_Ldap_Converter::fromLdapDatetime($value);
     }
 

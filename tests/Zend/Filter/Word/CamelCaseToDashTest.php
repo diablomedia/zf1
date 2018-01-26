@@ -32,7 +32,7 @@ require_once 'Zend/Filter/Word/CamelCaseToDash.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Filter
  */
-class Zend_Filter_Word_CamelCaseToDashTest extends PHPUnit_Framework_TestCase
+class Zend_Filter_Word_CamelCaseToDashTest extends PHPUnit\Framework\TestCase
 {
     public function testFilterSeparatesCamelCasedWordsWithDashes()
     {

@@ -33,7 +33,7 @@ require_once 'Zend/Mime/Message.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Mime
  */
-class Zend_Mime_MessageTest extends PHPUnit_Framework_TestCase
+class Zend_Mime_MessageTest extends PHPUnit\Framework\TestCase
 {
 
     public function testMultiPart()
@@ -46,7 +46,7 @@ class Zend_Mime_MessageTest extends PHPUnit_Framework_TestCase
     {
         $msg = new Zend_Mime_Message();  // No Parts
         $p = $msg->getParts();
-        $this->assertTrue(is_array($p));
+        $this->assertInternalType('array', $p);
         $this->assertTrue(count($p) == 0);
 
         $p2 = array();
@@ -54,7 +54,7 @@ class Zend_Mime_MessageTest extends PHPUnit_Framework_TestCase
         $p2[] = new Zend_Mime_Part('This is another test');
         $msg->setParts($p2);
         $p = $msg->getParts();
-        $this->assertTrue(is_array($p));
+        $this->assertInternalType('array', $p);
         $this->assertTrue(count($p) == 2);
     }
 

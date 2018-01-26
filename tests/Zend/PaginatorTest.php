@@ -31,7 +31,7 @@ require_once 'Zend/Paginator.php';
 require_once 'Zend/Paginator/AdapterAggregate.php';
 
 /**
- * @see PHPUnit_Framework_TestCase
+ * @see PHPUnit\Framework\TestCase
  */
 
 /**
@@ -102,7 +102,7 @@ require_once 'Zend/Cache/Core.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Paginator
  */
-class Zend_PaginatorTest extends PHPUnit_Framework_TestCase
+class Zend_PaginatorTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Paginator instance
@@ -986,7 +986,7 @@ class Zend_PaginatorTest extends PHPUnit_Framework_TestCase
      */
     public function testInvalidDataInConstructor_ThrowsException()
     {
-        $this->setExpectedException("Zend_Paginator_Exception");
+        $this->expectException("Zend_Paginator_Exception");
 
         $p = new Zend_Paginator(array());
     }

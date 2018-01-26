@@ -31,7 +31,7 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Cache
  */
-abstract class Zend_Cache_CommonBackendTest extends PHPUnit_Framework_TestCase {
+abstract class Zend_Cache_CommonBackendTest extends PHPUnit\Framework\TestCase {
 
     protected $_instance;
     protected $_className;
@@ -290,9 +290,9 @@ abstract class Zend_Cache_CommonBackendTest extends PHPUnit_Framework_TestCase {
 
     public function testGetOption()
     {
-        $this->assertTrue(is_numeric($this->_instance->getOption('LifeTime')));
+        $this->assertInternalType('numeric', $this->_instance->getOption('LifeTime'));
 
-        $this->setExpectedException('Zend_Cache_Exception');
+        $this->expectException('Zend_Cache_Exception');
         $this->_instance->getOption('unknown');
     }
 }

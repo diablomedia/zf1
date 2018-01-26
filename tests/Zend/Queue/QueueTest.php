@@ -45,7 +45,7 @@ require_once 'Zend/Queue/Adapter/Array.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Queue
  */
-class Zend_Queue_QueueTest extends PHPUnit_Framework_TestCase
+class Zend_Queue_QueueTest extends PHPUnit\Framework\TestCase
 {
     protected function setUp()
     {
@@ -64,9 +64,9 @@ class Zend_Queue_QueueTest extends PHPUnit_Framework_TestCase
 
     public function testConst()
     {
-        $this->assertTrue(is_string(Zend_Queue::TIMEOUT));
-        $this->assertTrue(is_integer(Zend_Queue::VISIBILITY_TIMEOUT));
-        $this->assertTrue(is_string(Zend_Queue::NAME));
+        $this->assertInternalType('string', Zend_Queue::TIMEOUT);
+        $this->assertInternalType('integer', Zend_Queue::VISIBILITY_TIMEOUT);
+        $this->assertInternalType('string', Zend_Queue::NAME);
     }
 
     /**
@@ -101,7 +101,7 @@ class Zend_Queue_QueueTest extends PHPUnit_Framework_TestCase
     public function test_getOptions()
     {
         $config = $this->queue->getOptions();
-        $this->assertTrue(is_array($config));
+        $this->assertInternalType('array', $config);
         $this->assertEquals($this->config['name'], $config['name']);
     }
 
@@ -203,7 +203,7 @@ class Zend_Queue_QueueTest extends PHPUnit_Framework_TestCase
     public function test_capabilities()
     {
         $list = $this->queue->getCapabilities();
-        $this->assertTrue(is_array($list));
+        $this->assertInternalType('array', $list);
 
         // these functions must have an boolean answer
         $func = array(
@@ -214,7 +214,7 @@ class Zend_Queue_QueueTest extends PHPUnit_Framework_TestCase
 
         foreach ( array_values($func) as $f ) {
             $this->assertTrue(isset($list[$f]));
-            $this->assertTrue(is_bool($list[$f]));
+            $this->assertInternalType('bool', $list[$f]);
         }
     }
 
@@ -222,7 +222,7 @@ class Zend_Queue_QueueTest extends PHPUnit_Framework_TestCase
     {
         $list = $this->queue->getCapabilities();
         foreach ( $list as $function => $result ) {
-            $this->assertTrue(is_bool($result));
+            $this->assertInternalType('bool', $result);
             if ( $result ) {
                 $this->assertTrue($this->queue->isSupported($function));
             } else {
@@ -234,7 +234,7 @@ class Zend_Queue_QueueTest extends PHPUnit_Framework_TestCase
     public function test_getQueues()
     {
         $queues = $this->queue->getQueues();
-        $this->assertTrue(is_array($queues));
+        $this->assertInternalType('array', $queues);
         $this->assertTrue(in_array($this->config['name'], $queues));
     }
 }

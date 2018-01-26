@@ -35,7 +35,7 @@ require_once 'Zend/Json.php';
  * @group      Zend_Json
  * @group      Zend_Json_Server
  */
-class Zend_Json_Server_ResponseTest extends PHPUnit_Framework_TestCase
+class Zend_Json_Server_ResponseTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -124,12 +124,12 @@ class Zend_Json_Server_ResponseTest extends PHPUnit_Framework_TestCase
         $json = $this->response->toJson();
         $test = Zend_Json::decode($json);
 
-        $this->assertTrue(is_array($test));
-        $this->assertTrue(array_key_exists('result', $test));
+        $this->assertInternalType('array', $test);
+        $this->assertArrayHasKey('result', $test);
         // assertion changed to false, because 'error' may not coexist with 'result'
-        $this->assertFalse(array_key_exists('error', $test), "'error' may not coexist with 'result'");
-        $this->assertTrue(array_key_exists('id', $test));
-        $this->assertTrue(array_key_exists('jsonrpc', $test));
+        $this->assertArrayNotHasKey('error', $test, "'error' may not coexist with 'result'");
+        $this->assertArrayHasKey('id', $test);
+        $this->assertArrayHasKey('jsonrpc', $test);
 
         $this->assertTrue($test['result']);
         $this->assertEquals($this->response->getId(), $test['id']);
@@ -147,10 +147,10 @@ class Zend_Json_Server_ResponseTest extends PHPUnit_Framework_TestCase
         $json = $this->response->toJson();
         $test = Zend_Json::decode($json);
 
-        $this->assertTrue(is_array($test));
-        $this->assertFalse(array_key_exists('result', $test), "'result' may not coexist with 'error'");
-        $this->assertTrue(array_key_exists('id', $test));
-        $this->assertFalse(array_key_exists('jsonrpc', $test));
+        $this->assertInternalType('array', $test);
+        $this->assertArrayNotHasKey('result', $test, "'result' may not coexist with 'error'");
+        $this->assertArrayHasKey('id', $test);
+        $this->assertArrayNotHasKey('jsonrpc', $test);
 
         $this->assertEquals($this->response->getId(), $test['id']);
         $this->assertEquals($error->getCode(), $test['error']['code']);
@@ -164,11 +164,11 @@ class Zend_Json_Server_ResponseTest extends PHPUnit_Framework_TestCase
         $json = $this->response->__toString();
         $test = Zend_Json::decode($json);
 
-        $this->assertTrue(is_array($test));
-        $this->assertTrue(array_key_exists('result', $test));
-        $this->assertFalse(array_key_exists('error', $test), "'error' may not coexist with 'result'");
-        $this->assertTrue(array_key_exists('id', $test));
-        $this->assertFalse(array_key_exists('jsonrpc', $test));
+        $this->assertInternalType('array', $test);
+        $this->assertArrayHasKey('result', $test);
+        $this->assertArrayNotHasKey('error', $test, "'error' may not coexist with 'result'");
+        $this->assertArrayHasKey('id', $test);
+        $this->assertArrayNotHasKey('jsonrpc', $test);
 
         $this->assertTrue($test['result']);
         $this->assertEquals($this->response->getId(), $test['id']);

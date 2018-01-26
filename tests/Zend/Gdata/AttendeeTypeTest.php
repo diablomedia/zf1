@@ -31,7 +31,7 @@ require_once 'Zend/Gdata.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Gdata
  */
-class Zend_Gdata_AttendeeTypeTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_AttendeeTypeTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -42,24 +42,24 @@ class Zend_Gdata_AttendeeTypeTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyAttendeeTypeShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->attendeeType->extensionElements));
+        $this->assertInternalType('array', $this->attendeeType->extensionElements);
         $this->assertTrue(count($this->attendeeType->extensionElements) == 0);
     }
 
     public function testEmptyAttendeeTypeShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->attendeeType->extensionAttributes));
+        $this->assertInternalType('array', $this->attendeeType->extensionAttributes);
         $this->assertTrue(count($this->attendeeType->extensionAttributes) == 0);
     }
 
     public function testSampleAttendeeTypeShouldHaveNoExtensionElements() {
         $this->attendeeType->transferFromXML($this->attendeeTypeText);
-        $this->assertTrue(is_array($this->attendeeType->extensionElements));
+        $this->assertInternalType('array', $this->attendeeType->extensionElements);
         $this->assertTrue(count($this->attendeeType->extensionElements) == 0);
     }
 
     public function testSampleAttendeeTypeShouldHaveNoExtensionAttributes() {
         $this->attendeeType->transferFromXML($this->attendeeTypeText);
-        $this->assertTrue(is_array($this->attendeeType->extensionAttributes));
+        $this->assertInternalType('array', $this->attendeeType->extensionAttributes);
         $this->assertTrue(count($this->attendeeType->extensionAttributes) == 0);
     }
 

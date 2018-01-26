@@ -34,7 +34,7 @@ require_once 'Zend/Validate/Hostname.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Validate
  */
-class Zend_Validate_HostnameTest extends PHPUnit_Framework_TestCase
+class Zend_Validate_HostnameTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Default instance created for all test methods

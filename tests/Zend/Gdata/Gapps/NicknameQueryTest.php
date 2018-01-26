@@ -32,7 +32,7 @@ require_once 'Zend/Gdata/Gapps/NicknameQuery.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Gapps
  */
-class Zend_Gdata_Gapps_NicknameQueryTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_Gapps_NicknameQueryTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp()

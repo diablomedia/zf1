@@ -24,7 +24,7 @@ require_once 'Zend/Http/Client/Adapter/Test.php';
 require_once 'Zend/Cloud/Infrastructure/Adapter/Ec2.php';
 require_once 'Zend/Cloud/Infrastructure/Factory.php';
 
-class Zend_Cloud_Infrastructure_Adapter_Ec2Test extends PHPUnit_Framework_TestCase
+class Zend_Cloud_Infrastructure_Adapter_Ec2Test extends PHPUnit\Framework\TestCase
 {
     /**
      * Timeout in seconds for status change
@@ -130,8 +130,10 @@ class Zend_Cloud_Infrastructure_Adapter_Ec2Test extends PHPUnit_Framework_TestCa
      */
     public function testConstructExceptionMissingParams()
     {
-        $this->setExpectedException(
-            'Zend_Cloud_Infrastructure_Exception',
+        $this->expectException(
+            'Zend_Cloud_Infrastructure_Exception'
+        );
+        $this->expectExceptionMessage(
             'Invalid options provided'
         );
         $image = new Zend_Cloud_Infrastructure_Adapter_Ec2('foo');

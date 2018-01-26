@@ -50,7 +50,7 @@ Zend_Session::start();
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Auth
  */
-class Zend_AuthTest extends PHPUnit_Framework_TestCase
+class Zend_AuthTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Ensures that the Singleton pattern is implemented properly

@@ -31,7 +31,7 @@ require_once 'Zend/Config.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Barcode_FactoryTest extends PHPUnit_Framework_TestCase
+class Zend_Barcode_FactoryTest extends PHPUnit\Framework\TestCase
 {
 
     public function testMinimalFactory()
@@ -70,19 +70,21 @@ class Zend_Barcode_FactoryTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Barcode_Object_Exception
      */
     public function testFactoryWithoutAutomaticObjectExceptionRendering()
     {
+        $this->expectException(\Zend_Barcode_Object_Exception::class);
+
         $options = array('barHeight' => - 1);
         $renderer = Zend_Barcode::factory('code39', 'image', $options, array(), false);
     }
 
     /**
-     * @expectedException Zend_Barcode_Renderer_Exception
      */
     public function testFactoryWithoutAutomaticRendererExceptionRendering()
     {
+        $this->expectException(\Zend_Barcode_Renderer_Exception::class);
+
         $this->_checkGDRequirement();
 
         $options = array('imageType' => 'my');
@@ -199,10 +201,11 @@ class Zend_Barcode_FactoryTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Barcode_Exception
      */
     public function testBarcodeObjectFactoryWithBarcodeAsZendConfigButNoBarcodeParameter()
     {
+        $this->expectException(\Zend_Barcode_Exception::class);
+
         $config = new Zend_Config(
                 array(
                         'barcodeParams' => array(
@@ -211,10 +214,11 @@ class Zend_Barcode_FactoryTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Barcode_Exception
      */
     public function testBarcodeObjectFactoryWithBarcodeAsZendConfigAndBadBarcodeParameters()
     {
+        $this->expectException(\Zend_Barcode_Exception::class);
+
         $barcode = Zend_Barcode::makeBarcode('code25', null);
     }
 
@@ -228,10 +232,11 @@ class Zend_Barcode_FactoryTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Barcode_Exception
      */
     public function testBarcodeObjectFactoryWithNamespaceButWithoutExtendingObjectAbstract()
     {
+        $this->expectException(\Zend_Barcode_Exception::class);
+
         require_once dirname(__FILE__) . '/Object/_files/BarcodeNamespaceWithoutExtendingObjectAbstract.php';
         $barcode = Zend_Barcode::makeBarcode('error',
                 array(
@@ -239,11 +244,12 @@ class Zend_Barcode_FactoryTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Exception
-     * @expectedExceptionMessage does not exist or class "Zend_Barcode_Object_Zf123" was not found in the file
      */
     public function testBarcodeObjectFactoryWithUnexistantBarcode()
     {
+        $this->expectException(\Zend_Exception::class);
+        $this->expectExceptionMessage('does not exist or class "Zend_Barcode_Object_Zf123" was not found in the file');
+
         $barcode = Zend_Barcode::makeBarcode('zf123', array());
     }
 
@@ -297,10 +303,11 @@ class Zend_Barcode_FactoryTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Barcode_Exception
      */
     public function testBarcodeRendererFactoryWithBarcodeAsZendConfigButNoBarcodeParameter()
     {
+        $this->expectException(\Zend_Barcode_Exception::class);
+
         $config = new Zend_Config(
                 array(
                         'rendererParams' => array(
@@ -309,10 +316,11 @@ class Zend_Barcode_FactoryTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Barcode_Exception
      */
     public function testBarcodeRendererFactoryWithBarcodeAsZendConfigAndBadBarcodeParameters()
     {
+        $this->expectException(\Zend_Barcode_Exception::class);
+
         $renderer = Zend_Barcode::makeRenderer('image', null);
     }
 
@@ -328,10 +336,11 @@ class Zend_Barcode_FactoryTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Barcode_Exception
      */
     public function testBarcodeFactoryWithNamespaceButWithoutExtendingRendererAbstract()
     {
+        $this->expectException(\Zend_Barcode_Exception::class);
+
         require_once dirname(__FILE__) . '/Renderer/_files/RendererNamespaceWithoutExtendingRendererAbstract.php';
         $renderer = Zend_Barcode::makeRenderer('image',
                 array(
@@ -339,11 +348,12 @@ class Zend_Barcode_FactoryTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Exception
-     * @expectedExceptionMessage does not exist or class "Zend_Barcode_Renderer_Zend" was not found in the file
      */
     public function testBarcodeRendererFactoryWithUnexistantRenderer()
     {
+        $this->expectException(\Zend_Exception::class);
+        $this->expectExceptionMessage('does not exist or class "Zend_Barcode_Renderer_Zend" was not found in the file');
+
         $renderer = Zend_Barcode::makeRenderer('zend', array());
     }
 

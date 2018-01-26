@@ -32,7 +32,7 @@ require_once 'Zend/Gdata/Books/CollectionFeed.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Books
  */
-class Zend_Gdata_Books_CollectionFeedTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_Books_CollectionFeedTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp()

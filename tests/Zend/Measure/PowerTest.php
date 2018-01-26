@@ -34,7 +34,7 @@ require_once 'Zend/Measure/Power.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Measure
  */
-class Zend_Measure_PowerTest extends PHPUnit_Framework_TestCase
+class Zend_Measure_PowerTest extends PHPUnit\Framework\TestCase
 {
     /**
      * test for Power initialisation
@@ -396,6 +396,6 @@ class Zend_Measure_PowerTest extends PHPUnit_Framework_TestCase
     {
         $value = new Zend_Measure_Power('-100',Zend_Measure_Power::STANDARD,'de');
         $unit  = $value->getConversionList();
-        $this->assertTrue(is_array($unit), 'Array expected');
+        $this->assertInternalType('array', $unit, 'Array expected');
     }
 }

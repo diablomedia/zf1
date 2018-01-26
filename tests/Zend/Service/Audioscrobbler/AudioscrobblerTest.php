@@ -83,7 +83,7 @@ class Zend_Service_Audioscrobbler_AudioscrobblerTest extends Zend_Service_Audios
      */
     public function testUnknownMethodViaCallInterceptThrowsException()
     {
-        $this->setExpectedException("Zend_Service_Exception");
+        $this->expectException("Zend_Service_Exception");
 
         $as = new Zend_Service_Audioscrobbler();
         $as->someInvalidMethod();
@@ -94,7 +94,7 @@ class Zend_Service_Audioscrobbler_AudioscrobblerTest extends Zend_Service_Audios
      */
     public function testCallInterceptMethodsRequireExactlyOneParameterAndThrowExceptionOtherwise()
     {
-        $this->setExpectedException("Zend_Service_Exception");
+        $this->expectException("Zend_Service_Exception");
 
         $as = new Zend_Service_Audioscrobbler();
         $as->setUser();

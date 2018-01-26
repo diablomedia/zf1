@@ -46,7 +46,7 @@ require_once 'Zend/Dojo/View/Helper/Dojo.php';
  * @group      Zend_Dojo
  * @group      Zend_Dojo_Form
  */
-class Zend_Dojo_Form_Decorator_DijitElementTest extends PHPUnit_Framework_TestCase
+class Zend_Dojo_Form_Decorator_DijitElementTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -116,20 +116,20 @@ class Zend_Dojo_Form_Decorator_DijitElementTest extends PHPUnit_Framework_TestCa
     public function testRetrievingElementAttributesShouldOmitDijitParams()
     {
         $attribs = $this->decorator->getElementAttribs();
-        $this->assertTrue(is_array($attribs));
-        $this->assertFalse(array_key_exists('dijitParams', $attribs));
-        $this->assertFalse(array_key_exists('propercase', $attribs));
-        $this->assertFalse(array_key_exists('trim', $attribs));
+        $this->assertInternalType('array', $attribs);
+        $this->assertArrayNotHasKey('dijitParams', $attribs);
+        $this->assertArrayNotHasKey('propercase', $attribs);
+        $this->assertArrayNotHasKey('trim', $attribs);
     }
 
     public function testRetrievingDijitParamsShouldOmitNormalAttributes()
     {
         $params = $this->decorator->getDijitParams();
-        $this->assertTrue(is_array($params));
-        $this->assertFalse(array_key_exists('class', $params));
-        $this->assertFalse(array_key_exists('style', $params));
-        $this->assertFalse(array_key_exists('value', $params));
-        $this->assertFalse(array_key_exists('label', $params));
+        $this->assertInternalType('array', $params);
+        $this->assertArrayNotHasKey('class', $params);
+        $this->assertArrayNotHasKey('style', $params);
+        $this->assertArrayNotHasKey('value', $params);
+        $this->assertArrayNotHasKey('label', $params);
     }
 
     public function testRenderingShouldEnableDojo()
@@ -145,7 +145,7 @@ class Zend_Dojo_Form_Decorator_DijitElementTest extends PHPUnit_Framework_TestCa
         $handler = set_error_handler(array($this, 'handleError'));
         $html = $this->decorator->render('');
         restore_error_handler();
-        $this->assertFalse(empty($this->errors), var_export($this->errors, 1));
+        $this->assertNotEmpty($this->errors, var_export($this->errors, 1));
         $found = false;
         foreach ($this->errors as $error) {
             if (strstr($error, 'Duplicate')) {
@@ -164,10 +164,11 @@ class Zend_Dojo_Form_Decorator_DijitElementTest extends PHPUnit_Framework_TestCa
     }
 
     /**
-     * @expectedException Zend_Form_Decorator_Exception
      */
     public function testRenderingShouldThrowExceptionWhenNoViewObjectRegistered()
     {
+        $this->expectException(\Zend_Form_Decorator_Exception::class);
+
         $element = new Zend_Dojo_Form_Element_TextBox(
             'foo',
             array(

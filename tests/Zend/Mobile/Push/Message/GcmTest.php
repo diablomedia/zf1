@@ -32,22 +32,24 @@ require_once 'Zend/Mobile/Push/Message/Gcm.php';
  * @group      Zend_Mobile_Push
  * @group      Zend_Mobile_Push_Gcm
  */
-class Zend_Mobile_Push_Message_GcmTest extends PHPUnit_Framework_TestCase
+class Zend_Mobile_Push_Message_GcmTest extends PHPUnit\Framework\TestCase
 {
     /**
-     * @expectedException Zend_Mobile_Push_Message_Exception
      */
     public function testAddDataThrowsExceptionOnNonStringKey()
     {
+        $this->expectException(\Zend_Mobile_Push_Message_Exception::class);
+
         $msg = new Zend_Mobile_Push_Message_Gcm();
         $msg->addData(array(), 'value');
     }
 
     /**
-     * @expectedException Zend_Mobile_Push_Message_Exception
      */
     public function testAddDataThrowsExceptionOnNonScalarValue()
     {
+        $this->expectException(\Zend_Mobile_Push_Message_Exception::class);
+
         $msg = new Zend_Mobile_Push_Message_Gcm();
         $msg->addData('key', new stdClass);
     }
@@ -92,10 +94,11 @@ class Zend_Mobile_Push_Message_GcmTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Mobile_Push_Message_Exception
      */
     public function testDelayWhileIdleThrowsExceptionOnInvalidValue()
     {
+        $this->expectException(\Zend_Mobile_Push_Message_Exception::class);
+
         $msg = new Zend_Mobile_Push_Message_Gcm();
         $msg->setDelayWhileIdle('true');
     }
@@ -116,10 +119,11 @@ class Zend_Mobile_Push_Message_GcmTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Mobile_Push_Message_Exception
      */
     public function testTtlThrowsExceptionOnInvalidValue()
     {
+        $this->expectException(\Zend_Mobile_Push_Message_Exception::class);
+
         $msg = new Zend_Mobile_Push_Message_Gcm();
         $msg->setTtl('foo');
     }

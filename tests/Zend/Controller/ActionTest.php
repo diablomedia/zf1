@@ -35,7 +35,7 @@ require_once 'Zend/Controller/Response/Cli.php';
  * @group      Zend_Controller
  * @group      Zend_Controller_Action
  */
-class Zend_Controller_ActionTest extends PHPUnit_Framework_TestCase
+class Zend_Controller_ActionTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {
@@ -275,7 +275,7 @@ class Zend_Controller_ActionTest extends PHPUnit_Framework_TestCase
         $view = $controller->initView();
         $this->assertTrue($view instanceof Zend_View);
         $scriptPath = $view->getScriptPaths();
-        $this->assertTrue(is_array($scriptPath));
+        $this->assertInternalType('array', $scriptPath);
         $this->assertEquals(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . 'scripts/', $scriptPath[0]);
     }
 

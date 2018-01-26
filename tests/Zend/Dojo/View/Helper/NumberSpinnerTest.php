@@ -43,7 +43,7 @@ require_once 'Zend/Dojo/View/Helper/Dojo.php';
  * @group      Zend_Dojo
  * @group      Zend_Dojo_View
  */
-class Zend_Dojo_View_Helper_NumberSpinnerTest extends PHPUnit_Framework_TestCase
+class Zend_Dojo_View_Helper_NumberSpinnerTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -127,10 +127,10 @@ class Zend_Dojo_View_Helper_NumberSpinnerTest extends PHPUnit_Framework_TestCase
             $constraints = str_replace('&#39;', '"', $constraints);
         }
         $constraints = Zend_Json::decode($constraints);
-        $this->assertTrue(is_array($constraints), var_export($m[1], 1));
-        $this->assertTrue(array_key_exists('min', $constraints));
-        $this->assertTrue(array_key_exists('max', $constraints));
-        $this->assertTrue(array_key_exists('places', $constraints));
+        $this->assertInternalType('array', $constraints, var_export($m[1], 1));
+        $this->assertArrayHasKey('min', $constraints);
+        $this->assertArrayHasKey('max', $constraints);
+        $this->assertArrayHasKey('places', $constraints);
     }
 
     public function testInvalidConstraintsShouldBeStrippedPriorToRendering()

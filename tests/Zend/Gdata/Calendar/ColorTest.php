@@ -32,7 +32,7 @@ require_once 'Zend/Gdata/Calendar.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Calendar
  */
-class Zend_Gdata_Calendar_ColorTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_Calendar_ColorTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -43,24 +43,24 @@ class Zend_Gdata_Calendar_ColorTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyColorShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->color->extensionElements));
+        $this->assertInternalType('array', $this->color->extensionElements);
         $this->assertTrue(count($this->color->extensionElements) == 0);
     }
 
     public function testEmptyColorShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->color->extensionAttributes));
+        $this->assertInternalType('array', $this->color->extensionAttributes);
         $this->assertTrue(count($this->color->extensionAttributes) == 0);
     }
 
     public function testSampleColorShouldHaveNoExtensionElements() {
         $this->color->transferFromXML($this->colorText);
-        $this->assertTrue(is_array($this->color->extensionElements));
+        $this->assertInternalType('array', $this->color->extensionElements);
         $this->assertTrue(count($this->color->extensionElements) == 0);
     }
 
     public function testSampleColorShouldHaveNoExtensionAttributes() {
         $this->color->transferFromXML($this->colorText);
-        $this->assertTrue(is_array($this->color->extensionAttributes));
+        $this->assertInternalType('array', $this->color->extensionAttributes);
         $this->assertTrue(count($this->color->extensionAttributes) == 0);
     }
 

@@ -41,7 +41,7 @@ require_once 'Zend/Registry.php';
  * @group      Zend_Controller
  * @group      Zend_Controller_Router
  */
-class Zend_Controller_Router_RouteTest extends PHPUnit_Framework_TestCase
+class Zend_Controller_Router_RouteTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Server backup
@@ -306,7 +306,7 @@ class Zend_Controller_Router_RouteTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('c', $values['controller']);
         $this->assertEquals('a', $values['action']);
         $this->assertEquals('next', $values['next']);
-        $this->assertTrue(array_key_exists('2000', $values));
+        $this->assertArrayHasKey('2000', $values);
     }
 
     public function testRootRoute()
@@ -423,7 +423,7 @@ class Zend_Controller_Router_RouteTest extends PHPUnit_Framework_TestCase
     {
         $route = new Zend_Controller_Router_Route('archives/:year/:month');
         $values = $route->match('archives/2006/07');
-        $this->assertTrue(is_array($values));
+        $this->assertInternalType('array', $values);
 
         $url = $route->assemble(array('month' => '03'));
         $this->assertEquals('archives/2006/03', $url);
@@ -451,7 +451,7 @@ class Zend_Controller_Router_RouteTest extends PHPUnit_Framework_TestCase
     {
         $route = new Zend_Controller_Router_Route('archives/:year/:month/*', array('controller' => 'archive'));
         $values = $route->match('archives/2006/07/controller/test/year/10000/sort/author');
-        $this->assertTrue(is_array($values));
+        $this->assertInternalType('array', $values);
 
         $this->assertEquals('archive', $values['controller']);
         $this->assertEquals('2006', $values['year']);
@@ -466,7 +466,7 @@ class Zend_Controller_Router_RouteTest extends PHPUnit_Framework_TestCase
 
         $values = $route->getDefaults();
 
-        $this->assertTrue(is_array($values));
+        $this->assertInternalType('array', $values);
         $this->assertEquals('ctrl', $values['controller']);
         $this->assertEquals('act', $values['action']);
     }
@@ -596,7 +596,7 @@ class Zend_Controller_Router_RouteTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('families', $route->assemble());
 
         $values = $route->match('families/edit/id/4');
-        $this->assertTrue(is_array($values));
+        $this->assertInternalType('array', $values);
 
         $this->assertEquals('families/edit/id/4', $route->assemble());
     }
@@ -636,7 +636,7 @@ class Zend_Controller_Router_RouteTest extends PHPUnit_Framework_TestCase
 
         $values = $route->match('en/tmp/ctrl/action/id/1', true);
 
-        $this->assertTrue(is_array($values));
+        $this->assertInternalType('array', $values);
         $this->assertEquals('en', $values['lang']);
         $this->assertEquals('tmp', $values['temp']);
         $this->assertEquals('en/tmp', $route->getMatchedPath());
@@ -659,7 +659,7 @@ class Zend_Controller_Router_RouteTest extends PHPUnit_Framework_TestCase
         $route  = new Zend_Controller_Router_Route('foo/@foo');
         $values = $route->match('foo/en_foo');
 
-        $this->assertTrue(is_array($values));
+        $this->assertInternalType('array', $values);
     }
 
     public function testDynamicTranslationAssemble()

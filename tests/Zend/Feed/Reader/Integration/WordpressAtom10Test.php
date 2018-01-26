@@ -31,7 +31,7 @@ require_once 'Zend/Feed/Reader.php';
  * @group      Zend_Feed
  * @group      Zend_Feed_Reader
  */
-class Zend_Feed_Reader_Integration_WordpressAtom10Test extends PHPUnit_Framework_TestCase
+class Zend_Feed_Reader_Integration_WordpressAtom10Test extends PHPUnit\Framework\TestCase
 {
 
     protected $_feedSamplePath = null;

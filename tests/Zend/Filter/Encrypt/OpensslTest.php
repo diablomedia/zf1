@@ -33,7 +33,7 @@ require_once 'Zend/Filter/Encrypt/Openssl.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Filter
  */
-class Zend_Filter_Encrypt_OpensslTest extends PHPUnit_Framework_TestCase
+class Zend_Filter_Encrypt_OpensslTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {
@@ -253,7 +253,7 @@ bK22CwD/l7SMBOz4M9XH0Jb0OhNxLza4XMDu0ANMIpnkn1KOcmQ4gB8fmAbBt';
             'passphrase' => $passphrase,
             'private' => dirname(__FILE__) . '/../_files/privatekey.pem'));
         $public = $filter->getPublicKey();
-        $this->assertFalse(empty($public));
+        $this->assertNotEmpty($public);
         $this->assertEquals($passphrase, $filter->getPassphrase());
     }
 

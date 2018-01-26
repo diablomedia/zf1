@@ -31,7 +31,7 @@ require_once 'Zend/Http/Client.php';
  * @group      Zend_Http
  * @group      Zend_Http_Client
  */
-class Zend_Http_Client_ClientTest extends PHPUnit_Framework_TestCase
+class Zend_Http_Client_ClientTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Set up the test case
@@ -63,7 +63,7 @@ class Zend_Http_Client_ClientTest extends PHPUnit_Framework_TestCase
      */
     public function testHeadersContainingCRLFInjectionRaiseAnException($name, $value)
     {
-        $this->setExpectedException('Zend_Http_Exception');
+        $this->expectException('Zend_Http_Exception');
         $this->client->setHeaders(array(
             $name => $value,
         ));

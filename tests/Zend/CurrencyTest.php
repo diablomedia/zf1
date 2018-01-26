@@ -35,7 +35,7 @@ require_once 'Zend/Currency.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Currency
  */
-class Zend_CurrencyTest extends PHPUnit_Framework_TestCase
+class Zend_CurrencyTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp()

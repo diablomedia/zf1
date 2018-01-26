@@ -39,7 +39,7 @@ require_once dirname(dirname(dirname(__FILE__))) . '/_files/HelperFlashMessenger
  * @group      Zend_Controller_Action
  * @group      Zend_Controller_Action_Helper
  */
-class Zend_Controller_Action_Helper_FlashMessengerTest extends PHPUnit_Framework_TestCase
+class Zend_Controller_Action_Helper_FlashMessengerTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @var Zend_Controller_Action
@@ -146,7 +146,7 @@ class Zend_Controller_Action_Helper_FlashMessengerTest extends PHPUnit_Framework
 
         // Ensure it didnt' bleed over into default namespace
         $defaultMessages = $this->helper->getCurrentMessages();
-        $this->assertTrue(empty($defaultMessages), 'Default namespace not empty');
+        $this->assertEmpty($defaultMessages, 'Default namespace not empty');
     }
 
     /**
@@ -165,7 +165,7 @@ class Zend_Controller_Action_Helper_FlashMessengerTest extends PHPUnit_Framework
 
         // Ensure it cleared the specified namespace
         $foobarMessages = $this->helper->getCurrentMessages('foobar');
-        $this->assertTrue(empty($foobarMessages), 'Namespace foobar not empty');
+        $this->assertEmpty($foobarMessages, 'Namespace foobar not empty');
 
         // Ensure it didnt' clear the default namespace
         $defaultMessages = $this->helper->getCurrentMessages();

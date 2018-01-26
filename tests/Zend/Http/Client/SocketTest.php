@@ -113,11 +113,12 @@ class Zend_Http_Client_SocketTest extends Zend_Http_Client_CommonHttpTests
     /**
      * Check that an exception is thrown when trying to set invalid config
      *
-     * @expectedException Zend_Http_Client_Adapter_Exception
      * @dataProvider invalidConfigProvider
      */
     public function testSetConfigInvalidConfig($config)
     {
+        $this->expectException(\Zend_Http_Client_Adapter_Exception::class);
+
         $this->_adapter->setConfig($config);
     }
 
@@ -165,10 +166,11 @@ class Zend_Http_Client_SocketTest extends Zend_Http_Client_CommonHttpTests
      * Test that setting invalid options / context causes an exception
      *
      * @dataProvider      invalidContextProvider
-     * @expectedException Zend_Http_Client_Adapter_Exception
      */
     public function testSetInvalidContextOptions($invalid)
     {
+        $this->expectException(\Zend_Http_Client_Adapter_Exception::class);
+
         $adapter = new $this->config['adapter'];
         $adapter->setStreamContext($invalid);
     }

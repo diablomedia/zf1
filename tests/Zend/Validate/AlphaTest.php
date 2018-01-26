@@ -34,7 +34,7 @@ require_once 'Zend/Validate/Alpha.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Validate
  */
-class Zend_Validate_AlphaTest extends PHPUnit_Framework_TestCase
+class Zend_Validate_AlphaTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Zend_Validate_Alpha object

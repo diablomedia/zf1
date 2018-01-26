@@ -30,7 +30,7 @@ require_once 'Zend/Feed/Pubsubhubbub/Publisher.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Feed_Pubsubhubbub_PublisherTest extends PHPUnit_Framework_TestCase
+class Zend_Feed_Pubsubhubbub_PublisherTest extends PHPUnit\Framework\TestCase
 {
 
     protected $_publisher = null;

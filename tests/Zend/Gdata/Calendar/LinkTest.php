@@ -33,7 +33,7 @@ require_once 'Zend/Gdata/Calendar.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Calendar
  */
-class Zend_Gdata_Calendar_LinkTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_Calendar_LinkTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -44,24 +44,24 @@ class Zend_Gdata_Calendar_LinkTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyLinkShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->link->extensionElements));
+        $this->assertInternalType('array', $this->link->extensionElements);
         $this->assertTrue(count($this->link->extensionElements) == 0);
     }
 
     public function testEmptyLinkShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->link->extensionAttributes));
+        $this->assertInternalType('array', $this->link->extensionAttributes);
         $this->assertTrue(count($this->link->extensionAttributes) == 0);
     }
 
     public function testSampleLinkShouldHaveNoExtensionElements() {
         $this->link->transferFromXML($this->linkText);
-        $this->assertTrue(is_array($this->link->extensionElements));
+        $this->assertInternalType('array', $this->link->extensionElements);
         $this->assertTrue(count($this->link->extensionElements) == 0);
     }
 
     public function testSampleLinkShouldHaveNoExtensionAttributes() {
         $this->link->transferFromXML($this->linkText);
-        $this->assertTrue(is_array($this->link->extensionAttributes));
+        $this->assertInternalType('array', $this->link->extensionAttributes);
         $this->assertTrue(count($this->link->extensionAttributes) == 0);
     }
 

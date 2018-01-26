@@ -31,7 +31,7 @@ require_once 'Zend/Memory.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Memory
  */
-class Zend_Memory_Container_LockedTest extends PHPUnit_Framework_TestCase
+class Zend_Memory_Container_LockedTest extends PHPUnit\Framework\TestCase
 {
     /**
      * tests the Movable memory container object creation

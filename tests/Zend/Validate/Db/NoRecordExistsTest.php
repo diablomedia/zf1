@@ -22,7 +22,7 @@
 
 
 /**
- * PHPUnit_Framework_TestCase
+ * PHPUnit\Framework\TestCase
  */
 
 
@@ -65,7 +65,7 @@ require_once dirname(__FILE__) . '/_files/Db/MockHasResult.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Validate
  */
-class Zend_Validate_Db_NoRecordExistsTest extends PHPUnit_Framework_TestCase
+class Zend_Validate_Db_NoRecordExistsTest extends PHPUnit\Framework\TestCase
 {
 
     /**

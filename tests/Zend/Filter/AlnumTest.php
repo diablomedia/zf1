@@ -34,7 +34,7 @@ require_once 'Zend/Filter/Alnum.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Filter
  */
-class Zend_Filter_AlnumTest extends PHPUnit_Framework_TestCase
+class Zend_Filter_AlnumTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Zend_Filter_Alnum object

@@ -34,7 +34,7 @@ require_once 'Zend/Http/Client/Adapter/Test.php';
  * @group      Zend_Service_Amazon
  * @group      Zend_Service_Amazon_Sqs
  */
-class Zend_Service_Amazon_Sqs_OfflineTest extends PHPUnit_Framework_TestCase
+class Zend_Service_Amazon_Sqs_OfflineTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Reference to Amazon service consumer object
@@ -77,9 +77,11 @@ class Zend_Service_Amazon_Sqs_OfflineTest extends PHPUnit_Framework_TestCase
     
     public function testSetEmptyRegion()
     {
-         $this->setExpectedException(
-            'Zend_Service_Amazon_Sqs_Exception',
-            'Empty region specified.'
+         $this->expectException(
+            'Zend_Service_Amazon_Sqs_Exception'
+         );
+         $this->expectExceptionMessage(
+             'Empty region specified.'
         );
         $this->_amazon->setEndpoint('');
     }

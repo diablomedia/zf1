@@ -33,7 +33,7 @@ require_once 'Zend/Mime/Part.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Mime
  */
-class Zend_Mime_PartTest extends PHPUnit_Framework_TestCase
+class Zend_Mime_PartTest extends PHPUnit\Framework\TestCase
 {
     /**
      * MIME part test object
@@ -94,22 +94,22 @@ class Zend_Mime_PartTest extends PHPUnit_Framework_TestCase
 
         // Test Base64
         $fp = fopen($testfile,'rb');
-        $this->assertTrue(is_resource($fp));
+        $this->assertInternalType('resource', $fp);
         $part = new Zend_Mime_Part($fp);
         $part->encoding = Zend_Mime::ENCODING_BASE64;
         $fp2 = $part->getEncodedStream();
-        $this->assertTrue(is_resource($fp2));
+        $this->assertInternalType('resource', $fp2);
         $encoded = stream_get_contents($fp2);
         fclose($fp);
         $this->assertEquals(base64_decode($encoded),$original);
 
         // test QuotedPrintable
         $fp = fopen($testfile,'rb');
-        $this->assertTrue(is_resource($fp));
+        $this->assertInternalType('resource', $fp);
         $part = new Zend_Mime_Part($fp);
         $part->encoding = Zend_Mime::ENCODING_QUOTEDPRINTABLE;
         $fp2 = $part->getEncodedStream();
-        $this->assertTrue(is_resource($fp2));
+        $this->assertInternalType('resource', $fp2);
         $encoded = stream_get_contents($fp2);
         fclose($fp);
         $this->assertEquals(quoted_printable_decode($encoded),$original);

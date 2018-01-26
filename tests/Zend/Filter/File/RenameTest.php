@@ -33,7 +33,7 @@ require_once 'Zend/Filter/File/Rename.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Filter
  */
-class Zend_Filter_File_RenameTest extends PHPUnit_Framework_TestCase
+class Zend_Filter_File_RenameTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Path to test files
@@ -82,7 +82,7 @@ class Zend_Filter_File_RenameTest extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    public function __construct()
+    public function setUp()
     {
         $this->_filesPath = dirname(__FILE__) . DIRECTORY_SEPARATOR
                           . '..' . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR;
@@ -91,15 +91,6 @@ class Zend_Filter_File_RenameTest extends PHPUnit_Framework_TestCase
         $this->_newFile   = $this->_filesPath . 'newfile.xml';
         $this->_newDir    = $this->_filesPath . DIRECTORY_SEPARATOR . '_testDir2';
         $this->_newDirFile = $this->_newDir . DIRECTORY_SEPARATOR . 'testfile.txt';
-    }
-
-    /**
-     * Sets the path to test files
-     *
-     * @return void
-     */
-    public function setUp()
-    {
         if (file_exists($this->_origFile)) {
             unlink($this->_origFile);
         }

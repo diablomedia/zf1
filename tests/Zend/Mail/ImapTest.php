@@ -44,7 +44,7 @@ require_once 'Zend/Config.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Mail
  */
-class Zend_Mail_ImapTest extends PHPUnit_Framework_TestCase
+class Zend_Mail_ImapTest extends PHPUnit\Framework\TestCase
 {
     protected $_params;
 
@@ -737,7 +737,7 @@ class Zend_Mail_ImapTest extends PHPUnit_Framework_TestCase
         $protocol = new Zend_Mail_Protocol_Imap($this->_params['host']);
         $protocol->login($this->_params['user'], $this->_params['password']);
         $capa = $protocol->capability();
-        $this->assertTrue(is_array($capa));
+        $this->assertInternalType('array', $capa);
         $this->assertEquals($capa[0], 'CAPABILITY');
     }
 
@@ -746,7 +746,7 @@ class Zend_Mail_ImapTest extends PHPUnit_Framework_TestCase
         $protocol = new Zend_Mail_Protocol_Imap($this->_params['host']);
         $protocol->login($this->_params['user'], $this->_params['password']);
         $status = $protocol->select('INBOX');
-        $this->assertTrue(is_array($status['flags']));
+        $this->assertInternalType('array', $status['flags']);
         $this->assertEquals($status['exists'], 7);
     }
 
@@ -756,7 +756,7 @@ class Zend_Mail_ImapTest extends PHPUnit_Framework_TestCase
         $protocol = new Zend_Mail_Protocol_Imap($this->_params['host']);
         $protocol->login($this->_params['user'], $this->_params['password']);
         $status = $protocol->examine('INBOX');
-        $this->assertTrue(is_array($status['flags']));
+        $this->assertInternalType('array', $status['flags']);
         $this->assertEquals($status['exists'], 7);
     }
 
@@ -797,12 +797,12 @@ class Zend_Mail_ImapTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($protocol->fetch('UID', 1, INF), $range);
         $this->assertEquals($protocol->fetch('UID', 1, 7), $range);
         $this->assertEquals($protocol->fetch('UID', range(1, 7)), $range);
-        $this->assertTrue(is_numeric($protocol->fetch('UID', 1)));
+        $this->assertInternalType('numeric', $protocol->fetch('UID', 1));
 
         $result = $protocol->fetch(array('UID', 'FLAGS'), 1, INF);
         foreach ($result as $k => $v) {
             $this->assertEquals($k, $v['UID']);
-            $this->assertTrue(is_array($v['FLAGS']));
+            $this->assertInternalType('array', $v['FLAGS']);
         }
 
         try {

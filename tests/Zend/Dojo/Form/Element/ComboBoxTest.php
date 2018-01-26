@@ -43,7 +43,7 @@ require_once 'Zend/Dojo/View/Helper/Dojo.php';
  * @group      Zend_Dojo
  * @group      Zend_Dojo_Form
  */
-class Zend_Dojo_Form_Element_ComboBoxTest extends PHPUnit_Framework_TestCase
+class Zend_Dojo_Form_Element_ComboBoxTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -95,7 +95,7 @@ class Zend_Dojo_Form_Element_ComboBoxTest extends PHPUnit_Framework_TestCase
         $this->element->setStoreId('someStore');
         $this->assertTrue($this->element->hasDijitParam('store'));
         $store = $this->element->getDijitParam('store');
-        $this->assertTrue(array_key_exists('store', $store));
+        $this->assertArrayHasKey('store', $store);
         $this->assertEquals('someStore', $store['store']);
         $this->assertEquals($this->element->getStoreId(), $store['store']);
     }
@@ -105,7 +105,7 @@ class Zend_Dojo_Form_Element_ComboBoxTest extends PHPUnit_Framework_TestCase
         $this->element->setStoreType('dojo.data.ItemFileReadStore');
         $this->assertTrue($this->element->hasDijitParam('store'));
         $store = $this->element->getDijitParam('store');
-        $this->assertTrue(array_key_exists('type', $store));
+        $this->assertArrayHasKey('type', $store);
         $this->assertEquals('dojo.data.ItemFileReadStore', $store['type']);
         $this->assertEquals($this->element->getStoreType(), $store['type']);
     }
@@ -115,7 +115,7 @@ class Zend_Dojo_Form_Element_ComboBoxTest extends PHPUnit_Framework_TestCase
         $this->element->setStoreParams(array('url' => '/js/foo.json'));
         $this->assertTrue($this->element->hasDijitParam('store'));
         $store = $this->element->getDijitParam('store');
-        $this->assertTrue(array_key_exists('params', $store));
+        $this->assertArrayHasKey('params', $store);
         $this->assertEquals(array('url' => '/js/foo.json'), $store['params']);
         $this->assertEquals($this->element->getStoreParams(), $store['params']);
     }
@@ -123,10 +123,10 @@ class Zend_Dojo_Form_Element_ComboBoxTest extends PHPUnit_Framework_TestCase
     public function testAutocompleteAccessorsShouldProxyToDijitParams()
     {
         $this->assertFalse($this->element->getAutocomplete());
-        $this->assertFalse(array_key_exists('autocomplete', $this->element->dijitParams));
+        $this->assertArrayNotHasKey('autocomplete', $this->element->dijitParams);
         $this->element->setAutocomplete(true);
         $this->assertTrue($this->element->getAutocomplete());
-        $this->assertTrue(array_key_exists('autocomplete', $this->element->dijitParams));
+        $this->assertArrayHasKey('autocomplete', $this->element->dijitParams);
     }
 
     /**#@+

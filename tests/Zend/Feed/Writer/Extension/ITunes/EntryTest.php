@@ -31,7 +31,7 @@ require_once 'Zend/Feed/Writer/Entry.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Feed_Writer_Extension_ITunes_EntryTest extends PHPUnit_Framework_TestCase
+class Zend_Feed_Writer_Extension_ITunes_EntryTest extends PHPUnit\Framework\TestCase
 {
 
     public function testSetBlock()
@@ -42,19 +42,21 @@ class Zend_Feed_Writer_Extension_ITunes_EntryTest extends PHPUnit_Framework_Test
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetBlockThrowsExceptionOnNonAlphaValue()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $entry = new Zend_Feed_Writer_Entry;
         $entry->setItunesBlock('123');
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetBlockThrowsExceptionIfValueGreaterThan255CharsLength()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $entry = new Zend_Feed_Writer_Entry;
         $entry->setItunesBlock(str_repeat('a', 256));
     }
@@ -74,10 +76,11 @@ class Zend_Feed_Writer_Extension_ITunes_EntryTest extends PHPUnit_Framework_Test
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testAddAuthorThrowsExceptionIfValueGreaterThan255CharsLength()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $entry = new Zend_Feed_Writer_Entry;
         $entry->addItunesAuthor(str_repeat('a', 256));
     }
@@ -104,28 +107,31 @@ class Zend_Feed_Writer_Extension_ITunes_EntryTest extends PHPUnit_Framework_Test
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetDurationThrowsExceptionOnUnknownFormat()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $entry = new Zend_Feed_Writer_Entry;
         $entry->setItunesDuration('abc');
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetDurationThrowsExceptionOnInvalidSeconds()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $entry = new Zend_Feed_Writer_Entry;
         $entry->setItunesDuration('23:456');
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetDurationThrowsExceptionOnInvalidMinutes()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $entry = new Zend_Feed_Writer_Entry;
         $entry->setItunesDuration('23:234:45');
     }
@@ -152,10 +158,11 @@ class Zend_Feed_Writer_Extension_ITunes_EntryTest extends PHPUnit_Framework_Test
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetExplicitThrowsExceptionOnUnknownTerm()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $entry = new Zend_Feed_Writer_Entry;
         $entry->setItunesExplicit('abc');
     }
@@ -171,10 +178,11 @@ class Zend_Feed_Writer_Extension_ITunes_EntryTest extends PHPUnit_Framework_Test
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetKeywordsThrowsExceptionIfMaxKeywordsExceeded()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $entry = new Zend_Feed_Writer_Entry;
         $words = array(
             'a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'a11', 'a12', 'a13'
@@ -183,10 +191,11 @@ class Zend_Feed_Writer_Extension_ITunes_EntryTest extends PHPUnit_Framework_Test
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetKeywordsThrowsExceptionIfFormattedKeywordsExceeds255CharLength()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $entry = new Zend_Feed_Writer_Entry;
         $words = array(
             str_repeat('a', 253), str_repeat('b', 2)
@@ -202,10 +211,11 @@ class Zend_Feed_Writer_Extension_ITunes_EntryTest extends PHPUnit_Framework_Test
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetSubtitleThrowsExceptionWhenValueExceeds255Chars()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $entry = new Zend_Feed_Writer_Entry;
         $entry->setItunesSubtitle(str_repeat('a', 256));
     }
@@ -218,10 +228,11 @@ class Zend_Feed_Writer_Extension_ITunes_EntryTest extends PHPUnit_Framework_Test
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetSummaryThrowsExceptionWhenValueExceeds255Chars()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $entry = new Zend_Feed_Writer_Entry;
         $entry->setItunesSummary(str_repeat('a', 4001));
     }

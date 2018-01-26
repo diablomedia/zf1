@@ -31,7 +31,7 @@ require_once 'Zend/Gdata.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Gdata
  */
-class Zend_Gdata_VisibilityTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_VisibilityTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -42,24 +42,24 @@ class Zend_Gdata_VisibilityTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyVisibilityShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->visibility->extensionElements));
+        $this->assertInternalType('array', $this->visibility->extensionElements);
         $this->assertTrue(count($this->visibility->extensionElements) == 0);
     }
 
     public function testEmptyVisibilityShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->visibility->extensionAttributes));
+        $this->assertInternalType('array', $this->visibility->extensionAttributes);
         $this->assertTrue(count($this->visibility->extensionAttributes) == 0);
     }
 
     public function testSampleVisibilityShouldHaveNoExtensionElements() {
         $this->visibility->transferFromXML($this->visibilityText);
-        $this->assertTrue(is_array($this->visibility->extensionElements));
+        $this->assertInternalType('array', $this->visibility->extensionElements);
         $this->assertTrue(count($this->visibility->extensionElements) == 0);
     }
 
     public function testSampleVisibilityShouldHaveNoExtensionAttributes() {
         $this->visibility->transferFromXML($this->visibilityText);
-        $this->assertTrue(is_array($this->visibility->extensionAttributes));
+        $this->assertInternalType('array', $this->visibility->extensionAttributes);
         $this->assertTrue(count($this->visibility->extensionAttributes) == 0);
     }
 

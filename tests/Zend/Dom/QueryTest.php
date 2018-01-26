@@ -33,7 +33,7 @@ require_once 'Zend/Dom/Query.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Dom
  */
-class Zend_Dom_QueryTest extends PHPUnit_Framework_TestCase
+class Zend_Dom_QueryTest extends PHPUnit\Framework\TestCase
 {
     public $html;
 
@@ -242,7 +242,7 @@ EOF;
         $this->query->setDocument($file);
         $this->query->query('p');
         $errors = $this->query->getDocumentErrors();
-        $this->assertTrue(is_array($errors));
+        $this->assertInternalType('array', $errors);
         $this->assertTrue(0 < count($errors));
     }
 
@@ -363,7 +363,7 @@ EOB;
 </results>
 XML;
         $this->query->setDocumentXml($xml);
-        $this->setExpectedException("Zend_Dom_Exception");
+        $this->expectException("Zend_Dom_Exception");
         $this->query->queryXpath('/');
     }
 }

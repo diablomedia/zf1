@@ -32,7 +32,7 @@ require_once 'Zend/Filter/Word/SeparatorToDash.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Filter
  */
-class Zend_Filter_Word_SeparatorToDashTest extends PHPUnit_Framework_TestCase
+class Zend_Filter_Word_SeparatorToDashTest extends PHPUnit\Framework\TestCase
 {
     public function testFilterSeparatesDashedWordsWithDefaultSpaces()
     {

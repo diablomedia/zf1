@@ -43,7 +43,7 @@ require_once 'Zend/View.php';
  * @group      Zend_View
  * @group      Zend_View_Helper
  */
-class Zend_View_Helper_Placeholder_StandaloneContainerTest extends PHPUnit_Framework_TestCase
+class Zend_View_Helper_Placeholder_StandaloneContainerTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.

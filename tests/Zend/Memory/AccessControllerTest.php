@@ -31,7 +31,7 @@ require_once 'Zend/Memory.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Memory
  */
-class Zend_Memory_Container_AccessControllerTest extends PHPUnit_Framework_TestCase
+class Zend_Memory_Container_AccessControllerTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Memory manager, used for tests

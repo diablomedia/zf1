@@ -34,7 +34,7 @@ require_once 'Zend/Service/LiveDocx/MailMerge.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @version    $Id: $
  */
-class Zend_Service_LiveDocX_LiveDocxTest extends PHPUnit_Framework_TestCase
+class Zend_Service_LiveDocX_LiveDocxTest extends PHPUnit\Framework\TestCase
 {
     public $phpLiveDocx;
 

@@ -43,9 +43,9 @@ class Zend_Test_PHPUnit_Db_DataSet_QueryTableTest extends Zend_Test_PHPUnit_Db_D
 {
     public function testCreateQueryTableWithoutZendDbConnectionThrowsException()
     {
-        $connectionMock = $this->getMockBuilder('PHPUnit_Extensions_Database_DB_IDatabaseConnection')->getMock();
+        $connectionMock = $this->getMockBuilder('PHPUnit\DbUnit\Database\Connection')->getMock();
 
-        $this->setExpectedException('Zend_Test_PHPUnit_Db_Exception');
+        $this->expectException('Zend_Test_PHPUnit_Db_Exception');
         $queryTable = new Zend_Test_PHPUnit_Db_DataSet_QueryTable("foo", "SELECT * FROM foo", $connectionMock);
     }
 
@@ -118,7 +118,7 @@ class Zend_Test_PHPUnit_Db_DataSet_QueryTableTest extends Zend_Test_PHPUnit_Db_D
         $queryTable = new Zend_Test_PHPUnit_Db_DataSet_QueryTable("foo", null, $this->connectionMock);
 
         $metadata = $queryTable->getTableMetaData();
-        $this->assertTrue($metadata instanceof PHPUnit_Extensions_Database_DataSet_ITableMetaData);
+        $this->assertTrue($metadata instanceof PHPUnit\DbUnit\DataSet\ITableMetaData);
         $this->assertEquals(array(), $metadata->getColumns());
         $this->assertEquals(array(), $metadata->getPrimaryKeys());
         $this->assertEquals("foo", $metadata->getTableName());

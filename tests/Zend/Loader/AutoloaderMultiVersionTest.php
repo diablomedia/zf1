@@ -33,7 +33,7 @@ require_once 'Zend/Loader/Autoloader.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Loader
  */
-class Zend_Loader_AutoloaderMultiVersionTest extends PHPUnit_Framework_TestCase
+class Zend_Loader_AutoloaderMultiVersionTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {
@@ -86,26 +86,29 @@ class Zend_Loader_AutoloaderMultiVersionTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Loader_Exception
      */
     public function testSettingZfPathFailsOnInvalidVersionString()
     {
+        $this->expectException(\Zend_Loader_Exception::class);
+
         $this->autoloader->setZfPath($this->path, 'foo.bar.baz.bat');
     }
 
     /**
-     * @expectedException Zend_Loader_Exception
      */
     public function testSettingZfPathFailsWhenBasePathDoesNotExist()
     {
+        $this->expectException(\Zend_Loader_Exception::class);
+
         $this->autoloader->setZfPath('foo.bar.baz.bat', 'latest');
     }
 
     /**
-     * @expectedException Zend_Loader_Exception
      */
     public function testSettingZfVersionFailsWhenNoValidInstallsDiscovered()
     {
+        $this->expectException(\Zend_Loader_Exception::class);
+
         $this->autoloader->setZfPath(dirname(__FILE__), 'latest');
     }
 

@@ -32,7 +32,7 @@ require_once 'Zend/Gdata/Books.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Books
  */
-class Zend_Gdata_Books_VolumeEntryTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_Books_VolumeEntryTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -78,24 +78,24 @@ class Zend_Gdata_Books_VolumeEntryTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyEntryShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->entry->extensionElements));
+        $this->assertInternalType('array', $this->entry->extensionElements);
         $this->assertEquals(0, count($this->entry->extensionElements));
     }
 
     public function testEmptyEntryShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->entry->extensionAttributes));
+        $this->assertInternalType('array', $this->entry->extensionAttributes);
         $this->assertEquals(0, count($this->entry->extensionAttributes));
     }
 
     public function testSampleEntryShouldHaveNoExtensionElements() {
         $this->entry->transferFromXML($this->entryText);
-        $this->assertTrue(is_array($this->entry->extensionElements));
+        $this->assertInternalType('array', $this->entry->extensionElements);
         $this->assertEquals(0, count($this->entry->extensionElements));
     }
 
     public function testSampleEntryShouldHaveNoExtensionAttributes() {
         $this->entry->transferFromXML($this->entryText);
-        $this->assertTrue(is_array($this->entry->extensionAttributes));
+        $this->assertInternalType('array', $this->entry->extensionAttributes);
         $this->assertEquals(0, count($this->entry->extensionAttributes));
     }
 

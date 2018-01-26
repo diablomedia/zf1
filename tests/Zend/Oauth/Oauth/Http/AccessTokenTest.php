@@ -31,7 +31,7 @@ require_once 'Zend/Oauth/Http/AccessToken.php';
  * @group      Zend_Oauth
  * @group      Zend_Oauth_Http
  */
-class Zend_Oauth_Http_AccessTokenTest extends PHPUnit_Framework_TestCase
+class Zend_Oauth_Http_AccessTokenTest extends PHPUnit\Framework\TestCase
 {
 
     protected $stubConsumer = null;

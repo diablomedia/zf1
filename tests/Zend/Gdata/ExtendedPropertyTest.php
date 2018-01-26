@@ -31,7 +31,7 @@ require_once 'Zend/Gdata.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Gdata
  */
-class Zend_Gdata_ExtendedPropertyTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_ExtendedPropertyTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -42,24 +42,24 @@ class Zend_Gdata_ExtendedPropertyTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyExtendedPropertyShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->extendedProperty->extensionElements));
+        $this->assertInternalType('array', $this->extendedProperty->extensionElements);
         $this->assertTrue(count($this->extendedProperty->extensionElements) == 0);
     }
 
     public function testEmptyExtendedPropertyShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->extendedProperty->extensionAttributes));
+        $this->assertInternalType('array', $this->extendedProperty->extensionAttributes);
         $this->assertTrue(count($this->extendedProperty->extensionAttributes) == 0);
     }
 
     public function testSampleExtendedPropertyShouldHaveNoExtensionElements() {
         $this->extendedProperty->transferFromXML($this->extendedPropertyText);
-        $this->assertTrue(is_array($this->extendedProperty->extensionElements));
+        $this->assertInternalType('array', $this->extendedProperty->extensionElements);
         $this->assertTrue(count($this->extendedProperty->extensionElements) == 0);
     }
 
     public function testSampleExtendedPropertyShouldHaveNoExtensionAttributes() {
         $this->extendedProperty->transferFromXML($this->extendedPropertyText);
-        $this->assertTrue(is_array($this->extendedProperty->extensionAttributes));
+        $this->assertInternalType('array', $this->extendedProperty->extensionAttributes);
         $this->assertTrue(count($this->extendedProperty->extensionAttributes) == 0);
     }
 

@@ -34,14 +34,14 @@ require_once 'Zend/OpenId/Provider/User/Session.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_OpenId
  */
-class Zend_OpenId_Provider_User_SessionTest extends PHPUnit_Framework_TestCase
+class Zend_OpenId_Provider_User_SessionTest extends PHPUnit\Framework\TestCase
 {
     const USER1     = "test_user1";
     const USER2     = "test_user2";
 
     private $_user;
 
-    public function __construct()
+    public function setUp()
     {
         $this->_user1 = new Zend_OpenId_Provider_User_Session();
         $this->_user2 = new Zend_OpenId_Provider_User_Session(new Zend_Session_Namespace("openid2"));

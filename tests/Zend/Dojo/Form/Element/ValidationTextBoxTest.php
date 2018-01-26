@@ -43,7 +43,7 @@ require_once 'Zend/Dojo/View/Helper/Dojo.php';
  * @group      Zend_Dojo
  * @group      Zend_Dojo_Form
  */
-class Zend_Dojo_Form_Element_ValidationTextBoxTest extends PHPUnit_Framework_TestCase
+class Zend_Dojo_Form_Element_ValidationTextBoxTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -96,7 +96,7 @@ class Zend_Dojo_Form_Element_ValidationTextBoxTest extends PHPUnit_Framework_Tes
     public function testInvalidMessageAccessorsShouldProxyToDijitParams()
     {
         $this->assertNull($this->element->getInvalidMessage());
-        $this->assertFalse(array_key_exists('invalidMessage', $this->element->dijitParams));
+        $this->assertArrayNotHasKey('invalidMessage', $this->element->dijitParams);
         $this->element->setInvalidMessage('message');
         $this->assertEquals('message', $this->element->getInvalidMessage());
         $this->assertEquals('message', $this->element->dijitParams['invalidMessage']);
@@ -105,7 +105,7 @@ class Zend_Dojo_Form_Element_ValidationTextBoxTest extends PHPUnit_Framework_Tes
     public function testPromptMessageAccessorsShouldProxyToDijitParams()
     {
         $this->assertNull($this->element->getPromptMessage());
-        $this->assertFalse(array_key_exists('promptMessage', $this->element->dijitParams));
+        $this->assertArrayNotHasKey('promptMessage', $this->element->dijitParams);
         $this->element->setPromptMessage('message');
         $this->assertEquals('message', $this->element->getPromptMessage());
         $this->assertEquals('message', $this->element->dijitParams['promptMessage']);
@@ -114,7 +114,7 @@ class Zend_Dojo_Form_Element_ValidationTextBoxTest extends PHPUnit_Framework_Tes
     public function testRegExpAccessorsShouldProxyToDijitParams()
     {
         $this->assertNull($this->element->getRegExp());
-        $this->assertFalse(array_key_exists('regExp', $this->element->dijitParams));
+        $this->assertArrayNotHasKey('regExp', $this->element->dijitParams);
         $this->element->setRegExp('[\w]+');
         $this->assertEquals('[\w]+', $this->element->getRegExp());
         $this->assertEquals('[\w]+', $this->element->dijitParams['regExp']);
@@ -123,8 +123,8 @@ class Zend_Dojo_Form_Element_ValidationTextBoxTest extends PHPUnit_Framework_Tes
     public function testConstraintsAccessorsShouldProxyToDijitParams()
     {
         $constraints = $this->element->getConstraints();
-        $this->assertTrue(empty($constraints));
-        $this->assertFalse(array_key_exists('constraints', $this->element->dijitParams));
+        $this->assertEmpty($constraints);
+        $this->assertArrayNotHasKey('constraints', $this->element->dijitParams);
 
         $constraints = array('foo' => 'bar', 'bar' => 'baz');
         $this->element->setConstraints($constraints);
@@ -135,7 +135,7 @@ class Zend_Dojo_Form_Element_ValidationTextBoxTest extends PHPUnit_Framework_Tes
     public function testShouldAllowSettingRetrievingAndRemovingInvididualConstraints()
     {
         $constraints = $this->element->getConstraints();
-        $this->assertTrue(empty($constraints));
+        $this->assertEmpty($constraints);
         $this->assertFalse($this->element->hasDijitParam('constraints'));
 
         $this->element->setConstraint('foo', 'bar');
@@ -147,7 +147,7 @@ class Zend_Dojo_Form_Element_ValidationTextBoxTest extends PHPUnit_Framework_Tes
         $this->element->removeConstraint('foo');
         $this->assertFalse($this->element->hasConstraint('foo'));
         $this->assertTrue($this->element->hasDijitParam('constraints'));
-        $this->assertTrue(empty($this->element->dijitParams['constraints']));
+        $this->assertEmpty($this->element->dijitParams['constraints']);
     }
 
     public function testShouldAllowClearingConstraints()

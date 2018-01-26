@@ -31,7 +31,7 @@ require_once 'Zend/Gdata.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Gdata
  */
-class Zend_Gdata_RecurrenceExceptionTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_RecurrenceExceptionTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -42,24 +42,24 @@ class Zend_Gdata_RecurrenceExceptionTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyRecurrenceExceptionShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->recurrenceException->extensionElements));
+        $this->assertInternalType('array', $this->recurrenceException->extensionElements);
         $this->assertTrue(count($this->recurrenceException->extensionElements) == 0);
     }
 
     public function testEmptyRecurrenceExceptionShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->recurrenceException->extensionAttributes));
+        $this->assertInternalType('array', $this->recurrenceException->extensionAttributes);
         $this->assertTrue(count($this->recurrenceException->extensionAttributes) == 0);
     }
 
     public function testSampleRecurrenceExceptionShouldHaveNoExtensionElements() {
         $this->recurrenceException->transferFromXML($this->recurrenceExceptionText);
-        $this->assertTrue(is_array($this->recurrenceException->extensionElements));
+        $this->assertInternalType('array', $this->recurrenceException->extensionElements);
         $this->assertTrue(count($this->recurrenceException->extensionElements) == 0);
     }
 
     public function testSampleRecurrenceExceptionShouldHaveNoExtensionAttributes() {
         $this->recurrenceException->transferFromXML($this->recurrenceExceptionText);
-        $this->assertTrue(is_array($this->recurrenceException->extensionAttributes));
+        $this->assertInternalType('array', $this->recurrenceException->extensionAttributes);
         $this->assertTrue(count($this->recurrenceException->extensionAttributes) == 0);
     }
 

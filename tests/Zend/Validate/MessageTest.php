@@ -34,7 +34,7 @@ require_once 'Zend/Validate/StringLength.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Validate
  */
-class Zend_Validate_MessageTest extends PHPUnit_Framework_TestCase
+class Zend_Validate_MessageTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Default instance created for all test methods
@@ -284,7 +284,7 @@ class Zend_Validate_MessageTest extends PHPUnit_Framework_TestCase
     {
         $vars = $this->_validator->getMessageVariables();
 
-        $this->assertTrue(is_array($vars));
+        $this->assertInternalType('array', $vars);
         $this->assertEquals(array('min', 'max'), $vars);
         $message = 'variables: %notvar% ';
         foreach ($vars as $var) {

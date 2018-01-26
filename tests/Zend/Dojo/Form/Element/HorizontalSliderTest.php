@@ -43,7 +43,7 @@ require_once 'Zend/Dojo/View/Helper/Dojo.php';
  * @group      Zend_Dojo
  * @group      Zend_Dojo_Form
  */
-class Zend_Dojo_Form_Element_HorizontalSliderTest extends PHPUnit_Framework_TestCase
+class Zend_Dojo_Form_Element_HorizontalSliderTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -96,7 +96,7 @@ class Zend_Dojo_Form_Element_HorizontalSliderTest extends PHPUnit_Framework_Test
     public function testClickSelectAccessorsShouldProxyToDijitParams()
     {
         $this->assertFalse($this->element->getClickSelect());
-        $this->assertFalse(array_key_exists('clickSelect', $this->element->dijitParams));
+        $this->assertArrayNotHasKey('clickSelect', $this->element->dijitParams);
         $this->element->setClickSelect(true);
         $this->assertTrue($this->element->getClickSelect());
         $this->assertTrue($this->element->dijitParams['clickSelect']);
@@ -105,7 +105,7 @@ class Zend_Dojo_Form_Element_HorizontalSliderTest extends PHPUnit_Framework_Test
     public function testIntermediateChangesAccessorsShouldProxyToDijitParams()
     {
         $this->assertFalse($this->element->getIntermediateChanges());
-        $this->assertFalse(array_key_exists('intermediateChanges', $this->element->dijitParams));
+        $this->assertArrayNotHasKey('intermediateChanges', $this->element->dijitParams);
         $this->element->setIntermediateChanges(true);
         $this->assertTrue($this->element->getIntermediateChanges());
         $this->assertTrue($this->element->dijitParams['intermediateChanges']);
@@ -114,7 +114,7 @@ class Zend_Dojo_Form_Element_HorizontalSliderTest extends PHPUnit_Framework_Test
     public function testShowButtonsAccessorsShouldProxyToDijitParams()
     {
         $this->assertFalse($this->element->getShowButtons());
-        $this->assertFalse(array_key_exists('showButtons', $this->element->dijitParams));
+        $this->assertArrayNotHasKey('showButtons', $this->element->dijitParams);
         $this->element->setShowButtons(true);
         $this->assertTrue($this->element->getShowButtons());
         $this->assertTrue($this->element->dijitParams['showButtons']);
@@ -123,7 +123,7 @@ class Zend_Dojo_Form_Element_HorizontalSliderTest extends PHPUnit_Framework_Test
     public function testDiscreteValuesAccessorsShouldProxyToDijitParams()
     {
         $this->assertNull($this->element->getDiscreteValues());
-        $this->assertFalse(array_key_exists('discreteValues', $this->element->dijitParams));
+        $this->assertArrayNotHasKey('discreteValues', $this->element->dijitParams);
         $this->element->setDiscreteValues(20);
         $this->assertEquals(20, $this->element->getDiscreteValues());
         $this->assertEquals(20, $this->element->dijitParams['discreteValues']);
@@ -132,7 +132,7 @@ class Zend_Dojo_Form_Element_HorizontalSliderTest extends PHPUnit_Framework_Test
     public function testMinimumAccessorsShouldProxyToDijitParams()
     {
         $this->assertNull($this->element->getMinimum());
-        $this->assertFalse(array_key_exists('minimum', $this->element->dijitParams));
+        $this->assertArrayNotHasKey('minimum', $this->element->dijitParams);
         $this->element->setMinimum(20);
         $this->assertEquals(20, $this->element->getMinimum());
         $this->assertEquals(20, $this->element->dijitParams['minimum']);
@@ -141,7 +141,7 @@ class Zend_Dojo_Form_Element_HorizontalSliderTest extends PHPUnit_Framework_Test
     public function testMaximumAccessorsShouldProxyToDijitParams()
     {
         $this->assertNull($this->element->getMaximum());
-        $this->assertFalse(array_key_exists('maximum', $this->element->dijitParams));
+        $this->assertArrayNotHasKey('maximum', $this->element->dijitParams);
         $this->element->setMaximum(20);
         $this->assertEquals(20, $this->element->getMaximum());
         $this->assertEquals(20, $this->element->dijitParams['maximum']);
@@ -150,7 +150,7 @@ class Zend_Dojo_Form_Element_HorizontalSliderTest extends PHPUnit_Framework_Test
     public function testPageIncrementAccessorsShouldProxyToDijitParams()
     {
         $this->assertNull($this->element->getPageIncrement());
-        $this->assertFalse(array_key_exists('pageIncrement', $this->element->dijitParams));
+        $this->assertArrayNotHasKey('pageIncrement', $this->element->dijitParams);
         $this->element->setPageIncrement(20);
         $this->assertEquals(20, $this->element->getPageIncrement());
         $this->assertEquals(20, $this->element->dijitParams['pageIncrement']);
@@ -165,7 +165,7 @@ class Zend_Dojo_Form_Element_HorizontalSliderTest extends PHPUnit_Framework_Test
         $test = $this->element->getTopDecoration();
         $this->assertSame($topDecoration, $test);
 
-        $this->assertTrue(array_key_exists('dijit', $topDecoration));
+        $this->assertArrayHasKey('dijit', $topDecoration);
         $this->assertEquals('HorizontalRule', $topDecoration['dijit']);
     }
 
@@ -178,7 +178,7 @@ class Zend_Dojo_Form_Element_HorizontalSliderTest extends PHPUnit_Framework_Test
         $test = $this->element->getTopDecoration();
         $this->assertSame($topDecoration, $test);
 
-        $this->assertTrue(array_key_exists('container', $topDecoration));
+        $this->assertArrayHasKey('container', $topDecoration);
         $this->assertEquals('top', $topDecoration['container']);
     }
 
@@ -192,7 +192,7 @@ class Zend_Dojo_Form_Element_HorizontalSliderTest extends PHPUnit_Framework_Test
         $test = $this->element->getTopDecoration();
         $this->assertSame($topDecoration, $test);
 
-        $this->assertTrue(array_key_exists('labels', $topDecoration));
+        $this->assertArrayHasKey('labels', $topDecoration);
         $this->assertSame($labels, $topDecoration['labels']);
     }
 
@@ -213,7 +213,7 @@ class Zend_Dojo_Form_Element_HorizontalSliderTest extends PHPUnit_Framework_Test
         $test = $this->element->getTopDecoration();
         $this->assertSame($topDecoration, $test);
 
-        $this->assertTrue(array_key_exists('params', $topDecoration));
+        $this->assertArrayHasKey('params', $topDecoration);
         $this->assertSame($params, $topDecoration['params']);
     }
 
@@ -234,7 +234,7 @@ class Zend_Dojo_Form_Element_HorizontalSliderTest extends PHPUnit_Framework_Test
         $test = $this->element->getTopDecoration();
         $this->assertSame($topDecoration, $test);
 
-        $this->assertTrue(array_key_exists('attribs', $topDecoration));
+        $this->assertArrayHasKey('attribs', $topDecoration);
         $this->assertSame($attribs, $topDecoration['attribs']);
     }
 
@@ -247,7 +247,7 @@ class Zend_Dojo_Form_Element_HorizontalSliderTest extends PHPUnit_Framework_Test
         $test = $this->element->getBottomDecoration();
         $this->assertSame($bottomDecoration, $test);
 
-        $this->assertTrue(array_key_exists('dijit', $bottomDecoration));
+        $this->assertArrayHasKey('dijit', $bottomDecoration);
         $this->assertEquals('HorizontalRule', $bottomDecoration['dijit']);
     }
 
@@ -260,7 +260,7 @@ class Zend_Dojo_Form_Element_HorizontalSliderTest extends PHPUnit_Framework_Test
         $test = $this->element->getBottomDecoration();
         $this->assertSame($bottomDecoration, $test);
 
-        $this->assertTrue(array_key_exists('container', $bottomDecoration));
+        $this->assertArrayHasKey('container', $bottomDecoration);
         $this->assertEquals('bottom', $bottomDecoration['container']);
     }
 
@@ -274,7 +274,7 @@ class Zend_Dojo_Form_Element_HorizontalSliderTest extends PHPUnit_Framework_Test
         $test = $this->element->getBottomDecoration();
         $this->assertSame($bottomDecoration, $test);
 
-        $this->assertTrue(array_key_exists('labels', $bottomDecoration));
+        $this->assertArrayHasKey('labels', $bottomDecoration);
         $this->assertSame($labels, $bottomDecoration['labels']);
     }
 
@@ -295,7 +295,7 @@ class Zend_Dojo_Form_Element_HorizontalSliderTest extends PHPUnit_Framework_Test
         $test = $this->element->getBottomDecoration();
         $this->assertSame($bottomDecoration, $test);
 
-        $this->assertTrue(array_key_exists('params', $bottomDecoration));
+        $this->assertArrayHasKey('params', $bottomDecoration);
         $this->assertSame($params, $bottomDecoration['params']);
     }
 
@@ -316,7 +316,7 @@ class Zend_Dojo_Form_Element_HorizontalSliderTest extends PHPUnit_Framework_Test
         $test = $this->element->getBottomDecoration();
         $this->assertSame($bottomDecoration, $test);
 
-        $this->assertTrue(array_key_exists('attribs', $bottomDecoration));
+        $this->assertArrayHasKey('attribs', $bottomDecoration);
         $this->assertSame($attribs, $bottomDecoration['attribs']);
     }
 

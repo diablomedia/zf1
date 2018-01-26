@@ -40,7 +40,7 @@ require_once 'Zend/Http/Client/Adapter/Socket.php';
  * @group      Zend_Service_Amazon
  * @group      Zend_Service_Amazon_S3
  */
-class Zend_Service_Amazon_S3_StreamTest extends PHPUnit_Framework_TestCase
+class Zend_Service_Amazon_S3_StreamTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up this test case
@@ -238,7 +238,7 @@ class Zend_Service_Amazon_S3_StreamTest extends PHPUnit_Framework_TestCase
         $result = mkdir($this->_bucketName);
         $this->assertTrue($result);
 
-        $this->assertTrue(is_dir($this->_bucketName));
+        $this->assertDirectoryExists($this->_bucketName);
 
         $data = str_repeat('x', 10000);
         $len = strlen($data);
@@ -247,7 +247,7 @@ class Zend_Service_Amazon_S3_StreamTest extends PHPUnit_Framework_TestCase
         $size = file_put_contents($this->_fileName, $data);
         $this->assertEquals($len, $size);
 
-        $this->assertFalse(is_dir($this->_fileName));
+        $this->assertDirectoryNotExists($this->_fileName);
 
         // Stat an object
         $info = stat($this->_fileName);
@@ -271,7 +271,7 @@ class Zend_Service_Amazon_S3_StreamTest extends PHPUnit_Framework_TestCase
  * @group      Zend_Service_Amazon
  * @group      Zend_Service_Amazon_S3
  */
-class Zend_Service_Amazon_S3_StreamTest_Skip extends PHPUnit_Framework_TestCase
+class Zend_Service_Amazon_S3_StreamTest_Skip extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {

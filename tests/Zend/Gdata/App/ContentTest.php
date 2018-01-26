@@ -32,7 +32,7 @@ require_once 'Zend/Gdata/App.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_App
  */
-class Zend_Gdata_App_ContentTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_App_ContentTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -46,7 +46,7 @@ class Zend_Gdata_App_ContentTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyContentShouldHaveEmptyExtensionsList() {
-        $this->assertTrue(is_array($this->content->extensionElements));
+        $this->assertInternalType('array', $this->content->extensionElements);
         $this->assertTrue(count($this->content->extensionElements) == 0);
     }
 

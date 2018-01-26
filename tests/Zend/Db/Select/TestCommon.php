@@ -1580,7 +1580,7 @@ abstract class Zend_Db_Select_TestCommon extends Zend_Db_TestSetup
 
         $select->reset(); // reset the whole object
         $from = $select->getPart(Zend_Db_Select::FROM);
-        $this->assertTrue(empty($from));
+        $this->assertEmpty($from);
     }
 
     /**
@@ -1700,7 +1700,7 @@ abstract class Zend_Db_Select_TestCommon extends Zend_Db_TestSetup
         /* checks if the adapter has effectively gotten serialized,
            no exceptions are thrown here, so it's all right */
         $serialize = serialize($this->_select());
-        $this->assertTrue(is_string($serialize));
+        $this->assertInternalType('string', $serialize);
     }
 
     /**

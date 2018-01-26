@@ -40,7 +40,7 @@ require_once 'Zend/Log/FactoryInterface.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Log
  */
-class Zend_Log_LogTest extends PHPUnit_Framework_TestCase
+class Zend_Log_LogTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {
@@ -201,7 +201,7 @@ class Zend_Log_LogTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(1, count($mock->events));
         $event = array_shift($mock->events);
 
-        $this->assertTrue(array_key_exists($field, $event));
+        $this->assertArrayHasKey($field, $event);
         $this->assertEquals($value, $event[$field]);
     }
 
@@ -334,14 +334,14 @@ class Zend_Log_LogTest extends PHPUnit_Framework_TestCase
     public function verifyHandlerData($errno, $errstr, $errfile, $errline, $errcontext)
     {
         if ($this->expectingLogging) {
-            $this->assertFalse(empty($this->errWriter->events));
+            $this->assertNotEmpty($this->errWriter->events);
             $event = array_shift($this->errWriter->events);
             $this->assertEquals($errstr, $event['message']);
             $this->assertEquals($errno, $event['errno']);
             $this->assertEquals($errfile, $event['file']);
             $this->assertEquals($errline, $event['line']);
         } else {
-            $this->assertTrue(empty($this->errWriter->events));
+            $this->assertEmpty($this->errWriter->events);
         }
     }
 
@@ -439,7 +439,7 @@ class Zend_Log_LogTest extends PHPUnit_Framework_TestCase
         }
         $this->assertEquals(0, $mock->events[0]['priority']);
         $this->assertEquals('EMERG', $mock->events[0]['priorityName']);
-        $this->assertFalse(array_key_exists(1, $mock->events));
+        $this->assertArrayNotHasKey(1, $mock->events);
     }
 
     /**
@@ -555,10 +555,11 @@ class Zend_Log_LogTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Log_Exception
      */
     public function testZendLogThrowsAnExceptionWhenPassingIncorrectClassToFactory()
     {
+        $this->expectException(\Zend_Log_Exception::class);
+
         $writer = new Zend_Log_Writer_Null();
         ZLTest_My_Log::factory(
             array(

@@ -31,7 +31,7 @@ require_once 'Zend/Paginator.php';
 require_once 'Zend/Paginator/Adapter/Null.php';
 
 /**
- * @see PHPUnit_Framework_TestCase
+ * @see PHPUnit\Framework\TestCase
  */
 
 /**
@@ -42,7 +42,7 @@ require_once 'Zend/Paginator/Adapter/Null.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Paginator
  */
-class Zend_Paginator_Adapter_NullTest extends PHPUnit_Framework_TestCase
+class Zend_Paginator_Adapter_NullTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @var Zend_Paginator_Adapter_Array

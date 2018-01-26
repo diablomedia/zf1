@@ -35,7 +35,7 @@ require_once 'Zend/Db/Table/TestCommon.php';
  * @group      Zend_Db
  * @group      Zend_Db_Table
  */
-class Zend_Db_Table_StaticTest extends PHPUnit_Framework_TestCase
+class Zend_Db_Table_StaticTest extends PHPUnit\Framework\TestCase
 {
 
     public function testStatic()

@@ -32,7 +32,7 @@ require_once 'Zend/Mobile/Push/Message/Mpns/Tile.php';
  * @group      Zend_Mobile_Push
  * @group      Zend_Mobile_Push_Mpns
  */
-class Zend_Mobile_Push_Message_Mpns_TileTest extends PHPUnit_Framework_TestCase
+class Zend_Mobile_Push_Message_Mpns_TileTest extends PHPUnit\Framework\TestCase
 {
     private $_msg;
 
@@ -49,19 +49,21 @@ class Zend_Mobile_Push_Message_Mpns_TileTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Mobile_Push_Message_Exception
      */
     public function testSetTokenNonStringThrowsException()
     {
+        $this->expectException(\Zend_Mobile_Push_Message_Exception::class);
+
         $token = array('foo' => 'bar');
         $this->_msg->setToken($token);
     }
 
     /**
-     * @expectedException Zend_Mobile_Push_Message_Exception
      */
     public function testSetTokenInvalidUrlThrowsException()
     {
+        $this->expectException(\Zend_Mobile_Push_Message_Exception::class);
+
         $token = 'notaurl';
         $this->_msg->setToken($token);
     }
@@ -84,10 +86,11 @@ class Zend_Mobile_Push_Message_Mpns_TileTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Mobile_Push_Message_Exception
      */
     public function testSetBackgroundImageThrowsExceptionOnNonString()
     {
+        $this->expectException(\Zend_Mobile_Push_Message_Exception::class);
+
         $image = array('foo' => 'bar');
         $this->_msg->setBackgroundImage($image);
     }
@@ -103,10 +106,11 @@ class Zend_Mobile_Push_Message_Mpns_TileTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Mobile_Push_Message_Exception
      */
     public function testSetCountThrowsExceptionOnNonNumeric()
     {
+        $this->expectException(\Zend_Mobile_Push_Message_Exception::class);
+
         $count = 'five';
         $this->_msg->setCount($count);
     }
@@ -119,10 +123,11 @@ class Zend_Mobile_Push_Message_Mpns_TileTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Mobile_Push_Message_Exception
      */
     public function testSetTitleThrowsExceptionOnNonString()
     {
+        $this->expectException(\Zend_Mobile_Push_Message_Exception::class);
+
         $title = array('foo' => 'bar');
         $this->_msg->setTitle($title);
     }
@@ -135,10 +140,11 @@ class Zend_Mobile_Push_Message_Mpns_TileTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Mobile_Push_Message_Exception
      */
     public function testSetBackBackgroundImageThrowsExceptionOnNonString()
     {
+        $this->expectException(\Zend_Mobile_Push_Message_Exception::class);
+
         $image = array('foo' => 'bar');
         $this->_msg->setBackBackgroundImage($image);
     }
@@ -151,10 +157,11 @@ class Zend_Mobile_Push_Message_Mpns_TileTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Mobile_Push_Message_Exception
      */
     public function testSetBackTitleThrowsExceptionOnNonString()
     {
+        $this->expectException(\Zend_Mobile_Push_Message_Exception::class);
+
         $title = array('foo' => 'bar');
         $this->_msg->setBackTitle($title);
     }
@@ -167,10 +174,11 @@ class Zend_Mobile_Push_Message_Mpns_TileTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Mobile_Push_Message_Exception
      */
     public function testSetBackContentThrowsExceptionOnNonString()
     {
+        $this->expectException(\Zend_Mobile_Push_Message_Exception::class);
+
         $content = array('foo' => 'bar');
         $this->_msg->setBackContent($content);
         $this->assertEquals($content, $this->_msg->getBackContent());
@@ -184,10 +192,11 @@ class Zend_Mobile_Push_Message_Mpns_TileTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Mobile_Push_Message_Exception
      */
     public function testSetTileIdThrowsExceptionOnNonString()
     {
+        $this->expectException(\Zend_Mobile_Push_Message_Exception::class);
+
         $id = array('foo' => 'bar');
         $this->_msg->setTileId($id);
     }

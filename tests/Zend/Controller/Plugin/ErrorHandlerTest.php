@@ -41,7 +41,7 @@ require_once 'Zend/Controller/Front.php';
  * @group      Zend_Controller
  * @group      Zend_Controller_Plugin
  */
-class Zend_Controller_Plugin_ErrorHandlerTest extends PHPUnit_Framework_TestCase
+class Zend_Controller_Plugin_ErrorHandlerTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Request object

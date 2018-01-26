@@ -32,7 +32,7 @@ require_once 'Zend/Serializer/Adapter/Amf3.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Serializer_Adapter_Amf3Test extends PHPUnit_Framework_TestCase
+class Zend_Serializer_Adapter_Amf3Test extends PHPUnit\Framework\TestCase
 {
 
     private $_adapter;

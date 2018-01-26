@@ -32,7 +32,7 @@ require_once 'Zend/Gdata/Calendar.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Calendar
  */
-class Zend_Gdata_Calendar_AccessLevelTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_Calendar_AccessLevelTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -43,24 +43,24 @@ class Zend_Gdata_Calendar_AccessLevelTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyAccessLevelShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->accessLevel->extensionElements));
+        $this->assertInternalType('array', $this->accessLevel->extensionElements);
         $this->assertTrue(count($this->accessLevel->extensionElements) == 0);
     }
 
     public function testEmptyAccessLevelShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->accessLevel->extensionAttributes));
+        $this->assertInternalType('array', $this->accessLevel->extensionAttributes);
         $this->assertTrue(count($this->accessLevel->extensionAttributes) == 0);
     }
 
     public function testSampleAccessLevelShouldHaveNoExtensionElements() {
         $this->accessLevel->transferFromXML($this->accessLevelText);
-        $this->assertTrue(is_array($this->accessLevel->extensionElements));
+        $this->assertInternalType('array', $this->accessLevel->extensionElements);
         $this->assertTrue(count($this->accessLevel->extensionElements) == 0);
     }
 
     public function testSampleAccessLevelShouldHaveNoExtensionAttributes() {
         $this->accessLevel->transferFromXML($this->accessLevelText);
-        $this->assertTrue(is_array($this->accessLevel->extensionAttributes));
+        $this->assertInternalType('array', $this->accessLevel->extensionAttributes);
         $this->assertTrue(count($this->accessLevel->extensionAttributes) == 0);
     }
 

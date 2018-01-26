@@ -32,7 +32,7 @@ require_once 'Zend/XmlRpc/TestProvider.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_XmlRpc
  */
-class Zend_XmlRpc_GeneratorTest extends PHPUnit_Framework_TestCase
+class Zend_XmlRpc_GeneratorTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider Zend_XmlRpc_TestProvider::provideGenerators
@@ -92,7 +92,7 @@ class Zend_XmlRpc_GeneratorTest extends PHPUnit_Framework_TestCase
         $variant2 = '<element>&lt;&gt;&amp;&quot;\'€</element>';
         try {
             $this->assertXml($variant1, $generator);
-        } catch (PHPUnit_Framework_ExpectationFailedException $e) {
+        } catch (PHPUnit\Framework\ExpectationFailedException $e) {
             $this->assertXml($variant2, $generator);
         }
     }

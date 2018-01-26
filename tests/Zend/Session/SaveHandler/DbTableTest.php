@@ -37,7 +37,7 @@ require_once 'Zend/Session/SaveHandler/DbTable.php';
  * @group      Zend_Session
  * @group      Zend_Db_Table
  */
-class Zend_Session_SaveHandler_DbTableTest extends PHPUnit_Framework_TestCase
+class Zend_Session_SaveHandler_DbTableTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @var array
@@ -149,7 +149,7 @@ class Zend_Session_SaveHandler_DbTableTest extends PHPUnit_Framework_TestCase
 
     public function testPrimaryAssignmentIdNotSet()
     {
-        $this->setExpectedException('Zend_Session_SaveHandler_Exception');
+        $this->expectException('Zend_Session_SaveHandler_Exception');
         $config = $this->_saveHandlerTableConfig;
         $config['primary'] = array('id');
         $config[Zend_Session_SaveHandler_DbTable::PRIMARY_ASSIGNMENT]
@@ -176,7 +176,7 @@ class Zend_Session_SaveHandler_DbTableTest extends PHPUnit_Framework_TestCase
 
     public function testModifiedColumnNotSet()
     {
-        $this->setExpectedException('Zend_Session_SaveHandler_Exception');
+        $this->expectException('Zend_Session_SaveHandler_Exception');
         $config = $this->_saveHandlerTableConfig;
         unset($config[Zend_Session_SaveHandler_DbTable::MODIFIED_COLUMN]);
         $this->_usedSaveHandlers[] =
@@ -188,7 +188,7 @@ class Zend_Session_SaveHandler_DbTableTest extends PHPUnit_Framework_TestCase
 
     public function testLifetimeColumnNotSet()
     {
-        $this->setExpectedException('Zend_Session_SaveHandler_Exception');
+        $this->expectException('Zend_Session_SaveHandler_Exception');
         $config = $this->_saveHandlerTableConfig;
         unset($config[Zend_Session_SaveHandler_DbTable::LIFETIME_COLUMN]);
         $this->_usedSaveHandlers[] =
@@ -200,7 +200,7 @@ class Zend_Session_SaveHandler_DbTableTest extends PHPUnit_Framework_TestCase
 
     public function testDataColumnNotSet()
     {
-        $this->setExpectedException('Zend_Session_SaveHandler_Exception');
+        $this->expectException('Zend_Session_SaveHandler_Exception');
         $config = $this->_saveHandlerTableConfig;
         unset($config[Zend_Session_SaveHandler_DbTable::DATA_COLUMN]);
         $this->_usedSaveHandlers[] =

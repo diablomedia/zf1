@@ -35,7 +35,7 @@ require_once 'Zend/Gdata/App/InvalidArgumentException.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Photos
  */
-class Zend_Gdata_PhotosOnlineTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_PhotosOnlineTest extends PHPUnit\Framework\TestCase
 {
 
     protected $photos = null;

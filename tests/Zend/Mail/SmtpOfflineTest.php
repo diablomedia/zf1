@@ -44,7 +44,7 @@ require_once 'Zend/Mail/Transport/Smtp.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Mail
  */
-class Zend_Mail_SmtpOfflineTest extends PHPUnit_Framework_TestCase
+class Zend_Mail_SmtpOfflineTest extends PHPUnit\Framework\TestCase
 {
     protected $_params;
 

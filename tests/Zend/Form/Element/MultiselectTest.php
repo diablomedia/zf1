@@ -33,7 +33,7 @@ require_once 'Zend/Translate.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Form
  */
-class Zend_Form_Element_MultiselectTest extends PHPUnit_Framework_TestCase
+class Zend_Form_Element_MultiselectTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @var Zend_Form_Element_Multiselect
@@ -121,8 +121,8 @@ class Zend_Form_Element_MultiselectTest extends PHPUnit_Framework_TestCase
     public function testMultiOptionsEmptyByDefault()
     {
         $options = $this->element->getMultiOptions();
-        $this->assertTrue(is_array($options));
-        $this->assertTrue(empty($options));
+        $this->assertInternalType('array', $options);
+        $this->assertEmpty($options);
     }
 
     public function testCanSetMultiOptions()

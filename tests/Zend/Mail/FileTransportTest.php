@@ -38,7 +38,7 @@ require_once 'Zend/Mail/Transport/File.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Mail
  */
-class Zend_Mail_FileTransportTest extends PHPUnit_Framework_TestCase
+class Zend_Mail_FileTransportTest extends PHPUnit\Framework\TestCase
 {
     protected $_params;
     protected $_transport;
@@ -123,7 +123,7 @@ class Zend_Mail_FileTransportTest extends PHPUnit_Framework_TestCase
 
         $mail = $this->_prepareMail();
 
-        $this->setExpectedException('Zend_Mail_Transport_Exception');
+        $this->expectException('Zend_Mail_Transport_Exception');
         $mail->send($transport);
     }
 

@@ -38,7 +38,7 @@ require_once 'Zend/Loader/Autoloader/Interface.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Loader
  */
-class Zend_Loader_AutoloaderTest extends PHPUnit_Framework_TestCase
+class Zend_Loader_AutoloaderTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {
@@ -119,10 +119,11 @@ class Zend_Loader_AutoloaderTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Loader_Exception
      */
     public function testSpecifyingInvalidDefaultAutoloaderShouldRaiseException()
     {
+        $this->expectException(\Zend_Loader_Exception::class);
+
         $this->autoloader->setDefaultAutoloader(uniqid());
     }
 
@@ -149,10 +150,11 @@ class Zend_Loader_AutoloaderTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Loader_Exception
      */
     public function testRegisteringInvalidNamespaceSpecShouldRaiseException()
     {
+        $this->expectException(\Zend_Loader_Exception::class);
+
         $o = new stdClass;
         $this->autoloader->registerNamespace($o);
     }
@@ -173,10 +175,11 @@ class Zend_Loader_AutoloaderTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Loader_Exception
      */
     public function testUnregisteringInvalidNamespaceSpecShouldRaiseException()
     {
+        $this->expectException(\Zend_Loader_Exception::class);
+
         $o = new stdClass;
         $this->autoloader->unregisterNamespace($o);
     }
@@ -294,9 +297,9 @@ class Zend_Loader_AutoloaderTest extends PHPUnit_Framework_TestCase
                          ->pushAutoloader('include');
         $this->autoloader->removeAutoloader('require');
         $test = $this->autoloader->getNamespaceAutoloaders('Foo');
-        $this->assertTrue(empty($test));
+        $this->assertEmpty($test);
         $test = $this->autoloader->getNamespaceAutoloaders('Bar');
-        $this->assertTrue(empty($test));
+        $this->assertEmpty($test);
     }
 
     public function testAutoloaderShouldAllowRemovingCallbackFromSpecifiedNamespaces()
@@ -305,9 +308,9 @@ class Zend_Loader_AutoloaderTest extends PHPUnit_Framework_TestCase
                          ->pushAutoloader('include');
         $this->autoloader->removeAutoloader('require', 'Foo');
         $test = $this->autoloader->getNamespaceAutoloaders('Foo');
-        $this->assertTrue(empty($test));
+        $this->assertEmpty($test);
         $test = $this->autoloader->getNamespaceAutoloaders('Bar');
-        $this->assertFalse(empty($test));
+        $this->assertNotEmpty($test);
     }
 
     public function testAutoloadShouldReturnFalseWhenNamespaceIsNotRegistered()

@@ -84,7 +84,7 @@ class Zend_Cache_FileBackendTest extends Zend_Cache_CommonExtendedBackendTest {
                 'hashed_directory_umask' => 0700,
             ));
             $this->fail("Missing expected E_USER_NOTICE error");
-        } catch (PHPUnit_Framework_Error $e) {
+        } catch (PHPUnit\Framework\Error\Error $e) {
             if ($e->getCode() != E_USER_NOTICE) {
                 throw $e;
             }
@@ -101,7 +101,7 @@ class Zend_Cache_FileBackendTest extends Zend_Cache_CommonExtendedBackendTest {
                     'cache_file_umask' => 0700,
             ));
             $this->fail("Missing expected E_USER_NOTICE error");
-        } catch (PHPUnit_Framework_Error $e) {
+        } catch (PHPUnit\Framework\Error\Error $e) {
             if ($e->getCode() != E_USER_NOTICE) {
                 throw $e;
             }
@@ -201,8 +201,8 @@ class Zend_Cache_FileBackendTest extends Zend_Cache_CommonExtendedBackendTest {
         $file = fopen($fn, 'a+');
         fclose($file);
 
-        $this->assertTrue(file_exists($fn));
+        $this->assertFileExists($fn);
         $this->assertTrue($this->_instance->clean(Zend_Cache::CLEANING_MODE_ALL));
-        $this->assertFalse(file_exists($fn));
+        $this->assertFileNotExists($fn);
     }
 }

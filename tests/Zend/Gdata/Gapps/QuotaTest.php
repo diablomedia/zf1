@@ -32,7 +32,7 @@ require_once 'Zend/Gdata.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Gapps
  */
-class Zend_Gdata_Gapps_QuotaTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_Gapps_QuotaTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -43,24 +43,24 @@ class Zend_Gdata_Gapps_QuotaTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyQuotaShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->quota->extensionElements));
+        $this->assertInternalType('array', $this->quota->extensionElements);
         $this->assertTrue(count($this->quota->extensionElements) == 0);
     }
 
     public function testEmptyQuotaShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->quota->extensionAttributes));
+        $this->assertInternalType('array', $this->quota->extensionAttributes);
         $this->assertTrue(count($this->quota->extensionAttributes) == 0);
     }
 
     public function testSampleQuotaShouldHaveNoExtensionElements() {
         $this->quota->transferFromXML($this->quotaText);
-        $this->assertTrue(is_array($this->quota->extensionElements));
+        $this->assertInternalType('array', $this->quota->extensionElements);
         $this->assertTrue(count($this->quota->extensionElements) == 0);
     }
 
     public function testSampleQuotaShouldHaveNoExtensionAttributes() {
         $this->quota->transferFromXML($this->quotaText);
-        $this->assertTrue(is_array($this->quota->extensionAttributes));
+        $this->assertInternalType('array', $this->quota->extensionAttributes);
         $this->assertTrue(count($this->quota->extensionAttributes) == 0);
     }
 

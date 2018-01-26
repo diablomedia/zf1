@@ -34,7 +34,7 @@ require_once 'Zend/Pdf/Element/Numeric.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Pdf
  */
-class Zend_Pdf_Element_ObjectTest extends PHPUnit_Framework_TestCase
+class Zend_Pdf_Element_ObjectTest extends PHPUnit\Framework\TestCase
 {
     public function testPDFObject()
     {

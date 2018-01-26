@@ -127,10 +127,11 @@ class Zend_Barcode_Object_Code25interleavedTest extends Zend_Barcode_Object_Test
     }
 
     /**
-     * @expectedException Zend_Barcode_Object_Exception
      */
     public function testBadTextDetectedIfChecksumWished()
     {
+        $this->expectException(\Zend_Barcode_Object_Exception::class);
+
         $this->_object->setText('a');
         $this->_object->setWithChecksum(true);
         $this->_object->getText();
@@ -143,10 +144,11 @@ class Zend_Barcode_Object_Code25interleavedTest extends Zend_Barcode_Object_Test
     }
 
     /**
-     * @expectedException Zend_Barcode_Object_Exception
      */
     public function testCheckParamsWithLowRatio()
     {
+        $this->expectException(\Zend_Barcode_Object_Exception::class);
+
         $this->_object->setText('0123456789');
         $this->_object->setBarThinWidth(21);
         $this->_object->setBarThickWidth(40);
@@ -154,10 +156,11 @@ class Zend_Barcode_Object_Code25interleavedTest extends Zend_Barcode_Object_Test
     }
 
     /**
-     * @expectedException Zend_Barcode_Object_Exception
      */
     public function testCheckParamsWithHighRatio()
     {
+        $this->expectException(\Zend_Barcode_Object_Exception::class);
+
         $this->_object->setText('0123456789');
         $this->_object->setBarThinWidth(20);
         $this->_object->setBarThickWidth(61);

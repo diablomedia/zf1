@@ -39,23 +39,19 @@ require_once 'Zend/Service/WindowsAzure/Management/Client.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_WindowsAzure_Management_ManagementClientTest extends PHPUnit_Framework_TestCase
+class Zend_Service_WindowsAzure_Management_ManagementClientTest extends PHPUnit\Framework\TestCase
 {
 	static $path;
 	static $debug = true;
 	protected $packageUrl;
     protected $skipped;
 
-    public function __construct()
-    {
-        self::$path = dirname(__FILE__).'/_files/';
-    }
-
     /**
      * Test setup
      */
     protected function setUp()
     {
+        self::$path = dirname(__FILE__).'/_files/';
         $this->skipped = false;
         if (!TESTS_ZEND_SERVICE_WINDOWSAZURE_MANAGEMENT_RUNTESTS) {
             $this->skipped = true;

@@ -38,7 +38,7 @@ require_once 'Zend/Config.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Mail
  */
-class Zend_Mail_MaildirTest extends PHPUnit_Framework_TestCase
+class Zend_Mail_MaildirTest extends PHPUnit\Framework\TestCase
 {
     protected $_originalMaildir;
     protected $_maildir;

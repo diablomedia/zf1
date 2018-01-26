@@ -36,7 +36,7 @@ require_once 'Zend/Rest/Server.php';
  * @group      Zend_Rest
  * @group      Zend_Rest_Server
  */
-class Zend_Rest_ServerTest extends PHPUnit_Framework_TestCase
+class Zend_Rest_ServerTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {
@@ -427,7 +427,7 @@ class Zend_Rest_ServerTest extends PHPUnit_Framework_TestCase
         ob_start();
         $response = $server->handle(array('method' => 'test2Xml'));
         $result = ob_get_clean();
-        $this->assertTrue(empty($result));
+        $this->assertEmpty($result);
         $this->assertContains('<foo>bar</foo>', $response);
     }
 
@@ -439,7 +439,7 @@ class Zend_Rest_ServerTest extends PHPUnit_Framework_TestCase
         ob_start();
         $response = $server->handle(array('method' => 'testScalarEncoding'));
         $result = ob_get_clean();
-        $this->assertTrue(empty($result));
+        $this->assertEmpty($result);
         $this->assertContains('This string has chars &amp; ampersands', $response);
     }
 
@@ -451,7 +451,7 @@ class Zend_Rest_ServerTest extends PHPUnit_Framework_TestCase
         ob_start();
         $response = $server->handle(array('method' => 'testStructEncoding'));
         $result = ob_get_clean();
-        $this->assertTrue(empty($result));
+        $this->assertEmpty($result);
         $this->assertContains('bar &amp; baz', $response);
     }
 
@@ -463,7 +463,7 @@ class Zend_Rest_ServerTest extends PHPUnit_Framework_TestCase
         ob_start();
         $response = $server->handle(array('method' => 'testExceptionsEncoding'));
         $result = ob_get_clean();
-        $this->assertTrue(empty($result));
+        $this->assertEmpty($result);
         $this->assertContains('testing class method exception &amp; encoding', $response);
     }
 

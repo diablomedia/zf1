@@ -32,7 +32,7 @@ require_once 'Zend/Form/Element/Hash.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Form
  */
-class Zend_Form_Element_HashTest extends PHPUnit_Framework_TestCase
+class Zend_Form_Element_HashTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -77,7 +77,7 @@ class Zend_Form_Element_HashTest extends PHPUnit_Framework_TestCase
     public function testSaltPopulatedByDefault()
     {
         $salt = $this->element->getSalt();
-        $this->assertFalse(empty($salt));
+        $this->assertNotEmpty($salt);
     }
 
     public function testCanSetSalt()
@@ -91,8 +91,8 @@ class Zend_Form_Element_HashTest extends PHPUnit_Framework_TestCase
     public function testTimeoutPopulatedByDefault()
     {
         $ttl = $this->element->getTimeout();
-        $this->assertFalse(empty($ttl));
-        $this->assertTrue(is_int($ttl));
+        $this->assertNotEmpty($ttl);
+        $this->assertInternalType('int', $ttl);
     }
 
     public function testCanSetTimeout()
@@ -106,8 +106,8 @@ class Zend_Form_Element_HashTest extends PHPUnit_Framework_TestCase
     public function testGetHashReturnsHashValue()
     {
         $hash = $this->element->getHash();
-        $this->assertFalse(empty($hash));
-        $this->assertTrue(is_string($hash));
+        $this->assertNotEmpty($hash);
+        $this->assertInternalType('string', $hash);
         $this->hash = $hash;
     }
 

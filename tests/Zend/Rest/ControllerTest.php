@@ -79,7 +79,7 @@ class Zend_Rest_TestController extends Zend_Rest_Controller
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Rest
  */
-class Zend_Rest_ControllerTest extends PHPUnit_Framework_TestCase
+class Zend_Rest_ControllerTest extends PHPUnit\Framework\TestCase
 {
     protected $_testController;
 

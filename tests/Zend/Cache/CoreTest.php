@@ -38,7 +38,7 @@ require_once 'Zend/Config.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Cache
  */
-class Zend_Cache_CoreTest extends PHPUnit_Framework_TestCase
+class Zend_Cache_CoreTest extends PHPUnit\Framework\TestCase
 {
     private $_instance;
 
@@ -120,7 +120,7 @@ class Zend_Cache_CoreTest extends PHPUnit_Framework_TestCase
         $this->_instance->setBackend($backend);
         $log = $backend->getLastLog();
         $this->assertEquals('setDirectives', $log['methodName']);
-        $this->assertTrue(is_array($log['args'][0]));
+        $this->assertInternalType('array', $log['args'][0]);
     }
 
     public function testSetOptionCorrectCall()

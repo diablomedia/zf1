@@ -38,7 +38,7 @@ require_once 'Zend/Validate/File/Extension.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_File
  */
-class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit_Framework_TestCase
+class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @var Zend_File_Transfer_Adapter_AbstractTest_MockAdapter
@@ -67,10 +67,11 @@ class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_File_Transfer_Exception
      */
     public function testAdapterShouldThrowExceptionWhenRetrievingPluginLoaderOfInvalidType()
     {
+        $this->expectException(\Zend_File_Transfer_Exception::class);
+
         $this->adapter->getPluginLoader('bogus');
     }
 
@@ -88,10 +89,11 @@ class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_File_Transfer_Exception
      */
     public function testAddingInvalidPluginLoaderTypeToAdapterShouldRaiseException()
     {
+        $this->expectException(\Zend_File_Transfer_Exception::class);
+
         $loader = new Zend_Loader_PluginLoader();
         $this->adapter->setPluginLoader($loader, 'bogus');
     }
@@ -101,7 +103,7 @@ class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit_Framework_TestCase
         $loader = $this->adapter->getPluginLoader('validate');
         $this->adapter->addPrefixPath('Foo_Valid', 'Foo/Valid/', 'validate');
         $paths = $loader->getPaths('Foo_Valid');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
     }
 
     public function testPassingNoTypeWhenAddingPrefixPathToAdapterShouldGeneratePathsForAllTypes()
@@ -110,16 +112,17 @@ class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit_Framework_TestCase
         $validateLoader = $this->adapter->getPluginLoader('validate');
         $filterLoader   = $this->adapter->getPluginLoader('filter');
         $paths = $validateLoader->getPaths('Foo_Validate');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
         $paths = $filterLoader->getPaths('Foo_Filter');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
     }
 
     /**
-     * @expectedException Zend_File_Transfer_Exception
      */
     public function testPassingInvalidTypeWhenAddingPrefixPathToAdapterShouldThrowException()
     {
+        $this->expectException(\Zend_File_Transfer_Exception::class);
+
         $this->adapter->addPrefixPath('Foo', 'Foo', 'bogus');
     }
 
@@ -139,13 +142,13 @@ class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit_Framework_TestCase
             array('type' => 'filter', 'prefix' => 'Bar_Filter', 'path' => 'Bar/Filter/'),
         ));
         $paths = $validatorLoader->getPaths('Foo_Valid');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
         $paths = $filterLoader->getPaths('Foo_Filter');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
         $paths = $filterLoader->getPaths('Bar_Filter');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
         $paths = $filterLoader->getPaths('Baz_Filter');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
         $this->assertEquals(2, count($paths));
     }
 
@@ -153,9 +156,9 @@ class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit_Framework_TestCase
     {
         $loader = $this->adapter->getPluginLoader('validate');
         $paths  = $loader->getPaths('Zend_Validate');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
         $paths  = $loader->getPaths('Zend_Validate_File');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
     }
 
     public function testAdapterShouldAllowAddingValidatorInstance()
@@ -174,10 +177,11 @@ class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_File_Transfer_Exception
      */
     public function testAdapterhShouldRaiseExceptionWhenAddingInvalidValidatorType()
     {
+        $this->expectException(\Zend_File_Transfer_Exception::class);
+
         $this->adapter->addValidator(new Zend_Filter_BaseName);
     }
 
@@ -191,7 +195,7 @@ class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit_Framework_TestCase
         );
         $this->adapter->addValidators($validators);
         $test = $this->adapter->getValidators();
-        $this->assertTrue(is_array($test));
+        $this->assertInternalType('array', $test);
         $this->assertEquals(4, count($test), var_export($test, 1));
         $count = array_shift($test);
         $this->assertTrue($count instanceof Zend_Validate_File_Count);
@@ -249,7 +253,7 @@ class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit_Framework_TestCase
     {
         $this->testAdapterShouldAllowAddingMultipleValidatorsAtOnceUsingBothInstancesAndPluginLoader();
         $validators = $this->adapter->getValidators();
-        $this->assertTrue(is_array($validators));
+        $this->assertInternalType('array', $validators);
         $this->assertEquals(4, count($validators));
         foreach ($validators as $validator) {
             $this->assertTrue($validator instanceof Zend_Validate_Interface);
@@ -288,7 +292,7 @@ class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit_Framework_TestCase
         $this->testAdapterShouldAllowAddingMultipleValidatorsAtOnceUsingBothInstancesAndPluginLoader();
         $this->adapter->clearValidators();
         $validators = $this->adapter->getValidators();
-        $this->assertTrue(is_array($validators));
+        $this->assertInternalType('array', $validators);
         $this->assertEquals(0, count($validators));
     }
 
@@ -317,7 +321,7 @@ class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit_Framework_TestCase
     public function testErrorMessagesShouldBeEmptyByDefault()
     {
         $messages = $this->adapter->getMessages();
-        $this->assertTrue(is_array($messages));
+        $this->assertInternalType('array', $messages);
         $this->assertEquals(0, count($messages));
     }
 
@@ -325,14 +329,14 @@ class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit_Framework_TestCase
     {
         $this->testValidationShouldReturnFalseForInvalidTransfer();
         $messages = $this->adapter->getMessages();
-        $this->assertTrue(is_array($messages));
-        $this->assertFalse(empty($messages));
+        $this->assertInternalType('array', $messages);
+        $this->assertNotEmpty($messages);
     }
 
     public function testErrorCodesShouldBeNullByDefault()
     {
         $errors = $this->adapter->getErrors();
-        $this->assertTrue(is_array($errors));
+        $this->assertInternalType('array', $errors);
         $this->assertEquals(0, count($errors));
     }
 
@@ -340,8 +344,8 @@ class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit_Framework_TestCase
     {
         $this->testValidationShouldReturnFalseForInvalidTransfer();
         $errors = $this->adapter->getErrors();
-        $this->assertTrue(is_array($errors));
-        $this->assertFalse(empty($errors));
+        $this->assertInternalType('array', $errors);
+        $this->assertNotEmpty($errors);
     }
 
     public function testAdapterShouldHavePluginLoaderForFilters()
@@ -354,9 +358,9 @@ class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit_Framework_TestCase
     {
         $loader = $this->adapter->getPluginLoader('filter');
         $paths  = $loader->getPaths('Zend_Filter');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
         $paths  = $loader->getPaths('Zend_Filter_File');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
     }
 
     public function testAdapterShouldAllowAddingFilterInstance()
@@ -375,10 +379,11 @@ class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_File_Transfer_Exception
      */
     public function testAdapterhShouldRaiseExceptionWhenAddingInvalidFilterType()
     {
+        $this->expectException(\Zend_File_Transfer_Exception::class);
+
         $this->adapter->addFilter(new Zend_Validate_File_Extension('jpg'));
     }
 
@@ -391,7 +396,7 @@ class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit_Framework_TestCase
         );
         $this->adapter->addFilters($filters);
         $test = $this->adapter->getFilters();
-        $this->assertTrue(is_array($test));
+        $this->assertInternalType('array', $test);
         $this->assertEquals(3, count($test), var_export($test, 1));
         $count = array_shift($test);
         $this->assertTrue($count instanceof Zend_Filter_Word_SeparatorToCamelCase);
@@ -446,7 +451,7 @@ class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit_Framework_TestCase
     {
         $this->testAdapterShouldAllowAddingMultipleFiltersAtOnceUsingBothInstancesAndPluginLoader();
         $filters = $this->adapter->getFilters();
-        $this->assertTrue(is_array($filters));
+        $this->assertInternalType('array', $filters);
         $this->assertEquals(3, count($filters));
         foreach ($filters as $filter) {
             $this->assertTrue($filter instanceof Zend_Filter_Interface);
@@ -485,7 +490,7 @@ class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit_Framework_TestCase
         $this->testAdapterShouldAllowAddingMultipleFiltersAtOnceUsingBothInstancesAndPluginLoader();
         $this->adapter->clearFilters();
         $filters = $this->adapter->getFilters();
-        $this->assertTrue(is_array($filters));
+        $this->assertInternalType('array', $filters);
         $this->assertEquals(0, count($filters));
     }
 
@@ -494,7 +499,7 @@ class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit_Framework_TestCase
         $directory = dirname(__FILE__);
         $this->adapter->setDestination($directory);
         $destinations = $this->adapter->getDestination();
-        $this->assertTrue(is_array($destinations));
+        $this->assertInternalType('array', $destinations);
         foreach ($destinations as $file => $destination) {
             $this->assertEquals($directory, $destination);
         }
@@ -513,7 +518,7 @@ class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit_Framework_TestCase
     {
         $this->adapter->setDestination(dirname(__FILE__));
         $destinations = $this->adapter->getDestination(array('bar', 'baz'));
-        $this->assertTrue(is_array($destinations));
+        $this->assertInternalType('array', $destinations);
         $directory = dirname(__FILE__);
         foreach ($destinations as $file => $destination) {
             $this->assertTrue(in_array($file, array('bar', 'baz')));
@@ -568,50 +573,56 @@ class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_File_Transfer_Exception
      */
     public function testGetAdditionalFileInfosForUnknownFile()
     {
+        $this->expectException(\Zend_File_Transfer_Exception::class);
+
         $files = $this->adapter->getFileInfo('unknown');
     }
 
     /**
-     * @expectedException Zend_File_Transfer_Exception
      */
     public function testGetUnknownOption()
     {
+        $this->expectException(\Zend_File_Transfer_Exception::class);
+
         $this->adapter->setOptions(array('unknownOption' => 'unknown'));
     }
 
     /**
-     * @expectedException Zend_File_Transfer_Exception
      */
     public function testGetFileIsNotImplemented()
     {
+        $this->expectException(\Zend_File_Transfer_Exception::class);
+
         $this->adapter->getFile();
     }
 
     /**
-     * @expectedException Zend_File_Transfer_Exception
      */
     public function testAddFileIsNotImplemented()
     {
+        $this->expectException(\Zend_File_Transfer_Exception::class);
+
         $this->adapter->addFile('foo');
     }
 
     /**
-     * @expectedException Zend_File_Transfer_Exception
      */
     public function testGetTypeIsNotImplemented()
     {
+        $this->expectException(\Zend_File_Transfer_Exception::class);
+
         $this->adapter->getType();
     }
 
     /**
-     * @expectedException Zend_File_Transfer_Exception
      */
     public function testAddTypeIsNotImplemented()
     {
+        $this->expectException(\Zend_File_Transfer_Exception::class);
+
         $this->adapter->addType('foo');
     }
 
@@ -646,7 +657,7 @@ class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit_Framework_TestCase
               . DIRECTORY_SEPARATOR . '_files';
         $this->adapter->setDestination($path);
         $files = $this->adapter->getFileName();
-        $this->assertTrue(is_array($files));
+        $this->assertInternalType('array', $files);
         $this->assertEquals($path . DIRECTORY_SEPARATOR . 'bar.png', $files['bar']);
     }
 
@@ -659,7 +670,7 @@ class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit_Framework_TestCase
               . DIRECTORY_SEPARATOR . '_files';
         $this->adapter->setDestination($path);
         $files = $this->adapter->getFileName(null, false);
-        $this->assertTrue(is_array($files));
+        $this->assertInternalType('array', $files);
         $this->assertEquals('bar.png', $files['bar']);
     }
 
@@ -683,7 +694,7 @@ class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit_Framework_TestCase
     public function testEmptyTempDirectoryDetection()
     {
         $this->adapter->_tmpDir = "";
-        $this->assertTrue(empty($this->adapter->_tmpDir), "Empty temporary directory");
+        $this->assertEmpty($this->adapter->_tmpDir, "Empty temporary directory");
     }
 
     public function testTempDirectoryDetection()
@@ -771,7 +782,7 @@ class Zend_File_Transfer_Adapter_AbstractTest extends PHPUnit_Framework_TestCase
         $this->adapter->setDestination($directory, 'nonexisting');
         $this->assertEquals($directory, $this->adapter->getDestination('nonexisting'));
         try {
-            $this->assertTrue(is_string($this->adapter->getDestination('reallynonexisting')));
+            $this->assertInternalType('string', $this->adapter->getDestination('reallynonexisting'));
             $this->fail();
         } catch(Exception $e) {
             $this->assertContains('not find', $e->getMessage());

@@ -41,7 +41,7 @@ require_once dirname(__FILE__) . '/TestAsset/commontypes.php';
  * @group      Zend_Soap
  * @group      Zend_Soap_Server
  */
-class Zend_Soap_ServerTest extends PHPUnit_Framework_TestCase
+class Zend_Soap_ServerTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {
@@ -978,7 +978,7 @@ class Zend_Soap_ServerTest extends PHPUnit_Framework_TestCase
     {
         $server = new Zend_Soap_MockServer();
         $r = $server->handle(new DomDocument('1.0', 'UTF-8'));
-        $this->assertTrue(is_string($server->mockSoapServer->handle[0]));
+        $this->assertInternalType('string', $server->mockSoapServer->handle[0]);
     }
 
     /**

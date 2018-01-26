@@ -58,7 +58,7 @@ require_once 'Zend/Search/Lucene/Document/Html.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Search_Lucene
  */
-class Zend_Search_Lucene_DocumentTest extends PHPUnit_Framework_TestCase
+class Zend_Search_Lucene_DocumentTest extends PHPUnit\Framework\TestCase
 {
 
     private function _clearDirectory($dirName)
@@ -93,7 +93,7 @@ class Zend_Search_Lucene_DocumentTest extends PHPUnit_Framework_TestCase
         $document->addField(Zend_Search_Lucene_Field::Text('body',       'Document body, document body, document body...'));
 
         $fieldnamesDiffArray = array_diff($document->getFieldNames(), array('title', 'annotation', 'body'));
-        $this->assertTrue(is_array($fieldnamesDiffArray));
+        $this->assertInternalType('array', $fieldnamesDiffArray);
         $this->assertEquals(count($fieldnamesDiffArray), 0);
 
         $this->assertEquals($document->title,      'Title');

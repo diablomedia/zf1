@@ -26,7 +26,7 @@ require_once 'Zend/Service/ShortUrl/IsGd.php';
  * @package  Zend_Service
  * @subpackage  UnitTests
  */
-class Zend_Service_ShortUrl_IsGdTest extends PHPUnit_Framework_TestCase
+class Zend_Service_ShortUrl_IsGdTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Zend_Service_ShortUrl_IsGd object
@@ -56,13 +56,13 @@ class Zend_Service_ShortUrl_IsGdTest extends PHPUnit_Framework_TestCase
 
     public function testShortenEmptyUrlException()
     {
-        $this->setExpectedException('Zend_Service_ShortUrl_Exception');
+        $this->expectException('Zend_Service_ShortUrl_Exception');
         $this->_s->shorten('');
     }
 
     public function testShortenIncorrectUrlException()
     {
-        $this->setExpectedException('Zend_Service_ShortUrl_Exception');
+        $this->expectException('Zend_Service_ShortUrl_Exception');
         $this->_s->shorten('wrongAdress.cccc');
     }
 
@@ -95,19 +95,19 @@ class Zend_Service_ShortUrl_IsGdTest extends PHPUnit_Framework_TestCase
 
     public function testUnshortenEmptyUrlException()
     {
-        $this->setExpectedException('Zend_Service_ShortUrl_Exception');
+        $this->expectException('Zend_Service_ShortUrl_Exception');
         $this->_s->unshorten('');
     }
 
     public function testUnshortenIncorrectUrlException()
     {
-        $this->setExpectedException('Zend_Service_ShortUrl_Exception');
+        $this->expectException('Zend_Service_ShortUrl_Exception');
         $this->_s->unshorten('wrongAdress.cccc');
     }
 
     public function testUnshortenWrongUrlException()
     {
-        $this->setExpectedException('Zend_Service_ShortUrl_Exception');
+        $this->expectException('Zend_Service_ShortUrl_Exception');
         $this->_s->unshorten('http://www.zend.com');
     }
 }

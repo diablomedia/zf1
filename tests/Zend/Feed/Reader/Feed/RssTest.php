@@ -32,7 +32,7 @@ require_once 'Zend/Registry.php';
  * @group      Zend_Feed
  * @group      Zend_Feed_Reader
  */
-class Zend_Feed_Reader_Feed_RssTest extends PHPUnit_Framework_TestCase
+class Zend_Feed_Reader_Feed_RssTest extends PHPUnit\Framework\TestCase
 {
 
     protected $_feedSamplePath = null;

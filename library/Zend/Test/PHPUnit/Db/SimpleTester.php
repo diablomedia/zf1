@@ -33,21 +33,21 @@ require_once "Zend/Test/PHPUnit/Db/Operation/Insert.php";
 /**
  * Simple Tester for Database Tests when the Abstract Test Case cannot be used.
  *
- * @uses       PHPUnit_Extensions_Database_DefaultTester
+ * @uses       PHPUnit\DbUnit\DefaultTester
  * @category   Zend
  * @package    Zend_Test
  * @subpackage PHPUnit
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Test_PHPUnit_Db_SimpleTester extends PHPUnit_Extensions_Database_DefaultTester
+class Zend_Test_PHPUnit_Db_SimpleTester extends PHPUnit\DbUnit\DefaultTester
 {
     /**
      * Creates a new default database tester using the given connection.
      *
-     * @param PHPUnit_Extensions_Database_DB_IDatabaseConnection $connection
+     * @param PHPUnit\DbUnit\Database\Connection $connection
      */
-    public function __construct(PHPUnit_Extensions_Database_DB_IDatabaseConnection $connection)
+    public function __construct(PHPUnit\DbUnit\Database\Connection $connection)
     {
         if(!($connection instanceof Zend_Test_PHPUnit_Db_Connection)) {
             require_once "Zend/Test/PHPUnit/Db/Exception.php";
@@ -55,19 +55,19 @@ class Zend_Test_PHPUnit_Db_SimpleTester extends PHPUnit_Extensions_Database_Defa
         }
 
         $this->connection = $connection;
-        $this->setUpOperation = new PHPUnit_Extensions_Database_Operation_Composite(array(
+        $this->setUpOperation = new PHPUnit\DbUnit\Operation\Composite(array(
             new Zend_Test_PHPUnit_Db_Operation_Truncate(),
             new Zend_Test_PHPUnit_Db_Operation_Insert(),
         ));
-        $this->tearDownOperation = PHPUnit_Extensions_Database_Operation_Factory::NONE();
+        $this->tearDownOperation = PHPUnit\DbUnit\Operation\Factory::NONE();
     }
 
     /**
      * Set Up the database using the given Dataset and the SetUp strategy "Truncate, then Insert"
      *
-     * @param PHPUnit_Extensions_Database_DataSet_IDataSet $dataSet
+     * @param PHPUnit\DbUnit\DataSet\IDataSet $dataSet
      */
-    public function setUpDatabase(PHPUnit_Extensions_Database_DataSet_IDataSet $dataSet)
+    public function setUpDatabase(PHPUnit\DbUnit\DataSet\IDataSet $dataSet)
     {
         $this->setDataSet($dataSet);
         $this->onSetUp();

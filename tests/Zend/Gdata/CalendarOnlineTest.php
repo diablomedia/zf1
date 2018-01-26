@@ -34,7 +34,7 @@ require_once 'Zend/Http/Client.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Calendar
  */
-class Zend_Gdata_CalendarOnlineTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_CalendarOnlineTest extends PHPUnit\Framework\TestCase
 {
 
     const GOOGLE_DEVELOPER_CALENDAR = 'developer-calendar@google.com';

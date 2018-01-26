@@ -38,7 +38,7 @@ require_once 'Zend/Auth/Adapter/Ldap.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Auth
  */
-class Zend_Auth_Adapter_Ldap_OnlineTest extends PHPUnit_Framework_TestCase
+class Zend_Auth_Adapter_Ldap_OnlineTest extends PHPUnit\Framework\TestCase
 {
     /**
      * LDAP connection options

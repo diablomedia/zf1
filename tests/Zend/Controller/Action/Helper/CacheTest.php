@@ -12,7 +12,7 @@ require_once 'Zend/Cache/Backend.php';
 /**
  * Test class for Zend_Controller_Action_Helper_Cache
  */
-class Zend_Controller_Action_Helper_CacheTest extends PHPUnit_Framework_TestCase
+class Zend_Controller_Action_Helper_CacheTest extends PHPUnit\Framework\TestCase
 {
 
     protected $_requestUriOld;

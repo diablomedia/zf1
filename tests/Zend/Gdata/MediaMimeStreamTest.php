@@ -30,7 +30,7 @@ require_once 'Zend/Gdata/MediaMimeStream.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Gdata
  */
-class Zend_Gdata_MediaMimeStreamTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_MediaMimeStreamTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp()

@@ -46,8 +46,8 @@ class Zend_Test_PHPUnit_Db_DataSet_QueryDataSetTest extends Zend_Test_PHPUnit_Db
 {
     public function testCreateQueryDataSetWithoutZendDbAdapterThrowsException()
     {
-        $connectionMock = $this->getMockBuilder('PHPUnit_Extensions_Database_DB_IDatabaseConnection')->getMock();
-        $this->setExpectedException('Zend_Test_PHPUnit_Db_Exception');
+        $connectionMock = $this->getMockBuilder('PHPUnit\DbUnit\Database\Connection')->getMock();
+        $this->expectException('Zend_Test_PHPUnit_Db_Exception');
         $queryDataSet = new Zend_Test_PHPUnit_Db_DataSet_QueryDataSet($connectionMock);
     }
 

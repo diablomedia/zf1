@@ -36,7 +36,7 @@ require_once dirname(__FILE__) . '/_classes/TagDummy.php';
  * @group      Zend_Tag
  * @group      Zend_Tag_Cloud
  */
-class Zend_Tag_Cloud_CloudTest extends PHPUnit_Framework_TestCase
+class Zend_Tag_Cloud_CloudTest extends PHPUnit\Framework\TestCase
 {
     public function testGetAndSetItemList()
     {

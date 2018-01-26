@@ -42,7 +42,7 @@ require_once 'Zend/Config/Writer/Yaml.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Config_Writer_YamlTest extends PHPUnit_Framework_TestCase
+class Zend_Config_Writer_YamlTest extends PHPUnit\Framework\TestCase
 {
     protected $_tempName;
 

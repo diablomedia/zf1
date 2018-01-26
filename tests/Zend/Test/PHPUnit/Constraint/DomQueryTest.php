@@ -34,7 +34,7 @@ require_once 'Zend/Test/PHPUnit/Constraint/DomQuery.php';
  * @group      Zend_Test
  * @group      Zend_Test_PHPUnit
  */
-class Zend_Test_PHPUnit_Constraint_DomQueryTest extends PHPUnit_Framework_TestCase
+class Zend_Test_PHPUnit_Constraint_DomQueryTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @group ZF-4010

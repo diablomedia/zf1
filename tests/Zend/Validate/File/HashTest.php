@@ -35,7 +35,7 @@ require_once 'Zend/Validate/File/Hash.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Validate
  */
-class Zend_Validate_File_HashTest extends PHPUnit_Framework_TestCase
+class Zend_Validate_File_HashTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Ensures that the validator follows expected behavior
@@ -78,7 +78,7 @@ class Zend_Validate_File_HashTest extends PHPUnit_Framework_TestCase
 
         $validator = new Zend_Validate_File_Hash('3f8d07e2');
         $this->assertFalse($validator->isValid(dirname(__FILE__) . '/_files/nofile.mo'));
-        $this->assertTrue(array_key_exists('fileHashNotFound', $validator->getMessages()));
+        $this->assertArrayHasKey('fileHashNotFound', $validator->getMessages());
 
         $files = array(
             'name'     => 'test1',
@@ -89,7 +89,7 @@ class Zend_Validate_File_HashTest extends PHPUnit_Framework_TestCase
         );
         $validator = new Zend_Validate_File_Hash('3f8d07e2');
         $this->assertFalse($validator->isValid(dirname(__FILE__) . '/_files/nofile.mo', $files));
-        $this->assertTrue(array_key_exists('fileHashNotFound', $validator->getMessages()));
+        $this->assertArrayHasKey('fileHashNotFound', $validator->getMessages());
 
         $files = array(
             'name'     => 'testsize.mo',
@@ -110,7 +110,7 @@ class Zend_Validate_File_HashTest extends PHPUnit_Framework_TestCase
         );
         $validator = new Zend_Validate_File_Hash('9f8d07e2');
         $this->assertFalse($validator->isValid(dirname(__FILE__) . '/_files/picture.jpg', $files));
-        $this->assertTrue(array_key_exists('fileHashDoesNotMatch', $validator->getMessages()));
+        $this->assertArrayHasKey('fileHashDoesNotMatch', $validator->getMessages());
     }
 
     /**

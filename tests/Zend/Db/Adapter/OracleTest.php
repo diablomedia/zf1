@@ -104,7 +104,7 @@ class Zend_Db_Adapter_OracleTest extends Zend_Db_Adapter_TestCommon
         // Test associative array
         $result = $this->_db->fetchAll("SELECT * FROM $products WHERE $product_id > :id ORDER BY $product_id ASC", array(":id"=>1), Zend_Db::FETCH_ASSOC);
         $this->assertEquals(2, count($result));
-        $this->assertTrue(is_array($result[0]));
+        $this->assertInternalType('array', $result[0]);
         $this->assertEquals(2, count($result[0])); // count columns
         $this->assertEquals(2, $result[0][$col_name]);
 
@@ -114,7 +114,7 @@ class Zend_Db_Adapter_OracleTest extends Zend_Db_Adapter_TestCommon
         // Ensure original fetch mode has been retained
         $result = $this->_db->fetchAll("SELECT * FROM $products WHERE $product_id > :id ORDER BY $product_id", array(":id"=>1));
         $this->assertEquals(2, count($result));
-        $this->assertTrue(is_object($result[0]));
+        $this->assertInternalType('object', $result[0]);
         $this->assertEquals(2, $result[0]->$col_name);
     }
 
@@ -145,7 +145,7 @@ class Zend_Db_Adapter_OracleTest extends Zend_Db_Adapter_TestCommon
 
         $this->_db->setFetchMode(Zend_Db::FETCH_OBJ);
         $result = $this->_db->fetchAssoc("SELECT * FROM $products WHERE $product_id > :id ORDER BY $product_id DESC", array(":id"=>1));
-        $this->assertTrue(is_array($result));
+        $this->assertInternalType('array', $result);
         $this->assertEquals(array('product_id', 'product_name'), array_keys(current($result)));
     }
 
@@ -175,7 +175,7 @@ class Zend_Db_Adapter_OracleTest extends Zend_Db_Adapter_TestCommon
 
         $this->_db->setFetchMode(Zend_Db::FETCH_OBJ);
         $result = $this->_db->fetchCol("SELECT * FROM $products WHERE $product_id > :id ORDER BY $product_id ASC", array(":id"=>1));
-        $this->assertTrue(is_array($result));
+        $this->assertInternalType('array', $result);
         $this->assertEquals(2, count($result)); // count rows
         $this->assertEquals(2, $result[0]);
         $this->assertEquals(3, $result[1]);
@@ -210,7 +210,7 @@ class Zend_Db_Adapter_OracleTest extends Zend_Db_Adapter_TestCommon
         $this->_db->setFetchMode(Zend_Db::FETCH_OBJ);
         $prod = 'Linux';
         $result = $this->_db->fetchOne("SELECT $product_name FROM $products WHERE $product_id > :id ORDER BY $product_id", array(":id"=>1));
-        $this->assertTrue(is_string($result));
+        $this->assertInternalType('string', $result);
         $this->assertEquals($prod, $result);
     }
 
@@ -242,7 +242,7 @@ class Zend_Db_Adapter_OracleTest extends Zend_Db_Adapter_TestCommon
         $this->_db->setFetchMode(Zend_Db::FETCH_OBJ);
         $prod = 'Linux';
         $result = $this->_db->fetchPairs("SELECT $product_id, $product_name FROM $products WHERE $product_id > :id ORDER BY $product_id ASC", array(":id"=>1));
-        $this->assertTrue(is_array($result));
+        $this->assertInternalType('array', $result);
         $this->assertEquals(2, count($result)); // count rows
         $this->assertEquals($prod, $result[2]);
     }
@@ -275,7 +275,7 @@ class Zend_Db_Adapter_OracleTest extends Zend_Db_Adapter_TestCommon
 
         // Test associative array
         $result = $this->_db->fetchRow("SELECT * FROM $products WHERE $product_id > :id ORDER BY $product_id", array(":id"=>1), Zend_Db::FETCH_ASSOC);
-        $this->assertTrue(is_array($result));
+        $this->assertInternalType('array', $result);
         $this->assertEquals(2, count($result)); // count columns
         $this->assertEquals(2, $result['product_id']);
 
@@ -284,7 +284,7 @@ class Zend_Db_Adapter_OracleTest extends Zend_Db_Adapter_TestCommon
 
         // Ensure original fetch mode has been retained
         $result = $this->_db->fetchRow("SELECT * FROM $products WHERE $product_id > :id ORDER BY $product_id", array(":id"=>1));
-        $this->assertTrue(is_object($result));
+        $this->assertInternalType('object', $result);
         $this->assertEquals(2, $result->$col_name);
     }
 
@@ -327,7 +327,7 @@ class Zend_Db_Adapter_OracleTest extends Zend_Db_Adapter_TestCommon
             ->from('zfproducts')
             ->where("$product_id = 4");
         $result = $this->_db->fetchAll($select);
-        $this->assertTrue(is_array($result));
+        $this->assertInternalType('array', $result);
         $this->assertEquals('SOLARIS', $result[0]['product_name']);
     }
 

@@ -33,7 +33,7 @@ require_once 'Zend/XmlRpc/Server/Cache.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_XmlRpc
  */
-class Zend_XmlRpc_Server_CacheTest extends PHPUnit_Framework_TestCase
+class Zend_XmlRpc_Server_CacheTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Zend_XmlRpc_Server object

@@ -31,7 +31,7 @@ require_once 'Zend/Feed/Writer/Deleted.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Feed_Writer_DeletedTest extends PHPUnit_Framework_TestCase
+class Zend_Feed_Writer_DeletedTest extends PHPUnit\Framework\TestCase
 {
 
     public function testSetsReference()
@@ -54,7 +54,7 @@ class Zend_Feed_Writer_DeletedTest extends PHPUnit_Framework_TestCase
     public function testGetReferenceReturnsNullIfNotSet()
     {
         $entry = new Zend_Feed_Writer_Deleted;
-        $this->assertTrue(is_null($entry->getReference()));
+        $this->assertNull($entry->getReference());
     }
 
     public function testSetWhenDefaultsToCurrentTime()
@@ -116,7 +116,7 @@ class Zend_Feed_Writer_DeletedTest extends PHPUnit_Framework_TestCase
     public function testGetWhenReturnsNullIfDateNotSet()
     {
         $entry = new Zend_Feed_Writer_Deleted;
-        $this->assertTrue(is_null($entry->getWhen()));
+        $this->assertNull($entry->getWhen());
     }
 
     public function testAddsByNameFromArray()

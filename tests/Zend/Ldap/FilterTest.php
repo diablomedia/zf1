@@ -41,7 +41,7 @@ require_once 'Zend/Ldap/Filter/Or.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Ldap
  */
-class Zend_Ldap_FilterTest extends PHPUnit_Framework_TestCase
+class Zend_Ldap_FilterTest extends PHPUnit\Framework\TestCase
 {
     public function testFilterEscapeBasicOperation()
     {
@@ -123,10 +123,11 @@ class Zend_Ldap_FilterTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Ldap_Filter_Exception
      */
     public function testIllegalGroupingFilter()
     {
+        $this->expectException(\Zend_Ldap_Filter_Exception::class);
+
         $data=array('a', 'b', 5);
         $f=new Zend_Ldap_Filter_And($data);
     }

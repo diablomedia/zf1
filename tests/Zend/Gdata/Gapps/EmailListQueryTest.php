@@ -32,7 +32,7 @@ require_once 'Zend/Gdata/Gapps/EmailListQuery.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Gapps
  */
-class Zend_Gdata_Gapps_EmailListQueryTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_Gapps_EmailListQueryTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp()

@@ -751,7 +751,7 @@ abstract class Zend_Db_Table_TestCommon extends Zend_Db_Table_TestSetup
             'product_id' => 1
         );
         $primary = $table->insert($row);
-        $this->assertTrue(is_array($primary));
+        $this->assertInternalType('array', $primary);
         $this->assertEquals(2, count($primary));
         $this->assertEquals(array(2, 1), array_values($primary));
     }
@@ -856,17 +856,17 @@ abstract class Zend_Db_Table_TestCommon extends Zend_Db_Table_TestSetup
         // empty string
         $row['bug_id'] = '';
         $insertResult = $table->insert($row);
-        $this->assertTrue(is_numeric($insertResult), 'Empty string did not return assigned primary key');
+        $this->assertInternalType('numeric', $insertResult, 'Empty string did not return assigned primary key');
 
         // false (bool)
         $row['bug_id'] = false;
         $insertResult = $table->insert($row);
-        $this->assertTrue(is_numeric($insertResult), 'Bool false did not return assigned primary key');
+        $this->assertInternalType('numeric', $insertResult, 'Bool false did not return assigned primary key');
 
         // empty array
         $row['bug_id'] = array();
         $insertResult = $table->insert($row);
-        $this->assertTrue(is_numeric($insertResult), 'Empty array did not return assigned primary key');
+        $this->assertInternalType('numeric', $insertResult, 'Empty array did not return assigned primary key');
 
         // zero '0'
         $row['bug_id'] = '0';
@@ -1414,8 +1414,8 @@ abstract class Zend_Db_Table_TestCommon extends Zend_Db_Table_TestSetup
         try {
             $bugsTable = $this->_getTable('My_ZendDbTable_TableBugs');
             $primary = $bugsTable->info(Zend_Db_Table_Abstract::PRIMARY);
-            $this->fail('Expected to catch PHPUnit_Framework_Error');
-        } catch (PHPUnit_Framework_Error $e) {
+            $this->fail('Expected to catch PHPUnit\Framework\Error\Error');
+        } catch (PHPUnit\Framework\Error\Error $e) {
             $this->assertEquals(E_USER_NOTICE, $e->getCode(), 'Error type not E_USER_NOTICE');
             $this->assertEquals('Failed saving metadata to metadataCache', $e->getMessage());
         }
@@ -1683,7 +1683,7 @@ abstract class Zend_Db_Table_TestCommon extends Zend_Db_Table_TestSetup
     public function testSerialiseTable()
     {
         $table = $this->_table['products'];
-        $this->assertTrue(is_string(serialize($table)));
+        $this->assertInternalType('string', serialize($table));
     }
 
     /**

@@ -34,7 +34,7 @@ require_once 'Zend/Text/Table/Decorator/Ascii.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Text
  */
-class Zend_Text_TableTest extends PHPUnit_Framework_TestCase
+class Zend_Text_TableTest extends PHPUnit\Framework\TestCase
 {
     public function tearDown()
     {

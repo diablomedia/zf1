@@ -35,7 +35,7 @@ require_once 'Zend/Service/StrikeIron/Decorator.php';
  * @group      Zend_Service
  * @group      Zend_Service_StrikeIron
  */
-class Zend_Service_StrikeIron_DecoratorTest extends PHPUnit_Framework_TestCase
+class Zend_Service_StrikeIron_DecoratorTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {

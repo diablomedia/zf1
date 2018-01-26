@@ -56,7 +56,7 @@ require_once 'Zend/Http/Client/Adapter/Test.php';
  * @group      Zend_Service
  * @group      Zend_Service_Amazon
  */
-class Zend_Service_Amazon_OfflineTest extends PHPUnit_Framework_TestCase
+class Zend_Service_Amazon_OfflineTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Reference to Amazon service consumer object

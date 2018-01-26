@@ -40,7 +40,7 @@ require_once 'Zend/Service/WindowsAzure/Storage/DynamicTableEntity.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_WindowsAzure_DynamicTableEntityTest extends PHPUnit_Framework_TestCase
+class Zend_Service_WindowsAzure_DynamicTableEntityTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {

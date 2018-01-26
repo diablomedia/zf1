@@ -35,7 +35,7 @@ require_once 'Zend/Http/Client/Adapter/Socket.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Service_Rackspace_Files
  */
-class Zend_Service_Rackspace_Files_OnlineTest extends PHPUnit_Framework_TestCase
+class Zend_Service_Rackspace_Files_OnlineTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Reference to Rackspace Files object
@@ -188,14 +188,14 @@ class Zend_Service_Rackspace_Files_OnlineTest extends PHPUnit_Framework_TestCase
     {
         $size= $this->rackspace->getSizeContainers();
         $this->assertTrue($size!==false);
-        $this->assertTrue(is_numeric($size));
+        $this->assertInternalType('numeric', $size);
     }
     
     public function testGetCountObjects()
     {
         $count= $this->rackspace->getCountObjects();
         $this->assertTrue($count!==false);
-        $this->assertTrue(is_numeric($count));
+        $this->assertInternalType('numeric', $count);
     }
     
     public function testSetMetadataObject()
@@ -218,7 +218,7 @@ class Zend_Service_Rackspace_Files_OnlineTest extends PHPUnit_Framework_TestCase
     {
         $data= $this->rackspace->enableCdnContainer(TESTS_ZEND_SERVICE_RACKSPACE_CONTAINER_NAME);
         $this->assertTrue($data!==false);
-        $this->assertTrue(is_array($data));
+        $this->assertInternalType('array', $data);
         $this->assertTrue(!empty($data['cdn_uri']));
         $this->assertTrue(!empty($data['cdn_uri_ssl']));
     }

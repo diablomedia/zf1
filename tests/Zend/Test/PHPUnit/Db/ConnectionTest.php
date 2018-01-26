@@ -31,7 +31,7 @@ require_once "Zend/Test/PHPUnit/Db/Connection.php";
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Test
  */
-class Zend_Test_PHPUnit_Db_ConnectionTest extends PHPUnit_Framework_TestCase
+class Zend_Test_PHPUnit_Db_ConnectionTest extends PHPUnit\Framework\TestCase
 {
     protected $adapterMock;
 

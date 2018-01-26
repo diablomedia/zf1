@@ -31,7 +31,7 @@ require_once 'Zend/Gdata.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Gdata
  */
-class Zend_Gdata_WhenTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_WhenTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -42,24 +42,24 @@ class Zend_Gdata_WhenTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyWhenShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->when->extensionElements));
+        $this->assertInternalType('array', $this->when->extensionElements);
         $this->assertTrue(count($this->when->extensionElements) == 0);
     }
 
     public function testEmptyWhenShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->when->extensionAttributes));
+        $this->assertInternalType('array', $this->when->extensionAttributes);
         $this->assertTrue(count($this->when->extensionAttributes) == 0);
     }
 
     public function testSampleWhenShouldHaveNoExtensionElements() {
         $this->when->transferFromXML($this->whenText);
-        $this->assertTrue(is_array($this->when->extensionElements));
+        $this->assertInternalType('array', $this->when->extensionElements);
         $this->assertTrue(count($this->when->extensionElements) == 0);
     }
 
     public function testSampleWhenShouldHaveNoExtensionAttributes() {
         $this->when->transferFromXML($this->whenText);
-        $this->assertTrue(is_array($this->when->extensionAttributes));
+        $this->assertInternalType('array', $this->when->extensionAttributes);
         $this->assertTrue(count($this->when->extensionAttributes) == 0);
     }
 

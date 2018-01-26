@@ -39,7 +39,7 @@ require_once 'Zend/Queue/Stomp/Frame.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Queue
  */
-class Zend_Queue_Stomp_FrameTest extends PHPUnit_Framework_TestCase
+class Zend_Queue_Stomp_FrameTest extends PHPUnit\Framework\TestCase
 {
 
     protected $body = 'hello world'; // 11 characters
@@ -143,9 +143,9 @@ class Zend_Queue_Stomp_FrameTest extends PHPUnit_Framework_TestCase
 
     public function test_constant()
     {
-        $this->assertTrue(is_string(Zend_Queue_Stomp_Frame::END_OF_FRAME));
-        $this->assertTrue(is_string(Zend_Queue_Stomp_Frame::CONTENT_LENGTH));
-        $this->assertTrue(is_string(Zend_Queue_Stomp_Frame::EOL));
+        $this->assertInternalType('string', Zend_Queue_Stomp_Frame::END_OF_FRAME);
+        $this->assertInternalType('string', Zend_Queue_Stomp_Frame::CONTENT_LENGTH);
+        $this->assertInternalType('string', Zend_Queue_Stomp_Frame::EOL);
     }
 
 }

@@ -31,7 +31,7 @@ require_once 'Zend/Gdata.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Gdata
  */
-class Zend_Gdata_FeedLinkTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_FeedLinkTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -42,24 +42,24 @@ class Zend_Gdata_FeedLinkTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyFeedLinkShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->feedLink->extensionElements));
+        $this->assertInternalType('array', $this->feedLink->extensionElements);
         $this->assertTrue(count($this->feedLink->extensionElements) == 0);
     }
 
     public function testEmptyFeedLinkShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->feedLink->extensionAttributes));
+        $this->assertInternalType('array', $this->feedLink->extensionAttributes);
         $this->assertTrue(count($this->feedLink->extensionAttributes) == 0);
     }
 
     public function testSampleFeedLinkShouldHaveNoExtensionElements() {
         $this->feedLink->transferFromXML($this->feedLinkText);
-        $this->assertTrue(is_array($this->feedLink->extensionElements));
+        $this->assertInternalType('array', $this->feedLink->extensionElements);
         $this->assertTrue(count($this->feedLink->extensionElements) == 0);
     }
 
     public function testSampleFeedLinkShouldHaveNoExtensionAttributes() {
         $this->feedLink->transferFromXML($this->feedLinkText);
-        $this->assertTrue(is_array($this->feedLink->extensionAttributes));
+        $this->assertInternalType('array', $this->feedLink->extensionAttributes);
         $this->assertTrue(count($this->feedLink->extensionAttributes) == 0);
     }
 

@@ -33,7 +33,7 @@ require_once 'Zend/Translate/Adapter/Qt.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Translate
  */
-class Zend_Translate_Adapter_QtTest extends PHPUnit_Framework_TestCase
+class Zend_Translate_Adapter_QtTest extends PHPUnit\Framework\TestCase
 {
     public function testCreate()
     {
@@ -140,7 +140,7 @@ class Zend_Translate_Adapter_QtTest extends PHPUnit_Framework_TestCase
         }
 
         $this->assertEquals('testkey', $adapter->getOptions('testoption'));
-        $this->assertTrue(is_null($adapter->getOptions('nooption')));
+        $this->assertNull($adapter->getOptions('nooption'));
     }
 
     public function testClearing()

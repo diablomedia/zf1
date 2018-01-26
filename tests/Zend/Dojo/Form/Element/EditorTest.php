@@ -43,7 +43,7 @@ require_once 'Zend/Dojo/View/Helper/Dojo.php';
  * @group      Zend_Dojo
  * @group      Zend_Dojo_Form
  */
-class Zend_Dojo_Form_Element_EditorTest extends PHPUnit_Framework_TestCase
+class Zend_Dojo_Form_Element_EditorTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -102,7 +102,7 @@ class Zend_Dojo_Form_Element_EditorTest extends PHPUnit_Framework_TestCase
     public function testShouldNotHaveCaptureEventsByDefault()
     {
         $events = $this->element->getCaptureEvents();
-        $this->assertTrue(empty($events));
+        $this->assertEmpty($events);
     }
 
     public function testCaptureEventAccessorsShouldProxyToDijitParams()
@@ -121,7 +121,7 @@ class Zend_Dojo_Form_Element_EditorTest extends PHPUnit_Framework_TestCase
     public function testShouldNotHaveEventsByDefault()
     {
         $events = $this->element->getEvents();
-        $this->assertTrue(empty($events));
+        $this->assertEmpty($events);
     }
 
     public function testEventAccessorsShouldProxyToDijitParams()
@@ -140,7 +140,7 @@ class Zend_Dojo_Form_Element_EditorTest extends PHPUnit_Framework_TestCase
     public function testShouldNotHavePluginsByDefault()
     {
         $plugins = $this->element->getPlugins();
-        $this->assertTrue(empty($plugins));
+        $this->assertEmpty($plugins);
     }
 
     public function testPluginAccessorsShouldProxyToDijitParams()
@@ -219,7 +219,7 @@ class Zend_Dojo_Form_Element_EditorTest extends PHPUnit_Framework_TestCase
     public function testShouldNotHaveStyleSheetsByDefault()
     {
         $styleSheets = $this->element->getStyleSheets();
-        $this->assertTrue(empty($styleSheets));
+        $this->assertEmpty($styleSheets);
     }
 
     public function testStyleSheetAccessorsShouldProxyToDijitParams()
@@ -280,7 +280,7 @@ class Zend_Dojo_Form_Element_EditorTest extends PHPUnit_Framework_TestCase
     public function testShouldNotHaveExtraPluginsByDefault()
     {
         $extraPlugins = $this->element->getExtraPlugins();
-        $this->assertTrue(empty($extraPlugins));
+        $this->assertEmpty($extraPlugins);
     }
 
     /** @group ZF-11511 */

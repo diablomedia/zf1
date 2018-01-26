@@ -31,7 +31,7 @@ require_once 'Zend/Log/Formatter/Simple.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Log
  */
-class Zend_Log_Formatter_SimpleTest extends PHPUnit_Framework_TestCase
+class Zend_Log_Formatter_SimpleTest extends PHPUnit\Framework\TestCase
 {
     public function testConstructorThrowsOnBadFormatString()
     {

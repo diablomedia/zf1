@@ -55,7 +55,7 @@ class fooclass {
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Cache
  */
-class Zend_Cache_FunctionFrontendTest extends PHPUnit_Framework_TestCase {
+class Zend_Cache_FunctionFrontendTest extends PHPUnit\Framework\TestCase {
 
     private $_instance;
 
@@ -199,7 +199,7 @@ class Zend_Cache_FunctionFrontendTest extends PHPUnit_Framework_TestCase {
             $this->markTestSkipped();
         }
 
-        $this->setExpectedException('Zend_Cache_Exception');
+        $this->expectException('Zend_Cache_Exception');
         eval('$closure = function () {};'); // no parse error on php < 5.3
         $this->_instance->call($closure);
     }

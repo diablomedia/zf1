@@ -33,7 +33,7 @@ require_once 'Zend/Http/CookieJar.php';
  * @group      Zend_Http
  * @group      Zend_Http_CookieJar
  */
-class Zend_Http_CookieJarTest extends PHPUnit_Framework_TestCase
+class Zend_Http_CookieJarTest extends PHPUnit\Framework\TestCase
 {
     public function loadResponse($filename)
     {
@@ -110,10 +110,11 @@ class Zend_Http_CookieJarTest extends PHPUnit_Framework_TestCase
      * Test we get an exception in case of invalid response objects
      *
      * @dataProvider invalidResponseProvider
-     * @expectedException Zend_Http_Exception
      */
     public function testExceptAddCookiesInvalidResponse($resp)
     {
+        $this->expectException(\Zend_Http_Exception::class);
+
         $jar = new Zend_Http_Cookiejar();
         $jar->addCookiesFromResponse($resp, 'http://www.example.com');
     }
@@ -412,16 +413,16 @@ class Zend_Http_CookieJarTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(8, count($jar->getAllCookies()), 'Cookie count is expected to be 8');
 
         $cookies = $jar->getMatchingCookies('http://www.foo.com/path/file.txt', true, Zend_Http_CookieJar::COOKIE_STRING_ARRAY);
-        $this->assertTrue(is_array($cookies), '$cookies is expected to be an array, but it is not');
-        $this->assertTrue(is_string($cookies[0]), '$cookies[0] is expected to be a string');;
+        $this->assertInternalType('array', $cookies, '$cookies is expected to be an array, but it is not');
+        $this->assertInternalType('string', $cookies[0], '$cookies[0] is expected to be a string');;
 
         $cookies = $jar->getMatchingCookies('http://www.foo.com/path/file.txt', true, Zend_Http_CookieJar::COOKIE_STRING_CONCAT);
-        $this->assertTrue(is_string($cookies), '$cookies is expected to be a string');
+        $this->assertInternalType('string', $cookies, '$cookies is expected to be a string');
         $expected = 'foo1=bar1;foo2=bar2;foo4=bar4;foo7=bar7;';
         $this->assertEquals($expected, $cookies, 'Concatenated string is not as expected');
 
         $cookies = $jar->getMatchingCookies('http://www.foo.com/path/file.txt', true, Zend_Http_CookieJar::COOKIE_STRING_CONCAT_STRICT);
-        $this->assertTrue(is_string($cookies), '$cookies is expected to be a string');
+        $this->assertInternalType('string', $cookies, '$cookies is expected to be a string');
         $expected = 'foo1=bar1; foo2=bar2; foo4=bar4; foo7=bar7';
         $this->assertEquals($expected, $cookies, 'Concatenated string is not as expected');
     }
@@ -494,7 +495,7 @@ class Zend_Http_CookieJarTest extends PHPUnit_Framework_TestCase
         foreach ($cookies as $cookie) $jar->addCookie($cookie);
         $cookies = $jar->getMatchingCookies('http://www.example.com/a/b/file.txt');
 
-        $this->assertTrue(is_array($cookies));
+        $this->assertInternalType('array', $cookies);
         $this->assertEquals(2, count($cookies));
     }
 

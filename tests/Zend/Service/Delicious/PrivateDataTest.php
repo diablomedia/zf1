@@ -35,7 +35,7 @@ require_once 'Zend/Service/Delicious.php';
  * @group      Zend_Service
  * @group      Zend_Service_Delicious
  */
-class Zend_Service_Delicious_PrivateDataTest extends PHPUnit_Framework_TestCase
+class Zend_Service_Delicious_PrivateDataTest extends PHPUnit\Framework\TestCase
 {
     const TEST_UNAME = 'zfTestUser';
     const TEST_PASS  = 'zfuser';
@@ -89,7 +89,7 @@ class Zend_Service_Delicious_PrivateDataTest extends PHPUnit_Framework_TestCase
     {
         // get tags
         $tags = $this->_delicious->getTags();
-        $this->assertTrue(is_array($tags));
+        $this->assertInternalType('array', $tags);
         $tags = array_keys($tags);
 
         if (count($tags) < 1) {
@@ -120,7 +120,7 @@ class Zend_Service_Delicious_PrivateDataTest extends PHPUnit_Framework_TestCase
 
         // check if bundle was added
         $bundles = $this->_delicious->getBundles();
-        $this->assertTrue(is_array($bundles));
+        $this->assertInternalType('array', $bundles);
         $this->assertArrayHasKey($newBundleName, $bundles);
         $this->assertEquals($tags, $bundles[$newBundleName]);
 
@@ -180,8 +180,8 @@ class Zend_Service_Delicious_PrivateDataTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(self::$TEST_POST_TAGS, $savedPost->getTags());
         $this->assertEquals(self::$TEST_POST_SHARED, $savedPost->getShared());
         $this->assertTrue($savedPost->getDate() instanceof Zend_Date);
-        $this->assertTrue(is_string($savedPost->getHash()));
-        $this->assertTrue(is_int($savedPost->getOthers()));
+        $this->assertInternalType('string', $savedPost->getHash());
+        $this->assertInternalType('int', $savedPost->getOthers());
 
         // delete post
         $savedPost->delete();
@@ -246,6 +246,6 @@ class Zend_Service_Delicious_PrivateDataTest extends PHPUnit_Framework_TestCase
      */
     public function testDates()
     {
-        $this->assertTrue(is_array($this->_delicious->getDates()));
+        $this->assertInternalType('array', $this->_delicious->getDates());
     }
 }

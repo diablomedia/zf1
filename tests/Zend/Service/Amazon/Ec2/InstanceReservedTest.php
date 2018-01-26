@@ -38,7 +38,7 @@ require_once 'Zend/Http/Client/Adapter/Test.php';
  * @group      Zend_Service_Amazon
  * @group      Zend_Service_Amazon_Ec2
  */
-class InstanceReservedTest extends PHPUnit_Framework_TestCase
+class InstanceReservedTest extends PHPUnit\Framework\TestCase
 {
 
     /**

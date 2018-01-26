@@ -33,7 +33,7 @@ require_once 'Zend/Config/Yaml.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Config
  */
-class Zend_Config_YamlTest extends PHPUnit_Framework_TestCase
+class Zend_Config_YamlTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {
@@ -78,9 +78,9 @@ class Zend_Config_YamlTest extends PHPUnit_Framework_TestCase
     {
         $config = new Zend_Config_Yaml($this->_iniFileConfig, 'debug');
 
-        $this->assertTrue(is_string($config->debug));
+        $this->assertInternalType('string', $config->debug);
         $this->assertEquals('1', $config->debug);
-        $this->assertTrue(is_string($config->values->changed));
+        $this->assertInternalType('string', $config->values->changed);
         $this->assertEquals('1', $config->values->changed);
     }
 
@@ -88,13 +88,13 @@ class Zend_Config_YamlTest extends PHPUnit_Framework_TestCase
     {
         $config = new Zend_Config_Yaml($this->_iniFileConfig, 'debug');
 
-        $this->assertTrue(is_string($config->special->no));
+        $this->assertInternalType('string', $config->special->no);
         $this->assertEquals('', $config->special->no);
-        $this->assertTrue(is_string($config->special->null));
+        $this->assertInternalType('string', $config->special->null);
         $this->assertEquals('', $config->special->null);
-        $this->assertTrue(is_string($config->special->false));
+        $this->assertInternalType('string', $config->special->false);
         $this->assertEquals('', $config->special->false);
-        $this->assertTrue(is_string($config->special->zero));
+        $this->assertInternalType('string', $config->special->zero);
         $this->assertEquals('0', $config->special->zero);
     }
 
@@ -242,19 +242,22 @@ class Zend_Config_YamlTest extends PHPUnit_Framework_TestCase
 
     public function testConstructorRaisesExceptionWhenUnableToLoadFile()
     {
-        $this->setExpectedException('Zend_Config_Exception', 'file_get_contents');
+        $this->expectException('Zend_Config_Exception');
+        $this->expectExceptionMessage('file_get_contents');
         $config = new Zend_Config_Yaml('__foo__');
     }
 
     public function testBadIndentationRaisesException()
     {
-        $this->setExpectedException('Zend_Config_Exception', 'unsupported syntax');
+        $this->expectException('Zend_Config_Exception');
+        $this->expectExceptionMessage('unsupported syntax');
         $config = new Zend_Config_Yaml($this->_badIndentationConfig, 'all');
     }
 
     public function testPassingBadYamlDecoderRaisesException()
     {
-        $this->setExpectedException('Zend_Config_Exception', 'must be callable');
+        $this->expectException('Zend_Config_Exception');
+        $this->expectExceptionMessage('must be callable');
         $config = new Zend_Config_Yaml($this->_iniFileAllSectionsConfig, 'debug', array(
             'yaml_decoder' => '__foo__',
         ));
@@ -340,8 +343,8 @@ class Zend_Config_YamlTest extends PHPUnit_Framework_TestCase
         $config = new Zend_Config_Yaml($this->_yamlInlineCommentsConfig, null);
         $this->assertTrue($config->resources instanceof Zend_Config);
         $this->assertTrue($config->resources->frontController instanceof Zend_Config);
-        $this->assertTrue(
-            is_string($config->resources->frontController->controllerDirectory)
+        $this->assertInternalType(
+            'string', $config->resources->frontController->controllerDirectory
         );
         $this->assertSame(
             'APPLICATION_PATH/controllers',
@@ -357,8 +360,8 @@ class Zend_Config_YamlTest extends PHPUnit_Framework_TestCase
         $config = new Zend_Config_Yaml($this->_yamlIndentedCommentsConfig, null);
         $this->assertTrue($config->resources instanceof Zend_Config);
         $this->assertTrue($config->resources->frontController instanceof Zend_Config);
-        $this->assertTrue(
-            is_string($config->resources->frontController->controllerDirectory)
+        $this->assertInternalType(
+            'string', $config->resources->frontController->controllerDirectory
         );
         $this->assertSame(
             'APPLICATION_PATH/controllers',

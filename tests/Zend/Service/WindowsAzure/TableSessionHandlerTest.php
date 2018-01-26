@@ -40,12 +40,8 @@ require_once 'Zend/Service/WindowsAzure/Storage/Table.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_WindowsAzure_TableSessionHandlerTest extends PHPUnit_Framework_TestCase
+class Zend_Service_WindowsAzure_TableSessionHandlerTest extends PHPUnit\Framework\TestCase
 {
-    public function __construct()
-    {
-    }
-
     /**
      * Test setup
      */

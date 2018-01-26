@@ -78,7 +78,7 @@ class test
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Cache
  */
-class Zend_Cache_ClassFrontendTest extends PHPUnit_Framework_TestCase
+class Zend_Cache_ClassFrontendTest extends PHPUnit\Framework\TestCase
 {
     private $_instance1;
     private $_instance2;
@@ -295,7 +295,7 @@ class Zend_Cache_ClassFrontendTest extends PHPUnit_Framework_TestCase
      */
     public function testThrowExceptionOnInvalidCallback()
     {
-        $this->setExpectedException('Zend_Cache_Exception');
+        $this->expectException('Zend_Cache_Exception');
         $this->_instance2->unknownMethod();
     }
 }

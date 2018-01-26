@@ -32,7 +32,7 @@ require_once 'Zend/Gdata.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_OpenSearch
  */
-class Zend_Gdata_OpenSearchItemsPerPageTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_OpenSearchItemsPerPageTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -43,24 +43,24 @@ class Zend_Gdata_OpenSearchItemsPerPageTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyOpenSearchItemsPerPageShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->openSearchItemsPerPage->extensionElements));
+        $this->assertInternalType('array', $this->openSearchItemsPerPage->extensionElements);
         $this->assertTrue(count($this->openSearchItemsPerPage->extensionElements) == 0);
     }
 
     public function testEmptyOpenSearchItemsPerPageShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->openSearchItemsPerPage->extensionAttributes));
+        $this->assertInternalType('array', $this->openSearchItemsPerPage->extensionAttributes);
         $this->assertTrue(count($this->openSearchItemsPerPage->extensionAttributes) == 0);
     }
 
     public function testSampleOpenSearchItemsPerPageShouldHaveNoExtensionElements() {
         $this->openSearchItemsPerPage->transferFromXML($this->openSearchItemsPerPageText);
-        $this->assertTrue(is_array($this->openSearchItemsPerPage->extensionElements));
+        $this->assertInternalType('array', $this->openSearchItemsPerPage->extensionElements);
         $this->assertTrue(count($this->openSearchItemsPerPage->extensionElements) == 0);
     }
 
     public function testSampleOpenSearchItemsPerPageShouldHaveNoExtensionAttributes() {
         $this->openSearchItemsPerPage->transferFromXML($this->openSearchItemsPerPageText);
-        $this->assertTrue(is_array($this->openSearchItemsPerPage->extensionAttributes));
+        $this->assertInternalType('array', $this->openSearchItemsPerPage->extensionAttributes);
         $this->assertTrue(count($this->openSearchItemsPerPage->extensionAttributes) == 0);
     }
 

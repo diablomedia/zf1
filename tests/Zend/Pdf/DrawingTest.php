@@ -53,7 +53,7 @@ require_once 'Zend/Pdf/Font.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Pdf
  */
-class Zend_Pdf_DrawingTest extends PHPUnit_Framework_TestCase
+class Zend_Pdf_DrawingTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {

@@ -31,7 +31,7 @@ require_once 'Zend/Log/Writer/ZendMonitor.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Log
  */
-class Zend_Log_Writer_ZendMonitorTest extends PHPUnit_Framework_TestCase
+class Zend_Log_Writer_ZendMonitorTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @group ZF-10081
@@ -53,6 +53,6 @@ class Zend_Log_Writer_ZendMonitorTest extends PHPUnit_Framework_TestCase
     public function testIsEnabled()
     {
         $writer = new Zend_Log_Writer_ZendMonitor();
-        $this->assertTrue(is_bool($writer->isEnabled()));
+        $this->assertInternalType('bool', $writer->isEnabled());
     }
 }

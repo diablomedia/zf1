@@ -34,7 +34,7 @@ require_once 'Zend/Http/Client/Adapter/Test.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Calendar
  */
-class Zend_Gdata_CalendarTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_CalendarTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {
@@ -45,24 +45,24 @@ class Zend_Gdata_CalendarTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyEventFeedShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->eventFeed->extensionElements));
+        $this->assertInternalType('array', $this->eventFeed->extensionElements);
         $this->assertTrue(count($this->eventFeed->extensionElements) == 0);
     }
 
     public function testEmptyEventFeedShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->eventFeed->extensionAttributes));
+        $this->assertInternalType('array', $this->eventFeed->extensionAttributes);
         $this->assertTrue(count($this->eventFeed->extensionAttributes) == 0);
     }
 
     public function testSampleEventFeedShouldHaveNoExtensionElements() {
         $this->eventFeed->transferFromXML($this->eventFeedText);
-        $this->assertTrue(is_array($this->eventFeed->extensionElements));
+        $this->assertInternalType('array', $this->eventFeed->extensionElements);
         $this->assertTrue(count($this->eventFeed->extensionElements) == 0);
     }
 
     public function testSampleEventFeedShouldHaveNoExtensionAttributes() {
         $this->eventFeed->transferFromXML($this->eventFeedText);
-        $this->assertTrue(is_array($this->eventFeed->extensionAttributes));
+        $this->assertInternalType('array', $this->eventFeed->extensionAttributes);
         $this->assertTrue(count($this->eventFeed->extensionAttributes) == 0);
     }
 

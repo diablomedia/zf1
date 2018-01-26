@@ -52,12 +52,12 @@ class Zend_Db_Profiler_OracleTest extends Zend_Db_Profiler_TestCommon
         // execute query a first time
         $stmt->execute(array(':bug_id' => 2));
         $results = $stmt->fetchAll();
-        $this->assertTrue(is_array($results));
+        $this->assertInternalType('array', $results);
         $this->assertEquals(2, $results[0]['bug_id']);
 
         // analyze query profiles
         $profiles = $this->_db->getProfiler()->getQueryProfiles(null, true);
-        $this->assertTrue(is_array($profiles), 'Expected array, got '.gettype($profiles));
+        $this->assertInternalType('array', $profiles, 'Expected array, got '.gettype($profiles));
         $this->assertEquals(1, count($profiles), 'Expected to find 1 profile');
         $qp = $profiles[0];
         $this->assertTrue($qp instanceof Zend_Db_Profiler_Query);
@@ -66,18 +66,18 @@ class Zend_Db_Profiler_OracleTest extends Zend_Db_Profiler_TestCommon
         $sql = $qp->getQuery();
         $this->assertContains(" = :bug_id", $sql);
         $params = $qp->getQueryParams();
-        $this->assertTrue(is_array($params));
+        $this->assertInternalType('array', $params);
         $this->assertEquals(array(':bug_id' => 2), $params);
 
         // execute query a second time
         $stmt->execute(array(':bug_id' => 3));
         $results = $stmt->fetchAll();
-        $this->assertTrue(is_array($results));
+        $this->assertInternalType('array', $results);
         $this->assertEquals(3, $results[0]['bug_id']);
 
         // analyze query profiles
         $profiles = $this->_db->getProfiler()->getQueryProfiles(null, true);
-        $this->assertTrue(is_array($profiles), 'Expected array, got '.gettype($profiles));
+        $this->assertInternalType('array', $profiles, 'Expected array, got '.gettype($profiles));
         $this->assertEquals(2, count($profiles), 'Expected to find 2 profiles');
         $qp = $profiles[1];
         $this->assertTrue($qp instanceof Zend_Db_Profiler_Query);
@@ -86,7 +86,7 @@ class Zend_Db_Profiler_OracleTest extends Zend_Db_Profiler_TestCommon
         $sql = $qp->getQuery();
         $this->assertContains(" = :bug_id", $sql);
         $params = $qp->getQueryParams();
-        $this->assertTrue(is_array($params));
+        $this->assertInternalType('array', $params);
         $this->assertEquals(array(':bug_id' => 3), $params);
     }
 
@@ -106,12 +106,12 @@ class Zend_Db_Profiler_OracleTest extends Zend_Db_Profiler_TestCommon
         $id = 2;
         $stmt->execute();
         $results = $stmt->fetchAll();
-        $this->assertTrue(is_array($results));
+        $this->assertInternalType('array', $results);
         $this->assertEquals(2, $results[0]['bug_id']);
 
         // analyze query profiles
         $profiles = $this->_db->getProfiler()->getQueryProfiles(null, true);
-        $this->assertTrue(is_array($profiles));
+        $this->assertInternalType('array', $profiles);
         $this->assertEquals(1, count($profiles), 'Expected to find 1 profile');
         $qp = $profiles[0];
         $this->assertTrue($qp instanceof Zend_Db_Profiler_Query);
@@ -120,19 +120,19 @@ class Zend_Db_Profiler_OracleTest extends Zend_Db_Profiler_TestCommon
         $sql = $qp->getQuery();
         $this->assertContains(" = :bug_id", $sql);
         $params = $qp->getQueryParams();
-        $this->assertTrue(is_array($params));
+        $this->assertInternalType('array', $params);
         $this->assertEquals(array(':bug_id' => 2), $params);
 
         // execute query a first time
         $id = 3;
         $stmt->execute();
         $results = $stmt->fetchAll();
-        $this->assertTrue(is_array($results));
+        $this->assertInternalType('array', $results);
         $this->assertEquals(3, $results[0]['bug_id']);
 
         // analyze query profiles
         $profiles = $this->_db->getProfiler()->getQueryProfiles(null, true);
-        $this->assertTrue(is_array($profiles));
+        $this->assertInternalType('array', $profiles);
         $this->assertEquals(2, count($profiles), 'Expected to find 2 profiles');
         $qp = $profiles[1];
         $this->assertTrue($qp instanceof Zend_Db_Profiler_Query);
@@ -141,7 +141,7 @@ class Zend_Db_Profiler_OracleTest extends Zend_Db_Profiler_TestCommon
         $sql = $qp->getQuery();
         $this->assertContains(" = :bug_id", $sql);
         $params = $qp->getQueryParams();
-        $this->assertTrue(is_array($params));
+        $this->assertInternalType('array', $params);
         $this->assertEquals(array(':bug_id' => 3), $params);
     }
 
@@ -168,7 +168,7 @@ class Zend_Db_Profiler_OracleTest extends Zend_Db_Profiler_TestCommon
         $this->_db->query("UPDATE $bugs SET $bug_status = :status", array(':status'=>'FIXED'));
 
         $qps = $prof->getQueryProfiles();
-        $this->assertTrue(is_array($qps), 'Expecting some query profiles, got none');
+        $this->assertInternalType('array', $qps, 'Expecting some query profiles, got none');
         foreach ($qps as $qp) {
             $qtype = $qp->getQueryType();
             $this->assertEquals($queryType, $qtype,

@@ -31,7 +31,7 @@ require_once 'Zend/Feed/Writer/Entry.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Feed_Writer_EntryTest extends PHPUnit_Framework_TestCase
+class Zend_Feed_Writer_EntryTest extends PHPUnit\Framework\TestCase
 {
 
     protected $_feedSamplePath = null;
@@ -184,10 +184,11 @@ class Zend_Feed_Writer_EntryTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testAddsEnclosureThrowsExceptionOnMissingUri()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $entry = new Zend_Feed_Writer_Entry;
         $entry->setEnclosure(array(
             'type' => 'audio/mpeg',
@@ -196,10 +197,11 @@ class Zend_Feed_Writer_EntryTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testAddsEnclosureThrowsExceptionWhenUriIsInvalid()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $entry = new Zend_Feed_Writer_Entry;
         $entry->setEnclosure(array(
             'type' => 'audio/mpeg',
@@ -357,25 +359,25 @@ class Zend_Feed_Writer_EntryTest extends PHPUnit_Framework_TestCase
     public function testGetDateCreatedReturnsNullIfDateNotSet()
     {
         $entry = new Zend_Feed_Writer_Entry;
-        $this->assertTrue(is_null($entry->getDateCreated()));
+        $this->assertNull($entry->getDateCreated());
     }
 
     public function testGetDateModifiedReturnsNullIfDateNotSet()
     {
         $entry = new Zend_Feed_Writer_Entry;
-        $this->assertTrue(is_null($entry->getDateModified()));
+        $this->assertNull($entry->getDateModified());
     }
 
     public function testGetCopyrightReturnsNullIfDateNotSet()
     {
         $entry = new Zend_Feed_Writer_Entry;
-        $this->assertTrue(is_null($entry->getCopyright()));
+        $this->assertNull($entry->getCopyright());
     }
 
     public function testGetContentReturnsNullIfDateNotSet()
     {
         $entry = new Zend_Feed_Writer_Entry;
-        $this->assertTrue(is_null($entry->getContent()));
+        $this->assertNull($entry->getContent());
     }
 
     public function testSetsDescription()
@@ -398,7 +400,7 @@ class Zend_Feed_Writer_EntryTest extends PHPUnit_Framework_TestCase
     public function testGetDescriptionReturnsNullIfDateNotSet()
     {
         $entry = new Zend_Feed_Writer_Entry;
-        $this->assertTrue(is_null($entry->getDescription()));
+        $this->assertNull($entry->getDescription());
     }
 
     public function testSetsId()
@@ -421,7 +423,7 @@ class Zend_Feed_Writer_EntryTest extends PHPUnit_Framework_TestCase
     public function testGetIdReturnsNullIfNotSet()
     {
         $entry = new Zend_Feed_Writer_Entry;
-        $this->assertTrue(is_null($entry->getId()));
+        $this->assertNull($entry->getId());
     }
 
     public function testSetsLink()
@@ -454,7 +456,7 @@ class Zend_Feed_Writer_EntryTest extends PHPUnit_Framework_TestCase
     public function testGetLinkReturnsNullIfNotSet()
     {
         $entry = new Zend_Feed_Writer_Entry;
-        $this->assertTrue(is_null($entry->getLink()));
+        $this->assertNull($entry->getLink());
     }
 
     public function testSetsCommentLink()
@@ -487,7 +489,7 @@ class Zend_Feed_Writer_EntryTest extends PHPUnit_Framework_TestCase
     public function testGetCommentLinkReturnsNullIfDateNotSet()
     {
         $entry = new Zend_Feed_Writer_Entry;
-        $this->assertTrue(is_null($entry->getCommentLink()));
+        $this->assertNull($entry->getCommentLink());
     }
 
     public function testSetsCommentFeedLink()
@@ -531,7 +533,7 @@ class Zend_Feed_Writer_EntryTest extends PHPUnit_Framework_TestCase
     public function testGetCommentFeedLinkReturnsNullIfNoneSet()
     {
         $entry = new Zend_Feed_Writer_Entry;
-        $this->assertTrue(is_null($entry->getCommentFeedLinks()));
+        $this->assertNull($entry->getCommentFeedLinks());
     }
 
     public function testSetsTitle()
@@ -554,7 +556,7 @@ class Zend_Feed_Writer_EntryTest extends PHPUnit_Framework_TestCase
     public function testGetTitleReturnsNullIfDateNotSet()
     {
         $entry = new Zend_Feed_Writer_Entry;
-        $this->assertTrue(is_null($entry->getTitle()));
+        $this->assertNull($entry->getTitle());
     }
 
     public function testSetsCommentCount()
@@ -597,7 +599,7 @@ class Zend_Feed_Writer_EntryTest extends PHPUnit_Framework_TestCase
     public function testGetCommentCountReturnsNullIfDateNotSet()
     {
         $entry = new Zend_Feed_Writer_Entry;
-        $this->assertTrue(is_null($entry->getCommentCount()));
+        $this->assertNull($entry->getCommentCount());
     }
 
 }

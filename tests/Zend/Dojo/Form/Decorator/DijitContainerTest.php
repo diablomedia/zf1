@@ -49,7 +49,7 @@ require_once 'Zend/Dojo/View/Helper/Dojo.php';
  * @group      Zend_Dojo
  * @group      Zend_Dojo_Form
  */
-class Zend_Dojo_Form_Decorator_DijitContainerTest extends PHPUnit_Framework_TestCase
+class Zend_Dojo_Form_Decorator_DijitContainerTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -118,16 +118,16 @@ class Zend_Dojo_Form_Decorator_DijitContainerTest extends PHPUnit_Framework_Test
     public function testRetrievingElementAttributesShouldOmitDijitParams()
     {
         $attribs = $this->decorator->getAttribs();
-        $this->assertTrue(is_array($attribs));
-        $this->assertFalse(array_key_exists('dijitParams', $attribs));
+        $this->assertInternalType('array', $attribs);
+        $this->assertArrayNotHasKey('dijitParams', $attribs);
     }
 
     public function testRetrievingDijitParamsShouldOmitNormalAttributes()
     {
         $params = $this->decorator->getDijitParams();
-        $this->assertTrue(is_array($params));
-        $this->assertFalse(array_key_exists('class', $params));
-        $this->assertFalse(array_key_exists('style', $params));
+        $this->assertInternalType('array', $params);
+        $this->assertArrayNotHasKey('class', $params);
+        $this->assertArrayNotHasKey('style', $params);
     }
 
     public function testLegendShouldBeUsedAsTitleByDefault()
@@ -165,7 +165,7 @@ class Zend_Dojo_Form_Decorator_DijitContainerTest extends PHPUnit_Framework_Test
         $html = $this->decorator->render('');
         restore_error_handler();
 
-        $this->assertFalse(empty($this->errors), var_export($this->errors, 1));
+        $this->assertNotEmpty($this->errors, var_export($this->errors, 1));
         $found = false;
         foreach ($this->errors as $error) {
             if (strstr($error, 'Duplicate')) {
@@ -183,10 +183,11 @@ class Zend_Dojo_Form_Decorator_DijitContainerTest extends PHPUnit_Framework_Test
     }
 
     /**
-     * @expectedException Zend_Form_Decorator_Exception
      */
     public function testAbsenceOfHelperShouldRaiseException()
     {
+        $this->expectException(\Zend_Form_Decorator_Exception::class);
+
         $decorator = new Zend_Dojo_Form_Decorator_DijitContainerTest_Example();
         $helper = $decorator->getHelper();
     }

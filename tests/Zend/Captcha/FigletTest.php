@@ -32,7 +32,7 @@ require_once 'Zend/Config.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Captcha
  */
-class Zend_Captcha_FigletTest extends PHPUnit_Framework_TestCase
+class Zend_Captcha_FigletTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -114,8 +114,8 @@ class Zend_Captcha_FigletTest extends PHPUnit_Framework_TestCase
     public function testTimeoutPopulatedByDefault()
     {
         $ttl = $this->captcha->getTimeout();
-        $this->assertFalse(empty($ttl));
-        $this->assertTrue(is_int($ttl));
+        $this->assertNotEmpty($ttl);
+        $this->assertInternalType('int', $ttl);
     }
 
     public function testCanSetTimeout()
@@ -129,8 +129,8 @@ class Zend_Captcha_FigletTest extends PHPUnit_Framework_TestCase
     public function testGenerateReturnsId()
     {
         $id = $this->captcha->generate();
-        $this->assertFalse(empty($id));
-        $this->assertTrue(is_string($id));
+        $this->assertNotEmpty($id);
+        $this->assertInternalType('string', $id);
         $this->id = $id;
     }
 
@@ -138,8 +138,8 @@ class Zend_Captcha_FigletTest extends PHPUnit_Framework_TestCase
     {
         $this->captcha->generate();
         $word = $this->captcha->getWord();
-        $this->assertFalse(empty($word));
-        $this->assertTrue(is_string($word));
+        $this->assertNotEmpty($word);
+        $this->assertInternalType('string', $word);
         $this->assertTrue(strlen($word) == 8);
         $this->word = $word;
     }
@@ -149,7 +149,7 @@ class Zend_Captcha_FigletTest extends PHPUnit_Framework_TestCase
         $this->captcha->setWordLen(4);
         $this->captcha->generate();
         $word = $this->captcha->getWord();
-        $this->assertTrue(is_string($word));
+        $this->assertInternalType('string', $word);
         $this->assertTrue(strlen($word) == 4);
         $this->word = $word;
     }
@@ -167,8 +167,8 @@ class Zend_Captcha_FigletTest extends PHPUnit_Framework_TestCase
         $id2 = $this->captcha->generate();
         $word2 = $this->captcha->getWord();
 
-        $this->assertFalse(empty($id1));
-        $this->assertFalse(empty($id2));
+        $this->assertNotEmpty($id1);
+        $this->assertNotEmpty($id2);
         $this->assertFalse($id1 == $id2);
         $this->assertFalse($word1 == $word2);
     }

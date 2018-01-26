@@ -32,7 +32,7 @@ require_once 'Zend/Gdata/Gapps.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Gapps
  */
-class Zend_Gdata_Gapps_OwnerEntryTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_Gapps_OwnerEntryTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -57,24 +57,24 @@ class Zend_Gdata_Gapps_OwnerEntryTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyEntryShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->entry->extensionElements));
+        $this->assertInternalType('array', $this->entry->extensionElements);
         $this->assertTrue(count($this->entry->extensionElements) == 0);
     }
 
     public function testEmptyEntryShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->entry->extensionAttributes));
+        $this->assertInternalType('array', $this->entry->extensionAttributes);
         $this->assertTrue(count($this->entry->extensionAttributes) == 0);
     }
 
     public function testSampleEntryShouldHaveNoExtensionElements() {
         $this->entry->transferFromXML($this->entryText);
-        $this->assertTrue(is_array($this->entry->extensionElements));
+        $this->assertInternalType('array', $this->entry->extensionElements);
         $this->assertTrue(count($this->entry->extensionElements) == 0);
     }
 
     public function testSampleEntryShouldHaveNoExtensionAttributes() {
         $this->entry->transferFromXML($this->entryText);
-        $this->assertTrue(is_array($this->entry->extensionAttributes));
+        $this->assertInternalType('array', $this->entry->extensionAttributes);
         $this->assertTrue(count($this->entry->extensionAttributes) == 0);
     }
 

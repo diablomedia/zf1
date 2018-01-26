@@ -32,7 +32,7 @@ require_once 'Zend/XmlRpc/Response.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_XmlRpc
  */
-class Zend_XmlRpc_ResponseTest extends PHPUnit_Framework_TestCase
+class Zend_XmlRpc_ResponseTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Zend_XmlRpc_Response object
@@ -262,7 +262,7 @@ EOD;
         $payload = sprintf($payload, 'file://' . realpath(dirname(__FILE__) . '/_files/ZF12293-payload.txt'));
         $this->_response->loadXml($payload);
         $value = $this->_response->getReturnValue();
-        $this->assertTrue(empty($value));
+        $this->assertEmpty($value);
         if (is_string($value)) {
             $this->assertNotContains('Local file inclusion', $value);
         }

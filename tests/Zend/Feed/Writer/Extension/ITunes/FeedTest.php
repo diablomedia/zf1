@@ -31,7 +31,7 @@ require_once 'Zend/Feed/Writer/Feed.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Feed_Writer_Extension_ITunes_FeedTest extends PHPUnit_Framework_TestCase
+class Zend_Feed_Writer_Extension_ITunes_FeedTest extends PHPUnit\Framework\TestCase
 {
 
     public function testSetBlock()
@@ -42,19 +42,21 @@ class Zend_Feed_Writer_Extension_ITunes_FeedTest extends PHPUnit_Framework_TestC
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetBlockThrowsExceptionOnNonAlphaValue()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $feed = new Zend_Feed_Writer_Feed;
         $feed->setItunesBlock('123');
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetBlockThrowsExceptionIfValueGreaterThan255CharsLength()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $feed = new Zend_Feed_Writer_Feed;
         $feed->setItunesBlock(str_repeat('a', 256));
     }
@@ -74,10 +76,11 @@ class Zend_Feed_Writer_Extension_ITunes_FeedTest extends PHPUnit_Framework_TestC
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testAddAuthorThrowsExceptionIfValueGreaterThan255CharsLength()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $feed = new Zend_Feed_Writer_Feed;
         $feed->addItunesAuthor(str_repeat('a', 256));
     }
@@ -94,10 +97,11 @@ class Zend_Feed_Writer_Extension_ITunes_FeedTest extends PHPUnit_Framework_TestC
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetCategoriesThrowsExceptionIfAnyCatNameGreaterThan255CharsLength()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $feed = new Zend_Feed_Writer_Feed;
         $cats = array(
             'cat1',
@@ -122,19 +126,21 @@ class Zend_Feed_Writer_Extension_ITunes_FeedTest extends PHPUnit_Framework_TestC
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetImageThrowsExceptionOnInvalidUri()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $feed = new Zend_Feed_Writer_Feed;
         $feed->setItunesImage('http://');
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetImageThrowsExceptionOnInvalidImageExtension()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $feed = new Zend_Feed_Writer_Feed;
         $feed->setItunesImage('http://www.example.com/image.gif');
     }
@@ -161,28 +167,31 @@ class Zend_Feed_Writer_Extension_ITunes_FeedTest extends PHPUnit_Framework_TestC
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetDurationThrowsExceptionOnUnknownFormat()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $feed = new Zend_Feed_Writer_Feed;
         $feed->setItunesDuration('abc');
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetDurationThrowsExceptionOnInvalidSeconds()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $feed = new Zend_Feed_Writer_Feed;
         $feed->setItunesDuration('23:456');
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetDurationThrowsExceptionOnInvalidMinutes()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $feed = new Zend_Feed_Writer_Feed;
         $feed->setItunesDuration('23:234:45');
     }
@@ -209,10 +218,11 @@ class Zend_Feed_Writer_Extension_ITunes_FeedTest extends PHPUnit_Framework_TestC
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetExplicitThrowsExceptionOnUnknownTerm()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $feed = new Zend_Feed_Writer_Feed;
         $feed->setItunesExplicit('abc');
     }
@@ -228,10 +238,11 @@ class Zend_Feed_Writer_Extension_ITunes_FeedTest extends PHPUnit_Framework_TestC
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetKeywordsThrowsExceptionIfMaxKeywordsExceeded()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $feed = new Zend_Feed_Writer_Feed;
         $words = array(
             'a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'a11', 'a12', 'a13'
@@ -240,10 +251,11 @@ class Zend_Feed_Writer_Extension_ITunes_FeedTest extends PHPUnit_Framework_TestC
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetKeywordsThrowsExceptionIfFormattedKeywordsExceeds255CharLength()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $feed = new Zend_Feed_Writer_Feed;
         $words = array(
             str_repeat('a', 253), str_repeat('b', 2)
@@ -259,10 +271,11 @@ class Zend_Feed_Writer_Extension_ITunes_FeedTest extends PHPUnit_Framework_TestC
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetNewFeedUrlThrowsExceptionOnInvalidUri()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $feed = new Zend_Feed_Writer_Feed;
         $feed->setItunesNewFeedUrl('http://');
     }
@@ -289,10 +302,11 @@ class Zend_Feed_Writer_Extension_ITunes_FeedTest extends PHPUnit_Framework_TestC
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetSubtitleThrowsExceptionWhenValueExceeds255Chars()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $feed = new Zend_Feed_Writer_Feed;
         $feed->setItunesSubtitle(str_repeat('a', 256));
     }
@@ -305,10 +319,11 @@ class Zend_Feed_Writer_Extension_ITunes_FeedTest extends PHPUnit_Framework_TestC
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testSetSummaryThrowsExceptionWhenValueExceeds4000Chars()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $feed = new Zend_Feed_Writer_Feed;
         $feed->setItunesSummary(str_repeat('a',4001));
     }

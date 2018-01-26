@@ -35,7 +35,7 @@ require_once 'Zend/Application/Resource/View.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Application
  */
-class Zend_Application_Resource_ViewTest extends PHPUnit_Framework_TestCase
+class Zend_Application_Resource_ViewTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {

@@ -93,10 +93,11 @@ class Zend_Barcode_Object_UpcaTest extends Zend_Barcode_Object_TestCommon
     }
 
     /**
-     * @expectedException Zend_Barcode_Object_Exception
      */
     public function testBadTextDetectedIfChecksumWished()
     {
+        $this->expectException(\Zend_Barcode_Object_Exception::class);
+
         $this->_object->setText('a');
         $this->_object->setWithChecksum(true);
         $this->_object->getText();

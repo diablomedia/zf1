@@ -34,7 +34,7 @@ require_once 'Zend/Version.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Form
  */
-class Zend_Form_SubFormTest extends PHPUnit_Framework_TestCase
+class Zend_Form_SubFormTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {
@@ -51,10 +51,10 @@ class Zend_Form_SubFormTest extends PHPUnit_Framework_TestCase
     public function testSubFormUtilizesDefaultDecorators()
     {
         $decorators = $this->form->getDecorators();
-        $this->assertTrue(array_key_exists('Zend_Form_Decorator_FormElements', $decorators));
-        $this->assertTrue(array_key_exists('Zend_Form_Decorator_HtmlTag', $decorators));
-        $this->assertTrue(array_key_exists('Zend_Form_Decorator_Fieldset', $decorators));
-        $this->assertTrue(array_key_exists('Zend_Form_Decorator_DtDdWrapper', $decorators));
+        $this->assertArrayHasKey('Zend_Form_Decorator_FormElements', $decorators);
+        $this->assertArrayHasKey('Zend_Form_Decorator_HtmlTag', $decorators);
+        $this->assertArrayHasKey('Zend_Form_Decorator_Fieldset', $decorators);
+        $this->assertArrayHasKey('Zend_Form_Decorator_DtDdWrapper', $decorators);
 
         $htmlTag = $decorators['Zend_Form_Decorator_HtmlTag'];
         $tag = $htmlTag->getOption('tag');
@@ -79,7 +79,7 @@ class Zend_Form_SubFormTest extends PHPUnit_Framework_TestCase
     {
         $form = new Zend_Form_SubFormTest_SubForm();
         $decorators = $form->getDecorators();
-        $this->assertTrue(empty($decorators));
+        $this->assertEmpty($decorators);
     }
 
     // Bugfixes

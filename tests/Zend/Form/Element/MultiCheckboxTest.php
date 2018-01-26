@@ -32,7 +32,7 @@ require_once 'Zend/Form/Element/MultiCheckbox.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Form
  */
-class Zend_Form_Element_MultiCheckboxTest extends PHPUnit_Framework_TestCase
+class Zend_Form_Element_MultiCheckboxTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -290,7 +290,7 @@ class Zend_Form_Element_MultiCheckboxTest extends PHPUnit_Framework_TestCase
 
         // Empty value + AllowEmpty=false = notInArray error message
         $messages = $this->element->getMessages();
-        $this->assertTrue(is_array($messages), 'Expected error message');
+        $this->assertInternalType('array', $messages, 'Expected error message');
         $this->assertArrayHasKey('notInArray', $messages, 'Expected \'notInArray\' error message');
 
         $this->element->setRequired(true)->setAllowEmpty(false);
@@ -298,7 +298,7 @@ class Zend_Form_Element_MultiCheckboxTest extends PHPUnit_Framework_TestCase
 
         // Empty value + Required=true + AllowEmpty=false = isEmpty error message
         $messages = $this->element->getMessages();
-        $this->assertTrue(is_array($messages), 'Expected error message');
+        $this->assertInternalType('array', $messages, 'Expected error message');
         $this->assertArrayHasKey('isEmpty', $messages, 'Expected \'isEmpty\' error message');
     }
 

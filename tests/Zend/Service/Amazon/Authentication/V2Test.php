@@ -31,7 +31,7 @@ require_once 'Zend/Service/Amazon/Authentication/V2.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_Amazon_Authentication_V2Test extends PHPUnit_Framework_TestCase
+class Zend_Service_Amazon_Authentication_V2Test extends PHPUnit\Framework\TestCase
 {
 
     /**

@@ -36,7 +36,7 @@ require_once 'Zend/Controller/Router/Route/Chain.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Navigation
  */
-class Zend_Navigation_Page_MvcTest extends PHPUnit_Framework_TestCase
+class Zend_Navigation_Page_MvcTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @var Zend_Controller_Front

@@ -36,7 +36,7 @@ require_once 'Zend/Http/Response.php';
  * @group      Zend_Http
  * @group      Zend_Http_Response
  */
-class Zend_Http_ResponseTest extends PHPUnit_Framework_TestCase
+class Zend_Http_ResponseTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     { }
@@ -246,7 +246,7 @@ class Zend_Http_ResponseTest extends PHPUnit_Framework_TestCase
 
         // Check we get an array if no code is passed
         $codes = Zend_Http_Response::responseCodeAsText();
-        $this->assertTrue(is_array($codes));
+        $this->assertInternalType('array', $codes);
         $this->assertEquals('OK', $codes[200]);
     }
 
@@ -412,7 +412,8 @@ class Zend_Http_ResponseTest extends PHPUnit_Framework_TestCase
      */
     public function testExtractHeadersRaisesExceptionWhenDetectingCRLFInjection($message)
     {
-        $this->setExpectedException('Zend_Http_Exception', 'Invalid');
+        $this->expectException('Zend_Http_Exception');
+        $this->expectExceptionMessage('Invalid');
         Zend_Http_Response::extractHeaders($message);
     }
 

@@ -81,7 +81,7 @@ abstract class Zend_Db_Statement_Pdo_TestCommon extends Zend_Db_Statement_TestCo
         foreach ($stmt as $test) {
             $this->assertTrue($test instanceof stdClass);
         }
-        $this->assertTrue(is_int(iterator_count($stmt)));
+        $this->assertInternalType('int', iterator_count($stmt));
     }
 
     public function testStatementConstructExceptionBadSql()

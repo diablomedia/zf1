@@ -33,7 +33,7 @@ require_once 'Zend/Server/Method/Prototype.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Server
  */
-class Zend_Server_Method_PrototypeTest extends PHPUnit_Framework_TestCase
+class Zend_Server_Method_PrototypeTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -71,8 +71,8 @@ class Zend_Server_Method_PrototypeTest extends PHPUnit_Framework_TestCase
     public function testParametersShouldBeEmptyArrayByDefault()
     {
         $params = $this->prototype->getParameters();
-        $this->assertTrue(is_array($params));
-        $this->assertTrue(empty($params));
+        $this->assertInternalType('array', $params);
+        $this->assertEmpty($params);
     }
 
     public function testPrototypeShouldAllowAddingSingleParameters()
@@ -80,7 +80,7 @@ class Zend_Server_Method_PrototypeTest extends PHPUnit_Framework_TestCase
         $this->testParametersShouldBeEmptyArrayByDefault();
         $this->prototype->addParameter('string');
         $params = $this->prototype->getParameters();
-        $this->assertTrue(is_array($params));
+        $this->assertInternalType('array', $params);
         $this->assertEquals(1, count($params));
         $this->assertEquals('string', $params[0]);
 

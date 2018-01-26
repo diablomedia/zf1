@@ -33,7 +33,7 @@ require_once 'Zend/Gdata/Docs/DocumentListEntry.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Docsj
  */
-class Zend_Gdata_Docs_DocumentListEntryTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_Docs_DocumentListEntryTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp()

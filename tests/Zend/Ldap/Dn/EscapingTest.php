@@ -34,7 +34,7 @@ require_once 'Zend/Ldap/Dn.php';
  * @group      Zend_Ldap
  * @group      Zend_Ldap_Dn
  */
-class Zend_Ldap_Dn_EscapingTest extends PHPUnit_Framework_TestCase
+class Zend_Ldap_Dn_EscapingTest extends PHPUnit\Framework\TestCase
 {
     public function testEscapeValues()
     {

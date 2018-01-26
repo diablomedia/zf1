@@ -37,7 +37,7 @@ require_once 'Zend/Soap/Wsdl/Strategy/ArrayOfTypeComplex.php';
  * @group      Zend_Soap
  * @group      Zend_Soap_Wsdl
  */
-class Zend_Soap_Wsdl_ArrayOfTypeComplexStrategyTest extends PHPUnit_Framework_TestCase
+class Zend_Soap_Wsdl_ArrayOfTypeComplexStrategyTest extends PHPUnit\Framework\TestCase
 {
     private $wsdl;
     private $strategy;

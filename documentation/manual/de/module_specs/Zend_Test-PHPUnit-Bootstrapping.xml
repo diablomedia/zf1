@@ -8,7 +8,7 @@
         Wie im <link linkend="zend.test.phpunit.loginexample">Login-Beispiel</link> gezeigt, sollten
         alle <acronym>MVC</acronym>-Testfälle
         <classname>Zend_Test_PHPUnit_ControllerTestCase</classname> erweitern. Diese Klasse
-        ihrerseits erweitert <classname>PHPUnit_Framework_TestCase</classname> und gibt einem alle
+        ihrerseits erweitert <classname>PHPUnit\Framework\TestCase</classname> und gibt einem alle
         Strukturen und Zusicherungen, die man von PHPUnit erwartet -- sowie einiges an Scaffolding und
         Zusicherungen, die genau auf die Zend Framework <acronym>MVC</acronym>-Implementation zugeschnitten sind.
     </para>

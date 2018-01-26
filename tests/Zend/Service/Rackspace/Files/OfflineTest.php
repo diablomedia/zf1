@@ -35,7 +35,7 @@ require_once 'Zend/Http/Client/Adapter/Test.php';
  * @group      Zend_Service_Rackspace_Files
  */
 class Zend_Service_Rackspace_Files_OfflineTest
-    extends PHPUnit_Framework_TestCase
+    extends PHPUnit\Framework\TestCase
 {
     /**
      * Reference to RackspaceFiles
@@ -248,14 +248,14 @@ class Zend_Service_Rackspace_Files_OfflineTest
     {
         $size = $this->rackspace->getSizeContainers();
         $this->assertTrue($size !== false);
-        $this->assertTrue(is_numeric($size));
+        $this->assertInternalType('numeric', $size);
     }
 
     public function testGetCountObjects()
     {
         $count = $this->rackspace->getCountObjects();
         $this->assertTrue($count !== false);
-        $this->assertTrue(is_numeric($count));
+        $this->assertInternalType('numeric', $count);
     }
 
     public function testSetMetadataObject()
@@ -282,7 +282,7 @@ class Zend_Service_Rackspace_Files_OfflineTest
     {
         $data = $this->rackspace->enableCdnContainer('zf-unit-test');
         $this->assertTrue($data !== false);
-        $this->assertTrue(is_array($data));
+        $this->assertInternalType('array', $data);
         $this->assertTrue(!empty($data['cdn_uri']));
         $this->assertTrue(!empty($data['cdn_uri_ssl']));
     }
@@ -342,7 +342,7 @@ class Zend_Service_Rackspace_Files_OfflineTest
             TESTS_ZEND_SERVICE_RACKSPACE_CONTAINER_NAME
         );
         $this->assertTrue($info !== false);
-        $this->assertTrue(is_array($info));
+        $this->assertInternalType('array', $info);
         $this->assertTrue(!empty($info['ttl']));
         $this->assertTrue(!empty($info['cdn_uri']));
         $this->assertTrue(!empty($info['cdn_uri_ssl']));

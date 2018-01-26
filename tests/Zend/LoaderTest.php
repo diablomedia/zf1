@@ -38,7 +38,7 @@ require_once 'Zend/Loader/Autoloader.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Loader
  */
-class Zend_LoaderTest extends PHPUnit_Framework_TestCase
+class Zend_LoaderTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {

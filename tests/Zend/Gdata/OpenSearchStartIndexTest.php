@@ -32,7 +32,7 @@ require_once 'Zend/Gdata.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_OpenSearch
  */
-class Zend_Gdata_OpenSearchStartIndexTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_OpenSearchStartIndexTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -43,24 +43,24 @@ class Zend_Gdata_OpenSearchStartIndexTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyOpenSearchStartIndexShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->openSearchStartIndex->extensionElements));
+        $this->assertInternalType('array', $this->openSearchStartIndex->extensionElements);
         $this->assertTrue(count($this->openSearchStartIndex->extensionElements) == 0);
     }
 
     public function testEmptyOpenSearchStartIndexShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->openSearchStartIndex->extensionAttributes));
+        $this->assertInternalType('array', $this->openSearchStartIndex->extensionAttributes);
         $this->assertTrue(count($this->openSearchStartIndex->extensionAttributes) == 0);
     }
 
     public function testSampleOpenSearchStartIndexShouldHaveNoExtensionElements() {
         $this->openSearchStartIndex->transferFromXML($this->openSearchStartIndexText);
-        $this->assertTrue(is_array($this->openSearchStartIndex->extensionElements));
+        $this->assertInternalType('array', $this->openSearchStartIndex->extensionElements);
         $this->assertTrue(count($this->openSearchStartIndex->extensionElements) == 0);
     }
 
     public function testSampleOpenSearchStartIndexShouldHaveNoExtensionAttributes() {
         $this->openSearchStartIndex->transferFromXML($this->openSearchStartIndexText);
-        $this->assertTrue(is_array($this->openSearchStartIndex->extensionAttributes));
+        $this->assertInternalType('array', $this->openSearchStartIndex->extensionAttributes);
         $this->assertTrue(count($this->openSearchStartIndex->extensionAttributes) == 0);
     }
 

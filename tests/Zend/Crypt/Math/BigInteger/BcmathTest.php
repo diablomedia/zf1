@@ -30,7 +30,7 @@ require_once 'Zend/Crypt/Math/BigInteger/Bcmath.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Crypt
  */
-class Zend_Crypt_Math_BigInteger_BcmathTest extends PHPUnit_Framework_TestCase
+class Zend_Crypt_Math_BigInteger_BcmathTest extends PHPUnit\Framework\TestCase
 {
 
     private $_math = null;

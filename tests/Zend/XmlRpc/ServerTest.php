@@ -37,7 +37,7 @@ require_once 'Zend/Server/Definition.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_XmlRpc
  */
-class Zend_XmlRpc_ServerTest extends PHPUnit_Framework_TestCase
+class Zend_XmlRpc_ServerTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Zend_XmlRpc_Server object
@@ -225,7 +225,7 @@ class Zend_XmlRpc_ServerTest extends PHPUnit_Framework_TestCase
 
         $this->assertTrue($response instanceof Zend_XmlRpc_Response);
         $return = $response->getReturnValue();
-        $this->assertTrue(is_array($return));
+        $this->assertInternalType('array', $return);
         $this->assertTrue(in_array('system.multicall', $return));
     }
 
@@ -284,7 +284,7 @@ class Zend_XmlRpc_ServerTest extends PHPUnit_Framework_TestCase
     public function testListMethods()
     {
         $methods = $this->_server->listMethods();
-        $this->assertTrue(is_array($methods));
+        $this->assertInternalType('array', $methods);
         $this->assertTrue(in_array('system.listMethods', $methods));
         $this->assertTrue(in_array('system.methodHelp', $methods));
         $this->assertTrue(in_array('system.methodSignature', $methods));
@@ -306,7 +306,8 @@ class Zend_XmlRpc_ServerTest extends PHPUnit_Framework_TestCase
         $help = $this->_server->methodHelp('system.methodHelp', 'system.listMethods');
         $this->assertContains('Display help message for an XMLRPC method', $help);
 
-        $this->setExpectedException('Zend_XmlRpc_Server_Exception', 'Method "foo" does not exist');
+        $this->expectException('Zend_XmlRpc_Server_Exception');
+        $this->expectExceptionMessage('Method "foo" does not exist');
         $this->_server->methodHelp('foo');
     }
 
@@ -323,10 +324,11 @@ class Zend_XmlRpc_ServerTest extends PHPUnit_Framework_TestCase
     public function testMethodSignature()
     {
         $sig = $this->_server->methodSignature('system.methodSignature');
-        $this->assertTrue(is_array($sig));
+        $this->assertInternalType('array', $sig);
         $this->assertEquals(1, count($sig), var_export($sig, 1));
 
-        $this->setExpectedException('Zend_XmlRpc_Server_Exception', 'Method "foo" does not exist');
+        $this->expectException('Zend_XmlRpc_Server_Exception');
+        $this->expectExceptionMessage('Method "foo" does not exist');
         $this->_server->methodSignature('foo');
     }
 
@@ -359,10 +361,10 @@ class Zend_XmlRpc_ServerTest extends PHPUnit_Framework_TestCase
 
         $this->assertTrue($response instanceof Zend_XmlRpc_Response, $response->__toString() . "\n\n" . $request->__toString());
         $returns = $response->getReturnValue();
-        $this->assertTrue(is_array($returns));
+        $this->assertInternalType('array', $returns);
         $this->assertEquals(2, count($returns), var_export($returns, 1));
-        $this->assertTrue(is_array($returns[0]), var_export($returns[0], 1));
-        $this->assertTrue(is_string($returns[1]), var_export($returns[1], 1));
+        $this->assertInternalType('array', $returns[0], var_export($returns[0], 1));
+        $this->assertInternalType('string', $returns[1], var_export($returns[1], 1));
     }
 
     /**
@@ -387,9 +389,9 @@ class Zend_XmlRpc_ServerTest extends PHPUnit_Framework_TestCase
 
         $this->assertTrue($response instanceof Zend_XmlRpc_Response, $response->__toString() . "\n\n" . $request->__toString());
         $returns = $response->getReturnValue();
-        $this->assertTrue(is_array($returns));
+        $this->assertInternalType('array', $returns);
         $this->assertEquals(2, count($returns), var_export($returns, 1));
-        $this->assertTrue(is_array($returns[0]), var_export($returns[0], 1));
+        $this->assertInternalType('array', $returns[0], var_export($returns[0], 1));
         $this->assertSame(array(
             'faultCode' => 620, 'faultString' => 'Method "undefined" does not exist'),
             $returns[1], var_export($returns[1], 1));
@@ -579,31 +581,31 @@ class Zend_XmlRpc_ServerTest extends PHPUnit_Framework_TestCase
             )
         );
         $returned = $this->_server->multicall($try);
-        $this->assertTrue(is_array($returned));
+        $this->assertInternalType('array', $returned);
         $this->assertEquals(5, count($returned));
 
         $response = $returned[0];
-        $this->assertTrue(is_array($response));
+        $this->assertInternalType('array', $response);
         $this->assertTrue(isset($response['faultCode']));
         $this->assertEquals(601, $response['faultCode']);
 
         $response = $returned[1];
-        $this->assertTrue(is_array($response));
+        $this->assertInternalType('array', $response);
         $this->assertTrue(isset($response['faultCode']));
         $this->assertEquals(602, $response['faultCode']);
 
         $response = $returned[2];
-        $this->assertTrue(is_array($response));
+        $this->assertInternalType('array', $response);
         $this->assertTrue(isset($response['faultCode']));
         $this->assertEquals(603, $response['faultCode']);
 
         $response = $returned[3];
-        $this->assertTrue(is_array($response));
+        $this->assertInternalType('array', $response);
         $this->assertTrue(isset($response['faultCode']));
         $this->assertEquals(604, $response['faultCode']);
 
         $response = $returned[4];
-        $this->assertTrue(is_array($response));
+        $this->assertInternalType('array', $response);
         $this->assertTrue(isset($response['faultCode']));
         $this->assertEquals(605, $response['faultCode']);
     }
@@ -639,7 +641,9 @@ class Zend_XmlRpc_ServerTest extends PHPUnit_Framework_TestCase
 
     public function testCallingUnregisteredMethod()
     {
-        $this->setExpectedException('Zend_XmlRpc_Server_Exception',
+        $this->expectException('Zend_XmlRpc_Server_Exception'
+        );
+        $this->expectExceptionMessage(
             'Unknown instance method called on server: foobarbaz');
         $this->_server->foobarbaz();
     }
@@ -652,13 +656,15 @@ class Zend_XmlRpc_ServerTest extends PHPUnit_Framework_TestCase
 
     public function testPassingInvalidRequestClassThrowsException()
     {
-        $this->setExpectedException('Zend_XmlRpc_Server_Exception', 'Invalid request class');
+        $this->expectException('Zend_XmlRpc_Server_Exception');
+        $this->expectExceptionMessage('Invalid request class');
         $this->_server->setRequest('stdClass');
     }
 
     public function testPassingInvalidResponseClassThrowsException()
     {
-        $this->setExpectedException('Zend_XmlRpc_Server_Exception', 'Invalid response class');
+        $this->expectException('Zend_XmlRpc_Server_Exception');
+        $this->expectExceptionMessage('Invalid response class');
         $this->_server->setResponseClass('stdClass');
     }
 

@@ -39,7 +39,7 @@ require_once 'Zend/Ldap/Exception.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Ldap
  */
-class Zend_Ldap_OfflineTest extends PHPUnit_Framework_TestCase
+class Zend_Ldap_OfflineTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Zend_Ldap instance

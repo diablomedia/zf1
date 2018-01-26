@@ -34,7 +34,7 @@ require_once 'Zend/Reflection/File.php';
  * @group      Zend_Reflection
  * @group      Zend_Reflection_File
  */
-class Zend_Reflection_FileTest extends PHPUnit_Framework_TestCase
+class Zend_Reflection_FileTest extends PHPUnit\Framework\TestCase
 {
 
     public function testFileConstructor()
@@ -45,10 +45,11 @@ class Zend_Reflection_FileTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Reflection_Exception
      */
     public function testFileConstructorThrowsExceptionOnNonExistentFile()
     {
+        $this->expectException(\Zend_Reflection_Exception::class);
+
         $nonExistentFile = 'Non/Existent/File.php';
         $reflectionFile = new Zend_Reflection_File($nonExistentFile);
         $this->fail('Exception should have been thrown');
@@ -74,10 +75,11 @@ class Zend_Reflection_FileTest extends PHPUnit_Framework_TestCase
 
 
     /**
-     * @expectedException Zend_Reflection_Exception
      */
     public function testFileGetClassThrowsExceptionOnNonExistentClassName()
     {
+        $this->expectException(\Zend_Reflection_Exception::class);
+
         $fileToRequire = dirname(__FILE__) . '/_files/TestSampleClass.php';
         require_once $fileToRequire;
         $reflectionFile = new Zend_Reflection_File($fileToRequire);

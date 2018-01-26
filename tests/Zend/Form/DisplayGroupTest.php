@@ -42,7 +42,7 @@ require_once 'Zend/View.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Form
  */
-class Zend_Form_DisplayGroupTest extends PHPUnit_Framework_TestCase
+class Zend_Form_DisplayGroupTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {
@@ -186,8 +186,8 @@ class Zend_Form_DisplayGroupTest extends PHPUnit_Framework_TestCase
         $this->testCanAddMultipleElements();
         $this->group->clearElements();
         $elements = $this->group->getElements();
-        $this->assertTrue(is_array($elements));
-        $this->assertTrue(empty($elements));
+        $this->assertInternalType('array', $elements);
+        $this->assertEmpty($elements);
     }
 
     // Plugin loader
@@ -313,12 +313,12 @@ class Zend_Form_DisplayGroupTest extends PHPUnit_Framework_TestCase
             array(array('div2' => 'HtmlTag'), array('tag' => 'div')),
         ));
         $decorators = $this->group->getDecorators();
-        $this->assertTrue(array_key_exists('div', $decorators));
-        $this->assertTrue(array_key_exists('div2', $decorators));
+        $this->assertArrayHasKey('div', $decorators);
+        $this->assertArrayHasKey('div2', $decorators);
         $this->group->removeDecorator('div');
         $decorators = $this->group->getDecorators();
-        $this->assertFalse(array_key_exists('div', $decorators));
-        $this->assertTrue(array_key_exists('div2', $decorators));
+        $this->assertArrayNotHasKey('div', $decorators);
+        $this->assertArrayHasKey('div2', $decorators);
     }
 
 
@@ -433,7 +433,7 @@ class Zend_Form_DisplayGroupTest extends PHPUnit_Framework_TestCase
 
         restore_error_handler();
 
-        $this->assertTrue(empty($text));
+        $this->assertEmpty($text);
         $this->assertTrue(isset($this->error));
         $this->assertEquals('Raising exception in decorator callback', $this->error);
     }
@@ -719,7 +719,7 @@ class Zend_Form_DisplayGroupTest extends PHPUnit_Framework_TestCase
             $this->loader
         );
         $decorators = $group->getDecorators();
-        $this->assertTrue(empty($decorators));
+        $this->assertEmpty($decorators);
     }
 
     /**
@@ -747,10 +747,11 @@ class Zend_Form_DisplayGroupTest extends PHPUnit_Framework_TestCase
 
     /**
      * @group ZF-3217
-     * @expectedException Zend_Form_Exception
      */
     public function testOverloadingToInvalidMethodsShouldThrowAnException()
     {
+        $this->expectException(\Zend_Form_Exception::class);
+
         $html = $this->group->bogusMethodCall();
     }
 

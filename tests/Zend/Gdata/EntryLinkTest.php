@@ -31,7 +31,7 @@ require_once 'Zend/Gdata.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Gdata
  */
-class Zend_Gdata_EntryLinkTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_EntryLinkTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -42,24 +42,24 @@ class Zend_Gdata_EntryLinkTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyEntryLinkShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->entryLink->extensionElements));
+        $this->assertInternalType('array', $this->entryLink->extensionElements);
         $this->assertTrue(count($this->entryLink->extensionElements) == 0);
     }
 
     public function testEmptyEntryLinkShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->entryLink->extensionAttributes));
+        $this->assertInternalType('array', $this->entryLink->extensionAttributes);
         $this->assertTrue(count($this->entryLink->extensionAttributes) == 0);
     }
 
     public function testSampleEntryLinkShouldHaveNoExtensionElements() {
         $this->entryLink->transferFromXML($this->entryLinkText);
-        $this->assertTrue(is_array($this->entryLink->extensionElements));
+        $this->assertInternalType('array', $this->entryLink->extensionElements);
         $this->assertTrue(count($this->entryLink->extensionElements) == 0);
     }
 
     public function testSampleEntryLinkShouldHaveNoExtensionAttributes() {
         $this->entryLink->transferFromXML($this->entryLinkText);
-        $this->assertTrue(is_array($this->entryLink->extensionAttributes));
+        $this->assertInternalType('array', $this->entryLink->extensionAttributes);
         $this->assertTrue(count($this->entryLink->extensionAttributes) == 0);
     }
 

@@ -40,7 +40,7 @@ require_once 'Zend/Cloud/Infrastructure/Instance.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-abstract class Zend_Cloud_Infrastructure_TestCase extends PHPUnit_Framework_TestCase
+abstract class Zend_Cloud_Infrastructure_TestCase extends PHPUnit\Framework\TestCase
 {
     /**
      * Reference to Document adapter to test
@@ -122,8 +122,10 @@ abstract class Zend_Cloud_Infrastructure_TestCase extends PHPUnit_Framework_Test
      */
     public function testConstructExceptionMissingParams() 
     {
-        $this->setExpectedException(
-            'Zend\Cloud\Infrastructure\Exception\InvalidArgumentException',
+        $this->expectException(
+            'Zend\Cloud\Infrastructure\Exception\InvalidArgumentException'
+        );
+        $this->expectExceptionMessage(
             'You must pass an array of params'
         );
         $instance = new Zend_Cloud_Infrastructure_Instance(self::$adapter,array());
@@ -134,8 +136,10 @@ abstract class Zend_Cloud_Infrastructure_TestCase extends PHPUnit_Framework_Test
      */
     public function testConstructExceptionInvalidKeys()
     {
-        $this->setExpectedException(
-            'Zend\Cloud\Infrastructure\Exception\InvalidArgumentException',
+        $this->expectException(
+            'Zend\Cloud\Infrastructure\Exception\InvalidArgumentException'
+        );
+        $this->expectExceptionMessage(
             'The param "'.Zend_Cloud_Infrastructure_Instance::INSTANCE_ID.'" is a required param for Zend\Cloud\Infrastructure\Instance'
         );
         $instance = new Zend_Cloud_Infrastructure_Instance(self::$adapter,array('foo'=>'bar'));

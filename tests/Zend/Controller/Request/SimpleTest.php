@@ -33,7 +33,7 @@ require_once 'Zend/Controller/Request/Simple.php';
  * @group      Zend_Controller
  * @group      Zend_Controller_Request
  */
-class Zend_Controller_Request_SimpleTest extends PHPUnit_Framework_TestCase
+class Zend_Controller_Request_SimpleTest extends PHPUnit\Framework\TestCase
 {
     public function testSimpleRequestIsOfAbstractRequestType()
     {

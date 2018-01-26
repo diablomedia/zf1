@@ -53,7 +53,7 @@ require_once 'Zend/Config.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Queue
  */
-abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit_Framework_TestCase
+abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit\Framework\TestCase
 {
     public function tearDown()
     {
@@ -184,7 +184,7 @@ abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit_Framework_TestCase
 
         $new = $adapter->getOptions();
 
-        $this->assertTrue(is_array($new));
+        $this->assertInternalType('array', $new);
         $this->assertEquals($new['setting'], $config['setting']);
 
         // delete the queue we created
@@ -511,7 +511,7 @@ abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit_Framework_TestCase
         $queues = $adapter->getQueues();
 
         // this is an array right?
-        $this->assertTrue(is_array($queues));
+        $this->assertInternalType('array', $queues);
 
         // make sure our current queue is in this list.
         $this->assertTrue(in_array($queue->getName(), $queues));
@@ -578,7 +578,7 @@ abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit_Framework_TestCase
         $adapter = $queue->getAdapter();
 
         $list = $adapter->getCapabilities();
-        $this->assertTrue(is_array($list));
+        $this->assertInternalType('array', $list);
 
         // these functions must have an boolean answer
         $func = array(
@@ -589,7 +589,7 @@ abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit_Framework_TestCase
 
         foreach ( array_values($func) as $f ) {
             $this->assertTrue(isset($list[$f]));
-            $this->assertTrue(is_bool($list[$f]));
+            $this->assertInternalType('bool', $list[$f]);
         }
 
         // delete the queue we created
@@ -605,7 +605,7 @@ abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit_Framework_TestCase
 
         $list = $adapter->getCapabilities();
         foreach ( $list as $function => $result ) {
-            $this->assertTrue(is_bool($result));
+            $this->assertInternalType('bool', $result);
             if ( $result ) {
                 $this->assertTrue($adapter->isSupported($function));
             } else {

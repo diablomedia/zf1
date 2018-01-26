@@ -57,7 +57,7 @@ class Zend_Tool_Project_Provider_Test extends Zend_Tool_Project_Provider_Abstrac
 
     public static function isPHPUnitAvailable()
     {
-        if (class_exists('PHPUnit_Runner_Version', false)) {
+        if (class_exists('PHPUnit\Runner\Version', false) || class_exists('PHPUnit_Runner_Version', false)) {
             return true;
         }
         

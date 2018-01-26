@@ -34,7 +34,7 @@ require_once 'Zend/Filter/StripTags.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Filter
  */
-class Zend_Filter_StripTagsTest extends PHPUnit_Framework_TestCase
+class Zend_Filter_StripTagsTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Zend_Filter_StripTags object
@@ -513,7 +513,7 @@ class Zend_Filter_StripTagsTest extends PHPUnit_Framework_TestCase
         $input    = 'äöü<!-- a comment -->äöü';
         $input    = iconv("UTF-8", "ISO-8859-1", $input);
         $output   = $this->_filter->filter($input);
-        $this->assertFalse(empty($output));
+        $this->assertNotEmpty($output);
     }
 
     /**
@@ -528,7 +528,7 @@ class Zend_Filter_StripTagsTest extends PHPUnit_Framework_TestCase
         $input    = 'äöü<!-- a comment -->äöü';
         $input    = iconv("UTF-8", "ISO-8859-1", $input);
         $output   = $this->_filter->filter($input);
-        $this->assertFalse(empty($output));
+        $this->assertNotEmpty($output);
     }
 
     /**

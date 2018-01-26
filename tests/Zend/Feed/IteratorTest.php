@@ -33,7 +33,7 @@ require_once 'Zend/Feed.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Feed
  */
-class Zend_Feed_IteratorTest extends PHPUnit_Framework_TestCase
+class Zend_Feed_IteratorTest extends PHPUnit\Framework\TestCase
 {
     private $_feed;
     private $_nsfeed;

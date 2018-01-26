@@ -42,7 +42,7 @@ require_once 'Zend/Navigation.php';
  * @group      Zend_View_Helper
  */
 abstract class Zend_View_Helper_Navigation_TestAbstract
-    extends PHPUnit_Framework_TestCase
+    extends PHPUnit\Framework\TestCase
 {
     const REGISTRY_KEY = 'Zend_Navigation';
 

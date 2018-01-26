@@ -33,7 +33,7 @@ require_once 'Zend/Json.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Dojo
  */
-class Zend_Dojo_BuildLayerTest extends PHPUnit_Framework_TestCase
+class Zend_Dojo_BuildLayerTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -59,10 +59,11 @@ class Zend_Dojo_BuildLayerTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Dojo_Exception
      */
     public function testRetrievingDojoHelperShouldRaiseExceptionWhenNoViewPresent()
     {
+        $this->expectException(\Zend_Dojo_Exception::class);
+
         $build = new Zend_Dojo_BuildLayer();
         $build->getDojoHelper();
     }
@@ -128,10 +129,11 @@ class Zend_Dojo_BuildLayerTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Dojo_Exception
      */
     public function testSettingLayerNameToInvalidFormatShouldRaiseException()
     {
+        $this->expectException(\Zend_Dojo_Exception::class);
+
         $build = new Zend_Dojo_BuildLayer();
         $build->setLayerName('customFoo#bar');
     }
@@ -273,14 +275,14 @@ class Zend_Dojo_BuildLayerTest extends PHPUnit_Framework_TestCase
     {
         $build = new Zend_Dojo_BuildLayer();
         $prefixes = $build->getProfilePrefixes();
-        $this->assertTrue(empty($prefixes));
+        $this->assertEmpty($prefixes);
     }
 
     public function testProfilePrefixesIncludeLayerNamePrefix()
     {
         $build = new Zend_Dojo_BuildLayer(array('layerName' => 'foo.main'));
         $prefixes = $build->getProfilePrefixes();
-        $this->assertTrue(array_key_exists('foo', $prefixes), var_export($prefixes, 1));
+        $this->assertArrayHasKey('foo', $prefixes, var_export($prefixes, 1));
         $this->assertEquals(array('foo', '../foo'), $prefixes['foo']);
     }
 
@@ -291,9 +293,9 @@ class Zend_Dojo_BuildLayerTest extends PHPUnit_Framework_TestCase
         $build = new Zend_Dojo_BuildLayer(array('view' => $this->view));
 
         $prefixes = $build->getProfilePrefixes();
-        $this->assertTrue(array_key_exists('dijit', $prefixes), var_export($prefixes, 1));
+        $this->assertArrayHasKey('dijit', $prefixes, var_export($prefixes, 1));
         $this->assertEquals(array('dijit', '../dijit'), $prefixes['dijit']);
-        $this->assertTrue(array_key_exists('dojox', $prefixes), var_export($prefixes, 1));
+        $this->assertArrayHasKey('dojox', $prefixes, var_export($prefixes, 1));
         $this->assertEquals(array('dojox', '../dojox'), $prefixes['dojox']);
     }
 

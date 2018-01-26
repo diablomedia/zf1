@@ -37,7 +37,7 @@ require_once 'Zend/Service/Amazon/Ec2/Instance.php';
  * @group      Zend_Service_Amazon
  * @group      Zend_Service_Amazon_Ec2
  */
-class Zend_Service_Amazon_Ec2_InstanceTest extends PHPUnit_Framework_TestCase
+class Zend_Service_Amazon_Ec2_InstanceTest extends PHPUnit\Framework\TestCase
 {
 
     /**

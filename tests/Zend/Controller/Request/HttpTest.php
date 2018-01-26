@@ -31,7 +31,7 @@ require_once 'Zend/Controller/Request/Http.php';
  * @group      Zend_Controller
  * @group      Zend_Controller_Request
  */
-class Zend_Controller_Request_HttpTest extends PHPUnit_Framework_TestCase
+class Zend_Controller_Request_HttpTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @var Zend_Controller_Request_Http

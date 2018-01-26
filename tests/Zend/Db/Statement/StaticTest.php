@@ -32,7 +32,7 @@
  * @group      Zend_Db
  * @group      Zend_Db_Statement
  */
-class Zend_Db_Statement_StaticTest extends PHPUnit_Framework_TestCase
+class Zend_Db_Statement_StaticTest extends PHPUnit\Framework\TestCase
 {
 
     public function testStatic()

@@ -39,7 +39,7 @@ require_once 'Zend/OpenId/ResponseHelper.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_OpenId
  */
-class Zend_OpenIdTest extends PHPUnit_Framework_TestCase
+class Zend_OpenIdTest extends PHPUnit\Framework\TestCase
 {
     private $_serverVariables;
 
@@ -415,9 +415,9 @@ class Zend_OpenIdTest extends PHPUnit_Framework_TestCase
         $this->assertSame( 302, $response->getHttpResponseCode() );
         $this->assertSame( array(), $response->getRawHeaders() );
         $headers = $response->getHeaders();
-        $this->assertTrue( is_array($headers) );
+        $this->assertInternalType( 'array', $headers );
         $this->assertSame( 1, count($headers) );
-        $this->assertTrue( is_array($headers[0]) );
+        $this->assertInternalType( 'array', $headers[0] );
         $this->assertSame( 3, count($headers[0]) );
         $this->assertSame( 'Location', $headers[0]['name'] );
         $this->assertSame( 'http://www.test.com/', $headers[0]['value'] );
@@ -530,10 +530,10 @@ class Zend_OpenIdTest extends PHPUnit_Framework_TestCase
     {
         $this->assertSame( '', Zend_OpenId::randomBytes(0) );
         $x = Zend_OpenId::randomBytes(1);
-        $this->assertTrue( is_string($x) );
+        $this->assertInternalType( 'string', $x );
         $this->assertSame( 1, strlen($x) );
         $x = Zend_OpenId::randomBytes(1024);
-        $this->assertTrue( is_string($x) );
+        $this->assertInternalType( 'string', $x );
         $this->assertSame( 1024, strlen($x) );
     }
 
@@ -585,7 +585,7 @@ class Zend_OpenIdTest extends PHPUnit_Framework_TestCase
                 pack('H*', '05'),
                 pack('H*', '09'));
             $dh_details = Zend_OpenId::getDhKeyDetails($dh);
-            $this->assertTrue( is_array($dh_details) );
+            $this->assertInternalType( 'array', $dh_details );
             $this->assertSame( 4, count($dh_details));
             $this->assertSame( '0233', bin2hex($dh_details['p']) );
             $this->assertSame( '05', bin2hex($dh_details['g']) );
@@ -597,7 +597,7 @@ class Zend_OpenIdTest extends PHPUnit_Framework_TestCase
                 pack('H*', '02'),
                 pack('H*', '09'));
             $dh_details = Zend_OpenId::getDhKeyDetails($dh);
-            $this->assertTrue( is_array($dh_details) );
+            $this->assertInternalType( 'array', $dh_details );
             $this->assertSame( 4, count($dh_details) );
             $this->assertSame( '0233', bin2hex($dh_details['p']) );
             $this->assertSame( '02', bin2hex($dh_details['g']) );
@@ -608,13 +608,13 @@ class Zend_OpenIdTest extends PHPUnit_Framework_TestCase
                 pack('H*', '0233'),
                 pack('H*', '02'));
             $dh_details = Zend_OpenId::getDhKeyDetails($dh);
-            $this->assertTrue( is_array($dh_details) );
+            $this->assertInternalType( 'array', $dh_details );
             $this->assertSame( 4, count($dh_details) );
             $this->assertSame( '0233', bin2hex($dh_details['p']) );
             $this->assertSame( '02', bin2hex($dh_details['g']) );
-            $this->assertTrue( is_string($dh_details['priv_key']) );
+            $this->assertInternalType( 'string', $dh_details['priv_key'] );
             $this->assertTrue( strlen($dh_details['priv_key']) > 0 );
-            $this->assertTrue( is_string($dh_details['pub_key']) );
+            $this->assertInternalType( 'string', $dh_details['pub_key'] );
             $this->assertTrue( strlen($dh_details['pub_key']) > 0 );
         } catch (Zend_OpenId_Exception $e) {
             $this->markTestSkipped($e->getMessage());

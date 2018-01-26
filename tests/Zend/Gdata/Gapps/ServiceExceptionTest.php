@@ -33,7 +33,7 @@ require_once 'Zend/Gdata/Gapps.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Gapps
  */
-class Zend_Gdata_Gapps_ServiceExceptionTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_Gapps_ServiceExceptionTest extends PHPUnit\Framework\TestCase
 {
     protected $fixture;
     protected $data;
@@ -50,16 +50,17 @@ class Zend_Gdata_Gapps_ServiceExceptionTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Gdata_Gapps_ServiceException
      */
     public function testCanThrowServiceException() {
+        $this->expectException(\Zend_Gdata_Gapps_ServiceException::class);
+
         throw $this->fixture;
     }
 
     public function testCanSetAndGetErrorArray() {
         $this->fixture->setErrors($this->data);
         $incoming = $this->fixture->getErrors();
-        $this->assertTrue(is_array($incoming));
+        $this->assertInternalType('array', $incoming);
         $this->assertEquals(count($this->data), count($incoming));
         foreach ($this->data as $i) {
             $this->assertEquals($i, $incoming[$i->getErrorCode()]);
@@ -77,7 +78,7 @@ class Zend_Gdata_Gapps_ServiceExceptionTest extends PHPUnit_Framework_TestCase
     public function testCanSetPropertiesViaConstructor() {
         $this->fixture = new Zend_Gdata_Gapps_ServiceException($this->data);
         $incoming = $this->fixture->getErrors();
-        $this->assertTrue(is_array($incoming));
+        $this->assertInternalType('array', $incoming);
         $this->assertEquals(count($this->data), count($incoming));
         foreach($this->data as $i) {
             $this->assertEquals($i, $incoming[$i->getErrorCode()]);
@@ -105,7 +106,7 @@ class Zend_Gdata_Gapps_ServiceExceptionTest extends PHPUnit_Framework_TestCase
     public function testCanConvertFromXML() {
         $this->fixture->importFromString($this->xmlSample);
         $incoming = $this->fixture->getErrors();
-        $this->assertTrue(is_array($incoming));
+        $this->assertInternalType('array', $incoming);
         $this->assertEquals(3, count($incoming));
         $this->assertEquals("9925", $incoming[9925]->errorCode);
         $this->assertEquals("Foo", $incoming[9925]->invalidInput);

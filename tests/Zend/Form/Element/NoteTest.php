@@ -34,7 +34,7 @@ require_once 'Zend/Form/Element/Note.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Form
  */
-class Zend_Form_Element_NoteTest extends PHPUnit_Framework_TestCase
+class Zend_Form_Element_NoteTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.

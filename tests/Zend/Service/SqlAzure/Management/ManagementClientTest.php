@@ -39,19 +39,15 @@ require_once 'Zend/Service/SqlAzure/Management/Client.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_SqlAzure_Management_ManagementClientTest extends PHPUnit_Framework_TestCase
+class Zend_Service_SqlAzure_Management_ManagementClientTest extends PHPUnit\Framework\TestCase
 {
 	static $path;
 	static $debug = true;
 	static $serverName = '';
 
-    public function __construct()
-    {
-        self::$path = dirname(__FILE__).'/_files/';
-    }
-
     public function setUp()
     {
+        self::$path = dirname(__FILE__).'/_files/';
         if (!defined(TESTS_ZEND_SERVICE_WINDOWSAZURE_SQLMANAGEMENT_RUNTESTS)) {
         	$this->markTestSkipped('Tests not configured to run');
             return;

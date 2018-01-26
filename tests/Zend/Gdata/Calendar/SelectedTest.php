@@ -32,7 +32,7 @@ require_once 'Zend/Gdata/Calendar.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Calendar
  */
-class Zend_Gdata_Calendar_SelectedTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_Calendar_SelectedTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -43,24 +43,24 @@ class Zend_Gdata_Calendar_SelectedTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptySelectedShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->selected->extensionElements));
+        $this->assertInternalType('array', $this->selected->extensionElements);
         $this->assertTrue(count($this->selected->extensionElements) == 0);
     }
 
     public function testEmptySelectedShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->selected->extensionAttributes));
+        $this->assertInternalType('array', $this->selected->extensionAttributes);
         $this->assertTrue(count($this->selected->extensionAttributes) == 0);
     }
 
     public function testSampleSelectedShouldHaveNoExtensionElements() {
         $this->selected->transferFromXML($this->selectedText);
-        $this->assertTrue(is_array($this->selected->extensionElements));
+        $this->assertInternalType('array', $this->selected->extensionElements);
         $this->assertTrue(count($this->selected->extensionElements) == 0);
     }
 
     public function testSampleSelectedShouldHaveNoExtensionAttributes() {
         $this->selected->transferFromXML($this->selectedText);
-        $this->assertTrue(is_array($this->selected->extensionAttributes));
+        $this->assertInternalType('array', $this->selected->extensionAttributes);
         $this->assertTrue(count($this->selected->extensionAttributes) == 0);
     }
 

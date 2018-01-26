@@ -35,7 +35,7 @@ require_once 'Zend/Service/Delicious/SimplePost.php';
  * @group      Zend_Service
  * @group      Zend_Service_Delicious
  */
-class Zend_Service_Delicious_SimplePostTest extends PHPUnit_Framework_TestCase
+class Zend_Service_Delicious_SimplePostTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Ensures that the constructor throws an exception when the title is missing

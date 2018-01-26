@@ -35,7 +35,7 @@ require_once 'Zend/CodeGenerator/Php/Docblock.php';
  * @group Zend_CodeGenerator
  * @group Zend_CodeGenerator_Php
  */
-class Zend_CodeGenerator_Php_DocblockTest extends PHPUnit_Framework_TestCase
+class Zend_CodeGenerator_Php_DocblockTest extends PHPUnit\Framework\TestCase
 {
 
     /**

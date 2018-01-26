@@ -32,7 +32,7 @@ class Test_Http_Client_19485876 extends Zend_Http_Client {}
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Oauth
  */
-class Zend_OauthTest extends PHPUnit_Framework_TestCase
+class Zend_OauthTest extends PHPUnit\Framework\TestCase
 {
 
     public function teardown()

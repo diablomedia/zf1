@@ -25,7 +25,7 @@
  */
 require_once 'Zend/Mail/Header/HeaderValue.php';
 
-class Zend_Mail_Header_HeaderValueTest extends PHPUnit_Framework_TestCase
+class Zend_Mail_Header_HeaderValueTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Data for filter value
@@ -104,7 +104,8 @@ class Zend_Mail_Header_HeaderValueTest extends PHPUnit_Framework_TestCase
      */
     public function testAssertValidRaisesExceptionForInvalidValues($value)
     {
-        $this->setExpectedException('Zend_Mail_Exception', 'Invalid');
+        $this->expectException('Zend_Mail_Exception');
+        $this->expectExceptionMessage('Invalid');
         Zend_Mail_Header_HeaderValue::assertValid($value);
     }
 }

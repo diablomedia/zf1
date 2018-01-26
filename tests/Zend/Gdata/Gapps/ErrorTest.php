@@ -32,7 +32,7 @@ require_once 'Zend/Gdata/Gapps.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Gapps
  */
-class Zend_Gdata_Gapps_ErrorTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_Gapps_ErrorTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {

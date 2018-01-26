@@ -33,7 +33,7 @@ require_once 'Zend/Validate/File/FilesSize.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Validate
  */
-class Zend_Validate_File_FilesSizeTest extends PHPUnit_Framework_TestCase
+class Zend_Validate_File_FilesSizeTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {
@@ -78,7 +78,7 @@ class Zend_Validate_File_FilesSizeTest extends PHPUnit_Framework_TestCase
 
         $validator = new Zend_Validate_File_FilesSize(array('min' => 0, 'max' => 200));
         $this->assertEquals(false, $validator->isValid(dirname(__FILE__) . '/_files/nofile.mo'));
-        $this->assertTrue(array_key_exists('fileFilesSizeNotReadable', $validator->getMessages()));
+        $this->assertArrayHasKey('fileFilesSizeNotReadable', $validator->getMessages());
 
         $validator = new Zend_Validate_File_FilesSize(array('min' => 0, 'max' => 500000));
         $this->assertEquals(true, $validator->isValid(array(

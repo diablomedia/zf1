@@ -33,7 +33,7 @@ require_once 'Zend/Version.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Feed_Writer_Renderer_Feed_RssTest extends PHPUnit_Framework_TestCase
+class Zend_Feed_Writer_Renderer_Feed_RssTest extends PHPUnit\Framework\TestCase
 {
 
     protected $_validWriter = null;
@@ -96,10 +96,11 @@ class Zend_Feed_Writer_Renderer_Feed_RssTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testFeedTitleIfMissingThrowsException()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $rssFeed = new Zend_Feed_Writer_Renderer_Feed_Rss($this->_validWriter);
         $this->_validWriter->remove('title');
         $rssFeed->render();
@@ -126,10 +127,11 @@ class Zend_Feed_Writer_Renderer_Feed_RssTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testFeedDescriptionThrowsExceptionIfMissing()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $rssFeed = new Zend_Feed_Writer_Renderer_Feed_Rss($this->_validWriter);
         $this->_validWriter->remove('description');
         $rssFeed->render();
@@ -229,10 +231,11 @@ class Zend_Feed_Writer_Renderer_Feed_RssTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testFeedLinkToHtmlVersionOfFeedIfMissingThrowsException()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $rssFeed = new Zend_Feed_Writer_Renderer_Feed_Rss($this->_validWriter);
         $this->_validWriter->remove('link');
         $rssFeed->render();
@@ -402,10 +405,11 @@ class Zend_Feed_Writer_Renderer_Feed_RssTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testImageThrowsExceptionOnMissingLink()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $this->_validWriter->setImage(array(
             'uri' => 'http://www.example.com/logo.gif',
             'title' => 'Image ALT'
@@ -415,10 +419,11 @@ class Zend_Feed_Writer_Renderer_Feed_RssTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testImageThrowsExceptionOnMissingTitle()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $this->_validWriter->setImage(array(
             'uri' => 'http://www.example.com/logo.gif',
             'link' => 'http://www.example.com'
@@ -428,10 +433,11 @@ class Zend_Feed_Writer_Renderer_Feed_RssTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testImageThrowsExceptionOnMissingUri()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $this->_validWriter->setImage(array(
             'link' => 'http://www.example.com',
             'title' => 'Image ALT'
@@ -441,10 +447,11 @@ class Zend_Feed_Writer_Renderer_Feed_RssTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testImageThrowsExceptionIfOptionalDescriptionInvalid()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $this->_validWriter->setImage(array(
             'uri' => 'http://www.example.com/logo.gif',
             'link' => 'http://www.example.com',
@@ -456,10 +463,11 @@ class Zend_Feed_Writer_Renderer_Feed_RssTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testImageThrowsExceptionIfOptionalDescriptionEmpty()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $this->_validWriter->setImage(array(
             'uri' => 'http://www.example.com/logo.gif',
             'link' => 'http://www.example.com',
@@ -471,10 +479,11 @@ class Zend_Feed_Writer_Renderer_Feed_RssTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testImageThrowsExceptionIfOptionalHeightNotAnInteger()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $this->_validWriter->setImage(array(
             'uri' => 'http://www.example.com/logo.gif',
             'link' => 'http://www.example.com',
@@ -487,10 +496,11 @@ class Zend_Feed_Writer_Renderer_Feed_RssTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testImageThrowsExceptionIfOptionalHeightEmpty()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $this->_validWriter->setImage(array(
             'uri' => 'http://www.example.com/logo.gif',
             'link' => 'http://www.example.com',
@@ -503,10 +513,11 @@ class Zend_Feed_Writer_Renderer_Feed_RssTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testImageThrowsExceptionIfOptionalHeightGreaterThan400()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $this->_validWriter->setImage(array(
             'uri' => 'http://www.example.com/logo.gif',
             'link' => 'http://www.example.com',
@@ -519,10 +530,11 @@ class Zend_Feed_Writer_Renderer_Feed_RssTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testImageThrowsExceptionIfOptionalWidthNotAnInteger()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $this->_validWriter->setImage(array(
             'uri' => 'http://www.example.com/logo.gif',
             'link' => 'http://www.example.com',
@@ -535,10 +547,11 @@ class Zend_Feed_Writer_Renderer_Feed_RssTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testImageThrowsExceptionIfOptionalWidthEmpty()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $this->_validWriter->setImage(array(
             'uri' => 'http://www.example.com/logo.gif',
             'link' => 'http://www.example.com',
@@ -551,10 +564,11 @@ class Zend_Feed_Writer_Renderer_Feed_RssTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Feed_Exception
      */
     public function testImageThrowsExceptionIfOptionalWidthGreaterThan144()
     {
+        $this->expectException(\Zend_Feed_Exception::class);
+
         $this->_validWriter->setImage(array(
             'uri' => 'http://www.example.com/logo.gif',
             'link' => 'http://www.example.com',

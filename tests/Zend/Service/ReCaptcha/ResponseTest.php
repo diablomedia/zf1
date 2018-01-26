@@ -32,7 +32,7 @@ require_once 'Zend/Service/ReCaptcha/Response.php';
  * @group      Zend_Service
  * @group      Zend_Service_ReCaptcha
  */
-class Zend_Service_ReCaptcha_ResponseTest extends PHPUnit_Framework_TestCase
+class Zend_Service_ReCaptcha_ResponseTest extends PHPUnit\Framework\TestCase
 {
     protected $_response = null;
 

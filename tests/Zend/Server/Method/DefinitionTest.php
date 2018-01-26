@@ -39,7 +39,7 @@ require_once 'Zend/Server/Method/Prototype.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Server
  */
-class Zend_Server_Method_DefinitionTest extends PHPUnit_Framework_TestCase
+class Zend_Server_Method_DefinitionTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -124,18 +124,19 @@ class Zend_Server_Method_DefinitionTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Server_Exception
      */
     public function testSettingObjectToNonObjectShouldThrowException()
     {
+        $this->expectException(\Zend_Server_Exception::class);
+
         $this->definition->setObject('foo');
     }
 
     public function testInvokeArgumentsShouldBeEmptyArrayByDefault()
     {
         $args = $this->definition->getInvokeArguments();
-        $this->assertTrue(is_array($args));
-        $this->assertTrue(empty($args));
+        $this->assertInternalType('array', $args);
+        $this->assertEmpty($args);
     }
 
     public function testInvokeArgumentsShouldBeMutable()
@@ -149,8 +150,8 @@ class Zend_Server_Method_DefinitionTest extends PHPUnit_Framework_TestCase
     public function testPrototypesShouldBeEmptyArrayByDefault()
     {
         $prototypes = $this->definition->getPrototypes();
-        $this->assertTrue(is_array($prototypes));
-        $this->assertTrue(empty($prototypes));
+        $this->assertInternalType('array', $prototypes);
+        $this->assertEmpty($prototypes);
     }
 
     public function testDefinitionShouldAllowAddingSinglePrototypes()

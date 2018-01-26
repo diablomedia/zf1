@@ -22,7 +22,7 @@
 
 
 /**
- * PHPUnit_Framework_TestCase
+ * PHPUnit\Framework\TestCase
  */
 
 
@@ -62,7 +62,7 @@ require_once 'Zend/Debug.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Auth
  */
-class Zend_Auth_Adapter_Http_ObjectTest extends PHPUnit_Framework_TestCase
+class Zend_Auth_Adapter_Http_ObjectTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Path to test files
@@ -111,7 +111,7 @@ class Zend_Auth_Adapter_Http_ObjectTest extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    public function __construct()
+    public function setUp()
     {
         $this->_filesPath      = dirname(__FILE__) . '/_files';
         $this->_basicResolver  = new Zend_Auth_Adapter_Http_Resolver_File("$this->_filesPath/htbasic.1");
@@ -141,7 +141,7 @@ class Zend_Auth_Adapter_Http_ObjectTest extends PHPUnit_Framework_TestCase
         } catch (Zend_Auth_Adapter_Exception $e) {
             $this->fail('Valid config deemed invalid');
         }
-        $this->assertFalse(empty($t));
+        $this->assertNotEmpty($t);
         $this->assertTrue($t instanceof Zend_Auth_Adapter_Http);
         unset($t);
 
@@ -150,7 +150,7 @@ class Zend_Auth_Adapter_Http_ObjectTest extends PHPUnit_Framework_TestCase
         } catch (Zend_Auth_Adapter_Exception $e) {
             $this->fail('Valid config deemed invalid');
         }
-        $this->assertFalse(empty($t));
+        $this->assertNotEmpty($t);
         $this->assertTrue($t instanceof Zend_Auth_Adapter_Http);
         unset($t);
 
@@ -159,7 +159,7 @@ class Zend_Auth_Adapter_Http_ObjectTest extends PHPUnit_Framework_TestCase
         } catch (Zend_Auth_Adapter_Exception $e) {
             $this->fail('Valid config deemed invalid');
         }
-        $this->assertFalse(empty($t));
+        $this->assertNotEmpty($t);
         $this->assertTrue($t instanceof Zend_Auth_Adapter_Http);
         unset($t);
     }

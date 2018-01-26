@@ -32,7 +32,7 @@ require_once 'Zend/Gdata.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_OpenSearch
  */
-class Zend_Gdata_OpenSearchTotalResultsTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_OpenSearchTotalResultsTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -43,24 +43,24 @@ class Zend_Gdata_OpenSearchTotalResultsTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyOpenSearchTotalResultsShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->openSearchTotalResults->extensionElements));
+        $this->assertInternalType('array', $this->openSearchTotalResults->extensionElements);
         $this->assertTrue(count($this->openSearchTotalResults->extensionElements) == 0);
     }
 
     public function testEmptyOpenSearchTotalResultsShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->openSearchTotalResults->extensionAttributes));
+        $this->assertInternalType('array', $this->openSearchTotalResults->extensionAttributes);
         $this->assertTrue(count($this->openSearchTotalResults->extensionAttributes) == 0);
     }
 
     public function testSampleOpenSearchTotalResultsShouldHaveNoExtensionElements() {
         $this->openSearchTotalResults->transferFromXML($this->openSearchTotalResultsText);
-        $this->assertTrue(is_array($this->openSearchTotalResults->extensionElements));
+        $this->assertInternalType('array', $this->openSearchTotalResults->extensionElements);
         $this->assertTrue(count($this->openSearchTotalResults->extensionElements) == 0);
     }
 
     public function testSampleOpenSearchTotalResultsShouldHaveNoExtensionAttributes() {
         $this->openSearchTotalResults->transferFromXML($this->openSearchTotalResultsText);
-        $this->assertTrue(is_array($this->openSearchTotalResults->extensionAttributes));
+        $this->assertInternalType('array', $this->openSearchTotalResults->extensionAttributes);
         $this->assertTrue(count($this->openSearchTotalResults->extensionAttributes) == 0);
     }
 

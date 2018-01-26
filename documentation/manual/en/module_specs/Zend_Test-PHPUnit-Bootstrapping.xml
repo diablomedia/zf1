@@ -7,7 +7,7 @@
         As noted in the <link linkend="zend.test.phpunit.loginexample">Login
             example</link>, all <acronym>MVC</acronym> test cases should extend
         <classname>Zend_Test_PHPUnit_ControllerTestCase</classname>. This class in turn
-        extends <classname>PHPUnit_Framework_TestCase</classname>, and gives you all the
+        extends <classname>PHPUnit\Framework\TestCase</classname>, and gives you all the
         structure and assertions you'd expect from PHPUnit -- as well as some
         scaffolding and assertions specific to Zend Framework's <acronym>MVC</acronym>
         implementation.

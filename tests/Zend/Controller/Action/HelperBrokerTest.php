@@ -38,7 +38,7 @@ require_once 'Zend/Controller/Action/Helper/Redirector.php';
  * @group      Zend_Controller_Action
  * @group      Zend_Controller_Action_Helper
  */
-class Zend_Controller_Action_HelperBrokerTest extends PHPUnit_Framework_TestCase
+class Zend_Controller_Action_HelperBrokerTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @var Zend_Controller_Front
@@ -211,7 +211,7 @@ class Zend_Controller_Action_HelperBrokerTest extends PHPUnit_Framework_TestCase
         Zend_Controller_Action_HelperBroker::addHelper(new Zend_Controller_Action_Helper_ViewRenderer()); // @todo in future this should throw an exception
 
         $helpers = Zend_Controller_Action_HelperBroker::getExistingHelpers();
-        $this->assertTrue(is_array($helpers));
+        $this->assertInternalType('array', $helpers);
         $this->assertEquals(2, count($helpers));
         $this->assertContains('ViewRenderer', array_keys($helpers));
         $this->assertContains('Redirector', array_keys($helpers));
@@ -223,7 +223,7 @@ class Zend_Controller_Action_HelperBrokerTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($helper instanceof Zend_Controller_Action_Helper_ViewRenderer);
 
         $helpers = Zend_Controller_Action_HelperBroker::getExistingHelpers();
-        $this->assertTrue(is_array($helpers));
+        $this->assertInternalType('array', $helpers);
         $this->assertEquals(1, count($helpers));
     }
 
@@ -301,7 +301,7 @@ class Zend_Controller_Action_HelperBrokerTest extends PHPUnit_Framework_TestCase
     {
         $loader = Zend_Controller_Action_HelperBroker::getPluginLoader();
         $paths  = $loader->getPaths('Zend_Controller_Action_Helper');
-        $this->assertFalse(empty($paths));
+        $this->assertNotEmpty($paths);
     }
 
     public function testCanLoadNamespacedHelper()

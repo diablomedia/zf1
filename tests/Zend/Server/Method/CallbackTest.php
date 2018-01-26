@@ -33,7 +33,7 @@ require_once 'Zend/Server/Method/Callback.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Server
  */
-class Zend_Server_Method_CallbackTest extends PHPUnit_Framework_TestCase
+class Zend_Server_Method_CallbackTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -105,10 +105,11 @@ class Zend_Server_Method_CallbackTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Server_Exception
      */
     public function testSettingTypeShouldThrowExceptionWhenInvalidTypeProvided()
     {
+        $this->expectException(\Zend_Server_Exception::class);
+
         $this->callback->setType('bogus');
     }
 
@@ -118,7 +119,7 @@ class Zend_Server_Method_CallbackTest extends PHPUnit_Framework_TestCase
                        ->setMethod('bar')
                        ->setType('instance');
         $test = $this->callback->toArray();
-        $this->assertTrue(is_array($test));
+        $this->assertInternalType('array', $test);
         $this->assertEquals('Foo', $test['class']);
         $this->assertEquals('bar', $test['method']);
         $this->assertEquals('instance', $test['type']);

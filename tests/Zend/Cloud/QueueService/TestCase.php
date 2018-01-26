@@ -44,7 +44,7 @@ require_once 'Zend/Cloud/QueueService/Factory.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-abstract class Zend_Cloud_QueueService_TestCase extends PHPUnit_Framework_TestCase
+abstract class Zend_Cloud_QueueService_TestCase extends PHPUnit\Framework\TestCase
 {
     /**
      * Reference to queue adapter to test
@@ -179,7 +179,7 @@ abstract class Zend_Cloud_QueueService_TestCase extends PHPUnit_Framework_TestCa
             $this->_commonQueue->storeQueueMetadata($queueURL, array('purpose' => 'test'));
             $this->_wait();
             $metadata = $this->_commonQueue->fetchQueueMetadata($queueURL);
-            $this->assertTrue(is_array($metadata));
+            $this->assertInternalType('array', $metadata);
             $this->assertGreaterThan(0, count($metadata));
             $this->_commonQueue->deleteQueue($queueURL);
         } catch (Exception $e) {

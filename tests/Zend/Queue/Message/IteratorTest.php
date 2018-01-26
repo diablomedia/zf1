@@ -47,7 +47,7 @@ require_once 'Zend/Queue/Adapter/Null.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Queue
  */
-class Zend_Queue_Message_IteratorTest extends PHPUnit_Framework_TestCase
+class Zend_Queue_Message_IteratorTest extends PHPUnit\Framework\TestCase
 {
     protected function setUp()
     {
@@ -89,7 +89,7 @@ class Zend_Queue_Message_IteratorTest extends PHPUnit_Framework_TestCase
     public function test_setup()
     {
         $this->assertTrue($this->queue instanceof Zend_Queue);
-        $this->assertTrue(is_array($this->options));
+        $this->assertInternalType('array', $this->options);
 
         foreach ($this->messages as $i => $message) {
             $this->assertTrue($message instanceof Zend_Queue_Message);
@@ -126,7 +126,7 @@ class Zend_Queue_Message_IteratorTest extends PHPUnit_Framework_TestCase
 
     public function test_magic()
     {
-        $this->assertTrue(is_array($this->messages->__sleep()));
+        $this->assertInternalType('array', $this->messages->__sleep());
 
         $messages = serialize($this->messages);
         $woken = unserialize($messages);
@@ -156,7 +156,7 @@ class Zend_Queue_Message_IteratorTest extends PHPUnit_Framework_TestCase
     public function test_toArray()
     {
         $array = $this->messages->toArray();
-        $this->assertTrue(is_array($array));
+        $this->assertInternalType('array', $array);
         $this->assertEquals($this->message_count, count($array));
         $this->assertEquals('Hello world', $array[0]['body']);
     }

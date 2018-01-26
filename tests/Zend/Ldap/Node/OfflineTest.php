@@ -73,30 +73,33 @@ class Zend_Ldap_Node_OfflineTest extends Zend_Ldap_TestCase
     }
 
     /**
-     * @expectedException Zend_Ldap_Exception
      */
     public function testCreateFromArrayMissingDn()
     {
+        $this->expectException(\Zend_Ldap_Exception::class);
+
         $data=$this->_createTestArrayData();
         unset($data['dn']);
         $node=Zend_Ldap_Node::fromArray($data);
     }
 
     /**
-     * @expectedException Zend_Ldap_Exception
      */
     public function testCreateFromArrayIllegalDn()
     {
+        $this->expectException(\Zend_Ldap_Exception::class);
+
         $data=$this->_createTestArrayData();
         $data['dn']=5;
         $node=Zend_Ldap_Node::fromArray($data);
     }
 
     /**
-     * @expectedException Zend_Ldap_Exception
      */
     public function testCreateFromArrayMalformedDn()
     {
+        $this->expectException(\Zend_Ldap_Exception::class);
+
         $data=$this->_createTestArrayData();
         $data['dn']='name1,cn=name2,dc=example,dc=org';
         $node=Zend_Ldap_Node::fromArray($data);
@@ -331,19 +334,21 @@ class Zend_Ldap_Node_OfflineTest extends Zend_Ldap_TestCase
     }
 
     /**
-     * @expectedException Zend_Ldap_Exception
      */
     public function testIllegalAttributeAccessRdnAttributeSet()
     {
+        $this->expectException(\Zend_Ldap_Exception::class);
+
         $node=$this->_createTestNode();
         $node->cn='test';
     }
 
     /**
-     * @expectedException Zend_Ldap_Exception
      */
     public function testIllegalAttributeAccessDnSet()
     {
+        $this->expectException(\Zend_Ldap_Exception::class);
+
         $node=$this->_createTestNode();
         $node->dn='test';
     }
@@ -351,7 +356,7 @@ class Zend_Ldap_Node_OfflineTest extends Zend_Ldap_TestCase
     public function testAttributeAccessDnGet()
     {
         $node=$this->_createTestNode();
-        $this->assertTrue(is_string($node->dn));
+        $this->assertInternalType('string', $node->dn);
         $this->assertEquals($node->getDn()->toString(), $node->dn);
     }
 
@@ -621,7 +626,7 @@ class Zend_Ldap_Node_OfflineTest extends Zend_Ldap_TestCase
 
         $node = Zend_Ldap_Node::fromArray($data, true);
         $changedData = $node->getChangedData();
-        $this->assertTrue(empty($changedData));
+        $this->assertEmpty($changedData);
     }
 
 	/**

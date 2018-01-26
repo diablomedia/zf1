@@ -34,7 +34,7 @@ require_once 'Zend/Validate/InArray.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Validate
  */
-class Zend_Validate_InArrayTest extends PHPUnit_Framework_TestCase
+class Zend_Validate_InArrayTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Ensures that the validator follows expected behavior

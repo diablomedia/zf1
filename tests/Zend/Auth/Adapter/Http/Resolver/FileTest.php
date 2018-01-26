@@ -22,7 +22,7 @@
 
 
 /**
- * PHPUnit_Framework_TestCase
+ * PHPUnit\Framework\TestCase
  */
 
 
@@ -40,7 +40,7 @@ require_once 'Zend/Auth/Adapter/Http/Resolver/File.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Auth
  */
-class Zend_Auth_Adapter_Http_Resolver_FileTest extends PHPUnit_Framework_TestCase
+class Zend_Auth_Adapter_Http_Resolver_FileTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Path to test files
@@ -76,7 +76,7 @@ class Zend_Auth_Adapter_Http_Resolver_FileTest extends PHPUnit_Framework_TestCas
      *
      * @return void
      */
-    public function __construct()
+    public function setUp()
     {
         $this->_filesPath = dirname(dirname(__FILE__)) . '/_files';
         $this->_validPath = "$this->_filesPath/htdigest.3";

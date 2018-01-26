@@ -34,7 +34,7 @@ require_once 'Zend/OpenId/Extension/Sreg.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_OpenId
  */
-class Zend_OpenId_Extension_SregTest extends PHPUnit_Framework_TestCase
+class Zend_OpenId_Extension_SregTest extends PHPUnit\Framework\TestCase
 {
     const USER = "test_user";
     const EMAIL = "user@test.com";

@@ -30,7 +30,7 @@ require_once 'Zend/Loader/ClassMapAutoloader.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Loader
  */
-class Zend_Loader_ClassMapAutoloaderTest extends PHPUnit_Framework_TestCase
+class Zend_Loader_ClassMapAutoloaderTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {
@@ -69,13 +69,13 @@ class Zend_Loader_ClassMapAutoloaderTest extends PHPUnit_Framework_TestCase
     public function testRegisteringNonExistentAutoloadMapRaisesInvalidArgumentException()
     {
         $dir = dirname(__FILE__) . '__foobar__';
-        $this->setExpectedException('Zend_Loader_Exception_InvalidArgumentException');
+        $this->expectException('Zend_Loader_Exception_InvalidArgumentException');
         $this->loader->registerAutoloadMap($dir);
     }
 
     public function testValidMapFileNotReturningMapRaisesInvalidArgumentException()
     {
-        $this->setExpectedException('Zend_Loader_Exception_InvalidArgumentException');
+        $this->expectException('Zend_Loader_Exception_InvalidArgumentException');
         $this->loader->registerAutoloadMap(dirname(__FILE__) . '/_files/badmap.php');
     }
 
@@ -103,13 +103,13 @@ class Zend_Loader_ClassMapAutoloaderTest extends PHPUnit_Framework_TestCase
     {
         $this->loader->registerAutoloadMap(dirname(__FILE__) . '/_files/goodmap.php');
         $map = $this->loader->getAutoloadMap();
-        $this->assertTrue(is_array($map));
+        $this->assertInternalType('array', $map);
         $this->assertEquals(2, count($map));
         // Just to make sure nothing changes after loading the same map again
         // (loadMapFromFile should just return)
         $this->loader->registerAutoloadMap(dirname(__FILE__) . '/_files/goodmap.php');
         $map = $this->loader->getAutoloadMap();
-        $this->assertTrue(is_array($map));
+        $this->assertInternalType('array', $map);
         $this->assertEquals(2, count($map));
     }
 
@@ -123,7 +123,7 @@ class Zend_Loader_ClassMapAutoloaderTest extends PHPUnit_Framework_TestCase
         $this->loader->registerAutoloadMap(dirname(__FILE__) . '/_files/goodmap.php');
 
         $test = $this->loader->getAutoloadMap();
-        $this->assertTrue(is_array($test));
+        $this->assertInternalType('array', $test);
         $this->assertEquals(3, count($test));
         $this->assertNotEquals($map['Zend_Loader_StandardAutoloaderTest'], $test['Zend_Loader_StandardAutoloaderTest']);
     }
@@ -137,7 +137,7 @@ class Zend_Loader_ClassMapAutoloaderTest extends PHPUnit_Framework_TestCase
         $maps = array($map, dirname(__FILE__) . '/_files/goodmap.php');
         $this->loader->registerAutoloadMaps($maps);
         $test = $this->loader->getAutoloadMap();
-        $this->assertTrue(is_array($test));
+        $this->assertInternalType('array', $test);
         $this->assertEquals(3, count($test));
     }
 

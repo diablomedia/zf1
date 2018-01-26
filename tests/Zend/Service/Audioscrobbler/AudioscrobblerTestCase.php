@@ -35,7 +35,7 @@ require_once "Zend/Http/Client/Adapter/Test.php";
  * @group      Zend_Service
  * @group      Zend_Service_Audioscrobbler
  */
-class Zend_Service_Audioscrobbler_AudioscrobblerTestCase extends PHPUnit_Framework_TestCase
+class Zend_Service_Audioscrobbler_AudioscrobblerTestCase extends PHPUnit\Framework\TestCase
 {
     /**
      * @var Zend_Http_Client

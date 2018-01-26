@@ -33,7 +33,7 @@ require_once 'Zend/OpenId/Provider/Storage/File.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_OpenId
  */
-class Zend_OpenId_Provider_Storage_FileTest extends PHPUnit_Framework_TestCase
+class Zend_OpenId_Provider_Storage_FileTest extends PHPUnit\Framework\TestCase
 {
     const HANDLE   = "d41d8cd98f00b204e9800998ecf8427e";
     const MAC_FUNC = "sha256";
@@ -53,7 +53,7 @@ class Zend_OpenId_Provider_Storage_FileTest extends PHPUnit_Framework_TestCase
         $dir = $tmp . '/openid_provider';
         @rmdir($dir);
         $storage = new Zend_OpenId_Provider_Storage_File($dir);
-        $this->assertTrue( is_dir($dir) );
+        $this->assertDirectoryExists( $dir );
 
         if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
             return;
@@ -71,7 +71,7 @@ class Zend_OpenId_Provider_Storage_FileTest extends PHPUnit_Framework_TestCase
         $this->assertSame( Zend_OpenId_Exception::ERROR_STORAGE, $ex->getCode() );
         $this->assertContains( 'Cannot access storage directory', $ex->getMessage() );
         chmod($dir, 0777);
-        $this->assertFalse( is_dir($dir2) );
+        $this->assertDirectoryNotExists( $dir2 );
         @rmdir($dir);
     }
 
@@ -96,7 +96,7 @@ class Zend_OpenId_Provider_Storage_FileTest extends PHPUnit_Framework_TestCase
         $dir = $tmp . '/openid_consumer';
         @rmdir($dir);
         $storage = new Zend_OpenId_Provider_Storage_File($dir);
-        $this->assertTrue( is_dir($dir) );
+        $this->assertDirectoryExists( $dir );
 
         if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
             return;
@@ -177,7 +177,7 @@ class Zend_OpenId_Provider_Storage_FileTest extends PHPUnit_Framework_TestCase
         $this->assertTrue( $storage->addUser(self::USER, self::PASSWORD) );
         $this->assertTrue( $storage->addSite(self::USER, self::SITE1, true) );
         $trusted = $storage->getTrustedSites(self::USER);
-        $this->assertTrue( is_array($trusted) );
+        $this->assertInternalType( 'array', $trusted );
         $this->assertSame( 1, count($trusted) );
         reset($trusted);
         $this->assertSame( self::SITE1, key($trusted) );
@@ -186,24 +186,24 @@ class Zend_OpenId_Provider_Storage_FileTest extends PHPUnit_Framework_TestCase
         $this->assertFalse( $storage->addSite(self::USER, self::SITE1, true) );
         $this->assertTrue( $storage->addUser(self::USER, self::PASSWORD) );
         $trusted = $storage->getTrustedSites(self::USER);
-        $this->assertTrue( is_array($trusted) );
+        $this->assertInternalType( 'array', $trusted );
         $this->assertSame( 0, count($trusted) );
         $this->assertTrue( $storage->addSite(self::USER, self::SITE1, self::SITE1) );
         $this->assertTrue( $storage->addSite(self::USER, self::SITE2, self::SITE2) );
         $this->assertTrue( $storage->addSite(self::USER, self::SITE1, self::USER) );
         $trusted = $storage->getTrustedSites(self::USER);
-        $this->assertTrue( is_array($trusted) );
+        $this->assertInternalType( 'array', $trusted );
         $this->assertSame( 2, count($trusted) );
         $this->assertSame( self::USER, $trusted[self::SITE1] );
         $this->assertSame( self::SITE2, $trusted[self::SITE2] );
         $this->assertTrue( $storage->addSite(self::USER, self::SITE2, null) );
         $trusted = $storage->getTrustedSites(self::USER);
-        $this->assertTrue( is_array($trusted) );
+        $this->assertInternalType( 'array', $trusted );
         $this->assertSame( 1, count($trusted) );
         $this->assertSame( self::USER, $trusted[self::SITE1] );
         $this->assertTrue( $storage->addSite(self::USER, self::SITE1, null) );
         $trusted = $storage->getTrustedSites(self::USER);
-        $this->assertTrue( is_array($trusted) );
+        $this->assertInternalType( 'array', $trusted );
         $this->assertSame( 0, count($trusted) );
         $this->assertTrue( $storage->delUser(self::USER) );
         $storage->delUser(self::USER);

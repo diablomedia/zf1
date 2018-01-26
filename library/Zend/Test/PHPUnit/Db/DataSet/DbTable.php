@@ -28,14 +28,14 @@ require_once "Zend/Db/Table/Abstract.php";
 /**
  * Use a Zend_Db_Table for assertions with other PHPUnit Database Extension table types.
  *
- * @uses       PHPUnit_Extensions_Database_DataSet_QueryTable
+ * @uses       PHPUnit\DbUnit\DataSet\QueryTable
  * @category   Zend
  * @package    Zend_Test
  * @subpackage PHPUnit
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Test_PHPUnit_Db_DataSet_DbTable extends PHPUnit_Extensions_Database_DataSet_QueryTable
+class Zend_Test_PHPUnit_Db_DataSet_DbTable extends PHPUnit\DbUnit\DataSet\QueryTable
 {
     /**
      * Zend_Db_Table object
@@ -114,7 +114,7 @@ class Zend_Test_PHPUnit_Db_DataSet_DbTable extends PHPUnit_Extensions_Database_D
     {
         if ($this->tableMetaData === NULL) {
             $this->loadData();
-            $this->tableMetaData = new PHPUnit_Extensions_Database_DataSet_DefaultTableMetaData($this->tableName, $this->_columns);
+            $this->tableMetaData = new PHPUnit\DbUnit\DataSet\DefaultTableMetadata($this->tableName, $this->_columns);
         }
     }
 }

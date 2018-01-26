@@ -53,7 +53,7 @@ require_once 'Zend/Http/Client/Adapter/Test.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_OpenId
  */
-class Zend_OpenId_ConsumerTest extends PHPUnit_Framework_TestCase
+class Zend_OpenId_ConsumerTest extends PHPUnit\Framework\TestCase
 {
     const ID       = "http://id.myopenid.com/";
     const REAL_ID  = "http://real_id.myopenid.com/";
@@ -83,9 +83,9 @@ class Zend_OpenId_ConsumerTest extends PHPUnit_Framework_TestCase
         $this->assertTrue( $consumer->login(self::ID, null, null, null, $response) );
         $headers = $response->getHeaders();
         $this->assertSame( '', $response->getBody() );
-        $this->assertTrue( is_array($headers) );
+        $this->assertInternalType( 'array', $headers );
         $this->assertSame( 1, count($headers) );
-        $this->assertTrue( is_array($headers[0]) );
+        $this->assertInternalType( 'array', $headers[0] );
         $this->assertSame( 3, count($headers[0]) );
         $this->assertSame( 'Location', $headers[0]['name'] );
         $this->assertSame( true, $headers[0]['replace'] );
@@ -101,7 +101,7 @@ class Zend_OpenId_ConsumerTest extends PHPUnit_Framework_TestCase
                 $query[$key] = $val;
             }
         }
-        $this->assertTrue( is_array($query) );
+        $this->assertInternalType( 'array', $query );
         $this->assertSame( 6, count($query) );
         $this->assertSame( 'checkid_setup', $query['openid.mode'] );
         $this->assertSame( 'http%3A%2F%2Freal_id.myopenid.com%2F', $query['openid.identity'] );
@@ -124,7 +124,7 @@ class Zend_OpenId_ConsumerTest extends PHPUnit_Framework_TestCase
                 $query[$key] = $val;
             }
         }
-        $this->assertTrue( is_array($query) );
+        $this->assertInternalType( 'array', $query );
         $this->assertSame( 6, count($query) );
         $this->assertSame( 'checkid_setup', $query['openid.mode'] );
         $this->assertSame( 'http%3A%2F%2Freal_id.myopenid.com%2F', $query['openid.identity'] );
@@ -150,7 +150,7 @@ class Zend_OpenId_ConsumerTest extends PHPUnit_Framework_TestCase
                 $query[$key] = $val;
             }
         }
-        $this->assertTrue( is_array($query) );
+        $this->assertInternalType( 'array', $query );
         $this->assertSame( 7, count($query) );
         $this->assertSame( 'http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0', $query['openid.ns'] );
         $this->assertSame( 'checkid_setup', $query['openid.mode'] );
@@ -175,7 +175,7 @@ class Zend_OpenId_ConsumerTest extends PHPUnit_Framework_TestCase
                 $query[$key] = $val;
             }
         }
-        $this->assertTrue( is_array($query) );
+        $this->assertInternalType( 'array', $query );
         $this->assertSame( 9, count($query) );
         $this->assertSame( 'http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0', $query['openid.ns'] );
         $this->assertSame( 'checkid_setup', $query['openid.mode'] );
@@ -202,7 +202,7 @@ class Zend_OpenId_ConsumerTest extends PHPUnit_Framework_TestCase
                 $query[$key] = $val;
             }
         }
-        $this->assertTrue( is_array($query) );
+        $this->assertInternalType( 'array', $query );
         $this->assertSame( 6, count($query) );
         $this->assertSame( 'http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0', $query['openid.ns'] );
         $this->assertSame( 'checkid_setup', $query['openid.mode'] );
@@ -234,9 +234,9 @@ class Zend_OpenId_ConsumerTest extends PHPUnit_Framework_TestCase
         $this->assertTrue( $consumer->check(self::ID, null, null, null, $response) );
         $headers = $response->getHeaders();
         $this->assertSame( '', $response->getBody() );
-        $this->assertTrue( is_array($headers) );
+        $this->assertInternalType( 'array', $headers );
         $this->assertSame( 1, count($headers) );
-        $this->assertTrue( is_array($headers[0]) );
+        $this->assertInternalType( 'array', $headers[0] );
         $this->assertSame( 3, count($headers[0]) );
         $this->assertSame( 'Location', $headers[0]['name'] );
         $this->assertSame( true, $headers[0]['replace'] );
@@ -252,7 +252,7 @@ class Zend_OpenId_ConsumerTest extends PHPUnit_Framework_TestCase
                 $query[$key] = $val;
             }
         }
-        $this->assertTrue( is_array($query) );
+        $this->assertInternalType( 'array', $query );
         $this->assertSame( 6, count($query) );
         $this->assertSame( 'checkid_immediate', $query['openid.mode'] );
         $this->assertSame( 'http%3A%2F%2Freal_id.myopenid.com%2F', $query['openid.identity'] );

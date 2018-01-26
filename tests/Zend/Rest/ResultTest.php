@@ -36,11 +36,11 @@ require_once 'Zend/Rest/Client/Result.php';
  * @group      Zend_Rest
  * @group      Zend_Rest_Result
  */
-class Zend_Rest_ResultTest extends PHPUnit_Framework_TestCase
+class Zend_Rest_ResultTest extends PHPUnit\Framework\TestCase
 {
     static $path;
 
-    public function __construct()
+    public function setUp()
     {
         self::$path = dirname(__FILE__).'/responses/';
     }
@@ -145,7 +145,7 @@ class Zend_Rest_ResultTest extends PHPUnit_Framework_TestCase
         $xml = file_get_contents(self::$path . DIRECTORY_SEPARATOR . 'returnNestedArray.xml');
         $result = new Zend_Rest_Client_Result($xml);
         $baz = $result->baz;
-        $this->assertTrue(is_array($baz), var_export($baz, 1));
+        $this->assertInternalType('array', $baz, var_export($baz, 1));
         $this->assertEquals('1', (string) $baz[0]);
         $this->assertEquals('farama', (string) $baz[1]);
     }

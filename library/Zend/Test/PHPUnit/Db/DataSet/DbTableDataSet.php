@@ -35,7 +35,7 @@ require_once "Zend/Test/PHPUnit/Db/DataSet/DbTable.php";
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Test_PHPUnit_Db_DataSet_DbTableDataSet extends PHPUnit_Extensions_Database_DataSet_AbstractDataSet
+class Zend_Test_PHPUnit_Db_DataSet_DbTableDataSet extends PHPUnit\DbUnit\DataSet\AbstractDataSet
 {
     /**
      * @var array
@@ -64,18 +64,18 @@ class Zend_Test_PHPUnit_Db_DataSet_DbTableDataSet extends PHPUnit_Extensions_Dat
      * true a reverse iterator will be returned.
      *
      * @param bool $reverse
-     * @return PHPUnit_Extensions_Database_DB_TableIterator
+     * @return PHPUnit\DbUnit\Database\TableIterator
      */
     protected function createIterator($reverse = FALSE)
     {
-        return new PHPUnit_Extensions_Database_DataSet_DefaultTableIterator($this->tables, $reverse);
+        return new PHPUnit\DbUnit\DataSet\DefaultTableIterator($this->tables, $reverse);
     }
 
     /**
      * Returns a table object for the given table.
      *
      * @param string $tableName
-     * @return PHPUnit_Extensions_Database_DB_Table
+     * @return PHPUnit\DbUnit\Database\Table
      */
     public function getTable($tableName)
     {

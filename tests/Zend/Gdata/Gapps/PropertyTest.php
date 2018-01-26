@@ -32,7 +32,7 @@ require_once 'Zend/Gdata.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Gapps
  */
-class Zend_Gdata_Gapps_PropertyTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_Gapps_PropertyTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -43,24 +43,24 @@ class Zend_Gdata_Gapps_PropertyTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyPropertyShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->theProperty->extensionElements));
+        $this->assertInternalType('array', $this->theProperty->extensionElements);
         $this->assertTrue(count($this->theProperty->extensionElements) == 0);
     }
 
     public function testEmptyPropertyShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->theProperty->extensionAttributes));
+        $this->assertInternalType('array', $this->theProperty->extensionAttributes);
         $this->assertTrue(count($this->theProperty->extensionAttributes) == 0);
     }
 
     public function testSamplePropertyShouldHaveNoExtensionElements() {
         $this->theProperty->transferFromXML($this->thePropertyText);
-        $this->assertTrue(is_array($this->theProperty->extensionElements));
+        $this->assertInternalType('array', $this->theProperty->extensionElements);
         $this->assertTrue(count($this->theProperty->extensionElements) == 0);
     }
 
     public function testSamplePropertyShouldHaveNoExtensionAttributes() {
         $this->theProperty->transferFromXML($this->thePropertyText);
-        $this->assertTrue(is_array($this->theProperty->extensionAttributes));
+        $this->assertInternalType('array', $this->theProperty->extensionAttributes);
         $this->assertTrue(count($this->theProperty->extensionAttributes) == 0);
     }
 

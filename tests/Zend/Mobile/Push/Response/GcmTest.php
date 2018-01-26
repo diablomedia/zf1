@@ -33,7 +33,7 @@ require_once 'Zend/Mobile/Push/Message/Gcm.php';
  * @group      Zend_Mobile_Push
  * @group      Zend_Mobile_Push_Gcm
  */
-class Zend_Mobile_Push_Response_GcmTest extends PHPUnit_Framework_TestCase
+class Zend_Mobile_Push_Response_GcmTest extends PHPUnit\Framework\TestCase
 {
     public function testConstructor()
     {
@@ -62,10 +62,11 @@ class Zend_Mobile_Push_Response_GcmTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Mobile_Push_Exception_ServerUnavailable
      */
     public function testConstructorThrowsExceptionOnBadOrEmptyJsonString()
     {
+        $this->expectException(\Zend_Mobile_Push_Exception_ServerUnavailable::class);
+
         $response = new Zend_Mobile_Push_Response_Gcm('{bad');
     }
 

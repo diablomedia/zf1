@@ -37,7 +37,7 @@ require_once 'Zend/Service/WindowsAzure/Credentials/SharedKeyLite.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_WindowsAzure_Credentials_SharedKeyLiteTest extends PHPUnit_Framework_TestCase
+class Zend_Service_WindowsAzure_Credentials_SharedKeyLiteTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {
@@ -60,7 +60,7 @@ class Zend_Service_WindowsAzure_Credentials_SharedKeyLiteTest extends PHPUnit_Fr
                               true
                           );
 
-        $this->assertTrue(is_array($signedHeaders));
+        $this->assertInternalType('array', $signedHeaders);
         $this->assertEquals(2, count($signedHeaders));
         $this->assertEquals("SharedKeyLite devstoreaccount1:iRQpXGzlMRb1A57bkcryX7Bg/3Uf5YOfNCG+XIingJI=", $signedHeaders["Authorization"]);
     }
@@ -79,7 +79,7 @@ class Zend_Service_WindowsAzure_Credentials_SharedKeyLiteTest extends PHPUnit_Fr
                               true
                           );
 
-        $this->assertTrue(is_array($signedHeaders));
+        $this->assertInternalType('array', $signedHeaders);
         $this->assertEquals(2, count($signedHeaders));
         $this->assertEquals("SharedKeyLite devstoreaccount1:MsC5SIbFB4M4UZd83CiMaL8ibUhaS5H9CcJBJpsnWqo=", $signedHeaders["Authorization"]);
     }
@@ -98,7 +98,7 @@ class Zend_Service_WindowsAzure_Credentials_SharedKeyLiteTest extends PHPUnit_Fr
                               true
                           );
 
-        $this->assertTrue(is_array($signedHeaders));
+        $this->assertInternalType('array', $signedHeaders);
         $this->assertEquals(2, count($signedHeaders));
         $this->assertEquals("SharedKeyLite devstoreaccount1:iRQpXGzlMRb1A57bkcryX7Bg/3Uf5YOfNCG+XIingJI=", $signedHeaders["Authorization"]);
     }
@@ -117,7 +117,7 @@ class Zend_Service_WindowsAzure_Credentials_SharedKeyLiteTest extends PHPUnit_Fr
                               true
                           );
 
-        $this->assertTrue(is_array($signedHeaders));
+        $this->assertInternalType('array', $signedHeaders);
         $this->assertEquals(2, count($signedHeaders));
         $this->assertEquals("SharedKeyLite testing:vZdOn/j0gW5FG0kAUG9NhSBO9eBjZqfe6RwALPYUtqU=", $signedHeaders["Authorization"]);
     }
@@ -136,7 +136,7 @@ class Zend_Service_WindowsAzure_Credentials_SharedKeyLiteTest extends PHPUnit_Fr
                               true
                           );
 
-        $this->assertTrue(is_array($signedHeaders));
+        $this->assertInternalType('array', $signedHeaders);
         $this->assertEquals(2, count($signedHeaders));
         $this->assertEquals("SharedKeyLite testing:HJTSiRDtMsQVsFVispSHkcODeFykLO+WEuOepwmh51o=", $signedHeaders["Authorization"]);
     }
@@ -155,7 +155,7 @@ class Zend_Service_WindowsAzure_Credentials_SharedKeyLiteTest extends PHPUnit_Fr
                               true
                           );
 
-        $this->assertTrue(is_array($signedHeaders));
+        $this->assertInternalType('array', $signedHeaders);
         $this->assertEquals(2, count($signedHeaders));
         $this->assertEquals("SharedKeyLite testing:vZdOn/j0gW5FG0kAUG9NhSBO9eBjZqfe6RwALPYUtqU=", $signedHeaders["Authorization"]);
     }

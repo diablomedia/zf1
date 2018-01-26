@@ -39,11 +39,11 @@ require_once 'Zend/Cloud/DocumentService/Factory.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Cloud
  */
-class Zend_Cloud_DocumentService_FactoryTest extends PHPUnit_Framework_TestCase
+class Zend_Cloud_DocumentService_FactoryTest extends PHPUnit\Framework\TestCase
 {
     public function testGetDocumentAdapterKey()
     {
-        $this->assertTrue(is_string(Zend_Cloud_DocumentService_Factory::DOCUMENT_ADAPTER_KEY));
+        $this->assertInternalType('string', Zend_Cloud_DocumentService_Factory::DOCUMENT_ADAPTER_KEY);
     }
 
     public function testGetAdapterWithConfig() {

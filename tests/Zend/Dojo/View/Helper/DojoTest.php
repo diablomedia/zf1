@@ -43,7 +43,7 @@ require_once 'Zend/View.php';
  * @group      Zend_Dojo
  * @group      Zend_Dojo_View
  */
-class Zend_Dojo_View_Helper_DojoTest extends PHPUnit_Framework_TestCase
+class Zend_Dojo_View_Helper_DojoTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @var Zend_Dojo_View_Helper_Dojo_Container
@@ -98,7 +98,7 @@ class Zend_Dojo_View_Helper_DojoTest extends PHPUnit_Framework_TestCase
     public function testNoModulesShouldBeRegisteredByDefault()
     {
         $modules = $this->helper->getModules();
-        $this->assertTrue(empty($modules));
+        $this->assertEmpty($modules);
     }
 
     public function testShouldBeAbleToRequireModules()
@@ -152,14 +152,14 @@ class Zend_Dojo_View_Helper_DojoTest extends PHPUnit_Framework_TestCase
     public function testModulePathsShouldBeEmptyByDefault()
     {
         $paths = $this->helper->getModulePaths();
-        $this->assertTrue(empty($paths));
+        $this->assertEmpty($paths);
     }
 
     public function testShouldBeAbleToRegisterModulePaths()
     {
         $this->helper->registerModulePath('custom', '../custom');
         $paths = $this->helper->getModulePaths();
-        $this->assertTrue(array_key_exists('custom', $paths), var_export($paths, 1));
+        $this->assertArrayHasKey('custom', $paths, var_export($paths, 1));
         $this->assertContains('../custom', $paths);
     }
 
@@ -169,7 +169,7 @@ class Zend_Dojo_View_Helper_DojoTest extends PHPUnit_Framework_TestCase
         $this->helper->registerModulePath('custom', '../custom');
         $paths = $this->helper->getModulePaths();
         $this->assertEquals(1, count($paths));
-        $this->assertTrue(array_key_exists('custom', $paths));
+        $this->assertArrayHasKey('custom', $paths);
         $this->assertContains('../custom', $paths);
     }
 
@@ -259,8 +259,8 @@ class Zend_Dojo_View_Helper_DojoTest extends PHPUnit_Framework_TestCase
     {
         $this->helper->setDjConfig(array('parseOnLoad' => 'true'));
         $config = $this->helper->getDjConfig();
-        $this->assertTrue(is_array($config));
-        $this->assertTrue(array_key_exists('parseOnLoad', $config));
+        $this->assertInternalType('array', $config);
+        $this->assertArrayHasKey('parseOnLoad', $config);
         $this->assertEquals('true', $config['parseOnLoad']);
     }
 
@@ -345,7 +345,7 @@ class Zend_Dojo_View_Helper_DojoTest extends PHPUnit_Framework_TestCase
     {
         $this->helper->addStylesheet('/css/foo.css');
         $css = $this->helper->getStylesheets();
-        $this->assertTrue(is_array($css));
+        $this->assertInternalType('array', $css);
         $this->assertContains('/css/foo.css', $css);
     }
 
@@ -354,7 +354,7 @@ class Zend_Dojo_View_Helper_DojoTest extends PHPUnit_Framework_TestCase
         $this->testShouldAllowSpecifyingLocalStylesheet();
         $this->helper->addStylesheet('/css/foo.css');
         $css = $this->helper->getStylesheets();
-        $this->assertTrue(is_array($css));
+        $this->assertInternalType('array', $css);
         $this->assertEquals(1, count($css));
         $this->assertContains('/css/foo.css', $css);
     }
@@ -363,10 +363,10 @@ class Zend_Dojo_View_Helper_DojoTest extends PHPUnit_Framework_TestCase
     {
         $this->helper->addOnLoad('foo');
         $onLoad = $this->helper->getOnLoadActions();
-        $this->assertTrue(is_array($onLoad));
+        $this->assertInternalType('array', $onLoad);
         $this->assertEquals(1, count($onLoad));
         $action = array_shift($onLoad);
-        $this->assertTrue(is_string($action));
+        $this->assertInternalType('string', $action);
         $this->assertEquals('foo', $action);
     }
 
@@ -379,10 +379,10 @@ function() {
 }
 <?php   $this->helper->onLoadCaptureEnd();
         $onLoad = $this->helper->getOnLoadActions();
-        $this->assertTrue(is_array($onLoad));
+        $this->assertInternalType('array', $onLoad);
         $this->assertEquals(1, count($onLoad));
         $action = array_shift($onLoad);
-        $this->assertTrue(is_string($action));
+        $this->assertInternalType('string', $action);
         $this->assertContains('function() {', $action);
         $this->assertContains('bar();', $action);
         $this->assertContains('baz();', $action);
@@ -393,7 +393,7 @@ function() {
         $this->helper->addOnLoad('foo');
         $this->helper->addOnLoad('foo');
         $onLoad = $this->helper->getOnLoadActions();
-        $this->assertTrue(is_array($onLoad));
+        $this->assertInternalType('array', $onLoad);
         $this->assertEquals(1, count($onLoad));
         $action = array_shift($onLoad);
         $this->assertEquals('foo', $action);
@@ -514,25 +514,26 @@ function() {
     {
         $this->helper->addDijit('foo', array('dojoType' => 'dijit.form.Form'));
         $dijits = $this->helper->getDijits();
-        $this->assertTrue(is_array($dijits));
+        $this->assertInternalType('array', $dijits);
         $this->assertEquals(1, count($dijits));
         $dijit = array_shift($dijits);
-        $this->assertTrue(is_array($dijit));
+        $this->assertInternalType('array', $dijit);
         $this->assertEquals(2, count($dijit));
-        $this->assertTrue(array_key_exists('id', $dijit));
-        $this->assertTrue(array_key_exists('params', $dijit));
+        $this->assertArrayHasKey('id', $dijit);
+        $this->assertArrayHasKey('params', $dijit);
         $this->assertEquals('foo', $dijit['id']);
-        $this->assertTrue(is_array($dijit['params']));
+        $this->assertInternalType('array', $dijit['params']);
         $this->assertEquals(1, count($dijit['params']));
-        $this->assertTrue(array_key_exists('dojoType', $dijit['params']));
+        $this->assertArrayHasKey('dojoType', $dijit['params']);
         $this->assertEquals('dijit.form.Form', $dijit['params']['dojoType']);
     }
 
     /**
-     * @expectedException Zend_Dojo_View_Exception
      */
     public function testAddingDuplicateProgrammaticDijitsShouldRaiseExceptions()
     {
+        $this->expectException(\Zend_Dojo_View_Exception::class);
+
         $this->helper->addDijit('foo', array('dojoType' => 'dijit.form.Form'));
         $this->helper->addDijit('foo', array('dojoType' => 'dijit.form.ComboBox'));
     }
@@ -542,7 +543,7 @@ function() {
         $this->testAddingProgrammaticDijitsShouldAcceptIdAndArrayOfDijitParams();
         $this->helper->setDijit('foo', array('dojoType' => 'dijit.form.ComboBox'));
         $dijits = $this->helper->getDijits();
-        $this->assertTrue(is_array($dijits));
+        $this->assertInternalType('array', $dijits);
         $this->assertEquals(1, count($dijits));
         $dijit = array_shift($dijits);
         $this->assertEquals('dijit.form.ComboBox', $dijit['params']['dojoType']);
@@ -560,7 +561,7 @@ function() {
         );
         $this->helper->addDijits($dijits);
         $test = $this->helper->getDijits();
-        $this->assertTrue(is_array($test));
+        $this->assertInternalType('array', $test);
         $this->assertEquals(2, count($test));
         $keys = array();
         foreach ($test as $dijit) {
@@ -582,7 +583,7 @@ function() {
         );
         $this->helper->setDijits($dijits);
         $test = $this->helper->getDijits();
-        $this->assertTrue(is_array($test));
+        $this->assertInternalType('array', $test);
         $this->assertEquals(2, count($test));
         $keys = array();
         foreach ($test as $dijit) {
@@ -595,9 +596,9 @@ function() {
     {
         $this->helper->addDijit('foo', array('dojoType' => 'dijit.form.Form'));
         $params = $this->helper->getDijit('foo');
-        $this->assertTrue(is_array($params));
+        $this->assertInternalType('array', $params);
         $this->assertEquals(1, count($params), var_export($params, 1));
-        $this->assertTrue(array_key_exists('dojoType', $params));
+        $this->assertArrayHasKey('dojoType', $params);
         $this->assertEquals('dijit.form.Form', $params['dojoType']);
     }
 
@@ -605,11 +606,11 @@ function() {
     {
         $this->helper->addDijit('foo', array('dojoType' => 'dijit.form.Form'));
         $dijits = $this->helper->getDijits();
-        $this->assertTrue(is_array($dijits));
+        $this->assertInternalType('array', $dijits);
         $this->assertEquals(1, count($dijits));
         $this->helper->removeDijit('foo');
         $dijits = $this->helper->getDijits();
-        $this->assertTrue(is_array($dijits));
+        $this->assertInternalType('array', $dijits);
         $this->assertEquals(0, count($dijits));
     }
 
@@ -618,7 +619,7 @@ function() {
         $this->testShouldAllowAddingMultipleDijitsAtOnce();
         $this->helper->clearDijits();
         $dijits = $this->helper->getDijits();
-        $this->assertTrue(is_array($dijits));
+        $this->assertInternalType('array', $dijits);
         $this->assertEquals(0, count($dijits));
     }
 
@@ -627,13 +628,13 @@ function() {
         $this->testShouldAllowAddingMultipleDijitsAtOnce();
         $json  = $this->helper->dijitsToJson();
         $array = Zend_Json::decode($json);
-        $this->assertTrue(is_array($array));
+        $this->assertInternalType('array', $array);
 
         $keys  = array();
         foreach ($array as $dijit) {
             $keys[] = $dijit['id'];
-            $this->assertTrue(array_key_exists('params', $dijit));
-            $this->assertTrue(is_array($dijit['params']));
+            $this->assertArrayHasKey('params', $dijit);
+            $this->assertInternalType('array', $dijit['params']);
         }
         $this->assertSame(array('foo', 'bar'), $keys);
     }
@@ -679,7 +680,7 @@ function() {
         $this->testShouldAllowAddingArbitraryJsToPrimaryDojoScriptTag();
         $this->helper->clearJavascript();
         $js = $this->helper->getJavascript();
-        $this->assertTrue(is_array($js));
+        $this->assertInternalType('array', $js);
         $this->assertEquals(0, count($js));
     }
 
@@ -688,7 +689,7 @@ function() {
         $this->helper->addJavascript('var foo = "bar";');
         $this->helper->addJavascript('var foo = "bar";');
         $js = $this->helper->getJavascript();
-        $this->assertTrue(is_array($js));
+        $this->assertInternalType('array', $js);
         $this->assertEquals(1, count($js), var_export($js, 1));
         $this->assertEquals('var foo = "bar";', $js[0]);
     }
@@ -706,8 +707,8 @@ function() {
     public function testNoLayersShouldBeRegisteredByDefault()
     {
         $layers = $this->helper->getLayers();
-        $this->assertTrue(is_array($layers));
-        $this->assertTrue(empty($layers));
+        $this->assertInternalType('array', $layers);
+        $this->assertEmpty($layers);
     }
 
     public function testShouldAllowAddingLayers()
@@ -749,8 +750,8 @@ function() {
         $this->testShouldAllowAddingLayers();
         $this->helper->clearLayers();
         $layers = $this->helper->getLayers();
-        $this->assertTrue(is_array($layers));
-        $this->assertTrue(empty($layers));
+        $this->assertInternalType('array', $layers);
+        $this->assertEmpty($layers);
     }
 
     public function testShouldRenderScriptTagsWithLayersWhenLayersAreRegistered()
@@ -778,10 +779,11 @@ function() {
     }
 
     /**
-     * @expectedException Zend_Dojo_View_Exception
      */
     public function testCallingMethodThatDoesNotExistInContainerShouldRaiseException()
     {
+        $this->expectException(\Zend_Dojo_View_Exception::class);
+
         $dojo = new Zend_Dojo_View_Helper_Dojo();
         $dojo->bogus();
     }

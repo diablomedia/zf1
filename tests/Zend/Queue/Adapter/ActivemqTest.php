@@ -94,9 +94,9 @@ class Zend_Queue_Adapter_ActivemqTest extends Zend_Queue_Adapter_AdapterTest
          * @see Zend_Queue_Adapter_Activemq
          */
         require_once 'Zend/Queue/Adapter/Activemq.php';
-        $this->assertTrue(is_string(Zend_Queue_Adapter_Activemq::DEFAULT_SCHEME));
-        $this->assertTrue(is_string(Zend_Queue_Adapter_Activemq::DEFAULT_HOST));
-        $this->assertTrue(is_integer(Zend_Queue_Adapter_Activemq::DEFAULT_PORT));
+        $this->assertInternalType('string', Zend_Queue_Adapter_Activemq::DEFAULT_SCHEME);
+        $this->assertInternalType('string', Zend_Queue_Adapter_Activemq::DEFAULT_HOST);
+        $this->assertInternalType('integer', Zend_Queue_Adapter_Activemq::DEFAULT_PORT);
     }
     
     /**

@@ -32,7 +32,7 @@ require_once 'Zend/Amf/Value/Messaging/ArrayCollection.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Amf
  */
-class Zend_Amf_Value_ArrayCollectionTest extends PHPUnit_Framework_TestCase
+class Zend_Amf_Value_ArrayCollectionTest extends PHPUnit\Framework\TestCase
 {
 
 
@@ -140,7 +140,7 @@ class Zend_Amf_Value_ArrayCollectionTest extends PHPUnit_Framework_TestCase
     {
         $this->_arrayCollection = new Zend_Amf_Value_Messaging_ArrayCollection($this->_data);
         $standardArray = iterator_to_array($this->_arrayCollection);
-        $this->assertTrue(is_array($standardArray));
+        $this->assertInternalType('array', $standardArray);
     }
 
     /**

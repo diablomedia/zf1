@@ -31,7 +31,7 @@
  * @group      Zend_Gdata
  * @group      Zend_Gdata_App
  */
-class Zend_Gdata_App_CaptchaRequiredExceptionTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_App_CaptchaRequiredExceptionTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {

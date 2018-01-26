@@ -31,7 +31,7 @@ require_once 'Zend/View.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Captcha
  */
-class Zend_Captcha_ReCaptchaTest extends PHPUnit_Framework_TestCase
+class Zend_Captcha_ReCaptchaTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -84,7 +84,7 @@ class Zend_Captcha_ReCaptchaTest extends PHPUnit_Framework_TestCase
         $test = $service->getParams();
         $compare = array('ssl' => $options['ssl'], 'xhtml' => $options['xhtml']);
         foreach ($compare as $key => $value) {
-            $this->assertTrue(array_key_exists($key, $test));
+            $this->assertArrayHasKey($key, $test);
             $this->assertSame($value, $test[$key]);
         }
     }

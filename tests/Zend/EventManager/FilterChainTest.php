@@ -31,7 +31,7 @@ require_once 'Zend/Stdlib/CallbackHandler.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_EventManager_FilterChainTest extends PHPUnit_Framework_TestCase
+class Zend_EventManager_FilterChainTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {

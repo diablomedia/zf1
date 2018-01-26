@@ -32,7 +32,7 @@ require_once 'Zend/Http/Client.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Analytics
  */
-class Zend_Gdata_Analytics_DataFeedTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_Analytics_DataFeedTest extends PHPUnit\Framework\TestCase
 {
     public $testData = array(
         'foobarbaz.de' => 12,

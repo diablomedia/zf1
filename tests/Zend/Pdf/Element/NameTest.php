@@ -33,7 +33,7 @@ require_once 'Zend/Pdf/Element/Name.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Pdf
  */
-class Zend_Pdf_Element_NameTest extends PHPUnit_Framework_TestCase
+class Zend_Pdf_Element_NameTest extends PHPUnit\Framework\TestCase
 {
     public function testPDFName()
     {

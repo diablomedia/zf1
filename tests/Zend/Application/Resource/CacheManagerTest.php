@@ -53,7 +53,7 @@ require_once 'Zend/Cache/Core.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Application
  */
-class Zend_Application_Resource_CacheManagerTest extends PHPUnit_Framework_TestCase
+class Zend_Application_Resource_CacheManagerTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {
@@ -255,8 +255,8 @@ class Zend_Application_Resource_CacheManagerTest extends PHPUnit_Framework_TestC
 
         $event = current($options['page']['frontend']['options']['logger'][0]->events);
 
-        $this->assertTrue(is_array($event));
-        $this->assertTrue(array_key_exists('message', $event));
+        $this->assertInternalType('array', $event);
+        $this->assertArrayHasKey('message', $event);
         $this->assertContains('Zend_Cache_Backend_Static', $event['message']);
     }
 }

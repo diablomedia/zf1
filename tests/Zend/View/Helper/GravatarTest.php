@@ -39,7 +39,7 @@ require_once 'Zend/View.php';
  * @group      Zend_View
  * @group      Zend_View_Helper
  */
-class Zend_View_Helper_GravatarTest extends PHPUnit_Framework_TestCase
+class Zend_View_Helper_GravatarTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @var Zend_View_Helper_Gravatar
@@ -138,14 +138,14 @@ class Zend_View_Helper_GravatarTest extends PHPUnit_Framework_TestCase
         $imgSizesRight = array(1, 500, "600");
         foreach ($imgSizesRight as $value) {
             $this->_object->setImgSize($value);
-            $this->assertTrue(is_int($this->_object->getImgSize()));
+            $this->assertInternalType('int', $this->_object->getImgSize());
         }
     }
 
     public function testInvalidRatingParametr()
     {
         $ratingsWrong = array( 'a', 'cs', 456);
-        $this->setExpectedException('Zend_View_Exception');
+        $this->expectException('Zend_View_Exception');
         foreach ($ratingsWrong as $value) {
             $this->_object->setRating($value);
         }
@@ -165,7 +165,7 @@ class Zend_View_Helper_GravatarTest extends PHPUnit_Framework_TestCase
         $values = array("true", "false", "text", $this->_view, 100, true, "", null, 0, false);
         foreach ($values as $value) {
             $this->_object->setSecure($value);
-            $this->assertTrue(is_bool($this->_object->getSecure()));
+            $this->assertInternalType('bool', $this->_object->getSecure());
         }
     }
 

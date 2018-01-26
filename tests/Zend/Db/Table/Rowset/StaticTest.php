@@ -33,7 +33,7 @@
  * @group      Zend_Db_Table
  * @group      Zend_Db_Table_Rowset
  */
-class Zend_Db_Table_Rowset_StaticTest extends PHPUnit_Framework_TestCase
+class Zend_Db_Table_Rowset_StaticTest extends PHPUnit\Framework\TestCase
 {
 
     public function testStatic()

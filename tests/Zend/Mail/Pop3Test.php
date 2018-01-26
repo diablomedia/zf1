@@ -43,7 +43,7 @@ require_once 'Zend/Config.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Mail
  */
-class Zend_Mail_Pop3Test extends PHPUnit_Framework_TestCase
+class Zend_Mail_Pop3Test extends PHPUnit\Framework\TestCase
 {
     protected $_params;
 
@@ -348,7 +348,7 @@ class Zend_Mail_Pop3Test extends PHPUnit_Framework_TestCase
     public function testServerCapa()
     {
         $mail = new Zend_Mail_Protocol_Pop3($this->_params['host']);
-        $this->assertTrue(is_array($mail->capa()));
+        $this->assertInternalType('array', $mail->capa());
     }
 
     public function testServerUidl()

@@ -1,4 +1,11 @@
-<phpunit bootstrap="./TestHelper.php" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" stderr="true">
+<phpunit
+    bootstrap="./TestHelper.php"
+    convertErrorsToExceptions="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true"
+    beStrictAboutTestsThatDoNotTestAnything="false"
+    backupGlobals="true"
+    stderr="true">
     <testsuites>
         <testsuite name="ZFTest_Zend_Acl">
             <file>./Zend/Acl/AclTest.php</file>

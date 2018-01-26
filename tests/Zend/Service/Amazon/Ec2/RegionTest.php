@@ -36,7 +36,7 @@ require_once 'Zend/Service/Amazon/Ec2/Region.php';
  * @group      Zend_Service_Amazon
  * @group      Zend_Service_Amazon_Ec2
  */
-class Zend_Service_Amazon_Ec2_RegionTest extends PHPUnit_Framework_TestCase
+class Zend_Service_Amazon_Ec2_RegionTest extends PHPUnit\Framework\TestCase
 {
 
     /**

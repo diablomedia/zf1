@@ -31,7 +31,7 @@ require_once 'Zend/Tag/Item.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Tag
  */
-class Zend_Tag_ItemTest extends PHPUnit_Framework_TestCase
+class Zend_Tag_ItemTest extends PHPUnit\Framework\TestCase
 {
     public function testConstuctor()
     {
@@ -96,7 +96,7 @@ class Zend_Tag_ItemTest extends PHPUnit_Framework_TestCase
         $tag->setWeight('10');
 
         $this->assertEquals(10.0, $tag->getWeight());
-        $this->assertTrue(is_float($tag->getWeight()));
+        $this->assertInternalType('float', $tag->getWeight());
     }
 
     public function testInvalidWeight()

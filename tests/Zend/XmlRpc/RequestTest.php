@@ -35,7 +35,7 @@ require_once 'Zend/XmlRpc/Value/String.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_XmlRpc
  */
-class Zend_XmlRpc_RequestTest extends PHPUnit_Framework_TestCase
+class Zend_XmlRpc_RequestTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Zend_XmlRpc_Request object
@@ -362,7 +362,7 @@ class Zend_XmlRpc_RequestTest extends PHPUnit_Framework_TestCase
         $payload = sprintf($payload, 'file://' . realpath(dirname(__FILE__) . '/_files/ZF12293-payload.txt'));
         $this->_request->loadXml($payload);
         $method = $this->_request->getMethod();
-        $this->assertTrue(empty($method));
+        $this->assertEmpty($method);
         if (is_string($method)) {
             $this->assertNotContains('Local file inclusion', $method);
         }

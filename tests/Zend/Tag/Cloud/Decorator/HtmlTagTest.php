@@ -34,7 +34,7 @@ require_once 'Zend/Config.php';
  * @group      Zend_Tag
  * @group      Zend_Tag_Cloud
  */
-class Zend_Tag_Cloud_Decorator_HtmlTagTest extends PHPUnit_Framework_TestCase
+class Zend_Tag_Cloud_Decorator_HtmlTagTest extends PHPUnit\Framework\TestCase
 {
     public function testDefaultOutput()
     {

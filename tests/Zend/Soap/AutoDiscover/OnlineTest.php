@@ -33,7 +33,7 @@ require_once 'Zend/Soap/Client.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Soap
  */
-class Zend_Soap_AutoDiscover_OnlineTest extends PHPUnit_Framework_TestCase
+class Zend_Soap_AutoDiscover_OnlineTest extends PHPUnit\Framework\TestCase
 {
     protected $baseuri;
 
@@ -56,9 +56,9 @@ class Zend_Soap_AutoDiscover_OnlineTest extends PHPUnit_Framework_TestCase
         $client = new Zend_Soap_Client($wsdl);
         $ret = $client->request($b);
 
-        $this->assertTrue( is_array($ret) );
+        $this->assertInternalType( 'array', $ret );
         $this->assertEquals(1, count($ret) );
-        $this->assertTrue( is_array($ret[0]->baz) );
+        $this->assertInternalType( 'array', $ret[0]->baz );
         $this->assertEquals(3, count($ret[0]->baz) );
 
         $baz = $ret[0]->baz;

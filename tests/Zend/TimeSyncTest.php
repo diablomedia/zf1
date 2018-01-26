@@ -33,7 +33,7 @@ require_once 'Zend/TimeSync.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_TimeSync
  */
-class Zend_TimeSyncTest extends PHPUnit_Framework_TestCase
+class Zend_TimeSyncTest extends PHPUnit\Framework\TestCase
 {
     public $timeservers = array(
         // invalid servers

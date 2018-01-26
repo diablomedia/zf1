@@ -31,7 +31,7 @@ require_once 'Zend/Log/Writer/Db.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Log
  */
-class Zend_Log_Writer_DbTest extends PHPUnit_Framework_TestCase
+class Zend_Log_Writer_DbTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {
@@ -135,7 +135,7 @@ class Zend_Log_Writer_DbTest extends PHPUnit_Framework_TestCase
         try {
             $this->writer->setFormatter(new StdClass());
         } catch (Exception $e) {
-            $this->assertTrue($e instanceof PHPUnit_Framework_Error);
+            $this->assertTrue($e instanceof PHPUnit\Framework\Error\Error);
             $this->assertContains('must implement interface', $e->getMessage());
         }
     }

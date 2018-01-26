@@ -33,7 +33,7 @@ require_once 'Zend/View/Helper/PaginationControl.php';
  * @group      Zend_View
  * @group      Zend_View_Helper
  */
-class Zend_View_Helper_PaginationControlTest extends PHPUnit_Framework_TestCase
+class Zend_View_Helper_PaginationControlTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @var Zend_View_Helper_PaginationControl

@@ -33,7 +33,7 @@ require_once 'Zend/Measure/Flow/Volume.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Measure
  */
-class Zend_Measure_Flow_VolumeTest extends PHPUnit_Framework_TestCase
+class Zend_Measure_Flow_VolumeTest extends PHPUnit\Framework\TestCase
 {
     /**
      * test for Volume initialisation
@@ -383,6 +383,6 @@ class Zend_Measure_Flow_VolumeTest extends PHPUnit_Framework_TestCase
     {
         $value = new Zend_Measure_Flow_Volume('-100',Zend_Measure_Flow_Volume::STANDARD,'de');
         $unit  = $value->getConversionList();
-        $this->assertTrue(is_array($unit), 'Array expected');
+        $this->assertInternalType('array', $unit, 'Array expected');
     }
 }

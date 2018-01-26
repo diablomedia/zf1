@@ -32,7 +32,7 @@ require_once 'Zend/Loader/PluginLoader.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Loader
  */
-class Zend_Loader_PluginLoaderTest extends PHPUnit_Framework_TestCase
+class Zend_Loader_PluginLoaderTest extends PHPUnit\Framework\TestCase
 {
     protected $_includeCache;
 
@@ -84,8 +84,8 @@ class Zend_Loader_PluginLoaderTest extends PHPUnit_Framework_TestCase
                ->addPrefixPath('Zend_Loader', $this->libPath . '/Zend');
         $paths = $loader->getPaths();
         $this->assertEquals(2, count($paths));
-        $this->assertTrue(array_key_exists('Zend_View_', $paths));
-        $this->assertTrue(array_key_exists('Zend_Loader_', $paths));
+        $this->assertArrayHasKey('Zend_View_', $paths);
+        $this->assertArrayHasKey('Zend_Loader_', $paths);
         $this->assertEquals(1, count($paths['Zend_View_']));
         $this->assertEquals(2, count($paths['Zend_Loader_']));
     }
@@ -97,7 +97,7 @@ class Zend_Loader_PluginLoaderTest extends PHPUnit_Framework_TestCase
                ->addPrefixPath('Zend_Loader', $this->libPath . '/Zend/Loader');
         $paths = $loader->getPaths();
 
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
         $this->assertEquals(1, count($paths['Zend_Loader_']));
     }
 
@@ -110,8 +110,8 @@ class Zend_Loader_PluginLoaderTest extends PHPUnit_Framework_TestCase
                ->addPrefixPath('Zend_Loader', $this->libPath . '/Zend');
         $paths = $loader->getPaths();
         $this->assertEquals(2, count($paths));
-        $this->assertTrue(array_key_exists('Zend_View_', $paths));
-        $this->assertTrue(array_key_exists('Zend_Loader_', $paths));
+        $this->assertArrayHasKey('Zend_View_', $paths);
+        $this->assertArrayHasKey('Zend_Loader_', $paths);
         $this->assertEquals(1, count($paths['Zend_View_']));
         $this->assertEquals(2, count($paths['Zend_Loader_']));
     }
@@ -388,10 +388,11 @@ class Zend_Loader_PluginLoaderTest extends PHPUnit_Framework_TestCase
 
     /**
      * @group ZF-4670
-     * @expectedException Zend_Loader_PluginLoader_Exception
      */
     public function testPluginLoaderShouldThrowExceptionWhenPathDoesNotExist()
     {
+        $this->expectException(\Zend_Loader_PluginLoader_Exception::class);
+
         $cacheFile = dirname(__FILE__) . '/_filesDoNotExist/includeCache.inc.php';
         $this->testIncludeCacheShouldBeNullByDefault();
         Zend_Loader_PluginLoader::setIncludeFileCache($cacheFile);
@@ -414,7 +415,7 @@ class Zend_Loader_PluginLoaderTest extends PHPUnit_Framework_TestCase
             $paths = $loader->getPaths();
             $this->fail(sprintf("Failed loading helper; paths: %s", var_export($paths, 1)));
         }
-        $this->assertTrue(file_exists($cacheFile));
+        $this->assertFileExists($cacheFile);
         $cache = file_get_contents($cacheFile);
         $this->assertContains('CacheTest.php', $cache);
     }

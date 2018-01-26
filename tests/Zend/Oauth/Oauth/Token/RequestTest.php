@@ -31,7 +31,7 @@ require_once 'Zend/Oauth/Token/Request.php';
  * @group      Zend_Oauth
  * @group      Zend_Oauth_Token
  */
-class Zend_Oauth_Token_RequestTest extends PHPUnit_Framework_TestCase
+class Zend_Oauth_Token_RequestTest extends PHPUnit\Framework\TestCase
 {
 
     public function testConstructorSetsResponseObject()

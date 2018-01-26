@@ -30,7 +30,7 @@ require_once 'Zend/Gdata/Entry.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Gdata
  */
-class Zend_Gdata_EntryTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_EntryTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {

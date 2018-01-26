@@ -35,7 +35,7 @@ require_once 'Zend/Validate/File/Md5.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Validate
  */
-class Zend_Validate_File_Md5Test extends PHPUnit_Framework_TestCase
+class Zend_Validate_File_Md5Test extends PHPUnit\Framework\TestCase
 {
     /**
      * Ensures that the validator follows expected behavior
@@ -62,7 +62,7 @@ class Zend_Validate_File_Md5Test extends PHPUnit_Framework_TestCase
 
         $validator = new Zend_Validate_File_Md5('ed74c22109fe9f110579f77b053b8bc3');
         $this->assertFalse($validator->isValid(dirname(__FILE__) . '/_files/nofile.mo'));
-        $this->assertTrue(array_key_exists('fileMd5NotFound', $validator->getMessages()));
+        $this->assertArrayHasKey('fileMd5NotFound', $validator->getMessages());
 
         $files = array(
             'name'     => 'test1',
@@ -73,7 +73,7 @@ class Zend_Validate_File_Md5Test extends PHPUnit_Framework_TestCase
         );
         $validator = new Zend_Validate_File_Md5('ed74c22109fe9f110579f77b053b8bc3');
         $this->assertFalse($validator->isValid(dirname(__FILE__) . '/_files/nofile.mo', $files));
-        $this->assertTrue(array_key_exists('fileMd5NotFound', $validator->getMessages()));
+        $this->assertArrayHasKey('fileMd5NotFound', $validator->getMessages());
 
         $files = array(
             'name'     => 'testsize.mo',
@@ -94,7 +94,7 @@ class Zend_Validate_File_Md5Test extends PHPUnit_Framework_TestCase
         );
         $validator = new Zend_Validate_File_Md5('7d74c22109fe9f110579f77b053b8bc3');
         $this->assertFalse($validator->isValid(dirname(__FILE__) . '/_files/picture.jpg', $files));
-        $this->assertTrue(array_key_exists('fileMd5DoesNotMatch', $validator->getMessages()));
+        $this->assertArrayHasKey('fileMd5DoesNotMatch', $validator->getMessages());
     }
 
     /**

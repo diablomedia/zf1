@@ -33,7 +33,7 @@ require_once 'Zend/View.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Form
  */
-class Zend_Form_Element_PasswordTest extends PHPUnit_Framework_TestCase
+class Zend_Form_Element_PasswordTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -115,7 +115,7 @@ class Zend_Form_Element_PasswordTest extends PHPUnit_Framework_TestCase
         $messages = $this->element->getMessages();
         restore_error_handler();
         $this->assertSame(array(), $messages);
-        $this->assertTrue(empty($this->errors));
+        $this->assertEmpty($this->errors);
     }
 
     /**

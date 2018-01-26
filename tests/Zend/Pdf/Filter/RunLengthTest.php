@@ -32,7 +32,7 @@ require_once 'Zend/Pdf/Filter/RunLength.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Pdf
  */
-class Zend_Pdf_Filter_RunLengthTest extends PHPUnit_Framework_TestCase
+class Zend_Pdf_Filter_RunLengthTest extends PHPUnit\Framework\TestCase
 {
     public function testSimpleStringEncode()
     {

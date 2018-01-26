@@ -47,7 +47,7 @@ require_once 'Zend/Queue/Adapter/Null.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Queue
  */
-class Zend_Queue_MessageTest extends PHPUnit_Framework_TestCase
+class Zend_Queue_MessageTest extends PHPUnit\Framework\TestCase
 {
     protected function setUp()
     {
@@ -179,7 +179,7 @@ class Zend_Queue_MessageTest extends PHPUnit_Framework_TestCase
     public function test_array()
     {
         $array = $this->message->toArray();
-        $this->assertTrue(is_array($array));
+        $this->assertInternalType('array', $array);
 
         $array['id'] = 'hello';
         $this->message->setFromArray($array);
@@ -189,7 +189,7 @@ class Zend_Queue_MessageTest extends PHPUnit_Framework_TestCase
 
     public function test_magic()
     {
-        $this->assertTrue(is_array($this->message->__sleep()));
+        $this->assertInternalType('array', $this->message->__sleep());
 
         $message = serialize($this->message);
         $woken = unserialize($message);

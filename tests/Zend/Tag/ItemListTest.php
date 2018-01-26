@@ -31,7 +31,7 @@ require_once 'Zend/Tag/ItemList.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Tag
  */
-class Zend_Tag_ItemListTest extends PHPUnit_Framework_TestCase
+class Zend_Tag_ItemListTest extends PHPUnit\Framework\TestCase
 {
     public function testArrayAccessAndCount()
     {

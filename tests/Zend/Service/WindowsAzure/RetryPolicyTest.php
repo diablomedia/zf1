@@ -37,7 +37,7 @@ require_once 'Zend/Service/WindowsAzure/RetryPolicy/RetryPolicyAbstract.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_WindowsAzure_RetryPolicyTest extends PHPUnit_Framework_TestCase
+class Zend_Service_WindowsAzure_RetryPolicyTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Helper variable for counting retries

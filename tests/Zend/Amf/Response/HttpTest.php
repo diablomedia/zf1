@@ -36,7 +36,7 @@ require_once 'Zend/Amf/Response/Http.php';
  * @group      Zend_Amf
  * @group      Zend_Amf_Response
  */
-class Zend_Amf_Response_HttpTest extends PHPUnit_Framework_TestCase
+class Zend_Amf_Response_HttpTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Ensure isIeOverSsl() does not emit a notice when $_SERVER['HTTPS'] not set

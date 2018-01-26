@@ -26,7 +26,7 @@ require_once 'Zend/Service/ShortUrl/BitLy.php';
  * @package  Zend_Service
  * @subpackage  UnitTests
  */
-class Zend_Service_ShortUrl_BitLyTest extends PHPUnit_Framework_TestCase
+class Zend_Service_ShortUrl_BitLyTest extends PHPUnit\Framework\TestCase
 {
 
     /**
@@ -47,7 +47,7 @@ class Zend_Service_ShortUrl_BitLyTest extends PHPUnit_Framework_TestCase
 
     public function testShortenEmptyUrlException()
     {
-        $this->setExpectedException('Zend_Service_ShortUrl_Exception');
+        $this->expectException('Zend_Service_ShortUrl_Exception');
 
         $s = new Zend_Service_ShortUrl_BitLy('test');
         $s->shorten('');
@@ -55,7 +55,7 @@ class Zend_Service_ShortUrl_BitLyTest extends PHPUnit_Framework_TestCase
 
     public function testShortenIncorrectUrlException()
     {
-        $this->setExpectedException('Zend_Service_ShortUrl_Exception');
+        $this->expectException('Zend_Service_ShortUrl_Exception');
 
         $s = new Zend_Service_ShortUrl_BitLy('test');
         $s->shorten('wrongAdress.cccc');
@@ -63,7 +63,7 @@ class Zend_Service_ShortUrl_BitLyTest extends PHPUnit_Framework_TestCase
 
     public function testExceptionOnBadApiResponse()
     {
-        $this->setExpectedException('Zend_Service_ShortUrl_Exception');
+        $this->expectException('Zend_Service_ShortUrl_Exception');
 
         $clientResponse = $this->getMockBuilder('Zend_Http_Response')
             ->disableOriginalConstructor()

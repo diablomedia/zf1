@@ -31,7 +31,7 @@ require_once 'Zend/Gdata.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Gdata
  */
-class Zend_Gdata_ReminderTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_ReminderTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -42,24 +42,24 @@ class Zend_Gdata_ReminderTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyReminderShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->reminder->extensionElements));
+        $this->assertInternalType('array', $this->reminder->extensionElements);
         $this->assertTrue(count($this->reminder->extensionElements) == 0);
     }
 
     public function testEmptyReminderShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->reminder->extensionAttributes));
+        $this->assertInternalType('array', $this->reminder->extensionAttributes);
         $this->assertTrue(count($this->reminder->extensionAttributes) == 0);
     }
 
     public function testSampleReminderShouldHaveNoExtensionElements() {
         $this->reminder->transferFromXML($this->reminderText);
-        $this->assertTrue(is_array($this->reminder->extensionElements));
+        $this->assertInternalType('array', $this->reminder->extensionElements);
         $this->assertTrue(count($this->reminder->extensionElements) == 0);
     }
 
     public function testSampleReminderShouldHaveNoExtensionAttributes() {
         $this->reminder->transferFromXML($this->reminderText);
-        $this->assertTrue(is_array($this->reminder->extensionAttributes));
+        $this->assertInternalType('array', $this->reminder->extensionAttributes);
         $this->assertTrue(count($this->reminder->extensionAttributes) == 0);
     }
 

@@ -33,7 +33,7 @@ require_once 'Zend/Gdata/App.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_App
  */
-class Zend_Gdata_App_GeneratorTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_App_GeneratorTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -44,7 +44,7 @@ class Zend_Gdata_App_GeneratorTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyGeneratorShouldHaveEmptyExtensionsList() {
-        $this->assertTrue(is_array($this->generator->extensionElements));
+        $this->assertInternalType('array', $this->generator->extensionElements);
         $this->assertTrue(count($this->generator->extensionElements) == 0);
     }
 

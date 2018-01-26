@@ -14,7 +14,7 @@
             de tests sous forme de classe étendant
             <classname>Zend_Test_PHPUnit_DatabaseTestCase</classname>. Cette classe étend elle-
             même PHPUnit Database Extension, qui étend alors
-            <classname>PHPUnit_Framework_TestCase</classname>. Un cas de test pour base de données
+            <classname>PHPUnit\Framework\TestCase</classname>. Un cas de test pour base de données
             contient deux méthodes abstraites à définir, une concernant la connexion à la base et
             l'autre concernant les données à utiliser comme source pour les tests.
         </para>
@@ -36,7 +36,7 @@ class BugsTest extends Zend_Test_PHPUnit_DatabaseTestCase
     /**
      * Retourne la connexion de test
      *
-     * @return PHPUnit_Extensions_Database_DB_IDatabaseConnection
+     * @return PHPUnit\DbUnit\Database\Connection
      */
     protected function getConnection()
     {
@@ -51,7 +51,7 @@ class BugsTest extends Zend_Test_PHPUnit_DatabaseTestCase
     }
 
     /**
-     * @return PHPUnit_Extensions_Database_DataSet_IDataSet
+     * @return PHPUnit\DbUnit\DataSet\IDataSet
      */
     protected function getDataSet()
     {
@@ -94,7 +94,7 @@ class BugsTest extends Zend_Test_PHPUnit_DatabaseTestCase
             <listitem>
                 <para>
                     Les jeux de données (DataSets) doivent implémenter
-                    <classname>PHPUnit_Extensions_Database_DataSet_IDataSet</classname>.
+                    <classname>PHPUnit\DbUnit\DataSet\IDataSet</classname>.
                     Il en existe quelques uns, basés sur <acronym>XML</acronym> ou YAML et
                     ils sont inclus dans PHPUnit et permettent de décrire les données fictives pour
                     les tests. Vous devriez vous reporter à la documentation de PHPUnit pour

@@ -175,9 +175,9 @@ abstract class Zend_Db_Table_Rowset_TestCommon extends Zend_Db_Table_TestSetup
 
         $a = $rows->toArray();
 
-        $this->assertTrue(is_array($a));
+        $this->assertInternalType('array', $a);
         $this->assertEquals(count($a), count($rows));
-        $this->assertTrue(is_array($a[0]));
+        $this->assertInternalType('array', $a[0]);
         $this->assertEquals(8, count($a[0]));
         $this->assertEquals('foo', $a[0][$bug_description]);
     }

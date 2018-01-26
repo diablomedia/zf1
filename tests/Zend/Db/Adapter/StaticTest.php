@@ -45,7 +45,7 @@ require_once 'Zend/Db/Adapter/Static.php';
  * @group      Zend_Db
  * @group      Zend_Db_Adapter
  */
-class Zend_Db_Adapter_StaticTest extends PHPUnit_Framework_TestCase
+class Zend_Db_Adapter_StaticTest extends PHPUnit\Framework\TestCase
 {
 
     protected static $_isCaseSensitiveFileSystem = null;
@@ -272,7 +272,7 @@ class Zend_Db_Adapter_StaticTest extends PHPUnit_Framework_TestCase
     {
         $db = Zend_Db::factory('Static', array('dbname' => 'dummy'));
         $mode = $db->getFetchMode();
-        $this->assertTrue(is_int($mode));
+        $this->assertInternalType('int', $mode);
     }
 
     /**

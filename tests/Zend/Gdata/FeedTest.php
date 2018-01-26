@@ -32,7 +32,7 @@ require_once 'Zend/Gdata/App/Util.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Gdata
  */
-class Zend_Gdata_FeedTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_FeedTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {

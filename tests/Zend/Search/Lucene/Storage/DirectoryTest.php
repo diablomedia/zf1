@@ -33,7 +33,7 @@ require_once 'Zend/Search/Lucene/Storage/Directory/Filesystem.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Search_Lucene
  */
-class Zend_Search_Lucene_Storage_DirectoryTest extends PHPUnit_Framework_TestCase
+class Zend_Search_Lucene_Storage_DirectoryTest extends PHPUnit\Framework\TestCase
 {
     public function testFilesystem()
     {

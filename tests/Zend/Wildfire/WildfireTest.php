@@ -58,7 +58,7 @@ require_once 'Zend/Json/Encoder.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Wildfire
  */
-class Zend_Wildfire_WildfireTest extends PHPUnit_Framework_TestCase
+class Zend_Wildfire_WildfireTest extends PHPUnit\Framework\TestCase
 {
 
     protected $_controller = null;

@@ -43,7 +43,7 @@ require_once 'Zend/Dojo/View/Helper/Dojo.php';
  * @group      Zend_Dojo
  * @group      Zend_Dojo_Form
  */
-class Zend_Dojo_Form_Element_TimeTextBoxTest extends PHPUnit_Framework_TestCase
+class Zend_Dojo_Form_Element_TimeTextBoxTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -119,10 +119,11 @@ class Zend_Dojo_Form_Element_TimeTextBoxTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Form_Element_Exception
      */
     public function testClickableIncrementMutatorShouldRaiseExceptionOnInvalidFormat()
     {
+        $this->expectException(\Zend_Form_Element_Exception::class);
+
         $this->element->setClickableIncrement('en-US');
     }
 
@@ -137,10 +138,11 @@ class Zend_Dojo_Form_Element_TimeTextBoxTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Form_Element_Exception
      */
     public function testVisibleIncrementMutatorShouldRaiseExceptionOnInvalidFormat()
     {
+        $this->expectException(\Zend_Form_Element_Exception::class);
+
         $this->element->setVisibleIncrement('en-US');
     }
 
@@ -155,10 +157,11 @@ class Zend_Dojo_Form_Element_TimeTextBoxTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Form_Element_Exception
      */
     public function testVisibleRangeMutatorShouldRaiseExceptionOnInvalidFormat()
     {
+        $this->expectException(\Zend_Form_Element_Exception::class);
+
         $this->element->setVisibleRange('en-US');
     }
 

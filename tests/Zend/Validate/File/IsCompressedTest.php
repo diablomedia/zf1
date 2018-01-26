@@ -35,7 +35,7 @@ require_once 'Zend/Validate/File/IsCompressed.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Validate
  */
-class Zend_Validate_File_IsCompressedTest extends PHPUnit_Framework_TestCase
+class Zend_Validate_File_IsCompressedTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Ensures that the validator follows expected behavior
@@ -174,7 +174,7 @@ class Zend_Validate_File_IsCompressedTest extends PHPUnit_Framework_TestCase
         $validator->enableHeaderCheck();
         $this->assertFalse($validator->isValid(dirname(__FILE__) . '/_files/picture.jpg', $files));
         $error = $validator->getMessages();
-        $this->assertTrue(array_key_exists('fileIsCompressedFalseType', $error));
+        $this->assertArrayHasKey('fileIsCompressedFalseType', $error);
     }
 
     public function testOptionsAtConstructor()

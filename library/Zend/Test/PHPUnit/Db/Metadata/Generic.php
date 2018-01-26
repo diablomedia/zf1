@@ -28,14 +28,14 @@ require_once "Zend/Db/Adapter/Abstract.php";
 /**
  * Generic Metadata accessor for the Zend_Db adapters
  *
- * @uses       PHPUnit_Extensions_Database_DB_IMetaData
+ * @uses       PHPUnit\DbUnit\Database\Metadata\Metadata
  * @category   Zend
  * @package    Zend_Test
  * @subpackage PHPUnit
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Test_PHPUnit_Db_Metadata_Generic implements PHPUnit_Extensions_Database_DB_IMetaData
+class Zend_Test_PHPUnit_Db_Metadata_Generic implements PHPUnit\DbUnit\Database\Metadata\Metadata
 {
     /**
      * Zend_Db Connection

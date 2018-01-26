@@ -116,9 +116,9 @@ class Zend_Db_Statement_OracleTest extends Zend_Db_Statement_TestCommon
                        ->where("$product_id = 4");
 
         $result = $this->_db->fetchAll($select);
-        $this->assertTrue(array_key_exists('product_name', $result[0]), 'fetchAll must return null for empty fields with Oracle');
+        $this->assertArrayHasKey('product_name', $result[0], 'fetchAll must return null for empty fields with Oracle');
         $result = $this->_db->fetchRow($select);
-        $this->assertTrue(array_key_exists('product_name', $result), 'fetchRow must return null for empty fields with Oracle');
+        $this->assertArrayHasKey('product_name', $result, 'fetchRow must return null for empty fields with Oracle');
     }
 
     public function testStatementSetFetchModeBoth()

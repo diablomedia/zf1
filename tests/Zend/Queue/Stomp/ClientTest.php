@@ -117,7 +117,7 @@ class Zend_Queue_Stomp_Connection_Mock
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Queue
  */
-class Zend_Queue_Stomp_ClientTest extends PHPUnit_Framework_TestCase
+class Zend_Queue_Stomp_ClientTest extends PHPUnit\Framework\TestCase
 {
     public function testConstruct()
     {

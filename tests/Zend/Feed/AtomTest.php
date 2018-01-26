@@ -42,7 +42,8 @@ class Zend_Feed_AtomTest extends Zend_Feed_AbstractFeedTest
     public function testPreventsXxeAttacksOnParsing()
     {
         $uri   = $this->baseUri . '/' . $this->prepareFeed('zend_feed_atom_xxe.xml');
-        $this->setExpectedException('Zend_Feed_Exception', 'parse');
+        $this->expectException('Zend_Feed_Exception');
+        $this->expectExceptionMessage('parse');
         $feed  = new Zend_Feed_Atom($uri);
     }
 }

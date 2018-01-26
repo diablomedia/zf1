@@ -36,7 +36,7 @@ require_once 'Zend/Http/UserAgent.php';
  * @group      Zend_View
  * @group      Zend_View_Helper
  */
-class Zend_View_Helper_UserAgentTest extends PHPUnit_Framework_TestCase
+class Zend_View_Helper_UserAgentTest extends PHPUnit\Framework\TestCase
 {
 
     /**

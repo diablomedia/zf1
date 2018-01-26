@@ -32,7 +32,7 @@ require_once 'Zend/Tag/Cloud/Decorator/HtmlCloud.php';
  * @group      Zend_Tag
  * @group      Zend_Tag_Cloud
  */
-class Zend_Tag_Cloud_Decorator_HtmlCloudTest extends PHPUnit_Framework_TestCase
+class Zend_Tag_Cloud_Decorator_HtmlCloudTest extends PHPUnit\Framework\TestCase
 {
     public function testDefaultOutput()
     {

@@ -33,7 +33,7 @@ require_once 'Zend/Validate/StringLength.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Validate
  */
-class Zend_Validate_StringLengthTest extends PHPUnit_Framework_TestCase
+class Zend_Validate_StringLengthTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Default instance created for all test methods
@@ -179,11 +179,12 @@ class Zend_Validate_StringLengthTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Validate_Exception
      * @group GH-634
      */
     public function testWrongEncoding()
     {
+        $this->expectException(\Zend_Validate_Exception::class);
+
         $this->_validator->setEncoding('');
     }
 

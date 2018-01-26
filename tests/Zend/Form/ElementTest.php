@@ -42,7 +42,7 @@ require_once 'Zend/View.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Form
  */
-class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
+class Zend_Form_ElementTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {
@@ -222,7 +222,7 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
              ->setIsArray(true)
              ->addFilter('StringToUpper');
         $test = $this->element->getValue();
-        $this->assertTrue(is_array($test));
+        $this->assertInternalType('array', $test);
         array_walk_recursive($test, array($this, 'checkFilterValues'));
     }
 
@@ -239,7 +239,7 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
         $this->element->setValue($values)
                       ->addFilter(new Zend_Form_ElementTest_ArrayFilter());
         $test = $this->element->getValue();
-        $this->assertTrue(is_array($test));
+        $this->assertInternalType('array', $test);
         require_once 'Zend/Json.php';
         $test = Zend_Json::encode($test);
         $this->assertNotContains('foo', $test);
@@ -464,7 +464,7 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
         );
         $this->element->setAttribs($attribs);
 
-        $this->assertFalse(array_key_exists('helper', $this->element->getAttribs()));
+        $this->assertArrayNotHasKey('helper', $this->element->getAttribs());
     }
 
     public function testPassingNullValuesToSetAttribsUnsetsAttribs()
@@ -495,7 +495,7 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
         $loader = $this->element->getPluginLoader('validate');
         $this->assertTrue($loader instanceof Zend_Loader_PluginLoader);
         $paths = $loader->getPaths('Zend_Validate');
-        $this->assertTrue(is_array($paths), var_export($loader, 1));
+        $this->assertInternalType('array', $paths, var_export($loader, 1));
         $this->assertTrue(0 < count($paths));
         $this->assertContains('Validate', $paths[0]);
     }
@@ -505,7 +505,7 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
         $loader = $this->element->getPluginLoader('filter');
         $this->assertTrue($loader instanceof Zend_Loader_PluginLoader);
         $paths = $loader->getPaths('Zend_Filter');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
         $this->assertTrue(0 < count($paths));
         $this->assertContains('Filter', $paths[0]);
     }
@@ -515,7 +515,7 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
         $loader = $this->element->getPluginLoader('decorator');
         $this->assertTrue($loader instanceof Zend_Loader_PluginLoader);
         $paths = $loader->getPaths('Zend_Form_Decorator');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
         $this->assertTrue(0 < count($paths));
         $this->assertContains('Decorator', $paths[0]);
     }
@@ -580,7 +580,7 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
         $loader = $this->element->getPluginLoader('validate');
         $this->element->addPrefixPath('Zend_Form', 'Zend/Form/', 'validate');
         $paths = $loader->getPaths('Zend_Form');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
         $this->assertContains('Form', $paths[0]);
     }
 
@@ -599,7 +599,7 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
         $loader = $this->element->getPluginLoader('validate');
         $this->element->addPrefixPath('Zend_Form', 'Zend/Form/', 'validate');
         $paths = $loader->getPaths('Zend_Form');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
         $this->assertContains('Form', $paths[0]);
     }
 
@@ -618,7 +618,7 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
         $loader = $this->element->getPluginLoader('decorator');
         $this->element->addPrefixPath('Zend_Foo', 'Zend/Foo/', 'decorator');
         $paths = $loader->getPaths('Zend_Foo');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
         $this->assertContains('Foo', $paths[0]);
     }
 
@@ -643,15 +643,15 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
                       ->addPrefixPath('Zend', 'Zend/');
 
         $paths = $filterLoader->getPaths('Zend_Filter');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
         $this->assertContains('Filter', $paths[0]);
 
         $paths = $validatorLoader->getPaths('Zend_Validate');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
         $this->assertContains('Validate', $paths[0]);
 
         $paths = $decoratorLoader->getPaths('Zend_Decorator');
-        $this->assertTrue(is_array($paths), var_export($paths, 1));
+        $this->assertInternalType('array', $paths, var_export($paths, 1));
         $this->assertContains('Decorator', $paths[0]);
     }
 
@@ -898,7 +898,7 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
         $this->testCustomErrorMessagesShouldBeManagedInAStack();
         $this->element->clearErrorMessages();
         $messages = $this->element->getErrorMessages();
-        $this->assertTrue(empty($messages));
+        $this->assertEmpty($messages);
     }
 
     public function testCustomErrorMessagesShouldBeTranslated()
@@ -1027,7 +1027,7 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
         $this->element->clearValidators();
         $test = $this->element->getValidators();
         $this->assertNotEquals($validators, $test);
-        $this->assertTrue(empty($test));
+        $this->assertEmpty($test);
         foreach (array_keys($validators) as $validator) {
             $this->assertFalse($this->element->getValidator($validator));
         }
@@ -1073,7 +1073,7 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
             $this->fail('Invalid data should fail validations');
         }
         $errors = $this->element->getErrors();
-        $this->assertTrue(is_array($errors));
+        $this->assertInternalType('array', $errors);
         $this->assertTrue(0 < count($errors));
     }
 
@@ -1089,7 +1089,7 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
             $this->fail('Invalid data should fail validations');
         }
         $messages = $this->element->getMessages();
-        $this->assertTrue(is_array($messages));
+        $this->assertInternalType('array', $messages);
         $this->assertTrue(0 < count($messages));
     }
 
@@ -1102,8 +1102,8 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
             $this->fail('Empty data should not fail validations');
         }
         $errors = $this->element->getErrors();
-        $this->assertTrue(is_array($errors));
-        $this->assertTrue(empty($errors));
+        $this->assertInternalType('array', $errors);
+        $this->assertEmpty($errors);
     }
 
     public function testOptionalElementDoesPerformValidationsWhenAllowEmptyIsFalse()
@@ -1116,7 +1116,7 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
             $this->fail('Empty data should fail validations when AllowEmpty is false');
         }
         $errors = $this->element->getErrors();
-        $this->assertTrue(is_array($errors));
+        $this->assertInternalType('array', $errors);
         $this->assertTrue(0 < count($errors));
     }
 
@@ -1254,7 +1254,7 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
         $this->element->clearFilters();
         $test = $this->element->getFilters();
         $this->assertNotEquals($filters, $test);
-        $this->assertTrue(empty($test));
+        $this->assertEmpty($test);
         foreach (array_keys($filters) as $filter) {
             $this->assertFalse($this->element->getFilter($filter));
         }
@@ -1312,9 +1312,9 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
         $decorator = $this->element->getDecorator('description');
         $this->assertTrue($decorator instanceof Zend_Form_Decorator_Description);
         $options = $decorator->getOptions();
-        $this->assertTrue(array_key_exists('tag', $options));
+        $this->assertArrayHasKey('tag', $options);
         $this->assertEquals('p', $options['tag']);
-        $this->assertTrue(array_key_exists('class', $options));
+        $this->assertArrayHasKey('class', $options);
         $this->assertEquals('description', $options['class']);
     }
 
@@ -1461,12 +1461,12 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
             array(array('div2' => 'HtmlTag'), array('tag' => 'div')),
         ));
         $decorators = $this->element->getDecorators();
-        $this->assertTrue(array_key_exists('div', $decorators));
-        $this->assertTrue(array_key_exists('div2', $decorators));
+        $this->assertArrayHasKey('div', $decorators);
+        $this->assertArrayHasKey('div2', $decorators);
         $this->element->removeDecorator('div');
         $decorators = $this->element->getDecorators();
-        $this->assertFalse(array_key_exists('div', $decorators));
-        $this->assertTrue(array_key_exists('div2', $decorators));
+        $this->assertArrayNotHasKey('div', $decorators);
+        $this->assertArrayHasKey('div2', $decorators);
     }
 
     public function testCanClearAllDecorators()
@@ -1537,8 +1537,8 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
     {
         $this->element->setName('foo');
         $html = $this->element->render($this->getView());
-        $this->assertTrue(is_string($html));
-        $this->assertFalse(empty($html));
+        $this->assertInternalType('string', $html);
+        $this->assertNotEmpty($html);
         $this->assertContains('<input', $html);
         $this->assertContains('"foo"', $html);
     }
@@ -1549,8 +1549,8 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
         $this->element->setName('foo')
                       ->setLabel('Foo');
         $html = $this->element->render();
-        $this->assertTrue(is_string($html));
-        $this->assertFalse(empty($html));
+        $this->assertInternalType('string', $html);
+        $this->assertNotEmpty($html);
         $this->assertContains('<label', $html);
         $this->assertContains('Foo', $html);
         $this->assertContains('</label>', $html);
@@ -1562,8 +1562,8 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
         $this->element->setName('foo')
                       ->setValue('bar');
         $html = $this->element->render();
-        $this->assertTrue(is_string($html));
-        $this->assertFalse(empty($html));
+        $this->assertInternalType('string', $html);
+        $this->assertNotEmpty($html);
         $this->assertContains('<input', $html);
         $this->assertContains('"foo"', $html);
         $this->assertContains('"bar"', $html);
@@ -1580,8 +1580,8 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
         $this->element->isValid('');
 
         $html = $this->element->render();
-        $this->assertTrue(is_string($html));
-        $this->assertFalse(empty($html));
+        $this->assertInternalType('string', $html);
+        $this->assertNotEmpty($html);
         $this->assertContains('error', $html);
         $this->assertRegexp('/empty/i', $html);
     }
@@ -1591,8 +1591,8 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
         $this->element->setView($this->getView());
         $this->element->setName('foo');
         $html = $this->element->__toString();
-        $this->assertTrue(is_string($html));
-        $this->assertFalse(empty($html));
+        $this->assertInternalType('string', $html);
+        $this->assertNotEmpty($html);
         $this->assertContains('<input', $html);
         $this->assertContains('"foo"', $html);
     }
@@ -1621,7 +1621,7 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
 
         restore_error_handler();
 
-        $this->assertTrue(empty($text));
+        $this->assertEmpty($text);
         $this->assertTrue(isset($this->error));
         $this->assertEquals('Raising exception in decorator callback', $this->error);
     }
@@ -1863,8 +1863,8 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
         foreach (array('validate', 'filter', 'decorator') as $type) {
             $loader = $this->element->getPluginLoader($type);
             $paths = $loader->getPaths('Zend_Foo_' . ucfirst($type));
-            $this->assertTrue(is_array($paths), "Failed for type $type: " . var_export($paths, 1));
-            $this->assertFalse(empty($paths));
+            $this->assertInternalType('array', $paths, "Failed for type $type: " . var_export($paths, 1));
+            $this->assertNotEmpty($paths);
             $this->assertContains('Foo', $paths[0]);
         }
     }
@@ -1879,8 +1879,8 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
 
         $loader = $this->element->getPluginLoader('filter');
         $paths = $loader->getPaths('Zend_Foo');
-        $this->assertTrue(is_array($paths));
-        $this->assertFalse(empty($paths));
+        $this->assertInternalType('array', $paths);
+        $this->assertNotEmpty($paths);
         $this->assertContains('Foo', $paths[0]);
     }
 
@@ -1894,8 +1894,8 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
 
         $loader = $this->element->getPluginLoader('decorator');
         $paths = $loader->getPaths('Zend_Foo');
-        $this->assertTrue(is_array($paths));
-        $this->assertFalse(empty($paths));
+        $this->assertInternalType('array', $paths);
+        $this->assertNotEmpty($paths);
         $this->assertContains('Foo', $paths[0]);
     }
 
@@ -1954,7 +1954,7 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
     {
         $element = new Zend_Form_ElementTest_Element('test');
         $decorators = $element->getDecorators();
-        $this->assertTrue(empty($decorators));
+        $this->assertEmpty($decorators);
     }
 
     /**
@@ -1978,10 +1978,11 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
 
     /**
      * @group ZF-3217
-     * @expectedException Zend_Form_Element_Exception
      */
     public function testOverloadingToInvalidMethodsShouldThrowAnException()
     {
+        $this->expectException(\Zend_Form_Element_Exception::class);
+
         $html = $this->element->bogusMethodCall();
     }
 
@@ -2211,15 +2212,15 @@ class Zend_Form_ElementTest extends PHPUnit_Framework_TestCase
                       ->addPrefixPath('Zf\Foo', 'Zf/Foo');
 
         $paths = $filterLoader->getPaths('Zf\Foo\Filter');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
         $this->assertContains('Filter', $paths[0]);
 
         $paths = $validatorLoader->getPaths('Zf\Foo\Validate');
-        $this->assertTrue(is_array($paths));
+        $this->assertInternalType('array', $paths);
         $this->assertContains('Validate', $paths[0]);
 
         $paths = $decoratorLoader->getPaths('Zf\Foo\Decorator');
-        $this->assertTrue(is_array($paths), var_export($paths, 1));
+        $this->assertInternalType('array', $paths, var_export($paths, 1));
         $this->assertContains('Decorator', $paths[0]);
     }
 

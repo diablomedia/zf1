@@ -34,7 +34,7 @@ require_once 'Zend/Log/Filter/Priority.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Log
  */
-class Zend_Log_Filter_PriorityTest extends PHPUnit_Framework_TestCase
+class Zend_Log_Filter_PriorityTest extends PHPUnit\Framework\TestCase
 {
     public function testComparisonDefaultsToLessThanOrEqual()
     {

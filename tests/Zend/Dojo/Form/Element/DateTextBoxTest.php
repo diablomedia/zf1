@@ -43,7 +43,7 @@ require_once 'Zend/Dojo/View/Helper/Dojo.php';
  * @group      Zend_Dojo
  * @group      Zend_Dojo_Form
  */
-class Zend_Dojo_Form_Element_DateTextBoxTest extends PHPUnit_Framework_TestCase
+class Zend_Dojo_Form_Element_DateTextBoxTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -97,11 +97,11 @@ class Zend_Dojo_Form_Element_DateTextBoxTest extends PHPUnit_Framework_TestCase
     {
         $this->assertFalse($this->element->getAmPm());
         $constraints = $this->element->getConstraints();
-        $this->assertFalse(array_key_exists('am,pm', $constraints));
+        $this->assertArrayNotHasKey('am,pm', $constraints);
         $this->element->setAmPm(true);
         $this->assertTrue($this->element->getAmPm());
         $constraints = $this->element->getConstraints();
-        $this->assertTrue(array_key_exists('am,pm', $constraints));
+        $this->assertArrayHasKey('am,pm', $constraints);
         $this->assertEquals('true', $this->element->dijitParams['constraints']['am,pm']);
     }
 
@@ -109,11 +109,11 @@ class Zend_Dojo_Form_Element_DateTextBoxTest extends PHPUnit_Framework_TestCase
     {
         $this->assertFalse($this->element->getStrict());
         $constraints = $this->element->getConstraints();
-        $this->assertFalse(array_key_exists('strict', $constraints));
+        $this->assertArrayNotHasKey('strict', $constraints);
         $this->element->setStrict(true);
         $this->assertTrue($this->element->getStrict());
         $constraints = $this->element->getConstraints();
-        $this->assertTrue(array_key_exists('strict', $constraints));
+        $this->assertArrayHasKey('strict', $constraints);
         $this->assertEquals('true', $this->element->dijitParams['constraints']['strict']);
     }
 
@@ -121,7 +121,7 @@ class Zend_Dojo_Form_Element_DateTextBoxTest extends PHPUnit_Framework_TestCase
     {
         $this->assertNull($this->element->getLocale());
         $constraints = $this->element->getConstraints();
-        $this->assertFalse(array_key_exists('locale', $constraints));
+        $this->assertArrayNotHasKey('locale', $constraints);
         $this->element->setLocale('en-US');
         $this->assertEquals('en-US', $this->element->getLocale());
         $constraints = $this->element->getConstraints();
@@ -132,7 +132,7 @@ class Zend_Dojo_Form_Element_DateTextBoxTest extends PHPUnit_Framework_TestCase
     {
         $this->assertNull($this->element->getFormatLength());
         $constraints = $this->element->getConstraints();
-        $this->assertFalse(array_key_exists('formatLength', $constraints));
+        $this->assertArrayNotHasKey('formatLength', $constraints);
         $this->element->setFormatLength('long');
         $this->assertEquals('long', $this->element->getFormatLength());
         $constraints = $this->element->getConstraints();
@@ -140,10 +140,11 @@ class Zend_Dojo_Form_Element_DateTextBoxTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Form_Element_Exception
      */
     public function testFormatLengthMutatorShouldThrowExceptionWithInvalidFormatLength()
     {
+        $this->expectException(\Zend_Form_Element_Exception::class);
+
         $this->element->setFormatLength('foobar');
     }
 
@@ -151,7 +152,7 @@ class Zend_Dojo_Form_Element_DateTextBoxTest extends PHPUnit_Framework_TestCase
     {
         $this->assertNull($this->element->getSelector());
         $constraints = $this->element->getConstraints();
-        $this->assertFalse(array_key_exists('selector', $constraints));
+        $this->assertArrayNotHasKey('selector', $constraints);
         $this->element->setSelector('time');
         $this->assertEquals('time', $this->element->getSelector());
         $constraints = $this->element->getConstraints();
@@ -159,10 +160,11 @@ class Zend_Dojo_Form_Element_DateTextBoxTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend_Form_Element_Exception
      */
     public function testSelectorMutatorShouldThrowExceptionWithInvalidSelector()
     {
+        $this->expectException(\Zend_Form_Element_Exception::class);
+
         $this->element->setSelector('foobar');
     }
 

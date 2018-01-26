@@ -38,7 +38,7 @@ require_once 'Zend/Soap/Wsdl/Strategy/ArrayOfTypeSequence.php';
  * @group      Zend_Soap
  * @group      Zend_Soap_Wsdl
  */
-class Zend_Soap_Wsdl_ArrayOfTypeSequenceStrategyTest extends PHPUnit_Framework_TestCase
+class Zend_Soap_Wsdl_ArrayOfTypeSequenceStrategyTest extends PHPUnit\Framework\TestCase
 {
     private $wsdl;
     private $strategy;
@@ -153,7 +153,7 @@ class Zend_Soap_Wsdl_ArrayOfTypeSequenceStrategyTest extends PHPUnit_Framework_T
 
     public function testAddComplexTypeOfNonExistingClassThrowsException()
     {
-        $this->setExpectedException("Zend_Soap_Wsdl_Exception");
+        $this->expectException("Zend_Soap_Wsdl_Exception");
 
         $this->wsdl->addComplexType('Zend_Soap_Wsdl_UnknownClass[]');
     }

@@ -33,7 +33,7 @@ require_once 'Zend/ProgressBar/Adapter/JsPull.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_ProgressBar
  */
-class Zend_ProgressBar_Adapter_JsPullTest extends PHPUnit_Framework_TestCase
+class Zend_ProgressBar_Adapter_JsPullTest extends PHPUnit\Framework\TestCase
 {
     public function testJson()
     {

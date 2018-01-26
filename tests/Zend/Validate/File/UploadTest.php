@@ -33,7 +33,7 @@ require_once 'Zend/Validate/File/Upload.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Validate
  */
-class Zend_Validate_File_UploadTest extends PHPUnit_Framework_TestCase
+class Zend_Validate_File_UploadTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Ensures that the validator follows expected behavior
@@ -101,51 +101,51 @@ class Zend_Validate_File_UploadTest extends PHPUnit_Framework_TestCase
 
         $validator = new Zend_Validate_File_Upload();
         $this->assertFalse($validator->isValid('test'));
-        $this->assertTrue(array_key_exists('fileUploadErrorAttack', $validator->getMessages()));
+        $this->assertArrayHasKey('fileUploadErrorAttack', $validator->getMessages());
 
         $validator = new Zend_Validate_File_Upload();
         $this->assertFalse($validator->isValid('test2'));
-        $this->assertTrue(array_key_exists('fileUploadErrorIniSize', $validator->getMessages()));
+        $this->assertArrayHasKey('fileUploadErrorIniSize', $validator->getMessages());
 
         $validator = new Zend_Validate_File_Upload();
         $this->assertFalse($validator->isValid('test3'));
-        $this->assertTrue(array_key_exists('fileUploadErrorFormSize', $validator->getMessages()));
+        $this->assertArrayHasKey('fileUploadErrorFormSize', $validator->getMessages());
 
         $validator = new Zend_Validate_File_Upload();
         $this->assertFalse($validator->isValid('test4'));
-        $this->assertTrue(array_key_exists('fileUploadErrorPartial', $validator->getMessages()));
+        $this->assertArrayHasKey('fileUploadErrorPartial', $validator->getMessages());
 
         $validator = new Zend_Validate_File_Upload();
         $this->assertFalse($validator->isValid('test5'));
-        $this->assertTrue(array_key_exists('fileUploadErrorNoFile', $validator->getMessages()));
+        $this->assertArrayHasKey('fileUploadErrorNoFile', $validator->getMessages());
 
         $validator = new Zend_Validate_File_Upload();
         $this->assertFalse($validator->isValid('test6'));
-        $this->assertTrue(array_key_exists('fileUploadErrorUnknown', $validator->getMessages()));
+        $this->assertArrayHasKey('fileUploadErrorUnknown', $validator->getMessages());
 
         $validator = new Zend_Validate_File_Upload();
         $this->assertFalse($validator->isValid('test7'));
-        $this->assertTrue(array_key_exists('fileUploadErrorNoTmpDir', $validator->getMessages()));
+        $this->assertArrayHasKey('fileUploadErrorNoTmpDir', $validator->getMessages());
 
         $validator = new Zend_Validate_File_Upload();
         $this->assertFalse($validator->isValid('test8'));
-        $this->assertTrue(array_key_exists('fileUploadErrorCantWrite', $validator->getMessages()));
+        $this->assertArrayHasKey('fileUploadErrorCantWrite', $validator->getMessages());
 
         $validator = new Zend_Validate_File_Upload();
         $this->assertFalse($validator->isValid('test9'));
-        $this->assertTrue(array_key_exists('fileUploadErrorExtension', $validator->getMessages()));
+        $this->assertArrayHasKey('fileUploadErrorExtension', $validator->getMessages());
 
         $validator = new Zend_Validate_File_Upload();
         $this->assertFalse($validator->isValid('test1'));
-        $this->assertTrue(array_key_exists('fileUploadErrorAttack', $validator->getMessages()));
+        $this->assertArrayHasKey('fileUploadErrorAttack', $validator->getMessages());
 
         $validator = new Zend_Validate_File_Upload();
         $this->assertFalse($validator->isValid('tmp_test1'));
-        $this->assertTrue(array_key_exists('fileUploadErrorAttack', $validator->getMessages()));
+        $this->assertArrayHasKey('fileUploadErrorAttack', $validator->getMessages());
 
         $validator = new Zend_Validate_File_Upload();
         $this->assertFalse($validator->isValid('test000'));
-        $this->assertTrue(array_key_exists('fileUploadErrorFileNotFound', $validator->getMessages()));
+        $this->assertArrayHasKey('fileUploadErrorFileNotFound', $validator->getMessages());
     }
 
     /**

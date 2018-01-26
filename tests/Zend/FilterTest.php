@@ -34,7 +34,7 @@ require_once 'Zend/Filter.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Filter
  */
-class Zend_FilterTest extends PHPUnit_Framework_TestCase
+class Zend_FilterTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Zend_Filter object
@@ -138,10 +138,11 @@ class Zend_FilterTest extends PHPUnit_Framework_TestCase
      *
      * @group  ZF-2724
      * @return void
-     * @expectedException Zend_Filter_Exception
      */
     public function testStaticFactoryClassNotFound()
     {
+        $this->expectException(\Zend_Filter_Exception::class);
+
         Zend_Filter::filterStatic('1234', 'UnknownFilter');
     }
 

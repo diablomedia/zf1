@@ -37,20 +37,16 @@ require_once 'Zend/Service/WindowsAzure/Storage/Blob.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Service_WindowsAzure_BlobStreamTest extends PHPUnit_Framework_TestCase
+class Zend_Service_WindowsAzure_BlobStreamTest extends PHPUnit\Framework\TestCase
 {
     static $path;
-
-    public function __construct()
-    {
-        self::$path = dirname(__FILE__).'/_files/';
-    }
 
     /**
      * Test setup
      */
      public function setUp()
      {
+        self::$path = dirname(__FILE__).'/_files/';
          if (!TESTS_ZEND_SERVICE_WINDOWSAZURE_BLOB_RUNTESTS) {
              $this->markTestSkipped('Test not enabled in TestConfiguration.php');
          }

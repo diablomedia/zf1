@@ -40,7 +40,7 @@ require_once 'Zend/Registry.php';
  * @group      Zend_View
  * @group      Zend_View_Helper
  */
-class Zend_View_Helper_PlaceholderTest extends PHPUnit_Framework_TestCase
+class Zend_View_Helper_PlaceholderTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @var Zend_View_Helper_Placeholder

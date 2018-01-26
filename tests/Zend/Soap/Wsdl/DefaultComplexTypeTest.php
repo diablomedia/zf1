@@ -32,7 +32,7 @@ require_once "Zend/Soap/Wsdl.php";
  * @group      Zend_Soap
  * @group      Zend_Soap_Wsdl
  */
-class Zend_Soap_Wsdl_DefaultComplexTypeTest extends PHPUnit_Framework_TestCase
+class Zend_Soap_Wsdl_DefaultComplexTypeTest extends PHPUnit\Framework\TestCase
 {
     /**
      * @var Zend_Soap_Wsdl

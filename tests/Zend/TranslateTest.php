@@ -38,7 +38,7 @@ require_once 'Zend/Translate/Plural.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Translate
  */
-class Zend_TranslateTest extends PHPUnit_Framework_TestCase
+class Zend_TranslateTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {
@@ -416,7 +416,7 @@ class Zend_TranslateTest extends PHPUnit_Framework_TestCase
     public function testGettingAllOptions()
     {
         $lang = new Zend_Translate(Zend_Translate::AN_ARRAY, array('msg1' => 'Message 1'), 'en');
-        $this->assertTrue(is_array($lang->getOptions()));
+        $this->assertInternalType('array', $lang->getOptions());
     }
 
     /**
@@ -690,8 +690,8 @@ class Zend_TranslateTest extends PHPUnit_Framework_TestCase
         $translate->addTranslation($adapter2, 'fr');
 
         $languages = $translate->getList();
-        $this->assertFalse(array_key_exists('de_AT', $languages));
-        $this->assertTrue(array_key_exists('fr', $languages));
+        $this->assertArrayNotHasKey('de_AT', $languages);
+        $this->assertArrayHasKey('fr', $languages);
     }
 
     /**
@@ -711,9 +711,9 @@ class Zend_TranslateTest extends PHPUnit_Framework_TestCase
         );
 
         $langs = $translate->getList();
-        $this->assertFalse(array_key_exists('de_DE', $langs));
-        $this->assertTrue(array_key_exists('ja', $langs));
-        $this->assertTrue(array_key_exists('en_US', $langs));
+        $this->assertArrayNotHasKey('de_DE', $langs);
+        $this->assertArrayHasKey('ja', $langs);
+        $this->assertArrayHasKey('en_US', $langs);
 
         $translate2 = new Zend_Translate(
             Zend_Translate::AN_ARRAY,
@@ -728,9 +728,9 @@ class Zend_TranslateTest extends PHPUnit_Framework_TestCase
 
         $langs = $translate2->getList();
 
-        $this->assertFalse(array_key_exists('de_DE', $langs));
-        $this->assertFalse(array_key_exists('ja', $langs));
-        $this->assertTrue(array_key_exists('en_US', $langs));
+        $this->assertArrayNotHasKey('de_DE', $langs);
+        $this->assertArrayNotHasKey('ja', $langs);
+        $this->assertArrayHasKey('en_US', $langs);
     }
 
     /**
@@ -759,9 +759,9 @@ class Zend_TranslateTest extends PHPUnit_Framework_TestCase
 
         $translate->addTranslation($translate2);
         $langs = $translate->getList();
-        $this->assertFalse(array_key_exists('de_AT', $langs));
-        $this->assertTrue(array_key_exists('ja', $langs));
-        $this->assertTrue(array_key_exists('en_US', $langs));
+        $this->assertArrayNotHasKey('de_AT', $langs);
+        $this->assertArrayHasKey('ja', $langs);
+        $this->assertArrayHasKey('en_US', $langs);
         $this->assertEquals('Message 5 (en)', $translate->translate('Message 5', 'ja'));
     }
 
@@ -793,9 +793,9 @@ class Zend_TranslateTest extends PHPUnit_Framework_TestCase
         $translate->addTranslation($translate2);
 
         $langs = $translate->getList();
-        $this->assertFalse(array_key_exists('de_DE', $langs));
-        $this->assertTrue(array_key_exists('ja', $langs));
-        $this->assertTrue(array_key_exists('en_US', $langs));
+        $this->assertArrayNotHasKey('de_DE', $langs);
+        $this->assertArrayHasKey('ja', $langs);
+        $this->assertArrayHasKey('en_US', $langs);
         $this->assertEquals('Message 5 (en)', $translate->translate('Message 5', 'ja'));
         $this->assertEquals('Message 10', $translate->translate('Message 10', 'ja'));
     }
@@ -828,9 +828,9 @@ class Zend_TranslateTest extends PHPUnit_Framework_TestCase
         $translate->addTranslation($translate2);
 
         $langs = $translate->getList();
-        $this->assertFalse(array_key_exists('de_DE', $langs));
-        $this->assertTrue(array_key_exists('ja', $langs));
-        $this->assertTrue(array_key_exists('en_US', $langs));
+        $this->assertArrayNotHasKey('de_DE', $langs);
+        $this->assertArrayHasKey('ja', $langs);
+        $this->assertArrayHasKey('en_US', $langs);
         $this->assertEquals('Message 5 (en)', $translate->translate('Message 5', 'ja'));
         $this->assertEquals('Message 5 (en)', $translate->translate('Message 5', 'ja'));
     }

@@ -44,7 +44,7 @@ require_once 'Zend/Cloud/StorageService/Factory.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-abstract class Zend_Cloud_StorageService_TestCase extends PHPUnit_Framework_TestCase
+abstract class Zend_Cloud_StorageService_TestCase extends PHPUnit\Framework\TestCase
 {
     /**
      * Reference to storage adapter to test
@@ -88,7 +88,7 @@ abstract class Zend_Cloud_StorageService_TestCase extends PHPUnit_Framework_Test
     public function testNoParams()
     {
         $config = array(Zend_Cloud_StorageService_Factory::STORAGE_ADAPTER_KEY => $this->_config->get(Zend_Cloud_StorageService_Factory::STORAGE_ADAPTER_KEY));
-        $this->setExpectedException('Zend_Cloud_StorageService_Exception');
+        $this->expectException('Zend_Cloud_StorageService_Exception');
         $s = Zend_Cloud_StorageService_Factory::getAdapter($config);
     }
 
@@ -327,7 +327,7 @@ abstract class Zend_Cloud_StorageService_TestCase extends PHPUnit_Framework_Test
             $this->_wait();
 
             // Hopefully we can assert more about the metadata in the future :/
-            $this->assertTrue(is_array($this->_commonStorage->fetchMetadata($dummyName)));
+            $this->assertInternalType('array', $this->_commonStorage->fetchMetadata($dummyName));
             $this->_commonStorage->deleteItem($dummyName);
         } catch (Exception $e) {
             try {

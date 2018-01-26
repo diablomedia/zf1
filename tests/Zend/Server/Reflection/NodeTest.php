@@ -32,7 +32,7 @@ require_once 'Zend/Server/Reflection/Node.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Server
  */
-class Zend_Server_Reflection_NodeTest extends PHPUnit_Framework_TestCase
+class Zend_Server_Reflection_NodeTest extends PHPUnit\Framework\TestCase
 {
     /**
      * __construct() test
@@ -44,14 +44,14 @@ class Zend_Server_Reflection_NodeTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('string', $node->getValue());
         $this->assertTrue(null === $node->getParent());
         $children = $node->getChildren();
-        $this->assertTrue(empty($children));
+        $this->assertEmpty($children);
 
         $child = new Zend_Server_Reflection_Node('array', $node);
         $this->assertTrue($child instanceof Zend_Server_Reflection_Node);
         $this->assertEquals('array', $child->getValue());
         $this->assertTrue($node === $child->getParent());
         $children = $child->getChildren();
-        $this->assertTrue(empty($children));
+        $this->assertEmpty($children);
 
         $children = $node->getChildren();
         $this->assertTrue($child === $children[0]);
@@ -111,7 +111,7 @@ class Zend_Server_Reflection_NodeTest extends PHPUnit_Framework_TestCase
         foreach ($children as $c) {
             $types[] = $c->getValue();
         }
-        $this->assertTrue(is_array($children));
+        $this->assertInternalType('array', $children);
         $this->assertEquals(1, count($children), var_export($types, 1));
         $this->assertTrue($child === $children[0]);
     }

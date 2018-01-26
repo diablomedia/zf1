@@ -36,7 +36,7 @@ require_once 'Zend/Filter/PregReplace.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Filter
  */
-class Zend_Filter_PregReplaceTest extends PHPUnit_Framework_TestCase
+class Zend_Filter_PregReplaceTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {
@@ -78,7 +78,7 @@ class Zend_Filter_PregReplaceTest extends PHPUnit_Framework_TestCase
     public function testReplacementInitiallyEmpty()
     {
         $replacement = $this->filter->getReplacement();
-        $this->assertTrue(empty($replacement));
+        $this->assertEmpty($replacement);
     }
 
     public function testReplacementAccessorsWork()

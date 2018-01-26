@@ -28,20 +28,20 @@ require_once "Zend/Test/PHPUnit/Db/Connection.php";
 /**
  * Operation for Inserting on setup or teardown of a database tester.
  *
- * @uses       PHPUnit_Extensions_Database_Operation_IDatabaseOperation
+ * @uses       PHPUnit\DbUnit\Operation\Operation
  * @category   Zend
  * @package    Zend_Test
  * @subpackage PHPUnit
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Test_PHPUnit_Db_Operation_Insert implements PHPUnit_Extensions_Database_Operation_IDatabaseOperation
+class Zend_Test_PHPUnit_Db_Operation_Insert implements PHPUnit\DbUnit\Operation\Operation
 {
     /**
-     * @param PHPUnit_Extensions_Database_DB_IDatabaseConnection $connection
-     * @param PHPUnit_Extensions_Database_DataSet_IDataSet $dataSet
+     * @param PHPUnit\DbUnit\Database\Connection $connection
+     * @param PHPUnit\DbUnit\DataSet\IDataSet $dataSet
      */
-    public function execute(PHPUnit_Extensions_Database_DB_IDatabaseConnection $connection, PHPUnit_Extensions_Database_DataSet_IDataSet $dataSet)
+    public function execute(PHPUnit\DbUnit\Database\Connection $connection, PHPUnit\DbUnit\DataSet\IDataSet $dataSet)
     {
         if(!($connection instanceof Zend_Test_PHPUnit_Db_Connection)) {
             require_once "Zend/Test/PHPUnit/Db/Exception.php";
@@ -61,7 +61,7 @@ class Zend_Test_PHPUnit_Db_Operation_Insert implements PHPUnit_Extensions_Databa
                 try {
                     $db->insert($tableName, $values);
                 } catch (Exception $e) {
-                    throw new PHPUnit_Extensions_Database_Operation_Exception("INSERT", "INSERT INTO ".$tableName." [..]", $values, $table, $e->getMessage());
+                    throw new PHPUnit\DbUnit\Operation\Exception("INSERT", "INSERT INTO ".$tableName." [..]", $values, $table, $e->getMessage());
                 }
             }
         }
@@ -69,11 +69,11 @@ class Zend_Test_PHPUnit_Db_Operation_Insert implements PHPUnit_Extensions_Databa
 
     /**
      *
-     * @param PHPUnit_Extensions_Database_DataSet_ITable $table
+     * @param PHPUnit\DbUnit\DataSet\ITable $table
      * @param int $rowNum
      * @return array
      */
-    protected function buildInsertValues(PHPUnit_Extensions_Database_DataSet_ITable $table, $rowNum)
+    protected function buildInsertValues(PHPUnit\DbUnit\DataSet\ITable $table, $rowNum)
     {
         $values = array();
         foreach($table->getTableMetaData()->getColumns() as $columnName) {

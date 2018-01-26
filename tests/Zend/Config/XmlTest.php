@@ -33,7 +33,7 @@ require_once 'Zend/Config/Xml.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Config
  */
-class Zend_Config_XmlTest extends PHPUnit_Framework_TestCase
+class Zend_Config_XmlTest extends PHPUnit\Framework\TestCase
 {
     protected $_xmlFileConfig;
     protected $_xmlFileAllSectionsConfig;

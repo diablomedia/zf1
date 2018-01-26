@@ -37,7 +37,7 @@ require_once 'Zend/Tool/Project/Provider/Exception.php';
  * @group Zend_Tool_Framework
  * @group Zend_Tool_Framework_Action
  */
-class Zend_Tool_Project_Provider_ControllerTest extends PHPUnit_Framework_TestCase
+class Zend_Tool_Project_Provider_ControllerTest extends PHPUnit\Framework\TestCase
 {
     /**
      *

@@ -35,7 +35,7 @@ require_once 'MockupStream.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_ProgressBar
  */
-class Zend_ProgressBar_Adapter_ConsoleTest extends PHPUnit_Framework_TestCase
+class Zend_ProgressBar_Adapter_ConsoleTest extends PHPUnit\Framework\TestCase
 {
 
     protected function setUp()
@@ -63,7 +63,7 @@ class Zend_ProgressBar_Adapter_ConsoleTest extends PHPUnit_Framework_TestCase
     {
         $adapter = new Zend_ProgressBar_Adapter_Console_Stub();
 
-        $this->assertTrue(is_resource($adapter->getOutputStream()));
+        $this->assertInternalType('resource', $adapter->getOutputStream());
 
         $metaData = stream_get_meta_data($adapter->getOutputStream());
         $this->assertEquals('php://stdout', $metaData['uri']);
@@ -73,7 +73,7 @@ class Zend_ProgressBar_Adapter_ConsoleTest extends PHPUnit_Framework_TestCase
     {
         $adapter = new Zend_ProgressBar_Adapter_Console_Stub(array('outputStream' => 'php://stdout'));
 
-        $this->assertTrue(is_resource($adapter->getOutputStream()));
+        $this->assertInternalType('resource', $adapter->getOutputStream());
 
         $metaData = stream_get_meta_data($adapter->getOutputStream());
         $this->assertEquals('php://stdout', $metaData['uri']);
@@ -83,7 +83,7 @@ class Zend_ProgressBar_Adapter_ConsoleTest extends PHPUnit_Framework_TestCase
     {
         $adapter = new Zend_ProgressBar_Adapter_Console_Stub(array('outputStream' => 'php://stderr'));
 
-        $this->assertTrue(is_resource($adapter->getOutputStream()));
+        $this->assertInternalType('resource', $adapter->getOutputStream());
 
         $metaData = stream_get_meta_data($adapter->getOutputStream());
         $this->assertEquals('php://stderr', $metaData['uri']);
@@ -273,7 +273,7 @@ class Zend_ProgressBar_Adapter_ConsoleTest extends PHPUnit_Framework_TestCase
     public function testgetOutputStreamReturnigStdout() {
         $adapter = new Zend_ProgressBar_Adapter_Console();
         $resource = $adapter->getOutputStream();
-        $this->assertTrue(is_resource($resource));
+        $this->assertInternalType('resource', $resource);
     }
 
     public function testFinishEol() {

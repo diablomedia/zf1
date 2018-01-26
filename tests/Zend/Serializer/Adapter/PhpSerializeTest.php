@@ -32,7 +32,7 @@ require_once 'Zend/Serializer/Adapter/PhpSerialize.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Serializer_Adapter_PhpSerializeTest extends PHPUnit_Framework_TestCase
+class Zend_Serializer_Adapter_PhpSerializeTest extends PHPUnit\Framework\TestCase
 {
 
     private $_adapter;
@@ -140,7 +140,7 @@ class Zend_Serializer_Adapter_PhpSerializeTest extends PHPUnit_Framework_TestCas
     public function testUnserialzeInvalid()
     {
         $value = 'not a serialized string';
-        $this->setExpectedException('Zend_Serializer_Exception');
+        $this->expectException('Zend_Serializer_Exception');
         $this->_adapter->unserialize($value);
     }
 

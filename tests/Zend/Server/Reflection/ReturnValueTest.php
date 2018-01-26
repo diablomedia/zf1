@@ -32,7 +32,7 @@ require_once 'Zend/Server/Reflection/ReturnValue.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Server
  */
-class Zend_Server_Reflection_ReturnValueTest extends PHPUnit_Framework_TestCase
+class Zend_Server_Reflection_ReturnValueTest extends PHPUnit\Framework\TestCase
 {
     /**
      * __construct() test

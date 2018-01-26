@@ -31,7 +31,7 @@ require_once 'Zend/Gdata.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Gdata
  */
-class Zend_Gdata_RecurrenceTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_RecurrenceTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -42,24 +42,24 @@ class Zend_Gdata_RecurrenceTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyRecurrenceShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->recurrence->extensionElements));
+        $this->assertInternalType('array', $this->recurrence->extensionElements);
         $this->assertTrue(count($this->recurrence->extensionElements) == 0);
     }
 
     public function testEmptyRecurrenceShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->recurrence->extensionAttributes));
+        $this->assertInternalType('array', $this->recurrence->extensionAttributes);
         $this->assertTrue(count($this->recurrence->extensionAttributes) == 0);
     }
 
     public function testSampleRecurrenceShouldHaveNoExtensionElements() {
         $this->recurrence->transferFromXML($this->recurrenceText);
-        $this->assertTrue(is_array($this->recurrence->extensionElements));
+        $this->assertInternalType('array', $this->recurrence->extensionElements);
         $this->assertTrue(count($this->recurrence->extensionElements) == 0);
     }
 
     public function testSampleRecurrenceShouldHaveNoExtensionAttributes() {
         $this->recurrence->transferFromXML($this->recurrenceText);
-        $this->assertTrue(is_array($this->recurrence->extensionAttributes));
+        $this->assertInternalType('array', $this->recurrence->extensionAttributes);
         $this->assertTrue(count($this->recurrence->extensionAttributes) == 0);
     }
 

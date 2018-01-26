@@ -32,7 +32,7 @@ require_once 'Zend/Http/Client.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Docs
  */
-class Zend_Gdata_Docs_DocumentListFeedTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_Docs_DocumentListFeedTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp()

@@ -33,7 +33,7 @@ require_once 'Zend/Filter/Compress.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Filter_CompressTest extends PHPUnit_Framework_TestCase
+class Zend_Filter_CompressTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {

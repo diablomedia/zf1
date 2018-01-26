@@ -37,7 +37,7 @@ require_once 'Zend/Service/Amazon/Ec2/Image.php';
  * @group      Zend_Service_Amazon
  * @group      Zend_Service_Amazon_Ec2
  */
-class Zend_Service_Amazon_Ec2_ImageTest extends PHPUnit_Framework_TestCase
+class Zend_Service_Amazon_Ec2_ImageTest extends PHPUnit\Framework\TestCase
 {
 
     /**

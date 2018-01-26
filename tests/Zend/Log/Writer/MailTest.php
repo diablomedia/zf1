@@ -50,7 +50,7 @@ require_once 'Zend/Mail/Transport/Abstract.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Log
  */
-class Zend_Log_Writer_MailTest extends PHPUnit_Framework_TestCase
+class Zend_Log_Writer_MailTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Mock Transport for Zend_Mail
@@ -173,7 +173,7 @@ class Zend_Log_Writer_MailTest extends PHPUnit_Framework_TestCase
 
         // Expect a Zend_Log_Exception because the subject prepend text cannot
         // be set of the Zend_Mail object already has a subject line set.
-        $this->setExpectedException('Zend_Log_Exception');
+        $this->expectException('Zend_Log_Exception');
 
         // Set a subject line so the setSubjectPrependText() call triggers an
         // exception.
@@ -224,7 +224,7 @@ class Zend_Log_Writer_MailTest extends PHPUnit_Framework_TestCase
         list(, $writer) = $this->_getSimpleLogger();
 
         // If Zend_Layout is not being used, a formatter cannot be set for it.
-        $this->setExpectedException('Zend_Log_Exception');
+        $this->expectException('Zend_Log_Exception');
         $writer->setLayoutFormatter(new Zend_Log_Formatter_Simple());
     }
 
@@ -248,7 +248,7 @@ class Zend_Log_Writer_MailTest extends PHPUnit_Framework_TestCase
         // Log an error message so that there's something to send via email.
         $log->err('a bogus error message to force mail sending');
 
-        $this->setExpectedException('PHPUnit_Framework_Error');
+        $this->expectException('PHPUnit\Framework\Error\Error');
         unset($log);
     }
 
@@ -272,7 +272,7 @@ class Zend_Log_Writer_MailTest extends PHPUnit_Framework_TestCase
         // Log an error message so that there's something to send via email.
         $log->err('a bogus error message to force mail sending');
 
-        $this->setExpectedException('PHPUnit_Framework_Error');
+        $this->expectException('PHPUnit\Framework\Error\Error');
         unset($log);
     }
 
@@ -408,7 +408,7 @@ class Zend_Log_Writer_MailTest extends PHPUnit_Framework_TestCase
     	$writer->write($this->_getEvent());
     	$writer->shutdown();
 
-        $this->assertFalse(empty($this->_transport->boundary));
+        $this->assertNotEmpty($this->_transport->boundary);
         $this->assertContains('Content-Type: multipart/', $this->_transport->header);
         $this->assertContains('boundary=', $this->_transport->header);
         $this->assertContains('Content-Type: text/plain', $this->_transport->body);

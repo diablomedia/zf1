@@ -40,7 +40,7 @@ require_once 'Zend/Queue/Adapter/ActivemqTest.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Queue
  */
-class Zend_Queue_FactoryTest extends PHPUnit_Framework_TestCase
+class Zend_Queue_FactoryTest extends PHPUnit\Framework\TestCase
 {
     protected function setUp()
     {

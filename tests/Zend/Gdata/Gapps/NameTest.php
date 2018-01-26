@@ -32,7 +32,7 @@ require_once 'Zend/Gdata.php';
  * @group      Zend_Gdata
  * @group      Zend_Gdata_Gapps
  */
-class Zend_Gdata_Gapps_NameTest extends PHPUnit_Framework_TestCase
+class Zend_Gdata_Gapps_NameTest extends PHPUnit\Framework\TestCase
 {
 
     public function setUp() {
@@ -43,24 +43,24 @@ class Zend_Gdata_Gapps_NameTest extends PHPUnit_Framework_TestCase
     }
 
     public function testEmptyNameShouldHaveNoExtensionElements() {
-        $this->assertTrue(is_array($this->theName->extensionElements));
+        $this->assertInternalType('array', $this->theName->extensionElements);
         $this->assertTrue(count($this->theName->extensionElements) == 0);
     }
 
     public function testEmptyNameShouldHaveNoExtensionAttributes() {
-        $this->assertTrue(is_array($this->theName->extensionAttributes));
+        $this->assertInternalType('array', $this->theName->extensionAttributes);
         $this->assertTrue(count($this->theName->extensionAttributes) == 0);
     }
 
     public function testSampleNameShouldHaveNoExtensionElements() {
         $this->theName->transferFromXML($this->theNameText);
-        $this->assertTrue(is_array($this->theName->extensionElements));
+        $this->assertInternalType('array', $this->theName->extensionElements);
         $this->assertTrue(count($this->theName->extensionElements) == 0);
     }
 
     public function testSampleNameShouldHaveNoExtensionAttributes() {
         $this->theName->transferFromXML($this->theNameText);
-        $this->assertTrue(is_array($this->theName->extensionAttributes));
+        $this->assertInternalType('array', $this->theName->extensionAttributes);
         $this->assertTrue(count($this->theName->extensionAttributes) == 0);
     }
 

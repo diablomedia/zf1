@@ -43,7 +43,7 @@ require_once 'Zend/OpenId/Provider/User/Session.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_OpenId
  */
-class Zend_OpenId_ProviderTest extends PHPUnit_Framework_TestCase
+class Zend_OpenId_ProviderTest extends PHPUnit\Framework\TestCase
 {
     const USER     = "http://test_user.myopenid.com/";
     const PASSWORD = "01234567890abcdef";
@@ -260,7 +260,7 @@ class Zend_OpenId_ProviderTest extends PHPUnit_Framework_TestCase
         $this->assertTrue( $provider->allowSite("http://www.test.com/") );
 
         $trusted = $storage->getTrustedSites(self::USER);
-        $this->assertTrue( is_array($trusted) );
+        $this->assertInternalType( 'array', $trusted );
         $this->assertSame( 1, count($trusted) );
         reset($trusted);
         $this->assertSame( "http://www.test.com/", key($trusted) );
@@ -270,7 +270,7 @@ class Zend_OpenId_ProviderTest extends PHPUnit_Framework_TestCase
         $this->assertTrue( $provider->allowSite("http://www.test.com/") );
 
         $trusted = $storage->getTrustedSites(self::USER);
-        $this->assertTrue( is_array($trusted) );
+        $this->assertInternalType( 'array', $trusted );
         $this->assertSame( 1, count($trusted) );
         reset($trusted);
         $this->assertSame( "http://www.test.com/", key($trusted) );
@@ -281,7 +281,7 @@ class Zend_OpenId_ProviderTest extends PHPUnit_Framework_TestCase
         $this->assertTrue( $provider->allowSite("http://www.test.com/", $sreg) );
 
         $trusted = $storage->getTrustedSites(self::USER);
-        $this->assertTrue( is_array($trusted) );
+        $this->assertInternalType( 'array', $trusted );
         $this->assertSame( 1, count($trusted) );
         reset($trusted);
         $this->assertSame( "http://www.test.com/", key($trusted) );
@@ -457,12 +457,12 @@ class Zend_OpenId_ProviderTest extends PHPUnit_Framework_TestCase
 
         // SHA1
         $x = $provider->genSecret("sha1");
-        $this->assertTrue( is_string($x) );
+        $this->assertInternalType( 'string', $x );
         $this->assertSame( 20, strlen($x) );
 
         // SHA256
         $x = $provider->genSecret("sha256");
-        $this->assertTrue( is_string($x) );
+        $this->assertInternalType( 'string', $x );
         $this->assertSame( 32, strlen($x) );
 
         // invalid function

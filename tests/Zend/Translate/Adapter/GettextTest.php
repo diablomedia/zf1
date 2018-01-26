@@ -33,7 +33,7 @@ require_once 'Zend/Translate/Adapter/Gettext.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Translate
  */
-class Zend_Translate_Adapter_GettextTest extends PHPUnit_Framework_TestCase
+class Zend_Translate_Adapter_GettextTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Runs the test methods of this class.
@@ -42,8 +42,8 @@ class Zend_Translate_Adapter_GettextTest extends PHPUnit_Framework_TestCase
      */
     public static function main()
     {
-        $suite  = new PHPUnit_Framework_TestSuite("Zend_Translate_Adapter_GettextTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
+        $suite  = new PHPUnit\Framework\TestSuite("Zend_Translate_Adapter_GettextTest");
+        $result = PHPUnit\TextUI\TestRunner::run($suite);
         Zend_Translate_Adapter_Gettext::removeCache();
     }
 
@@ -146,7 +146,7 @@ class Zend_Translate_Adapter_GettextTest extends PHPUnit_Framework_TestCase
         }
 
         $this->assertEquals('testkey', $adapter->getOptions('testoption'));
-        $this->assertTrue(is_null($adapter->getOptions('nooption')));
+        $this->assertNull($adapter->getOptions('nooption'));
     }
 
     public function testClearing()

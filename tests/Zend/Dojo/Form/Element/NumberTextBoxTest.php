@@ -42,7 +42,7 @@ require_once 'Zend/Dojo/View/Helper/Dojo.php';
  * @group      Zend_Dojo
  * @group      Zend_Dojo_Form
  */
-class Zend_Dojo_Form_Element_NumberTextBoxTest extends PHPUnit_Framework_TestCase
+class Zend_Dojo_Form_Element_NumberTextBoxTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -123,10 +123,11 @@ class Zend_Dojo_Form_Element_NumberTextBoxTest extends PHPUnit_Framework_TestCas
     }
 
     /**
-     * @expectedException Zend_Form_Element_Exception
      */
     public function testTypeMutatorShouldThrowExceptionWithInvalidType()
     {
+        $this->expectException(\Zend_Form_Element_Exception::class);
+
         $this->element->setType('foobar');
     }
 

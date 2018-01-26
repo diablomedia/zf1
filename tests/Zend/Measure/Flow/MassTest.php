@@ -33,7 +33,7 @@ require_once 'Zend/Measure/Flow/Mass.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Measure
  */
-class Zend_Measure_Flow_MassTest extends PHPUnit_Framework_TestCase
+class Zend_Measure_Flow_MassTest extends PHPUnit\Framework\TestCase
 {
     /**
      * test for Mass initialisation
@@ -383,6 +383,6 @@ class Zend_Measure_Flow_MassTest extends PHPUnit_Framework_TestCase
     {
         $value = new Zend_Measure_Flow_Mass('-100',Zend_Measure_Flow_Mass::STANDARD,'de');
         $unit  = $value->getConversionList();
-        $this->assertTrue(is_array($unit), 'Array expected');
+        $this->assertInternalType('array', $unit, 'Array expected');
     }
 }

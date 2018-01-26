@@ -33,7 +33,7 @@ require_once 'Zend/Version.php';
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @group      Zend_Version
  */
-class Zend_VersionTest extends PHPUnit_Framework_TestCase
+class Zend_VersionTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Tests that version_compare() and its "proxy"
