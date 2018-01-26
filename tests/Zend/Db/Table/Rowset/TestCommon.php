@@ -322,7 +322,8 @@ abstract class Zend_Db_Table_Rowset_TestCommon extends Zend_Db_Table_TestSetup
         $rowset = $table->fetchAll('bug_id IN (1,2,3,4)', 'bug_id ASC');
         $rowset->seek(3);
 
-        $this->setExpectedException('Zend_Db_Table_Rowset_Exception', 'Illegal index 4');
+        $this->expectedException('Zend_Db_Table_Rowset_Exception');
+        $this->expectedExceptionMessage('Illegal index 4');
         $rowset->seek(4);
     }
 
@@ -335,7 +336,8 @@ abstract class Zend_Db_Table_Rowset_TestCommon extends Zend_Db_Table_TestSetup
         $rowset = $table->fetchAll('bug_id IN (1,2,3,4)', 'bug_id ASC');
         $rowset->getRow(3);
 
-        $this->setExpectedException('Zend_Db_Table_Rowset_Exception', 'No row could be found at position 4');
+        $this->expectedException('Zend_Db_Table_Rowset_Exception');
+        $this->expectedExceptionMessage('No row could be found at position 4');
         $rowset->getRow(4);
     }
 
