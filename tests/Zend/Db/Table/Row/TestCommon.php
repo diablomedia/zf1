@@ -252,7 +252,7 @@ abstract class Zend_Db_Table_Row_TestCommon extends Zend_Db_Table_TestSetup
     {
         $table = $this->_table['bugs'];
         $row   = $table->find(1)->current();
-        $this->expectedException('Zend_Db_Table_Row_Exception');
+        $this->expectException('Zend_Db_Table_Row_Exception');
         unset($row->bug_id);
     }
 

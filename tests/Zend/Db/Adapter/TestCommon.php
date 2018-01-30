@@ -1991,7 +1991,7 @@ abstract class Zend_Db_Adapter_TestCommon extends Zend_Db_TestSetup
             Zend_Db::ALLOW_SERIALIZATION => false
         );
         $db = Zend_Db::factory($this->getDriver(), $params);
-        $this->expectedException('Zend_Db_Adapter_Exception');
+        $this->expectException('Zend_Db_Adapter_Exception');
         $serialized = serialize($db);
     }
 
