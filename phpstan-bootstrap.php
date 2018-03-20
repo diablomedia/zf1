@@ -38,6 +38,15 @@ if (!extension_loaded('memcached')) {
     require_once __DIR__ . '/vendor/jetbrains/phpstorm-stubs/memcached/memcached.php';
 }
 
+if (!extension_loaded('hash')) {
+    require_once __DIR__ . '/vendor/jetbrains/phpstorm-stubs/hash/hash.php';
+}
+// The hash extension may emulate the mhash extension if PHP is configured with --with-mhash
+// otherwise the mhash* functions/constants won't exist
+if (!function_exists('mhash')) {
+    require_once __DIR__ . '/vendor/jetbrains/phpstorm-stubs/mhash/mhash.php';
+}
+
 if (!extension_loaded('mysql')) {
     require_once __DIR__ . '/vendor/jetbrains/phpstorm-stubs/mysql/mysql.php';
 }
@@ -85,6 +94,10 @@ if (!extension_loaded('xcache')) {
 
 if (!extension_loaded('jobqueue_client')) {
     require_once __DIR__ . '/vendor/jetbrains/phpstorm-stubs/zend/zend.php';
+}
+
+if (!extension_loaded('wddx')) {
+    require_once __DIR__ . '/vendor/jetbrains/phpstorm-stubs/wddx/wddx.php';
 }
 
 if (!extension_loaded('zendcache')) {
