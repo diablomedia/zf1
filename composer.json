@@ -37,6 +37,7 @@
     "repositories": [
         {
             "type": "vcs",
+            "no-api": true,
             "url": "https://github.com/diablomedia/phpstorm-stubs"
         }
     ],
