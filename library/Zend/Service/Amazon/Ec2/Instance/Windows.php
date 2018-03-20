@@ -170,7 +170,7 @@ class Zend_Service_Amazon_Ec2_Instance_Windows extends Zend_Service_Amazon_Ec2_A
      * Signed S3 Upload Policy
      *
      * @param string $policy            Base64 Encoded string that is the upload policy
-     * @return string                   SHA1 encoded S3 Upload Policy
+     * @return string|false             SHA1 encoded S3 Upload Policy
      */
     protected function _signS3UploadPolicy($policy)
     {

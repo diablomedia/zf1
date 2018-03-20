@@ -135,7 +135,7 @@ class Zend_Crypt
      * @param string $algorithm
      * @param string $data
      * @param bool $binaryOutput
-     * @return string
+     * @return string|false
      */
     protected static function _digestMhash($algorithm, $data, $binaryOutput)
     {

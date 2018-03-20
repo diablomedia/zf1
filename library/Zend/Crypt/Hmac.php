@@ -81,7 +81,7 @@ class Zend_Crypt_Hmac extends Zend_Crypt
      * @param string $data
      * @param string $output
      * @throws Zend_Crypt_Hmac_Exception
-     * @return string
+     * @return string|false
      */
     public static function compute($key, $hash, $data, $output = self::STRING)
     {
@@ -134,7 +134,7 @@ class Zend_Crypt_Hmac extends Zend_Crypt
      * @param string $data
      * @param string $output
      * @param bool $internal Option to not use hash() functions for testing
-     * @return string
+     * @return string|false
      */
     protected static function _hash($data, $output = self::STRING, $internal = false)
     {
