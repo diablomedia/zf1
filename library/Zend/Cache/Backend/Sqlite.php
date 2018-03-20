@@ -53,9 +53,9 @@ class Zend_Cache_Backend_Sqlite extends Zend_Cache_Backend implements Zend_Cache
     /**
      * DB ressource
      *
-     * @var mixed $_db
+     * @var resource $_db
      */
-    private $_db = null;
+    private $_db;
 
     /**
      * Boolean to store if the structure has benn checked or not
@@ -481,10 +481,12 @@ class Zend_Cache_Backend_Sqlite extends Zend_Cache_Backend implements Zend_Cache
         if (is_resource($this->_db)) {
             return $this->_db;
         } else {
-            $this->_db = @sqlite_open($this->_options['cache_db_complete_path']);
-            if (!(is_resource($this->_db))) {
+            $db = @sqlite_open($this->_options['cache_db_complete_path']);
+            if (!(is_resource($db))) {
                 Zend_Cache::throwException("Impossible to open " . $this->_options['cache_db_complete_path'] . " cache DB file");
             }
+            $this->_db = $db;
+
             return $this->_db;
         }
     }

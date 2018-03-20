@@ -331,7 +331,7 @@ abstract class Zend_Navigation_Page extends Zend_Navigation_Container
     /**
      * Sets page label
      *
-     * @param  string $label              new page label
+     * @param  string|null $label              new page label
      * @return Zend_Navigation_Page       fluent interface, returns self
      * @throws Zend_Navigation_Exception  if empty/no string is given
      */
@@ -359,7 +359,7 @@ abstract class Zend_Navigation_Page extends Zend_Navigation_Container
     /**
      * Sets a fragment identifier
      *
-     * @param  string $fragment   new fragment identifier
+     * @param  string|null $fragment   new fragment identifier
      * @return Zend_Navigation_Page         fluent interface, returns self
      * @throws Zend_Navigation_Exception    if empty/no string is given
      */

@@ -115,7 +115,7 @@ abstract class Zend_Mail_Transport_Abstract
      * Content-Type of either multipart/alternative or multipart/mixed depending
      * on the mail parts present in the {@link $_mail Zend_Mail object} present.
      *
-     * @param string $boundary
+     * @param string|null $boundary
      * @return array
      */
     protected function _getHeaders($boundary)

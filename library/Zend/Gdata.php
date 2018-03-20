@@ -134,7 +134,7 @@ class Zend_Gdata extends Zend_Gdata_App
     /**
      * Retrieve feed as string or object
      *
-     * @param mixed $location The location as string or Zend_Gdata_Query
+     * @param string|Zend_Gdata_Query $location The location as string or Zend_Gdata_Query
      * @param string $className The class type to use for returning the feed
      * @throws Zend_Gdata_App_InvalidArgumentException
      * @return string|Zend_Gdata_App_Feed Returns string only if the object

@@ -144,11 +144,13 @@ class Zend_Db_Adapter_Sqlsrv extends Zend_Db_Adapter_Abstract
             }
         }
 
-        $this->_connection = sqlsrv_connect($serverName, $connectionInfo);
+        $connection = sqlsrv_connect($serverName, $connectionInfo);
 
-        if (!$this->_connection) {
+        if (!$connection) {
             throw new Zend_Db_Adapter_Sqlsrv_Exception(sqlsrv_errors());
         }
+
+        $this->_connection = $connection;
     }
 
     /**

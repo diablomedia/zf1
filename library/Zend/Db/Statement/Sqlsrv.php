@@ -58,11 +58,13 @@ class Zend_Db_Statement_Sqlsrv extends Zend_Db_Statement
     {
         $connection = $this->_adapter->getConnection();
 
-        $this->_stmt = sqlsrv_prepare($connection, $sql);
+        $stmt = sqlsrv_prepare($connection, $sql);
 
-        if (!$this->_stmt) {
+        if (!$stmt) {
             throw new Zend_Db_Statement_Sqlsrv_Exception(sqlsrv_errors());
         }
+
+        $this->_stmt = $stmt;
 
         $this->_originalSQL = $sql;
     }
@@ -104,7 +106,7 @@ class Zend_Db_Statement_Sqlsrv extends Zend_Db_Statement
      * Returns the number of columns in the result set.
      * Returns null if the statement has no result set metadata.
      *
-     * @return int The number of columns.
+     * @return int|false The number of columns.
      */
     public function columnCount()
     {
@@ -193,11 +195,13 @@ class Zend_Db_Statement_Sqlsrv extends Zend_Db_Statement
             $params = $params_;
         }
 
-        $this->_stmt = sqlsrv_query($connection, $this->_originalSQL, $params);
+        $stmt = sqlsrv_query($connection, $this->_originalSQL, $params);
 
-        if (!$this->_stmt) {
+        if (!$stmt) {
             throw new Zend_Db_Statement_Sqlsrv_Exception(sqlsrv_errors());
         }
+
+        $this->_stmt = $stmt;
 
         $this->_executed = true;
 

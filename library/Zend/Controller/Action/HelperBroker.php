@@ -37,7 +37,7 @@ class Zend_Controller_Action_HelperBroker
     protected $_actionController;
 
     /**
-     * @var Zend_Loader_PluginLoader_Interface
+     * @var Zend_Loader_PluginLoader_Interface|null
      */
     protected static $_pluginLoader;
 
@@ -51,7 +51,7 @@ class Zend_Controller_Action_HelperBroker
     /**
      * Set PluginLoader for use with broker
      *
-     * @param  Zend_Loader_PluginLoader_Interface $loader
+     * @param  Zend_Loader_PluginLoader_Interface|null $loader
      * @return void
      */
     public static function setPluginLoader($loader)

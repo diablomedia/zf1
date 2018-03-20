@@ -43,7 +43,7 @@ class Zend_XmlRpc_Client
      * HTTP Client to use for requests
      * @var Zend_Http_Client
      */
-    protected $_httpClient = null;
+    protected $_httpClient;
 
     /**
      * Introspection object

@@ -79,7 +79,7 @@ class Zend_Json_Server extends Zend_Server_Abstract
      *
      * @param  string|array $function Valid PHP callback
      * @param  string $namespace  Ignored
-     * @return Zend_Json_Server
+     * @return $this
      */
     public function addFunction($function, $namespace = '')
     {
@@ -129,7 +129,7 @@ class Zend_Json_Server extends Zend_Server_Abstract
      * @param  string $class
      * @param  string $namespace Ignored
      * @param  mixed $argv Ignored
-     * @return Zend_Json_Server
+     * @return $this
      */
     public function setClass($class, $namespace = '', $argv = null)
     {
@@ -218,7 +218,7 @@ class Zend_Json_Server extends Zend_Server_Abstract
      * Set request object
      *
      * @param  Zend_Json_Server_Request $request
-     * @return Zend_Json_Server
+     * @return $this
      */
     public function setRequest(Zend_Json_Server_Request $request)
     {
@@ -243,7 +243,7 @@ class Zend_Json_Server extends Zend_Server_Abstract
      * Set response object
      *
      * @param  Zend_Json_Server_Response $response
-     * @return Zend_Json_Server
+     * @return $this
      */
     public function setResponse(Zend_Json_Server_Response $response)
     {
@@ -268,7 +268,7 @@ class Zend_Json_Server extends Zend_Server_Abstract
      * Set flag indicating whether or not to auto-emit response
      *
      * @param  bool $flag
-     * @return Zend_Json_Server
+     * @return $this
      */
     public function setAutoEmitResponse($flag)
     {

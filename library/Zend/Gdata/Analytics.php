@@ -55,12 +55,12 @@ class Zend_Gdata_Analytics extends Zend_Gdata
     /**
      * Retrieve account feed object
      *
-     * @param string|Zend_Uri $uri
+     * @param string|Zend_Gdata_Analytics_AccountQuery $uri
      * @return Zend_Gdata_Analytics_AccountFeed|string
      */
     public function getAccountFeed($uri = self::ANALYTICS_ACCOUNT_FEED_URI)
     {
-        if ($uri instanceof Query) {
+        if ($uri instanceof Zend_Gdata_Analytics_AccountQuery) {
             $uri = $uri->getQueryUrl();
         }
         return parent::getFeed($uri, 'Zend_Gdata_Analytics_AccountFeed');
@@ -69,12 +69,12 @@ class Zend_Gdata_Analytics extends Zend_Gdata
     /**
      * Retrieve data feed object
      *
-     * @param string|Zend_Uri $uri
+     * @param string|Zend_Gdata_Analytics_DataQuery $uri
      * @return Zend_Gdata_Analytics_DataFeed|string
      */
     public function getDataFeed($uri = self::ANALYTICS_FEED_URI)
     {
-        if ($uri instanceof Query) {
+        if ($uri instanceof Zend_Gdata_Analytics_DataQuery) {
             $uri = $uri->getQueryUrl();
         }
         return parent::getFeed($uri, 'Zend_Gdata_Analytics_DataFeed');

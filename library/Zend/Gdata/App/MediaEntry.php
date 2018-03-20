@@ -35,7 +35,7 @@ class Zend_Gdata_App_MediaEntry extends Zend_Gdata_App_Entry
     /**
      * The attached MediaSource/file
      *
-     * @var Zend_Gdata_App_MediaSource
+     * @var Zend_Gdata_App_MediaSource|null
      */
     protected $_mediaSource = null;
 
@@ -76,7 +76,7 @@ class Zend_Gdata_App_MediaEntry extends Zend_Gdata_App_Entry
      * Return the MediaSource object representing the file attached to this
      * MediaEntry.
      *
-     * @return Zend_Gdata_App_MediaSource The attached MediaSource/file
+     * @return Zend_Gdata_App_MediaSource|null The attached MediaSource/file
      */
     public function getMediaSource()
     {
@@ -87,7 +87,7 @@ class Zend_Gdata_App_MediaEntry extends Zend_Gdata_App_Entry
      * Set the MediaSource object (file) for this MediaEntry
      *
      * @param Zend_Gdata_App_MediaSource $value The attached MediaSource/file
-     * @return Zend_Gdata_App_MediaEntry Provides a fluent interface
+     * @return $this Provides a fluent interface
      */
     public function setMediaSource($value)
     {

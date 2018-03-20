@@ -234,7 +234,7 @@ class Zend_View_Helper_Gravatar extends Zend_View_Helper_HtmlElement
     /**
      * Load from an SSL or No-SSL location?
      *
-     * @param bool $flag
+     * @param bool|null $flag
      * @return Zend_View_Helper_Gravatar
      */
     public function setSecure($flag)

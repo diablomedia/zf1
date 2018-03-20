@@ -267,7 +267,7 @@ class Zend_Navigation_Page_Mvc extends Zend_Navigation_Page
      *
      * @see getHref()
      *
-     * @param  string $action             action name
+     * @param  string|null $action             action name
      * @return Zend_Navigation_Page_Mvc   fluent interface, returns self
      * @throws Zend_Navigation_Exception  if invalid $action is given
      */
@@ -502,7 +502,7 @@ class Zend_Navigation_Page_Mvc extends Zend_Navigation_Page
      *
      * @see getHref()
      *
-     * @param  string $route              route name to use when assembling URL
+     * @param  string|null $route              route name to use when assembling URL
      * @return Zend_Navigation_Page_Mvc   fluent interface, returns self
      * @throws Zend_Navigation_Exception  if invalid $route is given
      */

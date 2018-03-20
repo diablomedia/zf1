@@ -98,6 +98,7 @@ class Zend_Cache_Backend_Apc extends Zend_Cache_Backend implements Zend_Cache_Ba
     public function save($data, $id, $tags = array(), $specificLifetime = false)
     {
         $lifetime = $this->getLifetime($specificLifetime);
+        /** @var bool $result Won't return an array if $id is a string */
         $result = apc_store($id, array($data, time(), $lifetime), $lifetime);
         if (count($tags) > 0) {
             $this->_log(self::TAGS_UNSUPPORTED_BY_SAVE_OF_APC_BACKEND);

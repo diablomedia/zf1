@@ -5,51 +5,56 @@ parameters:
         - 'library/Zend/Stdlib/SplPriorityQueue.php'
         - 'library/Zend/Tool/Framework/Provider/DocblockManifestable.php'
     ignoreErrors:
+        ######################################################################################
         # Level 0 errors that require code changes (or missing extensions/third party libs)
+        ######################################################################################
         - '#.+::__construct\(\) does not call parent constructor from .+\.#'
         - '#Access to an undefined property .+\.#'
-        - '#Access to constant .+ on an unknown class Memcached\.#'
         - '#Array has [\d]+ duplicate keys with value .+\.#'
         - '#Call to .+ on an unknown class Mobi_Mtld_DA_Api\.#'
         - '#Call to an undefined method .+\.#'
         - '#Call to an undefined static method .+\.#'
+        - '#Class WeakRef not found\.#'
+        - '#Class Zend_Pdf_FileParser_Font_OpenType_Type1 not found\.#'
         - '#Class .+ constructor invoked with [\d]+ parameters?, .+ required\.#'
         - '#Class .+ does not have a constructor and must be instantiated without any parameters\.#'
-        - '#Class .+ not found\.#'
         - '#Constructor of class .+ has an unused parameter .+.#'
         - '#Function .+ invoked with [\d] parameters?, .+ required\.#'
-        - '#Function .+ not found\.#'
-        - '#Instantiated class .+ not found\.#'
+        - '#Function accelerator_license_info not found\.#'
+        - '#Function accelerator_get_configuration not found\.#'
+        - '#Function bitset_empty not found\.#'
+        - '#Function bitset_incl not found\.#'
+        - '#Function bitset_to_array not found\.#'
+        - '#Function bitset_in not found\.#'
+        - '#Function bitset_union not found\.#'
+        - '#Function lzf_compress not found\.#'
+        - '#Function lzf_decompress not found\.#'
+        - '#Instantiated class TeraWurfl not found\.#'
+        - '#Instantiated class WeakRef not found\.#'
+        - '#Instantiated class Zend_Pdf_FileParser_Image_Jpeg not found\.#'
+        - '#Instantiated class Zend_Pdf_FileParser_Image_Tiff not found\.#'
         - '#Method .+ invoked with [\d]+ parameters?, .+ required\.#'
         - '#Parameter .+ has invalid typehint type TeraWurfl\.#'
         - '#Parameter .+ has invalid typehint type Zend_Pdf_Element_LayoutBox\.#'
-        - '#Parameter .+ has invalid typehint type ZendApi_Job\.#'
-        - '#Property .+ has unknown class Memcache as its type\.#'
-        - '#Property .+ has unknown class ZendApi_Job as its type\.#'
-        - '#Property .+ has unknown class ZendApi_Queue as its type\.#'
         - '#Property .+ has unknown class WeakRef as its type\.#'
+        - '#Result of function .+ \(void\) is used\.#'
         - '#Result of method .+ \(void\) is used\.#'
         - '#Result of static method .+ \(void\) is used\.#'
-        - '#Return typehint of method .+ has invalid type ZendApi_Job\.#'
         - '#Static method .+ invoked with [\d]+ parameters?, .+ required\.#'
         - '#Undefined variable: .+#'
         - '#Using \$this in static method .+\.#'
+        ########################################################
         # Level 1 errors that require code changes
+        ########################################################
         - '#Variable \$.+ might not be defined\.#'
         - '#Variable \$.+ in isset\(\) always exists and is not nullable\.#'
         - '#Variable \$.+ in isset\(\) is never defined\.#'
-        - '#Constant [A-Z0-9_]+ not found\.#'
-        - '#Constant this not found\.#'
+        #####################################################################################
         # Level 2 errors that require code changes (or missing extensions/third party libs)
+        #####################################################################################
         - '#Access to property .+ on an unknown class TeraWurfl\.#'
-        - '#Call to method .+ on an unknown class Archive_Tar\.#'
-        - '#Call to method .+ on an unknown class Memcache\.#'
-        - '#Call to method .+ on an unknown class Memcached\.#'
         - '#Call to method .+ on an unknown class TeraWurfl\.#'
         - '#Call to method .+ on an unknown class WeakRef\.#'
-        - '#Call to method .+ on an unknown class ZendApi_Job\.#'
-        - '#Call to method .+ on an unknown class ZendApi_Queue\.#'
-        - '#Call to method getQueryUrl\(\) on an unknown class Query\.#'
         - '#Cannot access property \$commands on array\.#'
         - '#Cannot access property \$description on array\.#'
         - '#Cannot access property \$footers on array\.#'
@@ -65,8 +70,9 @@ parameters:
         - '#PHPDoc tag @param references unknown parameter \$content#'
         - '#PHPDoc tag @param references unknown parameter \$locale#'
         - '#PHPDoc tag @param references unknown parameter \$script#'
+        ##########################################################################
         # Level 3 errors that require code changes or are false positives
-        - '#Argument of an invalid type APCIterator supplied for foreach, only iterables are supported\.#'
+        ##########################################################################
         - '#Argument of an invalid type object supplied for foreach, only iterables are supported\.#'
         - '#Cannot call method normalize\(\) on null\.#'
         - '#Cannot call method sumOfSquaredWeights\(\) on null\.#'
@@ -76,6 +82,12 @@ parameters:
         - '#Method Zend_Amf_Adobe_Introspector::_phpTypeToAS\(\) should return string but returns false\|string\.#'
         - '#Method Zend_Amf_Parse_Amf0_Deserializer::readXmlString\(\) should return false\|SimpleXMLElement but returns DOMDocument\|false\|SimpleXMLElement\.#'
         - '#Method Zend_Amf_Parse_Amf3_Deserializer::readXmlString\(\) should return false\|SimpleXMLElement but returns DOMDocument\|false\|SimpleXMLElement\.#'
+        # apc stub has this defined as array|bool, which could be correct (manual doesn't show it), except in this case it's returning bool since $id is a string
+        - '#Method Zend_Cache_Backend_Apc::remove\(\) should return bool but returns array<string>\|bool\.#'
+        # sqlite_open does return false|resource, but there's a check above this for !is_resource that will throw an exception, however, the exception
+        # is thrown via a call to Zend_Cache::throwException, so phpstan is unaware of the break in flow
+        - '#Method Zend_Cache_Backend_Sqlite::_getConnection\(\) should return resource but returns false\|resource\.#'
+        - '#Property Zend_Cache_Backend_Sqlite::\$_db \(resource\) does not accept false\|resource\.#'
         - '#Method Zend_Cloud_DocumentService_Adapter_SimpleDb::select\(\) should return Zend_Cloud_DocumentService_Adapter_SimpleDb_Query but returns object\.#'
         - '#Method Zend_Cloud_DocumentService_Adapter_WindowsAzure::select\(\) should return Zend_Cloud_DocumentService_Query but returns object\.#'
         - '#Method Zend_Cloud_StorageService_Factory::getAdapter\(\) should return Zend_Cloud_StorageService_Adapter but returns Zend_Cloud_DocumentService_Adapter\|Zend_Cloud_QueueService_Adapter\|Zend_Cloud_StorageService_Adapter\.#'
@@ -133,7 +145,9 @@ parameters:
         - '#Property Zend_Service_Rackspace_Abstract::\$token \(string\) does not accept array\|string\|null\.#'
         - '#Property Zend_Soap_Wsdl::\$_dom \(DOMDocument\) does not accept DOMDocument\|false\|SimpleXMLElement\.#'
         - '#Static property Zend_Navigation_Page_Mvc::\$_urlHelper \(Zend_Controller_Action_Helper_Url\) does not accept Zend_Controller_Action_Helper_Abstract\.#'
+        #########################################################
         # Level 4 errors that require code changes
+        #########################################################
         - '#Call to function is_float\(\) will always evaluate to false\.#'
         - '#Call to function is_null\(\) will always evaluate to false\.#'
         - '#Call to function is_numeric\(\) will always evaluate to false\.#'
@@ -143,9 +157,16 @@ parameters:
         - '#Method Zend_Db_Adapter_Pdo_Mssql::_quote\(\) should return string but returns float\|int\|string\.#'
         - '#Method Zend_Db_Adapter_Pdo_Sqlite::_quote\(\) should return string but returns float\|int\|string\.#'
         - '#Property Zend_Pdf_Style::\$_lineDashingPattern \(array\) does not accept array\|int\.#'
-        - '#Strict comparison using !== between .+ and null will always evaluate to true\.#'
+        # This one happens in Zend_Serializer_Adapter_Igbinary, it seems ZF is expecting igbinary_serialize to return false, but can't find any evidence that
+        # it does that.
+        - '#Strict comparison using === between string and false will always evaluate to false.#'
+        # This only happens in Zend_Service_Twitter:701, it seems intentional, since if it's not exactly "2" (int), then it throws an error. "false" applies here
         - '#Strict comparison using !== between bool and int will always evaluate to true\.#'
-        - '#Strict comparison using !== between null and .+ will always evaluate to true\.#'
-        - '#Strict comparison using === between .+ and null will always evaluate to false\.#'
+        # The object oriented style of DateTime does not return false, so this check probably doesn't need to be there in Zend_XmlRpc_Value_DateTime:67
         - '#Strict comparison using === between DateTime and false will always evaluate to false\.#'
+        # These are typically checking function arguments (or returns from other functions that don't explicitly say they return null) to make sure they were set to something,
+        # and without scalar type-hints, has to be done
+        - '#Strict comparison using === between .+ and null will always evaluate to false\.#'
         - '#Strict comparison using === between null and .+ will always evaluate to false\.#'
+        - '#Strict comparison using !== between null and .+ will always evaluate to true\.#'
+        - '#Strict comparison using !== between .+ and null will always evaluate to true\.#'

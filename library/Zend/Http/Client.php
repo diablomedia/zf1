@@ -497,7 +497,7 @@ class Zend_Http_Client
      *
      * @param string $type GET or POST
      * @param string $name
-     * @param string $value
+     * @param string|null $value
      * @return void
      */
     protected function _setParameter($type, $name, $value)
@@ -553,7 +553,7 @@ class Zend_Http_Client
      * </code>
      *
      * @see http://www.faqs.org/rfcs/rfc2617.html
-     * @param string|false $user User name or false disable authentication
+     * @param string|false|null $user User name or false disable authentication
      * @param string $password Password
      * @param string $type Authentication type
      * @return Zend_Http_Client

@@ -402,7 +402,7 @@ abstract class Zend_Translate_Adapter {
     /**
      * Sets locale
      *
-     * @param  string|Zend_Locale $locale Locale to set
+     * @param  string|Zend_Locale|null $locale Locale to set
      * @throws Zend_Translate_Exception
      * @return Zend_Translate_Adapter Provides fluent interface
      */

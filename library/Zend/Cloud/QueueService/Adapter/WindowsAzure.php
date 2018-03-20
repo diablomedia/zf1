@@ -87,10 +87,10 @@ class Zend_Cloud_QueueService_Adapter_WindowsAzure
             $host = $options[self::HOST];
         }
         if (! isset($options[self::ACCOUNT_NAME])) {
-            throw new Zend_Cloud_Storage_Exception('No Windows Azure account name provided.');
+            throw new Zend_Cloud_QueueService_Exception('No Windows Azure account name provided.');
         }
         if (! isset($options[self::ACCOUNT_KEY])) {
-            throw new Zend_Cloud_Storage_Exception('No Windows Azure account key provided.');
+            throw new Zend_Cloud_QueueService_Exception('No Windows Azure account key provided.');
         }
         try {
             // TODO: support $usePathStyleUri and $retryPolicy

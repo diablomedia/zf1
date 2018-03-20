@@ -75,7 +75,7 @@ class Zend_Test_PHPUnit_Db_Operation_Truncate implements PHPUnit\DbUnit\Operatio
             } else {
                 $db->query('IMPORT FROM /dev/null OF DEL REPLACE INTO '.$tableName);
             }*/
-            throw Zend_Exception("IBM Db2 TRUNCATE not supported.");
+            throw new Zend_Exception("IBM Db2 TRUNCATE not supported.");
         } else if($this->_isMssqlOrOracle($db)) {
             $db->query('TRUNCATE TABLE '.$tableName);
         } else if($db instanceof Zend_Db_Adapter_Pdo_Pgsql) {

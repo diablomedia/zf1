@@ -32,7 +32,7 @@
 class Zend_Queue_Adapter_PlatformJobQueue extends Zend_Queue_Adapter_AdapterAbstract
 {
     /**
-     * @var ZendApi_Queue
+     * @var ZendAPI_Queue
      */
     protected $_zendQueue;
 
@@ -64,7 +64,7 @@ class Zend_Queue_Adapter_PlatformJobQueue extends Zend_Queue_Adapter_AdapterAbst
             throw new Zend_Queue_Exception('Platform Job Queue password should be provided');
         }
 
-        $this->_zendQueue = new ZendApi_Queue($options['host']);
+        $this->_zendQueue = new ZendAPI_Queue($options['host']);
 
         if (!$this->_zendQueue) {
             throw new Zend_Queue_Exception('Platform Job Queue connection failed');
@@ -152,7 +152,7 @@ class Zend_Queue_Adapter_PlatformJobQueue extends Zend_Queue_Adapter_AdapterAbst
     /**
      * Send a message to the queue
      *
-     * @param  array | ZendApi_Job $message Message to send to the active queue
+     * @param  array | ZendAPI_Job $message Message to send to the active queue
      * @param  Zend_Queue $queue     Not supported
      * @return Zend_Queue_Message
      * @throws Zend_Queue_Exception
@@ -169,7 +169,7 @@ class Zend_Queue_Adapter_PlatformJobQueue extends Zend_Queue_Adapter_AdapterAbst
             Zend_Loader::loadClass($classname);
         }
 
-        if ($message instanceof ZendApi_Job) {
+        if ($message instanceof ZendAPI_Job) {
             $message = array('data' => $message);
         }
 
@@ -305,7 +305,7 @@ class Zend_Queue_Adapter_PlatformJobQueue extends Zend_Queue_Adapter_AdapterAbst
     {
         $options = $this->_options['daemonOptions'];
 
-        $this->_zendQueue = new ZendApi_Queue($options['host']);
+        $this->_zendQueue = new ZendAPI_Queue($options['host']);
 
         if (!$this->_zendQueue) {
             throw new Zend_Queue_Exception('Platform Job Queue connection failed');

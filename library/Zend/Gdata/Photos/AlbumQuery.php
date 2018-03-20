@@ -76,7 +76,7 @@ class Zend_Gdata_Photos_AlbumQuery extends Zend_Gdata_Photos_UserQuery
      * Get the album name which is to be returned.
      *
      * @see setAlbumName
-     * @return string The name of the album to retrieve.
+     * @return string|null The name of the album to retrieve.
      */
     public function getAlbumName()
     {

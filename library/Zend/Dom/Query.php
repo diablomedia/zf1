@@ -83,7 +83,7 @@ class Zend_Dom_Query
      * Set document encoding
      *
      * @param  string $encoding
-     * @return Zend_Dom_Query
+     * @return $this
      */
     public function setEncoding($encoding)
     {
@@ -106,7 +106,7 @@ class Zend_Dom_Query
      *
      * @param  string|DOMDocument $document
      * @param  null|string $encoding Document encoding
-     * @return Zend_Dom_Query
+     * @return $this
      */
     public function setDocument($document, $encoding = null)
     {
@@ -134,7 +134,7 @@ class Zend_Dom_Query
      * Set DOMDocument to query
      *
      * @param  DOMDocument $document
-     * @return Zend_Dom_Query
+     * @return $this
      */
     public function setDocumentDom(DOMDocument $document)
     {
@@ -151,7 +151,7 @@ class Zend_Dom_Query
      *
      * @param  string $document
      * @param  null|string $encoding Document encoding
-     * @return Zend_Dom_Query
+     * @return $this
      */
     public function setDocumentHtml($document, $encoding = null)
     {
@@ -168,7 +168,7 @@ class Zend_Dom_Query
      *
      * @param  string $document
      * @param  null|string $encoding Document encoding
-     * @return Zend_Dom_Query
+     * @return $this
      */
     public function setDocumentXhtml($document, $encoding = null)
     {
@@ -185,7 +185,7 @@ class Zend_Dom_Query
      *
      * @param  string $document
      * @param  null|string $encoding Document encoding
-     * @return Zend_Dom_Query
+     * @return $this
      */
     public function setDocumentXml($document, $encoding = null)
     {

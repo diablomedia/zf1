@@ -32,7 +32,7 @@ abstract class Zend_Controller_Action_Helper_Abstract
     /**
      * $_actionController
      *
-     * @var Zend_Controller_Action $_actionController
+     * @var Zend_Controller_Action|null $_actionController
      */
     protected $_actionController = null;
 
@@ -56,7 +56,7 @@ abstract class Zend_Controller_Action_Helper_Abstract
     /**
      * Retrieve current action controller
      *
-     * @return Zend_Controller_Action
+     * @return Zend_Controller_Action|null
      */
     public function getActionController()
     {

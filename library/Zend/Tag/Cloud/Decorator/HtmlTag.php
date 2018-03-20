@@ -35,7 +35,7 @@ class Zend_Tag_Cloud_Decorator_HtmlTag extends Zend_Tag_Cloud_Decorator_Tag
      * List of tags which get assigned to the inner element instead of
      * font-sizes.
      *
-     * @var array
+     * @var array|null
      */
     protected $_classList = null;
 
@@ -110,7 +110,7 @@ class Zend_Tag_Cloud_Decorator_HtmlTag extends Zend_Tag_Cloud_Decorator_Tag
     /**
      * Get class list
      *
-     * @return array
+     * @return array|null
      */
     public function getClassList()
     {

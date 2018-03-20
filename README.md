@@ -1,3 +1,29 @@
+Zend Framework 1
+================
+[![Build Status](https://travis-ci.org/diablomedia/zf1.svg?branch=version-test-fix)](https://travis-ci.org/diablomedia/zf1)
+[![codecov](https://codecov.io/gh/diablomedia/zf1/branch/master/graph/badge.svg)](https://codecov.io/gh/diablomedia/zf1)
+[![Latest Stable Version](https://poser.pugx.org/diablomedia/zendframework1/v/stable)](https://packagist.org/packages/diablomedia/zendframework1)
+[![Total Downloads](https://poser.pugx.org/diablomedia/zendframework1/downloads)](https://packagist.org/packages/diablomedia/zendframework1)
+[![License](https://poser.pugx.org/diablomedia/zendframework1/license)](https://packagist.org/packages/diablomedia/zendframework1)
+
+This is a fork of Zend Framework 1 that we'll maintain as long as we're using it, mainly just to keep it working on new versions of PHP as they're released.
+
+This fork is based on the final release of the original project (version 1.12.20), and releases will follow [semantic versioning](https://semver.org/). The first release of this fork is version 2.0.0.
+
+## Release Highlights
+
+### 3.0.0
+
+* Minimum PHP version set to 7.0
+* PHPUnit upgraded to 6.0
+
+### 2.0.0
+
+* Renamed to our organization in Composer
+* Minimum PHP version set to 5.6
+
+## The following is the original README contents from upstream:
+
 ![Logo](http://framework.zend.com/images/logos/ZendFramework-logo.png)
 
 > ## End-of-Life occurs 28 Sep 2016
@@ -9,13 +35,6 @@
 >
 > - https://framework.zend.com/blog/2016-06-28-zf1-eol.html
 
----
-
-[![Build Status](https://travis-ci.org/diablomedia/zf1.svg?branch=version-test-fix)](https://travis-ci.org/diablomedia/zf1)
-[![codecov](https://codecov.io/gh/diablomedia/zf1/branch/master/graph/badge.svg)](https://codecov.io/gh/diablomedia/zf1)
-[![Latest Stable Version](https://poser.pugx.org/diablomedia/zendframework1/v/stable)](https://packagist.org/packages/diablomedia/zendframework1)
-[![Total Downloads](https://poser.pugx.org/diablomedia/zendframework1/downloads)](https://packagist.org/packages/diablomedia/zendframework1)
-[![License](https://poser.pugx.org/diablomedia/zendframework1/license)](https://packagist.org/packages/diablomedia/zendframework1)
 
 RELEASE INFORMATION
 ===================

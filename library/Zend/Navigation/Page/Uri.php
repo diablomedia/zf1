@@ -41,7 +41,7 @@ class Zend_Navigation_Page_Uri extends Zend_Navigation_Page
     /**
      * Sets page URI
      *
-     * @param  string $uri                page URI, must a string or null
+     * @param  string|null $uri                page URI, must a string or null
      * @return Zend_Navigation_Page_Uri   fluent interface, returns self
      * @throws Zend_Navigation_Exception  if $uri is invalid
      */
@@ -74,16 +74,16 @@ class Zend_Navigation_Page_Uri extends Zend_Navigation_Page
     public function getHref()
     {
         $uri = $this->getUri();
-        
-        $fragment = $this->getFragment();       
+
+        $fragment = $this->getFragment();
         if (null !== $fragment) {
             if ('#' == substr($uri, -1)) {
                 return $uri . $fragment;
-            } else {                
+            } else {
                 return $uri . '#' . $fragment;
             }
         }
-        
+
         return $uri;
     }
 

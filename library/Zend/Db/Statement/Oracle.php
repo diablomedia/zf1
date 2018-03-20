@@ -82,10 +82,12 @@ class Zend_Db_Statement_Oracle extends Zend_Db_Statement
     protected function _prepare($sql)
     {
         $connection = $this->_adapter->getConnection();
-        $this->_stmt = @oci_parse($connection, $sql);
-        if (!$this->_stmt) {
+        $stmt = @oci_parse($connection, $sql);
+        if (!$stmt) {
             throw new Zend_Db_Statement_Oracle_Exception(oci_error($connection));
         }
+
+        $this->_stmt = $stmt;
     }
 
     /**

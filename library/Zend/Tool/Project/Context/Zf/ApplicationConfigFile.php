@@ -106,7 +106,7 @@ class Zend_Tool_Project_Context_Zf_ApplicationConfigFile extends Zend_Tool_Proje
      * @param string $key
      * @param string $value
      * @param string $section
-     * @param bool   $quoteValue
+     * @param bool|null   $quoteValue
      * @return Zend_Tool_Project_Context_Zf_ApplicationConfigFile
      */
     public function addStringItem($key, $value, $section = 'production', $quoteValue = true)

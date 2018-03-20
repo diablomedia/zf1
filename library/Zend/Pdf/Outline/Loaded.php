@@ -68,7 +68,7 @@ class Zend_Pdf_Outline_Loaded extends Zend_Pdf_Outline
      * Set outline title
      *
      * @param string $title
-     * @return Zend_Pdf_Outline
+     * @return $this
      */
     public function setTitle($title)
     {
@@ -81,7 +81,7 @@ class Zend_Pdf_Outline_Loaded extends Zend_Pdf_Outline
      * Sets 'isOpen' outline flag
      *
      * @param boolean $isOpen
-     * @return Zend_Pdf_Outline
+     * @return $this
      */
     public function setIsOpen($isOpen)
     {
@@ -89,7 +89,7 @@ class Zend_Pdf_Outline_Loaded extends Zend_Pdf_Outline
 
         if ($this->_outlineDictionary->Count === null) {
             // Do Nothing.
-            return this;
+            return $this;
         }
 
         $childrenCount = $this->_outlineDictionary->Count->value;

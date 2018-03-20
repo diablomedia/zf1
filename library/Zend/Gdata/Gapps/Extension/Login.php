@@ -51,7 +51,7 @@ class Zend_Gdata_Gapps_Extension_Login extends Zend_Gdata_Extension
      * The password for the user. May be in cleartext or as an SHA-1
      * digest, depending on the value of _hashFunctionName.
      *
-     * @var string
+     * @var string|null
      */
     protected $_password = null;
 
@@ -257,7 +257,7 @@ class Zend_Gdata_Gapps_Extension_Login extends Zend_Gdata_Extension
      * to form this user's email address.
      *
      * @param string $value The desired value for this attribute.
-     * @return Zend_Gdata_Gapps_Extension_Login Provides a fluent interface.
+     * @return $this Provides a fluent interface.
      */
     public function setUsername($value)
     {
@@ -269,7 +269,7 @@ class Zend_Gdata_Gapps_Extension_Login extends Zend_Gdata_Extension
      * Get the value for this element's password attribute.
      *
      * @see setPassword
-     * @return string The requested attribute.
+     * @return string|null The requested attribute.
      */
     public function getPassword()
     {
@@ -283,7 +283,7 @@ class Zend_Gdata_Gapps_Extension_Login extends Zend_Gdata_Extension
      * this must be indicated by calling setHashFunctionName().
      *
      * @param string $value The desired value for this attribute.
-     * @return Zend_Gdata_Gapps_Extension_Login Provides a fluent interface.
+     * @return $this Provides a fluent interface.
      */
     public function setPassword($value)
     {
@@ -310,7 +310,7 @@ class Zend_Gdata_Gapps_Extension_Login extends Zend_Gdata_Extension
      * function is 'SHA-1'.
      *
      * @param string $value The desired value for this attribute.
-     * @return Zend_Gdata_Gapps_Extension_Login Provides a fluent interface.
+     * @return $this Provides a fluent interface.
      */
     public function setHashFunctionName($value)
     {
@@ -338,7 +338,7 @@ class Zend_Gdata_Gapps_Extension_Login extends Zend_Gdata_Extension
      * whether this user is an administrator for this domain.
      *
      * @param boolean $value The desired value for this attribute.
-     * @return Zend_Gdata_Gapps_Extension_Login Provides a fluent interface.
+     * @return $this Provides a fluent interface.
      * @throws Zend_Gdata_App_InvalidArgumentException
      */
     public function setAdmin($value)
@@ -370,7 +370,7 @@ class Zend_Gdata_Gapps_Extension_Login extends Zend_Gdata_Extension
      * indicates whether this user has agreed to the terms of service.
      *
      * @param boolean $value The desired value for this attribute.
-     * @return Zend_Gdata_Gapps_Extension_Login Provides a fluent interface.
+     * @return $this Provides a fluent interface.
      * @throws Zend_Gdata_App_InvalidArgumentException
      */
     public function setAgreedToTerms($value)
@@ -402,7 +402,7 @@ class Zend_Gdata_Gapps_Extension_Login extends Zend_Gdata_Extension
      * user will not be able to login to this domain until unsuspended.
      *
      * @param boolean $value The desired value for this attribute.
-     * @return Zend_Gdata_Gapps_Extension_Login Provides a fluent interface.
+     * @return $this Provides a fluent interface.
      * @throws Zend_Gdata_App_InvalidArgumentException
      */
     public function setSuspended($value)
@@ -435,7 +435,7 @@ class Zend_Gdata_Gapps_Extension_Login extends Zend_Gdata_Extension
      * time they login.
      *
      * @param boolean $value The desired value for this attribute.
-     * @return Zend_Gdata_Gapps_Extension_Login Provides a fluent interface.
+     * @return $this Provides a fluent interface.
      * @throws Zend_Gdata_App_InvalidArgumentException
      */
     public function setChangePasswordAtNextLogin($value)

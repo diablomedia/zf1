@@ -50,7 +50,7 @@ class Zend_Service_ReCaptcha_MailHide extends Zend_Service_ReCaptcha
     /**
      * The email address to protect
      *
-     * @var string
+     * @var string|null
      */
     protected $_email = null;
 
@@ -243,7 +243,7 @@ class Zend_Service_ReCaptcha_MailHide extends Zend_Service_ReCaptcha
     /**
      * Get the email property
      *
-     * @return string
+     * @return string|null
      */
     public function getEmail()
     {

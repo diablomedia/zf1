@@ -32,7 +32,7 @@
 class Zend_Queue_Message_PlatformJob extends Zend_Queue_Message
 {
     /**
-     * @var ZendApi_Job
+     * @var ZendAPI_Job
      */
     protected $_job;
 
@@ -62,7 +62,7 @@ class Zend_Queue_Message_PlatformJob extends Zend_Queue_Message
     public function __construct(array $options = array())
     {
         if (isset($options['data'])) {
-            if (!($options['data'] instanceof ZendApi_Job)) {
+            if (!($options['data'] instanceof ZendAPI_Job)) {
                 throw new Zend_Queue_Exception('Data must be an instance of ZendApi_Job');
             }
             $this->_job = $options['data'];
@@ -74,7 +74,7 @@ class Zend_Queue_Message_PlatformJob extends Zend_Queue_Message
                 throw new Zend_Queue_Exception('The script is mandatory data');
             }
 
-            $this->_job = new ZendApi_Job($options['script']);
+            $this->_job = new ZendAPI_Job($options['script']);
             $this->_setJobProperties();
         }
     }
@@ -106,7 +106,7 @@ class Zend_Queue_Message_PlatformJob extends Zend_Queue_Message
     /**
      * Retrieve the internal ZendApi_Job instance
      *
-     * @return ZendApi_Job
+     * @return ZendAPI_Job
      */
     public function getJob()
     {

@@ -181,6 +181,7 @@ class Zend_Filter_Compress_Tar extends Zend_Filter_Compress_CompressAbstract
             $content = $file;
         }
 
+        /** @var bool $result Docblock of Archive_Tar::create is incorrect */
         $result  = $archive->create($content);
         if ($result === false) {
             throw new Zend_Filter_Exception('Error creating the Tar archive');

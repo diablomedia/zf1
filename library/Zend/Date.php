@@ -1277,7 +1277,7 @@ class Zend_Date extends Zend_Date_DateObject
      * @param  string                          $calc    Calculation to make, one of: 'add'|'sub'|'cmp'|'copy'|'set'
      * @param  string|integer|array|Zend_Date  $date    Date or datepart to calculate with
      * @param  string                          $part    Part of the date to calculate, if null the timestamp is used
-     * @param  string|Zend_Locale              $locale  Locale for parsing input
+     * @param  string|Zend_Locale|null              $locale  Locale for parsing input
      * @return integer|string|Zend_Date        new timestamp
      * @throws Zend_Date_Exception
      */
@@ -2705,7 +2705,7 @@ class Zend_Date extends Zend_Date_DateObject
      * @param  string                    $calc    Calculation to make
      * @param  string|integer|array|Zend_Date  $time    Time to calculate with, if null the actual time is taken
      * @param  string                          $format  Timeformat for parsing input
-     * @param  string|Zend_Locale              $locale  Locale for parsing input
+     * @param  string|Zend_Locale|null              $locale  Locale for parsing input
      * @return integer|$this  new time
      * @throws Zend_Date_Exception
      */
@@ -2865,7 +2865,7 @@ class Zend_Date extends Zend_Date_DateObject
      * @param  string                          $calc    Calculation to make
      * @param  string|integer|array|Zend_Date  $date    Date to calculate with, if null the actual date is taken
      * @param  string                          $format  Date format for parsing
-     * @param  string|Zend_Locale              $locale  Locale for parsing input
+     * @param  string|Zend_Locale|null         $locale  Locale for parsing input
      * @return integer|$this  new date
      * @throws Zend_Date_Exception
      */
@@ -3438,7 +3438,7 @@ class Zend_Date extends Zend_Date_DateObject
      * @param  string|integer|Zend_Date|array $value  Datevalue to calculate with, if null the actual value is taken
      * @param  string                   $type
      * @param  string                   $parameter
-     * @param  string|Zend_Locale       $locale Locale for parsing input
+     * @param  string|Zend_Locale|null  $locale Locale for parsing input
      * @throws Zend_Date_Exception
      * @return integer|$this  new date
      */
@@ -3584,7 +3584,7 @@ class Zend_Date extends Zend_Date_DateObject
      *
      * @param  string                          $calc    Calculation to make
      * @param  string|integer|array|Zend_Date  $month   Month to calculate with, if null the actual month is taken
-     * @param  string|Zend_Locale              $locale  Locale for parsing input
+     * @param  string|Zend_Locale|null         $locale  Locale for parsing input
      * @return integer|$this  new time
      * @throws Zend_Date_Exception
      */
@@ -3735,9 +3735,9 @@ class Zend_Date extends Zend_Date_DateObject
     /**
      * Returns the calculated day
      *
-     * @param string      $calc   Type of calculation to make
-     * @param Zend_Date   $day    Day to calculate, when null the actual day is calculated
-     * @param Zend_Locale $locale Locale for parsing input
+     * @param string           $calc   Type of calculation to make
+     * @param Zend_Date        $day    Day to calculate, when null the actual day is calculated
+     * @param Zend_Locale|null $locale Locale for parsing input
      * @throws Zend_Date_Exception
      * @return $this|integer
      */
@@ -3884,9 +3884,9 @@ class Zend_Date extends Zend_Date_DateObject
     /**
      * Returns the calculated weekday
      *
-     * @param  string      $calc     Type of calculation to make
-     * @param  Zend_Date   $weekday  Weekday to calculate, when null the actual weekday is calculated
-     * @param  Zend_Locale $locale   Locale for parsing input
+     * @param  string           $calc     Type of calculation to make
+     * @param  Zend_Date        $weekday  Weekday to calculate, when null the actual weekday is calculated
+     * @param  Zend_Locale|null $locale   Locale for parsing input
      * @return $this|integer
      * @throws Zend_Date_Exception
      */

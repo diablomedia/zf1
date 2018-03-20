@@ -1433,7 +1433,7 @@ abstract class Zend_File_Transfer_Adapter_Abstract
     /**
      * Returns found files based on internal file array and given files
      *
-     * @param  string|array $files       (Optional) Files to return
+     * @param  string|array|null $files       (Optional) Files to return
      * @param  boolean      $names       (Optional) Returns only names on true, else complete info
      * @param  boolean      $noexception (Optional) Allows throwing an exception, otherwise returns an empty array
      * @return array Found files

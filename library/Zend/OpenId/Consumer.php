@@ -63,7 +63,7 @@ class Zend_OpenId_Consumer
     /**
      * HTTP client to make HTTP requests
      *
-     * @var Zend_Http_Client $_httpClient
+     * @var Zend_Http_Client|null $_httpClient
      */
     private $_httpClient = null;
 
@@ -929,7 +929,7 @@ class Zend_OpenId_Consumer
     /**
      * Returns HTTP client object that will be used to make HTTP requests
      *
-     * @return Zend_Http_Client
+     * @return Zend_Http_Client|null
      */
     public function getHttpClient() {
         return $this->_httpClient;
