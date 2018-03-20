@@ -96,13 +96,10 @@ if (!extension_loaded('jobqueue_client')) {
     require_once __DIR__ . '/vendor/jetbrains/phpstorm-stubs/zend/zend.php';
 }
 
-<<<<<<< HEAD
 if (!extension_loaded('wddx')) {
     require_once __DIR__ . '/vendor/jetbrains/phpstorm-stubs/wddx/wddx.php';
 }
 
-=======
->>>>>>> Using stubs to better analyze some components
 if (!extension_loaded('zendcache')) {
     require_once __DIR__ . '/vendor/jetbrains/phpstorm-stubs/ZendCache/ZendCache.php';
 }
