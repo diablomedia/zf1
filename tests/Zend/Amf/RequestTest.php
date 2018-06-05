@@ -22,7 +22,6 @@
 
 require_once 'Zend/Amf/Request.php';
 require_once 'Zend/Amf/Parse/TypeLoader.php';
-require_once 'Zend/Locale.php';
 require_once 'Contact.php';
 
 

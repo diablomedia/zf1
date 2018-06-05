@@ -21,7 +21,6 @@
  */
 
 require_once 'Zend/Markup.php';
-require_once 'Zend/Filter/StringToUpper.php';
 
 /**
  * @category   Zend

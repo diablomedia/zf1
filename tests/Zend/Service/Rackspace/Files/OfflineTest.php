@@ -20,7 +20,6 @@
  */
 
 require_once 'Zend/Service/Rackspace/Files.php';
-require_once 'Zend/Http/Client/Adapter/Test.php';
 
 /**
  * Test helper

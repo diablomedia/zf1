@@ -20,7 +20,6 @@
  * @version    $Id $
  */
 
-require_once 'Zend/Http/Client.php';
 require_once 'Zend/Gdata.php';
 require_once 'Zend/Gdata/App/MediaEntry.php';
 require_once 'Zend/Gdata/App/MediaFileSource.php';

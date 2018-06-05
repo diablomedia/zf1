@@ -21,11 +21,6 @@
  */
 
 /**
- * @see Zend_Uri
- */
-require_once 'Zend/Uri.php';
-
-/**
  * @see Zend_Markup_Renderer_RendererAbstract
  */
 require_once 'Zend/Markup/Renderer/RendererAbstract.php';

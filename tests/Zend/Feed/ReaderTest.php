@@ -21,7 +21,6 @@
  */
 
 require_once 'Zend/Feed/Reader.php';
-require_once 'Zend/Cache.php';
 
 /**
  * @category   Zend
@@ -165,7 +164,7 @@ class Zend_Feed_ReaderTest extends PHPUnit\Framework\TestCase
             $this->fail($e->getMessage());
         }
     }
-    
+
     /**
      * @group ZF-8328
      */
@@ -239,7 +238,7 @@ class Zend_Feed_ReaderTest extends PHPUnit\Framework\TestCase
         $links = Zend_Feed_Reader::findFeedLinks('http://www.example.com');
         $this->assertEquals(0, count($links));
     }
-    
+
     /**
      * @group ZF-8327
      */
@@ -259,7 +258,7 @@ class Zend_Feed_ReaderTest extends PHPUnit\Framework\TestCase
         }
         $this->assertEquals('http://feeds.feedburner.com/jonnyken/infoblog', $links->rss);
     }
-    
+
     /**
      * @group ZF-8330
      */
@@ -279,7 +278,7 @@ class Zend_Feed_ReaderTest extends PHPUnit\Framework\TestCase
         }
         $this->assertEquals('http://meiobit.com/rss.xml', $links->rss);
     }
-    
+
     /**
      * @group ZF-8330
      */
@@ -320,7 +319,7 @@ class Zend_Feed_ReaderTest extends PHPUnit\Framework\TestCase
         }
         $this->assertTrue(Zend_Feed_Reader::isRegistered('JungleBooks'));
     }
-    
+
     /**
      * @group ZF-11184
      */
@@ -332,7 +331,7 @@ class Zend_Feed_ReaderTest extends PHPUnit\Framework\TestCase
         Zend_Feed_Reader::setHttpClient(new Zend_Http_Client(null, array(
             'adapter'=>$testAdapter
         )));
-        
+
         $this->expectException('Zend_Feed_Exception');
         $this->expectExceptionMessage('Feed failed to load');
         $result = Zend_Feed_Reader::import('http://www.example.com');
@@ -345,7 +344,7 @@ class Zend_Feed_ReaderTest extends PHPUnit\Framework\TestCase
          $this->expectException('Zend_Feed_Exception');
          $feed = Zend_Feed_Reader::importString($string);
      }
- 
+
     protected function _getTempDirectory()
     {
         $tmpdir = array();

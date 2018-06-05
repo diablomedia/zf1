@@ -84,7 +84,6 @@ class Zend_Queue_QueueTest extends PHPUnit\Framework\TestCase
             'adapter'   => 'array'
         );
 
-        require_once "Zend/Config.php";
         $zend_config = new Zend_Config($config);
 
         $obj = new Zend_Queue($config);

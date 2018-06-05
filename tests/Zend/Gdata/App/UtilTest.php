@@ -20,7 +20,6 @@
  * @version    $Id $
  */
 
-require_once 'Zend/Http/Client.php';
 require_once 'Zend/Gdata/App/Util.php';
 require_once 'Zend/Gdata/App/Exception.php';
 
@@ -149,7 +148,7 @@ class Zend_Gdata_App_UtilTest extends PHPUnit\Framework\TestCase
         // Excetion not thrown, this is bad.
         $this->fail("Exception not thrown.");
     }
-    
+
     /**
      * @group ZF-11610
      */

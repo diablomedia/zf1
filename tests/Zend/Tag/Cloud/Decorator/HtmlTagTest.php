@@ -23,7 +23,6 @@
 require_once 'Zend/Tag/Item.php';
 require_once 'Zend/Tag/ItemList.php';
 require_once 'Zend/Tag/Cloud/Decorator/HtmlTag.php';
-require_once 'Zend/Config.php';
 
 /**
  * @category   Zend

@@ -20,18 +20,6 @@
  * @version    $Id$
  */
 
-/**
- * Zend_Loader_Autoloader
- */
-require_once 'Zend/Loader/Autoloader.php';
-
-/**
- * @see Zend_Application_Resource_Multidb
- */
-require_once 'Zend/Application/Resource/Multidb.php';
-
-require_once 'Zend/Db/Table.php';
-
 
 /**
  * @category   Zend

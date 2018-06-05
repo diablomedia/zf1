@@ -34,9 +34,6 @@ require_once 'Zend/Cloud/DocumentService/Adapter/WindowsAzure.php';
  */
 require_once 'Zend/Cloud/DocumentService/Factory.php';
 
-/** @see Zend_Config */
-require_once 'Zend/Config.php';
-
 /**
  * @category   Zend
  * @package    Zend_Cloud

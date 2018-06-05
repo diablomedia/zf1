@@ -26,11 +26,6 @@
 require_once 'Zend/Service/Akismet.php';
 
 /**
- * @see Zend_Http_Client_Adapter_Test
- */
-require_once 'Zend/Http/Client/Adapter/Test.php';
-
-/**
  * @category   Zend
  * @package    Zend_Service_Akismet
  * @subpackage UnitTests

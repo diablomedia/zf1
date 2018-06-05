@@ -28,9 +28,6 @@
  * an exception.
  */
 
-/** Zend_Config */
-require_once 'Zend/Config.php';
-
 /** Zend_Queue */
 require_once 'Zend/Queue.php';
 

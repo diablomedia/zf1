@@ -44,7 +44,7 @@ $missingFiles = [];
 if ($handle) {
     while (($buffer = fgets($handle, 4096)) !== false) {
         if (strpos($buffer, '<file>')) {
-            $file = trim(str_replace(['<file>./', '</file>'], ['', ''], $buffer));
+            $file = trim(str_replace(['<file>', '</file>'], ['', ''], $buffer));
             if (!file_exists($file)) {
                 $missingFiles[] = $file;
             }

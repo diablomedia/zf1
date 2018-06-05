@@ -85,16 +85,8 @@ class Zend_Service_Flickr_OfflineTest extends PHPUnit\Framework\TestCase
             );
         $this->_filesPath   = dirname(__FILE__) . '/_files';
 
-        /**
-         * @see Zend_Http_Client_Adapter_Socket
-         */
-        require_once 'Zend/Http/Client/Adapter/Socket.php';
         $this->_httpClientAdapterSocket = new Zend_Http_Client_Adapter_Socket();
 
-        /**
-         * @see Zend_Http_Client_Adapter_Test
-         */
-        require_once 'Zend/Http/Client/Adapter/Test.php';
         $this->_httpClientAdapterTest = new Zend_Http_Client_Adapter_Test();
     }
 

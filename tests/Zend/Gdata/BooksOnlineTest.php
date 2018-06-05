@@ -21,7 +21,6 @@
  */
 
 require_once 'Zend/Gdata/Books.php';
-require_once 'Zend/Http/Client.php';
 require_once 'Zend/Gdata/ClientLogin.php';
 
 /**

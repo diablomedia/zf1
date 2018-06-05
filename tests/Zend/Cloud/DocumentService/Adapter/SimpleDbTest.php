@@ -30,9 +30,6 @@ require_once 'Zend/Cloud/DocumentService/Factory.php';
 /** @see Zend_Cloud_DocumenteService_Adapter_SimpleDb */
 require_once 'Zend/Cloud/DocumentService/Adapter/SimpleDb.php';
 
-/** @see Zend_Config */
-require_once 'Zend/Config.php';
-
 /**
  * @category   Zend
  * @package    Zend_Cloud

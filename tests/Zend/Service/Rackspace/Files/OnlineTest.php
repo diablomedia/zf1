@@ -20,8 +20,6 @@
  */
 
 require_once 'Zend/Service/Rackspace/Files.php';
-require_once 'Zend/Http/Client/Adapter/Socket.php';
-
 
 /**
  * Test helper
@@ -51,17 +49,17 @@ class Zend_Service_Rackspace_Files_OnlineTest extends PHPUnit\Framework\TestCase
     protected $httpClientAdapterSocket;
     /**
      * Metadata for container/object test
-     * 
-     * @var array 
+     *
+     * @var array
      */
     protected $metadata;
     /**
      * Another metadata for container/object test
-     * 
-     * @var array 
+     *
+     * @var array
      */
     protected $metadata2;
-    
+
     /**
      * Set up the test case
      *
@@ -69,7 +67,7 @@ class Zend_Service_Rackspace_Files_OnlineTest extends PHPUnit\Framework\TestCase
      */
     public function setUp()
     {
-        
+
         if (!constant('TESTS_ZEND_SERVICE_RACKSPACE_ONLINE_ENABLED')) {
             $this->markTestSkipped('Zend_Service_Rackspace_Files_OnlineTest tests are not enabled');
         }
@@ -84,20 +82,20 @@ class Zend_Service_Rackspace_Files_OnlineTest extends PHPUnit\Framework\TestCase
 
         $this->rackspace->getHttpClient()
                         ->setAdapter(self::$httpClientAdapterSocket);
-        
+
         $this->metadata =  array (
             'foo'  => 'bar',
             'foo2' => 'bar2'
         );
-        
+
         $this->metadata2 = array (
             'hello' => 'world'
         );
-        
+
         // terms of use compliance: safe delay between each test
         sleep(2);
     }
-    
+
     public function testCreateContainer()
     {
         $container= $this->rackspace->createContainer(TESTS_ZEND_SERVICE_RACKSPACE_CONTAINER_NAME,$this->metadata);
@@ -110,14 +108,14 @@ class Zend_Service_Rackspace_Files_OnlineTest extends PHPUnit\Framework\TestCase
         $num= $this->rackspace->getCountContainers();
         $this->assertTrue($num>0);
     }
-    
+
     public function testGetContainer()
     {
         $container= $this->rackspace->getContainer(TESTS_ZEND_SERVICE_RACKSPACE_CONTAINER_NAME);
         $this->assertTrue($container!==false);
         $this->assertEquals($container->getName(),TESTS_ZEND_SERVICE_RACKSPACE_CONTAINER_NAME);
     }
-    
+
     public function testGetContainers()
     {
         $containers= $this->rackspace->getContainers();
@@ -128,39 +126,39 @@ class Zend_Service_Rackspace_Files_OnlineTest extends PHPUnit\Framework\TestCase
                 $found=true;
                 break;
             }
-        } 
+        }
         $this->assertTrue($found);
     }
-    
+
     public function testGetMetadataContainer()
     {
         $data= $this->rackspace->getMetadataContainer(TESTS_ZEND_SERVICE_RACKSPACE_CONTAINER_NAME);
         $this->assertTrue($data!==false);
         $this->assertEquals($data['name'],TESTS_ZEND_SERVICE_RACKSPACE_CONTAINER_NAME);
         $this->assertEquals($data['metadata'],$this->metadata);
-        
+
     }
-    
+
     public function testGetInfoAccount()
     {
         $data= $this->rackspace->getInfoAccount();
         $this->assertTrue($data!==false);
         $this->assertTrue($data['tot_containers']>0);
     }
-    
+
     public function testStoreObject()
     {
         $content= 'This is a test!';
-        $result= $this->rackspace->storeObject(TESTS_ZEND_SERVICE_RACKSPACE_CONTAINER_NAME, 
+        $result= $this->rackspace->storeObject(TESTS_ZEND_SERVICE_RACKSPACE_CONTAINER_NAME,
                                                TESTS_ZEND_SERVICE_RACKSPACE_OBJECT_NAME,
                                                $content,
                                                $this->metadata);
         $this->assertTrue($result);
     }
-    
+
     public function testGetObject()
     {
-        $object= $this->rackspace->getObject(TESTS_ZEND_SERVICE_RACKSPACE_CONTAINER_NAME, 
+        $object= $this->rackspace->getObject(TESTS_ZEND_SERVICE_RACKSPACE_CONTAINER_NAME,
                                              TESTS_ZEND_SERVICE_RACKSPACE_OBJECT_NAME);
         $this->assertTrue($object!==false);
         $this->assertEquals($object->getName(),TESTS_ZEND_SERVICE_RACKSPACE_OBJECT_NAME);
@@ -179,25 +177,25 @@ class Zend_Service_Rackspace_Files_OnlineTest extends PHPUnit\Framework\TestCase
     {
         $objects= $this->rackspace->getObjects(TESTS_ZEND_SERVICE_RACKSPACE_CONTAINER_NAME);
         $this->assertTrue($objects!==false);
-        
+
         $this->assertEquals($objects[0]->getName(),TESTS_ZEND_SERVICE_RACKSPACE_OBJECT_NAME);
         $this->assertEquals($objects[1]->getName(),TESTS_ZEND_SERVICE_RACKSPACE_OBJECT_NAME.'-copy');
     }
-    
+
     public function testGetSizeContainers()
     {
         $size= $this->rackspace->getSizeContainers();
         $this->assertTrue($size!==false);
         $this->assertInternalType('numeric', $size);
     }
-    
+
     public function testGetCountObjects()
     {
         $count= $this->rackspace->getCountObjects();
         $this->assertTrue($count!==false);
         $this->assertInternalType('numeric', $count);
     }
-    
+
     public function testSetMetadataObject()
     {
         $result= $this->rackspace->setMetadataObject(TESTS_ZEND_SERVICE_RACKSPACE_CONTAINER_NAME,
@@ -205,7 +203,7 @@ class Zend_Service_Rackspace_Files_OnlineTest extends PHPUnit\Framework\TestCase
                                                      $this->metadata2);
         $this->assertTrue($result);
     }
-    
+
     public function testGetMetadataObject()
     {
         $data= $this->rackspace->getMetadataObject(TESTS_ZEND_SERVICE_RACKSPACE_CONTAINER_NAME,
@@ -213,7 +211,7 @@ class Zend_Service_Rackspace_Files_OnlineTest extends PHPUnit\Framework\TestCase
         $this->assertTrue($data!==false);
         $this->assertEquals($data['metadata'],$this->metadata2);
     }
-    
+
     public function testEnableCdnContainer()
     {
         $data= $this->rackspace->enableCdnContainer(TESTS_ZEND_SERVICE_RACKSPACE_CONTAINER_NAME);
@@ -222,7 +220,7 @@ class Zend_Service_Rackspace_Files_OnlineTest extends PHPUnit\Framework\TestCase
         $this->assertTrue(!empty($data['cdn_uri']));
         $this->assertTrue(!empty($data['cdn_uri_ssl']));
     }
-    
+
     public function testGetCdnContainers()
     {
         $containers= $this->rackspace->getCdnContainers();
@@ -236,29 +234,29 @@ class Zend_Service_Rackspace_Files_OnlineTest extends PHPUnit\Framework\TestCase
         }
         $this->assertTrue($found);
     }
-    
+
     public function testUpdateCdnContainer()
     {
         $data= $this->rackspace->updateCdnContainer(TESTS_ZEND_SERVICE_RACKSPACE_CONTAINER_NAME,null,false);
         $this->assertTrue($data!==false);
     }
 
-    
+
     public function testDeleteObject()
     {
         $this->assertTrue($this->rackspace->deleteObject(TESTS_ZEND_SERVICE_RACKSPACE_CONTAINER_NAME,
                                                          TESTS_ZEND_SERVICE_RACKSPACE_OBJECT_NAME));
     }
-    
+
     public function testDeleteObject2()
     {
         $this->assertTrue($this->rackspace->deleteObject(TESTS_ZEND_SERVICE_RACKSPACE_CONTAINER_NAME,
                                                          TESTS_ZEND_SERVICE_RACKSPACE_OBJECT_NAME.'-copy'));
     }
-    
+
     public function testDeleteContainer()
     {
         $this->assertTrue($this->rackspace->deleteContainer(TESTS_ZEND_SERVICE_RACKSPACE_CONTAINER_NAME));
     }
-  
+
 }

@@ -25,11 +25,6 @@
 require_once 'Zend/Cloud/StorageService/Adapter.php';
 
 /**
- * @see Zend_Config
- */
-require_once 'Zend/Config.php';
-
-/**
  * @see Zend_Cloud_StorageService_Factory
  */
 require_once 'Zend/Cloud/StorageService/Factory.php';

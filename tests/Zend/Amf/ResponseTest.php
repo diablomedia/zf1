@@ -28,7 +28,6 @@ require_once 'Zend/Amf/Value/Messaging/AcknowledgeMessage.php';
 require_once 'Zend/Amf/Parse/TypeLoader.php';
 require_once 'Contact.php';
 require_once 'ContactVO.php';
-require_once 'Zend/Date.php';
 
 /**
  * Test case for Zend_Amf_Response

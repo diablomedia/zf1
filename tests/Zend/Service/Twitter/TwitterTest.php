@@ -24,19 +24,6 @@
 require_once 'Zend/Service/Twitter.php';
 require_once 'Zend/Service/Twitter/Response.php';
 
-/** Zend_Http_Client */
-require_once 'Zend/Http/Client.php';
-
-/** Zend_Http_Client_Adapter_Test */
-require_once 'Zend/Http/Client/Adapter/Test.php';
-
-require_once 'Zend/Oauth/Client.php';
-require_once 'Zend/Http/Response.php';
-require_once 'Zend/Oauth/Token/Access.php';
-require_once 'Zend/Oauth/Token/Access.php';
-require_once 'Zend/Oauth/Client.php';
-require_once 'Zend/Oauth/Consumer.php';
-
 /**
  * @category   Zend
  * @package    Zend_Service_Twitter

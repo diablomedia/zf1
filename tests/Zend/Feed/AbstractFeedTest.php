@@ -26,11 +26,6 @@
 require_once 'Zend/Feed.php';
 
 /**
- * @see Zend_Http
- */
-require_once 'Zend/Http/Client.php';
-
-/**
  * @category   Zend
  * @package    Zend_Feed
  * @subpackage UnitTests

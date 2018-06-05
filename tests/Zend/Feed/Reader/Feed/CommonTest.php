@@ -21,7 +21,6 @@
  */
 
 require_once 'Zend/Feed/Reader.php';
-require_once 'Zend/Registry.php';
 
 /**
  * @category   Zend
@@ -105,7 +104,7 @@ class Zend_Feed_Reader_Feed_CommonTest extends PHPUnit\Framework\TestCase
         );
         $this->assertEquals(null, $feed->getExtension('Foo'));
     }
-    
+
     /**
      * @group ZF-8213
      */
@@ -116,7 +115,7 @@ class Zend_Feed_Reader_Feed_CommonTest extends PHPUnit\Framework\TestCase
         );
         $this->assertEquals('UTF-8', $feed->getEncoding());
     }
-    
+
     /**
      * @group ZF-8213
      */

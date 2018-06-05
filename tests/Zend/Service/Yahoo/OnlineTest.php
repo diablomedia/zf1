@@ -26,11 +26,6 @@
 require_once 'Zend/Service/Yahoo.php';
 
 /**
- * @see Zend_Http_Client_Adapter_Socket
- */
-require_once 'Zend/Http/Client/Adapter/Socket.php';
-
-/**
  * @category   Zend
  * @package    Zend_Service_Yahoo
  * @subpackage UnitTests

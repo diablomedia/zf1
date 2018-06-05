@@ -20,10 +20,6 @@
  * @version    $Id$
  */
 
-/**
- * @see Zend_Locale
- */
-require_once 'Zend/Locale.php';
 
 /**
  * @category   Zend

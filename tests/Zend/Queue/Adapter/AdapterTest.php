@@ -41,11 +41,6 @@ require_once 'MessageTestClass.php';
 require_once 'Iterator2.php';
 
 /**
- * @see Zend_Config
- */
-require_once 'Zend/Config.php';
-
-/**
  * @category   Zend
  * @package    Zend_Queue
  * @subpackage UnitTests
@@ -134,7 +129,6 @@ abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit\Framework\TestCase
 
         // create queue
         if (!class_exists($class)) {
-            require_once 'Zend/Loader.php';
             Zend_Loader::loadClass($class);
         }
 
@@ -195,10 +189,6 @@ abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit\Framework\TestCase
     public function testZendQueueAdapterConstructor()
     {
         $class = $this->getAdapterFullName();
-        /**
-         * @see Zend_Loader
-         */
-        require_once 'Zend/Loader.php';
         Zend_Loader::loadClass($class);
 
         try {

@@ -6,9 +6,12 @@
     beStrictAboutTestsThatDoNotTestAnything="false"
     backupGlobals="true"
     stderr="true">
+    <php>
+        <includePath>../vendor:../vendor/diablomedia/zendframework1-application/tests:../vendor/diablomedia/zendframework1-loader/tests:../vendor/diablomedia/zendframework1-db/tests:../vendor/diablomedia/zendframework1-paginator/tests</includePath>
+    </php>
     <testsuites>
         <testsuite name="ZFTest_Zend_Acl">
-            <file>./Zend/Acl/AclTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-acl/tests/Zend/Acl/AclTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Amf">
@@ -27,41 +30,41 @@
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Application">
-            <file>./Zend/Application/ApplicationTest.php</file>
-            <file>./Zend/Application/Bootstrap/BootstrapTest.php</file>
-            <file>./Zend/Application/Bootstrap/BootstrapAbstractTest.php</file>
-            <file>./Zend/Application/Module/AutoloaderTest.php</file>
-            <file>./Zend/Application/Module/BootstrapTest.php</file>
-            <file>./Zend/Application/Resource/ResourceAbstractTest.php</file>
-            <file>./Zend/Application/Resource/CacheManagerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-application/tests/Zend/Application/ApplicationTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-application/tests/Zend/Application/Bootstrap/BootstrapTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-application/tests/Zend/Application/Bootstrap/BootstrapAbstractTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-application/tests/Zend/Application/Module/AutoloaderTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-application/tests/Zend/Application/Module/BootstrapTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-application/tests/Zend/Application/Resource/ResourceAbstractTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-application/tests/Zend/Application/Resource/CacheManagerTest.php</file>
             <file>./Zend/Application/Resource/DbTest.php</file>
             <file>./Zend/Application/Resource/DojoTest.php</file>
-            <file>./Zend/Application/Resource/FrontcontrollerTest.php</file>
-            <file>./Zend/Application/Resource/LayoutTest.php</file>
-            <file>./Zend/Application/Resource/LocaleTest.php</file>
-            <file>./Zend/Application/Resource/LogTest.php</file>
-            <file>./Zend/Application/Resource/MailTest.php</file>
-            <file>./Zend/Application/Resource/ModulesTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-application/tests/Zend/Application/Resource/FrontcontrollerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-application/tests/Zend/Application/Resource/LayoutTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-application/tests/Zend/Application/Resource/LocaleTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-application/tests/Zend/Application/Resource/LogTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-application/tests/Zend/Application/Resource/MailTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-application/tests/Zend/Application/Resource/ModulesTest.php</file>
             <file>./Zend/Application/Resource/MultidbTest.php</file>
-            <file>./Zend/Application/Resource/NavigationTest.php</file>
-            <file>./Zend/Application/Resource/RouterTest.php</file>
-            <file>./Zend/Application/Resource/SessionTest.php</file>
-            <file>./Zend/Application/Resource/TranslateTest.php</file>
-            <file>./Zend/Application/Resource/UseragentTest.php</file>
-            <file>./Zend/Application/Resource/ViewTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-application/tests/Zend/Application/Resource/NavigationTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-application/tests/Zend/Application/Resource/RouterTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-application/tests/Zend/Application/Resource/SessionTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-application/tests/Zend/Application/Resource/TranslateTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-application/tests/Zend/Application/Resource/UseragentTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-application/tests/Zend/Application/Resource/ViewTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Auth">
-            <file>./Zend/Auth/Adapter/DigestTest.php</file>
-            <file>./Zend/Auth/Adapter/DbTable/BasicSqliteTest.php</file>
-            <file>./Zend/Auth/Adapter/Http/AuthTest.php</file>
-            <file>./Zend/Auth/Adapter/Http/ObjectTest.php</file>
-            <file>./Zend/Auth/Adapter/Http/ProxyTest.php</file>
-            <file>./Zend/Auth/Adapter/Http/Resolver/FileTest.php</file>
-            <file>./Zend/Auth/Adapter/Ldap/OfflineTest.php</file>
-            <file>./Zend/Auth/Adapter/Ldap/OnlineTest.php</file>
-            <file>./Zend/Auth/Adapter/OpenId/OpenIdTest.php</file>
-            <file>./Zend/AuthTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-auth/tests/Zend/Auth/Adapter/DigestTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-auth-adapter-dbtable/tests/Zend/Auth/Adapter/DbTable/BasicSqliteTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-auth-adapter-http/tests/Zend/Auth/Adapter/Http/AuthTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-auth-adapter-http/tests/Zend/Auth/Adapter/Http/ObjectTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-auth-adapter-http/tests/Zend/Auth/Adapter/Http/ProxyTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-auth-adapter-http/tests/Zend/Auth/Adapter/Http/Resolver/FileTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-auth-adapter-ldap/tests/Zend/Auth/Adapter/Ldap/OfflineTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-auth-adapter-ldap/tests/Zend/Auth/Adapter/Ldap/OnlineTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-auth-adapter-openid/tests/Zend/Auth/Adapter/OpenId/OpenIdTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-auth/tests/Zend/AuthTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Barcode">
@@ -89,33 +92,32 @@
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Cache">
-            <file>./Zend/Cache/FactoryTest.php</file>
-            <file>./Zend/Cache/CoreTest.php</file>
-            <file>./Zend/Cache/FileBackendTest.php</file>
-            <file>./Zend/Cache/StaticBackendTest.php</file>
-            <file>./Zend/Cache/OutputFrontendTest.php</file>
-            <file>./Zend/Cache/FunctionFrontendTest.php</file>
-            <file>./Zend/Cache/ClassFrontendTest.php</file>
-            <file>./Zend/Cache/FileFrontendTest.php</file>
-            <file>./Zend/Cache/PageFrontendTest.php</file>
-            <file>./Zend/Cache/ManagerTest.php</file>
-            <file>./Zend/Cache/SqliteBackendTest.php</file>
-            <file>./Zend/Cache/ApcBackendTest.php</file>
-            <file>./Zend/Cache/WinCacheBackendTest.php</file>
-            <file>./Zend/Cache/XcacheBackendTest.php</file>
-            <file>./Zend/Cache/MemcachedBackendTest.php</file>
-            <file>./Zend/Cache/LibmemcachedBackendTest.php</file>
-            <file>./Zend/Cache/ZendPlatformBackendTest.php</file>
-            <file>./Zend/Cache/TwoLevelsBackendTest.php</file>
-            <file>./Zend/Cache/ZendServerDiskTest.php</file>
-            <file>./Zend/Cache/ZendServerShMemTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-cache/tests/Zend/Cache/FactoryTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-cache/tests/Zend/Cache/CoreTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-cache/tests/Zend/Cache/FileBackendTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-cache/tests/Zend/Cache/StaticBackendTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-cache/tests/Zend/Cache/OutputFrontendTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-cache/tests/Zend/Cache/FunctionFrontendTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-cache/tests/Zend/Cache/ClassFrontendTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-cache/tests/Zend/Cache/FileFrontendTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-cache/tests/Zend/Cache/PageFrontendTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-cache/tests/Zend/Cache/ManagerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-cache/tests/Zend/Cache/ApcBackendTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-cache/tests/Zend/Cache/WinCacheBackendTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-cache/tests/Zend/Cache/XcacheBackendTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-cache/tests/Zend/Cache/MemcachedBackendTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-cache/tests/Zend/Cache/LibmemcachedBackendTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-cache/tests/Zend/Cache/ZendPlatformBackendTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-cache/tests/Zend/Cache/TwoLevelsBackendTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-cache/tests/Zend/Cache/ZendServerDiskTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-cache/tests/Zend/Cache/ZendServerShMemTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Captcha">
-            <file>./Zend/Captcha/DumbTest.php</file>
-            <file>./Zend/Captcha/FigletTest.php</file>
-            <file>./Zend/Captcha/ImageTest.php</file>
-            <file>./Zend/Captcha/ReCaptchaTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-captcha/tests/Zend/Captcha/DumbTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-captcha/tests/Zend/Captcha/FigletTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-captcha/tests/Zend/Captcha/ImageTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-captcha/tests/Zend/Captcha/ReCaptchaTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Cloud">
@@ -150,16 +152,16 @@
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Config">
-            <file>./Zend/Config/Writer/ArrayTest.php</file>
-            <file>./Zend/Config/Writer/IniTest.php</file>
-            <file>./Zend/Config/Writer/JsonTest.php</file>
-            <file>./Zend/Config/Writer/XmlTest.php</file>
-            <file>./Zend/Config/Writer/YamlTest.php</file>
-            <file>./Zend/Config/IniTest.php</file>
-            <file>./Zend/Config/JsonTest.php</file>
-            <file>./Zend/Config/XmlTest.php</file>
-            <file>./Zend/Config/YamlTest.php</file>
-            <file>./Zend/ConfigTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-config/tests/Zend/Config/Writer/ArrayTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-config/tests/Zend/Config/Writer/IniTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-config/tests/Zend/Config/Writer/JsonTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-config/tests/Zend/Config/Writer/XmlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-config/tests/Zend/Config/Writer/YamlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-config/tests/Zend/Config/IniTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-config/tests/Zend/Config/JsonTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-config/tests/Zend/Config/XmlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-config/tests/Zend/Config/YamlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-config/tests/Zend/ConfigTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Console">
@@ -167,159 +169,159 @@
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Controller">
-            <file>./Zend/Controller/ActionTest.php</file>
-            <file>./Zend/Controller/Action/HelperBrokerTest.php</file>
-            <file>./Zend/Controller/Action/HelperBroker/PriorityStackTest.php</file>
-            <file>./Zend/Controller/Dispatcher/StandardTest.php</file>
-            <file>./Zend/Controller/FrontTest.php</file>
-            <file>./Zend/Controller/Plugin/ActionStackTest.php</file>
-            <file>./Zend/Controller/Plugin/BrokerTest.php</file>
-            <file>./Zend/Controller/Plugin/ErrorHandlerTest.php</file>
-            <file>./Zend/Controller/Plugin/PutHandlerTest.php</file>
-            <file>./Zend/Controller/Request/Apache404Test.php</file>
-            <file>./Zend/Controller/Request/HttpTest.php</file>
-            <file>./Zend/Controller/Request/HttpTestCaseTest.php</file>
-            <file>./Zend/Controller/Request/SimpleTest.php</file>
-            <file>./Zend/Controller/Response/HttpTest.php</file>
-            <file>./Zend/Controller/Response/HttpTestCaseTest.php</file>
-            <file>./Zend/Controller/Router/RouteTest.php</file>
-            <file>./Zend/Controller/Router/Route/ModuleTest.php</file>
-            <file>./Zend/Controller/Router/Route/RegexTest.php</file>
-            <file>./Zend/Controller/Router/Route/StaticTest.php</file>
-            <file>./Zend/Controller/Router/Route/HostnameTest.php</file>
-            <file>./Zend/Controller/Router/Route/ChainTest.php</file>
-            <file>./Zend/Controller/Router/RewriteTest.php</file>
-            <file>./Zend/Controller/Action/Helper/ActionStackTest.php</file>
-            <file>./Zend/Controller/Action/Helper/AutoCompleteTest.php</file>
-            <file>./Zend/Controller/Action/Helper/CacheTest.php</file>
-            <file>./Zend/Controller/Action/Helper/ContextSwitchTest.php</file>
-            <file>./Zend/Controller/Action/Helper/AjaxContextTest.php</file>
-            <file>./Zend/Controller/Action/Helper/FlashMessengerTest.php</file>
-            <file>./Zend/Controller/Action/Helper/JsonTest.php</file>
-            <file>./Zend/Controller/Action/Helper/RedirectorTest.php</file>
-            <file>./Zend/Controller/Action/Helper/UrlTest.php</file>
-            <file>./Zend/Controller/Action/Helper/ViewRendererTest.php</file>
-            <file>./Zend/Controller/Action/Helper/NamespaceTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/ActionTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/Action/HelperBrokerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/Action/HelperBroker/PriorityStackTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/Dispatcher/StandardTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/FrontTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/Plugin/ActionStackTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/Plugin/BrokerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/Plugin/ErrorHandlerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/Plugin/PutHandlerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/Request/Apache404Test.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/Request/HttpTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/Request/HttpTestCaseTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/Request/SimpleTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/Response/HttpTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/Response/HttpTestCaseTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/Router/RouteTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/Router/Route/ModuleTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/Router/Route/RegexTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/Router/Route/StaticTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/Router/Route/HostnameTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/Router/Route/ChainTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/Router/RewriteTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/Action/Helper/ActionStackTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller-action-helper-autocomplete/tests/Zend/Controller/Action/Helper/AutoCompleteTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/Action/Helper/CacheTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller-action-helper-contextswitch/tests/Zend/Controller/Action/Helper/ContextSwitchTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller-action-helper-ajaxcontext/tests/Zend/Controller/Action/Helper/AjaxContextTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/Action/Helper/FlashMessengerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller-action-helper-json/tests/Zend/Controller/Action/Helper/JsonTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/Action/Helper/RedirectorTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/Action/Helper/UrlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/Action/Helper/ViewRendererTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-controller/tests/Zend/Controller/Action/Helper/NamespaceTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Crypt">
-            <file>./Zend/Crypt/DiffieHellmanTest.php</file>
-            <file>./Zend/Crypt/HmacTest.php</file>
-            <file>./Zend/Crypt/MathTest.php</file>
-            <file>./Zend/Crypt/Rsa/RsaTest.php</file>
-            <file>./Zend/Crypt/Math/BigInteger/BcmathTest.php</file>
-            <file>./Zend/Crypt/Math/BigInteger/GmpTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-crypt/tests/Zend/Crypt/DiffieHellmanTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-crypt/tests/Zend/Crypt/HmacTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-crypt/tests/Zend/Crypt/MathTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-crypt/tests/Zend/Crypt/RsaTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-crypt/tests/Zend/Crypt/Math/BigInteger/BcmathTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-crypt/tests/Zend/Crypt/Math/BigInteger/GmpTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Currency">
-            <file>./Zend/CurrencyTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-currency/tests/Zend/CurrencyTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Date">
-            <file>./Zend/Date/DateObjectTest.php</file>
-            <file>./Zend/DateTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-date/tests/Zend/Date/DateObjectTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-date/tests/Zend/DateTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Db">
-            <file>./Zend/Db/Adapter/StaticTest.php</file>
-            <file>./Zend/Db/Profiler/StaticTest.php</file>
-            <file>./Zend/Db/Statement/StaticTest.php</file>
-            <file>./Zend/Db/Select/StaticTest.php</file>
-            <file>./Zend/Db/Table/StaticTest.php</file>
-            <file>./Zend/Db/Table/Select/StaticTest.php</file>
-            <file>./Zend/Db/Table/Rowset/StaticTest.php</file>
-            <file>./Zend/Db/Table/Row/StaticTest.php</file>
-            <file>./Zend/Db/Table/Relationships/StaticTest.php</file>
-            <file>./Zend/Db/Adapter/Db2Test.php</file>
-            <file>./Zend/Db/Profiler/Db2Test.php</file>
-            <file>./Zend/Db/Statement/Db2Test.php</file>
-            <file>./Zend/Db/Select/Db2Test.php</file>
-            <file>./Zend/Db/Table/Db2Test.php</file>
-            <file>./Zend/Db/Table/Select/Db2Test.php</file>
-            <file>./Zend/Db/Table/Rowset/Db2Test.php</file>
-            <file>./Zend/Db/Table/Row/Db2Test.php</file>
-            <file>./Zend/Db/Table/Relationships/Db2Test.php</file>
-            <file>./Zend/Db/Adapter/MysqliTest.php</file>
-            <file>./Zend/Db/Profiler/MysqliTest.php</file>
-            <file>./Zend/Db/Statement/MysqliTest.php</file>
-            <file>./Zend/Db/Select/MysqliTest.php</file>
-            <file>./Zend/Db/Table/MysqliTest.php</file>
-            <file>./Zend/Db/Table/Select/MysqliTest.php</file>
-            <file>./Zend/Db/Table/Rowset/MysqliTest.php</file>
-            <file>./Zend/Db/Table/Row/MysqliTest.php</file>
-            <file>./Zend/Db/Table/Relationships/MysqliTest.php</file>
-            <file>./Zend/Db/Adapter/OracleTest.php</file>
-            <file>./Zend/Db/Profiler/OracleTest.php</file>
-            <file>./Zend/Db/Statement/OracleTest.php</file>
-            <file>./Zend/Db/Select/OracleTest.php</file>
-            <file>./Zend/Db/Table/OracleTest.php</file>
-            <file>./Zend/Db/Table/Select/OracleTest.php</file>
-            <file>./Zend/Db/Table/Rowset/OracleTest.php</file>
-            <file>./Zend/Db/Table/Row/OracleTest.php</file>
-            <file>./Zend/Db/Table/Relationships/OracleTest.php</file>
-            <file>./Zend/Db/Adapter/SqlsrvTest.php</file>
-            <file>./Zend/Db/Profiler/SqlsrvTest.php</file>
-            <file>./Zend/Db/Statement/SqlsrvTest.php</file>
-            <file>./Zend/Db/Select/SqlsrvTest.php</file>
-            <file>./Zend/Db/Table/SqlsrvTest.php</file>
-            <file>./Zend/Db/Table/Select/SqlsrvTest.php</file>
-            <file>./Zend/Db/Table/Rowset/SqlsrvTest.php</file>
-            <file>./Zend/Db/Table/Row/SqlsrvTest.php</file>
-            <file>./Zend/Db/Table/Relationships/SqlsrvTest.php</file>
-            <file>./Zend/Db/Adapter/Pdo/IbmTest.php</file>
-            <file>./Zend/Db/Profiler/Pdo/IbmTest.php</file>
-            <file>./Zend/Db/Statement/Pdo/IbmTest.php</file>
-            <file>./Zend/Db/Select/Pdo/IbmTest.php</file>
-            <file>./Zend/Db/Table/Pdo/IbmTest.php</file>
-            <file>./Zend/Db/Table/Select/Pdo/IbmTest.php</file>
-            <file>./Zend/Db/Table/Rowset/Pdo/IbmTest.php</file>
-            <file>./Zend/Db/Table/Row/Pdo/IbmTest.php</file>
-            <file>./Zend/Db/Table/Relationships/Pdo/IbmTest.php</file>
-            <file>./Zend/Db/Adapter/Pdo/MssqlTest.php</file>
-            <file>./Zend/Db/Profiler/Pdo/MssqlTest.php</file>
-            <file>./Zend/Db/Statement/Pdo/MssqlTest.php</file>
-            <file>./Zend/Db/Select/Pdo/MssqlTest.php</file>
-            <file>./Zend/Db/Table/Pdo/MssqlTest.php</file>
-            <file>./Zend/Db/Table/Select/Pdo/MssqlTest.php</file>
-            <file>./Zend/Db/Table/Rowset/Pdo/MssqlTest.php</file>
-            <file>./Zend/Db/Table/Row/Pdo/MssqlTest.php</file>
-            <file>./Zend/Db/Table/Relationships/Pdo/MssqlTest.php</file>
-            <file>./Zend/Db/Adapter/Pdo/MysqlTest.php</file>
-            <file>./Zend/Db/Profiler/Pdo/MysqlTest.php</file>
-            <file>./Zend/Db/Statement/Pdo/MysqlTest.php</file>
-            <file>./Zend/Db/Select/Pdo/MysqlTest.php</file>
-            <file>./Zend/Db/Table/Pdo/MysqlTest.php</file>
-            <file>./Zend/Db/Table/Select/Pdo/MysqlTest.php</file>
-            <file>./Zend/Db/Table/Rowset/Pdo/MysqlTest.php</file>
-            <file>./Zend/Db/Table/Row/Pdo/MysqlTest.php</file>
-            <file>./Zend/Db/Table/Relationships/Pdo/MysqlTest.php</file>
-            <file>./Zend/Db/Adapter/Pdo/OciTest.php</file>
-            <file>./Zend/Db/Profiler/Pdo/OciTest.php</file>
-            <file>./Zend/Db/Statement/Pdo/OciTest.php</file>
-            <file>./Zend/Db/Select/Pdo/OciTest.php</file>
-            <file>./Zend/Db/Table/Pdo/OciTest.php</file>
-            <file>./Zend/Db/Table/Select/Pdo/OciTest.php</file>
-            <file>./Zend/Db/Table/Rowset/Pdo/OciTest.php</file>
-            <file>./Zend/Db/Table/Row/Pdo/OciTest.php</file>
-            <file>./Zend/Db/Table/Relationships/Pdo/OciTest.php</file>
-            <file>./Zend/Db/Adapter/Pdo/PgsqlTest.php</file>
-            <file>./Zend/Db/Profiler/Pdo/PgsqlTest.php</file>
-            <file>./Zend/Db/Statement/Pdo/PgsqlTest.php</file>
-            <file>./Zend/Db/Select/Pdo/PgsqlTest.php</file>
-            <file>./Zend/Db/Table/Pdo/PgsqlTest.php</file>
-            <file>./Zend/Db/Table/Select/Pdo/PgsqlTest.php</file>
-            <file>./Zend/Db/Table/Rowset/Pdo/PgsqlTest.php</file>
-            <file>./Zend/Db/Table/Row/Pdo/PgsqlTest.php</file>
-            <file>./Zend/Db/Table/Relationships/Pdo/PgsqlTest.php</file>
-            <file>./Zend/Db/Adapter/Pdo/SqliteTest.php</file>
-            <file>./Zend/Db/Profiler/Pdo/SqliteTest.php</file>
-            <file>./Zend/Db/Statement/Pdo/SqliteTest.php</file>
-            <file>./Zend/Db/Select/Pdo/SqliteTest.php</file>
-            <file>./Zend/Db/Table/Pdo/SqliteTest.php</file>
-            <file>./Zend/Db/Table/Select/Pdo/SqliteTest.php</file>
-            <file>./Zend/Db/Table/Rowset/Pdo/SqliteTest.php</file>
-            <file>./Zend/Db/Table/Row/Pdo/SqliteTest.php</file>
-            <file>./Zend/Db/Table/Relationships/Pdo/SqliteTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Adapter/StaticTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Profiler/StaticTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Statement/StaticTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Select/StaticTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/StaticTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Select/StaticTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Rowset/StaticTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Row/StaticTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Relationships/StaticTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Adapter/Db2Test.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Profiler/Db2Test.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Statement/Db2Test.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Select/Db2Test.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Db2Test.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Select/Db2Test.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Rowset/Db2Test.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Row/Db2Test.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Relationships/Db2Test.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Adapter/MysqliTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Profiler/MysqliTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Statement/MysqliTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Select/MysqliTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/MysqliTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Select/MysqliTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Rowset/MysqliTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Row/MysqliTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Relationships/MysqliTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Adapter/OracleTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Profiler/OracleTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Statement/OracleTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Select/OracleTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/OracleTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Select/OracleTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Rowset/OracleTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Row/OracleTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Relationships/OracleTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Adapter/SqlsrvTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Profiler/SqlsrvTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Statement/SqlsrvTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Select/SqlsrvTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/SqlsrvTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Select/SqlsrvTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Rowset/SqlsrvTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Row/SqlsrvTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Relationships/SqlsrvTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Adapter/Pdo/IbmTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Profiler/Pdo/IbmTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Statement/Pdo/IbmTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Select/Pdo/IbmTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Pdo/IbmTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Select/Pdo/IbmTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Rowset/Pdo/IbmTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Row/Pdo/IbmTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Relationships/Pdo/IbmTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Adapter/Pdo/MssqlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Profiler/Pdo/MssqlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Statement/Pdo/MssqlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Select/Pdo/MssqlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Pdo/MssqlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Select/Pdo/MssqlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Rowset/Pdo/MssqlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Row/Pdo/MssqlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Relationships/Pdo/MssqlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Adapter/Pdo/MysqlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Profiler/Pdo/MysqlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Statement/Pdo/MysqlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Select/Pdo/MysqlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Pdo/MysqlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Select/Pdo/MysqlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Rowset/Pdo/MysqlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Row/Pdo/MysqlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Relationships/Pdo/MysqlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Adapter/Pdo/OciTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Profiler/Pdo/OciTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Statement/Pdo/OciTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Select/Pdo/OciTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Pdo/OciTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Select/Pdo/OciTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Rowset/Pdo/OciTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Row/Pdo/OciTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Relationships/Pdo/OciTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Adapter/Pdo/PgsqlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Profiler/Pdo/PgsqlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Statement/Pdo/PgsqlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Select/Pdo/PgsqlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Pdo/PgsqlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Select/Pdo/PgsqlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Rowset/Pdo/PgsqlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Row/Pdo/PgsqlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Relationships/Pdo/PgsqlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Adapter/Pdo/SqliteTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Profiler/Pdo/SqliteTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Statement/Pdo/SqliteTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Select/Pdo/SqliteTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Pdo/SqliteTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Select/Pdo/SqliteTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Rowset/Pdo/SqliteTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Row/Pdo/SqliteTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-db/tests/Zend/Db/Table/Relationships/Pdo/SqliteTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Debug">
@@ -327,87 +329,87 @@
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Dojo">
-            <file>./Zend/Dojo/BuildLayerTest.php</file>
-            <file>./Zend/Dojo/DojoTest.php</file>
-            <file>./Zend/Dojo/DataTest.php</file>
-            <file>./Zend/Dojo/Form/Decorator/AccordionContainerTest.php</file>
-            <file>./Zend/Dojo/Form/Decorator/AccordionPaneTest.php</file>
-            <file>./Zend/Dojo/Form/Decorator/BorderContainerTest.php</file>
-            <file>./Zend/Dojo/Form/Decorator/DijitContainerTest.php</file>
-            <file>./Zend/Dojo/Form/Decorator/DijitElementTest.php</file>
-            <file>./Zend/Dojo/Form/Decorator/DijitFormTest.php</file>
-            <file>./Zend/Dojo/Form/Decorator/SplitContainerTest.php</file>
-            <file>./Zend/Dojo/Form/Decorator/StackContainerTest.php</file>
-            <file>./Zend/Dojo/Form/Decorator/TabContainerTest.php</file>
-            <file>./Zend/Dojo/Form/Element/ButtonTest.php</file>
-            <file>./Zend/Dojo/Form/Element/CheckBoxTest.php</file>
-            <file>./Zend/Dojo/Form/Element/ComboBoxTest.php</file>
-            <file>./Zend/Dojo/Form/Element/CurrencyTextBoxTest.php</file>
-            <file>./Zend/Dojo/Form/Element/DateTextBoxTest.php</file>
-            <file>./Zend/Dojo/Form/Element/DijitTest.php</file>
-            <file>./Zend/Dojo/Form/Element/EditorTest.php</file>
-            <file>./Zend/Dojo/Form/Element/FilteringSelectTest.php</file>
-            <file>./Zend/Dojo/Form/Element/HorizontalSliderTest.php</file>
-            <file>./Zend/Dojo/Form/Element/NumberSpinnerTest.php</file>
-            <file>./Zend/Dojo/Form/Element/NumberTextBoxTest.php</file>
-            <file>./Zend/Dojo/Form/Element/PasswordTextBoxTest.php</file>
-            <file>./Zend/Dojo/Form/Element/RadioButtonTest.php</file>
-            <file>./Zend/Dojo/Form/Element/SimpleTextareaTest.php</file>
-            <file>./Zend/Dojo/Form/Element/SubmitButtonTest.php</file>
-            <file>./Zend/Dojo/Form/Element/TextBoxTest.php</file>
-            <file>./Zend/Dojo/Form/Element/TextareaTest.php</file>
-            <file>./Zend/Dojo/Form/Element/TimeTextBoxTest.php</file>
-            <file>./Zend/Dojo/Form/Element/ValidationTextBoxTest.php</file>
-            <file>./Zend/Dojo/Form/Element/VerticalSliderTest.php</file>
-            <file>./Zend/Dojo/Form/FormTest.php</file>
-            <file>./Zend/Dojo/Form/SubFormTest.php</file>
-            <file>./Zend/Dojo/View/Helper/DojoTest.php</file>
-            <file>./Zend/Dojo/View/Helper/AccordionContainerTest.php</file>
-            <file>./Zend/Dojo/View/Helper/AccordionPaneTest.php</file>
-            <file>./Zend/Dojo/View/Helper/BorderContainerTest.php</file>
-            <file>./Zend/Dojo/View/Helper/ButtonTest.php</file>
-            <file>./Zend/Dojo/View/Helper/CheckBoxTest.php</file>
-            <file>./Zend/Dojo/View/Helper/ComboBoxTest.php</file>
-            <file>./Zend/Dojo/View/Helper/ContentPaneTest.php</file>
-            <file>./Zend/Dojo/View/Helper/CurrencyTextBoxTest.php</file>
-            <file>./Zend/Dojo/View/Helper/CustomDijitTest.php</file>
-            <file>./Zend/Dojo/View/Helper/DateTextBoxTest.php</file>
-            <file>./Zend/Dojo/View/Helper/EditorTest.php</file>
-            <file>./Zend/Dojo/View/Helper/FilteringSelectTest.php</file>
-            <file>./Zend/Dojo/View/Helper/FormTest.php</file>
-            <file>./Zend/Dojo/View/Helper/HorizontalSliderTest.php</file>
-            <file>./Zend/Dojo/View/Helper/NumberSpinnerTest.php</file>
-            <file>./Zend/Dojo/View/Helper/NumberTextBoxTest.php</file>
-            <file>./Zend/Dojo/View/Helper/PasswordTextBoxTest.php</file>
-            <file>./Zend/Dojo/View/Helper/RadioButtonTest.php</file>
-            <file>./Zend/Dojo/View/Helper/SimpleTextareaTest.php</file>
-            <file>./Zend/Dojo/View/Helper/SubmitButtonTest.php</file>
-            <file>./Zend/Dojo/View/Helper/SplitContainerTest.php</file>
-            <file>./Zend/Dojo/View/Helper/StackContainerTest.php</file>
-            <file>./Zend/Dojo/View/Helper/TabContainerTest.php</file>
-            <file>./Zend/Dojo/View/Helper/TextareaTest.php</file>
-            <file>./Zend/Dojo/View/Helper/TextBoxTest.php</file>
-            <file>./Zend/Dojo/View/Helper/TimeTextBoxTest.php</file>
-            <file>./Zend/Dojo/View/Helper/ValidationTextBoxTest.php</file>
-            <file>./Zend/Dojo/View/Helper/VerticalSliderTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/BuildLayerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/DojoTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/DataTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Decorator/AccordionContainerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Decorator/AccordionPaneTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Decorator/BorderContainerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Decorator/DijitContainerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Decorator/DijitElementTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Decorator/DijitFormTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Decorator/SplitContainerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Decorator/StackContainerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Decorator/TabContainerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Element/ButtonTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Element/CheckBoxTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Element/ComboBoxTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Element/CurrencyTextBoxTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Element/DateTextBoxTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Element/DijitTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Element/EditorTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Element/FilteringSelectTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Element/HorizontalSliderTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Element/NumberSpinnerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Element/NumberTextBoxTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Element/PasswordTextBoxTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Element/RadioButtonTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Element/SimpleTextareaTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Element/SubmitButtonTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Element/TextBoxTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Element/TextareaTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Element/TimeTextBoxTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Element/ValidationTextBoxTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/Element/VerticalSliderTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/FormTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/Form/SubFormTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/DojoTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/AccordionContainerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/AccordionPaneTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/BorderContainerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/ButtonTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/CheckBoxTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/ComboBoxTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/ContentPaneTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/CurrencyTextBoxTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/CustomDijitTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/DateTextBoxTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/EditorTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/FilteringSelectTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/FormTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/HorizontalSliderTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/NumberSpinnerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/NumberTextBoxTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/PasswordTextBoxTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/RadioButtonTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/SimpleTextareaTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/SubmitButtonTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/SplitContainerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/StackContainerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/TabContainerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/TextareaTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/TextBoxTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/TimeTextBoxTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/ValidationTextBoxTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dojo/tests/Zend/Dojo/View/Helper/VerticalSliderTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Dom">
-            <file>./Zend/Dom/QueryTest.php</file>
-            <file>./Zend/Dom/Query/Css2XpathTest.php</file>
-            <file>./Zend/Dom/Query/ResultTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dom/tests/Zend/Dom/QueryTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dom/tests/Zend/Dom/Query/Css2XpathTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-dom/tests/Zend/Dom/Query/ResultTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_EventManager">
-            <file>./Zend/EventManager/EventManagerTest.php</file>
-            <file>./Zend/EventManager/FilterChainTest.php</file>
-            <file>./Zend/EventManager/GlobalEventManagerTest.php</file>
-            <file>./Zend/EventManager/StaticEventManagerTest.php</file>
-            <file>./Zend/EventManager/StaticIntegrationTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-eventmanager/tests/Zend/EventManager/EventManagerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-eventmanager/tests/Zend/EventManager/FilterChainTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-eventmanager/tests/Zend/EventManager/GlobalEventManagerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-eventmanager/tests/Zend/EventManager/StaticEventManagerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-eventmanager/tests/Zend/EventManager/StaticIntegrationTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Exception">
-            <file>./Zend/ExceptionTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-exception/tests/Zend/ExceptionTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Feed">
@@ -453,102 +455,102 @@
         </testsuite>
 
         <testsuite name="ZFTest_Zend_File">
-            <file>./Zend/File/ClassFileLocatorTest.php</file>
-            <file>./Zend/File/Transfer/Adapter/AbstractTest.php</file>
-            <file>./Zend/File/Transfer/Adapter/HttpTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-file/tests/Zend/File/ClassFileLocatorTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-file/tests/Zend/File/Transfer/Adapter/AbstractTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-file/tests/Zend/File/Transfer/Adapter/HttpTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Filter">
-            <file>./Zend/Filter/AlnumTest.php</file>
-            <file>./Zend/Filter/AlphaTest.php</file>
-            <file>./Zend/Filter/BaseNameTest.php</file>
-            <file>./Zend/Filter/BooleanTest.php</file>
-            <file>./Zend/Filter/CallbackTest.php</file>
-            <file>./Zend/Filter/CompressTest.php</file>
-            <file>./Zend/Filter/DecompressTest.php</file>
-            <file>./Zend/Filter/DecryptTest.php</file>
-            <file>./Zend/Filter/DigitsTest.php</file>
-            <file>./Zend/Filter/DirTest.php</file>
-            <file>./Zend/Filter/EncryptTest.php</file>
-            <file>./Zend/Filter/HtmlEntitiesTest.php</file>
-            <file>./Zend/Filter/InflectorTest.php</file>
-            <file>./Zend/Filter/InputTest.php</file>
-            <file>./Zend/Filter/IntTest.php</file>
-            <file>./Zend/Filter/LocalizedToNormalizedTest.php</file>
-            <file>./Zend/Filter/NormalizedToLocalizedTest.php</file>
-            <file>./Zend/Filter/NullTest.php</file>
-            <file>./Zend/Filter/PregReplaceTest.php</file>
-            <file>./Zend/Filter/RealPathTest.php</file>
-            <file>./Zend/Filter/StringToLowerTest.php</file>
-            <file>./Zend/Filter/StringToUpperTest.php</file>
-            <file>./Zend/Filter/StringTrimTest.php</file>
-            <file>./Zend/Filter/StripNewlinesTest.php</file>
-            <file>./Zend/Filter/StripTagsTest.php</file>
-            <file>./Zend/Filter/Compress/Bz2Test.php</file>
-            <file>./Zend/Filter/Compress/GzTest.php</file>
-            <file>./Zend/Filter/Compress/LzfTest.php</file>
-            <file>./Zend/Filter/Compress/RarTest.php</file>
-            <file>./Zend/Filter/Compress/TarTest.php</file>
-            <file>./Zend/Filter/Compress/ZipTest.php</file>
-            <file>./Zend/Filter/Encrypt/McryptTest.php</file>
-            <file>./Zend/Filter/Encrypt/OpensslTest.php</file>
-            <file>./Zend/Filter/File/DecryptTest.php</file>
-            <file>./Zend/Filter/File/EncryptTest.php</file>
-            <file>./Zend/Filter/File/LowerCaseTest.php</file>
-            <file>./Zend/Filter/File/RenameTest.php</file>
-            <file>./Zend/Filter/File/UpperCaseTest.php</file>
-            <file>./Zend/Filter/Word/CamelCaseToDashTest.php</file>
-            <file>./Zend/Filter/Word/CamelCaseToSeparatorTest.php</file>
-            <file>./Zend/Filter/Word/CamelCaseToUnderscoreTest.php</file>
-            <file>./Zend/Filter/Word/DashToCamelCaseTest.php</file>
-            <file>./Zend/Filter/Word/DashToSeparatorTest.php</file>
-            <file>./Zend/Filter/Word/DashToUnderscoreTest.php</file>
-            <file>./Zend/Filter/Word/SeparatorToCamelCaseTest.php</file>
-            <file>./Zend/Filter/Word/SeparatorToDashTest.php</file>
-            <file>./Zend/Filter/Word/SeparatorToSeparatorTest.php</file>
-            <file>./Zend/Filter/Word/UnderscoreToCamelCaseTest.php</file>
-            <file>./Zend/Filter/Word/UnderscoreToDashTest.php</file>
-            <file>./Zend/Filter/Word/UnderscoreToSeparatorTest.php</file>
-            <file>./Zend/FilterTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/AlnumTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/AlphaTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/BaseNameTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/BooleanTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/CallbackTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/CompressTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/DecompressTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/DecryptTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/DigitsTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/DirTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/EncryptTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/HtmlEntitiesTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/InflectorTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter-input/tests/Zend/Filter/InputTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/IntTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/LocalizedToNormalizedTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/NormalizedToLocalizedTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/NullTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/PregReplaceTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/RealPathTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/StringToLowerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/StringToUpperTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/StringTrimTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/StripNewlinesTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/StripTagsTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/Compress/Bz2Test.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/Compress/GzTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/Compress/LzfTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/Compress/RarTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/Compress/TarTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/Compress/ZipTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/Encrypt/McryptTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/Encrypt/OpensslTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/File/DecryptTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/File/EncryptTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/File/LowerCaseTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/File/RenameTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/File/UpperCaseTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/Word/CamelCaseToDashTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/Word/CamelCaseToSeparatorTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/Word/CamelCaseToUnderscoreTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/Word/DashToCamelCaseTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/Word/DashToSeparatorTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/Word/DashToUnderscoreTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/Word/SeparatorToCamelCaseTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/Word/SeparatorToDashTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/Word/SeparatorToSeparatorTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/Word/UnderscoreToCamelCaseTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/Word/UnderscoreToDashTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/Filter/Word/UnderscoreToSeparatorTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-filter/tests/Zend/FilterTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Form">
-            <file>./Zend/Form/Decorator/AbstractTest.php</file>
-            <file>./Zend/Form/Decorator/CallbackTest.php</file>
-            <file>./Zend/Form/Decorator/DescriptionTest.php</file>
-            <file>./Zend/Form/Decorator/ErrorsTest.php</file>
-            <file>./Zend/Form/Decorator/FieldsetTest.php</file>
-            <file>./Zend/Form/Decorator/FileTest.php</file>
-            <file>./Zend/Form/Decorator/FormErrorsTest.php</file>
-            <file>./Zend/Form/Decorator/FormTest.php</file>
-            <file>./Zend/Form/Decorator/HtmlTagTest.php</file>
-            <file>./Zend/Form/Decorator/ImageTest.php</file>
-            <file>./Zend/Form/Decorator/LabelTest.php</file>
-            <file>./Zend/Form/Decorator/PrepareElementsTest.php</file>
-            <file>./Zend/Form/Decorator/ReCaptchaTest.php</file>
-            <file>./Zend/Form/Decorator/ViewHelperTest.php</file>
-            <file>./Zend/Form/Decorator/ViewScriptTest.php</file>
-            <file>./Zend/Form/DisplayGroupTest.php</file>
-            <file>./Zend/Form/ElementTest.php</file>
-            <file>./Zend/Form/FormTest.php</file>
-            <file>./Zend/Form/SubFormTest.php</file>
-            <file>./Zend/Form/Element/ButtonTest.php</file>
-            <file>./Zend/Form/Element/CaptchaTest.php</file>
-            <file>./Zend/Form/Element/CheckboxTest.php</file>
-            <file>./Zend/Form/Element/FileTest.php</file>
-            <file>./Zend/Form/Element/HashTest.php</file>
-            <file>./Zend/Form/Element/HiddenTest.php</file>
-            <file>./Zend/Form/Element/ImageTest.php</file>
-            <file>./Zend/Form/Element/MultiCheckboxTest.php</file>
-            <file>./Zend/Form/Element/MultiselectTest.php</file>
-            <file>./Zend/Form/Element/NoteTest.php</file>
-            <file>./Zend/Form/Element/PasswordTest.php</file>
-            <file>./Zend/Form/Element/RadioTest.php</file>
-            <file>./Zend/Form/Element/ResetTest.php</file>
-            <file>./Zend/Form/Element/SelectTest.php</file>
-            <file>./Zend/Form/Element/SubmitTest.php</file>
-            <file>./Zend/Form/Element/TextareaTest.php</file>
-            <file>./Zend/Form/Element/TextTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Decorator/AbstractTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Decorator/CallbackTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Decorator/DescriptionTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Decorator/ErrorsTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Decorator/FieldsetTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Decorator/FileTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Decorator/FormErrorsTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Decorator/FormTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Decorator/HtmlTagTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Decorator/ImageTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Decorator/LabelTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Decorator/PrepareElementsTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-captcha/tests/Zend/Form/Decorator/ReCaptchaTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Decorator/ViewHelperTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Decorator/ViewScriptTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/DisplayGroupTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/ElementTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/FormTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/SubFormTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Element/ButtonTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-captcha/tests/Zend/Form/Element/CaptchaTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Element/CheckboxTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Element/FileTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Element/HashTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Element/HiddenTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Element/ImageTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Element/MultiCheckboxTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Element/MultiselectTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Element/NoteTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Element/PasswordTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Element/RadioTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Element/ResetTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Element/SelectTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Element/SubmitTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Element/TextareaTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-form/tests/Zend/Form/Element/TextTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Gdata">
@@ -684,133 +686,133 @@
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Http">
-            <file>./Zend/Http/ResponseTest.php</file>
-            <file>./Zend/Http/CookieTest.php</file>
-            <file>./Zend/Http/CookieJarTest.php</file>
-            <file>./Zend/Http/Client/ClientTest.php</file>
-            <file>./Zend/Http/Client/StaticTest.php</file>
-            <file>./Zend/Http/Client/SocketTest.php</file>
-            <file>./Zend/Http/Client/SocketKeepaliveTest.php</file>
-            <file>./Zend/Http/Client/SocketPersistentTest.php</file>
-            <file>./Zend/Http/Client/TestAdapterTest.php</file>
-            <file>./Zend/Http/Client/ProxyAdapterTest.php</file>
-            <file>./Zend/Http/Client/CurlTest.php</file>
-            <file>./Zend/Http/Header/HeaderValueTest.php</file>
-            <file>./Zend/Http/Header/SetCookieTest.php</file>
-            <file>./Zend/Http/UserAgentTest.php</file>
-            <file>./Zend/Http/UserAgent/AbstractDeviceTest.php</file>
-            <file>./Zend/Http/UserAgent/Features/Adapter/BrowscapTest.php</file>
-            <file>./Zend/Http/UserAgent/Features/Adapter/DeviceAtlasTest.php</file>
-            <file>./Zend/Http/UserAgent/Features/Adapter/TeraWurflTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-http/tests/Zend/Http/ResponseTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-http/tests/Zend/Http/CookieTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-http/tests/Zend/Http/CookieJarTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-http/tests/Zend/Http/Client/ClientTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-http/tests/Zend/Http/Client/StaticTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-http/tests/Zend/Http/Client/SocketTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-http/tests/Zend/Http/Client/SocketKeepaliveTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-http/tests/Zend/Http/Client/SocketPersistentTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-http/tests/Zend/Http/Client/TestAdapterTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-http/tests/Zend/Http/Client/ProxyAdapterTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-http/tests/Zend/Http/Client/CurlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-http/tests/Zend/Http/Header/HeaderValueTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-http/tests/Zend/Http/Header/SetCookieTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-http/tests/Zend/Http/UserAgentTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-http/tests/Zend/Http/UserAgent/AbstractDeviceTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-http/tests/Zend/Http/UserAgent/Features/Adapter/BrowscapTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-http/tests/Zend/Http/UserAgent/Features/Adapter/DeviceAtlasTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-http/tests/Zend/Http/UserAgent/Features/Adapter/TeraWurflTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Json">
-            <file>./Zend/Json/JsonXMLTest.php</file>
-            <file>./Zend/Json/ServerTest.php</file>
-            <file>./Zend/Json/Server/CacheTest.php</file>
-            <file>./Zend/Json/Server/ErrorTest.php</file>
-            <file>./Zend/Json/Server/RequestTest.php</file>
-            <file>./Zend/Json/Server/ResponseTest.php</file>
-            <file>./Zend/Json/Server/SmdTest.php</file>
-            <file>./Zend/Json/Server/Smd/ServiceTest.php</file>
-            <file>./Zend/JsonTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-json/tests/Zend/Json/JsonXMLTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-json/tests/Zend/Json/ServerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-json/tests/Zend/Json/Server/CacheTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-json/tests/Zend/Json/Server/ErrorTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-json/tests/Zend/Json/Server/RequestTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-json/tests/Zend/Json/Server/ResponseTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-json/tests/Zend/Json/Server/SmdTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-json/tests/Zend/Json/Server/Smd/ServiceTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-json/tests/Zend/JsonTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Layout">
-            <file>./Zend/Layout/LayoutTest.php</file>
-            <file>./Zend/Layout/HelperTest.php</file>
-            <file>./Zend/Layout/PluginTest.php</file>
-            <file>./Zend/Layout/FunctionalTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-layout/tests/Zend/Layout/LayoutTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-layout/tests/Zend/Layout/HelperTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-layout/tests/Zend/Layout/PluginTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-layout/tests/Zend/Layout/FunctionalTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Ldap">
-            <file>./Zend/Ldap/OfflineTest.php</file>
-            <file>./Zend/Ldap/AttributeTest.php</file>
-            <file>./Zend/Ldap/ConverterTest.php</file>
-            <file>./Zend/Ldap/Dn/EscapingTest.php</file>
-            <file>./Zend/Ldap/Dn/ExplodingTest.php</file>
-            <file>./Zend/Ldap/Dn/ImplodingTest.php</file>
-            <file>./Zend/Ldap/Dn/CreationTest.php</file>
-            <file>./Zend/Ldap/Dn/ModificationTest.php</file>
-            <file>./Zend/Ldap/Dn/MiscTest.php</file>
-            <file>./Zend/Ldap/FilterTest.php</file>
-            <file>./Zend/Ldap/Node/OfflineTest.php</file>
-            <file>./Zend/Ldap/Node/AttributeIterationTest.php</file>
-            <file>./Zend/Ldap/Node/OnlineTest.php</file>
-            <file>./Zend/Ldap/Node/ChildrenTest.php</file>
-            <file>./Zend/Ldap/Node/ChildrenIterationTest.php</file>
-            <file>./Zend/Ldap/Node/UpdateTest.php</file>
-            <file>./Zend/Ldap/Node/RootDseTest.php</file>
-            <file>./Zend/Ldap/Node/SchemaTest.php</file>
-            <file>./Zend/Ldap/Ldif/SimpleEncoderTest.php</file>
-            <file>./Zend/Ldap/Ldif/SimpleDecoderTest.php</file>
-            <file>./Zend/Ldap/ConnectTest.php</file>
-            <file>./Zend/Ldap/BindTest.php</file>
-            <file>./Zend/Ldap/CanonTest.php</file>
-            <file>./Zend/Ldap/SearchTest.php</file>
-            <file>./Zend/Ldap/CrudTest.php</file>
-            <file>./Zend/Ldap/CopyRenameTest.php</file>
-            <file>./Zend/Ldap/ChangePasswordTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-ldap/tests/Zend/Ldap/OfflineTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-ldap/tests/Zend/Ldap/AttributeTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-ldap/tests/Zend/Ldap/ConverterTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-ldap/tests/Zend/Ldap/Dn/EscapingTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-ldap/tests/Zend/Ldap/Dn/ExplodingTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-ldap/tests/Zend/Ldap/Dn/ImplodingTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-ldap/tests/Zend/Ldap/Dn/CreationTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-ldap/tests/Zend/Ldap/Dn/ModificationTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-ldap/tests/Zend/Ldap/Dn/MiscTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-ldap/tests/Zend/Ldap/FilterTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-ldap/tests/Zend/Ldap/Node/OfflineTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-ldap/tests/Zend/Ldap/Node/AttributeIterationTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-ldap/tests/Zend/Ldap/Node/OnlineTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-ldap/tests/Zend/Ldap/Node/ChildrenTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-ldap/tests/Zend/Ldap/Node/ChildrenIterationTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-ldap/tests/Zend/Ldap/Node/UpdateTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-ldap/tests/Zend/Ldap/Node/RootDseTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-ldap/tests/Zend/Ldap/Node/SchemaTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-ldap/tests/Zend/Ldap/Ldif/SimpleEncoderTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-ldap/tests/Zend/Ldap/Ldif/SimpleDecoderTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-ldap/tests/Zend/Ldap/ConnectTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-ldap/tests/Zend/Ldap/BindTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-ldap/tests/Zend/Ldap/CanonTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-ldap/tests/Zend/Ldap/SearchTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-ldap/tests/Zend/Ldap/CrudTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-ldap/tests/Zend/Ldap/CopyRenameTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-ldap/tests/Zend/Ldap/ChangePasswordTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Loader">
-            <file>./Zend/Loader/AutoloaderTest.php</file>
-            <file>./Zend/Loader/AutoloaderFactoryClassMapLoaderTest.php</file>
-            <file>./Zend/Loader/AutoloaderFactoryTest.php</file>
-            <file>./Zend/Loader/AutoloaderMultiVersionTest.php</file>
-            <file>./Zend/Loader/Autoloader/ResourceTest.php</file>
-            <file>./Zend/Loader/ClassMapAutoloaderTest.php</file>
-            <file>./Zend/Loader/PluginLoaderTest.php</file>
-            <file>./Zend/Loader/StandardAutoloaderTest.php</file>
-            <file>./Zend/LoaderTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-loader/tests/Zend/Loader/AutoloaderTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-loader/tests/Zend/Loader/AutoloaderFactoryClassMapLoaderTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-loader/tests/Zend/Loader/AutoloaderFactoryTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-loader/tests/Zend/Loader/AutoloaderMultiVersionTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-loader/tests/Zend/Loader/Autoloader/ResourceTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-loader/tests/Zend/Loader/ClassMapAutoloaderTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-loader/tests/Zend/Loader/PluginLoaderTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-loader/tests/Zend/Loader/StandardAutoloaderTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-loader/tests/Zend/LoaderTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Locale">
-            <file>./Zend/Locale/DataTest.php</file>
-            <file>./Zend/Locale/FormatTest.php</file>
-            <file>./Zend/Locale/MathTest.php</file>
-            <file>./Zend/LocaleTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-locale/tests/Zend/Locale/DataTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-locale/tests/Zend/Locale/FormatTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-locale/tests/Zend/Locale/MathTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-locale/tests/Zend/LocaleTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Log">
-            <file>./Zend/Log/LogTest.php</file>
-            <file>./Zend/Log/Filter/ChainingTest.php</file>
-            <file>./Zend/Log/Filter/MessageTest.php</file>
-            <file>./Zend/Log/Filter/PriorityTest.php</file>
-            <file>./Zend/Log/Filter/SuppressTest.php</file>
-            <file>./Zend/Log/Formatter/FirebugTest.php</file>
-            <file>./Zend/Log/Formatter/SimpleTest.php</file>
-            <file>./Zend/Log/Formatter/XmlTest.php</file>
-            <file>./Zend/Log/Writer/AbstractTest.php</file>
-            <file>./Zend/Log/Writer/DbTest.php</file>
-            <file>./Zend/Log/Writer/FirebugTest.php</file>
-            <file>./Zend/Log/Writer/MailTest.php</file>
-            <file>./Zend/Log/Writer/MockTest.php</file>
-            <file>./Zend/Log/Writer/NullTest.php</file>
-            <file>./Zend/Log/Writer/StreamTest.php</file>
-            <file>./Zend/Log/Writer/SyslogTest.php</file>
-            <file>./Zend/Log/Writer/ZendMonitorTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-log/tests/Zend/Log/LogTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-log/tests/Zend/Log/Filter/ChainingTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-log/tests/Zend/Log/Filter/MessageTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-log/tests/Zend/Log/Filter/PriorityTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-log/tests/Zend/Log/Filter/SuppressTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-log/tests/Zend/Log/Formatter/FirebugTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-log/tests/Zend/Log/Formatter/SimpleTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-log/tests/Zend/Log/Formatter/XmlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-log/tests/Zend/Log/Writer/AbstractTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-log-writer-db/tests/Zend/Log/Writer/DbTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-log-writer-firebug/tests/Zend/Log/Writer/FirebugTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-log-writer-mail/tests/Zend/Log/Writer/MailTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-log/tests/Zend/Log/Writer/MockTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-log/tests/Zend/Log/Writer/NullTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-log/tests/Zend/Log/Writer/StreamTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-log/tests/Zend/Log/Writer/SyslogTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-log/tests/Zend/Log/Writer/ZendMonitorTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Mail">
-            <file>./Zend/Mail/Header/HeaderNameTest.php</file>
-            <file>./Zend/Mail/Header/HeaderValueTest.php</file>
-            <file>./Zend/Mail/MailTest.php</file>
-            <file>./Zend/Mail/MessageTest.php</file>
-            <file>./Zend/Mail/InterfaceTest.php</file>
-            <file>./Zend/Mail/MboxTest.php</file>
-            <file>./Zend/Mail/MboxMessageOldTest.php</file>
-            <file>./Zend/Mail/MboxFolderTest.php</file>
-            <file>./Zend/Mail/Pop3Test.php</file>
-            <file>./Zend/Mail/ImapTest.php</file>
-            <file>./Zend/Mail/MaildirTest.php</file>
-            <file>./Zend/Mail/MaildirMessageOldTest.php</file>
-            <file>./Zend/Mail/MaildirFolderTest.php</file>
-            <file>./Zend/Mail/MaildirWritableTest.php</file>
-    	    <file>./Zend/Mail/SmtpOfflineTest.php</file>
-    	    <file>./Zend/Mail/SmtpProtocolTest.php</file>
-            <file>./Zend/Mail/SmtpTest.php</file>
-            <file>./Zend/Mail/FileTransportTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-mail/tests/Zend/Mail/Header/HeaderNameTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-mail/tests/Zend/Mail/Header/HeaderValueTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-mail/tests/Zend/Mail/MailTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-mail/tests/Zend/Mail/MessageTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-mail/tests/Zend/Mail/InterfaceTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-mail/tests/Zend/Mail/MboxTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-mail/tests/Zend/Mail/MboxMessageOldTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-mail/tests/Zend/Mail/MboxFolderTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-mail/tests/Zend/Mail/Pop3Test.php</file>
+            <file>../vendor/diablomedia/zendframework1-mail/tests/Zend/Mail/ImapTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-mail/tests/Zend/Mail/MaildirTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-mail/tests/Zend/Mail/MaildirMessageOldTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-mail/tests/Zend/Mail/MaildirFolderTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-mail/tests/Zend/Mail/MaildirWritableTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-mail/tests/Zend/Mail/SmtpOfflineTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-mail/tests/Zend/Mail/SmtpProtocolTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-mail/tests/Zend/Mail/SmtpTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-mail/tests/Zend/Mail/FileTransportTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Markup">
@@ -851,12 +853,6 @@
             <file>./Zend/Measure/WeightTest.php</file>
         </testsuite>
 
-        <testsuite name="ZFTest_Zend_Mime">
-            <file>./Zend/Mime/PartTest.php</file>
-            <file>./Zend/Mime/MessageTest.php</file>
-            <file>./Zend/MimeTest.php</file>
-        </testsuite>
-
         <testsuite name="ZFTest_Zend_Memory">
             <file>./Zend/Memory/MemoryTest.php</file>
             <file>./Zend/Memory/ValueTest.php</file>
@@ -864,6 +860,12 @@
             <file>./Zend/Memory/LockedTest.php</file>
             <file>./Zend/Memory/AccessControllerTest.php</file>
             <file>./Zend/Memory/MemoryManagerTest.php</file>
+        </testsuite>
+
+        <testsuite name="ZFTest_Zend_Mime">
+            <file>../vendor/diablomedia/zendframework1-mime/tests/Zend/Mime/PartTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-mime/tests/Zend/Mime/MessageTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-mime/tests/Zend/MimeTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Mobile">
@@ -881,58 +883,58 @@
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Navigation">
-            <file>./Zend/Navigation/ContainerTest.php</file>
-            <file>./Zend/Navigation/PageFactoryTest.php</file>
-            <file>./Zend/Navigation/PageTest.php</file>
-            <file>./Zend/Navigation/Page/MvcTest.php</file>
-            <file>./Zend/Navigation/Page/UriTest.php</file>
-            <file>./Zend/NavigationTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-navigation/tests/Zend/Navigation/ContainerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-navigation/tests/Zend/Navigation/PageFactoryTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-navigation/tests/Zend/Navigation/PageTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-navigation/tests/Zend/Navigation/Page/MvcTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-navigation/tests/Zend/Navigation/Page/UriTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-navigation/tests/Zend/NavigationTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Oauth">
-            <file>./Zend/Oauth/OauthTest.php</file>
-            <file>./Zend/Oauth/ClientTest.php</file>
-            <file>./Zend/Oauth/ConfigTest.php</file>
-            <file>./Zend/Oauth/Oauth/ConsumerTest.php</file>
-            <file>./Zend/Oauth/Oauth/Signature/AbstractTest.php</file>
-            <file>./Zend/Oauth/Oauth/Signature/PlaintextTest.php</file>
-            <file>./Zend/Oauth/Oauth/Signature/HmacTest.php</file>
-            <file>./Zend/Oauth/Oauth/Signature/RsaTest.php</file>
-            <file>./Zend/Oauth/Oauth/Http/RequestTokenTest.php</file>
-            <file>./Zend/Oauth/Oauth/Http/UserAuthorizationTest.php</file>
-            <file>./Zend/Oauth/Oauth/Http/AccessTokenTest.php</file>
-            <file>./Zend/Oauth/Oauth/Http/UtilityTest.php</file>
-            <file>./Zend/Oauth/Oauth/Token/RequestTest.php</file>
-            <file>./Zend/Oauth/Oauth/Token/AuthorizedRequestTest.php</file>
-            <file>./Zend/Oauth/Oauth/Token/AccessTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-oauth/tests/Zend/Oauth/OauthTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-oauth/tests/Zend/Oauth/ClientTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-oauth/tests/Zend/Oauth/ConfigTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-oauth/tests/Zend/Oauth/ConsumerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-oauth/tests/Zend/Oauth/Signature/AbstractTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-oauth/tests/Zend/Oauth/Signature/PlaintextTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-oauth/tests/Zend/Oauth/Signature/HmacTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-oauth/tests/Zend/Oauth/Signature/RsaTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-oauth/tests/Zend/Oauth/Http/RequestTokenTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-oauth/tests/Zend/Oauth/Http/UserAuthorizationTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-oauth/tests/Zend/Oauth/Http/AccessTokenTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-oauth/tests/Zend/Oauth/Http/UtilityTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-oauth/tests/Zend/Oauth/Token/RequestTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-oauth/tests/Zend/Oauth/Token/AuthorizedRequestTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-oauth/tests/Zend/Oauth/Token/AccessTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_OpenId">
-            <file>./Zend/OpenId/ConsumerTest.php</file>
-            <file>./Zend/OpenId/Consumer/Storage/FileTest.php</file>
-            <file>./Zend/OpenId/ProviderTest.php</file>
-            <file>./Zend/OpenId/Provider/Storage/FileTest.php</file>
-            <file>./Zend/OpenId/Provider/User/SessionTest.php</file>
-            <file>./Zend/OpenId/ExtensionTest.php</file>
-            <file>./Zend/OpenId/Extension/SregTest.php</file>
-            <file>./Zend/OpenIdTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-openid/tests/Zend/OpenId/ConsumerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-openid/tests/Zend/OpenId/Consumer/Storage/FileTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-openid/tests/Zend/OpenId/ProviderTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-openid/tests/Zend/OpenId/Provider/Storage/FileTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-openid/tests/Zend/OpenId/Provider/User/SessionTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-openid/tests/Zend/OpenId/ExtensionTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-openid/tests/Zend/OpenId/Extension/SregTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-openid/tests/Zend/OpenIdTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Paginator">
-            <file>./Zend/PaginatorTest.php</file>
-            <file>./Zend/Paginator/Adapter/ArrayTest.php</file>
-            <file>./Zend/Paginator/Adapter/DbSelectTest.php</file>
-            <file>./Zend/Paginator/Adapter/DbTableSelectTest.php</file>
-            <file>./Zend/Paginator/Adapter/IteratorTest.php</file>
-            <file>./Zend/Paginator/Adapter/NullTest.php</file>
-            <file>./Zend/Paginator/Adapter/DbSelect/OracleTest.php</file>
-            <file>./Zend/Paginator/Adapter/DbTableSelect/OracleTest.php</file>
-            <file>./Zend/Paginator/ScrollingStyle/AllTest.php</file>
-            <file>./Zend/Paginator/ScrollingStyle/ElasticTest.php</file>
-            <file>./Zend/Paginator/ScrollingStyle/JumpingTest.php</file>
-            <file>./Zend/Paginator/ScrollingStyle/SlidingTest.php</file>
-            <file>./Zend/View/Helper/PaginationControlTest.php</file>
-            <file>./Zend/PaginatorTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-paginator/tests/Zend/PaginatorTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-paginator/tests/Zend/Paginator/Adapter/ArrayTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-paginator/tests/Zend/Paginator/Adapter/DbSelectTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-paginator/tests/Zend/Paginator/Adapter/DbTableSelectTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-paginator/tests/Zend/Paginator/Adapter/IteratorTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-paginator/tests/Zend/Paginator/Adapter/NullTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-paginator/tests/Zend/Paginator/Adapter/DbSelect/OracleTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-paginator/tests/Zend/Paginator/Adapter/DbTableSelect/OracleTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-paginator/tests/Zend/Paginator/ScrollingStyle/AllTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-paginator/tests/Zend/Paginator/ScrollingStyle/ElasticTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-paginator/tests/Zend/Paginator/ScrollingStyle/JumpingTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-paginator/tests/Zend/Paginator/ScrollingStyle/SlidingTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view-helper-paginationcontrol/tests/Zend/View/Helper/PaginationControlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-paginator/tests/Zend/PaginatorTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Pdf">
@@ -959,10 +961,10 @@
         </testsuite>
 
         <testsuite name="ZFTest_Zend_ProgressBar">
-            <file>./Zend/ProgressBar/ProgressBarTest.php</file>
-            <file>./Zend/ProgressBar/Adapter/ConsoleTest.php</file>
-            <file>./Zend/ProgressBar/Adapter/JsPushTest.php</file>
-            <file>./Zend/ProgressBar/Adapter/JsPullTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-progressbar/tests/Zend/ProgressBar/ProgressBarTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-progressbar/tests/Zend/ProgressBar/Adapter/ConsoleTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-progressbar/tests/Zend/ProgressBar/Adapter/JsPushTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-progressbar/tests/Zend/ProgressBar/Adapter/JsPullTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Queue">
@@ -999,15 +1001,15 @@
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Registry">
-            <file>./Zend/RegistryTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-registry/tests/Zend/RegistryTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Rest">
-            <file>./Zend/Rest/ControllerTest.php</file>
-            <file>./Zend/Rest/RouteTest.php</file>
-            <file>./Zend/Rest/ServerTest.php</file>
-            <file>./Zend/Rest/ClientTest.php</file>
-            <file>./Zend/Rest/ResultTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-rest/tests/Zend/Rest/ControllerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-rest/tests/Zend/Rest/RouteTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-rest/tests/Zend/Rest/ServerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-rest/tests/Zend/Rest/ClientTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-rest/tests/Zend/Rest/ResultTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Search">
@@ -1046,48 +1048,48 @@
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Server">
-            <file>./Zend/Server/DefinitionTest.php</file>
-            <file>./Zend/Server/Method/DefinitionTest.php</file>
-            <file>./Zend/Server/Method/CallbackTest.php</file>
-            <file>./Zend/Server/Method/ParameterTest.php</file>
-            <file>./Zend/Server/Method/PrototypeTest.php</file>
-            <file>./Zend/Server/ReflectionTest.php</file>
-            <file>./Zend/Server/Reflection/ClassTest.php</file>
-            <file>./Zend/Server/Reflection/FunctionTest.php</file>
-            <file>./Zend/Server/Reflection/MethodTest.php</file>
-            <file>./Zend/Server/Reflection/NodeTest.php</file>
-            <file>./Zend/Server/Reflection/ParameterTest.php</file>
-            <file>./Zend/Server/Reflection/PrototypeTest.php</file>
-            <file>./Zend/Server/Reflection/ReturnValueTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-server/tests/Zend/Server/DefinitionTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-server/tests/Zend/Server/Method/DefinitionTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-server/tests/Zend/Server/Method/CallbackTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-server/tests/Zend/Server/Method/ParameterTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-server/tests/Zend/Server/Method/PrototypeTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-server/tests/Zend/Server/ReflectionTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-server/tests/Zend/Server/Reflection/ClassTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-server/tests/Zend/Server/Reflection/FunctionTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-server/tests/Zend/Server/Reflection/MethodTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-server/tests/Zend/Server/Reflection/NodeTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-server/tests/Zend/Server/Reflection/ParameterTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-server/tests/Zend/Server/Reflection/PrototypeTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-server/tests/Zend/Server/Reflection/ReturnValueTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Service">
             <file>./Zend/Service/AkismetTest.php</file>
-            <file>./Zend/Service/Amazon/AbstractTest.php</file>
-            <file>./Zend/Service/Amazon/OnlineTest.php</file>
-            <file>./Zend/Service/Amazon/OfflineTest.php</file>
-            <file>./Zend/Service/Amazon/Authentication/S3Test.php</file>
-            <file>./Zend/Service/Amazon/Authentication/V1Test.php</file>
-            <file>./Zend/Service/Amazon/Authentication/V2Test.php</file>
-            <file>./Zend/Service/Amazon/Ec2/AbstractTest.php</file>
-            <file>./Zend/Service/Amazon/Ec2/AvailabilityzonesTest.php</file>
-            <file>./Zend/Service/Amazon/Ec2/CloudWatchTest.php</file>
-            <file>./Zend/Service/Amazon/Ec2/EbsTest.php</file>
-            <file>./Zend/Service/Amazon/Ec2/Ec2Test.php</file>
-            <file>./Zend/Service/Amazon/Ec2/ElasticipTest.php</file>
-            <file>./Zend/Service/Amazon/Ec2/ImageTest.php</file>
-            <file>./Zend/Service/Amazon/Ec2/InstanceTest.php</file>
-            <file>./Zend/Service/Amazon/Ec2/InstanceReservedTest.php</file>
-            <file>./Zend/Service/Amazon/Ec2/InstanceWindowsTest.php</file>
-            <file>./Zend/Service/Amazon/Ec2/KeypairTest.php</file>
-            <file>./Zend/Service/Amazon/Ec2/RegionTest.php</file>
-            <file>./Zend/Service/Amazon/Ec2/SecuritygroupsTest.php</file>
-            <file>./Zend/Service/Amazon/S3/OnlineTest.php</file>
-            <file>./Zend/Service/Amazon/S3/StreamTest.php</file>
-            <file>./Zend/Service/Amazon/SimpleDb/OnlineTest.php</file>
-            <file>./Zend/Service/Amazon/SimpleDb/PageTest.php</file>
-            <file>./Zend/Service/Amazon/Sqs/OfflineTest.php</file>
-            <file>./Zend/Service/Amazon/Sqs/OnlineTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-amazon/tests/Zend/Service/Amazon/AbstractTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-amazon/tests/Zend/Service/Amazon/OnlineTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-amazon/tests/Zend/Service/Amazon/OfflineTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-amazon/tests/Zend/Service/Amazon/Authentication/S3Test.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-amazon/tests/Zend/Service/Amazon/Authentication/V1Test.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-amazon/tests/Zend/Service/Amazon/Authentication/V2Test.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-amazon/tests/Zend/Service/Amazon/Ec2/AbstractTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-amazon/tests/Zend/Service/Amazon/Ec2/AvailabilityzonesTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-amazon/tests/Zend/Service/Amazon/Ec2/CloudWatchTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-amazon/tests/Zend/Service/Amazon/Ec2/EbsTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-amazon/tests/Zend/Service/Amazon/Ec2/Ec2Test.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-amazon/tests/Zend/Service/Amazon/Ec2/ElasticipTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-amazon/tests/Zend/Service/Amazon/Ec2/ImageTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-amazon/tests/Zend/Service/Amazon/Ec2/InstanceTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-amazon/tests/Zend/Service/Amazon/Ec2/InstanceReservedTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-amazon/tests/Zend/Service/Amazon/Ec2/InstanceWindowsTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-amazon/tests/Zend/Service/Amazon/Ec2/KeypairTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-amazon/tests/Zend/Service/Amazon/Ec2/RegionTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-amazon/tests/Zend/Service/Amazon/Ec2/SecuritygroupsTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-amazon/tests/Zend/Service/Amazon/S3/OnlineTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-amazon/tests/Zend/Service/Amazon/S3/StreamTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-amazon/tests/Zend/Service/Amazon/SimpleDb/OnlineTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-amazon/tests/Zend/Service/Amazon/SimpleDb/PageTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-amazon/tests/Zend/Service/Amazon/Sqs/OfflineTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-amazon/tests/Zend/Service/Amazon/Sqs/OnlineTest.php</file>
             <file>./Zend/Service/Audioscrobbler/AudioscrobblerTest.php</file>
             <file>./Zend/Service/Audioscrobbler/ProfileTest.php</file>
             <file>./Zend/Service/Audioscrobbler/ArtistTest.php</file>
@@ -1111,9 +1113,9 @@
             <file>./Zend/Service/Rackspace/Servers/OfflineTest.php</file>
             <file>./Zend/Service/Rackspace/Servers/OnlineTest.php</file>
             <file>./Zend/Service/Rackspace/OfflineTest.php</file>
-            <file>./Zend/Service/ReCaptcha/ReCaptchaTest.php</file>
-            <file>./Zend/Service/ReCaptcha/ResponseTest.php</file>
-            <file>./Zend/Service/ReCaptcha/MailHideTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-recaptcha/tests/Zend/Service/ReCaptcha/ReCaptchaTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-recaptcha/tests/Zend/Service/ReCaptcha/ResponseTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-service-recaptcha/tests/Zend/Service/ReCaptcha/MailHideTest.php</file>
             <file>./Zend/Service/ShortUrl/IsGdTest.php</file>
             <file>./Zend/Service/ShortUrl/JdemCzTest.php</file>
             <file>./Zend/Service/ShortUrl/MetamarkNetTest.php</file>
@@ -1151,27 +1153,27 @@
             <file>./Zend/Service/Yahoo/OnlineTest.php</file>
         </testsuite>
 
-        <testsuite name="ZFTest_Zend_Session">
-            <file>./Zend/Session/SessionTest.php</file>
-            <file>./Zend/Session/SaveHandler/DbTableTest.php</file>
+        <testsuite name="ZFTest_Zend_Soap">
+            <file>../vendor/diablomedia/zendframework1-soap/tests/Zend/Soap/ClientTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-soap/tests/Zend/Soap/ServerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-soap/tests/Zend/Soap/WsdlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-soap/tests/Zend/Soap/Wsdl/ArrayOfTypeComplexStrategyTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-soap/tests/Zend/Soap/Wsdl/ArrayOfTypeSequenceStrategyTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-soap/tests/Zend/Soap/Wsdl/CompositeStrategyTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-soap/tests/Zend/Soap/Wsdl/DefaultComplexTypeTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-soap/tests/Zend/Soap/AutoDiscoverTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-soap/tests/Zend/Soap/AutoDiscover/OnlineTest.php</file>
         </testsuite>
 
-        <testsuite name="ZFTest_Zend_Soap">
-            <file>./Zend/Soap/ClientTest.php</file>
-            <file>./Zend/Soap/ServerTest.php</file>
-            <file>./Zend/Soap/WsdlTest.php</file>
-            <file>./Zend/Soap/Wsdl/ArrayOfTypeComplexStrategyTest.php</file>
-            <file>./Zend/Soap/Wsdl/ArrayOfTypeSequenceStrategyTest.php</file>
-            <file>./Zend/Soap/Wsdl/CompositeStrategyTest.php</file>
-            <file>./Zend/Soap/Wsdl/DefaultComplexTypeTest.php</file>
-            <file>./Zend/Soap/AutoDiscoverTest.php</file>
-            <file>./Zend/Soap/AutoDiscover/OnlineTest.php</file>
+        <testsuite name="ZFTest_Zend_Session">
+            <file>../vendor/diablomedia/zendframework1-session/tests/Zend/Session/SessionTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-session-savehandler-dbtable/tests/Zend/Session/SaveHandler/DbTableTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Stdlib">
-            <file>./Zend/Stdlib/CallbackHandlerTest.php</file>
-            <file>./Zend/Stdlib/PriorityQueueTest.php</file>
-            <file>./Zend/Stdlib/SplPriorityQueueTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-stdlib/tests/Zend/Stdlib/CallbackHandlerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-stdlib/tests/Zend/Stdlib/PriorityQueueTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-stdlib/tests/Zend/Stdlib/SplPriorityQueueTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Tag">
@@ -1183,34 +1185,34 @@
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Test">
-            <file>./Zend/Test/DbAdapterTest.php</file>
-            <file>./Zend/Test/DbStatementTest.php</file>
-            <file>./Zend/Test/PHPUnit/ControllerTestCaseTest.php</file>
-            <file>./Zend/Test/PHPUnit/Db/TestCaseTest.php</file>
-            <file>./Zend/Test/PHPUnit/Db/ConnectionTest.php</file>
-            <file>./Zend/Test/PHPUnit/Db/SimpleTesterTest.php</file>
-            <file>./Zend/Test/PHPUnit/Db/DataSet/DbRowsetTest.php</file>
-            <file>./Zend/Test/PHPUnit/Db/DataSet/QueryDataSetTest.php</file>
-            <file>./Zend/Test/PHPUnit/Db/DataSet/QueryTableTest.php</file>
-            <file>./Zend/Test/PHPUnit/Db/DataSet/DbTableTest.php</file>
-            <file>./Zend/Test/PHPUnit/Db/DataSet/DbTableDataSetTest.php</file>
-            <file>./Zend/Test/PHPUnit/Db/Operation/InsertTest.php</file>
-            <file>./Zend/Test/PHPUnit/Db/Operation/TruncateTest.php</file>
-            <file>./Zend/Test/PHPUnit/Db/Operation/DeleteAllTest.php</file>
-            <file>./Zend/Test/PHPUnit/Db/Metadata/GenericTest.php</file>
-            <file>./Zend/Test/PHPUnit/Db/Integration/SqLiteIntegrationTest.php</file>
-            <file>./Zend/Test/PHPUnit/Db/Integration/MysqlIntegrationTest.php</file>
-            <file>./Zend/Test/PHPUnit/Constraint/DomQueryTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/DbAdapterTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/DbStatementTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/ControllerTestCaseTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/TestCaseTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/ConnectionTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/SimpleTesterTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/DataSet/DbRowsetTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/DataSet/QueryDataSetTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/DataSet/QueryTableTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/DataSet/DbTableTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/DataSet/DbTableDataSetTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/Operation/InsertTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/Operation/TruncateTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/Operation/DeleteAllTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/Metadata/GenericTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/Integration/SqLiteIntegrationTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/Integration/MysqlIntegrationTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Constraint/DomQueryTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Text">
-            <file>./Zend/Text/FigletTest.php</file>
-            <file>./Zend/Text/TableTest.php</file>
-            <file>./Zend/Text/MultiByteTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-text/tests/Zend/Text/FigletTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-text/tests/Zend/Text/TableTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-text/tests/Zend/Text/MultiByteTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_TimeSync">
-            <file>./Zend/TimeSyncTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-date/tests/Zend/TimeSyncTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Tool">
@@ -1232,76 +1234,76 @@
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Translate">
-            <file>./Zend/Translate/Adapter/ArrayTest.php</file>
-            <file>./Zend/Translate/Adapter/CsvTest.php</file>
-            <file>./Zend/Translate/Adapter/GettextTest.php</file>
-            <file>./Zend/Translate/Adapter/IniTest.php</file>
-            <file>./Zend/Translate/Adapter/QtTest.php</file>
-            <file>./Zend/Translate/Adapter/TbxTest.php</file>
-            <file>./Zend/Translate/Adapter/TmxTest.php</file>
-            <file>./Zend/Translate/Adapter/XliffTest.php</file>
-            <file>./Zend/Translate/Adapter/XmlTmTest.php</file>
-            <file>./Zend/TranslateTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-translate/tests/Zend/Translate/Adapter/ArrayTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-translate/tests/Zend/Translate/Adapter/CsvTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-translate/tests/Zend/Translate/Adapter/GettextTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-translate/tests/Zend/Translate/Adapter/IniTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-translate/tests/Zend/Translate/Adapter/QtTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-translate/tests/Zend/Translate/Adapter/TbxTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-translate/tests/Zend/Translate/Adapter/TmxTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-translate/tests/Zend/Translate/Adapter/XliffTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-translate/tests/Zend/Translate/Adapter/XmlTmTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-translate/tests/Zend/TranslateTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Uri">
-            <file>./Zend/Uri/HttpTest.php</file>
-            <file>./Zend/UriTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-uri/tests/Zend/Uri/HttpTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-uri/tests/Zend/UriTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Validate">
-            <file>./Zend/Validate/AbstractTest.php</file>
-            <file>./Zend/Validate/AlnumTest.php</file>
-            <file>./Zend/Validate/AlphaTest.php</file>
-            <file>./Zend/Validate/BarcodeTest.php</file>
-            <file>./Zend/Validate/BetweenTest.php</file>
-            <file>./Zend/Validate/CallbackTest.php</file>
-            <file>./Zend/Validate/CcnumTest.php</file>
-            <file>./Zend/Validate/CreditCardTest.php</file>
-            <file>./Zend/Validate/DateTest.php</file>
-            <file>./Zend/Validate/Db/RecordExistsTest.php</file>
-            <file>./Zend/Validate/Db/NoRecordExistsTest.php</file>
-            <file>./Zend/Validate/DigitsTest.php</file>
-            <file>./Zend/Validate/EmailAddressTest.php</file>
-            <file>./Zend/Validate/File/CountTest.php</file>
-            <file>./Zend/Validate/File/Crc32Test.php</file>
-            <file>./Zend/Validate/File/ExcludeExtensionTest.php</file>
-            <file>./Zend/Validate/File/ExcludeMimeTypeTest.php</file>
-            <file>./Zend/Validate/File/ExistsTest.php</file>
-            <file>./Zend/Validate/File/ExtensionTest.php</file>
-            <file>./Zend/Validate/File/FilesSizeTest.php</file>
-            <file>./Zend/Validate/File/HashTest.php</file>
-            <file>./Zend/Validate/File/ImageSizeTest.php</file>
-            <file>./Zend/Validate/File/IsCompressedTest.php</file>
-            <file>./Zend/Validate/File/IsImageTest.php</file>
-            <file>./Zend/Validate/File/Md5Test.php</file>
-            <file>./Zend/Validate/File/MimeTypeTest.php</file>
-            <file>./Zend/Validate/File/NotExistsTest.php</file>
-            <file>./Zend/Validate/File/Sha1Test.php</file>
-            <file>./Zend/Validate/File/SizeTest.php</file>
-            <file>./Zend/Validate/File/UploadTest.php</file>
-            <file>./Zend/Validate/File/WordCountTest.php</file>
-            <file>./Zend/Validate/FloatTest.php</file>
-            <file>./Zend/Validate/GreaterThanTest.php</file>
-            <file>./Zend/Validate/HexTest.php</file>
-            <file>./Zend/Validate/HostnameTest.php</file>
-            <file>./Zend/Validate/IbanTest.php</file>
-            <file>./Zend/Validate/IdenticalTest.php</file>
-            <file>./Zend/Validate/InArrayTest.php</file>
-            <file>./Zend/Validate/IntTest.php</file>
-            <file>./Zend/Validate/IpTest.php</file>
-            <file>./Zend/Validate/IsbnTest.php</file>
-            <file>./Zend/Validate/LessThanTest.php</file>
-            <file>./Zend/Validate/MessageTest.php</file>
-            <file>./Zend/Validate/NotEmptyTest.php</file>
-            <file>./Zend/Validate/PostCodeTest.php</file>
-            <file>./Zend/Validate/RegexTest.php</file>
-            <file>./Zend/Validate/Sitemap/ChangefreqTest.php</file>
-            <file>./Zend/Validate/Sitemap/LastmodTest.php</file>
-            <file>./Zend/Validate/Sitemap/LocTest.php</file>
-            <file>./Zend/Validate/Sitemap/PriorityTest.php</file>
-            <file>./Zend/Validate/StringLengthTest.php</file>
-            <file>./Zend/ValidateTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/Validate/AbstractTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/Validate/AlnumTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/Validate/AlphaTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/Validate/BarcodeTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/Validate/BetweenTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/Validate/CallbackTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/Validate/CcnumTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/Validate/CreditCardTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/Validate/DateTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate-db/tests/Zend/Validate/Db/RecordExistsTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate-db/tests/Zend/Validate/Db/NoRecordExistsTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/Validate/DigitsTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/Validate/EmailAddressTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate-file/tests/Zend/Validate/File/CountTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate-file/tests/Zend/Validate/File/Crc32Test.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate-file/tests/Zend/Validate/File/ExcludeExtensionTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate-file/tests/Zend/Validate/File/ExcludeMimeTypeTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate-file/tests/Zend/Validate/File/ExistsTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate-file/tests/Zend/Validate/File/ExtensionTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate-file/tests/Zend/Validate/File/FilesSizeTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate-file/tests/Zend/Validate/File/HashTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate-file/tests/Zend/Validate/File/ImageSizeTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate-file/tests/Zend/Validate/File/IsCompressedTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate-file/tests/Zend/Validate/File/IsImageTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate-file/tests/Zend/Validate/File/Md5Test.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate-file/tests/Zend/Validate/File/MimeTypeTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate-file/tests/Zend/Validate/File/NotExistsTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate-file/tests/Zend/Validate/File/Sha1Test.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate-file/tests/Zend/Validate/File/SizeTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate-file/tests/Zend/Validate/File/UploadTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate-file/tests/Zend/Validate/File/WordCountTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/Validate/FloatTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/Validate/GreaterThanTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/Validate/HexTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/Validate/HostnameTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/Validate/IbanTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/Validate/IdenticalTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/Validate/InArrayTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/Validate/IntTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/Validate/IpTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/Validate/IsbnTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/Validate/LessThanTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/Validate/MessageTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/Validate/NotEmptyTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/Validate/PostCodeTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/Validate/RegexTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate-sitemap/tests/Zend/Validate/Sitemap/ChangefreqTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate-sitemap/tests/Zend/Validate/Sitemap/LastmodTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate-sitemap/tests/Zend/Validate/Sitemap/LocTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate-sitemap/tests/Zend/Validate/Sitemap/PriorityTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/Validate/StringLengthTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-validate/tests/Zend/ValidateTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Version">
@@ -1309,70 +1311,70 @@
         </testsuite>
 
         <testsuite name="ZFTest_Zend_View">
-            <file>./Zend/View/Helper/ActionTest.php</file>
-            <file>./Zend/View/Helper/AttributeJsEscapingTest.php</file>
-            <file>./Zend/View/Helper/BaseUrlTest.php</file>
-            <file>./Zend/View/Helper/CurrencyTest.php</file>
-            <file>./Zend/View/Helper/CycleTest.php</file>
-            <file>./Zend/View/Helper/DeclareVarsTest.php</file>
-            <file>./Zend/View/Helper/DoctypeTest.php</file>
-            <file>./Zend/View/Helper/FieldsetTest.php</file>
-            <file>./Zend/View/Helper/FormButtonTest.php</file>
-            <file>./Zend/View/Helper/FormCheckboxTest.php</file>
-            <file>./Zend/View/Helper/FormErrorsTest.php</file>
-            <file>./Zend/View/Helper/FormFileTest.php</file>
-            <file>./Zend/View/Helper/FormImageTest.php</file>
-            <file>./Zend/View/Helper/FormLabelTest.php</file>
-            <file>./Zend/View/Helper/FormMultiCheckboxTest.php</file>
-            <file>./Zend/View/Helper/FormPasswordTest.php</file>
-            <file>./Zend/View/Helper/FormRadioTest.php</file>
-            <file>./Zend/View/Helper/FormResetTest.php</file>
-            <file>./Zend/View/Helper/FormSelectTest.php</file>
-            <file>./Zend/View/Helper/FormSubmitTest.php</file>
-            <file>./Zend/View/Helper/FormTest.php</file>
-            <file>./Zend/View/Helper/FormTextTest.php</file>
-            <file>./Zend/View/Helper/FormTextareaTest.php</file>
-            <file>./Zend/View/Helper/GravatarTest.php</file>
-            <file>./Zend/View/Helper/HeadLinkTest.php</file>
-            <file>./Zend/View/Helper/HeadMetaTest.php</file>
-            <file>./Zend/View/Helper/HeadScriptTest.php</file>
-            <file>./Zend/View/Helper/HeadStyleTest.php</file>
-            <file>./Zend/View/Helper/HeadTitleTest.php</file>
-            <file>./Zend/View/Helper/HtmlFlashTest.php</file>
-            <file>./Zend/View/Helper/HtmlListTest.php</file>
-            <file>./Zend/View/Helper/HtmlObjectTest.php</file>
-            <file>./Zend/View/Helper/HtmlPageTest.php</file>
-            <file>./Zend/View/Helper/HtmlQuicktimeTest.php</file>
-            <file>./Zend/View/Helper/InlineScriptTest.php</file>
-            <file>./Zend/View/Helper/JsonTest.php</file>
-            <file>./Zend/View/Helper/LayoutTest.php</file>
-            <file>./Zend/View/Helper/Navigation/BreadcrumbsTest.php</file>
-            <file>./Zend/View/Helper/Navigation/LinksTest.php</file>
-            <file>./Zend/View/Helper/Navigation/MenuTest.php</file>
-            <file>./Zend/View/Helper/Navigation/NavigationTest.php</file>
-            <file>./Zend/View/Helper/Navigation/SitemapTest.php</file>
-            <file>./Zend/View/Helper/PaginationControlTest.php</file>
-            <file>./Zend/View/Helper/PartialTest.php</file>
-            <file>./Zend/View/Helper/PartialLoopTest.php</file>
-            <file>./Zend/View/Helper/PlaceholderTest.php</file>
-            <file>./Zend/View/Helper/Placeholder/ContainerTest.php</file>
-            <file>./Zend/View/Helper/Placeholder/RegistryTest.php</file>
-            <file>./Zend/View/Helper/Placeholder/StandaloneContainerTest.php</file>
-            <file>./Zend/View/Helper/RenderToPlaceholderTest.php</file>
-            <file>./Zend/View/Helper/ServerUrlTest.php</file>
-            <file>./Zend/View/Helper/TranslateTest.php</file>
-            <file>./Zend/View/Helper/UrlTest.php</file>
-            <file>./Zend/View/Helper/UserAgentTest.php</file>
-            <file>./Zend/ViewTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view-helper-action/tests/Zend/View/Helper/ActionTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/AttributeJsEscapingTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view-helper-baseurl/tests/Zend/View/Helper/BaseUrlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/CurrencyTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/CycleTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/DeclareVarsTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/DoctypeTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/FieldsetTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/FormButtonTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/FormCheckboxTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/FormErrorsTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/FormFileTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/FormImageTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/FormLabelTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/FormMultiCheckboxTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/FormPasswordTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/FormRadioTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/FormResetTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/FormSelectTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/FormSubmitTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/FormTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/FormTextTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/FormTextareaTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/GravatarTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/HeadLinkTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/HeadMetaTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/HeadScriptTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/HeadStyleTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/HeadTitleTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/HtmlFlashTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/HtmlListTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/HtmlObjectTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/HtmlPageTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/HtmlQuicktimeTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/InlineScriptTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view-helper-json/tests/Zend/View/Helper/JsonTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view-helper-layout/tests/Zend/View/Helper/LayoutTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view-helper-navigation/tests/Zend/View/Helper/Navigation/BreadcrumbsTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view-helper-navigation/tests/Zend/View/Helper/Navigation/LinksTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view-helper-navigation/tests/Zend/View/Helper/Navigation/MenuTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view-helper-navigation/tests/Zend/View/Helper/Navigation/NavigationTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view-helper-navigation/tests/Zend/View/Helper/Navigation/SitemapTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view-helper-paginationcontrol/tests/Zend/View/Helper/PaginationControlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view-helper-partial/tests/Zend/View/Helper/PartialTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view-helper-partial/tests/Zend/View/Helper/PartialLoopTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/PlaceholderTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/Placeholder/ContainerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/Placeholder/RegistryTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/Placeholder/StandaloneContainerTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/RenderToPlaceholderTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/ServerUrlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/TranslateTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view-helper-url/tests/Zend/View/Helper/UrlTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/View/Helper/UserAgentTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-view/tests/Zend/ViewTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Wildfire">
-            <file>./Zend/Wildfire/WildfireTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-wildfire/tests/Zend/Wildfire/WildfireTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_Xml">
-            <file>./Zend/Xml/SecurityTest.php</file>
-            <file>./Zend/Xml/MultibyteTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-xml/tests/Zend/Xml/SecurityTest.php</file>
+            <file>../vendor/diablomedia/zendframework1-xml/tests/Zend/Xml/MultibyteTest.php</file>
         </testsuite>
 
         <testsuite name="ZFTest_Zend_XmlRpc">

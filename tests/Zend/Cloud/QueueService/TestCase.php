@@ -25,11 +25,6 @@
 require_once 'Zend/Cloud/QueueService/Adapter.php';
 
 /**
- * @see Zend_Config
- */
-require_once 'Zend/Config.php';
-
-/**
  * @see Zend_Cloud_Queue_Factory
  */
 require_once 'Zend/Cloud/QueueService/Factory.php';
@@ -55,7 +50,7 @@ abstract class Zend_Cloud_QueueService_TestCase extends PHPUnit\Framework\TestCa
     protected $_dummyNamePrefix = '/TestItem';
     protected $_dummyDataPrefix = 'TestData';
     protected $_clientType = 'stdClass';
-    
+
     /**
      * Config object
      *

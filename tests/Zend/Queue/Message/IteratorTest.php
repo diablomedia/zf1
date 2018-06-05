@@ -79,7 +79,6 @@ class Zend_Queue_Message_IteratorTest extends PHPUnit\Framework\TestCase
 
         $classname = $this->queue->getMessageSetClass();
         if (!class_exists($classname)) {
-            require_once 'Zend/Loader.php';
             Zend_Loader::loadClass($classname);
         }
         $this->messages = new $classname($options);

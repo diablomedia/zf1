@@ -296,7 +296,7 @@ class Zend_Service_WindowsAzure_SessionHandler
 	            }
 	            return true;
 	        }
-	        catch (Zend_Service_WindowsAzure_exception $ex)
+	        catch (Zend_Service_WindowsAzure_Exception $ex)
 	        {
 	            return false;
 	        }
@@ -313,7 +313,7 @@ class Zend_Service_WindowsAzure_SessionHandler
 	            }
 	            return true;
 	        }
-	        catch (Zend_Service_WindowsAzure_exception $ex)
+	        catch (Zend_Service_WindowsAzure_Exception $ex)
 	        {
 	            return false;
 	        }

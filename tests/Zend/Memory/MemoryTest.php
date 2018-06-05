@@ -103,7 +103,6 @@ class Zend_Memory_MemoryTest extends PHPUnit\Framework\TestCase
             array('File'),
             array('Libmemcached'),
             array('Memcached'),
-            array('Sqlite'),
             array('TwoLevels'),
             array('Xcache'),
             array('ZendPlatform'),

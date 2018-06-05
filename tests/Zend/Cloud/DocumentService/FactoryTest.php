@@ -20,11 +20,6 @@
  */
 
 /**
- * @see Zend_Config_Ini
- */
-require_once 'Zend/Config/Ini.php';
-
-/**
  * @see Zend_Cloud_DocumentService_Factory
  */
 require_once 'Zend/Cloud/DocumentService/Factory.php';

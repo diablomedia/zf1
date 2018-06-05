@@ -33,9 +33,7 @@ require_once 'Zend/XmlRpc/Value/Integer.php';
 require_once 'Zend/XmlRpc/Value/String.php';
 require_once 'Zend/XmlRpc/Value/Nil.php';
 require_once 'Zend/XmlRpc/Value/Struct.php';
-require_once 'Zend/Crypt/Math/BigInteger.php';
 require_once 'Zend/XmlRpc/TestProvider.php';
-require_once 'Zend/Date.php';
 
 /**
  * Test case for Zend_XmlRpc_Value

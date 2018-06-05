@@ -184,6 +184,8 @@ defined('TESTS_ZEND_DB_ADAPTER_SQLSRV_USERNAME') || define('TESTS_ZEND_DB_ADAPTE
 defined('TESTS_ZEND_DB_ADAPTER_SQLSRV_PASSWORD') || define('TESTS_ZEND_DB_ADAPTER_SQLSRV_PASSWORD', null);
 defined('TESTS_ZEND_DB_ADAPTER_SQLSRV_DATABASE') || define('TESTS_ZEND_DB_ADAPTER_SQLSRV_DATABASE', 'test');
 
+defined('TESTS_ZEND_DB_ZF1_FULL_SUITE') || define('TESTS_ZEND_DB_ZF1_FULL_SUITE', true);
+
 /**
  * Zend_Feed_Rss/Zend_Feed_Atom online tests
  *
@@ -329,6 +331,11 @@ defined('TESTS_ZEND_HTTP_USERAGENT_DEVICEATLAS_DATA_FILE') || define('TESTS_ZEND
  * detection against TeraWurfl
  */
 defined('TESTS_ZEND_HTTP_USERAGENT_TERAWURFL_LIB_DIR') || define('TESTS_ZEND_HTTP_USERAGENT_TERAWURFL_LIB_DIR', false);
+
+// Enables some tests that were disabled in the individual component due to circular dependency issues
+defined('TESTS_ZEND_HTTP_ZF1_FULL_SUITE') || define('TESTS_ZEND_HTTP_ZF1_FULL_SUITE', true);
+
+defined('TESTS_ZEND_LAYOUT_ZF1_FULL_SUITE') || define('TESTS_ZEND_LAYOUT_ZF1_FULL_SUITE', true);
 
 /**
  * Zend_Loader_Autoloader multi-version support tests

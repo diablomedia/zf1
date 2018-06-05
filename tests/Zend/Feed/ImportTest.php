@@ -31,16 +31,6 @@ require_once 'Zend/Feed.php';
 require_once 'Zend/Feed/Builder.php';
 
 /**
- * @see Zend_Http_Client_Adapter_Test
- */
-require_once 'Zend/Http/Client/Adapter/Test.php';
-
-/**
- * @see Zend_Http_Client
- */
-require_once 'Zend/Http/Client.php';
-
-/**
  * @category   Zend
  * @package    Zend_Feed
  * @subpackage UnitTests

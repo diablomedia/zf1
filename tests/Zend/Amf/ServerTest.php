@@ -20,17 +20,14 @@
  * @version    $Id$
  */
 
-require_once 'Zend/Config.php';
 require_once 'Zend/Amf/Server.php';
 require_once 'Zend/Amf/Request.php';
 require_once 'Zend/Amf/Parse/TypeLoader.php';
 require_once 'Zend/Amf/Value/Messaging/RemotingMessage.php';
 require_once 'Zend/Amf/Adobe/Auth.php';
 require_once 'Zend/Amf/Adobe/Introspector.php';
-require_once 'Zend/Acl.php';
 require_once 'ServiceA.php';
 require_once 'ServiceB.php';
-require_once 'Zend/Session.php';
 
 /**
  * @category   Zend
@@ -1082,12 +1079,12 @@ class Zend_Amf_ServerTest extends PHPUnit\Framework\TestCase
         // let the server handle mock request
         $this->_server->handle($request);
         $response = $this->_server->getResponse()->getAMFBodies();
-        $this->assertTrue($response[0]->getData() instanceof Zend_Amf_Value_Messaging_ErrorMessage);
+        $this->assertInstanceOf(Zend_Amf_Value_Messaging_ErrorMessage::class, $response[0]->getData());
         // test the same while ensuring Zend_Json is loaded
-        require_once 'Zend/Json.php';
+        class_exists('Zend_Json', true);
         $this->_server->handle($request);
         $response = $this->_server->getResponse()->getAMFBodies();
-        $this->assertTrue($response[0]->getData() instanceof Zend_Amf_Value_Messaging_ErrorMessage);
+        $this->assertInstanceOf(Zend_Amf_Value_Messaging_ErrorMessage::class, $response[0]->getData());
     }
 
     /* See ZF-7102 */

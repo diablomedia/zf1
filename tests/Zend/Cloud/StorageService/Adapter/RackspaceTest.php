@@ -20,7 +20,6 @@
  */
 
 require_once 'Zend/Service/Rackspace/Files.php';
-require_once 'Zend/Config.php';
 require_once 'Zend/Cloud/StorageService/TestCase.php';
 
 /**

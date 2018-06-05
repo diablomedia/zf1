@@ -1,6 +1,6 @@
 Zend Framework 1
 ================
-[![Build Status](https://travis-ci.org/diablomedia/zf1.svg?branch=version-test-fix)](https://travis-ci.org/diablomedia/zf1)
+[![Build Status](https://travis-ci.org/diablomedia/zf1.svg?branch=master)](https://travis-ci.org/diablomedia/zf1)
 [![codecov](https://codecov.io/gh/diablomedia/zf1/branch/master/graph/badge.svg)](https://codecov.io/gh/diablomedia/zf1)
 [![Latest Stable Version](https://poser.pugx.org/diablomedia/zendframework1/v/stable)](https://packagist.org/packages/diablomedia/zendframework1)
 [![Total Downloads](https://poser.pugx.org/diablomedia/zendframework1/downloads)](https://packagist.org/packages/diablomedia/zendframework1)
@@ -10,7 +10,17 @@ This is a fork of Zend Framework 1 that we'll maintain as long as we're using it
 
 This fork is based on the final release of the original project (version 1.12.20), and releases will follow [semantic versioning](https://semver.org/). The first release of this fork is version 2.0.0.
 
+Installation via composer is the suggested way to install this fork:
+
+`composer require diablomedia/zf1`
+
 ## Release Highlights
+
+### 4.0.0
+
+* Moved a majority of components to their own separate composer package. This package can still be used like before (if being installed with composer, if not, you'll need to stick to the 3.x line), as it pulls in all of the separate components via composer, but it's recommended to just use the components you need. View this project's `composer.json` to see which components are available as a separate package.
+* Removed sqlite cache classes from Zend_Cache (in the `diablomedia/zendframework1-cache` package) since they're not compatible with PHP 7.0+
+* Autoloading namespaces changed to be more specific, which should speed up non-optimized autoloaders a bit.
 
 ### 3.0.0
 

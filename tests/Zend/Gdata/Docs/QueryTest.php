@@ -22,7 +22,6 @@
 
 require_once 'Zend/Gdata/Docs.php';
 require_once 'Zend/Gdata/Docs/Query.php';
-require_once 'Zend/Http/Client.php';
 
 /**
  * @category   Zend

@@ -20,10 +20,8 @@
  * @version    $Id $
  */
 
-require_once 'TestHelper.php';
 require_once 'Zend/Gdata/Gapps.php';
 require_once 'Zend/Gdata/ClientLogin.php';
-require_once 'Zend/Http/Client.php';
 
 /**
  * @category   Zend

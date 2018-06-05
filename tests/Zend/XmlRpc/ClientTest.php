@@ -24,13 +24,9 @@ require_once 'Zend/XmlRpc/Client.php';
 
 require_once 'Zend/XmlRpc/Response.php';
 
-require_once 'Zend/Http/Client/Adapter/Test.php';
-
 require_once 'Zend/XmlRpc/Value/DateTime.php';
 
 require_once 'Zend/XmlRpc/Client/ServerIntrospection.php';
-
-require_once 'Zend/Http/Client.php';
 
 /**
  * Test case for Zend_XmlRpc_Value
