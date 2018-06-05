@@ -1399,6 +1399,7 @@
     <filter>
         <whitelist addUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">../library/Zend</directory>
+            <directory suffix=".php">../vendor/diablomedia/zendframework1-*/src</directory>
         </whitelist>
     </filter>
 </phpunit>
