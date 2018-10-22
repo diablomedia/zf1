@@ -112,16 +112,12 @@ parameters:
         - '#Method Zend_Service_Audioscrobbler::_getInfo\(\) should return SimpleXMLElement but returns DOMDocument\|SimpleXMLElement\.#'
         - '#Method Zend_Service_Ebay_Finding::.+ should return Zend_Service_Ebay_Finding_Response_.+ but returns Zend_Service_Ebay_Finding_Response_Abstract\.#'
         - '#Method Zend_Service_Ebay_Finding::_parseResponse\(\) should return DOMDocument but returns DOMDocument\|false\|SimpleXMLElement\.#'
-        - '#Method Zend_Service_ShortUrl_IsGd::unshorten\(\) should return string\|null but returns array\|string\|null\.#'
         - '#Method Zend_Service_SqlAzure_Management_Client::_parseResponse\(\) should return false\|SimpleXMLElement but returns DOMDocument\|false\|SimpleXMLElement\.#'
         - '#Method Zend_Service_WindowsAzure_Management_Client::_parseResponse\(\) should return false\|SimpleXMLElement but returns DOMDocument\|false\|SimpleXMLElement\.#'
         - '#Method Zend_Service_WindowsAzure_Storage::_parseResponse\(\) should return false\|SimpleXMLElement but returns DOMDocument\|false\|SimpleXMLElement\.#'
         - '#Property Zend_Feed_Element::\$_element \(DOMDocument\|DOMElement\|string\) does not accept DOMDocument\|SimpleXMLElement\.#'
         - '#Property Zend_Markup_Renderer_RendererAbstract::\$_group \(string\) does not accept string\|true\.#'
         - '#Property Zend_Pdf_Element_Stream::\$value \(Zend_Memory_Container\) does not accept Zend_Memory_Container_Interface\.#'
-        - '#Property Zend_Service_Rackspace_Abstract::\$cdnUrl \(string\) does not accept array\|string\|null\.#'
-        - '#Property Zend_Service_Rackspace_Abstract::\$managementUrl \(string\) does not accept array\|string\|null\.#'
-        - '#Property Zend_Service_Rackspace_Abstract::\$token \(string\) does not accept array\|string\|null\.#'
         #########################################################
         # Level 4 errors that require code changes
         #########################################################
