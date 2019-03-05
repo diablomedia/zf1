@@ -82,6 +82,7 @@ parameters:
         - '#Call to an undefined method Zend_Tool_Project_Profile_Resource_Container::.+\(\)\.#'
         - '#Call to an undefined method Zend_Uri::.+\(\)\.#'
         - '#Call to an undefined method Zend_XmlRpc_Client_ServerProxy::.+\(\)\.#'
+        - '#Call to an undefined method DOMNode::getAttribute\(\)\.#'
         - '#Cannot access property \$commands on array\.#'
         - '#Cannot access property \$description on array\.#'
         - '#Cannot access property \$footers on array\.#'
