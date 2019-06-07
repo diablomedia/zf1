@@ -29,6 +29,7 @@ install:
 
 services:
   - memcached
+  - mysql
 
 before_script:
   - if [[ "$USE_XDEBUG" == false ]]; then phpenv config-rm xdebug.ini || return 0; fi
