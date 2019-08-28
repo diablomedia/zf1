@@ -224,7 +224,7 @@ EOS;
         require_once $file;
         $codeGenFileFromDisk = Zend_CodeGenerator_Php_File::fromReflection(new Zend_Reflection_File($file));
         $codeGenFileFromDisk->getClass()->setMethod(array('name' => 'foobar'));
-        
+
         $expectedOutput = <<<EOS
 <?php
 /**
@@ -287,7 +287,7 @@ EOS;
 
         $targetLength = strlen('require_once \'SampleClass.php\';');
         $this->assertEquals($targetLength, strlen($lines[2]));
-        $this->assertEquals(';', $lines[2]{$targetLength-1});
+        $this->assertEquals(';', $lines[2][$targetLength-1]);
     }
 
     /**
@@ -327,7 +327,7 @@ EOS;
 
         $this->assertEquals($target, $codeGenFile->generate());
     }
-    
+
     /**
     * @group ZF-11703
     */
