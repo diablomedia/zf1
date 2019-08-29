@@ -57,7 +57,7 @@ class Zend_Cloud_Infrastructure_Adapter_Rackspace extends Zend_Cloud_Infrastruct
      *
      * @var array
      */
-    protected $flavors;
+    protected $flavors = array();
     /**
      * Map array between Rackspace and Infrastructure status
      *
