@@ -157,8 +157,13 @@ class Zend_Cloud_Infrastructure_Adapter_Rackspace extends Zend_Cloud_Infrastruct
             } else {
                 $result[Zend_Cloud_Infrastructure_Instance::INSTANCE_ZONE] = self::RACKSPACE_ZONE_UK;
             }
-            $result[Zend_Cloud_Infrastructure_Instance::INSTANCE_RAM]     = $this->flavors[$attr['flavorId']]['ram'];
-            $result[Zend_Cloud_Infrastructure_Instance::INSTANCE_STORAGE] = $this->flavors[$attr['flavorId']]['disk'];
+            if (isset($this->flavors[$attr['flavorId']])) {
+                $result[Zend_Cloud_Infrastructure_Instance::INSTANCE_RAM]     = $this->flavors[$attr['flavorId']]['ram'];
+                $result[Zend_Cloud_Infrastructure_Instance::INSTANCE_STORAGE] = $this->flavors[$attr['flavorId']]['disk'];
+            } else {
+                $result[Zend_Cloud_Infrastructure_Instance::INSTANCE_RAM]     = null;
+                $result[Zend_Cloud_Infrastructure_Instance::INSTANCE_STORAGE] = null;
+            }
         }
         return $result;
     }
