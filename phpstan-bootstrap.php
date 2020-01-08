@@ -6,7 +6,7 @@ define('MICROSOFT_CONSOLE_COMMAND_HOST', 'nobootstrap');
 
 // Use stubs so we can analyze types from unloaded extensions
 if (!extension_loaded('apc')) {
-    require_once __DIR__ . '/vendor/jetbrains/phpstorm-stubs/apc/apc.php';
+    require_once __DIR__ . '/vendor/jetbrains/phpstorm-stubs/apcu/apcu.php';
 }
 
 if (!extension_loaded('gmp')) {
