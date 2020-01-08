@@ -25,7 +25,7 @@ if (!isset($_SERVER['TRAVIS_PHP_VERSION'])) {
     $_SERVER['TRAVIS_PHP_VERSION'] = $phpMajor . '.' . $phpMinor;
 }
 
-$PHPUNIT = '../bin/phpunit';
+$PHPUNIT = __DIR__ . '/../bin/phpunit';
 
 if (!is_executable($PHPUNIT)) {
     echo "PHPUnit is not executable ($PHPUNIT)";
