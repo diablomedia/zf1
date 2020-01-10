@@ -171,7 +171,7 @@ class Zend_CodeGenerator_Php_File extends Zend_CodeGenerator_Php_Abstract
                 }
             }
             $body = implode("\n", $bodyReturn);
-            unset($bodyLines, $bodyReturn, $classStartLine, $classEndLine);
+            unset($bodyLines, $bodyReturn);
         }
 
         $file->setBody($body);

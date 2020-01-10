@@ -152,19 +152,11 @@
     "config": {
         "bin-dir": "bin"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "no-api": true,
-            "url": "https://github.com/diablomedia/phpstorm-stubs"
-        }
-    ],
     "require-dev": {
         "phpunit/phpunit": "^7.5.15",
         "phpunit/dbunit": "^4.0",
         "phpunit/phpcov": "^5.0",
-        "phpstan/phpstan": "^0.9.2",
-        "jetbrains/phpstorm-stubs": "dev-phpstan"
+        "phpstan/phpstan": "0.12.4"
     },
     "archive": {
         "exclude": ["/demos", "/documentation", "/tests"]
@@ -173,6 +165,6 @@
         "zendframework/zendframework1": ">=1.12.20"
     },
     "scripts": {
-        "phpstan": "phpstan analyse -l 4 --autoload-file=vendor/autoload.php --memory-limit=1024M -c phpstan.neon ./library/"
+        "phpstan": "phpstan analyse --memory-limit=1024M -c phpstan.neon --ansi"
     }
 }

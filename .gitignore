@@ -7,3 +7,4 @@ bin/phpunit
 bin/phpcov
 bin/php-parse
 bin/phpstan
+bin/phpstan.phar
