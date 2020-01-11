@@ -74,7 +74,7 @@ jobs:
       php: 7.2
       env: TMPDIR=/tmp USE_XDEBUG=false
       script:
-        - ./bin/phpstan analyse -l 4 --autoload-file=vendor/autoload.php --memory-limit=1024M -c phpstan.neon ./library
+        - composer phpstan
 
     - stage: test with coverage
       php: 7.2
