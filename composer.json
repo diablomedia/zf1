@@ -20,7 +20,7 @@
         "diablomedia/zendframework1-auth-adapter-openid": "^1.0.0",
         "diablomedia/zendframework1-cache": "^1.0.0",
         "diablomedia/zendframework1-captcha": "^1.0.0",
-        "diablomedia/zendframework1-config": "^1.0.1",
+        "diablomedia/zendframework1-config": "^1.0.1 || ^2.0.0",
         "diablomedia/zendframework1-controller": "^1.0.0",
         "diablomedia/zendframework1-controller-action-helper-ajaxcontext": "^1.0.0",
         "diablomedia/zendframework1-controller-action-helper-autocomplete": "^1.0.0",
