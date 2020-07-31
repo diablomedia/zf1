@@ -156,7 +156,7 @@
         "phpunit/phpunit": "^7.5.15",
         "phpunit/dbunit": "^4.0",
         "phpunit/phpcov": "^5.0",
-        "phpstan/phpstan": "0.12.4"
+        "phpstan/phpstan": "0.12.34"
     },
     "archive": {
         "exclude": ["/demos", "/documentation", "/tests"]
