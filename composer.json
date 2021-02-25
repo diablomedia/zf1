@@ -84,7 +84,7 @@
         "diablomedia/zendframework1-view-helper-url": "^1.0.0",
         "diablomedia/zendframework1-wildfire": "^1.0.3",
         "diablomedia/zendframework1-xml": "^1.0.2",
-        "php": ">=7.0.0"
+        "php": "^7.0 || ^8.0"
     },
     "autoload": {
         "psr-0": {
@@ -156,10 +156,14 @@
         "phpunit/phpunit": "^7.5.15",
         "phpunit/dbunit": "^4.0",
         "phpunit/phpcov": "^5.0",
-        "phpstan/phpstan": "0.12.4"
+        "phpstan/phpstan": "0.12.78"
     },
     "archive": {
-        "exclude": ["/demos", "/documentation", "/tests"]
+        "exclude": [
+            "/demos",
+            "/documentation",
+            "/tests"
+        ]
     },
     "replace": {
         "zendframework/zendframework1": ">=1.12.20"

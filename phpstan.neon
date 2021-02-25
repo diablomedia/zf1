@@ -2,7 +2,8 @@ parameters:
     checkMissingIterableValueType: false
     checkGenericClassInNonGenericObjectType: false
     inferPrivatePropertyTypeFromConstructor: true
-    bootstrap: phpstan-bootstrap.php
+    bootstrapFiles:
+        - phpstan-bootstrap.php
     level: 8
     paths:
         - 'library'
