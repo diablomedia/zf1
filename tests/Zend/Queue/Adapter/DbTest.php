@@ -53,7 +53,7 @@ class Zend_Queue_Adapter_DbTest extends Zend_Queue_Adapter_AdapterTest
     /**
      * Test setup
      */
-    public function setUp()
+    public function setUp(): void
     {
         if (!TESTS_ZEND_QUEUE_DB) {
             $this->markTestSkipped('TESTS_ZEND_QUEUE_DB is not enabled in TestConfiguration.php');
@@ -148,7 +148,7 @@ class Zend_Queue_Adapter_DbTest extends Zend_Queue_Adapter_AdapterTest
         $queue->send('My Test Message 2');
 
         $messages = $queue->receive(0);
-        $this->assertEquals(0, count($messages));
+        $this->assertCount(0, $messages);
     }
 }
 

@@ -36,7 +36,7 @@ require_once 'Zend/Gdata/ClientLogin.php';
 class Zend_Gdata_App_HttpExceptionTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp()
+    public function setUp(): void
     {
         if (!(defined('TESTS_ZEND_GDATA_ONLINE_ENABLED') &&
             constant('TESTS_ZEND_GDATA_ONLINE_ENABLED') == true &&

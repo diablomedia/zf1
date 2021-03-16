@@ -51,7 +51,7 @@ abstract class Zend_Cloud_StorageService_TestCase extends PHPUnit\Framework\Test
     protected $_dummyNamePrefix = 'TestItem';
 
     protected $_dummyDataPrefix = 'TestData';
-	protected $_clientType = 'stdClass';
+    protected $_clientType = 'stdClass';
 
     /**
      * Config object
@@ -69,7 +69,7 @@ abstract class Zend_Cloud_StorageService_TestCase extends PHPUnit\Framework\Test
      */
     protected $_waitPeriod = 1;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->_config = $this->_getConfig();
         $this->_commonStorage = Zend_Cloud_StorageService_Factory::getAdapter($this->_config);
@@ -77,7 +77,7 @@ abstract class Zend_Cloud_StorageService_TestCase extends PHPUnit\Framework\Test
 
     public function testGetClient()
     {
-    	$this->assertTrue(is_a($this->_commonStorage->getClient(), $this->_clientType));
+        $this->assertTrue(is_a($this->_commonStorage->getClient(), $this->_clientType));
     }
 
     public function testNoParams()
@@ -117,7 +117,7 @@ abstract class Zend_Cloud_StorageService_TestCase extends PHPUnit\Framework\Test
         }
     }
 
-	/**
+    /**
      * Test fetch item
      *
      * @return void
@@ -174,7 +174,7 @@ abstract class Zend_Cloud_StorageService_TestCase extends PHPUnit\Framework\Test
         }
     }
 
-	/**
+    /**
      * Test store item
      *
      * @return void
@@ -269,7 +269,7 @@ abstract class Zend_Cloud_StorageService_TestCase extends PHPUnit\Framework\Test
         }
     }
 
-	/**
+    /**
      * Test move item
      *
      * @return void
@@ -304,7 +304,7 @@ abstract class Zend_Cloud_StorageService_TestCase extends PHPUnit\Framework\Test
         }
     }
 
-	/**
+    /**
      * Test fetch metadata
      *
      * @return void
@@ -322,7 +322,7 @@ abstract class Zend_Cloud_StorageService_TestCase extends PHPUnit\Framework\Test
             $this->_wait();
 
             // Hopefully we can assert more about the metadata in the future :/
-            $this->assertInternalType('array', $this->_commonStorage->fetchMetadata($dummyName));
+            $this->assertIsArray($this->_commonStorage->fetchMetadata($dummyName));
             $this->_commonStorage->deleteItem($dummyName);
         } catch (Exception $e) {
             try {
@@ -333,7 +333,7 @@ abstract class Zend_Cloud_StorageService_TestCase extends PHPUnit\Framework\Test
         }
     }
 
-	/**
+    /**
      * Test list items
      *
      * @return void
@@ -343,7 +343,6 @@ abstract class Zend_Cloud_StorageService_TestCase extends PHPUnit\Framework\Test
         $dummyName1 = null;
         $dummyName2 = null;
         try {
-
             $dummyName1 = $this->_dummyNamePrefix . 'ForListItem1';
             $dummyData1 = $this->_dummyDataPrefix . 'Item1';
             $this->_clobberItem($dummyData1, $dummyName1);
@@ -355,9 +354,9 @@ abstract class Zend_Cloud_StorageService_TestCase extends PHPUnit\Framework\Test
 
             $objects = $this->_commonStorage->listItems('');
 
-            $this->assertEquals(2, sizeof($objects));
+            $this->assertCount(2, $objects);
 
-            // PHPUnit does an identical comparison for assertContains(), so we just
+            // PHPUnit does an identical comparison for assertStringContainsString(), so we just
             // use assertTrue and in_array()
             $this->assertTrue(in_array($dummyName1, $objects));
             $this->assertTrue(in_array($dummyName2, $objects));
@@ -389,7 +388,7 @@ abstract class Zend_Cloud_StorageService_TestCase extends PHPUnit\Framework\Test
      */
     protected function _clobberItem($data, $path)
     {
-        if($this->_commonStorage->fetchItem($path)) {
+        if ($this->_commonStorage->fetchItem($path)) {
             $this->_commonStorage->deleteItem($path);
         }
         $this->_wait();

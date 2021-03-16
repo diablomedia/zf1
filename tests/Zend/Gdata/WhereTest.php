@@ -34,7 +34,7 @@ require_once 'Zend/Gdata.php';
 class Zend_Gdata_WhereTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->whereText = file_get_contents(
                 'Zend/Gdata/_files/WhereElementSample1.xml',
                 true);
@@ -42,24 +42,24 @@ class Zend_Gdata_WhereTest extends PHPUnit\Framework\TestCase
     }
 
     public function testEmptyWhereShouldHaveNoExtensionElements() {
-        $this->assertInternalType('array', $this->where->extensionElements);
+        $this->assertIsArray($this->where->extensionElements);
         $this->assertTrue(count($this->where->extensionElements) == 0);
     }
 
     public function testEmptyWhereShouldHaveNoExtensionAttributes() {
-        $this->assertInternalType('array', $this->where->extensionAttributes);
+        $this->assertIsArray($this->where->extensionAttributes);
         $this->assertTrue(count($this->where->extensionAttributes) == 0);
     }
 
     public function testSampleWhereShouldHaveNoExtensionElements() {
         $this->where->transferFromXML($this->whereText);
-        $this->assertInternalType('array', $this->where->extensionElements);
+        $this->assertIsArray($this->where->extensionElements);
         $this->assertTrue(count($this->where->extensionElements) == 0);
     }
 
     public function testSampleWhereShouldHaveNoExtensionAttributes() {
         $this->where->transferFromXML($this->whereText);
-        $this->assertInternalType('array', $this->where->extensionAttributes);
+        $this->assertIsArray($this->where->extensionAttributes);
         $this->assertTrue(count($this->where->extensionAttributes) == 0);
     }
 
@@ -72,13 +72,13 @@ class Zend_Gdata_WhereTest extends PHPUnit\Framework\TestCase
         $this->assertEquals("http://schemas.google.com/g/2005#event.alternate", $this->where->rel);
         $this->assertEquals("Test Label", $this->where->label);
 
-        $this->assertEquals(0, count($this->where->extensionElements));
+        $this->assertCount(0, $this->where->extensionElements);
         $newWhere = new Zend_Gdata_Extension_Where();
         $newWhere->transferFromXML($this->where->saveXML());
-        $this->assertEquals(0, count($newWhere->extensionElements));
+        $this->assertCount(0, $newWhere->extensionElements);
         $newWhere->extensionElements = array(
                 new Zend_Gdata_App_Extension_Element('foo', 'atom', null, 'bar'));
-        $this->assertEquals(1, count($newWhere->extensionElements));
+        $this->assertCount(1, $newWhere->extensionElements);
         $this->assertEquals("Test Value String", $newWhere->valueString);
         $this->assertEquals("http://schemas.google.com/g/2005#event.alternate", $newWhere->rel);
         $this->assertEquals("Test Label", $newWhere->label);
@@ -87,7 +87,7 @@ class Zend_Gdata_WhereTest extends PHPUnit\Framework\TestCase
         $gdata = new Zend_Gdata();
         $newWhere2 = $gdata->newWhere();
         $newWhere2->transferFromXML($newWhere->saveXML());
-        $this->assertEquals(1, count($newWhere2->extensionElements));
+        $this->assertCount(1, $newWhere2->extensionElements);
         $this->assertEquals("Test Value String", $newWhere2->valueString);
         $this->assertEquals("http://schemas.google.com/g/2005#event.alternate", $newWhere2->rel);
         $this->assertEquals("Test Label", $newWhere2->label);

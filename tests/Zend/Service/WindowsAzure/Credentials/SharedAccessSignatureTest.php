@@ -39,7 +39,7 @@ require_once 'Zend/Service/WindowsAzure/Credentials/SharedAccessSignature.php';
  */
 class Zend_Service_WindowsAzure_Credentials_SharedAccessSignatureTest extends PHPUnit\Framework\TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         if (!TESTS_ZEND_SERVICE_WINDOWSAZURE_CREDENTIALS_RUNTESTS) {
             $this->markTestSkipped('Test not enabled in TestConfiguration.php');

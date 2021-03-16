@@ -35,7 +35,7 @@ require_once 'Zend/Gdata.php';
 class Zend_Gdata_OpenSearchTotalResultsTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->openSearchTotalResultsText = file_get_contents(
                 'Zend/Gdata/_files/OpenSearchTotalResultsElementSample1.xml',
                 true);
@@ -43,24 +43,24 @@ class Zend_Gdata_OpenSearchTotalResultsTest extends PHPUnit\Framework\TestCase
     }
 
     public function testEmptyOpenSearchTotalResultsShouldHaveNoExtensionElements() {
-        $this->assertInternalType('array', $this->openSearchTotalResults->extensionElements);
+        $this->assertIsArray($this->openSearchTotalResults->extensionElements);
         $this->assertTrue(count($this->openSearchTotalResults->extensionElements) == 0);
     }
 
     public function testEmptyOpenSearchTotalResultsShouldHaveNoExtensionAttributes() {
-        $this->assertInternalType('array', $this->openSearchTotalResults->extensionAttributes);
+        $this->assertIsArray($this->openSearchTotalResults->extensionAttributes);
         $this->assertTrue(count($this->openSearchTotalResults->extensionAttributes) == 0);
     }
 
     public function testSampleOpenSearchTotalResultsShouldHaveNoExtensionElements() {
         $this->openSearchTotalResults->transferFromXML($this->openSearchTotalResultsText);
-        $this->assertInternalType('array', $this->openSearchTotalResults->extensionElements);
+        $this->assertIsArray($this->openSearchTotalResults->extensionElements);
         $this->assertTrue(count($this->openSearchTotalResults->extensionElements) == 0);
     }
 
     public function testSampleOpenSearchTotalResultsShouldHaveNoExtensionAttributes() {
         $this->openSearchTotalResults->transferFromXML($this->openSearchTotalResultsText);
-        $this->assertInternalType('array', $this->openSearchTotalResults->extensionAttributes);
+        $this->assertIsArray($this->openSearchTotalResults->extensionAttributes);
         $this->assertTrue(count($this->openSearchTotalResults->extensionAttributes) == 0);
     }
 
@@ -69,20 +69,20 @@ class Zend_Gdata_OpenSearchTotalResultsTest extends PHPUnit\Framework\TestCase
 
         $this->assertEquals("42", $this->openSearchTotalResults->text);
 
-        $this->assertEquals(0, count($this->openSearchTotalResults->extensionElements));
+        $this->assertCount(0, $this->openSearchTotalResults->extensionElements);
         $newOpenSearchTotalResults = new Zend_Gdata_Extension_OpenSearchTotalResults();
         $newOpenSearchTotalResults->transferFromXML($this->openSearchTotalResults->saveXML());
-        $this->assertEquals(0, count($newOpenSearchTotalResults->extensionElements));
+        $this->assertCount(0, $newOpenSearchTotalResults->extensionElements);
         $newOpenSearchTotalResults->extensionElements = array(
                 new Zend_Gdata_App_Extension_Element('foo', 'atom', null, 'bar'));
-        $this->assertEquals(1, count($newOpenSearchTotalResults->extensionElements));
+        $this->assertCount(1, $newOpenSearchTotalResults->extensionElements);
         $this->assertEquals("42", $newOpenSearchTotalResults->text);
 
         /* try constructing using magic factory */
         $gdata = new Zend_Gdata();
         $newOpenSearchTotalResults2 = $gdata->newOpenSearchTotalResults();
         $newOpenSearchTotalResults2->transferFromXML($newOpenSearchTotalResults->saveXML());
-        $this->assertEquals(1, count($newOpenSearchTotalResults2->extensionElements));
+        $this->assertCount(1, $newOpenSearchTotalResults2->extensionElements);
         $this->assertEquals("42", $newOpenSearchTotalResults2->text);
     }
 

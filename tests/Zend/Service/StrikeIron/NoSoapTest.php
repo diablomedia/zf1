@@ -39,7 +39,7 @@ require_once 'Zend/Service/StrikeIron/BaseTest.php';
 class Zend_Service_StrikeIron_NoSoapTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->soapClient = new Zend_Service_StrikeIron_BaseTest_MockSoapClient;
         if (extension_loaded('soap')) {

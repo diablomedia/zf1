@@ -49,7 +49,7 @@ class Zend_Service_WindowsAzure_Management_ManagementClientTest extends PHPUnit\
     /**
      * Test setup
      */
-    protected function setUp()
+    public function setUp(): void
     {
         self::$path = dirname(__FILE__).'/_files/';
         $this->skipped = false;
@@ -69,7 +69,7 @@ class Zend_Service_WindowsAzure_Management_ManagementClientTest extends PHPUnit\
     /**
      * Test teardown
      */
-    protected function tearDown()
+    public function tearDown(): void
     {
         if ($this->skipped === false) {
         	// Clean up storage

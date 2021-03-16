@@ -39,7 +39,7 @@ require_once 'Zend/Service/WindowsAzure/Credentials/SharedKey.php';
  */
 class Zend_Service_WindowsAzure_Credentials_SharedKeyTest extends PHPUnit\Framework\TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         if (!TESTS_ZEND_SERVICE_WINDOWSAZURE_CREDENTIALS_RUNTESTS) {
             $this->markTestSkipped('Test not enabled in TestConfiguration.php');
@@ -60,8 +60,8 @@ class Zend_Service_WindowsAzure_Credentials_SharedKeyTest extends PHPUnit\Framew
                               false
                           );
 
-        $this->assertInternalType('array', $signedHeaders);
-        $this->assertEquals(2, count($signedHeaders));
+        $this->assertIsArray($signedHeaders);
+        $this->assertCount(2, $signedHeaders);
         $this->assertEquals("SharedKey devstoreaccount1:9tokqwSDIqvRioVZ1k0mv5m/iseHsGRYmAMGJVu6NcU=", $signedHeaders["Authorization"]);
     }
 
@@ -79,8 +79,8 @@ class Zend_Service_WindowsAzure_Credentials_SharedKeyTest extends PHPUnit\Framew
                               false
                           );
 
-        $this->assertInternalType('array', $signedHeaders);
-        $this->assertEquals(2, count($signedHeaders));
+        $this->assertIsArray($signedHeaders);
+        $this->assertCount(2, $signedHeaders);
         $this->assertEquals("SharedKey devstoreaccount1:YHPfUXoeL/XZjEYii2pfSZi3CsOB++5sA4QT7CAvPig=", $signedHeaders["Authorization"]);
     }
 
@@ -98,8 +98,8 @@ class Zend_Service_WindowsAzure_Credentials_SharedKeyTest extends PHPUnit\Framew
                               false
                           );
 
-        $this->assertInternalType('array', $signedHeaders);
-        $this->assertEquals(2, count($signedHeaders));
+        $this->assertIsArray($signedHeaders);
+        $this->assertCount(2, $signedHeaders);
         $this->assertEquals("SharedKey devstoreaccount1:S1+AcI8z19N0EP0eRTEj4UUCtPbKyUcZDAt299AWudw=", $signedHeaders["Authorization"]);
     }
 
@@ -117,8 +117,8 @@ class Zend_Service_WindowsAzure_Credentials_SharedKeyTest extends PHPUnit\Framew
                               false
                           );
 
-        $this->assertInternalType('array', $signedHeaders);
-        $this->assertEquals(2, count($signedHeaders));
+        $this->assertIsArray($signedHeaders);
+        $this->assertCount(2, $signedHeaders);
         $this->assertEquals("SharedKey testing:amg3/Z6Yx0KxwhRz9yn1ZCPZXYWIp5aEDCeZ1H5UIwo=", $signedHeaders["Authorization"]);
     }
 
@@ -136,8 +136,8 @@ class Zend_Service_WindowsAzure_Credentials_SharedKeyTest extends PHPUnit\Framew
                               false
                           );
 
-        $this->assertInternalType('array', $signedHeaders);
-        $this->assertEquals(2, count($signedHeaders));
+        $this->assertIsArray($signedHeaders);
+        $this->assertCount(2, $signedHeaders);
         $this->assertEquals("SharedKey testing:ISA0m0Gy2SrxxjBO9ogtIbz0xNNyJ/GujUv5s1ibQrY=", $signedHeaders["Authorization"]);
     }
 
@@ -155,8 +155,8 @@ class Zend_Service_WindowsAzure_Credentials_SharedKeyTest extends PHPUnit\Framew
                               false
                           );
 
-        $this->assertInternalType('array', $signedHeaders);
-        $this->assertEquals(2, count($signedHeaders));
+        $this->assertIsArray($signedHeaders);
+        $this->assertCount(2, $signedHeaders);
         $this->assertEquals("SharedKey testing:vlfVjEbBaRVTv35e924cR4B/Z5zCaSYjbtMz9/k3UCY=", $signedHeaders["Authorization"]);
     }
 }

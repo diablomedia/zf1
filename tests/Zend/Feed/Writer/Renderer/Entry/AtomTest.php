@@ -35,11 +35,10 @@ require_once 'Zend/Version.php';
  */
 class Zend_Feed_Writer_Renderer_Entry_AtomTest extends PHPUnit\Framework\TestCase
 {
-
     protected $_validWriter = null;
     protected $_validEntry = null;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->_validWriter = new Zend_Feed_Writer_Feed;
 
@@ -62,7 +61,7 @@ class Zend_Feed_Writer_Renderer_Entry_AtomTest extends PHPUnit\Framework\TestCas
         $this->_validWriter->addEntry($this->_validEntry);
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $this->_validWriter = null;
         $this->_validEntry = null;
@@ -316,5 +315,4 @@ class Zend_Feed_Writer_Renderer_Entry_AtomTest extends PHPUnit\Framework\TestCas
         //$this->assertEquals('http://www.example.com/rss/id/1', $entry->getCommentFeedLink('rss'));
         $this->assertEquals('http://www.example.com/atom/id/1', $entry->getCommentFeedLink('atom'));
     }
-
 }

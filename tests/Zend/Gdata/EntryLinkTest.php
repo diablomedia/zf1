@@ -34,7 +34,7 @@ require_once 'Zend/Gdata.php';
 class Zend_Gdata_EntryLinkTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->entryLinkText = file_get_contents(
                 'Zend/Gdata/_files/EntryLinkElementSample1.xml',
                 true);
@@ -42,24 +42,24 @@ class Zend_Gdata_EntryLinkTest extends PHPUnit\Framework\TestCase
     }
 
     public function testEmptyEntryLinkShouldHaveNoExtensionElements() {
-        $this->assertInternalType('array', $this->entryLink->extensionElements);
+        $this->assertIsArray($this->entryLink->extensionElements);
         $this->assertTrue(count($this->entryLink->extensionElements) == 0);
     }
 
     public function testEmptyEntryLinkShouldHaveNoExtensionAttributes() {
-        $this->assertInternalType('array', $this->entryLink->extensionAttributes);
+        $this->assertIsArray($this->entryLink->extensionAttributes);
         $this->assertTrue(count($this->entryLink->extensionAttributes) == 0);
     }
 
     public function testSampleEntryLinkShouldHaveNoExtensionElements() {
         $this->entryLink->transferFromXML($this->entryLinkText);
-        $this->assertInternalType('array', $this->entryLink->extensionElements);
+        $this->assertIsArray($this->entryLink->extensionElements);
         $this->assertTrue(count($this->entryLink->extensionElements) == 0);
     }
 
     public function testSampleEntryLinkShouldHaveNoExtensionAttributes() {
         $this->entryLink->transferFromXML($this->entryLinkText);
-        $this->assertInternalType('array', $this->entryLink->extensionAttributes);
+        $this->assertIsArray($this->entryLink->extensionAttributes);
         $this->assertTrue(count($this->entryLink->extensionAttributes) == 0);
     }
 
@@ -72,13 +72,13 @@ class Zend_Gdata_EntryLinkTest extends PHPUnit\Framework\TestCase
         $this->assertEquals("self", $this->entryLink->rel);
         $this->assertEquals(false, $this->entryLink->readOnly);
 
-        $this->assertEquals(0, count($this->entryLink->extensionElements));
+        $this->assertCount(0, $this->entryLink->extensionElements);
         $newEntryLink = new Zend_Gdata_Extension_EntryLink();
         $newEntryLink->transferFromXML($this->entryLink->saveXML());
-        $this->assertEquals(0, count($newEntryLink->extensionElements));
+        $this->assertCount(0, $newEntryLink->extensionElements);
         $newEntryLink->extensionElements = array(
                 new Zend_Gdata_App_Extension_Element('foo', 'atom', null, 'bar'));
-        $this->assertEquals(1, count($newEntryLink->extensionElements));
+        $this->assertCount(1, $newEntryLink->extensionElements);
         $this->assertEquals("http://gmail.com/jo/contacts/Bob", $newEntryLink->href);
         $this->assertEquals("self", $newEntryLink->rel);
         $this->assertEquals(false, $newEntryLink->readOnly);
@@ -87,7 +87,7 @@ class Zend_Gdata_EntryLinkTest extends PHPUnit\Framework\TestCase
         $gdata = new Zend_Gdata();
         $newEntryLink2 = $gdata->newEntryLink();
         $newEntryLink2->transferFromXML($newEntryLink->saveXML());
-        $this->assertEquals(1, count($newEntryLink2->extensionElements));
+        $this->assertCount(1, $newEntryLink2->extensionElements);
         $this->assertEquals("http://gmail.com/jo/contacts/Bob", $newEntryLink2->href);
         $this->assertEquals("self", $newEntryLink2->rel);
         $this->assertEquals(false, $newEntryLink2->readOnly);

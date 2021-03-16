@@ -151,7 +151,7 @@ class Zend_Reflection_FileTest extends PHPUnit\Framework\TestCase
         require_once $fileToRequire;
         $reflectionFile = new Zend_Reflection_File($fileToRequire);
         $functions = $reflectionFile->getFunctions();
-        $this->assertEquals(2, count($functions));
+        $this->assertCount(2, $functions);
         $this->assertContainsOnly('Zend_Reflection_Function', $functions);
         $this->assertEquals('firstOne', $functions[0]->getName());
         $this->assertEquals('secondOne', $functions[1]->getName());

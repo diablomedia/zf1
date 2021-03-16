@@ -42,7 +42,7 @@ class Zend_Gdata_Analytics_DataFeedTest extends PHPUnit\Framework\TestCase
     /** @var DataFeed */
     public $dataFeed;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->dataFeed = new Zend_Gdata_Analytics_DataFeed(
             file_get_contents(dirname(__FILE__) . '/_files/TestDataFeed.xml')

@@ -40,7 +40,7 @@ class Zend_Gdata_Photos_PhotosPhotoEntryTest extends PHPUnit\Framework\TestCase
     /**
       * Called before each test to setup any fixtures.
       */
-    public function setUp()
+    public function setUp(): void
     {
         $photoEntryText = file_get_contents(
                 '_files/TestPhotoEntry.xml',

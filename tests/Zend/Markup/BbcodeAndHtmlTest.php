@@ -46,7 +46,7 @@ class Zend_Markup_BbcodeAndHtmlTest extends PHPUnit\Framework\TestCase
      *
      * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->_markup = Zend_Markup::factory('bbcode', 'html');
     }
@@ -57,7 +57,7 @@ class Zend_Markup_BbcodeAndHtmlTest extends PHPUnit\Framework\TestCase
      *
      * @return void
      */
-    public function tearDown()
+    public function tearDown(): void
     {
         unset($this->_markup);
     }

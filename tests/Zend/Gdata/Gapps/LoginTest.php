@@ -35,7 +35,7 @@ require_once 'Zend/Gdata.php';
 class Zend_Gdata_Gapps_LoginTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->loginText = file_get_contents(
                 'Zend/Gdata/Gapps/_files/LoginElementSample1.xml',
                 true);
@@ -43,24 +43,24 @@ class Zend_Gdata_Gapps_LoginTest extends PHPUnit\Framework\TestCase
     }
 
     public function testEmptyLoginShouldHaveNoExtensionElements() {
-        $this->assertInternalType('array', $this->login->extensionElements);
+        $this->assertIsArray($this->login->extensionElements);
         $this->assertTrue(count($this->login->extensionElements) == 0);
     }
 
     public function testEmptyLoginShouldHaveNoExtensionAttributes() {
-        $this->assertInternalType('array', $this->login->extensionAttributes);
+        $this->assertIsArray($this->login->extensionAttributes);
         $this->assertTrue(count($this->login->extensionAttributes) == 0);
     }
 
     public function testSampleLoginShouldHaveNoExtensionElements() {
         $this->login->transferFromXML($this->loginText);
-        $this->assertInternalType('array', $this->login->extensionElements);
+        $this->assertIsArray($this->login->extensionElements);
         $this->assertTrue(count($this->login->extensionElements) == 0);
     }
 
     public function testSampleLoginShouldHaveNoExtensionAttributes() {
         $this->login->transferFromXML($this->loginText);
-        $this->assertInternalType('array', $this->login->extensionAttributes);
+        $this->assertIsArray($this->login->extensionAttributes);
         $this->assertTrue(count($this->login->extensionAttributes) == 0);
     }
 
@@ -81,13 +81,13 @@ class Zend_Gdata_Gapps_LoginTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(true, $this->login->changePasswordAtNextLogin);
         $this->assertEquals(false, $this->login->agreedToTerms);
 
-        $this->assertEquals(0, count($this->login->extensionElements));
+        $this->assertCount(0, $this->login->extensionElements);
         $newLogin = new Zend_Gdata_Gapps_Extension_Login();
         $newLogin->transferFromXML($this->login->saveXML());
-        $this->assertEquals(0, count($newLogin->extensionElements));
+        $this->assertCount(0, $newLogin->extensionElements);
         $newLogin->extensionElements = array(
                 new Zend_Gdata_App_Extension_Element('foo', 'atom', null, 'bar'));
-        $this->assertEquals(1, count($newLogin->extensionElements));
+        $this->assertCount(1, $newLogin->extensionElements);
         $this->assertEquals("johndoe", $newLogin->username);
         $this->assertEquals("abcdefg1234567890", $newLogin->password);
         $this->assertEquals("Foo", $newLogin->hashFunctionName);
@@ -100,7 +100,7 @@ class Zend_Gdata_Gapps_LoginTest extends PHPUnit\Framework\TestCase
         $gdata = new Zend_Gdata_Gapps();
         $newLogin2 = $gdata->newLogin();
         $newLogin2->transferFromXML($newLogin->saveXML());
-        $this->assertEquals(1, count($newLogin2->extensionElements));
+        $this->assertCount(1, $newLogin2->extensionElements);
         $this->assertEquals("johndoe", $newLogin2->username);
         $this->assertEquals("abcdefg1234567890", $newLogin2->password);
         $this->assertEquals("Foo", $newLogin2->hashFunctionName);

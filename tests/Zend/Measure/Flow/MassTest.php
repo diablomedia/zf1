@@ -383,6 +383,6 @@ class Zend_Measure_Flow_MassTest extends PHPUnit\Framework\TestCase
     {
         $value = new Zend_Measure_Flow_Mass('-100',Zend_Measure_Flow_Mass::STANDARD,'de');
         $unit  = $value->getConversionList();
-        $this->assertInternalType('array', $unit, 'Array expected');
+        $this->assertIsArray($unit, 'Array expected');
     }
 }

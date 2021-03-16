@@ -382,6 +382,6 @@ class Zend_Measure_Cooking_WeightTest extends PHPUnit\Framework\TestCase
     {
         $value = new Zend_Measure_Cooking_Weight('-100',Zend_Measure_Cooking_Weight::STANDARD,'de');
         $unit  = $value->getConversionList();
-        $this->assertInternalType('array', $unit, 'Array expected');
+        $this->assertIsArray($unit, 'Array expected');
     }
 }

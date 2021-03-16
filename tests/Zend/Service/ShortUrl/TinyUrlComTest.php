@@ -40,14 +40,14 @@ class Zend_Service_ShortUrl_TinyUrlComTest extends PHPUnit\Framework\TestCase
      *
      * @return void
      */
-    public function setUp ()
+    public function setUp(): void
     {
         if (!defined('TESTS_ZEND_SERVICE_SHORTURL_TINYURL_ENABLED')
             || !constant('TESTS_ZEND_SERVICE_SHORTURL_TINYURL_ENABLED')
         ) {
             $this->markTestSkipped('Testing Zend_Service_ShortUrl_TinyUrlComTest only works when TESTS_ZEND_SERVICE_SHORTURL_TINYURL_ENABLED is set.');
         }
-        
+
         Zend_Service_Abstract::setHttpClient(new Zend_Http_Client());
 
         $this->_s = new Zend_Service_ShortUrl_TinyUrlCom();

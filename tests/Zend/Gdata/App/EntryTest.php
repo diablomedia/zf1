@@ -36,7 +36,7 @@ require_once 'Zend/Gdata/HttpClient.php';
 class Zend_Gdata_App_EntryTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->enryText = $this->loadResponse(
             dirname(__FILE__) . '/../App/_files/EntrySample1.xml'
@@ -65,7 +65,7 @@ class Zend_Gdata_App_EntryTest extends PHPUnit\Framework\TestCase
 
     public function testEmptyEntryShouldHaveEmptyExtensionsList()
     {
-        $this->assertInternalType('array', $this->enry->extensionElements);
+        $this->assertIsArray($this->enry->extensionElements);
         $this->assertTrue(count($this->enry->extensionElements) == 0);
     }
 

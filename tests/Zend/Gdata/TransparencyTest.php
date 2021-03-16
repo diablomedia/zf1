@@ -34,7 +34,7 @@ require_once 'Zend/Gdata.php';
 class Zend_Gdata_TransparencyTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->transparencyText = file_get_contents(
                 'Zend/Gdata/_files/TransparencyElementSample1.xml',
                 true);
@@ -42,24 +42,24 @@ class Zend_Gdata_TransparencyTest extends PHPUnit\Framework\TestCase
     }
 
     public function testEmptyTransparencyShouldHaveNoExtensionElements() {
-        $this->assertInternalType('array', $this->transparency->extensionElements);
+        $this->assertIsArray($this->transparency->extensionElements);
         $this->assertTrue(count($this->transparency->extensionElements) == 0);
     }
 
     public function testEmptyTransparencyShouldHaveNoExtensionAttributes() {
-        $this->assertInternalType('array', $this->transparency->extensionAttributes);
+        $this->assertIsArray($this->transparency->extensionAttributes);
         $this->assertTrue(count($this->transparency->extensionAttributes) == 0);
     }
 
     public function testSampleTransparencyShouldHaveNoExtensionElements() {
         $this->transparency->transferFromXML($this->transparencyText);
-        $this->assertInternalType('array', $this->transparency->extensionElements);
+        $this->assertIsArray($this->transparency->extensionElements);
         $this->assertTrue(count($this->transparency->extensionElements) == 0);
     }
 
     public function testSampleTransparencyShouldHaveNoExtensionAttributes() {
         $this->transparency->transferFromXML($this->transparencyText);
-        $this->assertInternalType('array', $this->transparency->extensionAttributes);
+        $this->assertIsArray($this->transparency->extensionAttributes);
         $this->assertTrue(count($this->transparency->extensionAttributes) == 0);
     }
 
@@ -68,20 +68,20 @@ class Zend_Gdata_TransparencyTest extends PHPUnit\Framework\TestCase
 
         $this->assertEquals("http://schemas.google.com/g/2005#event.opaque", $this->transparency->value);
 
-        $this->assertEquals(0, count($this->transparency->extensionElements));
+        $this->assertCount(0, $this->transparency->extensionElements);
         $newTransparency = new Zend_Gdata_Extension_Transparency();
         $newTransparency->transferFromXML($this->transparency->saveXML());
-        $this->assertEquals(0, count($newTransparency->extensionElements));
+        $this->assertCount(0, $newTransparency->extensionElements);
         $newTransparency->extensionElements = array(
                 new Zend_Gdata_App_Extension_Element('foo', 'atom', null, 'bar'));
-        $this->assertEquals(1, count($newTransparency->extensionElements));
+        $this->assertCount(1, $newTransparency->extensionElements);
         $this->assertEquals("http://schemas.google.com/g/2005#event.opaque", $newTransparency->value);
 
         /* try constructing using magic factory */
         $gdata = new Zend_Gdata();
         $newTransparency2 = $gdata->newTransparency();
         $newTransparency2->transferFromXML($newTransparency->saveXML());
-        $this->assertEquals(1, count($newTransparency2->extensionElements));
+        $this->assertCount(1, $newTransparency2->extensionElements);
         $this->assertEquals("http://schemas.google.com/g/2005#event.opaque", $newTransparency2->value);
     }
 

@@ -35,7 +35,7 @@ require_once 'Zend/Gdata/Calendar.php';
 class Zend_Gdata_Calendar_HiddenTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->hiddenText = file_get_contents(
                 'Zend/Gdata/Calendar/_files/HiddenElementSample1.xml',
                 true);
@@ -43,24 +43,24 @@ class Zend_Gdata_Calendar_HiddenTest extends PHPUnit\Framework\TestCase
     }
 
     public function testEmptyHiddenShouldHaveNoExtensionElements() {
-        $this->assertInternalType('array', $this->hidden->extensionElements);
+        $this->assertIsArray($this->hidden->extensionElements);
         $this->assertTrue(count($this->hidden->extensionElements) == 0);
     }
 
     public function testEmptyHiddenShouldHaveNoExtensionAttributes() {
-        $this->assertInternalType('array', $this->hidden->extensionAttributes);
+        $this->assertIsArray($this->hidden->extensionAttributes);
         $this->assertTrue(count($this->hidden->extensionAttributes) == 0);
     }
 
     public function testSampleHiddenShouldHaveNoExtensionElements() {
         $this->hidden->transferFromXML($this->hiddenText);
-        $this->assertInternalType('array', $this->hidden->extensionElements);
+        $this->assertIsArray($this->hidden->extensionElements);
         $this->assertTrue(count($this->hidden->extensionElements) == 0);
     }
 
     public function testSampleHiddenShouldHaveNoExtensionAttributes() {
         $this->hidden->transferFromXML($this->hiddenText);
-        $this->assertInternalType('array', $this->hidden->extensionAttributes);
+        $this->assertIsArray($this->hidden->extensionAttributes);
         $this->assertTrue(count($this->hidden->extensionAttributes) == 0);
     }
 

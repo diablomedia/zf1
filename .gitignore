@@ -8,3 +8,6 @@ bin/phpcov
 bin/php-parse
 bin/phpstan
 bin/phpstan.phar
+bin/php-cs-fixer
+tests/.phpunit.result.cache
+.php_cs.cache

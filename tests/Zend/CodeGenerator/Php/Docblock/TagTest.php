@@ -43,12 +43,12 @@ class Zend_CodeGenerator_Php_Docblock_TagTest extends PHPUnit\Framework\TestCase
      */
     protected $_tag = null;
 
-    public function setup()
+    public function setUp(): void
     {
         $this->_tag = new Zend_CodeGenerator_Php_Docblock_Tag();
     }
 
-    public function teardown()
+    public function tearDown(): void
     {
         $this->_tag = null;
     }
@@ -64,5 +64,4 @@ class Zend_CodeGenerator_Php_Docblock_TagTest extends PHPUnit\Framework\TestCase
         $this->_tag->setDescription('Foo foo foo');
         $this->assertEquals('Foo foo foo', $this->_tag->getDescription());
     }
-
 }

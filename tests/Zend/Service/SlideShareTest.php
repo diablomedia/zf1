@@ -72,7 +72,7 @@ class Zend_Service_SlideShareTest extends PHPUnit\Framework\TestCase
         return $ss;
     }
 
-    public function setUp()
+    public function setUp(): void
     {
         if (!defined("TESTS_ZEND_SERVICE_SLIDESHARE_APIKEY")
             || !defined("TESTS_ZEND_SERVICE_SLIDESHARE_SHAREDSECRET")
@@ -121,7 +121,7 @@ class Zend_Service_SlideShareTest extends PHPUnit\Framework\TestCase
             $this->fail("Exception Caught retrieving Slideshow List (tag)");
         }
 
-        $this->assertInternalType('array', $results);
+        $this->assertIsArray($results);
         $this->assertTrue(count($results) == 1);
         $this->assertTrue(
             $results[0] instanceof Zend_Service_SlideShare_SlideShow
@@ -143,7 +143,7 @@ class Zend_Service_SlideShareTest extends PHPUnit\Framework\TestCase
             $this->fail("Exception Caught retrieving Slideshow List (tag)");
         }
 
-        $this->assertInternalType('array', $results);
+        $this->assertIsArray($results);
 
         if (!empty($results)) {
             $this->assertTrue(count($results) == 1);
@@ -165,7 +165,7 @@ class Zend_Service_SlideShareTest extends PHPUnit\Framework\TestCase
             $this->fail("Exception Caught retrieving Slideshow List (tag)");
         }
 
-        $this->assertInternalType('array', $results);
+        $this->assertIsArray($results);
         $this->assertTrue(count($results) == 1);
         $this->assertTrue(
             $results[0] instanceof Zend_Service_SlideShare_SlideShow

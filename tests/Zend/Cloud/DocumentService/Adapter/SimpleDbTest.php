@@ -66,10 +66,10 @@ class Zend_Cloud_DocumentService_Adapter_SimpleDbTest
 
         $fetchdoc = $this->_commonDocument->fetchDocument($name, $doc->getID());
         $this->assertTrue($fetchdoc instanceof Zend_Cloud_DocumentService_Document, "New document not found");
-        $this->assertContains($doc->name, $fetchdoc->name, "Name field did not update: " . var_export($fetchdoc->getFields(), 1));
-        $this->assertContains($doc1->name, $fetchdoc->name, "Name field did not update: " . var_export($fetchdoc->getFields(), 1));
-        $this->assertContains((string) $doc->year, $fetchdoc->year, "Year field did not update: " . var_export($fetchdoc->getFields(), 1));
-        $this->assertContains((string) $doc1->year, $fetchdoc->year, "Year field did not update: " . var_export($fetchdoc->getFields(), 1));
+        $this->assertStringContainsString($doc->name, $fetchdoc->name, "Name field did not update: " . var_export($fetchdoc->getFields(), 1));
+        $this->assertStringContainsString($doc1->name, $fetchdoc->name, "Name field did not update: " . var_export($fetchdoc->getFields(), 1));
+        $this->assertStringContainsString((string) $doc->year, $fetchdoc->year, "Year field did not update: " . var_export($fetchdoc->getFields(), 1));
+        $this->assertStringContainsString((string) $doc1->year, $fetchdoc->year, "Year field did not update: " . var_export($fetchdoc->getFields(), 1));
 
         $this->_commonDocument->deleteCollection($name);
     }
@@ -92,10 +92,10 @@ class Zend_Cloud_DocumentService_Adapter_SimpleDbTest
         $fetchdoc = $this->_commonDocument->fetchDocument($name, $doc->getID());
         $this->assertTrue($fetchdoc instanceof Zend_Cloud_DocumentService_Document, "New document not found");
         $this->assertEquals($doc1->name, $fetchdoc->name, "Name field did not update");
-        $this->assertContains((string) $doc1->pages, $fetchdoc->pages, "Page field did not update");
-        $this->assertContains((string) $doc->pages, $fetchdoc->pages, "Page field did not update");
-        $this->assertContains((string) $doc1->year, $fetchdoc->year, "Year field did not update");
-        $this->assertContains((string) $doc->year, $fetchdoc->year, "Year field did not update");
+        $this->assertStringContainsString((string) $doc1->pages, $fetchdoc->pages, "Page field did not update");
+        $this->assertStringContainsString((string) $doc->pages, $fetchdoc->pages, "Page field did not update");
+        $this->assertStringContainsString((string) $doc1->year, $fetchdoc->year, "Year field did not update");
+        $this->assertStringContainsString((string) $doc->year, $fetchdoc->year, "Year field did not update");
 
         $this->_commonDocument->deleteCollection($name);
     }

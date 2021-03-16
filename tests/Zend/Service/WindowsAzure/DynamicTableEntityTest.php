@@ -42,7 +42,7 @@ require_once 'Zend/Service/WindowsAzure/Storage/DynamicTableEntity.php';
  */
 class Zend_Service_WindowsAzure_DynamicTableEntityTest extends PHPUnit\Framework\TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         if (!TESTS_ZEND_SERVICE_WINDOWSAZURE_TABLE_RUNTESTS) {
             $this->markTestSkipped('Test not enabled in TestConfiguration.php');
@@ -52,7 +52,7 @@ class Zend_Service_WindowsAzure_DynamicTableEntityTest extends PHPUnit\Framework
     /**
      * Test teardown
      */
-    protected function tearDown()
+    public function tearDown(): void
     {
         $storageClient = $this->createStorageInstance();
         for ($i = 1; $i <= self::$uniqId; $i++)

@@ -40,7 +40,7 @@ require_once 'Zend/Pdf.php';
  */
 class Zend_Pdf_DestinationTest extends PHPUnit\Framework\TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         date_default_timezone_set('GMT');
     }

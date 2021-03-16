@@ -41,15 +41,15 @@ abstract class Zend_Barcode_Object_TestCommon extends PHPUnit\Framework\TestCase
 
     protected function loadInstructionsFile($fileName)
     {
-        return include_once (dirname(__FILE__) . "/_files/$fileName.php");
+        return include_once(dirname(__FILE__) . "/_files/$fileName.php");
     }
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->_object = $this->_getBarcodeObject();
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $this->_object = null;
     }
@@ -77,16 +77,18 @@ abstract class Zend_Barcode_Object_TestCommon extends PHPUnit\Framework\TestCase
     public function testConstructorWithArray()
     {
         $object = $this->_getBarcodeObject(
-                array('barHeight' => 150 ,
-                        'unknownProperty' => 'aValue'));
+            array('barHeight' => 150 ,
+                        'unknownProperty' => 'aValue')
+        );
         $this->assertEquals(150, $object->getBarHeight());
     }
 
     public function testConstructorWithZendConfig()
     {
         $config = new Zend_Config(
-                array('barHeight' => 150 ,
-                        'unknownProperty' => 'aValue'));
+            array('barHeight' => 150 ,
+                        'unknownProperty' => 'aValue')
+        );
         $object = $this->_getBarcodeObject($config);
         $this->assertEquals(150, $object->getBarHeight());
     }
@@ -94,16 +96,18 @@ abstract class Zend_Barcode_Object_TestCommon extends PHPUnit\Framework\TestCase
     public function testSetOptions()
     {
         $this->_object->setOptions(
-                array('barHeight' => 150 ,
-                        'unknownProperty' => 'aValue'));
+            array('barHeight' => 150 ,
+                        'unknownProperty' => 'aValue')
+        );
         $this->assertEquals(150, $this->_object->getBarHeight());
     }
 
     public function testSetConfig()
     {
         $config = new Zend_Config(
-                array('barHeight' => 150 ,
-                        'unknownProperty' => 'aValue'));
+            array('barHeight' => 150 ,
+                        'unknownProperty' => 'aValue')
+        );
         $this->_object->setConfig($config);
         $this->assertEquals(150, $this->_object->getBarHeight());
     }
@@ -319,14 +323,17 @@ abstract class Zend_Barcode_Object_TestCommon extends PHPUnit\Framework\TestCase
     {
         if (! extension_loaded('gd')) {
             $this->markTestSkipped(
-                    'GD extension is required to run this test');
+                'GD extension is required to run this test'
+            );
         }
         $gdFontSize = array(8 , 13 , 13 , 16 , 15);
         for ($i = 1; $i <= 5; $i ++) {
             $this->_object->setFont($i);
             $this->assertSame($i, $this->_object->getFont());
-            $this->assertSame($gdFontSize[$i - 1],
-                    $this->_object->getFontSize());
+            $this->assertSame(
+                $gdFontSize[$i - 1],
+                $this->_object->getFontSize()
+            );
         }
     }
 
@@ -367,7 +374,8 @@ abstract class Zend_Barcode_Object_TestCommon extends PHPUnit\Framework\TestCase
     {
         if (extension_loaded('gd')) {
             $this->markTestSkipped(
-                    'GD extension must not be loaded to run this test');
+                'GD extension must not be loaded to run this test'
+            );
         }
         $this->expectException('Zend_Barcode_Object_Exception');
         $this->_object->setFont(1);
@@ -383,7 +391,8 @@ abstract class Zend_Barcode_Object_TestCommon extends PHPUnit\Framework\TestCase
     {
         if (! extension_loaded('gd')) {
             $this->markTestSkipped(
-                    'GD extension is required to run this test');
+                'GD extension is required to run this test'
+            );
         }
         $this->_object->setFont(1);
         $this->_object->setFontSize(22);
@@ -459,8 +468,15 @@ abstract class Zend_Barcode_Object_TestCommon extends PHPUnit\Framework\TestCase
                 'font' => $font , 'color' => $color ,
                 'alignment' => $alignment ,
                 'orientation' => $orientation);
-        $object->addText($text, $size, $position, $font, $color, $alignment,
-                $orientation);
+        $object->addText(
+            $text,
+            $size,
+            $position,
+            $font,
+            $color,
+            $alignment,
+            $orientation
+        );
         $this->assertSame(array($instructions), $object->getInstructions());
     }
 

@@ -60,7 +60,7 @@ require_once 'Zend/Service/Rackspace/Files.php';
      *
      * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->_files = new Zend_Service_Rackspace_Files('foo','bar');
         $this->_filesPath   = dirname(__FILE__) . '/_files';

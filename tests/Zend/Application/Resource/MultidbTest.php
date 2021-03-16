@@ -34,7 +34,7 @@ class Zend_Application_Resource_MultidbTest extends PHPUnit\Framework\TestCase
     protected $_dbOptions = array('db1' => array('adapter' => 'pdo_mysql','dbname' => 'db1','password' => 'XXXX','username' => 'webuser'),
                                 'db2' => array('adapter' => 'pdo_pgsql', 'dbname' => 'db2', 'password' => 'notthatpublic', 'username' => 'dba'));
 
-    public function setUp()
+    public function setUp(): void
     {
         // Store original autoloaders
         $this->loaders = spl_autoload_functions();
@@ -52,7 +52,7 @@ class Zend_Application_Resource_MultidbTest extends PHPUnit\Framework\TestCase
         Zend_Controller_Front::getInstance()->resetInstance();
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         Zend_Db_Table::setDefaultAdapter(null);
         Zend_Db_Table::setDefaultMetadataCache();
@@ -114,7 +114,6 @@ class Zend_Application_Resource_MultidbTest extends PHPUnit\Framework\TestCase
         $this->assertTrue($res->isDefault($res->getDb('db2')));
         $this->assertTrue($res->isDefault('db2'));
         $this->assertTrue(Zend_Db_Table::getDefaultAdapter() instanceof Zend_Db_Adapter_Pdo_Pgsql);
-
     }
 
     public function testGetDefaultRandomWhenNoDefaultWasSetObject()
@@ -138,7 +137,7 @@ class Zend_Application_Resource_MultidbTest extends PHPUnit\Framework\TestCase
         try {
             $res->getDb('foobar');
             $this->fail('An exception should have been thrown');
-        } catch(Zend_Application_Resource_Exception $e) {
+        } catch (Zend_Application_Resource_Exception $e) {
             $this->assertEquals($e->getMessage(), 'A DB adapter was tried to retrieve, but was not configured');
         }
     }

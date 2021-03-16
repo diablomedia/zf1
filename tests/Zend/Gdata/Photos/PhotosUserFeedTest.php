@@ -40,7 +40,7 @@ class Zend_Gdata_Photos_PhotosUserFeedTest extends PHPUnit\Framework\TestCase
     /**
       * Called before each test to setup any fixtures.
       */
-    public function setUp()
+    public function setUp(): void
     {
         $userFeedText = file_get_contents(
                 '_files/TestUserFeed.xml',
@@ -159,7 +159,7 @@ class Zend_Gdata_Photos_PhotosUserFeedTest extends PHPUnit\Framework\TestCase
         // Assert that the feed's author is correct
         $feedAuthor = $feed->getAuthor();
         $this->assertEquals($feedAuthor, $feed->author);
-        $this->assertEquals(1, count($feedAuthor));
+        $this->assertCount(1, $feedAuthor);
         $this->assertTrue($feedAuthor[0] instanceof Zend_Gdata_App_Extension_Author);
         $this->verifyProperty2($feedAuthor[0], "name", "text", "sample");
         $this->assertTrue($feedAuthor[0]->getUri() instanceof Zend_Gdata_App_Extension_Uri);
@@ -169,7 +169,7 @@ class Zend_Gdata_Photos_PhotosUserFeedTest extends PHPUnit\Framework\TestCase
         foreach ($feed as $entry) {
             if ($entry instanceof Zend_Gdata_Photos_AlbumEntry) {
                 $entryAuthor = $entry->getAuthor();
-                $this->assertEquals(1, count($entryAuthor));
+                $this->assertCount(1, $entryAuthor);
                 $this->verifyProperty2($entryAuthor[0], "name", "text", "sample");
                 $this->verifyProperty2($entryAuthor[0], "uri", "text", "http://picasaweb.google.com/sample.user");
             }

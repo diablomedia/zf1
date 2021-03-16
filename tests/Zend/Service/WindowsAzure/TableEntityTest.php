@@ -39,7 +39,7 @@ require_once 'Zend/Service/WindowsAzure/Storage/TableEntity.php';
  */
 class Zend_Service_WindowsAzure_TableEntityTest extends PHPUnit\Framework\TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         if (!TESTS_ZEND_SERVICE_WINDOWSAZURE_TABLE_RUNTESTS) {
             $this->markTestSkipped('Test not enabled in TestConfiguration.php');

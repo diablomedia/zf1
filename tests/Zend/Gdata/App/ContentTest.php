@@ -35,7 +35,7 @@ require_once 'Zend/Gdata/App.php';
 class Zend_Gdata_App_ContentTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->contentText = file_get_contents(
                 'Zend/Gdata/App/_files/ContentElementSample1.xml',
                 true);
@@ -46,7 +46,7 @@ class Zend_Gdata_App_ContentTest extends PHPUnit\Framework\TestCase
     }
 
     public function testEmptyContentShouldHaveEmptyExtensionsList() {
-        $this->assertInternalType('array', $this->content->extensionElements);
+        $this->assertIsArray($this->content->extensionElements);
         $this->assertTrue(count($this->content->extensionElements) == 0);
     }
 
@@ -91,7 +91,7 @@ class Zend_Gdata_App_ContentTest extends PHPUnit\Framework\TestCase
     public function testConvertContentWithTextAndTypeToAndFromString() {
         $this->content->transferFromXML($this->contentText2);
         $this->assertEquals('xhtml', $this->content->type);
-        $this->assertEquals(1, count($this->content->extensionElements));
+        $this->assertCount(1, $this->content->extensionElements);
     }
 
 }

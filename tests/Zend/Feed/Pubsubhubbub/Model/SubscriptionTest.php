@@ -46,7 +46,7 @@ class Zend_Feed_Pubsubhubbub_Model_SubscriptionTest extends PHPUnit\Framework\Te
 
         $this->assertTrue($subscription->hasSubscription($id));
         $dataSubscription = $subscription->getSubscription($id);
-        $this->assertInternalType('array', $dataSubscription);
+        $this->assertIsArray($dataSubscription);
         $keys = array('id', 'topic_url', 'hub_url',
                       'created_time', 'lease_seconds',
                       'verify_token', 'secret',

@@ -46,7 +46,7 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
     /**
      * Setup environment
      */
-    public function setUp()
+    public function setUp(): void
     {
         date_default_timezone_set("America/Chicago");
         Zend_Locale::setDefault('en');
@@ -57,7 +57,7 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
     /**
      * Teardown environment
      */
-    public function tearDown()
+    public function tearDown(): void
     {
         unset($this->_request);
     }
@@ -74,9 +74,9 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
         // Make sure the encoding type is properly set.
         $this->assertEquals(0x03, $this->_request->getObjectEncoding());
         // Make sure that no headers where recievedpbs
-        $this->assertEquals(0 , sizeof($this->_request->getAmfHeaders()));
+        $this->assertCount(0, $this->_request->getAmfHeaders());
         // Make sure that the message body was set after deserialization
-        $this->assertEquals(1, sizeof($this->_request->getAmfBodies()));
+        $this->assertCount(1, $this->_request->getAmfBodies());
         $bodies = $this->_request->getAmfBodies();
         $this->assertTrue($bodies[0] instanceof Zend_Amf_Value_MessageBody);
         $message = $bodies[0]->getData();
@@ -101,9 +101,9 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
         // Make sure the encoding type is properly set.
         $this->assertEquals(0x03, $this->_request->getObjectEncoding());
         // Make sure that no headers where recieved
-        $this->assertEquals(0 , sizeof($this->_request->getAmfHeaders()));
+        $this->assertCount(0, $this->_request->getAmfHeaders());
         // Make sure that the message body was set after deserialization
-        $this->assertEquals(1, sizeof($this->_request->getAmfBodies()));
+        $this->assertCount(1, $this->_request->getAmfBodies());
         $bodies = $this->_request->getAmfBodies();
         $this->assertTrue($bodies[0] instanceof Zend_Amf_Value_MessageBody);
         $message = $bodies[0]->getData();
@@ -113,7 +113,7 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('RoundTrip', $message->source);
         $data = $message->body;
         // Make sure that we are dealing with a PHP string
-        $this->assertInternalType('string', $data[0]);
+        $this->assertIsString($data[0]);
         // Make sure that the string was deserialized properly and check its value
         $this->assertEquals('abcdefghijklmpqrstuvwxyz', $data[0]);
     }
@@ -124,15 +124,15 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
      */
     public function testAmf3RemoteObjectArrayParameterDeserializedToNativePhpArray()
     {
-         $myRequest = file_get_contents(dirname(__FILE__) .'/Request/mock/arrayAmf3Request.bin');
+        $myRequest = file_get_contents(dirname(__FILE__) .'/Request/mock/arrayAmf3Request.bin');
         // send the mock object request to be deserialized
         $this->_request->initialize($myRequest);
         // Make sure the encoding type is properly set.
         $this->assertEquals(0x03, $this->_request->getObjectEncoding());
         // Make sure that no headers where recieved
-        $this->assertEquals(0 , sizeof($this->_request->getAmfHeaders()));
+        $this->assertCount(0, $this->_request->getAmfHeaders());
         // Make sure that the message body was set after deserialization
-        $this->assertEquals(1, sizeof($this->_request->getAmfBodies()));
+        $this->assertCount(1, $this->_request->getAmfBodies());
         $bodies = $this->_request->getAmfBodies();
         $this->assertTrue($bodies[0] instanceof Zend_Amf_Value_MessageBody);
         $message = $bodies[0]->getData();
@@ -142,7 +142,7 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('RoundTrip', $message->source);
         $data = $message->body;
         // Make sure that we are dealing with a PHP array
-        $this->assertInternalType('array', $data[0]);
+        $this->assertIsArray($data[0]);
         // Make sure that the array was deserialized properly and check its value
         $this->assertEquals('a', $data[0][0]);
         $this->assertEquals('g', $data[0][6]);
@@ -160,9 +160,9 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
         // Make sure the encoding type is properly set.
         $this->assertEquals(0x03, $this->_request->getObjectEncoding());
         // Make sure that no headers where recieved
-        $this->assertEquals(0 , sizeof($this->_request->getAmfHeaders()));
+        $this->assertCount(0, $this->_request->getAmfHeaders());
         // Make sure that the message body was set after deserialization
-        $this->assertEquals(1, sizeof($this->_request->getAmfBodies()));
+        $this->assertCount(1, $this->_request->getAmfBodies());
         $bodies = $this->_request->getAmfBodies();
         $this->assertTrue($bodies[0] instanceof Zend_Amf_Value_MessageBody);
         $message = $bodies[0]->getData();
@@ -172,7 +172,7 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('RoundTrip', $message->source);
         $data = $message->body;
         // Make sure that we are dealing with a PHP float
-        $this->assertInternalType('float', $data[0]);
+        $this->assertIsFloat($data[0]);
         // Make sure that the float was deserialized properly and check its value
         $this->assertEquals(31.57, $data[0]);
     }
@@ -189,9 +189,9 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
         // Make sure the encoding type is properly set.
         $this->assertEquals(0x03, $this->_request->getObjectEncoding());
         // Make sure that no headers where recieved
-        $this->assertEquals(0 , sizeof($this->_request->getAmfHeaders()));
+        $this->assertCount(0, $this->_request->getAmfHeaders());
         // Make sure that the message body was set after deserialization
-        $this->assertEquals(1, sizeof($this->_request->getAmfBodies()));
+        $this->assertCount(1, $this->_request->getAmfBodies());
         $bodies = $this->_request->getAmfBodies();
         $this->assertTrue($bodies[0] instanceof Zend_Amf_Value_MessageBody);
         $message = $bodies[0]->getData();
@@ -202,7 +202,6 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
         $data = $message->body;
         // Make sure that the array was deserialized properly and check its value
         $this->assertEquals(1978, $data[0]->toString('Y'));
-
     }
 
     /**
@@ -211,15 +210,15 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
      */
     public function testAmf3LargeIntParameterDeserializedToNativePhpInt()
     {
-         $myRequest = file_get_contents(dirname(__FILE__) .'/Request/mock/largeIntAmf3Request.bin');
+        $myRequest = file_get_contents(dirname(__FILE__) .'/Request/mock/largeIntAmf3Request.bin');
         // send the mock object request to be deserialized
         $this->_request->initialize($myRequest);
         // Make sure the encoding type is properly set.
         $this->assertEquals(0x03, $this->_request->getObjectEncoding());
         // Make sure that no headers where recieved
-        $this->assertEquals(0 , sizeof($this->_request->getAmfHeaders()));
+        $this->assertCount(0, $this->_request->getAmfHeaders());
         // Make sure that the message body was set after deserialization
-        $this->assertEquals(1, sizeof($this->_request->getAmfBodies()));
+        $this->assertCount(1, $this->_request->getAmfBodies());
         $bodies = $this->_request->getAmfBodies();
         $this->assertTrue($bodies[0] instanceof Zend_Amf_Value_MessageBody);
         $message = $bodies[0]->getData();
@@ -229,7 +228,7 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('RoundTrip', $message->source);
         $data = $message->body;
         // Make sure that we are dealing with a PHP array
-        $this->assertInternalType('int', $data[0]);
+        $this->assertIsInt($data[0]);
         // Make sure that the array was deserialized properly and check its value
         $this->assertEquals(268435455, $data[0]);
     }
@@ -240,13 +239,13 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
      */
     public function testAmf3BoolTrueParameterDeserializedToNativePhpBool()
     {
-         $myRequest = file_get_contents(dirname(__FILE__) .'/Request/mock/boolTrueAmf3Request.bin');
+        $myRequest = file_get_contents(dirname(__FILE__) .'/Request/mock/boolTrueAmf3Request.bin');
         // send the mock object request to be deserialized
         $this->_request->initialize($myRequest);
         // Make sure the encoding type is properly set.
         $this->assertEquals(0x03, $this->_request->getObjectEncoding());
         // Make sure that the message body was set after deserialization
-        $this->assertEquals(1, sizeof($this->_request->getAmfBodies()));
+        $this->assertCount(1, $this->_request->getAmfBodies());
         $bodies = $this->_request->getAmfBodies();
         $this->assertTrue($bodies[0] instanceof Zend_Amf_Value_MessageBody);
         $message = $bodies[0]->getData();
@@ -256,7 +255,7 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('RoundTrip', $message->source);
         $data = $message->body;
         // Make sure that we are dealing with a PHP array
-        $this->assertInternalType('bool', $data[0]);
+        $this->assertIsBool($data[0]);
         // Make sure that the Bool was deserialized properly and check its value
         $this->assertEquals(true, $data[0]);
     }
@@ -267,13 +266,13 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
      */
     public function testAmf3BoolFalseParameterDeserializedToNativePhpBool()
     {
-         $myRequest = file_get_contents(dirname(__FILE__) .'/Request/mock/boolFalseAmf3Request.bin');
+        $myRequest = file_get_contents(dirname(__FILE__) .'/Request/mock/boolFalseAmf3Request.bin');
         // send the mock object request to be deserialized
         $this->_request->initialize($myRequest);
         // Make sure the encoding type is properly set.
         $this->assertEquals(0x03, $this->_request->getObjectEncoding());
         // Make sure that the message body was set after deserialization
-        $this->assertEquals(1, sizeof($this->_request->getAmfBodies()));
+        $this->assertCount(1, $this->_request->getAmfBodies());
         $bodies = $this->_request->getAmfBodies();
         $this->assertTrue($bodies[0] instanceof Zend_Amf_Value_MessageBody);
         $message = $bodies[0]->getData();
@@ -283,22 +282,22 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('RoundTrip', $message->source);
         $data = $message->body;
         // Make sure that we are dealing with a PHP array
-        $this->assertInternalType('bool', $data[0]);
+        $this->assertIsBool($data[0]);
         // Make sure that the Bool was deserialized properly and check its value
         $this->assertEquals(false, $data[0]);
     }
 
     public function testAmf3XmlParameterDeserializedToNativePhpSimpleXml()
     {
-         $myRequest = file_get_contents(dirname(__FILE__) .'/Request/mock/xmlAmf3Request.bin');
+        $myRequest = file_get_contents(dirname(__FILE__) .'/Request/mock/xmlAmf3Request.bin');
         // send the mock object request to be deserialized
         $this->_request->initialize($myRequest);
         // Make sure the encoding type is properly set.
         $this->assertEquals(0x03, $this->_request->getObjectEncoding());
         // Make sure that no headers where recieved
-        $this->assertEquals(0 , sizeof($this->_request->getAmfHeaders()));
+        $this->assertCount(0, $this->_request->getAmfHeaders());
         // Make sure that the message body was set after deserialization
-        $this->assertEquals(1, sizeof($this->_request->getAmfBodies()));
+        $this->assertCount(1, $this->_request->getAmfBodies());
         $bodies = $this->_request->getAmfBodies();
         $this->assertTrue($bodies[0] instanceof Zend_Amf_Value_MessageBody);
         $message = $bodies[0]->getData();
@@ -319,14 +318,14 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
         // send the mock object request to be deserialized
         $this->_request->initialize($myRequest);
         // Make sure that no headers where recieved
-        $this->assertEquals(0 , sizeof($this->_request->getAmfHeaders()));
+        $this->assertCount(0, $this->_request->getAmfHeaders());
         // Make sure that the message body was set after deserialization
-        $this->assertEquals(1, sizeof($this->_request->getAmfBodies()));
+        $this->assertCount(1, $this->_request->getAmfBodies());
         $requestBody = $this->_request->getAmfBodies();
         $this->assertTrue($requestBody[0] instanceof Zend_Amf_Value_MessageBody);
         $data = $requestBody[0]->getData();
         // Make sure that we are dealing with a PHP string
-        $this->assertInternalType('string', $data[0]);
+        $this->assertIsString($data[0]);
         // Make sure that the string was deserialized properly and check its value
         $byteArray = file_get_contents(dirname(__FILE__) .'/Request/bytearray.bin');
         $this->assertEquals($byteArray, $data[0]);
@@ -342,15 +341,15 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
         // send the mock object request to be deserialized
         $this->_request->initialize($myRequest);
         // Make sure that no headers where recieved
-        $this->assertEquals(0 , sizeof($this->_request->getAmfHeaders()));
+        $this->assertCount(0, $this->_request->getAmfHeaders());
         // Make sure that the message body was set after deserialization
-        $this->assertEquals(1, sizeof($this->_request->getAmfBodies()));
+        $this->assertCount(1, $this->_request->getAmfBodies());
         $requestBody = $this->_request->getAmfBodies();
         $this->assertTrue($requestBody[0] instanceof Zend_Amf_Value_MessageBody);
         $this->assertEquals('RoundTrip.returnString', $requestBody[0]->getTargetURI());
         $data = $requestBody[0]->getData();
         // Make sure that we are dealing with a PHP string
-        $this->assertInternalType('string', $data[0]);
+        $this->assertIsString($data[0]);
         // Make sure that the string was deserialized properly and check its value
         $this->assertEquals('abcdefghijklmpqrstuvwxyz', $data[0]);
     }
@@ -365,9 +364,9 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
         // send the mock object request to be deserialized
         $this->_request->initialize($myRequest);
         // Make sure that no headers where recieved
-        $this->assertEquals(0 , sizeof($this->_request->getAmfHeaders()));
+        $this->assertCount(0, $this->_request->getAmfHeaders());
         // Make sure that the message body was set after deserialization
-        $this->assertEquals(1, sizeof($this->_request->getAmfBodies()));
+        $this->assertCount(1, $this->_request->getAmfBodies());
         $bodies = $this->_request->getAmfBodies();
         $this->assertTrue($bodies[0] instanceof Zend_Amf_Value_MessageBody);
         $data = $bodies[0]->getData();
@@ -387,9 +386,9 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
         // send the mock object request to be deserialized
         $this->_request->initialize($myRequest);
         // Make sure that no headers where recieved
-        $this->assertEquals(0 , sizeof($this->_request->getAmfHeaders()));
+        $this->assertCount(0, $this->_request->getAmfHeaders());
         // Make sure that the message body was set after deserialization
-        $this->assertEquals(1, sizeof($this->_request->getAmfBodies()));
+        $this->assertCount(1, $this->_request->getAmfBodies());
         $bodies = $this->_request->getAmfBodies();
         $this->assertTrue($bodies[0] instanceof Zend_Amf_Value_MessageBody);
         $data = $bodies[0]->getData();
@@ -410,9 +409,9 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
         // send the mock object request to be deserialized
         $this->_request->initialize($myRequest);
         // Make sure that no headers were recieved
-        $this->assertEquals(0 , sizeof($this->_request->getAmfHeaders()));
+        $this->assertCount(0, $this->_request->getAmfHeaders());
         // Make sure that the message body was set after deserialization
-        $this->assertEquals(1, sizeof($this->_request->getAmfBodies()));
+        $this->assertCount(1, $this->_request->getAmfBodies());
         $bodies = $this->_request->getAmfBodies();
         $this->assertTrue($bodies[0] instanceof Zend_Amf_Value_MessageBody);
         $data = $bodies[0]->getData();
@@ -438,14 +437,14 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
         // send the mock object request to be deserialized
         $this->_request->initialize($myRequest);
         // Make sure that no headers where recieved
-        $this->assertEquals(0 , sizeof($this->_request->getAmfHeaders()));
+        $this->assertCount(0, $this->_request->getAmfHeaders());
         // Make sure that the message body was set after deserialization
-        $this->assertEquals(1, sizeof($this->_request->getAmfBodies()));
+        $this->assertCount(1, $this->_request->getAmfBodies());
         $bodies = $this->_request->getAmfBodies();
         $this->assertTrue($bodies[0] instanceof Zend_Amf_Value_MessageBody);
         $data = $bodies[0]->getData();
         // Make sure that the string was deserialized properly and check its value
-        $this->assertInternalType('float', $data[0]);
+        $this->assertIsFloat($data[0]);
         $this->assertEquals(31.57, $data[0]);
     }
 
@@ -459,9 +458,9 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
         // send the mock object request to be deserialized
         $this->_request->initialize($myRequest);
         // Make sure that no headers where recieved
-        $this->assertEquals(0 , sizeof($this->_request->getAmfHeaders()));
+        $this->assertCount(0, $this->_request->getAmfHeaders());
         // Make sure that the message body was set after deserialization
-        $this->assertEquals(1, sizeof($this->_request->getAmfBodies()));
+        $this->assertCount(1, $this->_request->getAmfBodies());
         $bodies = $this->_request->getAmfBodies();
         $this->assertTrue($bodies[0] instanceof Zend_Amf_Value_MessageBody);
         $data = $bodies[0]->getData();
@@ -480,9 +479,9 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
         // send the mock object request to be deserialized
         $this->_request->initialize($myRequest);
         // Make sure that no headers where recieved
-        $this->assertEquals(0 , sizeof($this->_request->getAmfHeaders()));
+        $this->assertCount(0, $this->_request->getAmfHeaders());
         // Make sure that the message body was set after deserialization
-        $this->assertEquals(1, sizeof($this->_request->getAmfBodies()));
+        $this->assertCount(1, $this->_request->getAmfBodies());
         $bodies = $this->_request->getAmfBodies();
         $this->assertTrue($bodies[0] instanceof Zend_Amf_Value_MessageBody);
         $data = $bodies[0]->getData();
@@ -500,35 +499,35 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
         // send the mock object request to be deserialized
         $this->_request->initialize($myRequest);
         // Make sure that no headers where recieved
-        $this->assertEquals(0 , sizeof($this->_request->getAmfHeaders()));
+        $this->assertCount(0, $this->_request->getAmfHeaders());
         // Make sure that the message body was set after deserialization
-        $this->assertEquals(1, sizeof($this->_request->getAmfBodies()));
+        $this->assertCount(1, $this->_request->getAmfBodies());
         $bodies = $this->_request->getAmfBodies();
         $this->assertTrue($bodies[0] instanceof Zend_Amf_Value_MessageBody);
         $data = $bodies[0]->getData();
         // Make sure that the string was deserialized properly and check its value
-        $this->assertInternalType('bool', $data[0]);
+        $this->assertIsBool($data[0]);
         $this->assertEquals(true, $data[0]);
     }
 
-/**
-     * Convert an Amf0 boolean false to php boolean
-     *
-     */
+    /**
+         * Convert an Amf0 boolean false to php boolean
+         *
+         */
     public function testAmf0BoolFalseParameterDeserializedToNativePhpBool()
     {
         $myRequest = file_get_contents(dirname(__FILE__) .'/Request/mock/boolFalseAmf0Request.bin');
         // send the mock object request to be deserialized
         $this->_request->initialize($myRequest);
         // Make sure that no headers where recieved
-        $this->assertEquals(0 , sizeof($this->_request->getAmfHeaders()));
+        $this->assertCount(0, $this->_request->getAmfHeaders());
         // Make sure that the message body was set after deserialization
-        $this->assertEquals(1, sizeof($this->_request->getAmfBodies()));
+        $this->assertCount(1, $this->_request->getAmfBodies());
         $bodies = $this->_request->getAmfBodies();
         $this->assertTrue($bodies[0] instanceof Zend_Amf_Value_MessageBody);
         $data = $bodies[0]->getData();
         // Make sure that the string was deserialized properly and check its value
-        $this->assertInternalType('bool', $data[0]);
+        $this->assertIsBool($data[0]);
         $this->assertEquals(false, $data[0]);
     }
 
@@ -538,9 +537,9 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
         // send the mock object request to be deserialized
         $this->_request->initialize($myRequest);
         // Make sure that no headers where recieved
-        $this->assertEquals(0 , sizeof($this->_request->getAmfHeaders()));
+        $this->assertCount(0, $this->_request->getAmfHeaders());
         // Make sure that the message body was set after deserialization
-        $this->assertEquals(1, sizeof($this->_request->getAmfBodies()));
+        $this->assertCount(1, $this->_request->getAmfBodies());
         $bodies = $this->_request->getAmfBodies();
         $this->assertTrue($bodies[0] instanceof Zend_Amf_Value_MessageBody);
         $data = $bodies[0]->getData();
@@ -548,15 +547,15 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
         $this->assertNull($data[0]);
     }
 
-   public function testAmf0UndefinedDeserializedToNativePhpNull()
+    public function testAmf0UndefinedDeserializedToNativePhpNull()
     {
         $myRequest = file_get_contents(dirname(__FILE__) .'/Request/mock/undefinedAmf0Request.bin');
         // send the mock object request to be deserialized
         $this->_request->initialize($myRequest);
         // Make sure that no headers where recieved
-        $this->assertEquals(0 , sizeof($this->_request->getAmfHeaders()));
+        $this->assertCount(0, $this->_request->getAmfHeaders());
         // Make sure that the message body was set after deserialization
-        $this->assertEquals(1, sizeof($this->_request->getAmfBodies()));
+        $this->assertCount(1, $this->_request->getAmfBodies());
         $bodies = $this->_request->getAmfBodies();
         $this->assertTrue($bodies[0] instanceof Zend_Amf_Value_MessageBody);
         $data = $bodies[0]->getData();
@@ -570,9 +569,9 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
         // send the mock object request to be deserialized
         $this->_request->initialize($myRequest);
         // Make sure that no headers where recieved
-        $this->assertEquals(0 , sizeof($this->_request->getAmfHeaders()));
+        $this->assertCount(0, $this->_request->getAmfHeaders());
         // Make sure that the message body was set after deserialization
-        $this->assertEquals(1, sizeof($this->_request->getAmfBodies()));
+        $this->assertCount(1, $this->_request->getAmfBodies());
         $bodies = $this->_request->getAmfBodies();
         $this->assertTrue($bodies[0] instanceof Zend_Amf_Value_MessageBody);
         $data = $bodies[0]->getData();
@@ -588,9 +587,9 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
         // send the mock object request to be deserialized
         $this->_request->initialize($myRequest);
         // Make sure that no headers where recieved
-        $this->assertEquals(0 , sizeof($this->_request->getAmfHeaders()));
+        $this->assertCount(0, $this->_request->getAmfHeaders());
         // Make sure that the message body was set after deserialization
-        $this->assertEquals(1, sizeof($this->_request->getAmfBodies()));
+        $this->assertCount(1, $this->_request->getAmfBodies());
         $bodies = $this->_request->getAmfBodies();
         $this->assertTrue($bodies[0] instanceof Zend_Amf_Value_MessageBody);
         $data = $bodies[0]->getData();
@@ -601,14 +600,14 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
 
     public function testAmf0TypedObjecDeserializedToNativePHPObject()
     {
-        Zend_Amf_Parse_TypeLoader::setMapping("ContactVO","Contact");
+        Zend_Amf_Parse_TypeLoader::setMapping("ContactVO", "Contact");
         $myRequest = file_get_contents(dirname(__FILE__) .'/Request/mock/typedObjectAmf0Request.bin');
         // send the mock object request to be deserialized
         $this->_request->initialize($myRequest);
         // Make sure that no headers where recieved
-        $this->assertEquals(0 , sizeof($this->_request->getAmfHeaders()));
+        $this->assertCount(0, $this->_request->getAmfHeaders());
         // Make sure that the message body was set after deserialization
-        $this->assertEquals(1, sizeof($this->_request->getAmfBodies()));
+        $this->assertCount(1, $this->_request->getAmfBodies());
         $bodies = $this->_request->getAmfBodies();
         $this->assertTrue($bodies[0] instanceof Zend_Amf_Value_MessageBody);
         $data = $bodies[0]->getData();
@@ -642,7 +641,7 @@ class Zend_Amf_RequestTest extends PHPUnit\Framework\TestCase
         // send the mock object request to be deserialized
         $this->_request->initialize($myRequest);
         // Make sure that no headers where recieved
-        $this->assertEquals(1 , sizeof($this->_request->getAmfHeaders()));
+        $this->assertCount(1, $this->_request->getAmfHeaders());
         $requestHeaders = $this->_request->getAmfHeaders();
         $this->assertTrue($requestHeaders[0] instanceof Zend_Amf_Value_MessageHeader);
         $this->assertEquals('Credentials', $requestHeaders[0]->name);

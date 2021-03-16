@@ -53,7 +53,7 @@ class Zend_Queue_Adapter_MemcacheqTest extends Zend_Queue_Adapter_AdapterTest
     /**
      * Test setup
      */
-    public function setUp()
+    public function setUp(): void
     {
         if (!TESTS_ZEND_QUEUE_MEMCACHEQ_ENABLED) {
             $this->markTestSkipped('TESTS_ZEND_QUEUE_MEMCACHEQ_ENABLED is not enabled in TestConfiguration.php');
@@ -64,7 +64,7 @@ class Zend_Queue_Adapter_MemcacheqTest extends Zend_Queue_Adapter_AdapterTest
         date_default_timezone_set('GMT');
         parent::setUp();
     }
-    
+
     /**
      * getAdapterName() is an method to help make AdapterTest work with any
      * new adapters
@@ -111,11 +111,11 @@ class Zend_Queue_Adapter_MemcacheqTest extends Zend_Queue_Adapter_AdapterTest
          * @see Zend_Queue_Adapter_Memcacheq
          */
         require_once 'Zend/Queue/Adapter/Memcacheq.php';
-        $this->assertInternalType('string', Zend_Queue_Adapter_Memcacheq::DEFAULT_HOST);
-        $this->assertInternalType('integer', Zend_Queue_Adapter_Memcacheq::DEFAULT_PORT);
-        $this->assertInternalType('string', Zend_Queue_Adapter_Memcacheq::EOL);
+        $this->assertIsString(Zend_Queue_Adapter_Memcacheq::DEFAULT_HOST);
+        $this->assertIsInt(Zend_Queue_Adapter_Memcacheq::DEFAULT_PORT);
+        $this->assertIsString(Zend_Queue_Adapter_Memcacheq::EOL);
     }
-    
+
     /**
      * @group ZF-7650
      */
@@ -130,6 +130,6 @@ class Zend_Queue_Adapter_MemcacheqTest extends Zend_Queue_Adapter_AdapterTest
         $queue->send('My Test Message 2');
 
         $messages = $queue->receive(0);
-        $this->assertEquals(0, count($messages));
+        $this->assertCount(0, $messages);
     }
 }

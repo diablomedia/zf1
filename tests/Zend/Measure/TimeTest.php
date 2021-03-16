@@ -379,7 +379,7 @@ class Zend_Measure_TimeTest extends PHPUnit\Framework\TestCase
     {
         $value = new Zend_Measure_Time('-100',Zend_Measure_Time::STANDARD,'de');
         $unit  = $value->getConversionList();
-        $this->assertInternalType('array', $unit, 'Array expected');
+        $this->assertIsArray($unit, 'Array expected');
     }
 
     /**

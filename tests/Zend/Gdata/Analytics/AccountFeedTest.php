@@ -36,7 +36,7 @@ class Zend_Gdata_Analytics_AccountFeedTest extends PHPUnit\Framework\TestCase
     /** @var AccountFeed */
     public $accountFeed;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->accountFeed = new Zend_Gdata_Analytics_AccountFeed(
             file_get_contents(dirname(__FILE__) . '/_files/TestAccountFeed.xml')
@@ -45,7 +45,7 @@ class Zend_Gdata_Analytics_AccountFeedTest extends PHPUnit\Framework\TestCase
 
     public function testAccountFeed()
     {
-        $this->assertEquals(2, count($this->accountFeed->entries));
+        $this->assertCount(2, $this->accountFeed->entries);
 
         foreach ($this->accountFeed->entries as $entry) {
             $this->assertInstanceOf('Zend_Gdata_Analytics_AccountEntry', $entry);

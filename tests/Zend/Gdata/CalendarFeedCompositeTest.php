@@ -39,7 +39,7 @@ class Zend_Gdata_CalendarFeedCompositeTest extends PHPUnit\Framework\TestCase
     /**
       * Called before each test to setup any fixtures.
       */
-    public function setUp()
+    public function setUp(): void
     {
         $eventFeedText = file_get_contents(
                 'Zend/Gdata/Calendar/_files/EventFeedCompositeSample1.xml',
@@ -133,7 +133,7 @@ class Zend_Gdata_CalendarFeedCompositeTest extends PHPUnit\Framework\TestCase
         // Assert that the feed's author is correct
         $feedAuthor = $feed->getAuthor();
         $this->assertEquals($feedAuthor, $feed->author);
-        $this->assertEquals(1, count($feedAuthor));
+        $this->assertCount(1, $feedAuthor);
         $this->assertTrue($feedAuthor[0] instanceof Zend_Gdata_App_Extension_Author);
         $this->verifyProperty2($feedAuthor[0], "name", "text", "GData Ops Demo");
         $this->verifyProperty2($feedAuthor[0], "email", "text", "gdata.ops.demo@gmail.com");
@@ -141,7 +141,7 @@ class Zend_Gdata_CalendarFeedCompositeTest extends PHPUnit\Framework\TestCase
         // Assert that each entry has valid author data
         foreach ($feed as $entry) {
             $entryAuthor = $entry->getAuthor();
-            $this->assertEquals(1, count($entryAuthor));
+            $this->assertCount(1, $entryAuthor);
             $this->verifyProperty2($entryAuthor[0], "name", "text", "GData Ops Demo");
             $this->verifyProperty2($entryAuthor[0], "email", "text", "gdata.ops.demo@gmail.com");
             $this->verifyProperty($entryAuthor[0], "uri", null);
@@ -349,14 +349,14 @@ class Zend_Gdata_CalendarFeedCompositeTest extends PHPUnit\Framework\TestCase
         $entry = $feed[2];
         $when = $entry->getWhen();
         $this->assertEquals($entry->getWhen(), $entry->when);
-        $this->assertEquals(1, count($when));
+        $this->assertCount(1, $when);
         $this->assertTrue($when[0] instanceof Zend_Gdata_Extension_When);
         $this->verifyProperty($when[0], "startTime", "2007-05-24");
         $this->verifyProperty($when[0], "endTime", "2007-05-25");
 
         // Verify that the reminders show up
         $reminders = $when[0]->getReminders();
-        $this->assertEquals(2, count($reminders));
+        $this->assertCount(2, $reminders);
         $this->assertTrue($reminders[0] instanceof Zend_Gdata_Extension_Reminder);
         $this->assertTrue($reminders[1] instanceof Zend_Gdata_Extension_Reminder);
         $this->verifyProperty($reminders[0], "minutes", "10");
@@ -376,7 +376,7 @@ class Zend_Gdata_CalendarFeedCompositeTest extends PHPUnit\Framework\TestCase
         // Assert one of the entry's values
         $entry = $feed[2];
         $where = $entry->getWhere();
-        $this->assertEquals(1, count($where));
+        $this->assertCount(1, $where);
         $this->assertTrue($where[0] instanceof Zend_Gdata_Extension_Where);
         $this->verifyProperty($where[0], "valueString", "Mountain View, California");
     }
@@ -436,7 +436,7 @@ class Zend_Gdata_CalendarFeedCompositeTest extends PHPUnit\Framework\TestCase
         $this->assertTrue($comment->getUpdated() instanceof Zend_Gdata_App_Extension_Updated);
         $this->verifyProperty2($comment, "updated", "text", "2007-06-01T21:21:47.000Z");
 
-        $this->assertEquals(1, count($comment->author));
+        $this->assertCount(1, $comment->author);
         $this->assertTrue($comment->author[0] instanceof Zend_Gdata_App_Extension_Author);
         $this->assertTrue($comment->author[0]->getName() instanceof Zend_Gdata_App_Extension_Name);
         $this->assertTrue($comment->author[0]->getEmail() instanceof Zend_Gdata_App_Extension_Email);

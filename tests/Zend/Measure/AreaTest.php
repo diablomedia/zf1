@@ -356,6 +356,6 @@ class Zend_Measure_AreaTest extends PHPUnit\Framework\TestCase
     {
         $value = new Zend_Measure_Area('-100',Zend_Measure_Area::STANDARD,'de');
         $unit  = $value->getConversionList();
-        $this->assertInternalType('array', $unit, 'Array expected');
+        $this->assertIsArray($unit, 'Array expected');
     }
 }

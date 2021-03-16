@@ -76,7 +76,7 @@ class Zend_Service_Rackspace_Files_OfflineTest
      *
      * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->markTestIncomplete('Was not in suite, does not pass, perhaps not finished');
 
@@ -213,7 +213,7 @@ class Zend_Service_Rackspace_Files_OfflineTest
             'zf-object-test' . '-copy'
         );
         $this->assertTrue($result);
-        $this->assertNotContains('application/x-www-form-urlencoded', $this->rackspace->getHttpClient()->getLastRequest());
+        $this->assertStringNotContainsString('application/x-www-form-urlencoded', $this->rackspace->getHttpClient()->getLastRequest());
     }
 
     public function testGetObjects()
@@ -247,14 +247,14 @@ class Zend_Service_Rackspace_Files_OfflineTest
     {
         $size = $this->rackspace->getSizeContainers();
         $this->assertTrue($size !== false);
-        $this->assertInternalType('numeric', $size);
+        $this->assertIsNumeric($size);
     }
 
     public function testGetCountObjects()
     {
         $count = $this->rackspace->getCountObjects();
         $this->assertTrue($count !== false);
-        $this->assertInternalType('numeric', $count);
+        $this->assertIsNumeric($count);
     }
 
     public function testSetMetadataObject()
@@ -281,7 +281,7 @@ class Zend_Service_Rackspace_Files_OfflineTest
     {
         $data = $this->rackspace->enableCdnContainer('zf-unit-test');
         $this->assertTrue($data !== false);
-        $this->assertInternalType('array', $data);
+        $this->assertIsArray($data);
         $this->assertTrue(!empty($data['cdn_uri']));
         $this->assertTrue(!empty($data['cdn_uri_ssl']));
     }
@@ -341,7 +341,7 @@ class Zend_Service_Rackspace_Files_OfflineTest
             TESTS_ZEND_SERVICE_RACKSPACE_CONTAINER_NAME
         );
         $this->assertTrue($info !== false);
-        $this->assertInternalType('array', $info);
+        $this->assertIsArray($info);
         $this->assertTrue(!empty($info['ttl']));
         $this->assertTrue(!empty($info['cdn_uri']));
         $this->assertTrue(!empty($info['cdn_uri_ssl']));

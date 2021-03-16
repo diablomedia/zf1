@@ -58,7 +58,7 @@ class Zend_Tool_Framework_Manifest_RepositoryTest extends PHPUnit\Framework\Test
      */
     protected $_repository = null;
 
-    public function setup()
+    public function setUp(): void
     {
         $this->_repository = new Zend_Tool_Framework_Manifest_Repository();
 
@@ -69,7 +69,7 @@ class Zend_Tool_Framework_Manifest_RepositoryTest extends PHPUnit\Framework\Test
         $this->_registry->setManifestRepository($this->_repository);
     }
 
-    public function teardown()
+    public function tearDown(): void
     {
         $this->_registry->reset();
         $this->_repository = null;
@@ -79,7 +79,7 @@ class Zend_Tool_Framework_Manifest_RepositoryTest extends PHPUnit\Framework\Test
     {
         $this->_repository->addManifest(new Zend_Tool_Framework_Manifest_ManifestGoodOne());
         $this->_repository->addManifest(new Zend_Tool_Framework_Manifest_ManifestGoodTwo());
-        $this->assertEquals(2, count($this->_repository->getManifests()));
+        $this->assertCount(2, $this->_repository->getManifests());
 
         $actionRepository = $this->_registry->getActionRepository();
         $actionRepository->process();
@@ -106,7 +106,7 @@ class Zend_Tool_Framework_Manifest_RepositoryTest extends PHPUnit\Framework\Test
 
         $manifests = $this->_repository->getManifests();
 
-        $this->assertEquals(2, count($manifests));
+        $this->assertCount(2, $manifests);
         $this->assertTrue(array_shift($manifests) instanceof Zend_Tool_Framework_Manifest_ManifestGoodOne);
         $this->assertTrue(array_shift($manifests) instanceof Zend_Tool_Framework_Manifest_ManifestGoodTwo);
 
@@ -128,8 +128,8 @@ class Zend_Tool_Framework_Manifest_RepositoryTest extends PHPUnit\Framework\Test
         $this->_repository->process();
 
         //die(); // @todo ensure that we check whats actually in the repository
-        $this->assertEquals(3, count($this->_repository));
-        $this->assertEquals(2, count($this->_repository->getManifests()));
+        $this->assertCount(3, $this->_repository);
+        $this->assertCount(2, $this->_repository->getManifests());
     }
 
     /**
@@ -161,7 +161,7 @@ class Zend_Tool_Framework_Manifest_RepositoryTest extends PHPUnit\Framework\Test
         $this->_repository->process();
 
         $this->assertTrue($this->_repository instanceof Countable);
-        $this->assertEquals(1, count($this->_repository));
+        $this->assertCount(1, $this->_repository);
     }
 
     public function testRepositoryIsIterable()
@@ -197,7 +197,7 @@ class Zend_Tool_Framework_Manifest_RepositoryTest extends PHPUnit\Framework\Test
         $this->_repository->addMetadata($metadata3);
 
         $resultMetadatas = $this->_repository->getMetadatas(array('name' => 'Bar'));
-        $this->assertEquals(1, count($resultMetadatas));
+        $this->assertCount(1, $resultMetadatas);
         $this->assertTrue($metadata2 === array_shift($resultMetadatas));
 
 
@@ -251,10 +251,10 @@ class Zend_Tool_Framework_Manifest_RepositoryTest extends PHPUnit\Framework\Test
         $this->_repository->addMetadata($metadata3);
 
         $resultMetadatas = $this->_repository->getMetadatas(array('name' => 'Bar', 'blah' => 'boo'));
-        $this->assertEquals(1, count($resultMetadatas));
+        $this->assertCount(1, $resultMetadatas);
 
         $resultMetadatas = $this->_repository->getMetadatas(array('name' => 'Bar', 'blah' => 'boo'), false);
-        $this->assertEquals(0, count($resultMetadatas));
+        $this->assertCount(0, $resultMetadatas);
         //$this->assertTrue($metadata2 === array_shift($resultMetadatas));
 
     }

@@ -33,59 +33,66 @@ require_once 'Zend/Gdata.php';
  */
 class Zend_Gdata_AttendeeStatusTest extends PHPUnit\Framework\TestCase
 {
-
-    public function setUp() {
+    public function setUp(): void
+    {
         $this->attendeeStatusText = file_get_contents(
-                'Zend/Gdata/_files/AttendeeStatusElementSample1.xml',
-                true);
+            'Zend/Gdata/_files/AttendeeStatusElementSample1.xml',
+            true
+        );
         $this->attendeeStatus = new Zend_Gdata_Extension_AttendeeStatus();
     }
 
-    public function testEmptyAttendeeStatusShouldHaveNoExtensionElements() {
-        $this->assertInternalType('array', $this->attendeeStatus->extensionElements);
+    public function testEmptyAttendeeStatusShouldHaveNoExtensionElements()
+    {
+        $this->assertIsArray($this->attendeeStatus->extensionElements);
         $this->assertTrue(count($this->attendeeStatus->extensionElements) == 0);
     }
 
-    public function testEmptyAttendeeStatusShouldHaveNoExtensionAttributes() {
-        $this->assertInternalType('array', $this->attendeeStatus->extensionAttributes);
+    public function testEmptyAttendeeStatusShouldHaveNoExtensionAttributes()
+    {
+        $this->assertIsArray($this->attendeeStatus->extensionAttributes);
         $this->assertTrue(count($this->attendeeStatus->extensionAttributes) == 0);
     }
 
-    public function testSampleAttendeeStatusShouldHaveNoExtensionElements() {
+    public function testSampleAttendeeStatusShouldHaveNoExtensionElements()
+    {
         $this->attendeeStatus->transferFromXML($this->attendeeStatusText);
-        $this->assertInternalType('array', $this->attendeeStatus->extensionElements);
+        $this->assertIsArray($this->attendeeStatus->extensionElements);
         $this->assertTrue(count($this->attendeeStatus->extensionElements) == 0);
     }
 
-    public function testSampleAttendeeStatusShouldHaveNoExtensionAttributes() {
+    public function testSampleAttendeeStatusShouldHaveNoExtensionAttributes()
+    {
         $this->attendeeStatus->transferFromXML($this->attendeeStatusText);
-        $this->assertInternalType('array', $this->attendeeStatus->extensionAttributes);
+        $this->assertIsArray($this->attendeeStatus->extensionAttributes);
         $this->assertTrue(count($this->attendeeStatus->extensionAttributes) == 0);
     }
 
-    public function testNormalAttendeeStatusShouldHaveNoExtensionElements() {
+    public function testNormalAttendeeStatusShouldHaveNoExtensionElements()
+    {
         $this->attendeeStatus->value = "http://schemas.google.com/g/2005#event.accepted";
 
         $this->assertEquals("http://schemas.google.com/g/2005#event.accepted", $this->attendeeStatus->value);
 
-        $this->assertEquals(0, count($this->attendeeStatus->extensionElements));
+        $this->assertCount(0, $this->attendeeStatus->extensionElements);
         $newAttendeeStatus = new Zend_Gdata_Extension_AttendeeStatus();
         $newAttendeeStatus->transferFromXML($this->attendeeStatus->saveXML());
-        $this->assertEquals(0, count($newAttendeeStatus->extensionElements));
+        $this->assertCount(0, $newAttendeeStatus->extensionElements);
         $newAttendeeStatus->extensionElements = array(
                 new Zend_Gdata_App_Extension_Element('foo', 'atom', null, 'bar'));
-        $this->assertEquals(1, count($newAttendeeStatus->extensionElements));
+        $this->assertCount(1, $newAttendeeStatus->extensionElements);
         $this->assertEquals("http://schemas.google.com/g/2005#event.accepted", $newAttendeeStatus->value);
 
         /* try constructing using magic factory */
         $gdata = new Zend_Gdata();
         $newAttendeeStatus2 = $gdata->newAttendeeStatus();
         $newAttendeeStatus2->transferFromXML($newAttendeeStatus->saveXML());
-        $this->assertEquals(1, count($newAttendeeStatus2->extensionElements));
+        $this->assertCount(1, $newAttendeeStatus2->extensionElements);
         $this->assertEquals("http://schemas.google.com/g/2005#event.accepted", $newAttendeeStatus2->value);
     }
 
-    public function testEmptyAttendeeStatusToAndFromStringShouldMatch() {
+    public function testEmptyAttendeeStatusToAndFromStringShouldMatch()
+    {
         $attendeeStatusXml = $this->attendeeStatus->saveXML();
         $newAttendeeStatus = new Zend_Gdata_Extension_AttendeeStatus();
         $newAttendeeStatus->transferFromXML($attendeeStatusXml);
@@ -93,7 +100,8 @@ class Zend_Gdata_AttendeeStatusTest extends PHPUnit\Framework\TestCase
         $this->assertTrue($attendeeStatusXml == $newAttendeeStatusXml);
     }
 
-    public function testAttendeeStatusWithValueToAndFromStringShouldMatch() {
+    public function testAttendeeStatusWithValueToAndFromStringShouldMatch()
+    {
         $this->attendeeStatus->value = "http://schemas.google.com/g/2005#event.accepted";
         $attendeeStatusXml = $this->attendeeStatus->saveXML();
         $newAttendeeStatus = new Zend_Gdata_Extension_AttendeeStatus();
@@ -103,7 +111,8 @@ class Zend_Gdata_AttendeeStatusTest extends PHPUnit\Framework\TestCase
         $this->assertEquals("http://schemas.google.com/g/2005#event.accepted", $this->attendeeStatus->value);
     }
 
-    public function testExtensionAttributes() {
+    public function testExtensionAttributes()
+    {
         $extensionAttributes = $this->attendeeStatus->extensionAttributes;
         $extensionAttributes['foo1'] = array('name'=>'foo1', 'value'=>'bar');
         $extensionAttributes['foo2'] = array('name'=>'foo2', 'value'=>'rab');
@@ -117,9 +126,9 @@ class Zend_Gdata_AttendeeStatusTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('rab', $newAttendeeStatus->extensionAttributes['foo2']['value']);
     }
 
-    public function testConvertFullAttendeeStatusToAndFromString() {
+    public function testConvertFullAttendeeStatusToAndFromString()
+    {
         $this->attendeeStatus->transferFromXML($this->attendeeStatusText);
         $this->assertEquals("http://schemas.google.com/g/2005#event.invited", $this->attendeeStatus->value);
     }
-
 }

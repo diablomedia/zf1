@@ -35,7 +35,7 @@ require_once 'Zend/Gdata/App/Util.php';
 class Zend_Gdata_FeedTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->etagLocalName = 'etag';
         $this->expectedEtag = 'W/"CE4BRXw4cCp7ImA9WxRVFEs."';
         $this->expectedMismatchExceptionMessage = "ETag mismatch";
@@ -147,12 +147,12 @@ class Zend_Gdata_FeedTest extends PHPUnit\Framework\TestCase
     public function testNoExtensionElementsInV1Feed() {
         $this->feed->setMajorProtocolVersion(1);
         $this->feed->transferFromXML($this->feedTextV1);
-        $this->assertEquals(0, sizeof($this->feed->extensionElements));
+        $this->assertCount(0, $this->feed->extensionElements);
     }
 
     public function testNoExtensionElementsInV2Feed() {
         $this->feed->setMajorProtocolVersion(2);
         $this->feed->transferFromXML($this->feedTextV2);
-        $this->assertEquals(0, sizeof($this->feed->extensionElements));
+        $this->assertCount(0, $this->feed->extensionElements);
     }
 }

@@ -34,7 +34,7 @@ require_once 'Zend/Gdata.php';
 class Zend_Gdata_ExtendedPropertyTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->extendedPropertyText = file_get_contents(
                 'Zend/Gdata/_files/ExtendedPropertyElementSample1.xml',
                 true);
@@ -42,24 +42,24 @@ class Zend_Gdata_ExtendedPropertyTest extends PHPUnit\Framework\TestCase
     }
 
     public function testEmptyExtendedPropertyShouldHaveNoExtensionElements() {
-        $this->assertInternalType('array', $this->extendedProperty->extensionElements);
+        $this->assertIsArray($this->extendedProperty->extensionElements);
         $this->assertTrue(count($this->extendedProperty->extensionElements) == 0);
     }
 
     public function testEmptyExtendedPropertyShouldHaveNoExtensionAttributes() {
-        $this->assertInternalType('array', $this->extendedProperty->extensionAttributes);
+        $this->assertIsArray($this->extendedProperty->extensionAttributes);
         $this->assertTrue(count($this->extendedProperty->extensionAttributes) == 0);
     }
 
     public function testSampleExtendedPropertyShouldHaveNoExtensionElements() {
         $this->extendedProperty->transferFromXML($this->extendedPropertyText);
-        $this->assertInternalType('array', $this->extendedProperty->extensionElements);
+        $this->assertIsArray($this->extendedProperty->extensionElements);
         $this->assertTrue(count($this->extendedProperty->extensionElements) == 0);
     }
 
     public function testSampleExtendedPropertyShouldHaveNoExtensionAttributes() {
         $this->extendedProperty->transferFromXML($this->extendedPropertyText);
-        $this->assertInternalType('array', $this->extendedProperty->extensionAttributes);
+        $this->assertIsArray($this->extendedProperty->extensionAttributes);
         $this->assertTrue(count($this->extendedProperty->extensionAttributes) == 0);
     }
 
@@ -70,13 +70,13 @@ class Zend_Gdata_ExtendedPropertyTest extends PHPUnit\Framework\TestCase
         $this->assertEquals("http://www.example.com/schemas/2007#mycal.foo", $this->extendedProperty->name);
         $this->assertEquals("5678", $this->extendedProperty->value);
 
-        $this->assertEquals(0, count($this->extendedProperty->extensionElements));
+        $this->assertCount(0, $this->extendedProperty->extensionElements);
         $newExtendedProperty = new Zend_Gdata_Extension_ExtendedProperty();
         $newExtendedProperty->transferFromXML($this->extendedProperty->saveXML());
-        $this->assertEquals(0, count($newExtendedProperty->extensionElements));
+        $this->assertCount(0, $newExtendedProperty->extensionElements);
         $newExtendedProperty->extensionElements = array(
                 new Zend_Gdata_App_Extension_Element('foo', 'atom', null, 'bar'));
-        $this->assertEquals(1, count($newExtendedProperty->extensionElements));
+        $this->assertCount(1, $newExtendedProperty->extensionElements);
         $this->assertEquals("http://www.example.com/schemas/2007#mycal.foo", $newExtendedProperty->name);
         $this->assertEquals("5678", $newExtendedProperty->value);
 
@@ -84,7 +84,7 @@ class Zend_Gdata_ExtendedPropertyTest extends PHPUnit\Framework\TestCase
         $gdata = new Zend_Gdata();
         $newExtendedProperty2 = $gdata->newExtendedProperty();
         $newExtendedProperty2->transferFromXML($newExtendedProperty->saveXML());
-        $this->assertEquals(1, count($newExtendedProperty2->extensionElements));
+        $this->assertCount(1, $newExtendedProperty2->extensionElements);
         $this->assertEquals("http://www.example.com/schemas/2007#mycal.foo", $newExtendedProperty2->name);
         $this->assertEquals("5678", $newExtendedProperty2->value);
     }

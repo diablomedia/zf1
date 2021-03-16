@@ -35,7 +35,7 @@ require_once 'Zend/Amf/Adobe/Introspector.php';
  */
 class Zend_Amf_Adobe_IntrospectorTest extends PHPUnit\Framework\TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         $this->introspector = new Zend_Amf_Adobe_Introspector();
     }
@@ -43,13 +43,13 @@ class Zend_Amf_Adobe_IntrospectorTest extends PHPUnit\Framework\TestCase
     public function testIntrospectionDoesNotIncludeConstructor()
     {
         $xml = $this->introspector->introspect('com.zend.framework.IntrospectorTest');
-        $this->assertNotContains('__construct', $xml);
+        $this->assertStringNotContainsString('__construct', $xml);
     }
 
     public function testIntrospectionDoesNotIncludeMagicMethods()
     {
         $xml = $this->introspector->introspect('com.zend.framework.IntrospectorTest');
-        $this->assertNotContains('__get', $xml);
+        $this->assertStringNotContainsString('__get', $xml);
     }
 
     public function testIntrospectionContainsPublicPropertiesOfReturnClassTypes()
@@ -100,7 +100,7 @@ class Zend_Amf_Adobe_IntrospectorTest extends PHPUnit\Framework\TestCase
             $this->fail('Baz property of com.zend.framework.IntrospectorTestCustomType not found');
         }
         $node = $matches[1];
-        $this->assertContains('type="Unknown"', $node, $node);
+        $this->assertStringContainsString('type="Unknown"', $node, $node);
     }
 
     public function testPropertyDocblockWithoutAnnotationInTypedClassShouldReportTypeAsUnknown()
@@ -110,7 +110,7 @@ class Zend_Amf_Adobe_IntrospectorTest extends PHPUnit\Framework\TestCase
             $this->fail('Bat property of com.zend.framework.IntrospectorTestCustomType not found');
         }
         $node = $matches[1];
-        $this->assertContains('type="Unknown"', $node, $node);
+        $this->assertStringContainsString('type="Unknown"', $node, $node);
     }
 
     public function testTypedClassWithExplicitTypeShouldReportAsThatType()

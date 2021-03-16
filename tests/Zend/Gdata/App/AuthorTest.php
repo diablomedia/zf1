@@ -35,7 +35,7 @@ require_once 'Zend/Gdata/App.php';
 class Zend_Gdata_App_AuthorTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->authorText = file_get_contents(
                 'Zend/Gdata/App/_files/AuthorElementSample1.xml',
                 true);
@@ -43,7 +43,7 @@ class Zend_Gdata_App_AuthorTest extends PHPUnit\Framework\TestCase
     }
 
     public function testEmptyAuthorShouldHaveEmptyExtensionsList() {
-        $this->assertInternalType('array', $this->author->extensionElements);
+        $this->assertIsArray($this->author->extensionElements);
         $this->assertTrue(count($this->author->extensionElements) == 0);
     }
 

@@ -36,7 +36,7 @@ require_once 'Zend/Service/Akismet.php';
  */
 class Zend_Service_AkismetTest extends PHPUnit\Framework\TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         $this->akismet = new Zend_Service_Akismet('somebogusapikey', 'http://framework.zend.com/wiki/');
         $adapter = new Zend_Http_Client_Adapter_Test();
@@ -90,7 +90,7 @@ class Zend_Service_AkismetTest extends PHPUnit\Framework\TestCase
 
     public function testUserAgentDefaultMatchesFrameworkVersion()
     {
-        $this->assertContains('Zend Framework/' . Zend_Version::VERSION, $this->akismet->getUserAgent());
+        $this->assertStringContainsString('Zend Framework/' . Zend_Version::VERSION, $this->akismet->getUserAgent());
     }
 
     public function testVerifyKey()

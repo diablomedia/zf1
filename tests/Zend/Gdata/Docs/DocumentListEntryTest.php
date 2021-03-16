@@ -35,7 +35,7 @@ require_once 'Zend/Gdata/Docs/DocumentListEntry.php';
 class Zend_Gdata_Docs_DocumentListEntryTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->doc = new Zend_Gdata_Docs_DocumentListEntry(
                 file_get_contents('Zend/Gdata/Docs/_files/TestDataDocumentListEntrySample.xml', true));

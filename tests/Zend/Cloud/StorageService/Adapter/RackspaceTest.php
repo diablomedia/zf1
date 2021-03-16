@@ -50,7 +50,7 @@ class Zend_Cloud_StorageService_Adapter_RackspaceTest extends Zend_Cloud_Storage
      *
      * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
         if (!constant('TESTS_ZEND_SERVICE_RACKSPACE_ONLINE_ENABLED')) {
             $this->markTestSkipped('Rackspace online tests are not enabled');
@@ -67,7 +67,6 @@ class Zend_Cloud_StorageService_Adapter_RackspaceTest extends Zend_Cloud_Storage
         $rackspace->createContainer(
             $this->_config->get(Zend_Cloud_StorageService_Adapter_Rackspace::REMOTE_CONTAINER)
         );
-
     }
 
     /**
@@ -75,7 +74,7 @@ class Zend_Cloud_StorageService_Adapter_RackspaceTest extends Zend_Cloud_Storage
      *
      * @return void
      */
-    public function tearDown()
+    public function tearDown(): void
     {
         if (!$this->_config) {
             return;

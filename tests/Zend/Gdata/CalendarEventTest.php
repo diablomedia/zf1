@@ -39,7 +39,7 @@ class Zend_Gdata_CalendarEventTest extends PHPUnit\Framework\TestCase
     /**
       * Called before each test to setup any fixtures.
       */
-    public function setUp()
+    public function setUp(): void
     {
         $eventFeedText = file_get_contents(
                 'Zend/Gdata/Calendar/_files/TestDataEventFeedSample1.xml',
@@ -132,7 +132,7 @@ class Zend_Gdata_CalendarEventTest extends PHPUnit\Framework\TestCase
         // Assert that the feed's author is correct
         $feedAuthor = $feed->getAuthor();
         $this->assertEquals($feedAuthor, $feed->author);
-        $this->assertEquals(1, count($feedAuthor));
+        $this->assertCount(1, $feedAuthor);
         $this->assertTrue($feedAuthor[0] instanceof Zend_Gdata_App_Extension_Author);
         $this->verifyProperty2($feedAuthor[0], "name", "text", "GData Ops Demo");
         $this->verifyProperty2($feedAuthor[0], "email", "text", "gdata.ops.demo@gmail.com");
@@ -142,7 +142,7 @@ class Zend_Gdata_CalendarEventTest extends PHPUnit\Framework\TestCase
         // Assert that each entry has valid author data
         foreach ($feed as $entry) {
             $entryAuthor = $entry->getAuthor();
-            $this->assertEquals(1, count($entryAuthor));
+            $this->assertCount(1, $entryAuthor);
             $this->verifyProperty2($entryAuthor[0], "name", "text", "GData Ops Demo");
             $this->verifyProperty2($entryAuthor[0], "email", "text", "gdata.ops.demo@gmail.com");
             $this->verifyProperty($entryAuthor[0], "uri", null);
@@ -407,7 +407,7 @@ class Zend_Gdata_CalendarEventTest extends PHPUnit\Framework\TestCase
         $entry = $feed[1];
         $when = $entry->getWhen();
         $this->assertEquals($entry->getWhen(), $entry->when);
-        $this->assertEquals(1, count($when));
+        $this->assertCount(1, $when);
         $w = $when[0];
         $this->assertTrue($w instanceof Zend_Gdata_Extension_When);
         $this->verifyProperty($w, "startTime", "2007-03-24T12:00:00.000-07:00");
@@ -415,7 +415,7 @@ class Zend_Gdata_CalendarEventTest extends PHPUnit\Framework\TestCase
 
         // Assert that the associated reminders are correct
         $reminders = $w->getReminders();
-        $this->assertEquals(1, count($reminders));
+        $this->assertCount(1, $reminders);
         $this->verifyProperty($reminders[0], "minutes", "20");
         $this->verifyProperty($reminders[0], "method", "alert");
     }
@@ -431,7 +431,7 @@ class Zend_Gdata_CalendarEventTest extends PHPUnit\Framework\TestCase
         // Assert one of the entry's values
         $entry = $feed[1];
         $where = $entry->getWhere();
-        $this->assertEquals(1, count($where));
+        $this->assertCount(1, $where);
         $this->assertTrue($where[0] instanceof Zend_Gdata_Extension_Where);
         $this->verifyProperty($where[0], "valueString", "Dolores Park with Kim");
     }
@@ -451,7 +451,7 @@ class Zend_Gdata_CalendarEventTest extends PHPUnit\Framework\TestCase
         foreach ($who as $w) {
             $this->assertTrue($w instanceof Zend_Gdata_Extension_Who);
         }
-        $this->assertEquals(2, count($who));
+        $this->assertCount(2, $who);
 
         // Check one of the who entries to make sure the values are valid
         $this->verifyProperty($who[0], "rel", "http://schemas.google.com/g/2005#event.organizer");

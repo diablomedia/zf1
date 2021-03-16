@@ -52,7 +52,7 @@ class Zend_Cloud_Infrastructure_Adapter_RackspaceTest extends PHPUnit\Framework\
     /**
      * Setup for each test
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->infrastructure = Zend_Cloud_Infrastructure_Factory::getAdapter(array(
             Zend_Cloud_Infrastructure_Factory::INFRASTRUCTURE_ADAPTER_KEY => 'Zend_Cloud_Infrastructure_Adapter_Rackspace',
@@ -75,11 +75,10 @@ class Zend_Cloud_Infrastructure_Adapter_RackspaceTest extends PHPUnit\Framework\
             // authentication (from file)
             $content = dirname(__FILE__) . '/_files/'.$shortClassName . '_testAuthenticate.response';
             $this->httpClientAdapterTest->setResponse($this->loadResponse($content));
-            $this->assertTrue($this->infrastructure->getAdapter()->authenticate(),'Authentication failed');
+            $this->assertTrue($this->infrastructure->getAdapter()->authenticate(), 'Authentication failed');
 
             $this->httpClientAdapterTest->setResponse($this->loadResponse($filename));
         }
-
     }
 
     /**
@@ -103,9 +102,9 @@ class Zend_Cloud_Infrastructure_Adapter_RackspaceTest extends PHPUnit\Framework\
      *
      * @return array
      */
-    static function getConfigArray()
+    public static function getConfigArray()
     {
-         return array(
+        return array(
             Zend_Cloud_Infrastructure_Factory::INFRASTRUCTURE_ADAPTER_KEY => 'Zend_Cloud_Infrastructure_Adapter_Rackspace',
             Zend_Cloud_Infrastructure_Adapter_Rackspace::RACKSPACE_USER   => constant('TESTS_ZEND_SERVICE_RACKSPACE_ONLINE_USER'),
             Zend_Cloud_Infrastructure_Adapter_Rackspace::RACKSPACE_KEY    => constant('TESTS_ZEND_SERVICE_RACKSPACE_ONLINE_KEY'),
@@ -152,10 +151,10 @@ class Zend_Cloud_Infrastructure_Adapter_RackspaceTest extends PHPUnit\Framework\
      */
     public function testCreateInstance()
     {
-        $options = array (
+        $options = array(
             'imageId'  => constant('TESTS_ZEND_SERVICE_RACKSPACE_SERVER_IMAGEID'),
             'flavorId' => constant('TESTS_ZEND_SERVICE_RACKSPACE_SERVER_FLAVORID'),
-            'metadata' => array (
+            'metadata' => array(
                 'foo' => 'bar'
             )
         );

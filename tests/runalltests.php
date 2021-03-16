@@ -94,7 +94,9 @@ foreach ($testSuites as $testSuite) {
 echo PHP_EOL . "All done. Result: $result" . PHP_EOL;
 
 if ($result) {
-    echo 'Failed Test Suites: ' . implode(', ', $failedSuites) . PHP_EOL;
+    sort($failedSuites);
+    echo PHP_EOL . count($failedSuites) . ' test suites failed: ' . PHP_EOL . PHP_EOL;
+    echo implode(PHP_EOL, $failedSuites) . PHP_EOL . PHP_EOL;
 }
 
 exit($result);

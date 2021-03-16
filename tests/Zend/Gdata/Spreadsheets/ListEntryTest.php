@@ -34,7 +34,7 @@ require_once 'Zend/Gdata/Spreadsheets.php';
 class Zend_Gdata_Spreadsheets_ListEntryTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->listEntry = new Zend_Gdata_Spreadsheets_ListEntry();
         $this->rowData = array();
@@ -145,7 +145,7 @@ class Zend_Gdata_Spreadsheets_ListEntryTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(count($this->listEntry->getCustom()),
             count($this->listEntry->getCustomByName()));
         $this->listEntry->setCustom(array());
-        $this->assertEquals(0, count($this->listEntry->getCustom()));
+        $this->assertCount(0, $this->listEntry->getCustom());
     }
 
     public function testCanDeleteCustomElementById()

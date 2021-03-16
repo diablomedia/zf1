@@ -33,7 +33,7 @@ require_once 'Zend/Gdata/Entry.php';
 class Zend_Gdata_EntryTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->entry = new Zend_Gdata_Entry();
         $this->entryText = file_get_contents(
                 'Zend/Gdata/_files/EntrySample1.xml',

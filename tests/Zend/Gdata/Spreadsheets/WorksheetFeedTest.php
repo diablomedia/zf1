@@ -34,7 +34,7 @@ require_once 'Zend/Gdata/Spreadsheets.php';
 class Zend_Gdata_Spreadsheets_WorksheetFeedTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->wksFeed = new Zend_Gdata_Spreadsheets_WorksheetFeed(
                 file_get_contents(dirname(__FILE__) . '/_files/TestDataWorksheetFeedSample1.xml'),

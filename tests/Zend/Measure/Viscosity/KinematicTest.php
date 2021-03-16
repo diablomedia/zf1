@@ -383,6 +383,6 @@ class Zend_Measure_Viscosity_KinematicTest extends PHPUnit\Framework\TestCase
     {
         $value = new Zend_Measure_Viscosity_Kinematic('-100',Zend_Measure_Viscosity_Kinematic::STANDARD,'de');
         $unit  = $value->getConversionList();
-        $this->assertInternalType('array', $unit, 'Array expected');
+        $this->assertIsArray($unit, 'Array expected');
     }
 }

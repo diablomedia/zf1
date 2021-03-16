@@ -50,7 +50,7 @@ require_once 'Iterator2.php';
  */
 abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit\Framework\TestCase
 {
-    public function tearDown()
+    public function tearDown(): void
     {
         $this->error = false;
     }
@@ -178,7 +178,7 @@ abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit\Framework\TestCase
 
         $new = $adapter->getOptions();
 
-        $this->assertInternalType('array', $new);
+        $this->assertIsArray($new);
         $this->assertEquals($new['setting'], $config['setting']);
 
         // delete the queue we created
@@ -423,7 +423,7 @@ abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit\Framework\TestCase
 
         // get it back
         $list = $adapter->receive(1);
-        $this->assertEquals(1, count($list));
+        $this->assertCount(1, $list);
         $this->assertTrue($list instanceof Zend_Queue_Message_Iterator);
         $this->assertTrue($list->valid());
 
@@ -501,7 +501,7 @@ abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit\Framework\TestCase
         $queues = $adapter->getQueues();
 
         // this is an array right?
-        $this->assertInternalType('array', $queues);
+        $this->assertIsArray($queues);
 
         // make sure our current queue is in this list.
         $this->assertTrue(in_array($queue->getName(), $queues));
@@ -568,7 +568,7 @@ abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit\Framework\TestCase
         $adapter = $queue->getAdapter();
 
         $list = $adapter->getCapabilities();
-        $this->assertInternalType('array', $list);
+        $this->assertIsArray($list);
 
         // these functions must have an boolean answer
         $func = array(
@@ -579,7 +579,7 @@ abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit\Framework\TestCase
 
         foreach ( array_values($func) as $f ) {
             $this->assertTrue(isset($list[$f]));
-            $this->assertInternalType('bool', $list[$f]);
+            $this->assertIsBool($list[$f]);
         }
 
         // delete the queue we created
@@ -595,7 +595,7 @@ abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit\Framework\TestCase
 
         $list = $adapter->getCapabilities();
         foreach ( $list as $function => $result ) {
-            $this->assertInternalType('bool', $result);
+            $this->assertIsBool($result);
             if ( $result ) {
                 $this->assertTrue($adapter->isSupported($function));
             } else {
@@ -659,7 +659,7 @@ abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit\Framework\TestCase
             }
         }
 
-        $this->assertEquals(0, count($queue));
+        $this->assertCount(0, $queue);
         $this->assertTrue($queue->deleteQueue());
 
         // delete the queue we created
@@ -704,7 +704,7 @@ abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit\Framework\TestCase
         $messages = $queue->receive(1); // messages are deleted at the bottom.
 
         if ($queue->isSupported('count')) {
-            $this->assertEquals(1, count($queue));
+            $this->assertCount(1, $queue);
         }
 
         $start = microtime(true);

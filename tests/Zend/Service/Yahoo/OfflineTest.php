@@ -72,7 +72,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
      *
      * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->_yahoo = new Zend_Service_Yahoo(constant('TESTS_ZEND_SERVICE_YAHOO_ONLINE_APPID'));
 
@@ -97,7 +97,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $resultSet->current();
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains('implemented by child', $e->getMessage());
+            $this->assertStringContainsString('implemented by child', $e->getMessage());
         }
     }
 
@@ -112,7 +112,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->inlinkDataSearch('http://framework.zend.com/', array('results' => 101));
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains("option 'results'", $e->getMessage());
+            $this->assertStringContainsString("option 'results'", $e->getMessage());
         }
     }
 
@@ -127,7 +127,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->inlinkDataSearch('http://framework.zend.com/', array('start' => 1001));
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains("option 'start'", $e->getMessage());
+            $this->assertStringContainsString("option 'start'", $e->getMessage());
         }
     }
 
@@ -142,7 +142,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->inlinkDataSearch('http://framework.zend.com/', array('omit_inlinks' => 'oops'));
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains("option 'omit_inlinks'", $e->getMessage());
+            $this->assertStringContainsString("option 'omit_inlinks'", $e->getMessage());
         }
     }
 
@@ -157,7 +157,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->imageSearch('php', array('type' => 'oops'));
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains("option 'type'", $e->getMessage());
+            $this->assertStringContainsString("option 'type'", $e->getMessage());
         }
     }
 
@@ -172,7 +172,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->imageSearch('php', array('results' => 500));
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains("option 'results'", $e->getMessage());
+            $this->assertStringContainsString("option 'results'", $e->getMessage());
         }
     }
 
@@ -187,7 +187,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->imageSearch('php', array('start' => 1001));
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains("option 'start'", $e->getMessage());
+            $this->assertStringContainsString("option 'start'", $e->getMessage());
         }
     }
 
@@ -202,7 +202,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->imageSearch('php', array('format' => 'oops'));
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains("option 'format'", $e->getMessage());
+            $this->assertStringContainsString("option 'format'", $e->getMessage());
         }
     }
 
@@ -217,7 +217,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->imageSearch('php', array('coloration' => 'oops'));
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains("option 'coloration'", $e->getMessage());
+            $this->assertStringContainsString("option 'coloration'", $e->getMessage());
         }
     }
 
@@ -232,7 +232,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->localSearch('php', array('results' => 'oops'));
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains("option 'results'", $e->getMessage());
+            $this->assertStringContainsString("option 'results'", $e->getMessage());
         }
     }
 
@@ -247,7 +247,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->localSearch('php', array('start' => 'oops'));
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains("option 'start'", $e->getMessage());
+            $this->assertStringContainsString("option 'start'", $e->getMessage());
         }
     }
 
@@ -262,7 +262,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->localSearch('php', array('longitude' => -91));
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains("option 'longitude'", $e->getMessage());
+            $this->assertStringContainsString("option 'longitude'", $e->getMessage());
         }
     }
 
@@ -277,7 +277,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->localSearch('php', array('latitude' => -181));
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains("option 'latitude'", $e->getMessage());
+            $this->assertStringContainsString("option 'latitude'", $e->getMessage());
         }
     }
 
@@ -292,7 +292,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->localSearch('php', array('zip' => 'oops'));
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains("option 'zip'", $e->getMessage());
+            $this->assertStringContainsString("option 'zip'", $e->getMessage());
         }
     }
 
@@ -307,7 +307,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->localSearch('php');
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains('Location data', $e->getMessage());
+            $this->assertStringContainsString('Location data', $e->getMessage());
         }
     }
 
@@ -322,7 +322,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->localSearch('php', array('location' => '95014', 'sort' => 'oops'));
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains("option 'sort'", $e->getMessage());
+            $this->assertStringContainsString("option 'sort'", $e->getMessage());
         }
     }
 
@@ -337,7 +337,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->newsSearch('php', array('results' => 51));
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains("option 'results'", $e->getMessage());
+            $this->assertStringContainsString("option 'results'", $e->getMessage());
         }
     }
 
@@ -352,7 +352,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->newsSearch('php', array('start' => 'oops'));
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains("option 'start'", $e->getMessage());
+            $this->assertStringContainsString("option 'start'", $e->getMessage());
         }
     }
 
@@ -367,7 +367,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->newsSearch('php', array('language' => 'oops'));
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains('selected language', $e->getMessage());
+            $this->assertStringContainsString('selected language', $e->getMessage());
         }
     }
 
@@ -382,7 +382,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->pageDataSearch('http://framework.zend.com/', array('results' => 101));
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains("option 'results'", $e->getMessage());
+            $this->assertStringContainsString("option 'results'", $e->getMessage());
         }
     }
 
@@ -397,7 +397,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->pageDataSearch('http://framework.zend.com/', array('start' => 1001));
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains("option 'start'", $e->getMessage());
+            $this->assertStringContainsString("option 'start'", $e->getMessage());
         }
     }
 
@@ -412,7 +412,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->videoSearch('php', array('type' => 'oops'));
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains("option 'type'", $e->getMessage());
+            $this->assertStringContainsString("option 'type'", $e->getMessage());
         }
     }
 
@@ -427,7 +427,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->videoSearch('php', array('results' => 500));
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains("option 'results'", $e->getMessage());
+            $this->assertStringContainsString("option 'results'", $e->getMessage());
         }
     }
 
@@ -442,7 +442,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->videoSearch('php', array('start' => 1001));
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains("option 'start'", $e->getMessage());
+            $this->assertStringContainsString("option 'start'", $e->getMessage());
         }
     }
 
@@ -457,7 +457,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->videoSearch('php', array('format' => 'oops'));
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains("option 'format'", $e->getMessage());
+            $this->assertStringContainsString("option 'format'", $e->getMessage());
         }
     }
 
@@ -472,7 +472,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->webSearch('php', array('results' => 101));
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains("option 'results'", $e->getMessage());
+            $this->assertStringContainsString("option 'results'", $e->getMessage());
         }
     }
 
@@ -487,7 +487,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->webSearch('php', array('start' => 'oops'));
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains("option 'start'", $e->getMessage());
+            $this->assertStringContainsString("option 'start'", $e->getMessage());
         }
     }
 
@@ -502,7 +502,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->webSearch('php', array('oops' => 'oops'));
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains('parameters are invalid', $e->getMessage());
+            $this->assertStringContainsString('parameters are invalid', $e->getMessage());
         }
     }
 
@@ -517,7 +517,7 @@ class Zend_Service_Yahoo_OfflineTest extends PHPUnit\Framework\TestCase
             $this->_yahoo->webSearch('php', array('type' => 'oops'));
             $this->fail('Expected Zend_Service_Exception not thrown');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains("option 'type'", $e->getMessage());
+            $this->assertStringContainsString("option 'type'", $e->getMessage());
         }
     }
 

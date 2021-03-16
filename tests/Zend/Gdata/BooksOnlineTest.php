@@ -34,8 +34,7 @@ require_once 'Zend/Gdata/ClientLogin.php';
  */
 class Zend_Gdata_BooksOnlineTest extends PHPUnit\Framework\TestCase
 {
-
-    public function setUp()
+    public function setUp(): void
     {
         if (!(defined('TESTS_ZEND_GDATA_ONLINE_ENABLED') &&
             constant('TESTS_ZEND_GDATA_ONLINE_ENABLED') == true &&
@@ -86,7 +85,9 @@ class Zend_Gdata_BooksOnlineTest extends PHPUnit\Framework\TestCase
         foreach ($feed->entries as $entry) {
             $this->assertTrue($entry instanceof Zend_Gdata_Books_VolumeEntry);
             $this->assertEquals(
-                $feed->getHttpClient(), $entry->getHttpClient());
+                $feed->getHttpClient(),
+                $entry->getHttpClient()
+            );
         }
 
         $entry = new Zend_Gdata_Books_VolumeEntry();
@@ -103,14 +104,18 @@ class Zend_Gdata_BooksOnlineTest extends PHPUnit\Framework\TestCase
         foreach ($feed->entries as $entry) {
             $this->assertTrue($entry instanceof Zend_Gdata_Books_VolumeEntry);
             $this->assertEquals(
-                $feed->getHttpClient(), $entry->getHttpClient());
+                $feed->getHttpClient(),
+                $entry->getHttpClient()
+            );
         }
 
         $entry = new Zend_Gdata_Books_VolumeEntry();
         $entry->setId(new Zend_Gdata_App_Extension_Id('Mfer_MFwQrkC'));
         $entry->setRating(new Zend_Gdata_Extension_Rating(3, 1, 5, 1));
-        $newEntry = $this->gdata->insertVolume($entry,
-            Zend_Gdata_Books::MY_ANNOTATION_FEED_URI);
+        $newEntry = $this->gdata->insertVolume(
+            $entry,
+            Zend_Gdata_Books::MY_ANNOTATION_FEED_URI
+        );
         $this->assertTrue($newEntry instanceof Zend_Gdata_Books_VolumeEntry);
         $this->gdata->deleteVolume($newEntry);
     }

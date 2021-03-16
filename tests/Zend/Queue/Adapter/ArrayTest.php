@@ -94,7 +94,7 @@ class Zend_Queue_Adapter_ArrayTest extends Zend_Queue_Adapter_AdapterTest
         $queue = $this->createQueue(__FUNCTION__);
         $adapter = $queue->getAdapter();
 
-        $this->assertInternalType('array', $adapter->__sleep());
+        $this->assertIsArray($adapter->__sleep());
         $data = serialize($adapter);
         $new = unserialize($data);
         $this->assertEquals($new->getData(), $adapter->getData());
@@ -124,6 +124,6 @@ class Zend_Queue_Adapter_ArrayTest extends Zend_Queue_Adapter_AdapterTest
         $queue->send('My Test Message 2');
 
         $messages = $queue->receive(0);
-        $this->assertEquals(0, count($messages));
+        $this->assertCount(0, $messages);
     }
 }

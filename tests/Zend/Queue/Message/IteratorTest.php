@@ -49,7 +49,7 @@ require_once 'Zend/Queue/Adapter/Null.php';
  */
 class Zend_Queue_Message_IteratorTest extends PHPUnit\Framework\TestCase
 {
-    protected function setUp()
+    public function setUp(): void
     {
         // Test Zend_Config
         $this->options = array(
@@ -88,7 +88,7 @@ class Zend_Queue_Message_IteratorTest extends PHPUnit\Framework\TestCase
     public function test_setup()
     {
         $this->assertTrue($this->queue instanceof Zend_Queue);
-        $this->assertInternalType('array', $this->options);
+        $this->assertIsArray($this->options);
 
         foreach ($this->messages as $i => $message) {
             $this->assertTrue($message instanceof Zend_Queue_Message);
@@ -96,7 +96,7 @@ class Zend_Queue_Message_IteratorTest extends PHPUnit\Framework\TestCase
         }
     }
 
-    protected function tearDown()
+    public function tearDown(): void
     {
     }
 
@@ -125,7 +125,7 @@ class Zend_Queue_Message_IteratorTest extends PHPUnit\Framework\TestCase
 
     public function test_magic()
     {
-        $this->assertInternalType('array', $this->messages->__sleep());
+        $this->assertIsArray($this->messages->__sleep());
 
         $messages = serialize($this->messages);
         $woken = unserialize($messages);
@@ -155,7 +155,7 @@ class Zend_Queue_Message_IteratorTest extends PHPUnit\Framework\TestCase
     public function test_toArray()
     {
         $array = $this->messages->toArray();
-        $this->assertInternalType('array', $array);
+        $this->assertIsArray($array);
         $this->assertEquals($this->message_count, count($array));
         $this->assertEquals('Hello world', $array[0]['body']);
     }

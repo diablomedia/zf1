@@ -360,6 +360,6 @@ class Zend_Measure_IlluminationTest extends PHPUnit\Framework\TestCase
     {
         $value = new Zend_Measure_Illumination('-100',Zend_Measure_Illumination::STANDARD,'de');
         $unit  = $value->getConversionList();
-        $this->assertInternalType('array', $unit, 'Array expected');
+        $this->assertIsArray($unit, 'Array expected');
     }
 }

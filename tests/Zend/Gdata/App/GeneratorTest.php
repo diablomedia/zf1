@@ -36,7 +36,7 @@ require_once 'Zend/Gdata/App.php';
 class Zend_Gdata_App_GeneratorTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->generatorText = file_get_contents(
                 'Zend/Gdata/App/_files/GeneratorElementSample1.xml',
                 true);
@@ -44,7 +44,7 @@ class Zend_Gdata_App_GeneratorTest extends PHPUnit\Framework\TestCase
     }
 
     public function testEmptyGeneratorShouldHaveEmptyExtensionsList() {
-        $this->assertInternalType('array', $this->generator->extensionElements);
+        $this->assertIsArray($this->generator->extensionElements);
         $this->assertTrue(count($this->generator->extensionElements) == 0);
     }
 

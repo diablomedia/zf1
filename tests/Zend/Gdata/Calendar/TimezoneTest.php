@@ -35,7 +35,7 @@ require_once 'Zend/Gdata/Calendar.php';
 class Zend_Gdata_Calendar_TimezoneTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->timezoneText = file_get_contents(
                 'Zend/Gdata/Calendar/_files/TimezoneElementSample1.xml',
                 true);
@@ -43,24 +43,24 @@ class Zend_Gdata_Calendar_TimezoneTest extends PHPUnit\Framework\TestCase
     }
 
     public function testEmptyTimezoneShouldHaveNoExtensionElements() {
-        $this->assertInternalType('array', $this->timezone->extensionElements);
+        $this->assertIsArray($this->timezone->extensionElements);
         $this->assertTrue(count($this->timezone->extensionElements) == 0);
     }
 
     public function testEmptyTimezoneShouldHaveNoExtensionAttributes() {
-        $this->assertInternalType('array', $this->timezone->extensionAttributes);
+        $this->assertIsArray($this->timezone->extensionAttributes);
         $this->assertTrue(count($this->timezone->extensionAttributes) == 0);
     }
 
     public function testSampleTimezoneShouldHaveNoExtensionElements() {
         $this->timezone->transferFromXML($this->timezoneText);
-        $this->assertInternalType('array', $this->timezone->extensionElements);
+        $this->assertIsArray($this->timezone->extensionElements);
         $this->assertTrue(count($this->timezone->extensionElements) == 0);
     }
 
     public function testSampleTimezoneShouldHaveNoExtensionAttributes() {
         $this->timezone->transferFromXML($this->timezoneText);
-        $this->assertInternalType('array', $this->timezone->extensionAttributes);
+        $this->assertIsArray($this->timezone->extensionAttributes);
         $this->assertTrue(count($this->timezone->extensionAttributes) == 0);
     }
 

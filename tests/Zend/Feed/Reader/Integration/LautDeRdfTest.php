@@ -33,23 +33,22 @@ require_once 'Zend/Feed/Reader.php';
  */
 class Zend_Feed_Reader_Integration_LautDeRdfTest extends PHPUnit\Framework\TestCase
 {
-
     protected $_feedSamplePath = null;
 
-    public function setup()
+    public function setUp(): void
     {
         Zend_Feed_Reader::reset();
         $this->_feedSamplePath = dirname(__FILE__) . '/_files/laut.de-rdf.xml';
         $this->_options = Zend_Date::setOptions();
-        foreach($this->_options as $k=>$v) {
+        foreach ($this->_options as $k=>$v) {
             if (is_null($v)) {
                 unset($this->_options[$k]);
             }
         }
         Zend_Date::setOptions(array('format_type'=>'iso'));
     }
-    
-    public function teardown()
+
+    public function tearDown(): void
     {
         Zend_Date::setOptions($this->_options);
     }
@@ -211,8 +210,10 @@ class Zend_Feed_Reader_Integration_LautDeRdfTest extends PHPUnit\Framework\TestC
             file_get_contents($this->_feedSamplePath)
         );
         $entry = $feed->current();
-        $this->assertEquals('http://www.laut.de/vorlaut/news/2009/07/04/22426/index.htm',
-            $entry->getPermaLink());
+        $this->assertEquals(
+            'http://www.laut.de/vorlaut/news/2009/07/04/22426/index.htm',
+            $entry->getPermaLink()
+        );
     }
 
     public function testGetsEntryEncoding()
@@ -223,5 +224,4 @@ class Zend_Feed_Reader_Integration_LautDeRdfTest extends PHPUnit\Framework\TestC
         $entry = $feed->current();
         $this->assertEquals('ISO-8859-1', $entry->getEncoding());
     }
-
 }

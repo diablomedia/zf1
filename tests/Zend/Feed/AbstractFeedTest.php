@@ -39,7 +39,7 @@ class Zend_Feed_AbstractFeedTest extends PHPUnit\Framework\TestCase
 
     public $remoteFeedNames = array();
 
-    public function setUp()
+    public function setUp(): void
     {
         if (!defined('TESTS_ZEND_FEED_IMPORT_ONLINE_BASEURI')
             || !constant('TESTS_ZEND_FEED_IMPORT_ONLINE_BASEURI')
@@ -50,10 +50,10 @@ class Zend_Feed_AbstractFeedTest extends PHPUnit\Framework\TestCase
         Zend_Feed::setHttpClient(new Zend_Http_Client());
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         if (!$this->baseUri) {
-            return parent::tearDown();
+            parent::tearDown();
         }
 
         $basePath = dirname(__FILE__) . '/_files/';

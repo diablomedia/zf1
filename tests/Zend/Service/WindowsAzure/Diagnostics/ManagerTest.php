@@ -45,7 +45,7 @@ require_once 'Zend/Service/WindowsAzure/Diagnostics/ConfigurationInstance.php';
  */
 class Zend_Service_WindowsAzure_Diagnostics_ManagerTest extends PHPUnit\Framework\TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         if (!TESTS_ZEND_SERVICE_WINDOWSAZURE_DIAGNOSTICS_RUNTESTS) {
             $this->markTestSkipped('Test not enabled in TestConfiguration.php');
@@ -55,7 +55,7 @@ class Zend_Service_WindowsAzure_Diagnostics_ManagerTest extends PHPUnit\Framewor
     /**
      * Test teardown
      */
-    protected function tearDown()
+    public function tearDown(): void
     {
         $storageClient = $this->createStorageInstance();
         for ($i = 1; $i <= self::$uniqId; $i++)
@@ -153,9 +153,9 @@ class Zend_Service_WindowsAzure_Diagnostics_ManagerTest extends PHPUnit\Framewor
             $result = $manager->getConfigurationForRoleInstance('test');
 
             $this->assertEquals($configuration->toXml(), $result->toXml());
-            $this->assertEquals(1, count($result->DataSources->PerformanceCounters->Subscriptions));
-            $this->assertEquals(2, count($result->DataSources->WindowsEventLog->Subscriptions));
-            $this->assertEquals(3, count($result->DataSources->Directories->Subscriptions));
+            $this->assertCount(1, $result->DataSources->PerformanceCounters->Subscriptions);
+            $this->assertCount(2, $result->DataSources->WindowsEventLog->Subscriptions);
+            $this->assertCount(3, $result->DataSources->Directories->Subscriptions);
     	}
     }
 

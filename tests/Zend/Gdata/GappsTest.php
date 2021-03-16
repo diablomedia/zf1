@@ -36,7 +36,7 @@ class Zend_Gdata_GappsTest extends PHPUnit\Framework\TestCase
 {
     const TEST_DOMAIN = 'nowhere.invalid';
 
-    public function setUp()
+    public function setUp(): void
     {
         // These tests shouldn't be doing anything online, so we can use
         // bogous auth credentials.

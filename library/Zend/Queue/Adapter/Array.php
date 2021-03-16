@@ -158,6 +158,10 @@ class Zend_Queue_Adapter_Array extends Zend_Queue_Adapter_AdapterAbstract
      */
     public function send($message, Zend_Queue $queue=null)
     {
+        if (!is_string($message)) {
+            throw new Zend_Queue_Exception('Message must be a string');
+        }
+
         if ($queue === null) {
             $queue = $this->_queue;
         }

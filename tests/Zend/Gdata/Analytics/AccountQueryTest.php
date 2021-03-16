@@ -38,7 +38,7 @@ class Zend_GData_Analytics_AccountQueryTest extends PHPUnit\Framework\TestCase
      */
     public $accountQuery;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->accountQuery = new Zend_Gdata_Analytics_AccountQuery();
         $this->queryBase = Zend_Gdata_Analytics_AccountQuery::ANALYTICS_FEED_URI;

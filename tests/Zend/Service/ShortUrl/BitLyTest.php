@@ -34,14 +34,14 @@ class Zend_Service_ShortUrl_BitLyTest extends PHPUnit\Framework\TestCase
      *
      * @return void
      */
-    public function setUp ()
+    public function setUp(): void
     {
         if (!defined('TESTS_ZEND_SERVICE_SHORTURL_BITLY_ENABLED')
             || !constant('TESTS_ZEND_SERVICE_SHORTURL_BITLY_ENABLED')
         ) {
             $this->markTestSkipped('Testing Zend_Service_ShortUrl_BitLyTest only works when TESTS_ZEND_SERVICE_SHORTURL_BITLY_ENABLED is set.');
         }
-        
+
         Zend_Service_Abstract::setHttpClient(new Zend_Http_Client());
     }
 

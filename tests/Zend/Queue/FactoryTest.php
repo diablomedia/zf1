@@ -42,7 +42,7 @@ require_once 'Zend/Queue/Adapter/ActivemqTest.php';
  */
 class Zend_Queue_FactoryTest extends PHPUnit\Framework\TestCase
 {
-    protected function setUp()
+    public function setUp(): void
     {
         date_default_timezone_set('GMT');
     }

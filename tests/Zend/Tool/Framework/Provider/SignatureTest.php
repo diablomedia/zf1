@@ -56,7 +56,7 @@ class Zend_Tool_Framework_Provider_SignatureTest extends PHPUnit\Framework\TestC
      */
     protected $_targetSignature = null;
 
-    public function setup()
+    public function setUp(): void
     {
         // setup the registry components required to test with
         $this->_registry = new Zend_Tool_Framework_Registry();
@@ -66,7 +66,7 @@ class Zend_Tool_Framework_Provider_SignatureTest extends PHPUnit\Framework\TestC
         $this->_targetSignature->process();
     }
 
-    public function teardown()
+    public function tearDown(): void
     {
         $this->_registry->reset();
     }
@@ -152,7 +152,7 @@ class Zend_Tool_Framework_Provider_SignatureTest extends PHPUnit\Framework\TestC
 
     public function testGetActionableMethodsReturnsAllActionableMethods()
     {
-        $this->assertEquals(5, count($this->_targetSignature->getActionableMethods()));
+        $this->assertCount(5, $this->_targetSignature->getActionableMethods());
 
         $actionableMethods = $this->_targetSignature->getActionableMethods();
         $actionableMethod = array_shift($actionableMethods);

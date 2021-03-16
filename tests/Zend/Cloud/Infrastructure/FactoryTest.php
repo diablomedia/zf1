@@ -43,7 +43,7 @@ class Zend_Cloud_Infrastructure_FactoryTest extends PHPUnit\Framework\TestCase
 {
     public function testGetInfrastructureAdapterKey()
     {
-        $this->assertInternalType('string', Zend_Cloud_Infrastructure_Factory::INFRASTRUCTURE_ADAPTER_KEY);
+        $this->assertIsString(Zend_Cloud_Infrastructure_Factory::INFRASTRUCTURE_ADAPTER_KEY);
     }
 
     public function testGetAdapterWithConfig() {

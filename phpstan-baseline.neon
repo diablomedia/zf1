@@ -146,7 +146,7 @@ parameters:
 			path: library/Zend/Amf/Parse/Resource/MysqliResult.php
 
 		-
-			message: "#^Parameter \\#1 \\$link of function mysqli_num_fields expects mysqli_result, resource given\\.$#"
+			message: "#^Parameter \\#1 \\$(link|result) of function mysqli_num_fields expects mysqli_result, resource given\\.$#"
 			count: 1
 			path: library/Zend/Amf/Parse/Resource/MysqliResult.php
 
@@ -216,7 +216,7 @@ parameters:
 			path: library/Zend/Amf/Parse/TypeLoader.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function ucwords expects string, string\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function ucwords expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Amf/Parse/TypeLoader.php
 
@@ -286,12 +286,12 @@ parameters:
 			path: library/Zend/Amf/Server.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, string given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, string given\\.$#"
 			count: 1
 			path: library/Zend/Amf/Server.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(string, string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(string, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Amf/Server.php
 
@@ -306,7 +306,7 @@ parameters:
 			path: library/Zend/Amf/Server.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function base64_decode expects string, string\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function base64_decode expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Amf/Server.php
 
@@ -346,7 +346,7 @@ parameters:
 			path: library/Zend/Amf/Server.php
 
 		-
-			message: "#^Parameter \\#3 \\$length of function substr expects int, int\\<0, max\\>\\|false given\\.$#"
+			message: "#^Parameter \\#3 \\$length of function substr expects int(\\|null)?, int(\\<0, max\\>)?\\|false given\\.$#"
 			count: 2
 			path: library/Zend/Amf/Server.php
 
@@ -361,7 +361,7 @@ parameters:
 			path: library/Zend/Amf/Server.php
 
 		-
-			message: "#^Parameter \\#2 \\$needle of function strpos expects int\\|string, string\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$needle of function strpos expects (int\\|)?string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Amf/Server.php
 
@@ -421,7 +421,7 @@ parameters:
 			path: library/Zend/Amf/Value/Messaging/AcknowledgeMessage.php
 
 		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(var|value) of function count expects array\\|Countable, array\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Amf/Value/TraitsInfo.php
 
@@ -781,22 +781,17 @@ parameters:
 			path: library/Zend/Barcode/Renderer/Image.php
 
 		-
-			message: "#^Property Zend_Barcode_Renderer_Image\\:\\:\\$_resource \\(resource\\) does not accept resource\\|false\\.$#"
-			count: 1
-			path: library/Zend/Barcode/Renderer/Image.php
-
-		-
-			message: "#^Parameter \\#1 \\$im of function imagecolorallocate expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$im(age)? of function imagecolorallocate expects (resource, resource|GdImage, GdImage)\\|false given\\.$#"
 			count: 3
 			path: library/Zend/Barcode/Renderer/Image.php
 
 		-
-			message: "#^Parameter \\#1 \\$im of function imagefilledrectangle expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$im(age)? of function imagefilledrectangle expects (resource|GdImage), (resource|GdImage)\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Barcode/Renderer/Image.php
 
 		-
-			message: "#^Parameter \\#6 \\$col of function imagefilledrectangle expects int, int\\|false given\\.$#"
+			message: "#^Parameter \\#6 \\$col(or)? of function imagefilledrectangle expects int, int\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Barcode/Renderer/Image.php
 
@@ -821,7 +816,7 @@ parameters:
 			path: library/Zend/Barcode/Renderer/Image.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func expects callable\\(\\)\\: mixed, string given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func expects callable\\(\\)\\: mixed, string given\\.$#"
 			count: 1
 			path: library/Zend/Barcode/Renderer/Image.php
 
@@ -831,12 +826,12 @@ parameters:
 			path: library/Zend/Barcode/Renderer/Image.php
 
 		-
-			message: "#^Parameter \\#4 \\$col of function imagefilledpolygon expects int, int\\|false given\\.$#"
+			message: "#^Parameter \\#4 \\$col(or)? of function imagefilledpolygon expects int(\\|null)?, int\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Barcode/Renderer/Image.php
 
 		-
-			message: "#^Parameter \\#4 \\$col of function imagepolygon expects int, int\\|false given\\.$#"
+			message: "#^Parameter \\#4 \\$col(or)? of function imagepolygon expects int(\\|null)?, int\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Barcode/Renderer/Image.php
 
@@ -891,7 +886,7 @@ parameters:
 			path: library/Zend/Barcode/Renderer/Image.php
 
 		-
-			message: "#^Parameter \\#6 \\$col of function imagettftext expects int, int\\|false given\\.$#"
+			message: "#^Parameter \\#6 \\$col(or)? of function imagettftext expects int, int\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Barcode/Renderer/Image.php
 
@@ -1201,12 +1196,12 @@ parameters:
 			path: library/Zend/Cloud/Infrastructure/Adapter/AbstractAdapter.php
 
 		-
-			message: "#^Parameter \\#1 \\$socket of function stream_set_blocking expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(socket|stream) of function stream_set_blocking expects resource, resource\\|false given\\.$#"
 			count: 5
 			path: library/Zend/Cloud/Infrastructure/Adapter/AbstractAdapter.php
 
 		-
-			message: "#^Parameter \\#1 \\$source of function stream_get_contents expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(source|stream) of function stream_get_contents expects resource, resource\\|false given\\.$#"
 			count: 4
 			path: library/Zend/Cloud/Infrastructure/Adapter/AbstractAdapter.php
 
@@ -1281,7 +1276,7 @@ parameters:
 			path: library/Zend/Cloud/Infrastructure/Adapter/Rackspace.php
 
 		-
-			message: "#^Parameter \\#2 \\$str of function explode expects string, array\\|string given\\.$#"
+			message: "#^Parameter \\#2 \\$str(ing)? of function explode expects string, array\\|string given\\.$#"
 			count: 1
 			path: library/Zend/Cloud/Infrastructure/Adapter/Rackspace.php
 
@@ -1451,7 +1446,7 @@ parameters:
 			path: library/Zend/Cloud/StorageService/Adapter/FileSystem.php
 
 		-
-			message: "#^Parameter \\#1 \\$arr1 of function array_diff expects array, array\\<int, string\\>\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(arr1|array) of function array_diff expects array, array\\<int, string\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Cloud/StorageService/Adapter/FileSystem.php
 
@@ -1561,22 +1556,22 @@ parameters:
 			path: library/Zend/Cloud/StorageService/Adapter/WindowsAzure.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function fwrite expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function fwrite expects resource, resource\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Cloud/StorageService/Adapter/WindowsAzure.php
 
 		-
-			message: "#^Parameter \\#2 \\$str of function fwrite expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$(str|data) of function fwrite expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Cloud/StorageService/Adapter/WindowsAzure.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function fclose expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function fclose expects resource, resource\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Cloud/StorageService/Adapter/WindowsAzure.php
 
 		-
-			message: "#^Parameter \\#1 \\$file of function file_put_contents expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$file(name)? of function file_put_contents expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Cloud/StorageService/Adapter/WindowsAzure.php
 
@@ -1781,7 +1776,7 @@ parameters:
 			path: library/Zend/CodeGenerator/Php/Property/DefaultValue.php
 
 		-
-			message: "#^Parameter \\#1 \\$input of function str_repeat expects string, int\\|string given\\.$#"
+			message: "#^Parameter \\#1 \\$(input|string) of function str_repeat expects string, int\\|string given\\.$#"
 			count: 3
 			path: library/Zend/CodeGenerator/Php/Property/DefaultValue.php
 
@@ -1836,7 +1831,7 @@ parameters:
 			path: library/Zend/Feed.php
 
 		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, int given\\.$#"
+			message: "#^Parameter \\#2 \\$(new)?value of function ini_set expects string, int given\\.$#"
 			count: 2
 			path: library/Zend/Feed.php
 
@@ -1881,7 +1876,7 @@ parameters:
 			path: library/Zend/Feed/Abstract.php
 
 		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, int given\\.$#"
+			message: "#^Parameter \\#2 \\$(new)?value of function ini_set expects string, int given\\.$#"
 			count: 1
 			path: library/Zend/Feed/Abstract.php
 
@@ -2136,7 +2131,7 @@ parameters:
 			path: library/Zend/Feed/Entry/Abstract.php
 
 		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, int given\\.$#"
+			message: "#^Parameter \\#2 \\$(new)?value of function ini_set expects string, int given\\.$#"
 			count: 1
 			path: library/Zend/Feed/Entry/Abstract.php
 
@@ -2161,7 +2156,7 @@ parameters:
 			path: library/Zend/Feed/Entry/Atom.php
 
 		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, int given\\.$#"
+			message: "#^Parameter \\#2 \\$(new)?value of function ini_set expects string, int given\\.$#"
 			count: 1
 			path: library/Zend/Feed/Entry/Atom.php
 
@@ -2236,12 +2231,7 @@ parameters:
 			path: library/Zend/Feed/Pubsubhubbub/CallbackAbstract.php
 
 		-
-			message: "#^Cannot access offset string on array\\|false\\.$#"
-			count: 1
-			path: library/Zend/Feed/Pubsubhubbub/CallbackAbstract.php
-
-		-
-			message: "#^Parameter \\#1 \\$str of function trim expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function trim expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Feed/Pubsubhubbub/CallbackAbstract.php
 
@@ -2421,7 +2411,7 @@ parameters:
 			path: library/Zend/Feed/Reader.php
 
 		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, int given\\.$#"
+			message: "#^Parameter \\#2 \\$(new)?value of function ini_set expects string, int given\\.$#"
 			count: 2
 			path: library/Zend/Feed/Reader.php
 
@@ -2691,7 +2681,7 @@ parameters:
 			path: library/Zend/Feed/Reader/EntryAbstract.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Feed/Reader/EntryAbstract.php
 
@@ -3241,7 +3231,7 @@ parameters:
 			path: library/Zend/Feed/Reader/FeedAbstract.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, mixed\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, mixed\\) given\\.$#"
 			count: 1
 			path: library/Zend/Feed/Reader/FeedAbstract.php
 
@@ -3656,7 +3646,7 @@ parameters:
 			path: library/Zend/Feed/Writer/Entry.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Feed/Writer/Entry.php
 
@@ -3876,7 +3866,7 @@ parameters:
 			path: library/Zend/Feed/Writer/Feed/FeedAbstract.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Feed/Writer/Feed/FeedAbstract.php
 
@@ -4196,7 +4186,7 @@ parameters:
 			path: library/Zend/Gdata/App.php
 
 		-
-			message: "#^Parameter \\#3 \\$length of function substr expects int, int\\<0, max\\>\\|false given\\.$#"
+			message: "#^Parameter \\#3 \\$length of function substr expects int(\\|null)?, int\\<0, max\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/App.php
 
@@ -4211,7 +4201,7 @@ parameters:
 			path: library/Zend/Gdata/App.php
 
 		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, int given\\.$#"
+			message: "#^Parameter \\#2 \\$(new)?value of function ini_set expects string, int given\\.$#"
 			count: 2
 			path: library/Zend/Gdata/App.php
 
@@ -4246,7 +4236,7 @@ parameters:
 			path: library/Zend/Gdata/App.php
 
 		-
-			message: "#^Parameter \\#1 \\$argument of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
+			message: "#^Parameter \\#1 \\$(argument|objectOrClass) of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/App.php
 
@@ -4291,7 +4281,7 @@ parameters:
 			path: library/Zend/Gdata/App/Base.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function trim expects string, string\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function trim expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/App/Base.php
 
@@ -4361,7 +4351,7 @@ parameters:
 			path: library/Zend/Gdata/App/Base.php
 
 		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, int given\\.$#"
+			message: "#^Parameter \\#2 \\$(new)?value of function ini_set expects string, int given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/App/Base.php
 
@@ -4401,7 +4391,7 @@ parameters:
 			path: library/Zend/Gdata/App/Base.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func expects callable\\(\\)\\: mixed, array\\(\\$this\\(Zend_Gdata_App_Base\\), string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func expects callable\\(\\)\\: mixed, array\\(\\$this\\(Zend_Gdata_App_Base\\), string\\) given\\.$#"
 			count: 2
 			path: library/Zend/Gdata/App/Base.php
 
@@ -4421,7 +4411,7 @@ parameters:
 			path: library/Zend/Gdata/App/BaseMediaSource.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func expects callable\\(\\)\\: mixed, array\\(\\$this\\(Zend_Gdata_App_BaseMediaSource\\), string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func expects callable\\(\\)\\: mixed, array\\(\\$this\\(Zend_Gdata_App_BaseMediaSource\\), string\\) given\\.$#"
 			count: 2
 			path: library/Zend/Gdata/App/BaseMediaSource.php
 
@@ -5061,7 +5051,7 @@ parameters:
 			path: library/Zend/Gdata/App/LoggingHttpClientAdapterSocket.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function fwrite expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function fwrite expects resource, resource\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/App/LoggingHttpClientAdapterSocket.php
 
@@ -5091,7 +5081,7 @@ parameters:
 			path: library/Zend/Gdata/App/MediaEntry.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function fread expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function fread expects resource, resource\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/App/MediaFileSource.php
 
@@ -5101,7 +5091,7 @@ parameters:
 			path: library/Zend/Gdata/App/MediaFileSource.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function fclose expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function fclose expects resource, resource\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/App/MediaFileSource.php
 
@@ -5121,7 +5111,7 @@ parameters:
 			path: library/Zend/Gdata/App/Util.php
 
 		-
-			message: "#^Parameter \\#1 \\$time of function strtotime expects string, int given\\.$#"
+			message: "#^Parameter \\#1 \\$(date)?time of function strtotime expects string, int given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/App/Util.php
 
@@ -5141,7 +5131,7 @@ parameters:
 			path: library/Zend/Gdata/AuthSub.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function urlencode expects string, int given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function urlencode expects string, int given\\.$#"
 			count: 2
 			path: library/Zend/Gdata/AuthSub.php
 
@@ -7261,7 +7251,7 @@ parameters:
 			path: library/Zend/Gdata/Gapps.php
 
 		-
-			message: "#^Parameter \\#1 \\$argument of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
+			message: "#^Parameter \\#1 \\$(argument|objectOrClass) of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/Gapps.php
 
@@ -8116,7 +8106,7 @@ parameters:
 			path: library/Zend/Gdata/Gapps/ServiceException.php
 
 		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, int given\\.$#"
+			message: "#^Parameter \\#2 \\$(new)?value of function ini_set expects string, int given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/Gapps/ServiceException.php
 
@@ -8391,7 +8381,7 @@ parameters:
 			path: library/Zend/Gdata/HttpAdapterStreamingProxy.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function fwrite expects resource, resource\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function fwrite expects resource, resource\\|null given\\.$#"
 			count: 2
 			path: library/Zend/Gdata/HttpAdapterStreamingProxy.php
 
@@ -8406,7 +8396,7 @@ parameters:
 			path: library/Zend/Gdata/HttpAdapterStreamingProxy.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function strtolower expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function strtolower expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/HttpAdapterStreamingSocket.php
 
@@ -8421,17 +8411,12 @@ parameters:
 			path: library/Zend/Gdata/HttpAdapterStreamingSocket.php
 
 		-
-			message: "#^Property Zend_Gdata_HttpClient\\:\\:\\$_authSubPrivateKeyId \\(resource\\|null\\) does not accept resource\\|false\\.$#"
+			message: "#^Property Zend_Gdata_HttpClient\\:\\:\\$_authSubPrivateKeyId \\(resource\\|null\\) does not accept (resource|OpenSSLAsymmetricKey)\\|false\\.$#"
 			count: 1
 			path: library/Zend/Gdata/HttpClient.php
 
 		-
-			message: "#^Parameter \\#2 \\$passphrase of function openssl_pkey_get_private expects string, string\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Gdata/HttpClient.php
-
-		-
-			message: "#^Parameter \\#3 \\$priv_key_id of function openssl_sign expects resource\\|string, resource\\|null given\\.$#"
+			message: "#^Parameter \\#3 \\$(priv_key_id|private_key) of function openssl_sign expects (resource|array\\|OpenSSLAsymmetricKey\\|OpenSSLCertificate)\\|string, resource\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/HttpClient.php
 
@@ -9031,7 +9016,7 @@ parameters:
 			path: library/Zend/Gdata/MediaMimeStream.php
 
 		-
-			message: "#^Parameter \\#1 \\$get_as_float of function microtime expects bool, int given\\.$#"
+			message: "#^Parameter \\#1 \\$(get_)?as_float of function microtime expects bool, int given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/MediaMimeStream.php
 
@@ -9821,7 +9806,7 @@ parameters:
 			path: library/Zend/Gdata/Query.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func expects callable\\(\\)\\: mixed, array\\(\\$this\\(Zend_Gdata_Query\\), string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func expects callable\\(\\)\\: mixed, array\\(\\$this\\(Zend_Gdata_Query\\), string\\) given\\.$#"
 			count: 2
 			path: library/Zend/Gdata/Query.php
 
@@ -10371,7 +10356,7 @@ parameters:
 			path: library/Zend/Measure/Number.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function strtoupper expects string, int given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function strtoupper expects string, int given\\.$#"
 			count: 4
 			path: library/Zend/Measure/Number.php
 
@@ -10391,7 +10376,7 @@ parameters:
 			path: library/Zend/Measure/Number.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function str_split expects string, int given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function str_split expects string, int given\\.$#"
 			count: 1
 			path: library/Zend/Measure/Number.php
 
@@ -10401,17 +10386,17 @@ parameters:
 			path: library/Zend/Measure/Number.php
 
 		-
-			message: "#^Parameter \\#1 \\$hexadecimal_number of function hexdec expects string, float\\|int\\|string given\\.$#"
+			message: "#^Parameter \\#1 \\$(hexadecimal_number|hex_string) of function hexdec expects string, float\\|int\\|string given\\.$#"
 			count: 1
 			path: library/Zend/Measure/Number.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function strrev expects string, string\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function strrev expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Measure/Number.php
 
 		-
-			message: "#^Parameter \\#1 \\$var of function sizeof expects array\\|Countable, array\\<int, string\\>\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(var|value) of function sizeof expects array\\|Countable, array\\<int, string\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Measure/Number.php
 
@@ -10601,7 +10586,7 @@ parameters:
 			path: library/Zend/Memory/Manager.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function trim expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function trim expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Memory/Manager.php
 
@@ -10686,12 +10671,12 @@ parameters:
 			path: library/Zend/Mobile/Push/Apns.php
 
 		-
-			message: "#^Parameter \\#4 \\$timeout of function stream_socket_client expects float, string\\|false given\\.$#"
+			message: "#^Parameter \\#4 \\$timeout of function stream_socket_client expects float(\\|null)?, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Mobile/Push/Apns.php
 
 		-
-			message: "#^Parameter \\#2 \\$mode of function stream_set_blocking expects bool, int given\\.$#"
+			message: "#^Parameter \\#2 \\$(enable|mode) of function stream_set_blocking expects bool, int given\\.$#"
 			count: 1
 			path: library/Zend/Mobile/Push/Apns.php
 
@@ -10861,7 +10846,7 @@ parameters:
 			path: library/Zend/Mobile/Push/Test/ApnsProxy.php
 
 		-
-			message: "#^Parameter \\#3 \\$length of function substr expects int, string given\\.$#"
+			message: "#^Parameter \\#3 \\$length of function substr expects int(\\|null)?, string given\\.$#"
 			count: 1
 			path: library/Zend/Mobile/Push/Test/ApnsProxy.php
 
@@ -10976,7 +10961,7 @@ parameters:
 			path: library/Zend/Pdf.php
 
 		-
-			message: "#^Parameter \\#2 \\$search of function array_key_exists expects array, array\\|null given\\.$#"
+			message: "#^Parameter \\#2 \\$(search|array) of function array_key_exists expects array, array\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Pdf.php
 
@@ -11176,7 +11161,7 @@ parameters:
 			path: library/Zend/Pdf.php
 
 		-
-			message: "#^Parameter \\#1 \\$arr1 of function array_merge expects array, array\\|string given\\.$#"
+			message: "#^Parameter \\#1 (\\$arr1|\\.\\.\\.\\$arrays) of function array_merge expects array, array\\|string given\\.$#"
 			count: 1
 			path: library/Zend/Pdf.php
 
@@ -11591,7 +11576,7 @@ parameters:
 			path: library/Zend/Pdf/Canvas/Abstract.php
 
 		-
-			message: "#^Parameter \\#1 \\$x of function fmod expects float, float\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(x|num1) of function fmod expects float, float\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Canvas/Abstract.php
 
@@ -11766,7 +11751,7 @@ parameters:
 			path: library/Zend/Pdf/Element/Dictionary.php
 
 		-
-			message: "#^Parameter \\#1 \\$ascii of function chr expects int, string given\\.$#"
+			message: "#^Parameter \\#1 \\$(ascii|codepoint) of function chr expects int, string given\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Element/Name.php
 
@@ -11786,7 +11771,7 @@ parameters:
 			path: library/Zend/Pdf/Element/Object.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(Zend_Pdf_Element\\|null, string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(Zend_Pdf_Element\\|null, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Element/Object.php
 
@@ -11946,7 +11931,7 @@ parameters:
 			path: library/Zend/Pdf/Element/Reference.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Element/Reference.php
 
@@ -12036,7 +12021,7 @@ parameters:
 			path: library/Zend/Pdf/ElementFactory.php
 
 		-
-			message: "#^Parameter \\#1 \\$array_arg of function ksort expects array, array\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$array(_arg)? of function ksort expects array, array\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Pdf/ElementFactory.php
 
@@ -12051,7 +12036,7 @@ parameters:
 			path: library/Zend/Pdf/ElementFactory.php
 
 		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(var|value) of function count expects array\\|Countable, array\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Pdf/ElementFactory.php
 
@@ -12606,22 +12591,22 @@ parameters:
 			path: library/Zend/Pdf/Filter/AsciiHex.php
 
 		-
-			message: "#^Parameter \\#1 \\$ascii of function chr expects int, float given\\.$#"
+			message: "#^Parameter \\#1 \\$(ascii|codepoint) of function chr expects int, float given\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Filter/Compression.php
 
 		-
-			message: "#^Parameter \\#2 \\$num of function array_fill expects int, float given\\.$#"
+			message: "#^Parameter \\#2 \\$(num|count) of function array_fill expects int, float given\\.$#"
 			count: 2
 			path: library/Zend/Pdf/Filter/Compression.php
 
 		-
-			message: "#^Parameter \\#3 \\$length of function substr expects int, float given\\.$#"
+			message: "#^Parameter \\#3 \\$length of function substr expects int(\\|null)?, float given\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Filter/Compression.php
 
 		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$(new)?value of function ini_set expects string, string\\|false given\\.$#"
 			count: 4
 			path: library/Zend/Pdf/Filter/Compression/Flate.php
 
@@ -13066,7 +13051,7 @@ parameters:
 			path: library/Zend/Pdf/Parser.php
 
 		-
-			message: "#^Property Zend_Pdf_StringParser\\:\\:\\$offset \\(int\\) does not accept int\\<0, max\\>\\|false\\.$#"
+			message: "#^Property Zend_Pdf_StringParser\\:\\:\\$offset \\(int\\) does not accept int(\\<0, max\\>)?\\|false\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Parser.php
 
@@ -13231,7 +13216,7 @@ parameters:
 			path: library/Zend/Pdf/Resource/Font/CidFont.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function iconv_strlen expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function iconv_strlen expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Resource/Font/CidFont.php
 
@@ -13366,7 +13351,7 @@ parameters:
 			path: library/Zend/Pdf/Resource/Font/Simple.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function iconv_strlen expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function iconv_strlen expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Resource/Font/Simple.php
 
@@ -13751,7 +13736,7 @@ parameters:
 			path: library/Zend/Pdf/Resource/Image/Png.php
 
 		-
-			message: "#^Parameter \\#2 \\$data of function unpack expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$(data|string) of function unpack expects string, string\\|false given\\.$#"
 			count: 2
 			path: library/Zend/Pdf/Resource/Image/Png.php
 
@@ -13941,7 +13926,7 @@ parameters:
 			path: library/Zend/Pdf/Resource/Image/Tiff.php
 
 		-
-			message: "#^Parameter \\#2 \\$data of function unpack expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$(data|string) of function unpack expects string, string\\|false given\\.$#"
 			count: 2
 			path: library/Zend/Pdf/Resource/Image/Tiff.php
 
@@ -14296,7 +14281,7 @@ parameters:
 			path: library/Zend/Queue/Adapter/Memcacheq.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function trim expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function trim expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Queue/Adapter/Memcacheq.php
 
@@ -14406,27 +14391,27 @@ parameters:
 			path: library/Zend/Queue/Stomp/Client.php
 
 		-
-			message: "#^Parameter \\#2 \\$mode of function stream_set_blocking expects bool, int given\\.$#"
+			message: "#^Parameter \\#2 \\$(enable|mode) of function stream_set_blocking expects bool, int given\\.$#"
 			count: 1
 			path: library/Zend/Queue/Stomp/Client/Connection.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function fwrite expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function fwrite expects resource, resource\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Queue/Stomp/Client/Connection.php
 
 		-
-			message: "#^Parameter \\#1 \\$read_streams of function stream_select expects array\\<resource\\>, array\\<int, resource\\|false\\> given\\.$#"
+			message: "#^Parameter \\#1 \\$read(_streams)? of function stream_select expects array\\<resource\\>(\\|null)?, array\\<int, resource\\|false\\> given\\.$#"
 			count: 1
 			path: library/Zend/Queue/Stomp/Client/Connection.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function feof expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function feof expects resource, resource\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Queue/Stomp/Client/Connection.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function fread expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function fread expects resource, resource\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Queue/Stomp/Client/Connection.php
 
@@ -14501,7 +14486,7 @@ parameters:
 			path: library/Zend/Reflection/Class.php
 
 		-
-			message: "#^Parameter \\#1 \\$input of function array_splice expects array, array\\<int, string\\>\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(input|array) of function array_splice expects array, array\\<int, string\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Reflection/Class.php
 
@@ -14526,7 +14511,7 @@ parameters:
 			path: library/Zend/Reflection/Class.php
 
 		-
-			message: "#^Parameter \\#1 \\$filter of method ReflectionClass\\<object\\>\\:\\:getMethods\\(\\) expects int, string given\\.$#"
+			message: "#^Parameter \\#1 \\$filter of method ReflectionClass\\<object\\>\\:\\:getMethods\\(\\) expects int(\\|null)?, string given\\.$#"
 			count: 1
 			path: library/Zend/Reflection/Class.php
 
@@ -14546,7 +14531,7 @@ parameters:
 			path: library/Zend/Reflection/Docblock.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function ltrim expects string, string\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function ltrim expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Reflection/Docblock.php
 
@@ -14591,12 +14576,12 @@ parameters:
 			path: library/Zend/Reflection/Function.php
 
 		-
-			message: "#^Parameter \\#1 \\$input of function array_splice expects array, array\\<int, string\\>\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(input|array) of function array_splice expects array, array\\<int, string\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Reflection/Function.php
 
 		-
-			message: "#^Parameter \\#1 \\$input of function array_splice is passed by reference, so it expects variables only\\.$#"
+			message: "#^Parameter \\#1 \\$(input|array) of function array_splice is passed by reference, so it expects variables only\\.$#"
 			count: 1
 			path: library/Zend/Reflection/Function.php
 
@@ -14636,7 +14621,7 @@ parameters:
 			path: library/Zend/Reflection/Method.php
 
 		-
-			message: "#^Parameter \\#1 \\$input of function array_splice expects array, array\\<int, string\\>\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(input|array) of function array_splice expects array, array\\<int, string\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Reflection/Method.php
 
@@ -14646,7 +14631,7 @@ parameters:
 			path: library/Zend/Reflection/Method.php
 
 		-
-			message: "#^Parameter \\#1 \\$input of function array_slice expects array, array\\<int, string\\>\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(input|array) of function array_slice expects array, array\\<int, string\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Reflection/Method.php
 
@@ -14658,6 +14643,11 @@ parameters:
 		-
 			message: "#^Cannot call method getName\\(\\) on ReflectionClass\\|null\\.$#"
 			count: 1
+			path: library/Zend/Reflection/Parameter.php
+
+		-
+			message: "#^Call to an undefined method ReflectionType\\:\\:getName\\(\\)\\.$#"
+			count: 2
 			path: library/Zend/Reflection/Parameter.php
 
 		-
@@ -14676,7 +14666,7 @@ parameters:
 			path: library/Zend/Search/Lucene.php
 
 		-
-			message: "#^Parameter \\#1 \\$number of function base_convert expects string, int given\\.$#"
+			message: "#^Parameter \\#1 \\$num(ber)? of function base_convert expects string, int given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene.php
 
@@ -14851,7 +14841,7 @@ parameters:
 			path: library/Zend/Search/Lucene.php
 
 		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(var|value) of function count expects array\\|Countable, array\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene.php
 
@@ -14981,7 +14971,7 @@ parameters:
 			path: library/Zend/Search/Lucene/Analysis/TokenFilter/StopWords.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function trim expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function trim expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Analysis/TokenFilter/StopWords.php
 
@@ -15051,7 +15041,7 @@ parameters:
 			path: library/Zend/Search/Lucene/Document/Html.php
 
 		-
-			message: "#^Parameter \\#3 \\$str of function iconv expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#3 \\$str(ing)? of function iconv expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Document/Html.php
 
@@ -15141,7 +15131,7 @@ parameters:
 			path: library/Zend/Search/Lucene/Document/OpenXml.php
 
 		-
-			message: "#^Parameter \\#2 \\$callback of function array_filter expects callable\\(mixed, mixed\\)\\: bool, 'strlen' given\\.$#"
+			message: "#^Parameter \\#2 \\$callback of function array_filter expects (\\()?callable\\(mixed, mixed\\)\\: bool(\\)\\|null)?, 'strlen' given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Document/OpenXml.php
 
@@ -15371,7 +15361,7 @@ parameters:
 			path: library/Zend/Search/Lucene/Index/SegmentInfo.php
 
 		-
-			message: "#^Parameter \\#1 \\$number of function base_convert expects string, int given\\.$#"
+			message: "#^Parameter \\#1 \\$num(ber)? of function base_convert expects string, int given\\.$#"
 			count: 3
 			path: library/Zend/Search/Lucene/Index/SegmentInfo.php
 
@@ -15411,7 +15401,7 @@ parameters:
 			path: library/Zend/Search/Lucene/Index/SegmentInfo.php
 
 		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(var|value) of function count expects array\\|Countable, array\\|null given\\.$#"
 			count: 2
 			path: library/Zend/Search/Lucene/Index/SegmentInfo.php
 
@@ -15466,7 +15456,7 @@ parameters:
 			path: library/Zend/Search/Lucene/Index/SegmentInfo.php
 
 		-
-			message: "#^Parameter \\#2 \\$multiplier of function str_repeat expects int, float given\\.$#"
+			message: "#^Parameter \\#2 \\$(multiplier|times) of function str_repeat expects int, float given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Index/SegmentInfo.php
 
@@ -15796,7 +15786,7 @@ parameters:
 			path: library/Zend/Search/Lucene/Index/Writer.php
 
 		-
-			message: "#^Parameter \\#1 \\$number of function base_convert expects string, int given\\.$#"
+			message: "#^Parameter \\#1 \\$num(ber)? of function base_convert expects string, int given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Index/Writer.php
 
@@ -16131,7 +16121,7 @@ parameters:
 			path: library/Zend/Search/Lucene/Proxy.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(Zend_Search_Lucene_Interface\\|null, 'find'\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(Zend_Search_Lucene_Interface\\|null, 'find'\\) given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Proxy.php
 
@@ -16606,7 +16596,7 @@ parameters:
 			path: library/Zend/Search/Lucene/Search/Query/Preprocessing/Fuzzy.php
 
 		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\<int, string\\>\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(var|value) of function count expects array\\|Countable, array\\<int, string\\>\\|false given\\.$#"
 			count: 2
 			path: library/Zend/Search/Lucene/Search/Query/Preprocessing/Fuzzy.php
 
@@ -16641,7 +16631,7 @@ parameters:
 			path: library/Zend/Search/Lucene/Search/Query/Preprocessing/Term.php
 
 		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\<int, array\\<int, int\\|string\\>\\>\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(var|value) of function count expects array\\|Countable, array\\<int, array\\<int, int\\|string\\>\\>\\|false given\\.$#"
 			count: 2
 			path: library/Zend/Search/Lucene/Search/Query/Preprocessing/Term.php
 
@@ -16781,7 +16771,7 @@ parameters:
 			path: library/Zend/Search/Lucene/Search/QueryLexer.php
 
 		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(var|value) of function count expects array\\|Countable, array\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Search/QueryLexer.php
 
@@ -17066,17 +17056,17 @@ parameters:
 			path: library/Zend/Search/Lucene/Storage/Directory/Filesystem.php
 
 		-
-			message: "#^Parameter \\#1 \\$dir_handle of function readdir expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$dir_handle of function readdir expects resource(\\|null)?, resource\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Storage/Directory/Filesystem.php
 
 		-
-			message: "#^Parameter \\#1 \\$dir_handle of function closedir expects resource, resource\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$dir_handle of function closedir expects resource(\\|null)?, resource\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Storage/Directory/Filesystem.php
 
 		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$(new)?value of function ini_set expects string, string\\|false given\\.$#"
 			count: 4
 			path: library/Zend/Search/Lucene/Storage/Directory/Filesystem.php
 
@@ -17151,12 +17141,12 @@ parameters:
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
 
 		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$(new)?value of function ini_set expects string, string\\|false given\\.$#"
 			count: 2
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function fseek expects resource, resource\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function fseek expects resource, resource\\|null given\\.$#"
 			count: 3
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
 
@@ -17166,12 +17156,12 @@ parameters:
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function ftell expects resource, resource\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function ftell expects resource, resource\\|null given\\.$#"
 			count: 3
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function fflush expects resource, resource\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function fflush expects resource, resource\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
 
@@ -17196,12 +17186,12 @@ parameters:
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function fread expects resource, resource\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function fread expects resource, resource\\|null given\\.$#"
 			count: 2
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function feof expects resource, resource\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function feof expects resource, resource\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
 
@@ -17211,12 +17201,12 @@ parameters:
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function fwrite expects resource, resource\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function fwrite expects resource, resource\\|null given\\.$#"
 			count: 2
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function flock expects resource, resource\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$(fp|stream) of function flock expects resource, resource\\|null given\\.$#"
 			count: 2
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
 
@@ -17311,7 +17301,7 @@ parameters:
 			path: library/Zend/Search/Lucene/TermStreamsPriorityQueue.php
 
 		-
-			message: "#^Parameter \\#1 \\$what of function class_implements expects object\\|string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(what|object_or_class) of function class_implements expects object\\|string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Serializer.php
 
@@ -17431,7 +17421,7 @@ parameters:
 			path: library/Zend/Serializer/Adapter/PythonPickle.php
 
 		-
-			message: "#^Parameter \\#1 \\$ascii of function chr expects int, float\\|int\\<min, 127\\> given\\.$#"
+			message: "#^Parameter \\#1 \\$(ascii|codepoint) of function chr expects int, float\\|int\\<min, 127\\> given\\.$#"
 			count: 1
 			path: library/Zend/Serializer/Adapter/PythonPickle.php
 
@@ -17441,17 +17431,17 @@ parameters:
 			path: library/Zend/Serializer/Adapter/PythonPickle.php
 
 		-
-			message: "#^Parameter \\#1 \\$base of function bcpow expects string, int given\\.$#"
+			message: "#^Parameter \\#1 \\$(base|num) of function bcpow expects string, int given\\.$#"
 			count: 2
 			path: library/Zend/Serializer/Adapter/PythonPickle.php
 
 		-
-			message: "#^Parameter \\#1 \\$left_operand of function bcadd expects string, int\\|string given\\.$#"
+			message: "#^Parameter \\#1 \\$(left_operand|num1) of function bcadd expects string, int\\|string given\\.$#"
 			count: 1
 			path: library/Zend/Serializer/Adapter/PythonPickle.php
 
 		-
-			message: "#^Parameter \\#1 \\$left_operand of function bcmul expects string, int given\\.$#"
+			message: "#^Parameter \\#1 \\$(left_operand|num1) of function bcmul expects string, int given\\.$#"
 			count: 1
 			path: library/Zend/Serializer/Adapter/PythonPickle.php
 
@@ -17461,7 +17451,7 @@ parameters:
 			path: library/Zend/Serializer/Adapter/PythonPickle.php
 
 		-
-			message: "#^Parameter \\#1 \\$left_operand of function bcsub expects string, int\\|string given\\.$#"
+			message: "#^Parameter \\#1 \\$(left_operand|num1) of function bcsub expects string, int\\|string given\\.$#"
 			count: 1
 			path: library/Zend/Serializer/Adapter/PythonPickle.php
 
@@ -17531,17 +17521,17 @@ parameters:
 			path: library/Zend/Service/Console/Command.php
 
 		-
-			message: "#^Parameter \\#1 \\$exception_handler of function set_exception_handler expects \\(callable\\(Throwable\\)\\: void\\)\\|null, array\\('Zend_Service…', 'phpstdex'\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(exception_handler|callback) of function set_exception_handler expects \\(callable\\(Throwable\\)\\: void\\)\\|null, array\\('Zend_Service…', 'phpstdex'\\) given\\.$#"
 			count: 1
 			path: library/Zend/Service/Console/Command.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, mixed\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, mixed\\) given\\.$#"
 			count: 1
 			path: library/Zend/Service/Console/Command.php
 
 		-
-			message: "#^Parameter \\#2 \\$parameters of function call_user_func_array expects array\\<int, mixed\\>, array\\<int\\|string, mixed\\> given\\.$#"
+			message: "#^Parameter \\#2 \\$(parameters|args) of function call_user_func_array expects array\\<int, mixed\\>, array\\<int\\|string, mixed\\> given\\.$#"
 			count: 1
 			path: library/Zend/Service/Console/Command.php
 
@@ -17581,12 +17571,12 @@ parameters:
 			path: library/Zend/Service/Console/Command.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function strtolower expects string, string\\|true\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function strtolower expects string, string\\|true\\|null given\\.$#"
 			count: 2
 			path: library/Zend/Service/Console/Command/ParameterSource/Argv.php
 
 		-
-			message: "#^Parameter \\#2 \\$search of function array_key_exists expects array, array\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$(search|array) of function array_key_exists expects array, array\\|false given\\.$#"
 			count: 4
 			path: library/Zend/Service/Console/Command/ParameterSource/ConfigFile.php
 
@@ -17601,17 +17591,17 @@ parameters:
 			path: library/Zend/Service/Console/Command/ParameterSource/Env.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function strtolower expects string, string\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function strtolower expects string, string\\|null given\\.$#"
 			count: 2
 			path: library/Zend/Service/Console/Command/ParameterSource/Env.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function trim expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function trim expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/Console/Command/ParameterSource/Prompt.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function rtrim expects string, string\\|false\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function rtrim expects string, string\\|false\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Service/Console/Command/ParameterSource/StdIn.php
 
@@ -17641,7 +17631,7 @@ parameters:
 			path: library/Zend/Service/Delicious.php
 
 		-
-			message: "#^Parameter \\#1 \\$micro_seconds of function usleep expects int, float given\\.$#"
+			message: "#^Parameter \\#1 \\$micro(_)?seconds of function usleep expects int, float given\\.$#"
 			count: 1
 			path: library/Zend/Service/Delicious.php
 
@@ -17901,7 +17891,7 @@ parameters:
 			path: library/Zend/Service/Ebay/Finding/Response/Items.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(Zend_Service_Ebay_Finding, string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(Zend_Service_Ebay_Finding, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Service/Ebay/Finding/Response/Items.php
 
@@ -18076,7 +18066,7 @@ parameters:
 			path: library/Zend/Service/LiveDocx/MailMerge.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function base64_encode expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function base64_encode expects string, string\\|false given\\.$#"
 			count: 3
 			path: library/Zend/Service/LiveDocx/MailMerge.php
 
@@ -18376,7 +18366,7 @@ parameters:
 			path: library/Zend/Service/Rackspace/Files.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function strtolower expects string, string\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function strtolower expects string, string\\|null given\\.$#"
 			count: 2
 			path: library/Zend/Service/Rackspace/Files.php
 
@@ -18466,7 +18456,7 @@ parameters:
 			path: library/Zend/Service/Rackspace/Servers.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function base64_encode expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function base64_encode expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/Rackspace/Servers.php
 
@@ -18501,7 +18491,7 @@ parameters:
 			path: library/Zend/Service/Rackspace/Servers.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function rawurlencode expects string, int given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function rawurlencode expects string, int given\\.$#"
 			count: 2
 			path: library/Zend/Service/Rackspace/Servers.php
 
@@ -18766,7 +18756,7 @@ parameters:
 			path: library/Zend/Service/StrikeIron/Decorator.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(object, string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(object, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Service/StrikeIron/Decorator.php
 
@@ -18781,17 +18771,17 @@ parameters:
 			path: library/Zend/Service/Twitter.php
 
 		-
-			message: "#^Parameter \\#1 \\$object of function method_exists expects object\\|string, Zend_Oauth_Consumer\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$object(_or_class)? of function method_exists expects object\\|string, Zend_Oauth_Consumer\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Service/Twitter.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(Zend_Oauth_Consumer\\|null, string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(Zend_Oauth_Consumer\\|null, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Service/Twitter.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(\\$this\\(Zend_Service_Twitter\\), string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(\\$this\\(Zend_Service_Twitter\\), string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Service/Twitter.php
 
@@ -19846,17 +19836,17 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
 
 		-
-			message: "#^Parameter \\#1 \\$arr1 of function array_merge expects array, array\\<int, string\\>\\|false given\\.$#"
+			message: "#^Parameter \\#1 (\\$arr1|\\.\\.\\.\\$arrays) of function array_merge expects array, array\\<int, string\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
 
 		-
-			message: "#^Parameter \\#2 \\.\\.\\.\\$args of function array_merge expects array, array\\<int, string\\>\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\.\\.\\.\\$(args|arrays) of function array_merge expects array, array\\<int, string\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
 
 		-
-			message: "#^Parameter \\#3 \\.\\.\\.\\$args of function array_merge expects array, array\\<int, string\\>\\|false given\\.$#"
+			message: "#^Parameter \\#3 \\.\\.\\.\\$(args|arrays) of function array_merge expects array, array\\<int, string\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
 
@@ -19866,7 +19856,7 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
 
 		-
-			message: "#^Parameter \\#2 \\.\\.\\.\\$args of function array_merge expects array, SimpleXMLElement given\\.$#"
+			message: "#^Parameter \\#2 \\.\\.\\.\\$(args|arrays) of function array_merge expects array, SimpleXMLElement given\\.$#"
 			count: 2
 			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
 
@@ -19896,7 +19886,7 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
 
 		-
-			message: "#^Parameter \\#2 \\$baseDirectory of method Phar\\:\\:buildFromIterator\\(\\) expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$baseDirectory of method Phar\\:\\:buildFromIterator\\(\\) expects string(\\|null)?, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
 
@@ -19951,12 +19941,12 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/CommandLine/PackageScaffolder/PackageScaffolderAbstract.php
 
 		-
-			message: "#^Parameter \\#2 \\$mode of function chmod expects int, string given\\.$#"
+			message: "#^Parameter \\#2 \\$(mode|permissions) of function chmod expects int, string given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/CommandLine/PackageScaffolder/PackageScaffolderAbstract.php
 
 		-
-			message: "#^Parameter \\#2 \\$mode of function mkdir expects int, string given\\.$#"
+			message: "#^Parameter \\#2 \\$(mode|permissions) of function mkdir expects int, string given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/CommandLine/PackageScaffolder/PackageScaffolderAbstract.php
 
@@ -20341,7 +20331,7 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/CommandLine/Storage.php
 
 		-
-			message: "#^Parameter \\#2 \\$start of function substr expects int, int\\<0, max\\>\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$(start|offset) of function substr expects int, int\\<0, max\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Credentials/SharedAccessSignature.php
 
@@ -20361,7 +20351,7 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Credentials/SharedAccessSignature.php
 
 		-
-			message: "#^Parameter \\#2 \\$start of function substr expects int, int\\<0, max\\>\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$(start|offset) of function substr expects int, int\\<0, max\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Credentials/SharedKey.php
 
@@ -20376,7 +20366,7 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Credentials/SharedKey.php
 
 		-
-			message: "#^Parameter \\#2 \\$start of function substr expects int, int\\<0, max\\>\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$(start|offset) of function substr expects int, int\\<0, max\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Credentials/SharedKeyLite.php
 
@@ -20676,7 +20666,7 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Management/Client.php
 
 		-
-			message: "#^Parameter \\#1 \\$data of function utf8_decode expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(data|string) of function utf8_decode expects string, string\\|false given\\.$#"
 			count: 5
 			path: library/Zend/Service/WindowsAzure/Management/Client.php
 
@@ -20841,7 +20831,7 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Management/Client.php
 
 		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\<SimpleXMLElement\\>\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$(var|value) of function count expects array\\|Countable, array\\<SimpleXMLElement\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Management/Client.php
 
@@ -20946,7 +20936,7 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Management/Client.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function base64_encode expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function base64_encode expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Management/Client.php
 
@@ -21036,12 +21026,12 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Management/SubscriptionOperationInstance.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\|string given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\|string given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/RetryPolicy/NoRetry.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\|string given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\|string given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/RetryPolicy/RetryN.php
 
@@ -21301,7 +21291,7 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function strtolower expects string, string\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function strtolower expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
 
@@ -21571,12 +21561,12 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Storage/Blob/Stream.php
 
 		-
-			message: "#^Parameter \\#1 \\$array_arg of function current expects array, array\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$array(_arg)? of function current expects array, array\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Blob/Stream.php
 
 		-
-			message: "#^Parameter \\#1 \\$array_arg of function next expects array, array\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$array(_arg)? of function next expects array, array\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Blob/Stream.php
 
@@ -21766,12 +21756,12 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Storage/Table.php
 
 		-
-			message: "#^Parameter \\#2 \\$start of function substr expects int, int\\<0, max\\>\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$(start|offset) of function substr expects int, int\\<0, max\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Table.php
 
 		-
-			message: "#^Parameter \\#3 \\$length of function substr expects int, int\\<0, max\\>\\|false given\\.$#"
+			message: "#^Parameter \\#3 \\$length of function substr expects int(\\|null)?, int\\<0, max\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Table.php
 
@@ -21846,7 +21836,7 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Storage/TableEntity.php
 
 		-
-			message: "#^Parameter \\#1 \\$argument of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
+			message: "#^Parameter \\#1 \\$(argument|objectOrClass) of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/TableEntity.php
 
@@ -21856,12 +21846,12 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Storage/TableEntity.php
 
 		-
-			message: "#^Parameter \\#2 \\$str of function explode expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$str(ing)? of function explode expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/TableEntity.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function addslashes expects string, string\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function addslashes expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/TableEntityQuery.php
 
@@ -22206,12 +22196,12 @@ parameters:
 			path: library/Zend/Tool/Framework/Client/Abstract.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, mixed\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, mixed\\) given\\.$#"
 			count: 1
 			path: library/Zend/Tool/Framework/Client/Abstract.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Tool/Framework/Client/Abstract.php
 
@@ -22316,7 +22306,7 @@ parameters:
 			path: library/Zend/Tool/Framework/Client/Console.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function rtrim expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function rtrim expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Tool/Framework/Client/Console.php
 
@@ -23111,7 +23101,7 @@ parameters:
 			path: library/Zend/Tool/Framework/Provider/Signature.php
 
 		-
-			message: "#^Parameter \\#1 \\$object of function method_exists expects object\\|string, Zend_Tool_Framework_Provider_Interface\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$object(_or_class)? of function method_exists expects object\\|string, Zend_Tool_Framework_Provider_Interface\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Tool/Framework/Provider/Signature.php
 
@@ -23211,7 +23201,7 @@ parameters:
 			path: library/Zend/Tool/Framework/System/Provider/Config.php
 
 		-
-			message: "#^Parameter \\#1 \\$argument of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
+			message: "#^Parameter \\#1 \\$(argument|objectOrClass) of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
 			count: 2
 			path: library/Zend/Tool/Framework/System/Provider/Config.php
 
@@ -23271,7 +23261,7 @@ parameters:
 			path: library/Zend/Tool/Framework/System/Provider/Manifest.php
 
 		-
-			message: "#^Parameter \\#2 \\$prefix of function http_build_query expects string, null given\\.$#"
+			message: "#^Parameter \\#2 \\$(numeric_)?prefix of function http_build_query expects string, null given\\.$#"
 			count: 2
 			path: library/Zend/Tool/Framework/System/Provider/Manifest.php
 
@@ -23791,7 +23781,7 @@ parameters:
 			path: library/Zend/Tool/Project/Context/Zf/TestApplicationControllerFile.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function ltrim expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function ltrim expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Tool/Project/Context/Zf/TestLibraryFile.php
 
@@ -23901,7 +23891,7 @@ parameters:
 			path: library/Zend/Tool/Project/Profile/FileParser/Xml.php
 
 		-
-			message: "#^Parameter \\#1 \\$node of method DOMDocument\\:\\:importNode\\(\\) expects DOMNode, DOMElement\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$node of method DOMDocument\\:\\:importNode\\(\\) expects DOMNode, DOMElement\\|(false|null) given\\.$#"
 			count: 1
 			path: library/Zend/Tool/Project/Profile/FileParser/Xml.php
 
@@ -23961,7 +23951,7 @@ parameters:
 			path: library/Zend/Tool/Project/Profile/Resource.php
 
 		-
-			message: "#^Parameter \\#1 \\$object of function method_exists expects object\\|string, string\\|Zend_Tool_Project_Context_Interface\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$object(_or_class)? of function method_exists expects object\\|string, string\\|Zend_Tool_Project_Context_Interface\\|null given\\.$#"
 			count: 2
 			path: library/Zend/Tool/Project/Profile/Resource.php
 
@@ -23986,7 +23976,7 @@ parameters:
 			path: library/Zend/Tool/Project/Profile/Resource.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(string\\|Zend_Tool_Project_Context_Interface\\|null, string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(string\\|Zend_Tool_Project_Context_Interface\\|null, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Tool/Project/Profile/Resource.php
 
@@ -24686,7 +24676,7 @@ parameters:
 			path: library/Zend/Tool/Project/Provider/Project.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function ltrim expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$str(ing)? of function ltrim expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Tool/Project/Provider/Project.php
 
@@ -24936,7 +24926,7 @@ parameters:
 			path: library/Zend/XmlRpc/Server.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(Zend_XmlRpc_Server_System, string\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(Zend_XmlRpc_Server_System, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/XmlRpc/Server.php
 
@@ -25011,7 +25001,7 @@ parameters:
 			path: library/Zend/XmlRpc/Server.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func expects callable\\(\\)\\: mixed, array\\(\\(int\\|string\\), 'observe'\\) given\\.$#"
+			message: "#^Parameter \\#1 \\$(function|callback) of function call_user_func expects callable\\(\\)\\: mixed, array\\(\\(int\\|string\\), 'observe'\\) given\\.$#"
 			count: 1
 			path: library/Zend/XmlRpc/Server/Fault.php
 
@@ -25091,17 +25081,17 @@ parameters:
 			path: library/Zend/XmlRpc/Value.php
 
 		-
-			message: "#^Parameter \\#1 \\$array_arg of function key expects array, SimpleXMLElement given\\.$#"
+			message: "#^Parameter \\#1 \\$array(_arg)? of function key expects array, SimpleXMLElement given\\.$#"
 			count: 2
 			path: library/Zend/XmlRpc/Value.php
 
 		-
-			message: "#^Parameter \\#1 \\$array_arg of function current expects array, SimpleXMLElement given\\.$#"
+			message: "#^Parameter \\#1 \\$array(_arg)? of function current expects array, SimpleXMLElement given\\.$#"
 			count: 2
 			path: library/Zend/XmlRpc/Value.php
 
 		-
-			message: "#^Parameter \\#1 \\$array_arg of function next expects array, SimpleXMLElement given\\.$#"
+			message: "#^Parameter \\#1 \\$array(_arg)? of function next expects array, SimpleXMLElement given\\.$#"
 			count: 2
 			path: library/Zend/XmlRpc/Value.php
 

@@ -42,7 +42,7 @@ require_once dirname(__FILE__) . '/AdapterTest.php';
  */
 class Zend_Queue_Adapter_PlatformJobQueueTest extends Zend_Queue_Adapter_AdapterTest
 {
-    public function setUp()
+    public function setUp(): void
     {
         if (!defined('TESTS_ZEND_QUEUE_PLATFORMJQ_HOST')
             || !constant('TESTS_ZEND_QUEUE_PLATFORMJQ_HOST')
@@ -179,7 +179,7 @@ class Zend_Queue_Adapter_PlatformJobQueueTest extends Zend_Queue_Adapter_Adapter
 
         // get it back
         $list = $adapter->receive(1);
-        $this->assertEquals(1, count($list));
+        $this->assertCount(1, $list);
         $this->assertTrue($list instanceof Zend_Queue_Message_Iterator);
         $this->assertTrue($list->valid());
 
@@ -217,7 +217,7 @@ class Zend_Queue_Adapter_PlatformJobQueueTest extends Zend_Queue_Adapter_Adapter
 
         // get it back
         $list = $adapter->receive(1);
-        $this->assertEquals(1, count($list));
+        $this->assertCount(1, $list);
         $this->assertTrue($list instanceof Zend_Queue_Message_Iterator);
         $this->assertTrue($list->valid());
 

@@ -383,6 +383,6 @@ class Zend_Measure_Flow_VolumeTest extends PHPUnit\Framework\TestCase
     {
         $value = new Zend_Measure_Flow_Volume('-100',Zend_Measure_Flow_Volume::STANDARD,'de');
         $unit  = $value->getConversionList();
-        $this->assertInternalType('array', $unit, 'Array expected');
+        $this->assertIsArray($unit, 'Array expected');
     }
 }

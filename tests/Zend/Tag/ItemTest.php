@@ -95,7 +95,7 @@ class Zend_Tag_ItemTest extends PHPUnit\Framework\TestCase
         $tag->setWeight('10');
 
         $this->assertEquals(10.0, $tag->getWeight());
-        $this->assertInternalType('float', $tag->getWeight());
+        $this->assertIsFloat($tag->getWeight());
     }
 
     public function testInvalidWeight()

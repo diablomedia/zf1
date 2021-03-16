@@ -1188,20 +1188,6 @@
             <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/DbAdapterTest.php</file>
             <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/DbStatementTest.php</file>
             <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/ControllerTestCaseTest.php</file>
-            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/TestCaseTest.php</file>
-            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/ConnectionTest.php</file>
-            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/SimpleTesterTest.php</file>
-            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/DataSet/DbRowsetTest.php</file>
-            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/DataSet/QueryDataSetTest.php</file>
-            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/DataSet/QueryTableTest.php</file>
-            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/DataSet/DbTableTest.php</file>
-            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/DataSet/DbTableDataSetTest.php</file>
-            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/Operation/InsertTest.php</file>
-            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/Operation/TruncateTest.php</file>
-            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/Operation/DeleteAllTest.php</file>
-            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/Metadata/GenericTest.php</file>
-            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/Integration/SqLiteIntegrationTest.php</file>
-            <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Db/Integration/MysqlIntegrationTest.php</file>
             <file>../vendor/diablomedia/zendframework1-test/tests/Zend/Test/PHPUnit/Constraint/DomQueryTest.php</file>
         </testsuite>
 

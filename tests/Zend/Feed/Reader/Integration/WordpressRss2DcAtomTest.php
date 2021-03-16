@@ -33,10 +33,9 @@ require_once 'Zend/Feed/Reader.php';
  */
 class Zend_Feed_Reader_Integration_WordpressRss2DcAtomTest extends PHPUnit\Framework\TestCase
 {
-
     protected $_feedSamplePath = null;
 
-    public function setup()
+    public function setUp(): void
     {
         Zend_Feed_Reader::reset();
         $this->_feedSamplePath = dirname(__FILE__) . '/_files/wordpress-rss2-dc-atom.xml';
@@ -209,8 +208,10 @@ class Zend_Feed_Reader_Integration_WordpressRss2DcAtomTest extends PHPUnit\Frame
             file_get_contents($this->_feedSamplePath)
         );
         $entry = $feed->current();
-        $this->assertEquals('http://www.norm2782.com/2009/03/wth-reading-books/',
-            $entry->getPermaLink());
+        $this->assertEquals(
+            'http://www.norm2782.com/2009/03/wth-reading-books/',
+            $entry->getPermaLink()
+        );
     }
 
     public function testGetsEntryEncoding()
@@ -221,5 +222,4 @@ class Zend_Feed_Reader_Integration_WordpressRss2DcAtomTest extends PHPUnit\Frame
         $entry = $feed->current();
         $this->assertEquals('UTF-8', $entry->getEncoding());
     }
-
 }

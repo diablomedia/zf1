@@ -143,9 +143,9 @@ class Zend_Queue_Stomp_FrameTest extends PHPUnit\Framework\TestCase
 
     public function test_constant()
     {
-        $this->assertInternalType('string', Zend_Queue_Stomp_Frame::END_OF_FRAME);
-        $this->assertInternalType('string', Zend_Queue_Stomp_Frame::CONTENT_LENGTH);
-        $this->assertInternalType('string', Zend_Queue_Stomp_Frame::EOL);
+        $this->assertIsString(Zend_Queue_Stomp_Frame::END_OF_FRAME);
+        $this->assertIsString(Zend_Queue_Stomp_Frame::CONTENT_LENGTH);
+        $this->assertIsString(Zend_Queue_Stomp_Frame::EOL);
     }
 
 }

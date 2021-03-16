@@ -47,12 +47,12 @@ class Zend_CodeGenerator_Php_MethodTest extends PHPUnit\Framework\TestCase
      */
     protected $_method = null;
 
-    public function setup()
+    public function setUp(): void
     {
         $this->_method = new Zend_CodeGenerator_Php_Method();
     }
 
-    public function teardown()
+    public function tearDown(): void
     {
         $this->_method = null;
     }
@@ -197,5 +197,4 @@ EOS;
 EOS;
         $this->assertEquals($expected, $codeGenProperty->generate());
     }
-
 }

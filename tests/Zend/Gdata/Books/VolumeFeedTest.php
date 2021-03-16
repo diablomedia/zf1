@@ -35,7 +35,7 @@ require_once 'Zend/Gdata/Books.php';
 class Zend_Gdata_Books_VolumeFeedTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->feedText = file_get_contents(
                 'Zend/Gdata/Books/_files/VolumeFeedDataSample1.xml',
                 true);
@@ -61,25 +61,25 @@ class Zend_Gdata_Books_VolumeFeedTest extends PHPUnit\Framework\TestCase
     }
 
     public function testEmptyEntryShouldHaveNoExtensionElements() {
-        $this->assertInternalType('array', $this->feed->extensionElements);
-        $this->assertEquals(0, count($this->feed->extensionElements));
+        $this->assertIsArray($this->feed->extensionElements);
+        $this->assertCount(0, $this->feed->extensionElements);
     }
 
     public function testEmptyEntryShouldHaveNoExtensionAttributes() {
-        $this->assertInternalType('array', $this->feed->extensionAttributes);
-        $this->assertEquals(0, count($this->feed->extensionAttributes));
+        $this->assertIsArray($this->feed->extensionAttributes);
+        $this->assertCount(0, $this->feed->extensionAttributes);
     }
 
     public function testSampleEntryShouldHaveNoExtensionElements() {
         $this->feed->transferFromXML($this->feedText);
-        $this->assertInternalType('array', $this->feed->extensionElements);
-        $this->assertEquals(0, count($this->feed->extensionElements));
+        $this->assertIsArray($this->feed->extensionElements);
+        $this->assertCount(0, $this->feed->extensionElements);
     }
 
     public function testSampleEntryShouldHaveNoExtensionAttributes() {
         $this->feed->transferFromXML($this->feedText);
-        $this->assertInternalType('array', $this->feed->extensionAttributes);
-        $this->assertEquals(0, count($this->feed->extensionAttributes));
+        $this->assertIsArray($this->feed->extensionAttributes);
+        $this->assertCount(0, $this->feed->extensionAttributes);
     }
 
     public function testEmptyVolumeFeedToAndFromStringShouldMatch() {

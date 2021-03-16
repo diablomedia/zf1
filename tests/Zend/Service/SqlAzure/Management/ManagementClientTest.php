@@ -45,7 +45,7 @@ class Zend_Service_SqlAzure_Management_ManagementClientTest extends PHPUnit\Fram
 	static $debug = true;
 	static $serverName = '';
 
-    public function setUp()
+    public function setUp(): void
     {
         self::$path = dirname(__FILE__).'/_files/';
         if (!defined(TESTS_ZEND_SERVICE_WINDOWSAZURE_SQLMANAGEMENT_RUNTESTS)) {
@@ -57,7 +57,7 @@ class Zend_Service_SqlAzure_Management_ManagementClientTest extends PHPUnit\Fram
     /**
      * Test teardown
      */
-    protected function tearDown()
+    public function tearDown(): void
     {
         // Clean up server
         $managementClient = $this->createManagementClient();
@@ -105,14 +105,14 @@ class Zend_Service_SqlAzure_Management_ManagementClientTest extends PHPUnit\Fram
 	        $this->log('Creating firewall rule...');
 			$managementClient->createFirewallRuleForMicrosoftServices($server->Name, true);
 			$result = $managementClient->listFirewallRules($server->Name);
-	        $this->assertEquals(1, count($result));
+	        $this->assertCount(1, $result);
 	        $this->log('Created firewall rule.');
 
 	        // ** Step 4: remove firewall rule
 	        $this->log('Removing firewall rule...');
 			$managementClient->createFirewallRuleForMicrosoftServices($server->Name, false);
 			$result = $managementClient->listFirewallRules($server->Name);
-	        $this->assertEquals(0, count($result));
+	        $this->assertCount(0, $result);
 	        $this->log('Removed firewall rule.');
 
 			// ** Step 5: Drop server

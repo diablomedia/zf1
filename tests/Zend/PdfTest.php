@@ -44,7 +44,7 @@ class Zend_PdfTest extends PHPUnit\Framework\TestCase
      */
     private $_pdf;
 
-    protected function setUp()
+    public function setUp(): void
     {
         $this->_pdf = Zend_Pdf::load(dirname(__FILE__) . '/Pdf/_files/PdfWithFields.pdf');
     }
@@ -80,7 +80,7 @@ class Zend_PdfTest extends PHPUnit\Framework\TestCase
 
     /**
      * Asserts: Setting a non-existent field shouls throw an exception
-     * 
+     *
      */
     public function testSetTextFieldNonExistent()
     {
@@ -115,7 +115,7 @@ class Zend_PdfTest extends PHPUnit\Framework\TestCase
 
     /**
      * Asserts setting property of non-existent field shouls throw an exception
-     * 
+     *
      */
     public function testSetTextFieldPropertiesNonExistent()
     {
@@ -140,7 +140,7 @@ class Zend_PdfTest extends PHPUnit\Framework\TestCase
 
     /**
      * Asserts setting property of non-existent field shouls throw an exception
-     * 
+     *
      */
     public function testMarkTextFieldAsReadOnlyNonExistent()
     {
@@ -162,7 +162,7 @@ class Zend_PdfTest extends PHPUnit\Framework\TestCase
         // getting JavaScript after setting it returns array
         $pdf = new Zend_Pdf();
         $pdf->setJavaScript('print();');
-        $this->assertInternalType('array', $pdf->getJavaScript());
+        $this->assertIsArray($pdf->getJavaScript());
     }
 
     public function testSetJavaScriptString()
@@ -205,7 +205,7 @@ class Zend_PdfTest extends PHPUnit\Framework\TestCase
 
     /**
      * Asserts setting empty JavaScript string throws exception
-     * 
+     *
      */
     public function testSetJavaScriptEmptyString()
     {
@@ -218,7 +218,7 @@ class Zend_PdfTest extends PHPUnit\Framework\TestCase
 
     /**
      * Asserts setting empty JavaScript array throws exception
-     * 
+     *
      */
     public function testSetJavaScriptEmptyArray()
     {

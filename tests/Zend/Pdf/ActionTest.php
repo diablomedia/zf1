@@ -53,7 +53,7 @@ require_once 'Zend/Pdf/ElementFactory.php';
  */
 class Zend_Pdf_ActionTest extends PHPUnit\Framework\TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         date_default_timezone_set('GMT');
     }
@@ -400,7 +400,7 @@ class Zend_Pdf_ActionTest extends PHPUnit\Framework\TestCase
             $action = Zend_Pdf_Action::load($dictionary);
             $this->fail("exception expected");
         } catch (Zend_Pdf_Exception $e) {
-            $this->assertContains('URI action dictionary entry is required', $e->getMessage());
+            $this->assertStringContainsString('URI action dictionary entry is required', $e->getMessage());
         }
     }
 

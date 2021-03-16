@@ -37,12 +37,12 @@ class Zend_Feed_AtomPublishingTest extends PHPUnit\Framework\TestCase
 {
     protected $_uri;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->_uri = 'http://fubar.com/myFeed';
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         Zend_Feed::setHttpClient(new Zend_Http_Client());
     }

@@ -35,7 +35,7 @@ require_once 'Zend/Gdata.php';
 class Zend_Gdata_Gapps_QuotaTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->quotaText = file_get_contents(
                 'Zend/Gdata/Gapps/_files/QuotaElementSample1.xml',
                 true);
@@ -43,24 +43,24 @@ class Zend_Gdata_Gapps_QuotaTest extends PHPUnit\Framework\TestCase
     }
 
     public function testEmptyQuotaShouldHaveNoExtensionElements() {
-        $this->assertInternalType('array', $this->quota->extensionElements);
+        $this->assertIsArray($this->quota->extensionElements);
         $this->assertTrue(count($this->quota->extensionElements) == 0);
     }
 
     public function testEmptyQuotaShouldHaveNoExtensionAttributes() {
-        $this->assertInternalType('array', $this->quota->extensionAttributes);
+        $this->assertIsArray($this->quota->extensionAttributes);
         $this->assertTrue(count($this->quota->extensionAttributes) == 0);
     }
 
     public function testSampleQuotaShouldHaveNoExtensionElements() {
         $this->quota->transferFromXML($this->quotaText);
-        $this->assertInternalType('array', $this->quota->extensionElements);
+        $this->assertIsArray($this->quota->extensionElements);
         $this->assertTrue(count($this->quota->extensionElements) == 0);
     }
 
     public function testSampleQuotaShouldHaveNoExtensionAttributes() {
         $this->quota->transferFromXML($this->quotaText);
-        $this->assertInternalType('array', $this->quota->extensionAttributes);
+        $this->assertIsArray($this->quota->extensionAttributes);
         $this->assertTrue(count($this->quota->extensionAttributes) == 0);
     }
 
@@ -69,20 +69,20 @@ class Zend_Gdata_Gapps_QuotaTest extends PHPUnit\Framework\TestCase
 
         $this->assertEquals("123456789", $this->quota->limit);
 
-        $this->assertEquals(0, count($this->quota->extensionElements));
+        $this->assertCount(0, $this->quota->extensionElements);
         $newQuota = new Zend_Gdata_Gapps_Extension_Quota();
         $newQuota->transferFromXML($this->quota->saveXML());
-        $this->assertEquals(0, count($newQuota->extensionElements));
+        $this->assertCount(0, $newQuota->extensionElements);
         $newQuota->extensionElements = array(
                 new Zend_Gdata_App_Extension_Element('foo', 'atom', null, 'bar'));
-        $this->assertEquals(1, count($newQuota->extensionElements));
+        $this->assertCount(1, $newQuota->extensionElements);
         $this->assertEquals("123456789", $newQuota->limit);
 
         /* try constructing using magic factory */
         $gdata = new Zend_Gdata_Gapps();
         $newQuota2 = $gdata->newQuota();
         $newQuota2->transferFromXML($newQuota->saveXML());
-        $this->assertEquals(1, count($newQuota2->extensionElements));
+        $this->assertCount(1, $newQuota2->extensionElements);
         $this->assertEquals("123456789", $newQuota2->limit);
     }
 

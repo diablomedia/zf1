@@ -396,6 +396,6 @@ class Zend_Measure_PressureTest extends PHPUnit\Framework\TestCase
     {
         $value = new Zend_Measure_Pressure('-100',Zend_Measure_Pressure::STANDARD,'de');
         $unit  = $value->getConversionList();
-        $this->assertInternalType('array', $unit, 'Array expected');
+        $this->assertIsArray($unit, 'Array expected');
     }
 }

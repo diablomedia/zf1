@@ -50,7 +50,7 @@ class Zend_Service_Flickr_OnlineTest extends PHPUnit\Framework\TestCase
      *
      * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
         if (!(defined('TESTS_ZEND_SERVICE_FLICKR_ONLINE_ENABLED') &&
             constant('TESTS_ZEND_SERVICE_FLICKR_ONLINE_ENABLED'))) {
@@ -93,7 +93,7 @@ class Zend_Service_Flickr_OnlineTest extends PHPUnit\Framework\TestCase
             $resultSet->seek(-1);
             $this->fail('Expected OutOfBoundsException not thrown');
         } catch (OutOfBoundsException $e) {
-            $this->assertContains('Illegal index', $e->getMessage());
+            $this->assertStringContainsString('Illegal index', $e->getMessage());
         }
 
         $resultSet->seek(9);
@@ -102,7 +102,7 @@ class Zend_Service_Flickr_OnlineTest extends PHPUnit\Framework\TestCase
             $resultSet->seek(10);
             $this->fail('Expected OutOfBoundsException not thrown');
         } catch (OutOfBoundsException $e) {
-            $this->assertContains('Illegal index', $e->getMessage());
+            $this->assertStringContainsString('Illegal index', $e->getMessage());
         }
 
         $resultSet->rewind();
@@ -140,7 +140,7 @@ class Zend_Service_Flickr_OnlineTest extends PHPUnit\Framework\TestCase
             $resultSet->seek(-1);
             $this->fail('Expected OutOfBoundsException not thrown');
         } catch (OutOfBoundsException $e) {
-            $this->assertContains('Illegal index', $e->getMessage());
+            $this->assertStringContainsString('Illegal index', $e->getMessage());
         }
 
         $resultSet->seek(9);
@@ -149,7 +149,7 @@ class Zend_Service_Flickr_OnlineTest extends PHPUnit\Framework\TestCase
             $resultSet->seek(10);
             $this->fail('Expected OutOfBoundsException not thrown');
         } catch (OutOfBoundsException $e) {
-            $this->assertContains('Illegal index', $e->getMessage());
+            $this->assertStringContainsString('Illegal index', $e->getMessage());
         }
 
         $resultSet->rewind();

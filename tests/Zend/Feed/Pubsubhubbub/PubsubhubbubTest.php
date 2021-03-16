@@ -33,7 +33,7 @@ require_once 'Zend/Feed/Pubsubhubbub.php';
 class Zend_Feed_Pubsubhubbub_PubsubhubbubTest extends PHPUnit\Framework\TestCase
 {
 
-    public function teardown()
+    public function tearDown(): void
     {
         Zend_Feed_Pubsubhubbub::clearHttpClient();
     }

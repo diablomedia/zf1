@@ -45,7 +45,7 @@ class Zend_Service_WindowsAzure_TableSessionHandlerTest extends PHPUnit\Framewor
     /**
      * Test setup
      */
-     public function setUp()
+     public function setUp(): void
      {
          if (!TESTS_ZEND_SERVICE_WINDOWSAZURE_SESSIONHANDLER_RUNTESTS) {
              $this->markTestSkipped('Test not enabled in TestConfiguration.php');
@@ -55,7 +55,7 @@ class Zend_Service_WindowsAzure_TableSessionHandlerTest extends PHPUnit\Framewor
     /**
      * Test teardown
      */
-    protected function tearDown()
+    public function tearDown(): void
     {
         $storageClient = $this->createStorageInstance();
         for ($i = 1; $i <= self::$uniqId; $i++)
@@ -185,7 +185,7 @@ class Zend_Service_WindowsAzure_TableSessionHandlerTest extends PHPUnit\Framewor
 
 
             $verifyResult = $storageClient->retrieveEntities($tableName);
-            $this->assertEquals(1, count($verifyResult));
+            $this->assertCount(1, $verifyResult);
         }
     }
 
@@ -238,7 +238,7 @@ class Zend_Service_WindowsAzure_TableSessionHandlerTest extends PHPUnit\Framewor
             $this->assertTrue($result);
 
             $verifyResult = $storageClient->retrieveEntities($tableName);
-            $this->assertEquals(0, count($verifyResult));
+            $this->assertCount(0, $verifyResult);
         }
     }
 
@@ -263,7 +263,7 @@ class Zend_Service_WindowsAzure_TableSessionHandlerTest extends PHPUnit\Framewor
             $this->assertTrue($result);
 
             $verifyResult = $storageClient->retrieveEntities($tableName);
-            $this->assertEquals(0, count($verifyResult));
+            $this->assertCount(0, $verifyResult);
         }
     }
 

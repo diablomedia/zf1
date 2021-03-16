@@ -33,14 +33,13 @@ require_once 'Zend/Feed/Reader.php';
  */
 class Zend_Feed_Reader_Entry_AtomTest extends PHPUnit\Framework\TestCase
 {
-
     protected $_feedSamplePath = null;
-    
+
     protected $_expectedCats = array();
-    
+
     protected $_expectedCatsDc = array();
 
-    public function setup()
+    public function setUp(): void
     {
         Zend_Feed_Reader::reset();
         if (Zend_Registry::isRegistered('Zend_Locale')) {
@@ -49,7 +48,7 @@ class Zend_Feed_Reader_Entry_AtomTest extends PHPUnit\Framework\TestCase
         }
         $this->_feedSamplePath = dirname(__FILE__) . '/_files/Atom';
         $this->_options = Zend_Date::setOptions();
-        foreach($this->_options as $k=>$v) {
+        foreach ($this->_options as $k=>$v) {
             if (is_null($v)) {
                 unset($this->_options[$k]);
             }
@@ -85,8 +84,8 @@ class Zend_Feed_Reader_Entry_AtomTest extends PHPUnit\Framework\TestCase
             )
         );
     }
-    
-    public function teardown()
+
+    public function tearDown(): void
     {
         Zend_Date::setOptions($this->_options);
     }
@@ -324,7 +323,7 @@ class Zend_Feed_Reader_Entry_AtomTest extends PHPUnit\Framework\TestCase
         $entry = $feed->current();
         $this->assertEquals('Entry Content &amp;', $entry->getContent());
     }
-    
+
     /**
      * HTML Escaped
      * @group ZFRATOMCONTENT
@@ -337,7 +336,7 @@ class Zend_Feed_Reader_Entry_AtomTest extends PHPUnit\Framework\TestCase
         $entry = $feed->current();
         $this->assertEquals('<p>Entry Content &amp;</p>', $entry->getContent());
     }
-    
+
     /**
      * HTML CDATA Escaped
      * @group ZFRATOMCONTENT
@@ -350,7 +349,7 @@ class Zend_Feed_Reader_Entry_AtomTest extends PHPUnit\Framework\TestCase
         $entry = $feed->current();
         $this->assertEquals('<p>Entry Content &amp;</p>', $entry->getContent());
     }
-    
+
     /**
      * XHTML
      * @group ZFRATOMCONTENT
@@ -453,13 +452,13 @@ class Zend_Feed_Reader_Entry_AtomTest extends PHPUnit\Framework\TestCase
         $entry = $feed->current();
         $this->assertEquals('http://www.example.com/entry/comments', $entry->getCommentLink());
     }
-    
+
     /**
      * Get category data
      */
-    
+
     // Atom 1.0 (Atom 0.3 never supported categories except via Atom 1.0/Dublin Core extensions)
-    
+
     public function testGetsCategoriesFromAtom10()
     {
         $feed = Zend_Feed_Reader::importString(
@@ -469,7 +468,7 @@ class Zend_Feed_Reader_Entry_AtomTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($this->_expectedCats, (array) $entry->getCategories());
         $this->assertEquals(array('topic1','Cat & Dog'), array_values($entry->getCategories()->getValues()));
     }
-    
+
     public function testGetsCategoriesFromAtom03_Atom10Extension()
     {
         $feed = Zend_Feed_Reader::importString(
@@ -479,9 +478,9 @@ class Zend_Feed_Reader_Entry_AtomTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($this->_expectedCats, (array) $entry->getCategories());
         $this->assertEquals(array('topic1','Cat & Dog'), array_values($entry->getCategories()->getValues()));
     }
-    
+
     // DC 1.0/1.1 for Atom 0.3
-    
+
     public function testGetsCategoriesFromAtom03_Dc10()
     {
         $feed = Zend_Feed_Reader::importString(
@@ -491,7 +490,7 @@ class Zend_Feed_Reader_Entry_AtomTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($this->_expectedCatsDc, (array) $entry->getCategories());
         $this->assertEquals(array('topic1','topic2'), array_values($entry->getCategories()->getValues()));
     }
-    
+
     public function testGetsCategoriesFromAtom03_Dc11()
     {
         $feed = Zend_Feed_Reader::importString(
@@ -501,9 +500,9 @@ class Zend_Feed_Reader_Entry_AtomTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($this->_expectedCatsDc, (array) $entry->getCategories());
         $this->assertEquals(array('topic1','topic2'), array_values($entry->getCategories()->getValues()));
     }
-    
+
     // No Categories In Entry
-    
+
     public function testGetsCategoriesFromAtom10_None()
     {
         $feed = Zend_Feed_Reader::importString(
@@ -513,7 +512,7 @@ class Zend_Feed_Reader_Entry_AtomTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(array(), (array) $entry->getCategories());
         $this->assertEquals(array(), array_values($entry->getCategories()->getValues()));
     }
-    
+
     public function testGetsCategoriesFromAtom03_None()
     {
         $feed = Zend_Feed_Reader::importString(
@@ -523,5 +522,4 @@ class Zend_Feed_Reader_Entry_AtomTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(array(), (array) $entry->getCategories());
         $this->assertEquals(array(), array_values($entry->getCategories()->getValues()));
     }
-    
 }

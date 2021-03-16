@@ -57,16 +57,21 @@ class Zend_Reflection_Parameter extends ReflectionParameter
      */
     public function getClass($reflectionClass = 'Zend_Reflection_Class')
     {
-        $phpReflection  = parent::getClass();
-        if($phpReflection == null) {
+        $type = parent::getType();
+
+        if ($type === null) {
             return null;
         }
 
-        $zendReflection = new $reflectionClass($phpReflection->getName());
+        if ($type->isBuiltin()) {
+            return null;
+        }
+
+        $zendReflection = new $reflectionClass($type->getName());
         if (!$zendReflection instanceof Zend_Reflection_Class) {
             throw new Zend_Reflection_Exception('Invalid reflection class provided; must extend Zend_Reflection_Class');
         }
-        unset($phpReflection);
+        unset($type);
         return $zendReflection;
     }
 
@@ -116,5 +121,16 @@ class Zend_Reflection_Parameter extends ReflectionParameter
         }
 
         return null;
+    }
+
+    public function isArray()
+    {
+        $type = parent::getType();
+
+        if ($type === null) {
+            return false;
+        }
+
+        return $type->getName() === 'array';
     }
 }

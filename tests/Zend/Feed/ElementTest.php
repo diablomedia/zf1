@@ -78,8 +78,8 @@ class Zend_Feed_ElementTest extends PHPUnit\Framework\TestCase
 
         $this->assertTrue($entry->summary instanceof Zend_Feed_Element, '__get access should return an Zend_Feed_Element instance');
         $this->assertFalse($entry->summary() instanceof Zend_Feed_Element, 'method access should not return an Zend_Feed_Element instance');
-        $this->assertInternalType('string', $entry->summary(), 'method access should return a string');
-        $this->assertNotInternalType('string', $entry->summary, '__get access should not return a string');
+        $this->assertIsString($entry->summary(), 'method access should return a string');
+        $this->assertIsNotString($entry->summary, '__get access should not return a string');
     }
 
     public function testSetNamespacedAttributes()

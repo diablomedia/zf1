@@ -237,7 +237,7 @@ class Zend_Measure_NumberTest extends PHPUnit\Framework\TestCase
     {
         $value = new Zend_Measure_Number('-100',Zend_Measure_Number::STANDARD,'de');
         $unit  = $value->getConversionList();
-        $this->assertInternalType('array', $unit, 'Array expected');
+        $this->assertIsArray($unit, 'Array expected');
     }
 
     /**

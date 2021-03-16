@@ -34,7 +34,7 @@ require_once 'Zend/Gdata/Spreadsheets.php';
 class Zend_Gdata_Spreadsheets_CellFeedTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->cellFeed = new Zend_Gdata_Spreadsheets_CellFeed(
                 file_get_contents('Zend/Gdata/Spreadsheets/_files/TestDataCellFeedSample1.xml', true),

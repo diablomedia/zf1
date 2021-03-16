@@ -43,12 +43,12 @@ class Zend_CodeGenerator_Php_Docblock_Tag_ReturnTest extends PHPUnit\Framework\T
      */
     protected $_tag = null;
 
-    public function setup()
+    public function setUp(): void
     {
         $this->_tag = new Zend_CodeGenerator_Php_Docblock_Tag_Return();
     }
 
-    public function teardown()
+    public function tearDown(): void
     {
         $this->_tag = null;
     }
@@ -58,5 +58,4 @@ class Zend_CodeGenerator_Php_Docblock_Tag_ReturnTest extends PHPUnit\Framework\T
         $this->_tag->setDatatype('Foo');
         $this->assertEquals('Foo', $this->_tag->getDatatype());
     }
-
 }

@@ -40,7 +40,7 @@ class Zend_Reflection_Docblock_Tag_ParamTest extends PHPUnit\Framework\TestCase
 
     static protected $_sampleClassFileRequired = false;
 
-    public function setup()
+    public function setUp(): void
     {
         if (self::$_sampleClassFileRequired === false) {
             $fileToRequire = dirname(dirname(dirname(__FILE__))) . '/_files/TestSampleClass.php';
@@ -80,7 +80,7 @@ class Zend_Reflection_Docblock_Tag_ParamTest extends PHPUnit\Framework\TestCase
      * @group ZF-8307
      */
     public function testNamespaceInParam()
-    {    
+    {
         $classReflection = new Zend_Reflection_Class('Zend_Reflection_Docblock_Param_WithNamespace');
         $paramTag = $classReflection->getMethod('doSomething')->getDocblock()->getTag('param');
 

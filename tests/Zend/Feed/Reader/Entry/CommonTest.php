@@ -36,7 +36,7 @@ class Zend_Feed_Reader_Entry_CommonTest extends PHPUnit\Framework\TestCase
 
     protected $_feedSamplePath = null;
 
-    public function setup()
+    public function setUp(): void
     {
         Zend_Feed_Reader::reset();
         if (Zend_Registry::isRegistered('Zend_Locale')) {
@@ -111,7 +111,7 @@ class Zend_Feed_Reader_Entry_CommonTest extends PHPUnit\Framework\TestCase
         $entry = $feed->current();
         $this->assertEquals(null, $entry->getExtension('Foo'));
     }
-    
+
     /**
      * @group ZF-8213
      */
@@ -123,7 +123,7 @@ class Zend_Feed_Reader_Entry_CommonTest extends PHPUnit\Framework\TestCase
         $entry = $feed->current();
         $this->assertEquals('UTF-8', $entry->getEncoding());
     }
-    
+
     /**
      * @group ZF-8213
      */

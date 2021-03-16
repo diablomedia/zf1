@@ -64,7 +64,7 @@ class Zend_Service_Delicious_PostTest extends PHPUnit\Framework\TestCase
      *
      * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->_delicious = new Zend_Service_Delicious(self::UNAME, self::PASS);
 
@@ -86,7 +86,7 @@ class Zend_Service_Delicious_PostTest extends PHPUnit\Framework\TestCase
             $post = new Zend_Service_Delicious_Post($this->_delicious, array('url' => 'anything'));
             $this->fail('Expected Zend_Service_Delicious_Exception not thrown');
         } catch (Zend_Service_Delicious_Exception $e) {
-            $this->assertContains("'url' and 'title'", $e->getMessage());
+            $this->assertStringContainsString("'url' and 'title'", $e->getMessage());
         }
     }
 
@@ -101,7 +101,7 @@ class Zend_Service_Delicious_PostTest extends PHPUnit\Framework\TestCase
             $post = new Zend_Service_Delicious_Post($this->_delicious, array('title' => 'anything'));
             $this->fail('Expected Zend_Service_Delicious_Exception not thrown');
         } catch (Zend_Service_Delicious_Exception $e) {
-            $this->assertContains("'url' and 'title'", $e->getMessage());
+            $this->assertStringContainsString("'url' and 'title'", $e->getMessage());
         }
     }
 
@@ -121,7 +121,7 @@ class Zend_Service_Delicious_PostTest extends PHPUnit\Framework\TestCase
             $post = new Zend_Service_Delicious_Post($this->_delicious, $values);
             $this->fail('Expected Zend_Service_Delicious_Exception not thrown');
         } catch (Zend_Service_Delicious_Exception $e) {
-            $this->assertContains('instance of Zend_Date', $e->getMessage());
+            $this->assertStringContainsString('instance of Zend_Date', $e->getMessage());
         }
     }
 

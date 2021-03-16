@@ -43,7 +43,7 @@ class Zend_Queue_Adapter_ActivemqTest extends Zend_Queue_Adapter_AdapterTest
     /**
      * Test setup
      */
-    public function setUp()
+    public function setUp(): void
     {
         if (!TESTS_ZEND_QUEUE_ACTIVEMQ_ENABLED) {
             $this->markTestSkipped('TESTS_ZEND_QUEUE_ACTIVEMQ_ENABLED is not enabled in TestConfiguration.php');
@@ -94,11 +94,11 @@ class Zend_Queue_Adapter_ActivemqTest extends Zend_Queue_Adapter_AdapterTest
          * @see Zend_Queue_Adapter_Activemq
          */
         require_once 'Zend/Queue/Adapter/Activemq.php';
-        $this->assertInternalType('string', Zend_Queue_Adapter_Activemq::DEFAULT_SCHEME);
-        $this->assertInternalType('string', Zend_Queue_Adapter_Activemq::DEFAULT_HOST);
-        $this->assertInternalType('integer', Zend_Queue_Adapter_Activemq::DEFAULT_PORT);
+        $this->assertIsString(Zend_Queue_Adapter_Activemq::DEFAULT_SCHEME);
+        $this->assertIsString(Zend_Queue_Adapter_Activemq::DEFAULT_HOST);
+        $this->assertIsInt(Zend_Queue_Adapter_Activemq::DEFAULT_PORT);
     }
-    
+
     /**
      * @group ZF-7650
      */
@@ -113,6 +113,6 @@ class Zend_Queue_Adapter_ActivemqTest extends Zend_Queue_Adapter_AdapterTest
         $queue->send('My Test Message 2');
 
         $messages = $queue->receive(0);
-        $this->assertEquals(0, count($messages));
+        $this->assertCount(0, $messages);
     }
 }

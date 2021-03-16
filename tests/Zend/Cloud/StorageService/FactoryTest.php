@@ -44,7 +44,7 @@ class Zend_Cloud_StorageService_FactoryTest extends PHPUnit\Framework\TestCase
 {
     public function testGetStorageAdapterKey()
     {
-        $this->assertInternalType('string', Zend_Cloud_StorageService_Factory::STORAGE_ADAPTER_KEY);
+        $this->assertIsString(Zend_Cloud_StorageService_Factory::STORAGE_ADAPTER_KEY);
     }
 
     public function testGetAdapterWithConfig()

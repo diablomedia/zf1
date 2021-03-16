@@ -53,7 +53,7 @@ class Zend_Cloud_Infrastructure_Adapter_Ec2Test extends PHPUnit\Framework\TestCa
     /**
      * Setup for each test
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->infrastructure = Zend_Cloud_Infrastructure_Factory::getAdapter(array(
             Zend_Cloud_Infrastructure_Factory::INFRASTRUCTURE_ADAPTER_KEY => 'Zend_Cloud_Infrastructure_Adapter_Ec2',
@@ -65,7 +65,7 @@ class Zend_Cloud_Infrastructure_Adapter_Ec2Test extends PHPUnit\Framework\TestCa
         $this->httpClientAdapterTest = new Zend_Http_Client_Adapter_Test();
 
         // load the HTTP response (from a file)
-        $shortClassName = substr(__CLASS__,strlen('Zend_Cloud_Infrastructure_Adapter_'));
+        $shortClassName = substr(__CLASS__, strlen('Zend_Cloud_Infrastructure_Adapter_'));
         $filename= dirname(__FILE__) . '/_files/' . $shortClassName . '_'. $this->getName().'.response';
 
         if (file_exists($filename)) {
@@ -78,8 +78,7 @@ class Zend_Cloud_Infrastructure_Adapter_Ec2Test extends PHPUnit\Framework\TestCa
             'adapter' => $this->httpClientAdapterTest
         ));
 
-        call_user_func(array($adapter,'setHttpClient'),$client);
-
+        call_user_func(array($adapter,'setHttpClient'), $client);
     }
     /**
      * Utility method for returning a string HTTP response, which is loaded from a file
@@ -102,9 +101,9 @@ class Zend_Cloud_Infrastructure_Adapter_Ec2Test extends PHPUnit\Framework\TestCa
      *
      * @return array
      */
-    static function getConfigArray()
+    public static function getConfigArray()
     {
-         return array(
+        return array(
             Zend_Cloud_Infrastructure_Factory::INFRASTRUCTURE_ADAPTER_KEY => 'Zend_Cloud_Infrastructure_Adapter_Ec2',
             Zend_Cloud_Infrastructure_Adapter_Ec2::AWS_ACCESS_KEY         => 'foo',
             Zend_Cloud_Infrastructure_Adapter_Ec2::AWS_SECRET_KEY         => 'bar',
@@ -152,7 +151,7 @@ class Zend_Cloud_Infrastructure_Adapter_Ec2Test extends PHPUnit\Framework\TestCa
      */
     public function testCreateInstance()
     {
-        $options = array (
+        $options = array(
             Zend_Cloud_Infrastructure_Instance::INSTANCE_IMAGEID      => 'ami-7f418316',
             Zend_Cloud_Infrastructure_Adapter_Ec2::AWS_SECURITY_GROUP => array('default')
         );
@@ -200,7 +199,7 @@ class Zend_Cloud_Infrastructure_Adapter_Ec2Test extends PHPUnit\Framework\TestCa
      */
     public function testMonitorInstance()
     {
-        $monitor       = $this->infrastructure->monitorInstance(self::$instanceId,Zend_Cloud_Infrastructure_Instance::MONITOR_CPU);
+        $monitor       = $this->infrastructure->monitorInstance(self::$instanceId, Zend_Cloud_Infrastructure_Instance::MONITOR_CPU);
         $adapterResult = $this->infrastructure->getAdapterResult();
         $this->assertTrue(!empty($adapterResult['label']));
     }

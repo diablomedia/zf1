@@ -34,7 +34,7 @@ require_once 'Zend/Gdata.php';
 class Zend_Gdata_CommentsTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->commentsText = file_get_contents(
                 'Zend/Gdata/_files/CommentsElementSample1.xml',
                 true);
@@ -42,24 +42,24 @@ class Zend_Gdata_CommentsTest extends PHPUnit\Framework\TestCase
     }
 
     public function testEmptyCommentsShouldHaveNoExtensionElements() {
-        $this->assertInternalType('array', $this->comments->extensionElements);
+        $this->assertIsArray($this->comments->extensionElements);
         $this->assertTrue(count($this->comments->extensionElements) == 0);
     }
 
     public function testEmptyCommentsShouldHaveNoExtensionAttributes() {
-        $this->assertInternalType('array', $this->comments->extensionAttributes);
+        $this->assertIsArray($this->comments->extensionAttributes);
         $this->assertTrue(count($this->comments->extensionAttributes) == 0);
     }
 
     public function testSampleCommentsShouldHaveNoExtensionElements() {
         $this->comments->transferFromXML($this->commentsText);
-        $this->assertInternalType('array', $this->comments->extensionElements);
+        $this->assertIsArray($this->comments->extensionElements);
         $this->assertTrue(count($this->comments->extensionElements) == 0);
     }
 
     public function testSampleCommentsShouldHaveNoExtensionAttributes() {
         $this->comments->transferFromXML($this->commentsText);
-        $this->assertInternalType('array', $this->comments->extensionAttributes);
+        $this->assertIsArray($this->comments->extensionAttributes);
         $this->assertTrue(count($this->comments->extensionAttributes) == 0);
     }
 
@@ -68,20 +68,20 @@ class Zend_Gdata_CommentsTest extends PHPUnit\Framework\TestCase
 
         $this->assertEquals("http://schemas.google.com/g/2005#regular", $this->comments->rel);
 
-        $this->assertEquals(0, count($this->comments->extensionElements));
+        $this->assertCount(0, $this->comments->extensionElements);
         $newComments = new Zend_Gdata_Extension_Comments();
         $newComments->transferFromXML($this->comments->saveXML());
-        $this->assertEquals(0, count($newComments->extensionElements));
+        $this->assertCount(0, $newComments->extensionElements);
         $newComments->extensionElements = array(
                 new Zend_Gdata_App_Extension_Element('foo', 'atom', null, 'bar'));
-        $this->assertEquals(1, count($newComments->extensionElements));
+        $this->assertCount(1, $newComments->extensionElements);
         $this->assertEquals("http://schemas.google.com/g/2005#regular", $newComments->rel);
 
         /* try constructing using magic factory */
         $gdata = new Zend_Gdata();
         $newComments2 = $gdata->newComments();
         $newComments2->transferFromXML($newComments->saveXML());
-        $this->assertEquals(1, count($newComments2->extensionElements));
+        $this->assertCount(1, $newComments2->extensionElements);
         $this->assertEquals("http://schemas.google.com/g/2005#regular", $newComments2->rel);
     }
 

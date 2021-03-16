@@ -38,7 +38,7 @@ class Zend_Feed_ArrayAccessTest extends PHPUnit\Framework\TestCase
     protected $_feed;
     protected $_nsfeed;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->_feed = Zend_Feed::importFile(dirname(__FILE__) . '/_files/TestAtomFeed.xml');
         $this->_nsfeed = Zend_Feed::importFile(dirname(__FILE__) . '/_files/TestAtomFeedNamespaced.xml');
@@ -97,5 +97,4 @@ class Zend_Feed_ArrayAccessTest extends PHPUnit\Framework\TestCase
         $entry = $feed->current();
         $this->assertEquals('http://www.h-online.com/security/Google-acquires-reCAPTCHA--/news/114266/from/rss', $entry->link('alternate'));
     }
-
 }

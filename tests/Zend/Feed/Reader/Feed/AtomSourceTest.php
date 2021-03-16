@@ -33,16 +33,15 @@ require_once 'Zend/Feed/Reader.php';
  */
 class Zend_Feed_Reader_Feed_AtomSourceTest extends PHPUnit\Framework\TestCase
 {
-
     protected $_feedSamplePath = null;
-    
+
     protected $_options = array();
-    
+
     protected $_expectedCats = array();
-    
+
     protected $_expectedCatsDc = array();
 
-    public function setup()
+    public function setUp(): void
     {
         Zend_Feed_Reader::reset();
         if (Zend_Registry::isRegistered('Zend_Locale')) {
@@ -51,7 +50,7 @@ class Zend_Feed_Reader_Feed_AtomSourceTest extends PHPUnit\Framework\TestCase
         }
         $this->_feedSamplePath = dirname(__FILE__) . '/_files/AtomSource';
         $this->_options = Zend_Date::setOptions();
-        foreach($this->_options as $k=>$v) {
+        foreach ($this->_options as $k=>$v) {
             if (is_null($v)) {
                 unset($this->_options[$k]);
             }
@@ -87,19 +86,19 @@ class Zend_Feed_Reader_Feed_AtomSourceTest extends PHPUnit\Framework\TestCase
             )
         );
     }
-    
-    public function teardown()
+
+    public function tearDown(): void
     {
         Zend_Date::setOptions($this->_options);
     }
-    
+
     public function testGetsSourceFromEntry()
     {
         $feed = Zend_Feed_Reader::importString(
             file_get_contents($this->_feedSamplePath.'/title/atom10.xml')
         );
         $source = $feed->current()->getSource();
-        $this->assertTrue($source instanceof Zend_Feed_Reader_Feed_Atom_Source);  
+        $this->assertTrue($source instanceof Zend_Feed_Reader_Feed_Atom_Source);
     }
 
     /**
@@ -274,7 +273,7 @@ class Zend_Feed_Reader_Feed_AtomSourceTest extends PHPUnit\Framework\TestCase
         $source = $feed->current()->getSource();
         $this->assertEquals('http://www.example.com/feed/atom', $source->getFeedLink());
     }
-    
+
     /**
      * Get Pubsubhubbub Hubs
      */
@@ -289,7 +288,7 @@ class Zend_Feed_Reader_Feed_AtomSourceTest extends PHPUnit\Framework\TestCase
             'http://www.example.com/hub2'
         ), $source->getHubs());
     }
-    
+
     /**
      * Get category data
      */
@@ -302,5 +301,4 @@ class Zend_Feed_Reader_Feed_AtomSourceTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($this->_expectedCats, (array) $source->getCategories());
         $this->assertEquals(array('topic1','Cat & Dog'), array_values($source->getCategories()->getValues()));
     }
-
 }

@@ -40,7 +40,7 @@ class Zend_Memory_Container_AccessControllerTest extends PHPUnit\Framework\TestC
      */
     private $_memoryManager = null;
 
-    public function setUp()
+    public function setUp(): void
     {
         $tmpDir = sys_get_temp_dir() . '/zend_memory';
         $this->_removeCacheDir($tmpDir);

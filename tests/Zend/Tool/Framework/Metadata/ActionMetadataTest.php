@@ -44,14 +44,14 @@ class Zend_Tool_Framework_Manifest_ActionMetadataTest extends PHPUnit\Framework\
      */
     protected $_metadata = null;
 
-    public function setup()
+    public function setUp(): void
     {
         $this->markTestIncomplete('Were not in suite, do not pass, perhaps not finished');
 
         $this->_metadata = new Zend_Tool_Framework_Manifest_ActionMetadata();
     }
 
-    public function teardown()
+    public function tearDown(): void
     {
         $this->_metadata = null;
     }

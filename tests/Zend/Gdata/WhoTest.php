@@ -34,7 +34,7 @@ require_once 'Zend/Gdata.php';
 class Zend_Gdata_WhoTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->whoText = file_get_contents(
                 'Zend/Gdata/_files/WhoElementSample1.xml',
                 true);
@@ -42,24 +42,24 @@ class Zend_Gdata_WhoTest extends PHPUnit\Framework\TestCase
     }
 
     public function testEmptyWhoShouldHaveNoExtensionElements() {
-        $this->assertInternalType('array', $this->who->extensionElements);
+        $this->assertIsArray($this->who->extensionElements);
         $this->assertTrue(count($this->who->extensionElements) == 0);
     }
 
     public function testEmptyWhoShouldHaveNoExtensionAttributes() {
-        $this->assertInternalType('array', $this->who->extensionAttributes);
+        $this->assertIsArray($this->who->extensionAttributes);
         $this->assertTrue(count($this->who->extensionAttributes) == 0);
     }
 
     public function testSampleWhoShouldHaveNoExtensionElements() {
         $this->who->transferFromXML($this->whoText);
-        $this->assertInternalType('array', $this->who->extensionElements);
+        $this->assertIsArray($this->who->extensionElements);
         $this->assertTrue(count($this->who->extensionElements) == 0);
     }
 
     public function testSampleWhoShouldHaveNoExtensionAttributes() {
         $this->who->transferFromXML($this->whoText);
-        $this->assertInternalType('array', $this->who->extensionAttributes);
+        $this->assertIsArray($this->who->extensionAttributes);
         $this->assertTrue(count($this->who->extensionAttributes) == 0);
     }
 
@@ -72,13 +72,13 @@ class Zend_Gdata_WhoTest extends PHPUnit\Framework\TestCase
         $this->assertEquals("http://schemas.google.com/g/2005#event.speaker", $this->who->rel);
         $this->assertEquals("testemail@somewhere.domain.invalid", $this->who->email);
 
-        $this->assertEquals(0, count($this->who->extensionElements));
+        $this->assertCount(0, $this->who->extensionElements);
         $newWho = new Zend_Gdata_Extension_Who();
         $newWho->transferFromXML($this->who->saveXML());
-        $this->assertEquals(0, count($newWho->extensionElements));
+        $this->assertCount(0, $newWho->extensionElements);
         $newWho->extensionElements = array(
                 new Zend_Gdata_App_Extension_Element('foo', 'atom', null, 'bar'));
-        $this->assertEquals(1, count($newWho->extensionElements));
+        $this->assertCount(1, $newWho->extensionElements);
         $this->assertEquals("Test Value String", $newWho->valueString);
         $this->assertEquals("http://schemas.google.com/g/2005#event.speaker", $newWho->rel);
         $this->assertEquals("testemail@somewhere.domain.invalid", $newWho->email);
@@ -87,7 +87,7 @@ class Zend_Gdata_WhoTest extends PHPUnit\Framework\TestCase
         $gdata = new Zend_Gdata();
         $newWho2 = $gdata->newWho();
         $newWho2->transferFromXML($newWho->saveXML());
-        $this->assertEquals(1, count($newWho2->extensionElements));
+        $this->assertCount(1, $newWho2->extensionElements);
         $this->assertEquals("Test Value String", $newWho2->valueString);
         $this->assertEquals("http://schemas.google.com/g/2005#event.speaker", $newWho2->rel);
         $this->assertEquals("testemail@somewhere.domain.invalid", $newWho2->email);

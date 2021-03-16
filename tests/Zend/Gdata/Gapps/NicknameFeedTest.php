@@ -39,7 +39,7 @@ class Zend_Gdata_Gapps_NicknameFeedTest extends PHPUnit\Framework\TestCase
     /**
       * Called before each test to setup any fixtures.
       */
-    public function setUp()
+    public function setUp(): void
     {
         $nicknameFeedText = file_get_contents(
                 'Zend/Gdata/Gapps/_files/NicknameFeedDataSample1.xml',
@@ -49,22 +49,22 @@ class Zend_Gdata_Gapps_NicknameFeedTest extends PHPUnit\Framework\TestCase
     }
 
     public function testEmptyFeedShouldHaveNoExtensionElements() {
-        $this->assertInternalType('array', $this->emptyNicknameFeed->extensionElements);
+        $this->assertIsArray($this->emptyNicknameFeed->extensionElements);
         $this->assertTrue(count($this->emptyNicknameFeed->extensionElements) == 0);
     }
 
     public function testEmptyFeedShouldHaveNoExtensionAttributes() {
-        $this->assertInternalType('array', $this->emptyNicknameFeed->extensionAttributes);
+        $this->assertIsArray($this->emptyNicknameFeed->extensionAttributes);
         $this->assertTrue(count($this->emptyNicknameFeed->extensionAttributes) == 0);
     }
 
     public function testSampleFeedShouldHaveNoExtensionElements() {
-        $this->assertInternalType('array', $this->nicknameFeed->extensionElements);
+        $this->assertIsArray($this->nicknameFeed->extensionElements);
         $this->assertTrue(count($this->nicknameFeed->extensionElements) == 0);
     }
 
     public function testSampleFeedShouldHaveNoExtensionAttributes() {
-        $this->assertInternalType('array', $this->nicknameFeed->extensionAttributes);
+        $this->assertIsArray($this->nicknameFeed->extensionAttributes);
         $this->assertTrue(count($this->nicknameFeed->extensionAttributes) == 0);
     }
 

@@ -34,7 +34,7 @@ require_once 'Zend/Gdata.php';
 class Zend_Gdata_RecurrenceExceptionTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->recurrenceExceptionText = file_get_contents(
                 'Zend/Gdata/_files/RecurrenceExceptionElementSample1.xml',
                 true);
@@ -42,24 +42,24 @@ class Zend_Gdata_RecurrenceExceptionTest extends PHPUnit\Framework\TestCase
     }
 
     public function testEmptyRecurrenceExceptionShouldHaveNoExtensionElements() {
-        $this->assertInternalType('array', $this->recurrenceException->extensionElements);
+        $this->assertIsArray($this->recurrenceException->extensionElements);
         $this->assertTrue(count($this->recurrenceException->extensionElements) == 0);
     }
 
     public function testEmptyRecurrenceExceptionShouldHaveNoExtensionAttributes() {
-        $this->assertInternalType('array', $this->recurrenceException->extensionAttributes);
+        $this->assertIsArray($this->recurrenceException->extensionAttributes);
         $this->assertTrue(count($this->recurrenceException->extensionAttributes) == 0);
     }
 
     public function testSampleRecurrenceExceptionShouldHaveNoExtensionElements() {
         $this->recurrenceException->transferFromXML($this->recurrenceExceptionText);
-        $this->assertInternalType('array', $this->recurrenceException->extensionElements);
+        $this->assertIsArray($this->recurrenceException->extensionElements);
         $this->assertTrue(count($this->recurrenceException->extensionElements) == 0);
     }
 
     public function testSampleRecurrenceExceptionShouldHaveNoExtensionAttributes() {
         $this->recurrenceException->transferFromXML($this->recurrenceExceptionText);
-        $this->assertInternalType('array', $this->recurrenceException->extensionAttributes);
+        $this->assertIsArray($this->recurrenceException->extensionAttributes);
         $this->assertTrue(count($this->recurrenceException->extensionAttributes) == 0);
     }
 
@@ -68,20 +68,20 @@ class Zend_Gdata_RecurrenceExceptionTest extends PHPUnit\Framework\TestCase
 
         $this->assertEquals(false, $this->recurrenceException->specialized);
 
-        $this->assertEquals(0, count($this->recurrenceException->extensionElements));
+        $this->assertCount(0, $this->recurrenceException->extensionElements);
         $newRecurrenceException = new Zend_Gdata_Extension_RecurrenceException();
         $newRecurrenceException->transferFromXML($this->recurrenceException->saveXML());
-        $this->assertEquals(0, count($newRecurrenceException->extensionElements));
+        $this->assertCount(0, $newRecurrenceException->extensionElements);
         $newRecurrenceException->extensionElements = array(
                 new Zend_Gdata_App_Extension_Element('foo', 'atom', null, 'bar'));
-        $this->assertEquals(1, count($newRecurrenceException->extensionElements));
+        $this->assertCount(1, $newRecurrenceException->extensionElements);
         $this->assertEquals(false, $newRecurrenceException->specialized);
 
         /* try constructing using magic factory */
         $gdata = new Zend_Gdata();
         $newRecurrenceException2 = $gdata->newRecurrenceException();
         $newRecurrenceException2->transferFromXML($newRecurrenceException->saveXML());
-        $this->assertEquals(1, count($newRecurrenceException2->extensionElements));
+        $this->assertCount(1, $newRecurrenceException2->extensionElements);
         $this->assertEquals(false, $newRecurrenceException2->specialized);
     }
 

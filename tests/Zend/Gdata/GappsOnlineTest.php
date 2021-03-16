@@ -42,7 +42,7 @@ class Zend_Gdata_GappsOnlineTest extends PHPUnit\Framework\TestCase
     const PASSWORD = '4ohtladfl;';
     const PASSWORD_HASH = 'SHA-1';
 
-    public function setUp()
+    public function setUp(): void
     {
         if (!(defined('TESTS_ZEND_GDATA_ONLINE_ENABLED') &&
             constant('TESTS_ZEND_GDATA_ONLINE_ENABLED') == true &&
@@ -67,7 +67,7 @@ class Zend_Gdata_GappsOnlineTest extends PHPUnit\Framework\TestCase
         $this->autoDeletePool = array();
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         // Delete all entries in $this->autoDeletePool.
         foreach ($this->autoDeletePool as $x) {
@@ -260,7 +260,7 @@ class Zend_Gdata_GappsOnlineTest extends PHPUnit\Framework\TestCase
             $this->assertNotSame(false, $searchResult);
             unset($generatedNickname[$searchResult]);
         }
-        $this->assertEquals(0, count($generatedNickname));
+        $this->assertCount(0, $generatedNickname);
     }
 
     public function testRetrievePageOfNicknames() {

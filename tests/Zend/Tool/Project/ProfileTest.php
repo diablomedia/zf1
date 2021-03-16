@@ -44,7 +44,7 @@ class Zend_Tool_Project_ProfileTest extends PHPUnit\Framework\TestCase
      */
     protected $_standardProfileFromData = null;
 
-    public function setup()
+    public function setUp(): void
     {
         $this->_projectDirectory   = dirname(__FILE__) . '/_files/project1/';
 
@@ -66,7 +66,7 @@ class Zend_Tool_Project_ProfileTest extends PHPUnit\Framework\TestCase
         $this->_standardProfileFromData->setAttribute('projectDirectory', $this->_projectDirectory);
     }
 
-    public function teardown()
+    public function tearDown(): void
     {
         $this->_removeProjectFiles();
     }
@@ -95,7 +95,7 @@ class Zend_Tool_Project_ProfileTest extends PHPUnit\Framework\TestCase
         // first item in here should be 'projectDirectory'
         $projectDirectoryResource = $profile->current();
 
-        $this->assertEquals(1, count($profile));
+        $this->assertCount(1, $profile);
         $this->assertEquals('Zend_Tool_Project_Profile_Resource', get_class($projectDirectoryResource));
         $this->assertEquals('Zend_Tool_Project_Context_System_ProjectDirectory', get_class($projectDirectoryResource->getContext()));
     }

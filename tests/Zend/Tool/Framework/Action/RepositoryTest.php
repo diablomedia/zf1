@@ -46,19 +46,19 @@ class Zend_Tool_Framework_Action_RepositoryTest extends PHPUnit\Framework\TestCa
      */
     protected $_repository = null;
 
-    public function setup()
+    public function setUp(): void
     {
         $this->_repository = new Zend_Tool_Framework_Action_Repository();
     }
 
-    public function teardown()
+    public function tearDown(): void
     {
         $this->_repository = null;
     }
 
     public function testRepositoryIsEmpty()
     {
-        $this->assertEquals(0, count($this->_repository));
+        $this->assertCount(0, $this->_repository);
     }
 
     public function testAddActionCanHandleActionObjects()
@@ -67,7 +67,7 @@ class Zend_Tool_Framework_Action_RepositoryTest extends PHPUnit\Framework\TestCa
         $fooAction->setName('Foo');
         $this->_repository->addAction($fooAction);
 
-        $this->assertEquals(1, count($this->_repository));
+        $this->assertCount(1, $this->_repository);
         $this->assertEquals('Zend_Tool_Framework_Action_Base', get_class($this->_repository->getAction('Foo')));
     }
 

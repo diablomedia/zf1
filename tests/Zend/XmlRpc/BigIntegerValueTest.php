@@ -47,7 +47,7 @@ require_once 'Zend/XmlRpc/TestProvider.php';
  */
 class Zend_XmlRpc_BigIntegerValueTest extends PHPUnit\Framework\TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         try {
             $XmlRpcBigInteger = new Zend_XmlRpc_Value_BigInteger(0);

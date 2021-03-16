@@ -384,6 +384,6 @@ class Zend_Measure_SpeedTest extends PHPUnit\Framework\TestCase
     {
         $value = new Zend_Measure_Speed('-100',Zend_Measure_Speed::STANDARD,'de');
         $unit  = $value->getConversionList();
-        $this->assertInternalType('array', $unit, 'Array expected');
+        $this->assertIsArray($unit, 'Array expected');
     }
 }

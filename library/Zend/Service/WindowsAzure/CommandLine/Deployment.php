@@ -69,7 +69,7 @@ class Zend_Service_WindowsAzure_CommandLine_Deployment
 	 * @command-example --PackageUrl:"http://acct.blob.core.windows.net/pkgs/service.cspkg"
 	 * @command-example --ServiceConfigLocation:".\ServiceConfiguration.cscfg" --StartImmediately --WaitFor
 	 */
-	public function createFromStorageCommand($subscriptionId, $certificate, $certificatePassphrase, $serviceName, $deploymentName, $label, $staging = false, $production = false, $packageUrl, $serviceConfigurationLocation, $startImmediately = true, $warningsAsErrors = false, $waitForOperation = false)
+	public function createFromStorageCommand($subscriptionId, $certificate, $certificatePassphrase, $serviceName, $deploymentName, $label, $packageUrl, $serviceConfigurationLocation, $staging = false, $production = false, $startImmediately = true, $warningsAsErrors = false, $waitForOperation = false)
 	{
 		$deploymentSlot = 'staging';
 		if (!$staging && !$production) {
@@ -112,7 +112,7 @@ class Zend_Service_WindowsAzure_CommandLine_Deployment
 	 * @command-example --ServiceConfigLocation:".\ServiceConfiguration.cscfg" --StorageAccount:"mystorage"
 	 * @command-example --StartImmediately --WaitFor
 	 */
-	public function createFromLocalCommand($subscriptionId, $certificate, $certificatePassphrase, $serviceName, $deploymentName, $label, $staging = false, $production = false, $packageLocation, $serviceConfigurationLocation, $storageAccount, $startImmediately = true, $warningsAsErrors = false, $waitForOperation = false)
+	public function createFromLocalCommand($subscriptionId, $certificate, $certificatePassphrase, $serviceName, $deploymentName, $label, $packageLocation, $serviceConfigurationLocation, $storageAccount, $staging = false, $production = false, $startImmediately = true, $warningsAsErrors = false, $waitForOperation = false)
 	{
 		$deploymentSlot = 'staging';
 		if (!$staging && !$production) {

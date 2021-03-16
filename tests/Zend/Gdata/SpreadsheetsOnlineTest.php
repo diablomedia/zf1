@@ -35,7 +35,7 @@ require_once 'Zend/Gdata/ClientLogin.php';
 class Zend_Gdata_SpreadsheetsOnlineTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp()
+    public function setUp(): void
     {
         if (!(defined('TESTS_ZEND_GDATA_ONLINE_ENABLED') &&
             constant('TESTS_ZEND_GDATA_ONLINE_ENABLED') == true &&
@@ -284,8 +284,8 @@ class Zend_Gdata_SpreadsheetsOnlineTest extends PHPUnit\Framework\TestCase
         $rowData['d1'] = 'here';
         $entry = $this->gdata->insertRow($rowData, $this->sprKey);
 
-        $this->assertEquals(4, count($entry->custom));
-        $this->assertEquals(4, count($entry->customByName));
+        $this->assertCount(4, $entry->custom);
+        $this->assertCount(4, $entry->customByName);
 
         $this->assertEquals('new', $entry->custom[0]->getText());
         $this->assertEquals('row', $entry->custom[1]->getText());

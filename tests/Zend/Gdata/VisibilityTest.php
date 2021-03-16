@@ -34,7 +34,7 @@ require_once 'Zend/Gdata.php';
 class Zend_Gdata_VisibilityTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->visibilityText = file_get_contents(
                 'Zend/Gdata/_files/VisibilityElementSample1.xml',
                 true);
@@ -42,24 +42,24 @@ class Zend_Gdata_VisibilityTest extends PHPUnit\Framework\TestCase
     }
 
     public function testEmptyVisibilityShouldHaveNoExtensionElements() {
-        $this->assertInternalType('array', $this->visibility->extensionElements);
+        $this->assertIsArray($this->visibility->extensionElements);
         $this->assertTrue(count($this->visibility->extensionElements) == 0);
     }
 
     public function testEmptyVisibilityShouldHaveNoExtensionAttributes() {
-        $this->assertInternalType('array', $this->visibility->extensionAttributes);
+        $this->assertIsArray($this->visibility->extensionAttributes);
         $this->assertTrue(count($this->visibility->extensionAttributes) == 0);
     }
 
     public function testSampleVisibilityShouldHaveNoExtensionElements() {
         $this->visibility->transferFromXML($this->visibilityText);
-        $this->assertInternalType('array', $this->visibility->extensionElements);
+        $this->assertIsArray($this->visibility->extensionElements);
         $this->assertTrue(count($this->visibility->extensionElements) == 0);
     }
 
     public function testSampleVisibilityShouldHaveNoExtensionAttributes() {
         $this->visibility->transferFromXML($this->visibilityText);
-        $this->assertInternalType('array', $this->visibility->extensionAttributes);
+        $this->assertIsArray($this->visibility->extensionAttributes);
         $this->assertTrue(count($this->visibility->extensionAttributes) == 0);
     }
 
@@ -68,20 +68,20 @@ class Zend_Gdata_VisibilityTest extends PHPUnit\Framework\TestCase
 
         $this->assertEquals("http://schemas.google.com/g/2005#event.private", $this->visibility->value);
 
-        $this->assertEquals(0, count($this->visibility->extensionElements));
+        $this->assertCount(0, $this->visibility->extensionElements);
         $newVisibility = new Zend_Gdata_Extension_Visibility();
         $newVisibility->transferFromXML($this->visibility->saveXML());
-        $this->assertEquals(0, count($newVisibility->extensionElements));
+        $this->assertCount(0, $newVisibility->extensionElements);
         $newVisibility->extensionElements = array(
                 new Zend_Gdata_App_Extension_Element('foo', 'atom', null, 'bar'));
-        $this->assertEquals(1, count($newVisibility->extensionElements));
+        $this->assertCount(1, $newVisibility->extensionElements);
         $this->assertEquals("http://schemas.google.com/g/2005#event.private", $newVisibility->value);
 
         /* try constructing using magic factory */
         $gdata = new Zend_Gdata();
         $newVisibility2 = $gdata->newVisibility();
         $newVisibility2->transferFromXML($newVisibility->saveXML());
-        $this->assertEquals(1, count($newVisibility2->extensionElements));
+        $this->assertCount(1, $newVisibility2->extensionElements);
         $this->assertEquals("http://schemas.google.com/g/2005#event.private", $newVisibility2->value);
     }
 

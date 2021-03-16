@@ -43,12 +43,12 @@ class Zend_CodeGenerator_Php_DocblockTest extends PHPUnit\Framework\TestCase
      */
     protected $_docblock = null;
 
-    public function setup()
+    public function setUp(): void
     {
         $this->_docblock = new Zend_CodeGenerator_Php_Docblock();
     }
 
-    public function teardown()
+    public function tearDown(): void
     {
         $this->_docblock = null;
     }
@@ -70,7 +70,7 @@ class Zend_CodeGenerator_Php_DocblockTest extends PHPUnit\Framework\TestCase
         $this->_docblock->setTag(array('name' => 'blah'));
         $this->_docblock->setTag(new Zend_CodeGenerator_Php_Docblock_Tag_Param(array('datatype' => 'string')));
         $this->_docblock->setTag(new Zend_CodeGenerator_Php_Docblock_Tag_Return(array('datatype' => 'int')));
-        $this->assertEquals(3, count($this->_docblock->getTags()));
+        $this->assertCount(3, $this->_docblock->getTags());
 
         $target = <<<EOS
 /**
@@ -82,7 +82,5 @@ class Zend_CodeGenerator_Php_DocblockTest extends PHPUnit\Framework\TestCase
 EOS;
 
         $this->assertEquals($target, $this->_docblock->generate());
-
     }
-
 }

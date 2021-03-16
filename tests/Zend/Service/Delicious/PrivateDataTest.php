@@ -55,7 +55,7 @@ class Zend_Service_Delicious_PrivateDataTest extends PHPUnit\Framework\TestCase
      *
      * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
         if (!(defined('TESTS_ZEND_SERVICE_DELICIOUS_ENABLED') &&
             constant('TESTS_ZEND_SERVICE_DELICIOUS_ENABLED'))) {
@@ -89,7 +89,7 @@ class Zend_Service_Delicious_PrivateDataTest extends PHPUnit\Framework\TestCase
     {
         // get tags
         $tags = $this->_delicious->getTags();
-        $this->assertInternalType('array', $tags);
+        $this->assertIsArray($tags);
         $tags = array_keys($tags);
 
         if (count($tags) < 1) {
@@ -120,7 +120,7 @@ class Zend_Service_Delicious_PrivateDataTest extends PHPUnit\Framework\TestCase
 
         // check if bundle was added
         $bundles = $this->_delicious->getBundles();
-        $this->assertInternalType('array', $bundles);
+        $this->assertIsArray($bundles);
         $this->assertArrayHasKey($newBundleName, $bundles);
         $this->assertEquals($tags, $bundles[$newBundleName]);
 
@@ -155,11 +155,11 @@ class Zend_Service_Delicious_PrivateDataTest extends PHPUnit\Framework\TestCase
         // test tag adding to tag
         $newTagName = uniqid('tag');
         $newPost->addTag($newTagName);
-        $this->assertContains($newTagName, $newPost->getTags());
+        $this->assertStringContainsString($newTagName, $newPost->getTags());
 
         // test tag removeing
         $newPost->removeTag($newTagName);
-        $this->assertNotContains($newTagName, $newPost->getTags());
+        $this->assertStringNotContainsString($newTagName, $newPost->getTags());
 
         // send post to del.icio.us
         $newPost->save();
@@ -169,7 +169,7 @@ class Zend_Service_Delicious_PrivateDataTest extends PHPUnit\Framework\TestCase
         // get the post back
         $returnedPosts = $this->_delicious->getPosts(null, null, self::$TEST_POST_URL);
 
-        $this->assertEquals(1, count($returnedPosts));
+        $this->assertCount(1, $returnedPosts);
 
         $savedPost = $returnedPosts[0];
 
@@ -180,8 +180,8 @@ class Zend_Service_Delicious_PrivateDataTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(self::$TEST_POST_TAGS, $savedPost->getTags());
         $this->assertEquals(self::$TEST_POST_SHARED, $savedPost->getShared());
         $this->assertTrue($savedPost->getDate() instanceof Zend_Date);
-        $this->assertInternalType('string', $savedPost->getHash());
-        $this->assertInternalType('int', $savedPost->getOthers());
+        $this->assertIsString($savedPost->getHash());
+        $this->assertIsInt($savedPost->getOthers());
 
         // delete post
         $savedPost->delete();
@@ -190,7 +190,7 @@ class Zend_Service_Delicious_PrivateDataTest extends PHPUnit\Framework\TestCase
 
         // check if post was realy deleted
         $returnedPosts = $this->_delicious->getPosts(null, null, self::$TEST_POST_URL);
-        $this->assertEquals(0, count($returnedPosts));
+        $this->assertCount(0, $returnedPosts);
     }
 
     /**
@@ -204,7 +204,7 @@ class Zend_Service_Delicious_PrivateDataTest extends PHPUnit\Framework\TestCase
         $this->assertTrue($posts instanceof Zend_Service_Delicious_PostList);
 
         foreach ($posts as $post) {
-            $this->assertContains('zfSite', $post->getTags());
+            $this->assertStringContainsString('zfSite', $post->getTags());
         }
     }
 
@@ -220,7 +220,7 @@ class Zend_Service_Delicious_PrivateDataTest extends PHPUnit\Framework\TestCase
         $this->assertTrue(count($posts) <= 10);
 
         foreach ($posts as $post) {
-            $this->assertContains('zfSite', $post->getTags());
+            $this->assertStringContainsString('zfSite', $post->getTags());
         }
     }
 
@@ -236,7 +236,7 @@ class Zend_Service_Delicious_PrivateDataTest extends PHPUnit\Framework\TestCase
         $this->assertTrue(count($posts) <= 10);
 
         foreach ($posts as $post) {
-            $this->assertContains('zfSite', $post->getTags());
+            $this->assertStringContainsString('zfSite', $post->getTags());
         }
     }
 
@@ -246,6 +246,6 @@ class Zend_Service_Delicious_PrivateDataTest extends PHPUnit\Framework\TestCase
      */
     public function testDates()
     {
-        $this->assertInternalType('array', $this->_delicious->getDates());
+        $this->assertIsArray($this->_delicious->getDates());
     }
 }

@@ -369,10 +369,16 @@ class Zend_Feed_Reader
         }
         $responseHtml = $response->getBody();
         $libxml_errflag = libxml_use_internal_errors(true);
-        $oldValue = libxml_disable_entity_loader(true);
+        if (version_compare(PHP_VERSION, '8.0.0', 'lt')) {
+            $oldValue = libxml_disable_entity_loader(true);
+        } else {
+            $oldValue = false;
+        }
         $dom = new DOMDocument;
         $status = $dom->loadHTML($responseHtml);
-        libxml_disable_entity_loader($oldValue);
+        if (version_compare(PHP_VERSION, '8.0.0', 'lt')) {
+            libxml_disable_entity_loader($oldValue);
+        }
         libxml_use_internal_errors($libxml_errflag);
         if (!$status) {
             // Build error message

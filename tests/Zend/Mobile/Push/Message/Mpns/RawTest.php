@@ -36,7 +36,7 @@ class Zend_Mobile_Push_Message_Mpns_RawTest extends PHPUnit\Framework\TestCase
 {
     private $_msg;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->_msg = new Zend_Mobile_Push_Message_Mpns_Raw();
     }

@@ -213,7 +213,7 @@ class Zend_Measure_AccelerationTest extends PHPUnit\Framework\TestCase
     {
         $value = new Zend_Measure_Acceleration('-100',Zend_Measure_Acceleration::STANDARD,'de');
         $unit  = $value->getConversionList();
-        $this->assertInternalType('array', $unit, 'Array expected');
+        $this->assertIsArray($unit, 'Array expected');
     }
 
 

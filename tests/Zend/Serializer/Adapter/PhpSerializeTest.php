@@ -37,12 +37,12 @@ class Zend_Serializer_Adapter_PhpSerializeTest extends PHPUnit\Framework\TestCas
 
     private $_adapter;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->_adapter = new Zend_Serializer_Adapter_PhpSerialize();
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $this->_adapter = null;
     }

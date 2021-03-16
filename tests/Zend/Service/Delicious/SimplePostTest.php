@@ -49,7 +49,7 @@ class Zend_Service_Delicious_SimplePostTest extends PHPUnit\Framework\TestCase
             $simplePost = new Zend_Service_Delicious_SimplePost($post);
             $this->fail('Expected Zend_Service_Delicious_Exception not thrown');
         } catch (Zend_Service_Delicious_Exception $e) {
-            $this->assertContains('Title and URL', $e->getMessage());
+            $this->assertStringContainsString('Title and URL', $e->getMessage());
         }
     }
 
@@ -65,7 +65,7 @@ class Zend_Service_Delicious_SimplePostTest extends PHPUnit\Framework\TestCase
             $simplePost = new Zend_Service_Delicious_SimplePost($post);
             $this->fail('Expected Zend_Service_Delicious_Exception not thrown');
         } catch (Zend_Service_Delicious_Exception $e) {
-            $this->assertContains('Title and URL', $e->getMessage());
+            $this->assertStringContainsString('Title and URL', $e->getMessage());
         }
     }
 

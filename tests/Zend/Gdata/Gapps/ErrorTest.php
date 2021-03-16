@@ -35,7 +35,7 @@ require_once 'Zend/Gdata/Gapps.php';
 class Zend_Gdata_Gapps_ErrorTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->error = new Zend_Gdata_Gapps_Error();
     }
 

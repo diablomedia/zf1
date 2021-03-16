@@ -35,10 +35,9 @@ require_once 'Zend/Version.php';
  */
 class Zend_Feed_Writer_Renderer_Feed_AtomTest extends PHPUnit\Framework\TestCase
 {
-
     protected $_validWriter = null;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->_validWriter = new Zend_Feed_Writer_Feed;
         $this->_validWriter->setTitle('This is a test feed.');
@@ -51,7 +50,7 @@ class Zend_Feed_Writer_Renderer_Feed_AtomTest extends PHPUnit\Framework\TestCase
         $this->_validWriter->setType('atom');
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $this->_validWriter = null;
     }
@@ -432,5 +431,4 @@ class Zend_Feed_Writer_Renderer_Feed_AtomTest extends PHPUnit\Framework\TestCase
         );
         $this->assertEquals($expected, $feed->getIcon());
     }
-
 }

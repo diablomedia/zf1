@@ -48,7 +48,7 @@ class Zend_Tool_Framework_Client_ResponseTest extends PHPUnit\Framework\TestCase
 
     protected $_responseBuffer = array();
 
-    public function setup()
+    public function setUp(): void
     {
         $this->_response = new Zend_Tool_Framework_Client_Response();
     }

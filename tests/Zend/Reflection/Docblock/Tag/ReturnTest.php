@@ -38,7 +38,7 @@ class Zend_Reflection_Docblock_Tag_ReturnTest extends PHPUnit\Framework\TestCase
 
     static protected $_sampleClassFileRequired = false;
 
-    public function setup()
+    public function setUp(): void
     {
         if (self::$_sampleClassFileRequired === false) {
             $fileToRequire = dirname(dirname(dirname(__FILE__))) . '/_files/TestSampleClass.php';

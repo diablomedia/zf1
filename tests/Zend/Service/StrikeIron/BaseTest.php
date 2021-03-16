@@ -36,7 +36,7 @@ require_once 'Zend/Service/StrikeIron/BaseTest.php';
  */
 class Zend_Service_StrikeIron_BaseTest extends PHPUnit\Framework\TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         if (!extension_loaded('soap')) {
             $this->markTestSkipped('soap extension is not loaded');
@@ -80,8 +80,8 @@ class Zend_Service_StrikeIron_BaseTest extends PHPUnit\Framework\TestCase
         $this->base->foo();
         $headers = $this->soapClient->calls[0]['headers'];
 
-        $this->assertInternalType('array', $headers);
-        $this->assertEquals(1, count($headers));
+        $this->assertIsArray($headers);
+        $this->assertCount(1, $headers);
         $header = $headers[0];
 
         $this->assertTrue($header instanceof SoapHeader);
@@ -122,7 +122,7 @@ class Zend_Service_StrikeIron_BaseTest extends PHPUnit\Framework\TestCase
         $base->foo();
 
         $headers = $this->soapClient->calls[0]['headers'];
-        $this->assertEquals(2, count($headers));
+        $this->assertCount(2, $headers);
         $this->assertEquals($header->name, $headers[0]->name);
         $this->assertEquals('LicenseInfo', $headers[1]->name);
     }
@@ -139,8 +139,8 @@ class Zend_Service_StrikeIron_BaseTest extends PHPUnit\Framework\TestCase
 
         $headers = $this->soapClient->calls[0]['headers'];
 
-        $this->assertInternalType('array', $headers);
-        $this->assertEquals(1, count($headers));
+        $this->assertIsArray($headers);
+        $this->assertCount(1, $headers);
         $header = $headers[0];
 
         $this->assertTrue($header instanceof SoapHeader);
@@ -160,8 +160,8 @@ class Zend_Service_StrikeIron_BaseTest extends PHPUnit\Framework\TestCase
 
         $headers = $this->soapClient->calls[0]['headers'];
 
-        $this->assertInternalType('array', $headers);
-        $this->assertEquals(3, count($headers));  // these 2 + default LicenseInfo
+        $this->assertIsArray($headers);
+        $this->assertCount(3, $headers);  // these 2 + default LicenseInfo
     }
 
     public function testMethodInflection()
@@ -209,27 +209,27 @@ class Zend_Service_StrikeIron_BaseTest extends PHPUnit\Framework\TestCase
 
     public function testGettingSubscriptionInfo()
     {
-        $this->assertEquals(0, count($this->soapClient->calls));
+        $this->assertCount(0, $this->soapClient->calls);
         $info = $this->base->getSubscriptionInfo();
-        $this->assertEquals(1, count($this->soapClient->calls));
+        $this->assertCount(1, $this->soapClient->calls);
         $this->assertEquals(3, $info->remainingHits);
     }
 
     public function testGettingSubscriptionInfoWithCaching()
     {
-        $this->assertEquals(0, count($this->soapClient->calls));
+        $this->assertCount(0, $this->soapClient->calls);
         $this->base->foo();
         $this->base->getSubscriptionInfo();
-        $this->assertEquals(1, count($this->soapClient->calls));
+        $this->assertCount(1, $this->soapClient->calls);
     }
 
     public function testGettingSubscriptionOverridingCache()
     {
-        $this->assertEquals(0, count($this->soapClient->calls));
+        $this->assertCount(0, $this->soapClient->calls);
         $this->base->getSubscriptionInfo();
-        $this->assertEquals(1, count($this->soapClient->calls));
+        $this->assertCount(1, $this->soapClient->calls);
         $this->base->getSubscriptionInfo(true);
-        $this->assertEquals(2, count($this->soapClient->calls));
+        $this->assertCount(2, $this->soapClient->calls);
     }
 
     public function testGettingSubscriptionInfoWithDefaultQueryMethod()

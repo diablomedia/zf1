@@ -383,7 +383,7 @@ class Zend_Measure_LengthTest extends PHPUnit\Framework\TestCase
     {
         $value = new Zend_Measure_Length('-100',Zend_Measure_Length::STANDARD,'de');
         $unit  = $value->getConversionList();
-        $this->assertInternalType('array', $unit, 'Array expected');
+        $this->assertIsArray($unit, 'Array expected');
     }
 
     /**

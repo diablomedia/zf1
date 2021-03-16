@@ -36,7 +36,7 @@ require_once 'Zend/Gdata/App.php';
 class Zend_Gdata_App_FeedTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->feedText = file_get_contents(
                 'Zend/Gdata/App/_files/FeedSample1.xml',
                 true);
@@ -44,7 +44,7 @@ class Zend_Gdata_App_FeedTest extends PHPUnit\Framework\TestCase
     }
 
     public function testEmptyFeedShouldHaveEmptyExtensionsList() {
-        $this->assertInternalType('array', $this->feed->extensionElements);
+        $this->assertIsArray($this->feed->extensionElements);
         $this->assertTrue(count($this->feed->extensionElements) == 0);
     }
 
@@ -61,12 +61,12 @@ class Zend_Gdata_App_FeedTest extends PHPUnit\Framework\TestCase
         $feedXml = $this->feed->saveXML();
         $newFeed = new Zend_Gdata_App_Feed();
         $newFeed->transferFromXML($feedXml);
-        $this->assertEquals(1, count($newFeed->entry));
+        $this->assertCount(1, $newFeed->entry);
         $this->assertEquals('dive into mark', $newFeed->title->text);
         $this->assertEquals('text', $newFeed->title->type);
         $this->assertEquals('2005-07-31T12:29:29Z', $newFeed->updated->text);
         $this->assertEquals('tag:example.org,2003:3', $newFeed->id->text);
-        $this->assertEquals(2, count($newFeed->link));
+        $this->assertCount(2, $newFeed->link);
         $this->assertEquals('http://example.org/',
                 $newFeed->getAlternateLink()->href);
         $this->assertEquals('en',
@@ -90,7 +90,7 @@ class Zend_Gdata_App_FeedTest extends PHPUnit\Framework\TestCase
                 $entry->author[0]->name->text);
         $this->assertEquals('http://example.org/',
                 $entry->author[0]->uri->text);
-        $this->assertEquals(2, count($entry->contributor));
+        $this->assertCount(2, $entry->contributor);
         $this->assertEquals('Sam Ruby',
                 $entry->contributor[0]->name->text);
         $this->assertEquals('Joe Gregorio',
@@ -100,12 +100,12 @@ class Zend_Gdata_App_FeedTest extends PHPUnit\Framework\TestCase
 
     public function testCanAddIndividualEntries() {
         $this->feed->transferFromXML($this->feedText);
-        $this->assertEquals(1, count($this->feed->entry));
+        $this->assertCount(1, $this->feed->entry);
         $oldTitle = $this->feed->entry[0]->title->text;
         $newEntry = new Zend_Gdata_App_Entry();
         $newEntry->setTitle(new Zend_Gdata_App_Extension_Title("Foo"));
         $this->feed->addEntry($newEntry);
-        $this->assertEquals(2, count($this->feed->entry));
+        $this->assertCount(2, $this->feed->entry);
         $this->assertEquals($oldTitle, $this->feed->entry[0]->title->text);
         $this->assertEquals("Foo", $this->feed->entry[1]->title->text);
     }
@@ -147,10 +147,10 @@ class Zend_Gdata_App_FeedTest extends PHPUnit\Framework\TestCase
         // Set null service instance and test for propagation
         $s = null;
         $this->feed->setService($s);
-        $this->assertNotInternalType('object', $this->feed->getService());
+        $this->assertIsNotObject($this->feed->getService());
         foreach ($entries as $entry) {
             $service = $entry->getService();
-            $this->assertNotInternalType('object', $service);
+            $this->assertIsNotObject($service);
         }
     }
 
@@ -277,6 +277,6 @@ class Zend_Gdata_App_FeedTest extends PHPUnit\Framework\TestCase
              ->addEntry('bar');
 
         $this->assertEquals(2, $feed->count());
-        $this->assertEquals(2, count($feed));
+        $this->assertCount(2, $feed);
     }
 }

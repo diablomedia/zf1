@@ -80,7 +80,7 @@ abstract class Zend_Cloud_DocumentService_TestCase extends PHPUnit\Framework\Tes
 
     public function testGetClient()
     {
-    	$this->assertTrue(is_a($this->_commonDocument->getClient(), $this->_clientType));
+        $this->assertTrue(is_a($this->_commonDocument->getClient(), $this->_clientType));
     }
 
     public function testCreateCollection()
@@ -93,7 +93,7 @@ abstract class Zend_Cloud_DocumentService_TestCase extends PHPUnit\Framework\Tes
         $this->_wait();
 
         $collections = $this->_commonDocument->listCollections();
-        $this->assertContains($name, $collections, "New collection not in the list");
+        $this->assertStringContainsString($name, $collections, "New collection not in the list");
         $this->_wait();
 
         $this->_commonDocument->deleteCollection($name);
@@ -106,7 +106,7 @@ abstract class Zend_Cloud_DocumentService_TestCase extends PHPUnit\Framework\Tes
         $this->_wait();
 
         $collections = $this->_commonDocument->listCollections();
-        $this->assertContains($name, $collections, "New collection not in the list");
+        $this->assertStringContainsString($name, $collections, "New collection not in the list");
         $this->_wait();
 
         $this->_commonDocument->deleteCollection($name);
@@ -114,7 +114,7 @@ abstract class Zend_Cloud_DocumentService_TestCase extends PHPUnit\Framework\Tes
         $this->_wait();
 
         $collections = $this->_commonDocument->listCollections();
-        $this->assertNotContains($name, $collections, "New collection not in the list");
+        $this->assertStringNotContainsString($name, $collections, "New collection not in the list");
     }
 
     public function testListCollections()
@@ -124,8 +124,8 @@ abstract class Zend_Cloud_DocumentService_TestCase extends PHPUnit\Framework\Tes
         $this->_wait();
 
         $collections = $this->_commonDocument->listCollections();
-        $this->assertContains($this->_collectionName("test3"), $collections, "New collection test3 not in the list");
-        $this->assertContains($this->_collectionName("test4"), $collections, "New collection test4 not in the list");
+        $this->assertStringContainsString($this->_collectionName("test3"), $collections, "New collection test3 not in the list");
+        $this->assertStringContainsString($this->_collectionName("test4"), $collections, "New collection test4 not in the list");
         $this->_wait();
 
         $this->_commonDocument->deleteCollection($this->_collectionName("test3"));
@@ -219,7 +219,7 @@ abstract class Zend_Cloud_DocumentService_TestCase extends PHPUnit\Framework\Tes
         $this->assertTrue($fetchdoc instanceof Zend_Cloud_DocumentService_Document, "New document not found");
         $this->assertEquals($doc1->name, $fetchdoc->name, "Name field did not update");
 
-         $this->_commonDocument->deleteCollection($name);
+        $this->_commonDocument->deleteCollection($name);
     }
 
     public function testUpdateDocumentIDDoc()
@@ -239,7 +239,7 @@ abstract class Zend_Cloud_DocumentService_TestCase extends PHPUnit\Framework\Tes
         $this->assertEquals($doc2->name, $fetchdoc->name, "Name field did not update");
         $this->assertEquals($doc2->keyword, $fetchdoc->keyword, "Keywords did not update");
 
-         $this->_commonDocument->deleteCollection($name);
+        $this->_commonDocument->deleteCollection($name);
     }
 
     public function testUpdateDocumentDoc()
@@ -272,9 +272,9 @@ abstract class Zend_Cloud_DocumentService_TestCase extends PHPUnit\Framework\Tes
         $fetchdocs = $this->_commonDocument->query($name, $query);
 
         $this->assertTrue(count($fetchdocs) >= 2, "Query failed to fetch 2 fields");
-        foreach($fetchdocs as $fdoc) {
-            $this->assertContains($fdoc["name"], array($doc[1]->name, $doc[2]->name), "Wrong name in results");
-            $this->assertContains($fdoc["author"], array($doc[1]->author, $doc[2]->author), "Wrong name in results");
+        foreach ($fetchdocs as $fdoc) {
+            $this->assertStringContainsString($fdoc["name"], array($doc[1]->name, $doc[2]->name), "Wrong name in results");
+            $this->assertStringContainsString($fdoc["author"], array($doc[1]->author, $doc[2]->author), "Wrong name in results");
         }
 
         $this->_commonDocument->deleteCollection($name);
@@ -290,7 +290,7 @@ abstract class Zend_Cloud_DocumentService_TestCase extends PHPUnit\Framework\Tes
         $this->assertTrue($query instanceof Zend_Cloud_DocumentService_QueryAdapter);
         $query->from($name)->whereId($doc[1]->getId());
         $fetchdocs = $this->_commonDocument->query($name, $query);
-        $this->assertEquals(1, count($fetchdocs), 'Query: ' . $query->assemble() . "\nDocuments:\n" . var_export($fetchdocs, 1));
+        $this->assertCount(1, $fetchdocs, 'Query: ' . $query->assemble() . "\nDocuments:\n" . var_export($fetchdocs, 1));
         foreach ($fetchdocs as $fdoc) {
             $this->assertEquals($doc[1]->name, $fdoc["name"], "Wrong name in results");
             $this->assertEquals($doc[1]->author, $fdoc["author"], "Wrong author in results");
@@ -308,8 +308,8 @@ abstract class Zend_Cloud_DocumentService_TestCase extends PHPUnit\Framework\Tes
         $query = $this->_commonDocument->select()
             ->from($name)->where("year > ?", array(1945));
         $fetchdocs = $this->_commonDocument->query($name, $query);
-        $this->assertEquals(3, count($fetchdocs));
-        foreach($fetchdocs as $fdoc) {
+        $this->assertCount(3, $fetchdocs);
+        foreach ($fetchdocs as $fdoc) {
             $this->assertTrue($fdoc["year"] > 1945);
         }
 
@@ -325,10 +325,10 @@ abstract class Zend_Cloud_DocumentService_TestCase extends PHPUnit\Framework\Tes
         $query = $this->_commonDocument->select()
             ->from($name)->where("year > ?", array(1945))->limit(1);
         $fetchdocs = $this->_commonDocument->query($name, $query);
-        $this->assertEquals(1, count($fetchdocs));
-        foreach($fetchdocs as $fdoc) {
+        $this->assertCount(1, $fetchdocs);
+        foreach ($fetchdocs as $fdoc) {
             $this->assertTrue($fdoc["year"] > 1945);
-            $this->assertContains($fdoc["name"], array($doc[0]->name, $doc[2]->name, $doc[3]->name), "Wrong name in results");
+            $this->assertStringContainsString($fdoc["name"], array($doc[0]->name, $doc[2]->name, $doc[3]->name), "Wrong name in results");
         }
 
         $this->_commonDocument->deleteCollection($name);
@@ -343,7 +343,7 @@ abstract class Zend_Cloud_DocumentService_TestCase extends PHPUnit\Framework\Tes
         $query = $this->_commonDocument->select()
             ->from($name)->where("year > ?", array(1945))->order("year", "desc");
         $fetchdocs = $this->_commonDocument->query($name, $query);
-        $this->assertEquals(3, count($fetchdocs));
+        $this->assertCount(3, $fetchdocs);
         foreach ($fetchdocs as $fdoc) {
             $this->assertEquals($doc[2]->name, $fdoc["name"]);
             break;
@@ -352,7 +352,7 @@ abstract class Zend_Cloud_DocumentService_TestCase extends PHPUnit\Framework\Tes
         $this->_commonDocument->deleteCollection($name);
     }
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->_config = $this->_getConfig();
         $this->_commonDocument = Zend_Cloud_DocumentService_Factory::getAdapter($this->_config);
@@ -368,7 +368,8 @@ abstract class Zend_Cloud_DocumentService_TestCase extends PHPUnit\Framework\Tes
         return $this->_dummyCollectionNamePrefix . $name; //.mt_rand();
     }
 
-    protected function _wait() {
+    protected function _wait()
+    {
         sleep($this->_waitPeriod);
     }
 
@@ -383,7 +384,7 @@ abstract class Zend_Cloud_DocumentService_TestCase extends PHPUnit\Framework\Tes
     {
         $data = $this->_getDocumentData();
         $this->_commonDocument->createCollection($name);
-        for($i=0; $i<count($data); $i++) {
+        for ($i=0; $i<count($data); $i++) {
             $doc[$i] = $this->_makeDocument($data[$i]);
             $this->_commonDocument->insertDocument($name, $doc[$i]);
         }

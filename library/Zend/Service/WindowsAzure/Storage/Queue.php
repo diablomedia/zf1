@@ -475,7 +475,7 @@ class Zend_Service_WindowsAzure_Storage_Queue extends Zend_Service_WindowsAzure_
 	 * @throws Zend_Service_WindowsAzure_Exception
 	 * @return void
 	 */
-	public function deleteMessage($queueName = '', Zend_Service_WindowsAzure_Storage_QueueMessage $message)
+	public function deleteMessage($queueName, Zend_Service_WindowsAzure_Storage_QueueMessage $message)
 	{
 		if ($queueName === '') {
 			throw new Zend_Service_WindowsAzure_Exception('Queue name is not specified.');

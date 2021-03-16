@@ -35,7 +35,7 @@ require_once 'Zend/Gdata/App.php';
 class Zend_Gdata_App_CategoryTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->categoryText = file_get_contents(
                 'Zend/Gdata/App/_files/CategoryElementSample1.xml',
                 true);
@@ -43,7 +43,7 @@ class Zend_Gdata_App_CategoryTest extends PHPUnit\Framework\TestCase
     }
 
     public function testEmptyCategoryShouldHaveEmptyExtensionsList() {
-        $this->assertInternalType('array', $this->category->extensionElements);
+        $this->assertIsArray($this->category->extensionElements);
         $this->assertTrue(count($this->category->extensionElements) == 0);
     }
 
@@ -54,7 +54,7 @@ class Zend_Gdata_App_CategoryTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(count($this->category->extensionElements), 0);
         $newCategory = new Zend_Gdata_App_Extension_Category();
         $newCategory->transferFromXML($this->category->saveXML());
-        $this->assertEquals(0, count($newCategory->extensionElements));
+        $this->assertCount(0, $newCategory->extensionElements);
         $newCategory->extensionElements = array(
                 new Zend_Gdata_App_Extension_Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(count($newCategory->extensionElements), 1);

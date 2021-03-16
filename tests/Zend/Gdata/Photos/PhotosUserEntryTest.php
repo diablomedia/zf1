@@ -40,7 +40,7 @@ class Zend_Gdata_Photos_PhotosUserEntryTest extends PHPUnit\Framework\TestCase
     /**
       * Called before each test to setup any fixtures.
       */
-    public function setUp()
+    public function setUp(): void
     {
         $userEntryText = file_get_contents(
                 '_files/TestUserEntry.xml',
@@ -118,7 +118,7 @@ class Zend_Gdata_Photos_PhotosUserEntryTest extends PHPUnit\Framework\TestCase
         // Assert that the entry's author is correct
         $entryAuthor = $entry->getAuthor();
         $this->assertEquals($entryAuthor, $entry->author);
-        $this->assertEquals(1, count($entryAuthor));
+        $this->assertCount(1, $entryAuthor);
         $this->assertTrue($entryAuthor[0] instanceof Zend_Gdata_App_Extension_Author);
         $this->verifyProperty2($entryAuthor[0], "name", "text", "sample");
         $this->assertTrue($entryAuthor[0]->getUri() instanceof Zend_Gdata_App_Extension_Uri);

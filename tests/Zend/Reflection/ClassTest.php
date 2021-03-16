@@ -38,7 +38,7 @@ class Zend_Reflection_ClassTest extends PHPUnit\Framework\TestCase
 
     static protected $_sampleClassFileRequired = false;
 
-    public function setup()
+    public function setUp(): void
     {
         // ensure we are only required this file once per runtime
         if (self::$_sampleClassFileRequired === false) {
@@ -57,7 +57,7 @@ class Zend_Reflection_ClassTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('Zend_Reflection_Method', get_class($methodByName));
 
         $methodsAll = $reflectionClass->getMethods();
-        $this->assertEquals(3, count($methodsAll));
+        $this->assertCount(3, $methodsAll);
 
         $firstMethod = array_shift($methodsAll);
         $this->assertEquals('getProp1', $firstMethod->getName());
@@ -71,7 +71,7 @@ class Zend_Reflection_ClassTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('Zend_Reflection_Property', get_class($propertyByName));
 
         $propertiesAll = $reflectionClass->getProperties();
-        $this->assertEquals(2, count($propertiesAll));
+        $this->assertCount(2, $propertiesAll);
 
         $firstProperty = array_shift($propertiesAll);
         $this->assertEquals('_prop1', $firstProperty->getName());
@@ -92,7 +92,7 @@ class Zend_Reflection_ClassTest extends PHPUnit\Framework\TestCase
         $reflectionClass = new Zend_Reflection_Class('Zend_Reflection_TestSampleClass4');
 
         $interfaces = $reflectionClass->getInterfaces();
-        $this->assertEquals(1, count($interfaces));
+        $this->assertCount(1, $interfaces);
 
         $interface = array_shift($interfaces);
         $this->assertEquals('Zend_Reflection_TestSampleClassInterface', $interface->getName());
@@ -141,7 +141,7 @@ EOS;
     public function testGetDeclaringFileReturnsFilename()
     {
         $reflectionClass = new Zend_Reflection_Class('Zend_Reflection_TestSampleClass2');
-        $this->assertContains('TestSampleClass.php', $reflectionClass->getDeclaringFile()->getFileName()); //ns(, $reflectionClass->getDeclaringFile());
+        $this->assertStringContainsString('TestSampleClass.php', $reflectionClass->getDeclaringFile()->getFileName()); //ns(, $reflectionClass->getDeclaringFile());
     }
 
 }

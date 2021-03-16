@@ -103,7 +103,7 @@ class Zend_Queue_CustomTest extends PHPUnit\Framework\TestCase
         // get the first 5 doing 0-4
         $receive = $queue->receive(5);
         $this->assertTrue($receive instanceof Custom_Messages);
-        $this->assertEquals(5, count($receive));
+        $this->assertCount(5, $receive);
 
         // test them
         for ($index = 0; $index < 5; $index++) {
@@ -122,7 +122,7 @@ class Zend_Queue_CustomTest extends PHPUnit\Framework\TestCase
         $receive = $queue->receive();
         $index++;
         $this->assertTrue($receive instanceof Custom_Messages);
-        $this->assertEquals(1, count($receive));
+        $this->assertCount(1, $receive);
 
         // testing Custom_Messages::__deconstruct()
         unset($receive);
@@ -149,6 +149,6 @@ class Zend_Queue_CustomTest extends PHPUnit\Framework\TestCase
         }
 
         // auto-delete should have been called on $receive
-        $this->assertEquals(0, count($queue));
+        $this->assertCount(0, $queue);
     }
 }

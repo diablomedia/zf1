@@ -35,7 +35,7 @@ require_once 'Zend/Gdata/Books.php';
 class Zend_Gdata_Books_VolumeEntryTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->entryText = file_get_contents(
                 'Zend/Gdata/Books/_files/VolumeEntryDataSample1.xml',
                 true);
@@ -78,25 +78,25 @@ class Zend_Gdata_Books_VolumeEntryTest extends PHPUnit\Framework\TestCase
     }
 
     public function testEmptyEntryShouldHaveNoExtensionElements() {
-        $this->assertInternalType('array', $this->entry->extensionElements);
-        $this->assertEquals(0, count($this->entry->extensionElements));
+        $this->assertIsArray($this->entry->extensionElements);
+        $this->assertCount(0, $this->entry->extensionElements);
     }
 
     public function testEmptyEntryShouldHaveNoExtensionAttributes() {
-        $this->assertInternalType('array', $this->entry->extensionAttributes);
-        $this->assertEquals(0, count($this->entry->extensionAttributes));
+        $this->assertIsArray($this->entry->extensionAttributes);
+        $this->assertCount(0, $this->entry->extensionAttributes);
     }
 
     public function testSampleEntryShouldHaveNoExtensionElements() {
         $this->entry->transferFromXML($this->entryText);
-        $this->assertInternalType('array', $this->entry->extensionElements);
-        $this->assertEquals(0, count($this->entry->extensionElements));
+        $this->assertIsArray($this->entry->extensionElements);
+        $this->assertCount(0, $this->entry->extensionElements);
     }
 
     public function testSampleEntryShouldHaveNoExtensionAttributes() {
         $this->entry->transferFromXML($this->entryText);
-        $this->assertInternalType('array', $this->entry->extensionAttributes);
-        $this->assertEquals(0, count($this->entry->extensionAttributes));
+        $this->assertIsArray($this->entry->extensionAttributes);
+        $this->assertCount(0, $this->entry->extensionAttributes);
     }
 
     public function testEmptyVolumeEntryToAndFromStringShouldMatch() {

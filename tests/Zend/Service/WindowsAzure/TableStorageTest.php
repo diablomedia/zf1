@@ -42,7 +42,7 @@ class Zend_Service_WindowsAzure_TableStorageTest extends PHPUnit\Framework\TestC
     /**
      * Test setup
      */
-     public function setUp()
+     public function setUp(): void
      {
          if (!TESTS_ZEND_SERVICE_WINDOWSAZURE_TABLE_RUNTESTS) {
              $this->markTestSkipped('Test not enabled in TestConfiguration.php');
@@ -52,7 +52,7 @@ class Zend_Service_WindowsAzure_TableStorageTest extends PHPUnit\Framework\TestC
     /**
      * Test teardown
      */
-    protected function tearDown()
+    public function tearDown(): void
     {
         $storageClient = $this->createStorageInstance();
         for ($i = 1; $i <= self::$uniqId; $i++)
@@ -98,7 +98,7 @@ class Zend_Service_WindowsAzure_TableStorageTest extends PHPUnit\Framework\TestC
             $this->assertEquals($tableName, $result->Name);
 
             $result = $storageClient->listTables();
-            $this->assertEquals(1, count($result));
+            $this->assertCount(1, $result);
             $this->assertEquals($tableName, $result[0]->Name);
         }
     }
@@ -159,7 +159,7 @@ class Zend_Service_WindowsAzure_TableStorageTest extends PHPUnit\Framework\TestC
             $storageClient->createTable($tableName2);
 
             $result = $storageClient->listTables();
-            $this->assertEquals(2, count($result));
+            $this->assertCount(2, $result);
             $this->assertEquals($tableName1, $result[0]->Name);
             $this->assertEquals($tableName2, $result[1]->Name);
         }
@@ -178,7 +178,7 @@ class Zend_Service_WindowsAzure_TableStorageTest extends PHPUnit\Framework\TestC
             $storageClient->deleteTable($tableName);
 
             $result = $storageClient->listTables();
-            $this->assertEquals(0, count($result));
+            $this->assertCount(0, $result);
         }
     }
 
@@ -499,7 +499,7 @@ class Zend_Service_WindowsAzure_TableStorageTest extends PHPUnit\Framework\TestC
             }
 
             $result = $storageClient->retrieveEntities($tableName, 'TSTest_TestEntity');
-            $this->assertEquals(20, count($result));
+            $this->assertCount(20, $result);
         }
     }
 
@@ -520,7 +520,7 @@ class Zend_Service_WindowsAzure_TableStorageTest extends PHPUnit\Framework\TestC
             }
 
             $result = $storageClient->retrieveEntities($tableName);
-            $this->assertEquals(20, count($result));
+            $this->assertCount(20, $result);
 
             foreach ($result as $item)
             {
@@ -546,7 +546,7 @@ class Zend_Service_WindowsAzure_TableStorageTest extends PHPUnit\Framework\TestC
             }
 
             $result = $storageClient->retrieveEntities($tableName, 'PartitionKey eq \'' . $entities[0]->getPartitionKey() . '\' and RowKey eq \'' . $entities[0]->getRowKey() . '\'', 'TSTest_TestEntity');
-            $this->assertEquals(1, count($result));
+            $this->assertCount(1, $result);
         }
     }
 
@@ -574,7 +574,7 @@ class Zend_Service_WindowsAzure_TableStorageTest extends PHPUnit\Framework\TestC
                 'TSTest_TestEntity'
             );
 
-            $this->assertEquals(1, count($result));
+            $this->assertCount(1, $result);
             $this->assertEquals($entities[0], $result[0]);
         }
     }
@@ -603,7 +603,7 @@ class Zend_Service_WindowsAzure_TableStorageTest extends PHPUnit\Framework\TestC
                 'TSTest_TestEntity'
             );
 
-            $this->assertEquals(1, count($result));
+            $this->assertCount(1, $result);
             $this->assertEquals($entities[0], $result[0]);
         }
     }
@@ -630,7 +630,7 @@ class Zend_Service_WindowsAzure_TableStorageTest extends PHPUnit\Framework\TestC
                 'TSTest_TestEntity'
             );
 
-            $this->assertEquals(4, count($result));
+            $this->assertCount(4, $result);
         }
     }
 
@@ -675,7 +675,7 @@ class Zend_Service_WindowsAzure_TableStorageTest extends PHPUnit\Framework\TestC
 
             // Verify
             $result = $storageClient->retrieveEntities($tableName);
-            $this->assertEquals(10, count($result));
+            $this->assertCount(10, $result);
         }
     }
 
@@ -706,7 +706,7 @@ class Zend_Service_WindowsAzure_TableStorageTest extends PHPUnit\Framework\TestC
 
             // Verify
             $result = $storageClient->retrieveEntities($tableName);
-            $this->assertEquals(0, count($result));
+            $this->assertCount(0, $result);
         }
     }
 
@@ -787,7 +787,7 @@ class Zend_Service_WindowsAzure_TableStorageTest extends PHPUnit\Framework\TestC
 
             // Verify
             $result = $storageClient->retrieveEntities($tableName);
-            $this->assertEquals(0, count($result));
+            $this->assertCount(0, $result);
         }
     }
 
@@ -820,14 +820,14 @@ class Zend_Service_WindowsAzure_TableStorageTest extends PHPUnit\Framework\TestC
 
             // Verify
             $result = $storageClient->retrieveEntities($tableName);
-            $this->assertEquals(2500, count($result));
+            $this->assertCount(2500, $result);
 
             $result = $storageClient->retrieveEntities(
                 $storageClient->select()
                               ->from($tableName)
                               ->where('Age ne 0')
             );
-            $this->assertEquals(2500, count($result));
+            $this->assertCount(2500, $result);
         }
     }
 

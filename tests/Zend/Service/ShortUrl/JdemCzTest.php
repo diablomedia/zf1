@@ -40,7 +40,7 @@ class Zend_Service_ShortUrl_JdemCzTest extends PHPUnit\Framework\TestCase
      *
      * @return void
      */
-    public function setUp ()
+    public function setUp(): void
     {
         if (!defined('TESTS_ZEND_SERVICE_SHORTURL_JDEMCZ_ENABLED')
             || !constant('TESTS_ZEND_SERVICE_SHORTURL_JDEMCZ_ENABLED')

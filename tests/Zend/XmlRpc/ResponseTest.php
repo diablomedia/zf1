@@ -48,7 +48,7 @@ class Zend_XmlRpc_ResponseTest extends PHPUnit\Framework\TestCase
     /**
      * Setup environment
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->_response = new Zend_XmlRpc_Response();
     }
@@ -56,7 +56,7 @@ class Zend_XmlRpc_ResponseTest extends PHPUnit\Framework\TestCase
     /**
      * Teardown environment
      */
-    public function tearDown()
+    public function tearDown(): void
     {
         unset($this->_response);
     }
@@ -264,7 +264,7 @@ EOD;
         $value = $this->_response->getReturnValue();
         $this->assertEmpty($value);
         if (is_string($value)) {
-            $this->assertNotContains('Local file inclusion', $value);
+            $this->assertStringNotContainsString('Local file inclusion', $value);
         }
     }
 

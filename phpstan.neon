@@ -15,3 +15,5 @@ parameters:
 
 includes:
     - phpstan-baseline.neon
+    - phpstan-php7.php
+    - phpstan-php8.php

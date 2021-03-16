@@ -38,7 +38,7 @@ class Zend_Gdata_PhotosOnlineTest extends PHPUnit\Framework\TestCase
 
     protected $photos = null;
 
-    public function setUp()
+    public function setUp(): void
     {
         if (!(defined('TESTS_ZEND_GDATA_ONLINE_ENABLED') &&
             constant('TESTS_ZEND_GDATA_ONLINE_ENABLED') == true &&

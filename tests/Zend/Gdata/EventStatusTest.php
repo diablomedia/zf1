@@ -34,7 +34,7 @@ require_once 'Zend/Gdata.php';
 class Zend_Gdata_EventStatusTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->eventStatusText = file_get_contents(
                 'Zend/Gdata/_files/EventStatusElementSample1.xml',
                 true);
@@ -42,24 +42,24 @@ class Zend_Gdata_EventStatusTest extends PHPUnit\Framework\TestCase
     }
 
     public function testEmptyEventStatusShouldHaveNoExtensionElements() {
-        $this->assertInternalType('array', $this->eventStatus->extensionElements);
+        $this->assertIsArray($this->eventStatus->extensionElements);
         $this->assertTrue(count($this->eventStatus->extensionElements) == 0);
     }
 
     public function testEmptyEventStatusShouldHaveNoExtensionAttributes() {
-        $this->assertInternalType('array', $this->eventStatus->extensionAttributes);
+        $this->assertIsArray($this->eventStatus->extensionAttributes);
         $this->assertTrue(count($this->eventStatus->extensionAttributes) == 0);
     }
 
     public function testSampleEventStatusShouldHaveNoExtensionElements() {
         $this->eventStatus->transferFromXML($this->eventStatusText);
-        $this->assertInternalType('array', $this->eventStatus->extensionElements);
+        $this->assertIsArray($this->eventStatus->extensionElements);
         $this->assertTrue(count($this->eventStatus->extensionElements) == 0);
     }
 
     public function testSampleEventStatusShouldHaveNoExtensionAttributes() {
         $this->eventStatus->transferFromXML($this->eventStatusText);
-        $this->assertInternalType('array', $this->eventStatus->extensionAttributes);
+        $this->assertIsArray($this->eventStatus->extensionAttributes);
         $this->assertTrue(count($this->eventStatus->extensionAttributes) == 0);
     }
 
@@ -68,20 +68,20 @@ class Zend_Gdata_EventStatusTest extends PHPUnit\Framework\TestCase
 
         $this->assertEquals("http://schemas.google.com/g/2005#event.tentative", $this->eventStatus->value);
 
-        $this->assertEquals(0, count($this->eventStatus->extensionElements));
+        $this->assertCount(0, $this->eventStatus->extensionElements);
         $newEventStatus = new Zend_Gdata_Extension_EventStatus();
         $newEventStatus->transferFromXML($this->eventStatus->saveXML());
-        $this->assertEquals(0, count($newEventStatus->extensionElements));
+        $this->assertCount(0, $newEventStatus->extensionElements);
         $newEventStatus->extensionElements = array(
                 new Zend_Gdata_App_Extension_Element('foo', 'atom', null, 'bar'));
-        $this->assertEquals(1, count($newEventStatus->extensionElements));
+        $this->assertCount(1, $newEventStatus->extensionElements);
         $this->assertEquals("http://schemas.google.com/g/2005#event.tentative", $newEventStatus->value);
 
         /* try constructing using magic factory */
         $gdata = new Zend_Gdata();
         $newEventStatus2 = $gdata->newEventStatus();
         $newEventStatus2->transferFromXML($newEventStatus->saveXML());
-        $this->assertEquals(1, count($newEventStatus2->extensionElements));
+        $this->assertCount(1, $newEventStatus2->extensionElements);
         $this->assertEquals("http://schemas.google.com/g/2005#event.tentative", $newEventStatus2->value);
     }
 

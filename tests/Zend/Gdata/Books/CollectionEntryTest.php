@@ -35,7 +35,7 @@ require_once 'Zend/Gdata/Books/CollectionEntry.php';
 class Zend_Gdata_Books_CollectionEntryTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->gdata = new Zend_Gdata_Books_CollectionEntry();
     }

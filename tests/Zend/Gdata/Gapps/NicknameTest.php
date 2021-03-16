@@ -35,7 +35,7 @@ require_once 'Zend/Gdata.php';
 class Zend_Gdata_Gapps_NicknameTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->nicknameText = file_get_contents(
                 'Zend/Gdata/Gapps/_files/NicknameElementSample1.xml',
                 true);
@@ -43,24 +43,24 @@ class Zend_Gdata_Gapps_NicknameTest extends PHPUnit\Framework\TestCase
     }
 
     public function testEmptyNicknameShouldHaveNoExtensionElements() {
-        $this->assertInternalType('array', $this->nickname->extensionElements);
+        $this->assertIsArray($this->nickname->extensionElements);
         $this->assertTrue(count($this->nickname->extensionElements) == 0);
     }
 
     public function testEmptyNicknameShouldHaveNoExtensionAttributes() {
-        $this->assertInternalType('array', $this->nickname->extensionAttributes);
+        $this->assertIsArray($this->nickname->extensionAttributes);
         $this->assertTrue(count($this->nickname->extensionAttributes) == 0);
     }
 
     public function testSampleNicknameShouldHaveNoExtensionElements() {
         $this->nickname->transferFromXML($this->nicknameText);
-        $this->assertInternalType('array', $this->nickname->extensionElements);
+        $this->assertIsArray($this->nickname->extensionElements);
         $this->assertTrue(count($this->nickname->extensionElements) == 0);
     }
 
     public function testSampleNicknameShouldHaveNoExtensionAttributes() {
         $this->nickname->transferFromXML($this->nicknameText);
-        $this->assertInternalType('array', $this->nickname->extensionAttributes);
+        $this->assertIsArray($this->nickname->extensionAttributes);
         $this->assertTrue(count($this->nickname->extensionAttributes) == 0);
     }
 
@@ -69,20 +69,20 @@ class Zend_Gdata_Gapps_NicknameTest extends PHPUnit\Framework\TestCase
 
         $this->assertEquals("Trogdor", $this->nickname->name);
 
-        $this->assertEquals(0, count($this->nickname->extensionElements));
+        $this->assertCount(0, $this->nickname->extensionElements);
         $newNickname = new Zend_Gdata_Gapps_Extension_Nickname();
         $newNickname->transferFromXML($this->nickname->saveXML());
-        $this->assertEquals(0, count($newNickname->extensionElements));
+        $this->assertCount(0, $newNickname->extensionElements);
         $newNickname->extensionElements = array(
                 new Zend_Gdata_App_Extension_Element('foo', 'atom', null, 'bar'));
-        $this->assertEquals(1, count($newNickname->extensionElements));
+        $this->assertCount(1, $newNickname->extensionElements);
         $this->assertEquals("Trogdor", $newNickname->name);
 
         /* try constructing using magic factory */
         $gdata = new Zend_Gdata_Gapps();
         $newNickname2 = $gdata->newNickname();
         $newNickname2->transferFromXML($newNickname->saveXML());
-        $this->assertEquals(1, count($newNickname2->extensionElements));
+        $this->assertCount(1, $newNickname2->extensionElements);
         $this->assertEquals("Trogdor", $newNickname2->name);
     }
 

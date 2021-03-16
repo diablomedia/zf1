@@ -37,7 +37,7 @@ class Zend_Serializer_Adapter_IgbinaryTest extends PHPUnit\Framework\TestCase
 
     private $_adapter;
 
-    public function setUp()
+    public function setUp(): void
     {
         if (!defined('TESTS_ZEND_SERIALIZER_ADAPTER_IGBINARY_ENABLED') || !TESTS_ZEND_SERIALIZER_ADAPTER_IGBINARY_ENABLED) {
             $this->markTestSkipped('this Adapter is not enabled in TestConfiguration.php');
@@ -48,7 +48,7 @@ class Zend_Serializer_Adapter_IgbinaryTest extends PHPUnit\Framework\TestCase
         $this->_adapter = new Zend_Serializer_Adapter_Igbinary();
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $this->_adapter = null;
     }

@@ -35,7 +35,7 @@ require_once 'Zend/Measure/Temperature.php';
  */
 class Zend_Measure_TemperatureTest extends PHPUnit\Framework\TestCase
 {
-    public function setup()
+    public function setUp(): void
     {
         if (Zend_Registry::isRegistered('Zend_Locale')) {
             $registry = Zend_Registry::getInstance();
@@ -47,7 +47,7 @@ class Zend_Measure_TemperatureTest extends PHPUnit\Framework\TestCase
         setlocale(LC_ALL, 'de');
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         if (is_string($this->_locale) && strpos($this->_locale, ';')) {
             $locales = array();
@@ -409,7 +409,7 @@ class Zend_Measure_TemperatureTest extends PHPUnit\Framework\TestCase
     {
         $value = new Zend_Measure_Temperature('-100',Zend_Measure_Temperature::STANDARD,'de');
         $unit  = $value->getConversionList();
-        $this->assertInternalType('array', $unit, 'Array expected');
+        $this->assertIsArray($unit, 'Array expected');
     }
 
 

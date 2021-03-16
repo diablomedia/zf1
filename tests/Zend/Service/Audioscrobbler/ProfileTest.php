@@ -261,7 +261,7 @@ class Zend_Service_Audioscrobbler_ProfileTest extends Zend_Service_Audioscrobble
             $response = $as->userGetTopTagsForArtist();
             $this->fail('userGetTopTagsForArtist() did not throw exception based on bad parameters');
         } catch (Zend_Service_Exception $e) {
-            $this->assertContains('SimpleXML', $e->getMessage());
+            $this->assertStringContainsString('SimpleXML', $e->getMessage());
         }
     }
 

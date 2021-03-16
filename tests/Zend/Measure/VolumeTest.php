@@ -37,7 +37,7 @@ require_once 'Zend/Measure/Volume.php';
 class Zend_Measure_VolumeTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp()
+    public function setUp(): void
     {
     }
 
@@ -390,6 +390,6 @@ class Zend_Measure_VolumeTest extends PHPUnit\Framework\TestCase
     {
         $value = new Zend_Measure_Volume('-100',Zend_Measure_Volume::STANDARD,'de');
         $unit  = $value->getConversionList();
-        $this->assertInternalType('array', $unit, 'Array expected');
+        $this->assertIsArray($unit, 'Array expected');
     }
 }

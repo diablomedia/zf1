@@ -39,7 +39,7 @@ class Zend_Gdata_Gapps_UserFeedTest extends PHPUnit\Framework\TestCase
     /**
       * Called before each test to setup any fixtures.
       */
-    public function setUp()
+    public function setUp(): void
     {
         $userFeedText = file_get_contents(
                 'Zend/Gdata/Gapps/_files/UserFeedDataSample1.xml',
@@ -49,22 +49,22 @@ class Zend_Gdata_Gapps_UserFeedTest extends PHPUnit\Framework\TestCase
     }
 
     public function testEmptyFeedShouldHaveNoExtensionElements() {
-        $this->assertInternalType('array', $this->emptyUserFeed->extensionElements);
+        $this->assertIsArray($this->emptyUserFeed->extensionElements);
         $this->assertTrue(count($this->emptyUserFeed->extensionElements) == 0);
     }
 
     public function testEmptyFeedShouldHaveNoExtensionAttributes() {
-        $this->assertInternalType('array', $this->emptyUserFeed->extensionAttributes);
+        $this->assertIsArray($this->emptyUserFeed->extensionAttributes);
         $this->assertTrue(count($this->emptyUserFeed->extensionAttributes) == 0);
     }
 
     public function testSampleFeedShouldHaveNoExtensionElements() {
-        $this->assertInternalType('array', $this->userFeed->extensionElements);
+        $this->assertIsArray($this->userFeed->extensionElements);
         $this->assertTrue(count($this->userFeed->extensionElements) == 0);
     }
 
     public function testSampleFeedShouldHaveNoExtensionAttributes() {
-        $this->assertInternalType('array', $this->userFeed->extensionAttributes);
+        $this->assertIsArray($this->userFeed->extensionAttributes);
         $this->assertTrue(count($this->userFeed->extensionAttributes) == 0);
     }
 

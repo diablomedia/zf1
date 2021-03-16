@@ -41,7 +41,7 @@ class Zend_Service_Ebay_Finding_OnlineTest extends PHPUnit\Framework\TestCase
 
     protected $_httpClientOriginal;
 
-    protected function setUp()
+    public function setUp(): void
     {
         if (!(defined('TESTS_ZEND_SERVICE_EBAY_ONLINE_ENABLED') &&
             constant('TESTS_ZEND_SERVICE_EBAY_ONLINE_ENABLED') !== false)) {
@@ -53,7 +53,7 @@ class Zend_Service_Ebay_Finding_OnlineTest extends PHPUnit\Framework\TestCase
         Zend_Rest_Client::setHttpClient(new Zend_Http_Client());
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         Zend_Rest_Client::setHttpClient($this->_httpClientOriginal);
     }
@@ -68,7 +68,7 @@ class Zend_Service_Ebay_Finding_OnlineTest extends PHPUnit\Framework\TestCase
             $this->fail('No exception found');
         } catch (Exception $e) {
             $this->assertTrue($e instanceof Zend_Service_Ebay_Finding_Exception);
-            $this->assertContains('eBay error', $e->getMessage());
+            $this->assertStringContainsString('eBay error', $e->getMessage());
         }
     }
 
@@ -140,7 +140,7 @@ class Zend_Service_Ebay_Finding_OnlineTest extends PHPUnit\Framework\TestCase
             $this->fail('No exception found for page #0');
         } catch (Exception $e) {
             $this->assertTrue($e instanceof Zend_Service_Ebay_Finding_Exception);
-            $this->assertContains('Page number ', $e->getMessage());
+            $this->assertStringContainsString('Page number ', $e->getMessage());
         }
 
         // out of range, one page after last one
@@ -150,7 +150,7 @@ class Zend_Service_Ebay_Finding_OnlineTest extends PHPUnit\Framework\TestCase
             $this->fail("No exception found for page out of range #$number");
         } catch (Exception $e) {
             $this->assertTrue($e instanceof Zend_Service_Ebay_Finding_Exception);
-            $this->assertContains('Page number ', $e->getMessage());
+            $this->assertStringContainsString('Page number ', $e->getMessage());
         }
 
         // page next

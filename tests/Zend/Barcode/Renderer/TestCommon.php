@@ -39,13 +39,13 @@ abstract class Zend_Barcode_Renderer_TestCommon extends PHPUnit\Framework\TestCa
 
     abstract protected function _getRendererObject($options = null);
 
-    public function setUp()
+    public function setUp(): void
     {
         Zend_Barcode::setBarcodeFont(dirname(__FILE__) . '/../Object/_fonts/Vera.ttf');
         $this->_renderer = $this->_getRendererObject();
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         Zend_Barcode::setBarcodeFont('');
     }
@@ -104,8 +104,10 @@ abstract class Zend_Barcode_Renderer_TestCommon extends PHPUnit\Framework\TestCa
     {
         foreach (array('left' , 'center' , 'right') as $position) {
             $this->_renderer->setHorizontalPosition($position);
-            $this->assertSame($position,
-                    $this->_renderer->getHorizontalPosition());
+            $this->assertSame(
+                $position,
+                $this->_renderer->getHorizontalPosition()
+            );
         }
     }
 
@@ -122,8 +124,10 @@ abstract class Zend_Barcode_Renderer_TestCommon extends PHPUnit\Framework\TestCa
     {
         foreach (array('top' , 'middle' , 'bottom') as $position) {
             $this->_renderer->setVerticalPosition($position);
-            $this->assertSame($position,
-                    $this->_renderer->getVerticalPosition());
+            $this->assertSame(
+                $position,
+                $this->_renderer->getVerticalPosition()
+            );
         }
     }
 
@@ -175,16 +179,18 @@ abstract class Zend_Barcode_Renderer_TestCommon extends PHPUnit\Framework\TestCa
     public function testConstructorWithArray()
     {
         $renderer = $this->_getRendererObject(
-                array('automaticRenderError' => true ,
-                        'unknownProperty' => 'aValue'));
+            array('automaticRenderError' => true ,
+                        'unknownProperty' => 'aValue')
+        );
         $this->assertEquals(true, $renderer->getAutomaticRenderError());
     }
 
     public function testConstructorWithZendConfig()
     {
         $config = new Zend_Config(
-                array('automaticRenderError' => true ,
-                        'unknownProperty' => 'aValue'));
+            array('automaticRenderError' => true ,
+                        'unknownProperty' => 'aValue')
+        );
         $renderer = $this->_getRendererObject($config);
         $this->assertEquals(true, $renderer->getAutomaticRenderError());
     }
@@ -193,8 +199,9 @@ abstract class Zend_Barcode_Renderer_TestCommon extends PHPUnit\Framework\TestCa
     {
         $this->assertEquals(false, $this->_renderer->getAutomaticRenderError());
         $this->_renderer->setOptions(
-                array('automaticRenderError' => true ,
-                        'unknownProperty' => 'aValue'));
+            array('automaticRenderError' => true ,
+                        'unknownProperty' => 'aValue')
+        );
         $this->assertEquals(true, $this->_renderer->getAutomaticRenderError());
     }
 
@@ -202,8 +209,9 @@ abstract class Zend_Barcode_Renderer_TestCommon extends PHPUnit\Framework\TestCa
     {
         $this->assertEquals(false, $this->_renderer->getAutomaticRenderError());
         $config = new Zend_Config(
-                array('automaticRenderError' => true ,
-                        'unknownProperty' => 'aValue'));
+            array('automaticRenderError' => true ,
+                        'unknownProperty' => 'aValue')
+        );
         $this->_renderer->setConfig($config);
         $this->assertEquals(true, $this->_renderer->getAutomaticRenderError());
     }

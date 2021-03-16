@@ -44,7 +44,7 @@ class Zend_Amf_AuthTest extends PHPUnit\Framework\TestCase
      */
     protected $_server;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->_server = new Zend_Amf_Server();
         $this->_server->setProduction(false);
@@ -52,7 +52,7 @@ class Zend_Amf_AuthTest extends PHPUnit\Framework\TestCase
         $this->_acl = new Zend_Acl();
     }
 
-    protected function tearDown()
+    public function tearDown(): void
     {
         unset($this->_server);
     }
@@ -60,13 +60,13 @@ class Zend_Amf_AuthTest extends PHPUnit\Framework\TestCase
     {
         $data[] = "12345";
         $this->_server->setClass($class);
-        $newBody = new Zend_Amf_Value_MessageBody("$class.$method","/1",$data);
+        $newBody = new Zend_Amf_Value_MessageBody("$class.$method", "/1", $data);
         $request->addAmfBody($newBody);
     }
 
     protected function _addLogin($request, $username, $password)
     {
-        $cmdBody = new Zend_Amf_Value_MessageBody("","/1","");
+        $cmdBody = new Zend_Amf_Value_MessageBody("", "/1", "");
         $loginCmd = new Zend_Amf_Value_Messaging_CommandMessage();
         $cmdBody->setData($loginCmd);
         $loginCmd->operation = Zend_Amf_Value_Messaging_CommandMessage::LOGIN_OPERATION;
@@ -76,7 +76,7 @@ class Zend_Amf_AuthTest extends PHPUnit\Framework\TestCase
 
     protected function _addLogout($request)
     {
-        $cmdBody = new Zend_Amf_Value_MessageBody("","/1","");
+        $cmdBody = new Zend_Amf_Value_MessageBody("", "/1", "");
         $loginCmd = new Zend_Amf_Value_Messaging_CommandMessage();
         $cmdBody->setData($loginCmd);
         $loginCmd->operation = Zend_Amf_Value_Messaging_CommandMessage::LOGOUT_OPERATION;
@@ -107,7 +107,7 @@ class Zend_Amf_AuthTest extends PHPUnit\Framework\TestCase
     public function testService()
     {
         $resp = $this->_callService();
-        $this->assertContains("hello", $resp);
+        $this->assertStringContainsString("hello", $resp);
     }
 
 
@@ -118,7 +118,7 @@ class Zend_Amf_AuthTest extends PHPUnit\Framework\TestCase
         $this->_server->setAcl($this->_acl);
         $data = $this->_callService();
         $this->assertTrue($data instanceof Zend_Amf_Value_Messaging_ErrorMessage);
-        $this->assertContains("not allowed", $data->faultString);
+        $this->assertStringContainsString("not allowed", $data->faultString);
     }
 
     public function testAnonymousDenied()
@@ -129,7 +129,7 @@ class Zend_Amf_AuthTest extends PHPUnit\Framework\TestCase
         $this->_server->setAcl($this->_acl);
         $resp = $this->_callService();
         $this->assertTrue($resp instanceof Zend_Amf_Value_Messaging_ErrorMessage);
-        $this->assertContains("not allowed", $resp->faultString);
+        $this->assertStringContainsString("not allowed", $resp->faultString);
     }
 
     public function testAnonymousOK()
@@ -140,7 +140,7 @@ class Zend_Amf_AuthTest extends PHPUnit\Framework\TestCase
         $this->_acl->allow(Zend_Amf_Constants::GUEST_ROLE, null, null);
         $this->_server->setAcl($this->_acl);
         $resp = $this->_callService();
-        $this->assertContains("hello", $resp);
+        $this->assertStringContainsString("hello", $resp);
     }
 
     public function testNoUsername()
@@ -150,7 +150,7 @@ class Zend_Amf_AuthTest extends PHPUnit\Framework\TestCase
         $resp = $this->_callServiceAuth("", "");
         $data = $resp[0]->getData();
         $this->assertTrue($data instanceof Zend_Amf_Value_Messaging_ErrorMessage);
-        $this->assertContains("username not supplied", $data->faultString);
+        $this->assertStringContainsString("username not supplied", $data->faultString);
     }
 
     public function testWrongPassword()
@@ -160,7 +160,7 @@ class Zend_Amf_AuthTest extends PHPUnit\Framework\TestCase
         $resp = $this->_callServiceAuth("testuser", "");
         $data = $resp[0]->getData();
         $this->assertTrue($data instanceof Zend_Amf_Value_Messaging_ErrorMessage);
-        $this->assertContains("Wrong Password", $data->faultString);
+        $this->assertStringContainsString("Wrong Password", $data->faultString);
     }
 
     public function testRightPassword()
@@ -172,7 +172,7 @@ class Zend_Amf_AuthTest extends PHPUnit\Framework\TestCase
         $this->_server->setAcl($this->_acl);
         $resp = $this->_callServiceAuth("testuser", "");
         $this->assertTrue($resp[0]->getData() instanceof Zend_Amf_Value_Messaging_AcknowledgeMessage);
-        $this->assertContains("hello", $resp[1]->getData());
+        $this->assertStringContainsString("hello", $resp[1]->getData());
     }
 
     // no ACL to allow access to this method
@@ -185,7 +185,7 @@ class Zend_Amf_AuthTest extends PHPUnit\Framework\TestCase
         $this->assertTrue($resp[0]->getData() instanceof Zend_Amf_Value_Messaging_AcknowledgeMessage);
         $data = $resp[1]->getData();
         $this->assertTrue($data instanceof Zend_Amf_Value_Messaging_ErrorMessage);
-        $this->assertContains("not allowed", $data->faultString);
+        $this->assertStringContainsString("not allowed", $data->faultString);
     }
 
     // Class allows everybody to access, even though no ACL is defined
@@ -196,7 +196,7 @@ class Zend_Amf_AuthTest extends PHPUnit\Framework\TestCase
         $this->_server->setAcl($this->_acl);
         $resp = $this->_callServiceAuth("testuser", "", 'Zend_Amf_Auth_testclass_NoAcl');
         $this->assertTrue($resp[0]->getData() instanceof Zend_Amf_Value_Messaging_AcknowledgeMessage);
-        $this->assertContains("hello", $resp[1]->getData());
+        $this->assertStringContainsString("hello", $resp[1]->getData());
     }
 
     // Class-defined ACL
@@ -209,7 +209,7 @@ class Zend_Amf_AuthTest extends PHPUnit\Framework\TestCase
         $this->_server->setAcl($this->_acl);
         $resp = $this->_callServiceAuth("testuser", "", 'Zend_Amf_Auth_testclass_Acl');
         $this->assertTrue($resp[0]->getData() instanceof Zend_Amf_Value_Messaging_AcknowledgeMessage);
-        $this->assertContains("hello", $resp[1]->getData());
+        $this->assertStringContainsString("hello", $resp[1]->getData());
     }
 
     // Class-defined ACL
@@ -223,7 +223,7 @@ class Zend_Amf_AuthTest extends PHPUnit\Framework\TestCase
         $this->assertTrue($resp[0]->getData() instanceof Zend_Amf_Value_Messaging_AcknowledgeMessage);
         $data = $resp[1]->getData();
         $this->assertTrue($data instanceof Zend_Amf_Value_Messaging_ErrorMessage);
-        $this->assertContains("not allowed", $data->faultString);
+        $this->assertStringContainsString("not allowed", $data->faultString);
     }
 
     // Class-defined ACL
@@ -236,7 +236,7 @@ class Zend_Amf_AuthTest extends PHPUnit\Framework\TestCase
         $this->_server->setAcl($this->_acl);
         $resp = $this->_callServiceAuth("testuser", "", 'Zend_Amf_Auth_testclass_Acl', 'hello2');
         $this->assertTrue($resp[0]->getData() instanceof Zend_Amf_Value_Messaging_AcknowledgeMessage);
-        $this->assertContains("hello", $resp[1]->getData());
+        $this->assertStringContainsString("hello", $resp[1]->getData());
     }
 
     public function testLogout()
@@ -248,7 +248,7 @@ class Zend_Amf_AuthTest extends PHPUnit\Framework\TestCase
         $this->_server->setAcl($this->_acl);
         $resp = $this->_callServiceAuth("testuser", "");
         $this->assertTrue($resp[0]->getData() instanceof Zend_Amf_Value_Messaging_AcknowledgeMessage);
-        $this->assertContains("hello", $resp[1]->getData());
+        $this->assertStringContainsString("hello", $resp[1]->getData());
 
         // After logout same request should not be allowed
         $this->setUp();
@@ -264,17 +264,19 @@ class Zend_Amf_AuthTest extends PHPUnit\Framework\TestCase
         $this->assertTrue($resp[0]->getData() instanceof Zend_Amf_Value_Messaging_AcknowledgeMessage);
         $data = $resp[1]->getData();
         $this->assertTrue($data instanceof Zend_Amf_Value_Messaging_ErrorMessage);
-        $this->assertContains("not allowed", $data->faultString);
+        $this->assertStringContainsString("not allowed", $data->faultString);
     }
 }
 
 class WrongPassword extends Zend_Amf_Auth_Abstract
 {
-    public function authenticate() {
-        return new Zend_Auth_Result(Zend_Auth_Result::FAILURE_CREDENTIAL_INVALID,
-                null,
-                array('Wrong Password')
-                );
+    public function authenticate()
+    {
+        return new Zend_Auth_Result(
+            Zend_Auth_Result::FAILURE_CREDENTIAL_INVALID,
+            null,
+            array('Wrong Password')
+        );
     }
 }
 
@@ -294,34 +296,43 @@ class RightPassword extends Zend_Amf_Auth_Abstract
     }
 }
 
-class Zend_Amf_Auth_testclass {
-    function hello() {
+class Zend_Amf_Auth_testclass
+{
+    public function hello()
+    {
         return "hello!";
     }
 }
 
-class Zend_Amf_Auth_testclass_Acl {
-    function hello() {
+class Zend_Amf_Auth_testclass_Acl
+{
+    public function hello()
+    {
         return "hello!";
     }
 
-    function hello2() {
+    public function hello2()
+    {
         return "hello2!";
     }
 
-    function initAcl(Zend_Acl $acl) {
+    public function initAcl(Zend_Acl $acl)
+    {
         $acl->allow("testrole", null, "hello");
         $acl->allow("testrole2", null, "hello2");
         return true;
     }
 }
 
-class Zend_Amf_Auth_testclass_NoAcl {
-    function hello() {
+class Zend_Amf_Auth_testclass_NoAcl
+{
+    public function hello()
+    {
         return "hello!";
     }
 
-    function initAcl() {
+    public function initAcl()
+    {
         return false;
     }
 }

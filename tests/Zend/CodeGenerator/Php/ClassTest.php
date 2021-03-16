@@ -249,7 +249,7 @@ EOS;
 
         $code = $codeGen->generate();
         $expectedClassDef = 'class Zend_CodeGenerator_Php_ClassWithInterface implements Zend_Code_Generator_Php_OneInterface, Zend_Code_Generator_Php_TwoInterface';
-        $this->assertContains($expectedClassDef, $code);
+        $this->assertStringContainsString($expectedClassDef, $code);
     }
 
     /**
@@ -270,7 +270,7 @@ EOS;
         $code = $codeGen->generate();
 
         $expectedClassDef = 'class Zend_CodeGenerator_Php_NewClassWithInterface extends Zend_CodeGenerator_Php_ClassWithInterface implements Zend_Code_Generator_Php_ThreeInterface';
-        $this->assertContains($expectedClassDef, $code);
+        $this->assertStringContainsString($expectedClassDef, $code);
     }
 
     /**

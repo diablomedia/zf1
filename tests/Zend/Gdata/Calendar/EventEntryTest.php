@@ -36,7 +36,7 @@ require_once 'Zend/Gdata/Calendar.php';
 class Zend_Gdata_Calendar_EventEntryTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->entryText = file_get_contents(
                 'Zend/Gdata/Calendar/_files/EventEntrySample1.xml',
                 true);
@@ -55,24 +55,24 @@ class Zend_Gdata_Calendar_EventEntryTest extends PHPUnit\Framework\TestCase
     }
 
     public function testEmptyEntryShouldHaveNoExtensionElements() {
-        $this->assertInternalType('array', $this->entry->extensionElements);
+        $this->assertIsArray($this->entry->extensionElements);
         $this->assertTrue(count($this->entry->extensionElements) == 0);
     }
 
     public function testEmptyEntryShouldHaveNoExtensionAttributes() {
-        $this->assertInternalType('array', $this->entry->extensionAttributes);
+        $this->assertIsArray($this->entry->extensionAttributes);
         $this->assertTrue(count($this->entry->extensionAttributes) == 0);
     }
 
     public function testSampleEntryShouldHaveNoExtensionElements() {
         $this->entry->transferFromXML($this->entryText);
-        $this->assertInternalType('array', $this->entry->extensionElements);
+        $this->assertIsArray($this->entry->extensionElements);
         $this->assertTrue(count($this->entry->extensionElements) == 0);
     }
 
     public function testSampleEntryShouldHaveNoExtensionAttributes() {
         $this->entry->transferFromXML($this->entryText);
-        $this->assertInternalType('array', $this->entry->extensionAttributes);
+        $this->assertIsArray($this->entry->extensionAttributes);
         $this->assertTrue(count($this->entry->extensionAttributes) == 0);
     }
 

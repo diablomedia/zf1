@@ -30,7 +30,7 @@
  */
 class Zend_Application_Resource_DbTest extends PHPUnit\Framework\TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         // Store original autoloaders
         $this->loaders = spl_autoload_functions();
@@ -48,9 +48,9 @@ class Zend_Application_Resource_DbTest extends PHPUnit\Framework\TestCase
         $this->bootstrap = new ZfAppBootstrap($this->application);
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
-    	Zend_Db_Table::setDefaultMetadataCache();
+        Zend_Db_Table::setDefaultMetadataCache();
 
         // Restore original autoloaders
         $loaders = spl_autoload_functions();

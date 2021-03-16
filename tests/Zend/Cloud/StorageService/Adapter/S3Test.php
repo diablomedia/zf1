@@ -35,17 +35,16 @@ require_once 'Zend/Cloud/StorageService/Adapter/S3.php';
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Zend_Cloud_StorageService_Adapter_S3Test
-    extends Zend_Cloud_StorageService_TestCase
+class Zend_Cloud_StorageService_Adapter_S3Test extends Zend_Cloud_StorageService_TestCase
 {
-	protected $_clientType = 'Zend_Service_Amazon_S3';
+    protected $_clientType = 'Zend_Service_Amazon_S3';
 
     /**
      * Sets up this test case
      *
      * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -77,12 +76,12 @@ class Zend_Cloud_StorageService_Adapter_S3Test
     }
 
 
-	/**
+    /**
      * Tears down this test case
      *
      * @return void
      */
-    public function tearDown()
+    public function tearDown(): void
     {
         if (!$this->_config) {
             return;

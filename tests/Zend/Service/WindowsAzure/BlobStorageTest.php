@@ -45,7 +45,7 @@ class Zend_Service_WindowsAzure_BlobStorageTest extends PHPUnit\Framework\TestCa
     /**
      * Test setup
      */
-     public function setUp()
+     public function setUp(): void
      {
         self::$path = dirname(__FILE__).'/_files/';
          $this->skipped = false;
@@ -59,7 +59,7 @@ class Zend_Service_WindowsAzure_BlobStorageTest extends PHPUnit\Framework\TestCa
     /**
      * Test teardown
      */
-    protected function tearDown()
+    public function tearDown(): void
     {
         if ($this->skipped === false) {
             $storageClient = $this->createStorageInstance();
@@ -232,7 +232,7 @@ class Zend_Service_WindowsAzure_BlobStorageTest extends PHPUnit\Framework\TestCa
             );
             $acl = $storageClient->getContainerAcl($containerName, true);
 
-            $this->assertEquals(1, count($acl));
+            $this->assertCount(1, $acl);
         }
     }
 
@@ -276,10 +276,10 @@ class Zend_Service_WindowsAzure_BlobStorageTest extends PHPUnit\Framework\TestCa
             $storageClient->deleteContainer($containerName2);
             $storageClient->deleteContainer($containerName3);
 
-            $this->assertEquals(3, count($result1));
+            $this->assertCount(3, $result1);
             $this->assertEquals($containerName2, $result1[1]->Name);
 
-            $this->assertEquals(1, count($result2));
+            $this->assertCount(1, $result2);
         }
     }
 
@@ -563,7 +563,7 @@ class Zend_Service_WindowsAzure_BlobStorageTest extends PHPUnit\Framework\TestCa
             $storageClient->deleteBlob($containerName, 'images/WindowsAzure.gif');
 
             $result = $storageClient->listBlobs($containerName);
-            $this->assertEquals(0, count($result));
+            $this->assertCount(0, $result);
         }
     }
 
@@ -584,11 +584,11 @@ class Zend_Service_WindowsAzure_BlobStorageTest extends PHPUnit\Framework\TestCa
             $storageClient->putBlob($containerName, 'images/WindowsAzure5.gif', self::$path . 'WindowsAzure.gif');
 
             $result1 = $storageClient->listBlobs($containerName);
-            $this->assertEquals(5, count($result1));
+            $this->assertCount(5, $result1);
             $this->assertEquals('images/WindowsAzure5.gif', $result1[4]->Name);
 
             $result2 = $storageClient->listBlobs($containerName, '', '', 2);
-            $this->assertEquals(2, count($result2));
+            $this->assertCount(2, $result2);
         }
     }
 
@@ -616,7 +616,7 @@ class Zend_Service_WindowsAzure_BlobStorageTest extends PHPUnit\Framework\TestCa
             ));
 
             $result = $storageClient->listBlobs($containerName, '', '', null, null, 'metadata,snapshots,uncommittedblobs');
-            $this->assertEquals(3, count($result));
+            $this->assertCount(3, $result);
             $this->assertEquals('images/WindowsAzure2.gif', $result[1]->Name);
 
             $this->assertEquals('PHPAzure', $result[1]->Metadata['createdby']);
@@ -678,7 +678,7 @@ class Zend_Service_WindowsAzure_BlobStorageTest extends PHPUnit\Framework\TestCa
 
             // List
             $result = $storageClient->listContainers();
-            $this->assertEquals(1, count($result));
+            $this->assertCount(1, $result);
 
             // Put blob
             $result = $storageClient->putBlob($containerName, 'WindowsAzure.gif', self::$path . 'WindowsAzure.gif');
@@ -709,13 +709,13 @@ class Zend_Service_WindowsAzure_BlobStorageTest extends PHPUnit\Framework\TestCa
 
             // List blobs
             $result = $storageClient->listBlobs($containerName);
-            $this->assertEquals(1, count($result));
+            $this->assertCount(1, $result);
 
             // Delete blob
             $storageClient->deleteBlob($containerName, 'WindowsAzure.gif');
 
             $result = $storageClient->listBlobs($containerName);
-            $this->assertEquals(0, count($result));
+            $this->assertCount(0, $result);
         }
     }
 
@@ -776,7 +776,7 @@ class Zend_Service_WindowsAzure_BlobStorageTest extends PHPUnit\Framework\TestCa
             $pageRegions = $storageClient->getPageRegions($containerName, 'test2.txt');
 
             // Verify
-            $this->assertEquals(2, count($pageRegions));
+            $this->assertCount(2, $pageRegions);
         }
     }
 

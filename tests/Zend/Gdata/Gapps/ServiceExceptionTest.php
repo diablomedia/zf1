@@ -38,7 +38,7 @@ class Zend_Gdata_Gapps_ServiceExceptionTest extends PHPUnit\Framework\TestCase
     protected $fixture;
     protected $data;
 
-    public function setUp() {
+    public function setUp(): void {
         $this->xmlSample = file_get_contents(
                 'Zend/Gdata/Gapps/_files/AppsForYourDomainElementSample1.xml',
                 true);
@@ -60,7 +60,7 @@ class Zend_Gdata_Gapps_ServiceExceptionTest extends PHPUnit\Framework\TestCase
     public function testCanSetAndGetErrorArray() {
         $this->fixture->setErrors($this->data);
         $incoming = $this->fixture->getErrors();
-        $this->assertInternalType('array', $incoming);
+        $this->assertIsArray($incoming);
         $this->assertEquals(count($this->data), count($incoming));
         foreach ($this->data as $i) {
             $this->assertEquals($i, $incoming[$i->getErrorCode()]);
@@ -78,7 +78,7 @@ class Zend_Gdata_Gapps_ServiceExceptionTest extends PHPUnit\Framework\TestCase
     public function testCanSetPropertiesViaConstructor() {
         $this->fixture = new Zend_Gdata_Gapps_ServiceException($this->data);
         $incoming = $this->fixture->getErrors();
-        $this->assertInternalType('array', $incoming);
+        $this->assertIsArray($incoming);
         $this->assertEquals(count($this->data), count($incoming));
         foreach($this->data as $i) {
             $this->assertEquals($i, $incoming[$i->getErrorCode()]);
@@ -106,8 +106,8 @@ class Zend_Gdata_Gapps_ServiceExceptionTest extends PHPUnit\Framework\TestCase
     public function testCanConvertFromXML() {
         $this->fixture->importFromString($this->xmlSample);
         $incoming = $this->fixture->getErrors();
-        $this->assertInternalType('array', $incoming);
-        $this->assertEquals(3, count($incoming));
+        $this->assertIsArray($incoming);
+        $this->assertCount(3, $incoming);
         $this->assertEquals("9925", $incoming[9925]->errorCode);
         $this->assertEquals("Foo", $incoming[9925]->invalidInput);
         $this->assertEquals("Bar", $incoming[9925]->reason);

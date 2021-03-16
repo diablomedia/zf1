@@ -94,7 +94,7 @@ class Zend_Measure_BinaryTest extends PHPUnit\Framework\TestCase
     public function testBinaryNoLocale()
     {
         $value = new Zend_Measure_Binary('100',Zend_Measure_Binary::STANDARD);
-        $this->assertInternalType('object', $value,'Object expected because of standard locale');
+        $this->assertIsObject($value,'Object expected because of standard locale');
     }
 
     /**
@@ -346,6 +346,6 @@ class Zend_Measure_BinaryTest extends PHPUnit\Framework\TestCase
     {
         $value = new Zend_Measure_Binary('-100',Zend_Measure_Binary::STANDARD,'de');
         $unit  = $value->getConversionList();
-        $this->assertInternalType('array', $unit, 'Array expected');
+        $this->assertIsArray($unit, 'Array expected');
     }
 }

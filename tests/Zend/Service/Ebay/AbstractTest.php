@@ -39,7 +39,7 @@ class Zend_Service_Ebay_AbstractTest extends PHPUnit\Framework\TestCase
      */
     protected $_concrete;
 
-    protected function setUp()
+    public function setUp(): void
     {
         $this->_concrete = new Zend_Service_Ebay_AbstractConcrete(array());
     }

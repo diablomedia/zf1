@@ -49,7 +49,7 @@ require_once 'Zend/Queue/Adapter/Null.php';
  */
 class Zend_Queue_MessageTest extends PHPUnit\Framework\TestCase
 {
-    protected function setUp()
+    public function setUp(): void
     {
         // Test Zend_Config
         $this->options = array(
@@ -73,7 +73,7 @@ class Zend_Queue_MessageTest extends PHPUnit\Framework\TestCase
         $this->message = new Zend_Queue_Message($this->options);
     }
 
-    protected function tearDown()
+    public function tearDown(): void
     {
     }
 
@@ -179,7 +179,7 @@ class Zend_Queue_MessageTest extends PHPUnit\Framework\TestCase
     public function test_array()
     {
         $array = $this->message->toArray();
-        $this->assertInternalType('array', $array);
+        $this->assertIsArray($array);
 
         $array['id'] = 'hello';
         $this->message->setFromArray($array);
@@ -189,7 +189,7 @@ class Zend_Queue_MessageTest extends PHPUnit\Framework\TestCase
 
     public function test_magic()
     {
-        $this->assertInternalType('array', $this->message->__sleep());
+        $this->assertIsArray($this->message->__sleep());
 
         $message = serialize($this->message);
         $woken = unserialize($message);

@@ -44,14 +44,14 @@ class Zend_Tool_Framework_Manifest_MetadataTest extends PHPUnit\Framework\TestCa
      */
     protected $_metadata = null;
 
-    public function setup()
+    public function setUp(): void
     {
         $this->markTestIncomplete('Were not in suite, do not pass, perhaps not finished');
 
         $this->_metadata = new Zend_Tool_Framework_Manifest_Metadata();
     }
 
-    public function teardown()
+    public function tearDown(): void
     {
         $this->_metadata = null;
     }
@@ -117,7 +117,7 @@ class Zend_Tool_Framework_Manifest_MetadataTest extends PHPUnit\Framework\TestCa
 
         $attributes = $this->_metadata->getAttributes();
 
-        $this->assertEquals(4, count($attributes));
+        $this->assertCount(4, $attributes);
 
         $this->assertEquals('Global', $attributes['type']);
         $this->assertEquals('Foo', $attributes['name']);
@@ -126,12 +126,12 @@ class Zend_Tool_Framework_Manifest_MetadataTest extends PHPUnit\Framework\TestCa
 
         $attributes = $this->_metadata->getAttributes(Zend_Tool_Framework_Manifest_Metadata::ATTRIBUTES_NO_PARENT);
 
-        $this->assertEquals(0, count($attributes));
+        $this->assertCount(0, $attributes);
 
 
         $attributes = $this->_metadata->getAttributes(Zend_Tool_Framework_Manifest_Metadata::ATTRIBUTES_ALL, true);
 
-        $this->assertEquals(4, count($attributes));
+        $this->assertCount(4, $attributes);
 
         $this->assertEquals('Global', $attributes['type']);
         $this->assertEquals('Foo', $attributes['name']);

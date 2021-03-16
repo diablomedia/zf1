@@ -49,7 +49,7 @@ class Zend_Service_Ebay_OfflineTest extends PHPUnit\Framework\TestCase
      */
     protected $_finding;
 
-    protected function setUp()
+    public function setUp(): void
     {
         $this->_finding = new Zend_Service_Ebay_Finding('foo');
     }
@@ -117,8 +117,8 @@ class Zend_Service_Ebay_OfflineTest extends PHPUnit\Framework\TestCase
         $this->assertNotNull($object->domain);
         $this->assertNotNull($object->errorId);
         $this->assertNotNull($object->message);
-        $this->assertInternalType('array', $object->parameter);
-        $this->assertInternalType('array', $object->attributes('parameter', 'name'));
+        $this->assertIsArray($object->parameter);
+        $this->assertIsArray($object->attributes('parameter', 'name'));
         $this->assertNotNull($object->severity);
         $this->assertNotNull($object->subdomain);
 
@@ -176,14 +176,14 @@ class Zend_Service_Ebay_OfflineTest extends PHPUnit\Framework\TestCase
         $this->assertTrue($object instanceof Zend_Service_Ebay_Finding_Search_Item);
         $this->assertNotNull($object->autoPay);
         $this->assertNotNull($object->country);
-        $this->assertInternalType('array', $object->galleryPlusPictureURL);
+        $this->assertIsArray($object->galleryPlusPictureURL);
         $this->assertNotNull($object->galleryPlusPictureURL[0]);
         $this->assertNotNull($object->galleryURL);
         $this->assertNotNull($object->globalId);
         $this->assertNotNull($object->itemId);
         $this->assertTrue($object->listingInfo instanceof Zend_Service_Ebay_Finding_ListingInfo);
         $this->assertNotNull($object->location);
-        $this->assertInternalType('array', $object->paymentMethod);
+        $this->assertIsArray($object->paymentMethod);
         $this->assertNotNull($object->paymentMethod[0]);
         $this->assertNotNull($object->postalCode);
         $this->assertTrue($object->primaryCategory instanceof Zend_Service_Ebay_Finding_Category);
@@ -281,7 +281,7 @@ class Zend_Service_Ebay_OfflineTest extends PHPUnit\Framework\TestCase
         $this->assertNotNull($object->shippingServiceCost);
         $this->assertNotNull($object->attributes('shippingServiceCost', 'currencyId'));
         $this->assertNotNull($object->shippingType);
-        $this->assertInternalType('array', $object->shipToLocations);
+        $this->assertIsArray($object->shipToLocations);
         $this->assertNotNull($object->shipToLocations[0]);
     }
 
@@ -313,7 +313,7 @@ class Zend_Service_Ebay_OfflineTest extends PHPUnit\Framework\TestCase
         // Zend_Service_Ebay_Finding_Aspect
         $object = $object->aspect->current();
         $this->assertTrue($object->valueHistogram instanceof Zend_Service_Ebay_Finding_Aspect_Histogram_Value_Set);
-        $this->assertInternalType('array', $object->attributes('valueHistogram', 'valueName'));
+        $this->assertIsArray($object->attributes('valueHistogram', 'valueName'));
 
         // Zend_Service_Ebay_Finding_Aspect_Histogram_Value
         $object = $object->valueHistogram->current();

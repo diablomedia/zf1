@@ -37,7 +37,7 @@ require_once 'Zend/Debug.php';
 class Zend_Tool_Project_Context_RepositoryTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp()
+    public function setUp(): void
     {
         Zend_Tool_Project_Context_Repository::resetInstance();
     }

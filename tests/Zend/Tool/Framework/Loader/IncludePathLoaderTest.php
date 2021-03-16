@@ -44,12 +44,12 @@ class Zend_Tool_Framework_Loader_IncludePathLoaderTest extends PHPUnit\Framework
      */
     protected $_registry = null;
 
-    public function setUp()
+    public function setUp(): void
     {
 
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         Zend_Tool_Framework_Registry::resetInstance();
     }
@@ -66,7 +66,7 @@ class Zend_Tool_Framework_Loader_IncludePathLoaderTest extends PHPUnit\Framework
         foreach ($files as $index => $file) {
             $files[$index] = substr($file, strpos($file, 'Zend'));
         }
-        $this->assertContains('Zend/Tool/Framework/System/Manifest.php', $files);
+        $this->assertStringContainsString('Zend/Tool/Framework/System/Manifest.php', $files);
     }
 
     public function testLoaderFindsIncludePathFilesAreLoaded()
@@ -74,7 +74,7 @@ class Zend_Tool_Framework_Loader_IncludePathLoaderTest extends PHPUnit\Framework
         $loader = new Zend_Tool_Framework_Loader_IncludePathLoader();
         $loader->load();
         $classes = $loader->getLoadLoadedClasses();
-        $this->assertContains('Zend_Tool_Framework_System_Manifest', $classes);
+        $this->assertStringContainsString('Zend_Tool_Framework_System_Manifest', $classes);
     }
 
     */

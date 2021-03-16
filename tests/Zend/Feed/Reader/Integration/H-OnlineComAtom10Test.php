@@ -33,23 +33,22 @@ require_once 'Zend/Feed/Reader.php';
  */
 class Zend_Feed_Reader_Integration_HOnlineComAtom10Test extends PHPUnit\Framework\TestCase
 {
-
     protected $_feedSamplePath = null;
 
-    public function setup()
+    public function setUp(): void
     {
         Zend_Feed_Reader::reset();
         $this->_feedSamplePath = dirname(__FILE__) . '/_files/h-online.com-atom10.xml';
         $this->_options = Zend_Date::setOptions();
-        foreach($this->_options as $k=>$v) {
+        foreach ($this->_options as $k=>$v) {
             if (is_null($v)) {
                 unset($this->_options[$k]);
             }
         }
         Zend_Date::setOptions(array('format_type'=>'iso'));
     }
-    
-    public function teardown()
+
+    public function tearDown(): void
     {
         Zend_Date::setOptions($this->_options);
     }
@@ -211,8 +210,10 @@ class Zend_Feed_Reader_Integration_HOnlineComAtom10Test extends PHPUnit\Framewor
             file_get_contents($this->_feedSamplePath)
         );
         $entry = $feed->current();
-        $this->assertEquals('http://www.h-online.com/security/McAfee-update-brings-systems-down-again--/news/113689/from/rss',
-            $entry->getPermaLink());
+        $this->assertEquals(
+            'http://www.h-online.com/security/McAfee-update-brings-systems-down-again--/news/113689/from/rss',
+            $entry->getPermaLink()
+        );
     }
 
     public function testGetsEntryEncoding()
@@ -223,5 +224,4 @@ class Zend_Feed_Reader_Integration_HOnlineComAtom10Test extends PHPUnit\Framewor
         $entry = $feed->current();
         $this->assertEquals('UTF-8', $entry->getEncoding());
     }
-
 }

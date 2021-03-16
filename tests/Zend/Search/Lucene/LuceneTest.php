@@ -51,7 +51,7 @@ class Zend_Search_Lucene_LuceneTest extends PHPUnit\Framework\TestCase
         closedir($dir);
     }
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->_clearDirectory(dirname(__FILE__) . '/_index/_files');
     }
@@ -530,15 +530,15 @@ class Zend_Search_Lucene_LuceneTest extends PHPUnit\Framework\TestCase
         $index = Zend_Search_Lucene::open(dirname(__FILE__) . '/_index/_files');
 
         $hits = $index->find('test:[a TO t]');
-        $this->assertEquals(1, count($hits));
+        $this->assertCount(1, $hits);
         $this->assertEquals(0, reset($hits)->id);
 
         $hits = $index->find('test:f');
-        $this->assertEquals(1, count($hits));
+        $this->assertCount(1, $hits);
         $this->assertEquals(0, reset($hits)->id);
 
         $hits = $index->find('test:g');
-        $this->assertEquals(0, count($hits));
+        $this->assertCount(0, $hits);
 
         unset($index);
 

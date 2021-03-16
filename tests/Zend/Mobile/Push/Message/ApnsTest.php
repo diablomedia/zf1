@@ -34,7 +34,7 @@ require_once 'Zend/Mobile/Push/Message/Apns.php';
  */
 class Zend_Mobile_Push_Message_ApnsTest extends PHPUnit\Framework\TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         $this->message = new Zend_Mobile_Push_Message_Apns();
     }
@@ -45,7 +45,7 @@ class Zend_Mobile_Push_Message_ApnsTest extends PHPUnit\Framework\TestCase
         $ret = $this->message->setAlert($text);
         $this->assertTrue($ret instanceof Zend_Mobile_Push_Message_Apns);
         $checkText = $this->message->getAlert();
-        $this->assertInternalType('array', $checkText);
+        $this->assertIsArray($checkText);
         $this->assertEquals($checkText['body'], $text);
     }
 

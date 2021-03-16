@@ -40,7 +40,7 @@ class Zend_Cloud_QueueService_FactoryTest extends PHPUnit\Framework\TestCase
 {
     public function testGetQueueAdapterKey()
     {
-        $this->assertInternalType('string', Zend_Cloud_QueueService_Factory::QUEUE_ADAPTER_KEY);
+        $this->assertIsString(Zend_Cloud_QueueService_Factory::QUEUE_ADAPTER_KEY);
     }
 
     public function testGetAdapterWithConfig()

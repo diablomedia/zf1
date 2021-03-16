@@ -42,7 +42,7 @@ class Zend_Service_WindowsAzure_QueueStorageTest extends PHPUnit\Framework\TestC
     /**
      * Test setup
      */
-    public function setUp()
+    public function setUp(): void
     {
         if (!TESTS_ZEND_SERVICE_WINDOWSAZURE_QUEUE_RUNTESTS) {
             $this->markTestSkipped('Test not enabled in TestConfiguration.php');
@@ -52,7 +52,7 @@ class Zend_Service_WindowsAzure_QueueStorageTest extends PHPUnit\Framework\TestC
     /**
      * Test teardown
      */
-    protected function tearDown()
+    public function tearDown(): void
     {
         $storageClient = $this->createStorageInstance();
         for ($i = 1; $i <= self::$uniqId; $i++)
@@ -195,10 +195,10 @@ class Zend_Service_WindowsAzure_QueueStorageTest extends PHPUnit\Framework\TestC
             $storageClient->deleteQueue($queueName2);
             $storageClient->deleteQueue($queueName3);
 
-            $this->assertEquals(3, count($result1));
+            $this->assertCount(3, $result1);
             $this->assertEquals($queueName2, $result1[1]->Name);
 
-            $this->assertEquals(1, count($result2));
+            $this->assertCount(1, $result2);
         }
     }
 
@@ -236,7 +236,7 @@ class Zend_Service_WindowsAzure_QueueStorageTest extends PHPUnit\Framework\TestC
             sleep(5); // wait for the message to appear in the queue...
 
             $messages = $storageClient->getMessages($queueName);
-            $this->assertEquals(1, count($messages));
+            $this->assertCount(1, $messages);
             $this->assertEquals('Test message', $messages[0]->MessageText);
         }
     }
@@ -261,9 +261,9 @@ class Zend_Service_WindowsAzure_QueueStorageTest extends PHPUnit\Framework\TestC
             $messages2 = $storageClient->getMessages($queueName, 2);
             $messages3 = $storageClient->getMessages($queueName);
 
-            $this->assertEquals(2, count($messages1));
-            $this->assertEquals(2, count($messages2));
-            $this->assertEquals(0, count($messages3));
+            $this->assertCount(2, $messages1);
+            $this->assertCount(2, $messages2);
+            $this->assertCount(0, $messages3);
         }
     }
 
@@ -287,9 +287,9 @@ class Zend_Service_WindowsAzure_QueueStorageTest extends PHPUnit\Framework\TestC
             $hasMessages = $storageClient->hasMessages($queueName);
             $messages2 = $storageClient->getMessages($queueName, 4);
 
-            $this->assertEquals(4, count($messages1));
+            $this->assertCount(4, $messages1);
             $this->assertTrue($hasMessages);
-            $this->assertEquals(4, count($messages2));
+            $this->assertCount(4, $messages2);
         }
     }
 
@@ -341,8 +341,8 @@ class Zend_Service_WindowsAzure_QueueStorageTest extends PHPUnit\Framework\TestC
 
             $messages2 = $storageClient->peekMessages($queueName, 4);
 
-            $this->assertEquals(4, count($messages1));
-            $this->assertEquals(0, count($messages2));
+            $this->assertCount(4, $messages1);
+            $this->assertCount(0, $messages2);
         }
     }
 
@@ -372,8 +372,8 @@ class Zend_Service_WindowsAzure_QueueStorageTest extends PHPUnit\Framework\TestC
 
             $messages2 = $storageClient->getMessages($queueName, 4);
 
-            $this->assertEquals(2, count($messages1));
-            $this->assertEquals(2, count($messages2));
+            $this->assertCount(2, $messages1);
+            $this->assertCount(2, $messages2);
         }
     }
 }

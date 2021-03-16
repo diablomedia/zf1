@@ -49,7 +49,7 @@ class Zend_Service_WindowsAzure_BlobStorageSharedAccessTest extends PHPUnit\Fram
     /**
      * Test setup
      */
-     public function setUp()
+     public function setUp(): void
      {
          self::$path = dirname(__FILE__).'/_files/';
          $this->skipped = false;
@@ -63,7 +63,7 @@ class Zend_Service_WindowsAzure_BlobStorageSharedAccessTest extends PHPUnit\Fram
     /**
      * Test teardown
      */
-    protected function tearDown()
+    public function tearDown(): void
     {
         if ($this->skipped === false) {
             $storageClient = $this->createAdministrativeStorageInstance();

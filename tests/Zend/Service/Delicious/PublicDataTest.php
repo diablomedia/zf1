@@ -50,7 +50,7 @@ class Zend_Service_Delicious_PublicDataTest extends PHPUnit\Framework\TestCase
     /**
      * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
         if (!(defined('TESTS_ZEND_SERVICE_DELICIOUS_ENABLED') &&
             constant('TESTS_ZEND_SERVICE_DELICIOUS_ENABLED'))) {
@@ -76,7 +76,7 @@ class Zend_Service_Delicious_PublicDataTest extends PHPUnit\Framework\TestCase
     {
         $tags = $this->_delicious->getUserTags(self::TEST_UNAME);
 
-        $this->assertInternalType('array', $tags);
+        $this->assertIsArray($tags);
     }
 
     /**
@@ -86,7 +86,7 @@ class Zend_Service_Delicious_PublicDataTest extends PHPUnit\Framework\TestCase
     {
         $tags = $this->_delicious->getUserTags(self::TEST_UNAME, null, 20);
 
-        $this->assertInternalType('array', $tags);
+        $this->assertIsArray($tags);
         $this->assertTrue(count($tags) <= 20);
     }
 
@@ -97,7 +97,7 @@ class Zend_Service_Delicious_PublicDataTest extends PHPUnit\Framework\TestCase
     {
         $tags = $this->_delicious->getUserTags(self::TEST_UNAME, 5);
 
-        $this->assertInternalType('array', $tags);
+        $this->assertIsArray($tags);
         foreach ($tags as $count) {
             $this->assertTrue($count >= 5);
         }
@@ -110,7 +110,7 @@ class Zend_Service_Delicious_PublicDataTest extends PHPUnit\Framework\TestCase
     {
         $network = $this->_delicious->getUserNetwork(self::TEST_UNAME);
 
-        $this->assertInternalType('array', $network);
+        $this->assertIsArray($network);
     }
 
     /**
@@ -120,7 +120,7 @@ class Zend_Service_Delicious_PublicDataTest extends PHPUnit\Framework\TestCase
     {
         $fans = $this->_delicious->getUserFans(self::TEST_UNAME);
 
-        $this->assertInternalType('array', $fans);
+        $this->assertIsArray($fans);
     }
 
     /**
@@ -142,8 +142,8 @@ class Zend_Service_Delicious_PublicDataTest extends PHPUnit\Framework\TestCase
         $filterPostList = $posts->withTag('zfSite');
 
         foreach ($filterPostList as $post) {
-            $this->assertInternalType('array', $post->getTags());
-            $this->assertContains('zfSite', $post->getTags());
+            $this->assertIsArray($post->getTags());
+            $this->assertStringContainsString('zfSite', $post->getTags());
         }
     }
 
@@ -155,13 +155,13 @@ class Zend_Service_Delicious_PublicDataTest extends PHPUnit\Framework\TestCase
     public function testGetUrlDetails() {
         $details = $this->_delicious->getUrlDetails(self::TEST_URL);
 
-        $this->assertInternalType('array', $details);
+        $this->assertIsArray($details);
         $this->assertArrayHasKey('hash', $details);
         $this->assertArrayHasKey('top_tags', $details);
         $this->assertArrayHasKey('url', $details);
         $this->assertArrayHasKey('total_posts', $details);
 
         $this->assertEquals(self::TEST_URL, $details['url']);
-        $this->assertInternalType('array', $details['top_tags']);
+        $this->assertIsArray($details['top_tags']);
     }
 }

@@ -39,7 +39,7 @@ class Zend_Gdata_CalendarFeedTest extends PHPUnit\Framework\TestCase
     /**
       * Called before each test to setup any fixtures.
       */
-    public function setUp()
+    public function setUp(): void
     {
         $listFeedText = file_get_contents(
                 'Zend/Gdata/Calendar/_files/ListFeedSample1.xml',
@@ -132,7 +132,7 @@ class Zend_Gdata_CalendarFeedTest extends PHPUnit\Framework\TestCase
         // Assert that the feed's author is correct
         $feedAuthor = $feed->getAuthor();
         $this->assertEquals($feedAuthor, $feed->author);
-        $this->assertEquals(1, count($feedAuthor));
+        $this->assertCount(1, $feedAuthor);
         $this->assertTrue($feedAuthor[0] instanceof Zend_Gdata_App_Extension_Author);
         $this->verifyProperty2($feedAuthor[0], "name", "text", "GData Ops Demo");
         $this->verifyProperty2($feedAuthor[0], "email", "text", "gdata.ops.demo@gmail.com");
@@ -142,7 +142,7 @@ class Zend_Gdata_CalendarFeedTest extends PHPUnit\Framework\TestCase
         // Assert that each entry has valid author data
         foreach ($feed as $entry) {
             $entryAuthor = $entry->getAuthor();
-            $this->assertEquals(1, count($entryAuthor));
+            $this->assertCount(1, $entryAuthor);
             $this->verifyProperty2($entryAuthor[0], "name", "text", "GData Ops Demo");
             $this->verifyProperty2($entryAuthor[0], "email", "text", "gdata.ops.demo@gmail.com");
             $this->verifyProperty($entryAuthor[0], "uri", null);

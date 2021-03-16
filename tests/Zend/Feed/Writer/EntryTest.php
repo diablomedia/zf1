@@ -33,10 +33,9 @@ require_once 'Zend/Feed/Writer/Entry.php';
  */
 class Zend_Feed_Writer_EntryTest extends PHPUnit\Framework\TestCase
 {
-
     protected $_feedSamplePath = null;
 
-    public function setup()
+    public function setUp(): void
     {
         $this->_feedSamplePath = dirname(__FILE__) . '/_files';
     }
@@ -565,7 +564,7 @@ class Zend_Feed_Writer_EntryTest extends PHPUnit\Framework\TestCase
         $entry->setCommentCount('10');
         $this->assertEquals(10, $entry->getCommentCount());
     }
-    
+
     /**
      * @group ZF-11150
      */
@@ -601,5 +600,4 @@ class Zend_Feed_Writer_EntryTest extends PHPUnit\Framework\TestCase
         $entry = new Zend_Feed_Writer_Entry;
         $this->assertNull($entry->getCommentCount());
     }
-
 }

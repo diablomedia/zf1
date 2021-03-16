@@ -26,7 +26,7 @@
  * <code>
  * class ...
  * {
- *     public function setUp()
+ *     public function setUp(): void
  *     {
  *         Zend_AllTests_StreamWrapper_PhpInput::mockInput('expected string');
  *     }
@@ -37,7 +37,7 @@
  *         $this->assertSame('php://input', Zend_AllTests_StreamWrapper_PhpInput::getCurrentPath());
  *     }
  *
- *     public function tearDown()
+ *     public function tearDown(): void
  *     {
  *         Zend_AllTests_StreamWrapper_PhpInput::restoreDefault();
  *     }

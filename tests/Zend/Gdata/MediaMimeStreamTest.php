@@ -33,7 +33,7 @@ require_once 'Zend/Gdata/MediaMimeStream.php';
 class Zend_Gdata_MediaMimeStreamTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->locationOfFakeBinary =
             'Zend/Gdata/_files/MediaMimeStreamSample1.txt';

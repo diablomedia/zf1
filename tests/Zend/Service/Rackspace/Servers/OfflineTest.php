@@ -88,7 +88,7 @@ class Zend_Service_Rackspace_Servers_OfflineTest extends PHPUnit\Framework\TestC
     /**
      * SetUpBerofeClass
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->markTestIncomplete('Was not in suite, does not pass, perhaps not finished');
 

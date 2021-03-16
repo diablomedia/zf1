@@ -46,7 +46,7 @@ class Zend_XmlRpc_RequestTest extends PHPUnit\Framework\TestCase
     /**
      * Setup environment
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->_request = new Zend_XmlRpc_Request();
     }
@@ -54,7 +54,7 @@ class Zend_XmlRpc_RequestTest extends PHPUnit\Framework\TestCase
     /**
      * Teardown environment
      */
-    public function tearDown()
+    public function tearDown(): void
     {
         unset($this->_request);
     }
@@ -100,18 +100,18 @@ class Zend_XmlRpc_RequestTest extends PHPUnit\Framework\TestCase
     {
         $this->_request->addParam('string1');
         $params = $this->_request->getParams();
-        $this->assertEquals(1, count($params));
+        $this->assertCount(1, $params);
         $this->assertEquals('string1', $params[0]);
 
         $this->_request->addParam('string2');
         $params = $this->_request->getParams();
-        $this->assertSame(2, count($params));
+        $this->assertCount(2, $params);
         $this->assertSame('string1', $params[0]);
         $this->assertSame('string2', $params[1]);
 
         $this->_request->addParam(new Zend_XmlRpc_Value_String('foo'));
         $params = $this->_request->getParams();
-        $this->assertSame(3, count($params));
+        $this->assertCount(3, $params);
         $this->assertSame('string1', $params[0]);
         $this->assertSame('string2', $params[1]);
         $this->assertSame('foo', $params[2]->getValue());
@@ -364,7 +364,7 @@ class Zend_XmlRpc_RequestTest extends PHPUnit\Framework\TestCase
         $method = $this->_request->getMethod();
         $this->assertEmpty($method);
         if (is_string($method)) {
-            $this->assertNotContains('Local file inclusion', $method);
+            $this->assertStringNotContainsString('Local file inclusion', $method);
         }
     }
 

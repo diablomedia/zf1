@@ -38,7 +38,7 @@ class Zend_Cloud_DocumentService_FactoryTest extends PHPUnit\Framework\TestCase
 {
     public function testGetDocumentAdapterKey()
     {
-        $this->assertInternalType('string', Zend_Cloud_DocumentService_Factory::DOCUMENT_ADAPTER_KEY);
+        $this->assertIsString(Zend_Cloud_DocumentService_Factory::DOCUMENT_ADAPTER_KEY);
     }
 
     public function testGetAdapterWithConfig() {

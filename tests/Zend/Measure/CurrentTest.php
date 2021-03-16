@@ -359,6 +359,6 @@ class Zend_Measure_CurrentTest extends PHPUnit\Framework\TestCase
     {
         $value = new Zend_Measure_Current('-100',Zend_Measure_Current::STANDARD,'de');
         $unit  = $value->getConversionList();
-        $this->assertInternalType('array', $unit, 'Array expected');
+        $this->assertIsArray($unit, 'Array expected');
     }
 }

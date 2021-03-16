@@ -71,6 +71,6 @@ class Zend_Amf_Util_BinaryStreamTest extends PHPUnit\Framework\TestCase
         $stream = new Zend_Amf_Util_BinaryStream('');
         $stream->writeLongUtf($string);
         $test = $stream->getStream();
-        $this->assertContains($string, $test);
+        $this->assertStringContainsString($string, $test);
     }
 }

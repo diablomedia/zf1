@@ -38,7 +38,7 @@ class Zend_XmlRpc_Request_HttpTest extends PHPUnit\Framework\TestCase
     /**
      * Setup environment
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->xml =<<<EOX
 <?xml version="1.0" encoding="UTF-8"?>
@@ -90,7 +90,7 @@ EOX;
     /**
      * Teardown environment
      */
-    public function tearDown()
+    public function tearDown(): void
     {
         $_SERVER = $this->server;
         unset($this->request);

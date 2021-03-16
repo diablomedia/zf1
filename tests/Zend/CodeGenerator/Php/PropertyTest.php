@@ -36,8 +36,7 @@ require_once 'Zend/Reflection/Class.php';
  */
 class Zend_CodeGenerator_Php_PropertyTest extends PHPUnit\Framework\TestCase
 {
-
-    public function setup()
+    public function setUp(): void
     {
         if (!class_exists('Zend_CodeGenerator_Php_TestClassWithManyProperties')) {
             require_once dirname(__FILE__) . '/_files/TestClassWithManyProperties.php';
@@ -177,7 +176,7 @@ EOS;
         $codeGenProperty->generate();
     }
 
-    static public function dataSetTypeSetValueGenerate()
+    public static function dataSetTypeSetValueGenerate()
     {
         return array(
             array('string', 'foo', "'foo';"),
@@ -218,7 +217,7 @@ EOS;
      */
     public function testSetBogusTypeSetValueGenerateUseAutoDetection($type, $value, $code)
     {
-        if($type == 'constant') {
+        if ($type == 'constant') {
             return; // constant can only be detected explicitly
         }
 

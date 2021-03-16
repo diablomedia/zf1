@@ -45,11 +45,11 @@ class Zend_Feed_Entry_RssTest extends PHPUnit\Framework\TestCase
         $this->assertTrue($item instanceof Zend_Feed_Entry_Rss);
 
         $this->assertTrue(isset($item->content));
-        $this->assertContains(
+        $this->assertStringContainsString(
             'http://framework.zend.com/fisheye/changelog/Zend_Framework/?cs=7757',
             $item->content->__toString()
             );
-        $this->assertContains(
+        $this->assertStringContainsString(
             'http://framework.zend.com/fisheye/changelog/Zend_Framework/?cs=7757',
             $item->content()
             );

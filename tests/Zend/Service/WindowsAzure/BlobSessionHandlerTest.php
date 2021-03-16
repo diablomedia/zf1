@@ -45,7 +45,7 @@ require_once 'Zend/Service/WindowsAzure/TableSessionHandlerTest.php';
  */
 class Zend_Service_WindowsAzure_BlobSessionHandlerTest extends Zend_Service_WindowsAzure_TableSessionHandlerTest
 {
-    public function setUp()
+    public function setUp(): void
     {
         if (!TESTS_ZEND_SERVICE_WINDOWSAZURE_SESSIONHANDLER_RUNTESTS) {
             $this->markTestSkipped('Test not enabled in TestConfiguration.php');
@@ -55,7 +55,7 @@ class Zend_Service_WindowsAzure_BlobSessionHandlerTest extends Zend_Service_Wind
     /**
      * Test teardown
      */
-    protected function tearDown()
+    public function tearDown(): void
     {
         $storageClient = $this->createStorageInstance();
         for ($i = 1; $i <= self::$uniqId; $i++)
@@ -116,7 +116,7 @@ class Zend_Service_WindowsAzure_BlobSessionHandlerTest extends Zend_Service_Wind
 
 
             $verifyResult = $storageClient->listBlobs($tableName);
-            $this->assertEquals(1, count($verifyResult));
+            $this->assertCount(1, $verifyResult);
         }
     }
 
@@ -143,7 +143,7 @@ class Zend_Service_WindowsAzure_BlobSessionHandlerTest extends Zend_Service_Wind
 
 
             $verifyResult = $storageClient->listBlobs($tableName);
-            $this->assertEquals(1, count($verifyResult));
+            $this->assertCount(1, $verifyResult);
         }
     }
 
@@ -166,7 +166,7 @@ class Zend_Service_WindowsAzure_BlobSessionHandlerTest extends Zend_Service_Wind
             $this->assertTrue($result);
 
             $verifyResult = $storageClient->listBlobs($tableName);
-            $this->assertEquals(0, count($verifyResult));
+            $this->assertCount(0, $verifyResult);
         }
     }
 
@@ -191,7 +191,7 @@ class Zend_Service_WindowsAzure_BlobSessionHandlerTest extends Zend_Service_Wind
             $this->assertTrue($result);
 
             $verifyResult = $storageClient->listBlobs($tableName);
-            $this->assertEquals(0, count($verifyResult));
+            $this->assertCount(0, $verifyResult);
         }
     }
 }

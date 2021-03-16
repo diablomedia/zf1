@@ -35,11 +35,10 @@ require_once 'Zend/Version.php';
  */
 class Zend_Feed_Writer_Renderer_Entry_RssTest extends PHPUnit\Framework\TestCase
 {
-
     protected $_validWriter = null;
     protected $_validEntry = null;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->_validWriter = new Zend_Feed_Writer_Feed;
 
@@ -51,11 +50,12 @@ class Zend_Feed_Writer_Renderer_Entry_RssTest extends PHPUnit\Framework\TestCase
         $this->_validEntry = $this->_validWriter->createEntry();
         $this->_validEntry->setTitle('This is a test entry.');
         $this->_validEntry->setDescription('This is a test entry description.');
-        $this->_validEntry->setLink('http://www.example.com/1');;
+        $this->_validEntry->setLink('http://www.example.com/1');
+        ;
         $this->_validWriter->addEntry($this->_validEntry);
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $this->_validWriter = null;
         $this->_validEntry = null;
@@ -383,7 +383,6 @@ class Zend_Feed_Writer_Renderer_Entry_RssTest extends PHPUnit\Framework\TestCase
         ));
         $renderer = new Zend_Feed_Writer_Renderer_Feed_Rss($this->_validWriter);
         $xmlString = $renderer->render()->saveXml();
-        $this->assertContains('<category><![CDATA[This is a test category]]></category>', $xmlString);
+        $this->assertStringContainsString('<category><![CDATA[This is a test category]]></category>', $xmlString);
     }
-
 }

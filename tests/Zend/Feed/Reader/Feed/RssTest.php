@@ -33,7 +33,6 @@ require_once 'Zend/Feed/Reader.php';
  */
 class Zend_Feed_Reader_Feed_RssTest extends PHPUnit\Framework\TestCase
 {
-
     protected $_feedSamplePath = null;
 
     protected $_expectedCats = array();
@@ -42,7 +41,7 @@ class Zend_Feed_Reader_Feed_RssTest extends PHPUnit\Framework\TestCase
 
     protected $_expectedCatsAtom = array();
 
-    public function setup()
+    public function setUp(): void
     {
         Zend_Feed_Reader::reset();
         if (Zend_Registry::isRegistered('Zend_Locale')) {
@@ -51,7 +50,7 @@ class Zend_Feed_Reader_Feed_RssTest extends PHPUnit\Framework\TestCase
         }
         $this->_feedSamplePath = dirname(__FILE__) . '/_files/Rss';
         $this->_options = Zend_Date::setOptions();
-        foreach($this->_options as $k=>$v) {
+        foreach ($this->_options as $k=>$v) {
             if (is_null($v)) {
                 unset($this->_options[$k]);
             }
@@ -105,7 +104,7 @@ class Zend_Feed_Reader_Feed_RssTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    public function teardown()
+    public function tearDown(): void
     {
         Zend_Date::setOptions($this->_options);
     }
@@ -564,7 +563,8 @@ class Zend_Feed_Reader_Feed_RssTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(array(
             array('name'=>'Joe Bloggs'), array('name'=>'Jane Bloggs')
         ), (array) $feed->getAuthors());
-        $this->assertEquals(array('Joe Bloggs','Jane Bloggs'), $feed->getAuthors()->getValues());;
+        $this->assertEquals(array('Joe Bloggs','Jane Bloggs'), $feed->getAuthors()->getValues());
+        ;
     }
 
     // DC 1.1
@@ -1851,7 +1851,7 @@ class Zend_Feed_Reader_Feed_RssTest extends PHPUnit\Framework\TestCase
         $feed = Zend_Feed_Reader::importString(
             file_get_contents($this->_feedSamplePath.'/link/plain/none/rss090.xml')
         );
-        $this->assertEquals(0, count($feed));
+        $this->assertCount(0, $feed);
     }
 
     /**
@@ -2974,5 +2974,4 @@ class Zend_Feed_Reader_Feed_RssTest extends PHPUnit\Framework\TestCase
         );
         $this->assertEquals(null, $feed->getImage());
     }
-
 }

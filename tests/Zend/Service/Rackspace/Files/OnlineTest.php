@@ -65,7 +65,7 @@ class Zend_Service_Rackspace_Files_OnlineTest extends PHPUnit\Framework\TestCase
      *
      * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
 
         if (!constant('TESTS_ZEND_SERVICE_RACKSPACE_ONLINE_ENABLED')) {
@@ -186,14 +186,14 @@ class Zend_Service_Rackspace_Files_OnlineTest extends PHPUnit\Framework\TestCase
     {
         $size= $this->rackspace->getSizeContainers();
         $this->assertTrue($size!==false);
-        $this->assertInternalType('numeric', $size);
+        $this->assertIsNumeric($size);
     }
 
     public function testGetCountObjects()
     {
         $count= $this->rackspace->getCountObjects();
         $this->assertTrue($count!==false);
-        $this->assertInternalType('numeric', $count);
+        $this->assertIsNumeric($count);
     }
 
     public function testSetMetadataObject()
@@ -216,7 +216,7 @@ class Zend_Service_Rackspace_Files_OnlineTest extends PHPUnit\Framework\TestCase
     {
         $data= $this->rackspace->enableCdnContainer(TESTS_ZEND_SERVICE_RACKSPACE_CONTAINER_NAME);
         $this->assertTrue($data!==false);
-        $this->assertInternalType('array', $data);
+        $this->assertIsArray($data);
         $this->assertTrue(!empty($data['cdn_uri']));
         $this->assertTrue(!empty($data['cdn_uri_ssl']));
     }

@@ -76,7 +76,7 @@ class Zend_DebugTest extends PHPUnit\Framework\TestCase
         $result1 = Zend_Debug::dump($data, null, true);
         $result2 = ob_get_clean();
 
-        $this->assertContains('string(6) "string"', $result1);
+        $this->assertStringContainsString('string(6) "string"', $result1);
         $this->assertEquals($result1, $result2);
     }
 
@@ -105,8 +105,8 @@ class Zend_DebugTest extends PHPUnit\Framework\TestCase
         $a = array("a" => "b");
 
         $result = Zend_Debug::dump($a, "LABEL", false);
-        $this->assertContains("<pre>", $result);
-        $this->assertContains("</pre>", $result);
+        $this->assertStringContainsString("<pre>", $result);
+        $this->assertStringContainsString("</pre>", $result);
     }
 
 }

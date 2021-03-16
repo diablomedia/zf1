@@ -151,10 +151,13 @@ class Zend_Barcode_Renderer_Image extends Zend_Barcode_Renderer_RendererAbstract
     public function setResource($image)
     {
         if (gettype($image) != 'resource' || get_resource_type($image) != 'gd') {
-            throw new Zend_Barcode_Renderer_Exception(
-                'Invalid image resource provided to setResource()'
-            );
+            if (!$image instanceof GdImage) {
+                throw new Zend_Barcode_Renderer_Exception(
+                    'Invalid image resource provided to setResource()'
+                );
+            }
         }
+
         $this->_resource = $image;
         return $this;
     }

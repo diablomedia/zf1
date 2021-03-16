@@ -44,7 +44,7 @@ class Zend_Tool_Framework_Client_RequestTest extends PHPUnit\Framework\TestCase
      */
     protected $_request = null;
 
-    public function setup()
+    public function setUp(): void
     {
         $this->_request = new Zend_Tool_Framework_Client_Request();
     }
@@ -74,7 +74,7 @@ class Zend_Tool_Framework_Client_RequestTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('bar', $this->_request->getActionParameter('foo'));
         $this->assertArrayHasKey('foo', $this->_request->getActionParameters());
         $this->assertArrayHasKey('bar', $this->_request->getActionParameters());
-        $this->assertEquals(2, count($this->_request->getActionParameters()));
+        $this->assertCount(2, $this->_request->getActionParameters());
     }
 
     public function testProviderParameterGetterAndSetter()
@@ -84,7 +84,7 @@ class Zend_Tool_Framework_Client_RequestTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('bar', $this->_request->getProviderParameter('foo'));
         $this->assertArrayHasKey('foo', $this->_request->getProviderParameters());
         $this->assertArrayHasKey('bar', $this->_request->getProviderParameters());
-        $this->assertEquals(2, count($this->_request->getProviderParameters()));
+        $this->assertCount(2, $this->_request->getProviderParameters());
     }
 
     public function testPretendGetterAndSetter()

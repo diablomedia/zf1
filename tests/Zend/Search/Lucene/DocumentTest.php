@@ -93,7 +93,7 @@ class Zend_Search_Lucene_DocumentTest extends PHPUnit\Framework\TestCase
         $document->addField(Zend_Search_Lucene_Field::text('body',       'Document body, document body, document body...'));
 
         $fieldnamesDiffArray = array_diff($document->getFieldNames(), array('title', 'annotation', 'body'));
-        $this->assertInternalType('array', $fieldnamesDiffArray);
+        $this->assertIsArray($fieldnamesDiffArray);
         $this->assertEquals(count($fieldnamesDiffArray), 0);
 
         $this->assertEquals($document->title,      'Title');

@@ -33,16 +33,15 @@ require_once 'Zend/Feed/Reader.php';
  */
 class Zend_Feed_Reader_Feed_AtomTest extends PHPUnit\Framework\TestCase
 {
-
     protected $_feedSamplePath = null;
-    
+
     protected $_options = array();
-    
+
     protected $_expectedCats = array();
-    
+
     protected $_expectedCatsDc = array();
 
-    public function setup()
+    public function setUp(): void
     {
         Zend_Feed_Reader::reset();
         if (Zend_Registry::isRegistered('Zend_Locale')) {
@@ -51,7 +50,7 @@ class Zend_Feed_Reader_Feed_AtomTest extends PHPUnit\Framework\TestCase
         }
         $this->_feedSamplePath = dirname(__FILE__) . '/_files/Atom';
         $this->_options = Zend_Date::setOptions();
-        foreach($this->_options as $k=>$v) {
+        foreach ($this->_options as $k=>$v) {
             if (is_null($v)) {
                 unset($this->_options[$k]);
             }
@@ -87,8 +86,8 @@ class Zend_Feed_Reader_Feed_AtomTest extends PHPUnit\Framework\TestCase
             )
         );
     }
-    
-    public function teardown()
+
+    public function tearDown(): void
     {
         Zend_Date::setOptions($this->_options);
     }
@@ -444,15 +443,15 @@ class Zend_Feed_Reader_Feed_AtomTest extends PHPUnit\Framework\TestCase
         $feed = Zend_Feed_Reader::importString(
             file_get_contents($this->_feedSamplePath.'/link/plain/atom10.xml')
         );
-        $this->assertEquals(0, count($feed));
+        $this->assertCount(0, $feed);
     }
-    
+
     /**
      * Get category data
      */
-    
+
     // Atom 1.0 (Atom 0.3 never supported categories except via Atom 1.0/Dublin Core extensions)
-    
+
     public function testGetsCategoriesFromAtom10()
     {
         $feed = Zend_Feed_Reader::importString(
@@ -461,7 +460,7 @@ class Zend_Feed_Reader_Feed_AtomTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($this->_expectedCats, (array) $feed->getCategories());
         $this->assertEquals(array('topic1','Cat & Dog'), array_values($feed->getCategories()->getValues()));
     }
-    
+
     public function testGetsCategoriesFromAtom03_Atom10Extension()
     {
         $feed = Zend_Feed_Reader::importString(
@@ -470,9 +469,9 @@ class Zend_Feed_Reader_Feed_AtomTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($this->_expectedCats, (array) $feed->getCategories());
         $this->assertEquals(array('topic1','Cat & Dog'), array_values($feed->getCategories()->getValues()));
     }
-    
+
     // DC 1.0/1.1 for Atom 0.3
-    
+
     public function testGetsCategoriesFromAtom03_Dc10()
     {
         $feed = Zend_Feed_Reader::importString(
@@ -481,7 +480,7 @@ class Zend_Feed_Reader_Feed_AtomTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($this->_expectedCatsDc, (array) $feed->getCategories());
         $this->assertEquals(array('topic1','topic2'), array_values($feed->getCategories()->getValues()));
     }
-    
+
     public function testGetsCategoriesFromAtom03_Dc11()
     {
         $feed = Zend_Feed_Reader::importString(
@@ -490,9 +489,9 @@ class Zend_Feed_Reader_Feed_AtomTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($this->_expectedCatsDc, (array) $feed->getCategories());
         $this->assertEquals(array('topic1','topic2'), array_values($feed->getCategories()->getValues()));
     }
-    
+
     // No Categories In Entry
-    
+
     public function testGetsCategoriesFromAtom10_None()
     {
         $feed = Zend_Feed_Reader::importString(
@@ -501,7 +500,7 @@ class Zend_Feed_Reader_Feed_AtomTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(array(), (array) $feed->getCategories());
         $this->assertEquals(array(), array_values($feed->getCategories()->getValues()));
     }
-    
+
     public function testGetsCategoriesFromAtom03_None()
     {
         $feed = Zend_Feed_Reader::importString(
@@ -548,7 +547,7 @@ class Zend_Feed_Reader_Feed_AtomTest extends PHPUnit\Framework\TestCase
         );
         $this->assertEquals(null, $feed->getImage());
     }
-    
+
     /**
      * Get Icon (Unencoded Text)
      */

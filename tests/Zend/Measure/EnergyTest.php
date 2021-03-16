@@ -384,6 +384,6 @@ class Zend_Measure_EnergyTest extends PHPUnit\Framework\TestCase
     {
         $value = new Zend_Measure_Energy('-100',Zend_Measure_Energy::STANDARD,'de');
         $unit  = $value->getConversionList();
-        $this->assertInternalType('array', $unit, 'Array expected');
+        $this->assertIsArray($unit, 'Array expected');
     }
 }

@@ -50,7 +50,7 @@ class Zend_Feed_ImportTest extends PHPUnit\Framework\TestCase
      */
     protected $_adapter;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->_adapter = new Zend_Http_Client_Adapter_Test();
         Zend_Feed::setHttpClient(new Zend_Http_Client(null, array('adapter' => $this->_adapter)));
@@ -258,7 +258,6 @@ class Zend_Feed_ImportTest extends PHPUnit\Framework\TestCase
     public function testAtomImportFullBuilder()
     {
         $feed = Zend_Feed::importBuilder(new Zend_Feed_Builder($this->_getFullArray()), 'atom');
-
     }
 
     /**

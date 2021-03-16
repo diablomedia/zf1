@@ -155,7 +155,7 @@ class Zend_Tag_Cloud_CloudTest extends PHPUnit\Framework\TestCase
             ),
         ), false);
 
-        $this->assertEquals(1, count($cloud->getPluginLoader()->getPaths()));
+        $this->assertCount(1, $cloud->getPluginLoader()->getPaths());
     }
 
     public function testSetPluginLoader()

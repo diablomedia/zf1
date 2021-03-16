@@ -39,7 +39,7 @@ class Zend_Gdata_Gapps_OwnerFeedTest extends PHPUnit\Framework\TestCase
     /**
       * Called before each test to setup any fixtures.
       */
-    public function setUp()
+    public function setUp(): void
     {
         $ownerFeedText = file_get_contents(
                 'Zend/Gdata/Gapps/_files/OwnerFeedDataSample1.xml',
@@ -49,22 +49,22 @@ class Zend_Gdata_Gapps_OwnerFeedTest extends PHPUnit\Framework\TestCase
     }
 
     public function testEmptyFeedShouldHaveNoExtensionElements() {
-        $this->assertInternalType('array', $this->emptyOwnerFeed->extensionElements);
+        $this->assertIsArray($this->emptyOwnerFeed->extensionElements);
         $this->assertTrue(count($this->emptyOwnerFeed->extensionElements) == 0);
     }
 
     public function testEmptyFeedShouldHaveNoExtensionAttributes() {
-        $this->assertInternalType('array', $this->emptyOwnerFeed->extensionAttributes);
+        $this->assertIsArray($this->emptyOwnerFeed->extensionAttributes);
         $this->assertTrue(count($this->emptyOwnerFeed->extensionAttributes) == 0);
     }
 
     public function testSampleFeedShouldHaveNoExtensionElements() {
-        $this->assertInternalType('array', $this->ownerFeed->extensionElements);
+        $this->assertIsArray($this->ownerFeed->extensionElements);
         $this->assertTrue(count($this->ownerFeed->extensionElements) == 0);
     }
 
     public function testSampleFeedShouldHaveNoExtensionAttributes() {
-        $this->assertInternalType('array', $this->ownerFeed->extensionAttributes);
+        $this->assertIsArray($this->ownerFeed->extensionAttributes);
         $this->assertTrue(count($this->ownerFeed->extensionAttributes) == 0);
     }
 

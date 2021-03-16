@@ -44,7 +44,7 @@ class Zend_Service_WindowsAzure_BlobStreamTest extends PHPUnit\Framework\TestCas
     /**
      * Test setup
      */
-     public function setUp()
+     public function setUp(): void
      {
         self::$path = dirname(__FILE__).'/_files/';
          if (!TESTS_ZEND_SERVICE_WINDOWSAZURE_BLOB_RUNTESTS) {
@@ -55,7 +55,7 @@ class Zend_Service_WindowsAzure_BlobStreamTest extends PHPUnit\Framework\TestCas
     /**
      * Test teardown
      */
-    protected function tearDown()
+    public function tearDown(): void
     {
         $storageClient = $this->createStorageInstance();
         for ($i = 1; $i <= self::$uniqId; $i++)
@@ -157,7 +157,7 @@ class Zend_Service_WindowsAzure_BlobStreamTest extends PHPUnit\Framework\TestCas
             $storageClient->unregisterStreamWrapper();
 
             $result = $storageClient->listBlobs($containerName);
-            $this->assertEquals(0, count($result));
+            $this->assertCount(0, $result);
         }
     }
 
@@ -230,7 +230,7 @@ class Zend_Service_WindowsAzure_BlobStreamTest extends PHPUnit\Framework\TestCas
 
             $result = $storageClient->listContainers();
 
-            $this->assertEquals(1, count($result));
+            $this->assertCount(1, $result);
             $this->assertEquals($containerName, $result[0]->Name);
         }
     }
@@ -253,7 +253,7 @@ class Zend_Service_WindowsAzure_BlobStreamTest extends PHPUnit\Framework\TestCas
 
             $result = $storageClient->listContainers();
 
-            $this->assertEquals(0, count($result));
+            $this->assertCount(0, $result);
         }
     }
 

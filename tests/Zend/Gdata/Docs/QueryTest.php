@@ -35,7 +35,7 @@ require_once 'Zend/Gdata/Docs/Query.php';
 class Zend_Gdata_Docs_QueryTest extends PHPUnit\Framework\TestCase
 {
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->docQuery = new Zend_Gdata_Docs_Query();
     }
