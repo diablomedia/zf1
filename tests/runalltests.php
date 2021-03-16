@@ -20,11 +20,6 @@
  * @version    $Id$
  */
 
-if (!isset($_SERVER['TRAVIS_PHP_VERSION'])) {
-    list($phpMajor, $phpMinor) = explode('.', PHP_VERSION);
-    $_SERVER['TRAVIS_PHP_VERSION'] = $phpMajor . '.' . $phpMinor;
-}
-
 $PHPUNIT = __DIR__ . '/../bin/phpunit';
 
 if (!is_executable($PHPUNIT)) {
@@ -69,11 +64,6 @@ $result = 0;
 $failedSuites = [];
 
 foreach ($testSuites as $testSuite) {
-    if ($_SERVER['TRAVIS_PHP_VERSION'] === 'hhvm' && $testSuite === 'ZFTest_Zend_CodeGenerator') {
-        echo "Skipping $testSuite on HHVM" . PHP_EOL; //gets stuck on the HHVM
-        continue;
-    }
-
     echo "Executing Suite {$testSuite}" . PHP_EOL;
     if (isset($argv[1]) && $argv[1] === '--coverage') {
         system($PHPUNIT . ' --coverage-php=../build/coverage/' . escapeshellarg($testSuite . '.cov') . ' --testsuite=' . escapeshellarg($testSuite), $c_result);
