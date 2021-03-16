@@ -19,7 +19,7 @@
         "diablomedia/zendframework1-auth-adapter-openid": "dev-github-actions as 1.0.0",
         "diablomedia/zendframework1-cache": "dev-master as 1.0.0",
         "diablomedia/zendframework1-captcha": "dev-github-actions as 1.0.0",
-        "diablomedia/zendframework1-config": "^1.0.2 || ^2.0.0",
+        "diablomedia/zendframework1-config": "^2.0.1",
         "diablomedia/zendframework1-controller": "dev-master as 1.0.3",
         "diablomedia/zendframework1-controller-action-helper-ajaxcontext": "dev-github-actions as 1.0.0",
         "diablomedia/zendframework1-controller-action-helper-autocomplete": "dev-github-actions as 1.0.0",
