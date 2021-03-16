@@ -9,6 +9,31 @@ on:
 jobs:
     build:
         name: PHP ${{ matrix.php-versions }} ${{ matrix.composer-args }}
+        services:
+            mysql:
+                image: mysql/mysql-server:5.7
+                env:
+                    MYSQL_DATABASE: zftest
+                    MYSQL_USER: github
+                    MYSQL_PASSWORD: githubpass
+                ports:
+                    - 3306:3306
+                options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=10s --health-retries=10
+            postgres:
+                image: postgres:10
+                env:
+                    POSTGRES_DB: zftest
+                    POSTGRES_USER: github
+                    POSTGRES_PASSWORD: githubpass
+                ports:
+                    - 5432:5432
+                options: --health-cmd=pg_isready --health-interval=10s --health-timeout=5s --health-retries=5
+            memcached:
+                image: memcached:latest
+                ports:
+                    - 11211:11211
+                # needed because the memcached container does not provide a healthcheck
+                options: --health-cmd "timeout 5 bash -c 'cat < /dev/null > /dev/udp/127.0.0.1/11211'" --health-interval 10s --health-timeout 5s --health-retries 5
         strategy:
             fail-fast: false
             matrix:
