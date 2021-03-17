@@ -66,7 +66,7 @@ $failedSuites = [];
 foreach ($testSuites as $testSuite) {
     echo "Executing Suite {$testSuite}" . PHP_EOL;
     if (isset($argv[1]) && $argv[1] === '--coverage') {
-        system($PHPUNIT . ' --coverage-php=../build/coverage/' . escapeshellarg($testSuite . '.cov') . ' --testsuite=' . escapeshellarg($testSuite), $c_result);
+        system('php -dpcov.directory=../library ' . $PHPUNIT . ' --coverage-php=../build/coverage/' . escapeshellarg($testSuite) . '.cov --testsuite=' . escapeshellarg($testSuite), $c_result);
     } else {
         system($PHPUNIT . ' --testsuite=' . escapeshellarg($testSuite), $c_result);
     }
