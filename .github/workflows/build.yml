@@ -77,8 +77,13 @@ jobs:
               run: composer phpstan
             - name: Test
               run: cd tests/ && php runalltests.php --coverage
+            - name: Merge Coverage
+              run: ./bin/phpcov merge ./build/coverage --clover=./build/coverage/clover.xml
             - name: Upload Coverage
-              run: ./bin/phpcov merge ./build/coverage --clover=./build/coverage/clover.xml && bash <(curl -s https://codecov.io/bash) -f ./build/coverage/clover.xml
+              uses: codecov/codecov-action@v1
+              with:
+                  files: ./build/coverage/clover.xml
+
     merge-me:
         name: Merge me!
         needs:
