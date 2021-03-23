@@ -11131,7 +11131,7 @@ parameters:
 			path: library/Zend/Pdf.php
 
 		-
-			message: "#^Binary operation \"\\.\" between '.+' and array\\<int, string\\>\\|string\\|false results in an error\\.$#"
+			message: "#^Binary operation \"\\.\" between '.*' and array\\<int, string\\>\\|string\\|false results in an error\\.$#"
 			count: 1
 			path: library/Zend/Pdf.php
 
