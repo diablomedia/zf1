@@ -231,11 +231,6 @@ parameters:
 			path: library/Zend/Amf/Parse/TypeLoader.php
 
 		-
-			message: "#^Cannot call method parse\\(\\) on class\\-string\\|object\\.$#"
-			count: 1
-			path: library/Zend/Amf/Parse/TypeLoader.php
-
-		-
 			message: "#^Parameter \\#4 \\$length of class Zend_Amf_Value_MessageHeader constructor expects int\\|null, float given\\.$#"
 			count: 1
 			path: library/Zend/Amf/Request.php
@@ -11136,7 +11131,7 @@ parameters:
 			path: library/Zend/Pdf.php
 
 		-
-			message: "#^Binary operation \"\\.\" between '' and array\\<int, string\\>\\|string\\|false results in an error\\.$#"
+			message: "#^Binary operation \"\\.\" between '.+' and array\\<int, string\\>\\|string\\|false results in an error\\.$#"
 			count: 1
 			path: library/Zend/Pdf.php
 
