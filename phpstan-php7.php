@@ -840,11 +840,6 @@ if (version_compare(PHP_VERSION, '8.0', '<')) {
                     'path' => __DIR__ . '/library/Zend/Serializer/Adapter/PythonPickle.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#2 \$value of method Zend_Feed_Pubsubhubbub_HttpResponse\:\:setHeader\(\) expects string, int\<0, max\> given\.$#',
-                    'count' => 1,
-                    'path' => __DIR__ . '/library/Zend/Feed/Pubsubhubbub/HttpResponse.php',
-                ),
-                array(
                     'message' => '#^Parameter \#2 \$num of function array_fill expects int, float given\.$#',
                     'count' => 2,
                     'path' => __DIR__ . '/library/Zend/Pdf/Filter/Compression.php',
@@ -923,6 +918,11 @@ if (version_compare(PHP_VERSION, '8.0', '<')) {
                     'message' => '#^Parameter \#1 \$node of method DOMDocument\:\:importNode\(\) expects DOMNode, DOMElement\|false given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Tool/Project/Profile/FileParser/Xml.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$callback of function array_filter expects callable\(mixed, mixed\)\: bool, \'strlen\' given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Document/OpenXml.php',
                 ),
             )
         )

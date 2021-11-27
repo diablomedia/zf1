@@ -785,7 +785,7 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                 ),
                 array(
                     'message' => '#^Parameter \#2 \$count of function array_fill expects int<0, max>, float given\.$#',
-                    'count' => 2,
+                    'count' => 6,
                     'path' => __DIR__ . '/library/Zend/Pdf/Filter/Compression.php',
                 ),
                 array(
@@ -977,6 +977,11 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'message' => '#^Parameter \#2 \$baseDirectory of method Phar\:\:buildFromIterator\(\) expects string\|null, string\|false given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/CommandLine/Package.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$callback of function array_filter expects \(callable\(mixed, mixed\)\: bool\)\|null, \'strlen\' given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Document/OpenXml.php',
                 ),
             )
         )

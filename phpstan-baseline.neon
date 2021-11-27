@@ -2106,6 +2106,11 @@ parameters:
 			path: library/Zend/Feed/Pubsubhubbub/HttpResponse.php
 
 		-
+			message: "#^Parameter \\#2 \\$value of method Zend_Feed_Pubsubhubbub_HttpResponse\\:\\:setHeader\\(\\) expects string, int\\<0, max\\> given\\.$#"
+			count: 1
+			path: library/Zend/Feed/Pubsubhubbub/HttpResponse.php
+
+		-
 			message: "#^Cannot access property \\$created_time on Zend_Db_Table_Row_Abstract\\|null\\.$#"
 			count: 1
 			path: library/Zend/Feed/Pubsubhubbub/Model/Subscription.php
@@ -14653,11 +14658,6 @@ parameters:
 		-
 			message: "#^Parameter \\#1 \\$xml of static method Zend_Xml_Security\\:\\:scan\\(\\) expects string, string\\|false given\\.$#"
 			count: 2
-			path: library/Zend/Search/Lucene/Document/OpenXml.php
-
-		-
-			message: "#^Parameter \\#2 \\$callback of function array_filter expects callable\\(mixed, mixed\\)\\: bool, 'strlen' given\\.$#"
-			count: 1
 			path: library/Zend/Search/Lucene/Document/OpenXml.php
 
 		-
