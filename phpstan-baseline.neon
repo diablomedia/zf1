@@ -18081,11 +18081,6 @@ parameters:
 			path: library/Zend/Service/SqlAzure/Management/ServiceEntityAbstract.php
 
 		-
-			message: "#^Access to an undefined property SoapHeader\\:\\:\\$name\\.$#"
-			count: 1
-			path: library/Zend/Service/StrikeIron/Base.php
-
-		-
 			message: "#^Method Zend_Service_StrikeIron_Base\\:\\:getSoapClient\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Service/StrikeIron/Base.php
