@@ -1816,11 +1816,6 @@ parameters:
 			path: library/Zend/Feed.php
 
 		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, int given\\.$#"
-			count: 2
-			path: library/Zend/Feed.php
-
-		-
 			message: "#^Undefined variable\\: \\$php_errormsg$#"
 			count: 2
 			path: library/Zend/Feed.php
@@ -1862,11 +1857,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$xml of static method Zend_Xml_Security\\:\\:scan\\(\\) expects string, DOMDocument\\|DOMElement\\|string given\\.$#"
-			count: 1
-			path: library/Zend/Feed/Abstract.php
-
-		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, int given\\.$#"
 			count: 1
 			path: library/Zend/Feed/Abstract.php
 
@@ -2111,11 +2101,6 @@ parameters:
 			path: library/Zend/Feed/Entry/Abstract.php
 
 		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, int given\\.$#"
-			count: 1
-			path: library/Zend/Feed/Entry/Abstract.php
-
-		-
 			message: "#^Variable \\$php_errormsg in isset\\(\\) is never defined\\.$#"
 			count: 1
 			path: library/Zend/Feed/Entry/Abstract.php
@@ -2152,11 +2137,6 @@ parameters:
 
 		-
 			message: "#^Cannot call method replaceChild\\(\\) on DOMNode\\|null\\.$#"
-			count: 1
-			path: library/Zend/Feed/Entry/Atom.php
-
-		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, int given\\.$#"
 			count: 1
 			path: library/Zend/Feed/Entry/Atom.php
 
@@ -2388,11 +2368,6 @@ parameters:
 		-
 			message: "#^Parameter \\#1 \\$feed of static method Zend_Feed_Reader\\:\\:detectType\\(\\) expects DOMDocument\\|string\\|Zend_Feed_Abstract, DOMDocument\\|null given\\.$#"
 			count: 1
-			path: library/Zend/Feed/Reader.php
-
-		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, int given\\.$#"
-			count: 2
 			path: library/Zend/Feed/Reader.php
 
 		-
@@ -4166,11 +4141,6 @@ parameters:
 			path: library/Zend/Gdata/App.php
 
 		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, int given\\.$#"
-			count: 2
-			path: library/Zend/Gdata/App.php
-
-		-
 			message: "#^Parameter \\#2 \\$url of method Zend_Gdata_App\\:\\:performHttpRequest\\(\\) expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/App.php
@@ -4332,11 +4302,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$str of function trim expects string, string\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Gdata/App/Base.php
-
-		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, int given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/App/Base.php
 
@@ -8057,11 +8022,6 @@ parameters:
 
 		-
 			message: "#^Method Zend_Gdata_Gapps_ServiceException\\:\\:setErrors\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Gdata/Gapps/ServiceException.php
-
-		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, int given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/Gapps/ServiceException.php
 
@@ -12541,11 +12501,6 @@ parameters:
 			path: library/Zend/Pdf/Filter/Compression.php
 
 		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, string\\|false given\\.$#"
-			count: 4
-			path: library/Zend/Pdf/Filter/Compression/Flate.php
-
-		-
 			message: "#^Undefined variable\\: \\$php_errormsg$#"
 			count: 1
 			path: library/Zend/Pdf/Filter/Compression/Flate.php
@@ -16986,11 +16941,6 @@ parameters:
 			path: library/Zend/Search/Lucene/Storage/Directory/Filesystem.php
 
 		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, string\\|false given\\.$#"
-			count: 4
-			path: library/Zend/Search/Lucene/Storage/Directory/Filesystem.php
-
-		-
 			message: "#^Strict comparison using \\=\\=\\= between string and null will always evaluate to false\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Storage/Directory/Filesystem.php
@@ -17107,11 +17057,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$fp of function fwrite expects resource, resource\\|null given\\.$#"
-			count: 2
-			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
-
-		-
-			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, string\\|false given\\.$#"
 			count: 2
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
 

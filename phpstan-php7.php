@@ -204,6 +204,61 @@ if (version_compare(PHP_VERSION, '8.0', '<')) {
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Management/Client.php',
                 ),
+                array(
+                    'message' => '#^Parameter \#2 \$newvalue of function ini_set expects string, int given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Feed.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$newvalue of function ini_set expects string, int given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Feed/Abstract.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$newvalue of function ini_set expects string, int given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Feed/Entry/Abstract.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$newvalue of function ini_set expects string, int given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Feed/Entry/Atom.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$newvalue of function ini_set expects string, int given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Feed/Reader.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$newvalue of function ini_set expects string, int given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Gdata/App.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$newvalue of function ini_set expects string, int given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Gdata/App/Base.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$newvalue of function ini_set expects string, int given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Gdata/Gapps/ServiceException.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$newvalue of function ini_set expects string, string\|false given\.$#',
+                    'count' => 4,
+                    'path' => __DIR__ . '/library/Zend/Pdf/Filter/Compression/Flate.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$newvalue of function ini_set expects string, string\|false given\.$#',
+                    'count' => 4,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Storage/Directory/Filesystem.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$newvalue of function ini_set expects string, string\|false given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Storage/File/Filesystem.php',
+                ),
             )
         )
     );
