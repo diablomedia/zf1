@@ -474,6 +474,31 @@ if (version_compare(PHP_VERSION, '8.0', '<')) {
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Tool/Project/Provider/Project.php',
                 ),
+                array(
+                    'message' => '#^Parameter \#1 \$function of function call_user_func expects callable\(\)\: mixed, non\-empty\-string given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$function of function call_user_func expects callable\(\)\: mixed, array\(\$this\(Zend_Gdata_App_Base\), non\-empty\-string\) given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Gdata/App/Base.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$function of function call_user_func expects callable\(\)\: mixed, array\(\$this\(Zend_Gdata_App_BaseMediaSource\), non\-empty\-string\) given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Gdata/App/BaseMediaSource.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$function of function call_user_func expects callable\(\)\: mixed, array\(\$this\(Zend_Gdata_Query\), non\-empty\-string\) given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Gdata/Query.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$function of function call_user_func expects callable\(\)\: mixed, array\(\(int\|string\), \'observe\'\) given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/XmlRpc/Server/Fault.php',
+                ),
             )
         )
     );

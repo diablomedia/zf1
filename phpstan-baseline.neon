@@ -756,11 +756,6 @@ parameters:
 			path: library/Zend/Barcode/Renderer/Image.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func expects callable\\(\\)\\: mixed, non\\-empty\\-string given\\.$#"
-			count: 1
-			path: library/Zend/Barcode/Renderer/Image.php
-
-		-
 			message: "#^Parameter \\#1 \\$im of function imagecolorallocate expects resource, resource\\|false given\\.$#"
 			count: 3
 			path: library/Zend/Barcode/Renderer/Image.php
@@ -4261,11 +4256,6 @@ parameters:
 			path: library/Zend/Gdata/App/Base.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func expects callable\\(\\)\\: mixed, array\\(\\$this\\(Zend_Gdata_App_Base\\), non\\-empty\\-string\\) given\\.$#"
-			count: 2
-			path: library/Zend/Gdata/App/Base.php
-
-		-
 			message: "#^Parameter \\#1 \\$haystack of function strpos expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/App/Base.php
@@ -4303,11 +4293,6 @@ parameters:
 		-
 			message: "#^Method Zend_Gdata_App_BaseMediaSource\\:\\:setSlug\\(\\) has parameter \\$value with no typehint specified\\.$#"
 			count: 1
-			path: library/Zend/Gdata/App/BaseMediaSource.php
-
-		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func expects callable\\(\\)\\: mixed, array\\(\\$this\\(Zend_Gdata_App_BaseMediaSource\\), non\\-empty\\-string\\) given\\.$#"
-			count: 2
 			path: library/Zend/Gdata/App/BaseMediaSource.php
 
 		-
@@ -9683,11 +9668,6 @@ parameters:
 		-
 			message: "#^Method Zend_Gdata_Query\\:\\:resetParameters\\(\\) has no return typehint specified\\.$#"
 			count: 1
-			path: library/Zend/Gdata/Query.php
-
-		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func expects callable\\(\\)\\: mixed, array\\(\\$this\\(Zend_Gdata_Query\\), non\\-empty\\-string\\) given\\.$#"
-			count: 2
 			path: library/Zend/Gdata/Query.php
 
 		-
@@ -24624,11 +24604,6 @@ parameters:
 			message: "#^Return type \\(array\\) of method Zend_XmlRpc_Server\\:\\:getFunctions\\(\\) should be compatible with return type \\(Zend_Server_Definition\\) of method Zend_Server_Abstract\\:\\:getFunctions\\(\\)$#"
 			count: 1
 			path: library/Zend/XmlRpc/Server.php
-
-		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func expects callable\\(\\)\\: mixed, array\\(\\(int\\|string\\), 'observe'\\) given\\.$#"
-			count: 1
-			path: library/Zend/XmlRpc/Server/Fault.php
 
 		-
 			message: "#^Call to an undefined method Zend_XmlRpc_Fault\\|Zend_XmlRpc_Response\\|Zend_XmlRpc_Server_Exception\\:\\:getCode\\(\\)\\.$#"
