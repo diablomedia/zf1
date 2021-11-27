@@ -260,11 +260,6 @@ if (version_compare(PHP_VERSION, '8.0', '<')) {
                     'path' => __DIR__ . '/library/Zend/Search/Lucene/Storage/File/Filesystem.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#2 \$value of method Zend_Feed_Pubsubhubbub_HttpResponse\:\:setHeader\(\) expects string, int\<0, max\> given\.$#',
-                    'count' => 1,
-                    'path' => __DIR__ . '/library/Zend/Feed/Pubsubhubbub/HttpResponse.php',
-                ),
-                array(
                     'message' => '#^Cannot access offset int\<0, max\> on array\<int, string\>\|false\.$#',
                     'count' => 2,
                     'path' => __DIR__ . '/library/Zend/Measure/Number.php',
@@ -740,11 +735,6 @@ if (version_compare(PHP_VERSION, '8.0', '<')) {
                     'path' => __DIR__ . '/library/Zend/Measure/Number.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#2 \$num of function array_fill expects int, float given\.$#',
-                    'count' => 2,
-                    'path' => __DIR__ . '/library/Zend/Pdf/Filter/Compression.php',
-                ),
-                array(
                     'message' => '#^Parameter \#1 \$left_operand of function bcadd expects string, int\|string given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Serializer/Adapter/PythonPickle.php',
@@ -808,6 +798,56 @@ if (version_compare(PHP_VERSION, '8.0', '<')) {
                     'message' => '#^Parameter \#2 \$mode of function mkdir expects int, string given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/CommandLine/PackageScaffolder/PackageScaffolderAbstract.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#3 \$priv_key_id of function openssl_sign expects resource\|string, resource\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Gdata/HttpClient.php',
+                ),
+                array(
+                    'message' => '#^Property Zend_Gdata_HttpClient\:\:\$_authSubPrivateKeyId \(resource\|null\) does not accept resource\|false\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Gdata/HttpClient.php',
+                ),
+                array(
+                    'message' => '#^Cannot access offset int on array\<int, string\>\|false\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Measure/Number.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$mode of function stream_set_blocking expects bool, int given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Mobile/Push/Apns.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$mode of function stream_set_blocking expects bool, int given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Queue/Stomp/Client/Connection.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#4 \$timeout of function stream_socket_client expects float, string\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Mobile/Push/Apns.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$x of function fmod expects float, float\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Pdf/Canvas/Abstract.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$ascii of function chr expects int, string given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Pdf/Element/Name.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$ascii of function chr expects int, float given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Pdf/Filter/Compression.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$ascii of function chr expects int, float\|int\<min, 127\> given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Serializer/Adapter/PythonPickle.php',
                 ),
             )
         )

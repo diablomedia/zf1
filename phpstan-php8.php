@@ -74,6 +74,11 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
                 ),
                 array(
+                    'message' => '#^Parameter \#4 \$color of function imagepolygon expects int\|null, int\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
+                ),
+                array(
                     'message' => '#Parameter \#1 \$image of function imagestring expects GdImage, resource given\.#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
@@ -857,6 +862,56 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'message' => '#^Parameter \#2 \$permissions of function mkdir expects int, string given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/CommandLine/PackageScaffolder/PackageScaffolderAbstract.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#3 \$private_key of function openssl_sign expects resource\|string, resource\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Gdata/HttpClient.php',
+                ),
+                array(
+                    'message' => '#^Property Zend_Gdata_HttpClient\:\:\$_authSubPrivateKeyId \(resource\|null\) does not accept OpenSSLAsymmetricKey\|false\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Gdata/HttpClient.php',
+                ),
+                array(
+                    'message' => '#^Cannot access offset int<0, max> on array\<int, string\>\|false\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Measure/Number.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$enable of function stream_set_blocking expects bool, int given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Mobile/Push/Apns.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$enable of function stream_set_blocking expects bool, int given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Queue/Stomp/Client/Connection.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#4 \$timeout of function stream_socket_client expects float\|null, string\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Mobile/Push/Apns.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$num1 of function fmod expects float, float\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Pdf/Canvas/Abstract.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$codepoint of function chr expects int, string given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Pdf/Element/Name.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$codepoint of function chr expects int, float given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Pdf/Filter/Compression.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$codepoint of function chr expects int, float\|int\<min, 127\> given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Serializer/Adapter/PythonPickle.php',
                 ),
             )
         )

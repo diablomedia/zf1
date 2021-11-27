@@ -2106,6 +2106,11 @@ parameters:
 			path: library/Zend/Feed/Pubsubhubbub/HttpResponse.php
 
 		-
+			message: "#^Parameter \\#2 \\$value of method Zend_Feed_Pubsubhubbub_HttpResponse\\:\\:setHeader\\(\\) expects string, int\\<0, max\\> given\\.$#"
+			count: 1
+			path: library/Zend/Feed/Pubsubhubbub/HttpResponse.php
+
+		-
 			message: "#^Cannot access property \\$created_time on Zend_Db_Table_Row_Abstract\\|null\\.$#"
 			count: 1
 			path: library/Zend/Feed/Pubsubhubbub/Model/Subscription.php
@@ -8181,16 +8186,6 @@ parameters:
 			path: library/Zend/Gdata/HttpClient.php
 
 		-
-			message: "#^Parameter \\#3 \\$priv_key_id of function openssl_sign expects resource\\|string, resource\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Gdata/HttpClient.php
-
-		-
-			message: "#^Property Zend_Gdata_HttpClient\\:\\:\\$_authSubPrivateKeyId \\(resource\\|null\\) does not accept resource\\|false\\.$#"
-			count: 1
-			path: library/Zend/Gdata/HttpClient.php
-
-		-
 			message: "#^Method Zend_Gdata_Kind_EventEntry\\:\\:getComments\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Gdata/Kind/EventEntry.php
@@ -10091,11 +10086,6 @@ parameters:
 			path: library/Zend/Measure/Cooking/Weight.php
 
 		-
-			message: "#^Cannot access offset int on array\\<int, string\\>\\|false\\.$#"
-			count: 2
-			path: library/Zend/Measure/Number.php
-
-		-
 			message: "#^Method Zend_Measure_Abstract\\:\\:getType\\(\\) invoked with 1 parameter, 0 required\\.$#"
 			count: 1
 			path: library/Zend/Measure/Number.php
@@ -10427,16 +10417,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$string of function strlen expects string, string\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Mobile/Push/Apns.php
-
-		-
-			message: "#^Parameter \\#2 \\$mode of function stream_set_blocking expects bool, int given\\.$#"
-			count: 1
-			path: library/Zend/Mobile/Push/Apns.php
-
-		-
-			message: "#^Parameter \\#4 \\$timeout of function stream_socket_client expects float, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Mobile/Push/Apns.php
 
@@ -11276,11 +11256,6 @@ parameters:
 			path: library/Zend/Pdf/Canvas/Abstract.php
 
 		-
-			message: "#^Parameter \\#1 \\$x of function fmod expects float, float\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Pdf/Canvas/Abstract.php
-
-		-
 			message: "#^Parameter \\$box of method Zend_Pdf_Canvas_Abstract\\:\\:drawLayoutBox\\(\\) has invalid typehint type Zend_Pdf_Element_LayoutBox\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Canvas/Abstract.php
@@ -11449,11 +11424,6 @@ parameters:
 			message: "#^Method Zend_Pdf_Element_Dictionary\\:\\:setParentObject\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Element/Dictionary.php
-
-		-
-			message: "#^Parameter \\#1 \\$ascii of function chr expects int, string given\\.$#"
-			count: 1
-			path: library/Zend/Pdf/Element/Name.php
 
 		-
 			message: "#^Cannot call method getType\\(\\) on Zend_Pdf_Element\\|null\\.$#"
@@ -12271,8 +12241,8 @@ parameters:
 			path: library/Zend/Pdf/Filter/AsciiHex.php
 
 		-
-			message: "#^Parameter \\#1 \\$ascii of function chr expects int, float given\\.$#"
-			count: 1
+			message: "#^Parameter \\#2 \\$num of function array_fill expects int, float given\\.$#"
+			count: 2
 			path: library/Zend/Pdf/Filter/Compression.php
 
 		-
@@ -14017,11 +13987,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$read_streams of function stream_select expects array\\<resource\\>, array\\<int, resource\\|false\\> given\\.$#"
-			count: 1
-			path: library/Zend/Queue/Stomp/Client/Connection.php
-
-		-
-			message: "#^Parameter \\#2 \\$mode of function stream_set_blocking expects bool, int given\\.$#"
 			count: 1
 			path: library/Zend/Queue/Stomp/Client/Connection.php
 
@@ -16887,11 +16852,6 @@ parameters:
 
 		-
 			message: "#^Method Zend_Serializer_Adapter_PythonPickle\\:\\:_searchMomo\\(\\) should return int\\|false but returns int\\|string\\|false\\.$#"
-			count: 1
-			path: library/Zend/Serializer/Adapter/PythonPickle.php
-
-		-
-			message: "#^Parameter \\#1 \\$ascii of function chr expects int, float\\|int\\<min, 127\\> given\\.$#"
 			count: 1
 			path: library/Zend/Serializer/Adapter/PythonPickle.php
 
