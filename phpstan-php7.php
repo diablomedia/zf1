@@ -270,16 +270,6 @@ if (version_compare(PHP_VERSION, '8.0', '<')) {
                     'path' => __DIR__ . '/library/Zend/Pdf/Parser.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#2 \$value of method Zend_Queue_Stomp_FrameInterface\:\:setHeader\(\) expects string, int\<0, max\> given\.$#',
-                    'count' => 1,
-                    'path' => __DIR__ . '/library/Zend/Queue/Adapter/Activemq.php',
-                ),
-                array(
-                    'message' => '#^Parameter \#1 \$distance of method Zend_Search_Lucene_Search_Similarity\:\:sloppyFreq\(\) expects int, float\|int\<0, max\>\|null given\.$#',
-                    'count' => 1,
-                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Search/Query/Phrase.php',
-                ),
-                array(
                     'message' => '#^Parameter \#2 \$start of function substr expects int, int\<0, max\>\|false given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Credentials/SharedAccessSignature.php',
@@ -848,6 +838,91 @@ if (version_compare(PHP_VERSION, '8.0', '<')) {
                     'message' => '#^Parameter \#1 \$ascii of function chr expects int, float\|int\<min, 127\> given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Serializer/Adapter/PythonPickle.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$value of method Zend_Feed_Pubsubhubbub_HttpResponse\:\:setHeader\(\) expects string, int\<0, max\> given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Feed/Pubsubhubbub/HttpResponse.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$num of function array_fill expects int, float given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Pdf/Filter/Compression.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$read_streams of function stream_select expects array\<resource\>, array\<int, resource\|false\> given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Queue/Stomp/Client/Connection.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$filter of method ReflectionClass\<object\>\:\:getMethods\(\) expects int, string given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Reflection/Class.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$input of function array_splice expects array, array\<int, string\>\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Reflection/Class.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$input of function array_splice expects array, array\<int, string\>\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Reflection/Function.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$input of function array_splice is passed by reference, so it expects variables only\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Reflection/Function.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$input of function array_splice expects array, array\<int, string\>\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Reflection/Method.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$input of function array_slice expects array, array\<int, string\>\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Reflection/Method.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$multiplier of function str_repeat expects int, float given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Index/SegmentInfo.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$dir_handle of function closedir expects resource, resource\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Storage/Directory/Filesystem.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$dir_handle of function readdir expects resource, resource\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Storage/Directory/Filesystem.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$what of function class_implements expects object\|string, string\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Serializer.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$exception_handler of function set_exception_handler expects \(callable\(Throwable\)\: void\)\|null, array\(\'Zend_Service…\', \'phpstdex\'\) given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/Console/Command.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$parameters of function call_user_func_array expects array\<int, mixed\>, array\<int\|string, mixed\> given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/Console/Command.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$baseDirectory of method Phar\:\:buildFromIterator\(\) expects string, string\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/CommandLine/Package.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$node of method DOMDocument\:\:importNode\(\) expects DOMNode, DOMElement\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Tool/Project/Profile/FileParser/Xml.php',
                 ),
             )
         )

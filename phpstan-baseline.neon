@@ -2106,11 +2106,6 @@ parameters:
 			path: library/Zend/Feed/Pubsubhubbub/HttpResponse.php
 
 		-
-			message: "#^Parameter \\#2 \\$value of method Zend_Feed_Pubsubhubbub_HttpResponse\\:\\:setHeader\\(\\) expects string, int\\<0, max\\> given\\.$#"
-			count: 1
-			path: library/Zend/Feed/Pubsubhubbub/HttpResponse.php
-
-		-
 			message: "#^Cannot access property \\$created_time on Zend_Db_Table_Row_Abstract\\|null\\.$#"
 			count: 1
 			path: library/Zend/Feed/Pubsubhubbub/Model/Subscription.php
@@ -12241,11 +12236,6 @@ parameters:
 			path: library/Zend/Pdf/Filter/AsciiHex.php
 
 		-
-			message: "#^Parameter \\#2 \\$num of function array_fill expects int, float given\\.$#"
-			count: 2
-			path: library/Zend/Pdf/Filter/Compression.php
-
-		-
 			message: "#^Undefined variable\\: \\$php_errormsg$#"
 			count: 1
 			path: library/Zend/Pdf/Filter/Compression/Flate.php
@@ -13776,6 +13766,11 @@ parameters:
 			path: library/Zend/Queue/Adapter/Activemq.php
 
 		-
+			message: "#^Parameter \\#2 \\$value of method Zend_Queue_Stomp_FrameInterface\\:\\:setHeader\\(\\) expects string, int\\<0, max\\> given\\.$#"
+			count: 1
+			path: library/Zend/Queue/Adapter/Activemq.php
+
+		-
 			message: "#^Return type \\(void\\) of method Zend_Queue_Adapter_Activemq\\:\\:create\\(\\) should be compatible with return type \\(bool\\) of method Zend_Queue_Adapter_AdapterInterface\\:\\:create\\(\\)$#"
 			count: 2
 			path: library/Zend/Queue/Adapter/Activemq.php
@@ -13986,11 +13981,6 @@ parameters:
 			path: library/Zend/Queue/Stomp/Client.php
 
 		-
-			message: "#^Parameter \\#1 \\$read_streams of function stream_select expects array\\<resource\\>, array\\<int, resource\\|false\\> given\\.$#"
-			count: 1
-			path: library/Zend/Queue/Stomp/Client/Connection.php
-
-		-
 			message: "#^Method Zend_Queue_Stomp_Client_ConnectionInterface\\:\\:canRead\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Queue/Stomp/Client/ConnectionInterface.php
@@ -14071,16 +14061,6 @@ parameters:
 			path: library/Zend/Reflection/Class.php
 
 		-
-			message: "#^Parameter \\#1 \\$filter of method ReflectionClass\\<object\\>\\:\\:getMethods\\(\\) expects int, string given\\.$#"
-			count: 1
-			path: library/Zend/Reflection/Class.php
-
-		-
-			message: "#^Parameter \\#1 \\$input of function array_splice expects array, array\\<int, string\\>\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Reflection/Class.php
-
-		-
 			message: "#^Parameter \\#4 \\$replacement of function array_splice expects array\\|string, true given\\.$#"
 			count: 1
 			path: library/Zend/Reflection/Class.php
@@ -14151,16 +14131,6 @@ parameters:
 			path: library/Zend/Reflection/Function.php
 
 		-
-			message: "#^Parameter \\#1 \\$input of function array_splice expects array, array\\<int, string\\>\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Reflection/Function.php
-
-		-
-			message: "#^Parameter \\#1 \\$input of function array_splice is passed by reference, so it expects variables only\\.$#"
-			count: 1
-			path: library/Zend/Reflection/Function.php
-
-		-
 			message: "#^Parameter \\#4 \\$replacement of function array_splice expects array\\|string, true given\\.$#"
 			count: 1
 			path: library/Zend/Reflection/Function.php
@@ -14183,16 +14153,6 @@ parameters:
 		-
 			message: "#^Parameter \\#1 \\$filename of function file expects string, string\\|false given\\.$#"
 			count: 2
-			path: library/Zend/Reflection/Method.php
-
-		-
-			message: "#^Parameter \\#1 \\$input of function array_slice expects array, array\\<int, string\\>\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Reflection/Method.php
-
-		-
-			message: "#^Parameter \\#1 \\$input of function array_splice expects array, array\\<int, string\\>\\|false given\\.$#"
-			count: 1
 			path: library/Zend/Reflection/Method.php
 
 		-
@@ -15033,11 +14993,6 @@ parameters:
 		-
 			message: "#^Parameter \\#1 \\$offset of method Zend_Search_Lucene_Storage_File\\:\\:seek\\(\\) expects int, float\\|int given\\.$#"
 			count: 2
-			path: library/Zend/Search/Lucene/Index/SegmentInfo.php
-
-		-
-			message: "#^Parameter \\#2 \\$multiplier of function str_repeat expects int, float given\\.$#"
-			count: 1
 			path: library/Zend/Search/Lucene/Index/SegmentInfo.php
 
 		-
@@ -16131,6 +16086,11 @@ parameters:
 			path: library/Zend/Search/Lucene/Search/Query/Phrase.php
 
 		-
+			message: "#^Parameter \\#1 \\$distance of method Zend_Search_Lucene_Search_Similarity\\:\\:sloppyFreq\\(\\) expects int, float\\|int\\<0, max\\>\\|null given\\.$#"
+			count: 1
+			path: library/Zend/Search/Lucene/Search/Query/Phrase.php
+
+		-
 			message: "#^Method Zend_Search_Lucene_Search_Query_Preprocessing\\:\\:execute\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Search/Query/Preprocessing.php
@@ -16586,16 +16546,6 @@ parameters:
 			path: library/Zend/Search/Lucene/Storage/Directory/Filesystem.php
 
 		-
-			message: "#^Parameter \\#1 \\$dir_handle of function closedir expects resource, resource\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Search/Lucene/Storage/Directory/Filesystem.php
-
-		-
-			message: "#^Parameter \\#1 \\$dir_handle of function readdir expects resource, resource\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Search/Lucene/Storage/Directory/Filesystem.php
-
-		-
 			message: "#^Strict comparison using \\=\\=\\= between string and null will always evaluate to false\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Storage/Directory/Filesystem.php
@@ -16787,11 +16737,6 @@ parameters:
 
 		-
 			message: "#^Method Zend_Serializer\\:\\:setDefaultAdapter\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Serializer.php
-
-		-
-			message: "#^Parameter \\#1 \\$what of function class_implements expects object\\|string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Serializer.php
 
@@ -17016,18 +16961,8 @@ parameters:
 			path: library/Zend/Service/Console/Command.php
 
 		-
-			message: "#^Parameter \\#1 \\$exception_handler of function set_exception_handler expects \\(callable\\(Throwable\\)\\: void\\)\\|null, array\\('Zend_Service…', 'phpstdex'\\) given\\.$#"
-			count: 1
-			path: library/Zend/Service/Console/Command.php
-
-		-
 			message: "#^Parameter \\#2 \\$docComment of static method Zend_Service_Console_Command\\:\\:_findValueForDocComment\\(\\) expects string, string\\|false given\\.$#"
 			count: 8
-			path: library/Zend/Service/Console/Command.php
-
-		-
-			message: "#^Parameter \\#2 \\$parameters of function call_user_func_array expects array\\<int, mixed\\>, array\\<int\\|string, mixed\\> given\\.$#"
-			count: 1
 			path: library/Zend/Service/Console/Command.php
 
 		-
@@ -19247,11 +19182,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$filename of function is_file expects string, string\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
-
-		-
-			message: "#^Parameter \\#2 \\$baseDirectory of method Phar\\:\\:buildFromIterator\\(\\) expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
 
@@ -23192,11 +23122,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$context of class Zend_Tool_Project_Profile_Resource constructor expects string\\|Zend_Tool_Project_Context_Interface, string\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Tool/Project/Profile/FileParser/Xml.php
-
-		-
-			message: "#^Parameter \\#1 \\$node of method DOMDocument\\:\\:importNode\\(\\) expects DOMNode, DOMElement\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Tool/Project/Profile/FileParser/Xml.php
 
