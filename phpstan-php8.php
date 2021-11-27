@@ -319,11 +319,6 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'path' => __DIR__ . '/library/Zend/Search/Lucene/Storage/File/Filesystem.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#2 \$value of method Zend_Feed_Pubsubhubbub_HttpResponse\:\:setHeader\(\) expects string, int given\.$#',
-                    'count' => 1,
-                    'path' => __DIR__ . '/library/Zend/Feed/Pubsubhubbub/HttpResponse.php',
-                ),
-                array(
                     'message' => '#^Cannot access offset int on array\<int, string\>\|false\.$#',
                     'count' => 2,
                     'path' => __DIR__ . '/library/Zend/Measure/Number.php',

@@ -2106,6 +2106,11 @@ parameters:
 			path: library/Zend/Feed/Pubsubhubbub/HttpResponse.php
 
 		-
+			message: "#^Parameter \\#2 \\$value of method Zend_Feed_Pubsubhubbub_HttpResponse\\:\\:setHeader\\(\\) expects string, int\\<0, max\\> given\\.$#"
+			count: 1
+			path: library/Zend/Feed/Pubsubhubbub/HttpResponse.php
+
+		-
 			message: "#^Cannot access property \\$created_time on Zend_Db_Table_Row_Abstract\\|null\\.$#"
 			count: 1
 			path: library/Zend/Feed/Pubsubhubbub/Model/Subscription.php
