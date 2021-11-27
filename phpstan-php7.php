@@ -514,6 +514,41 @@ if (version_compare(PHP_VERSION, '8.0', '<')) {
                     'count' => 2,
                     'path' => __DIR__ . '/library/Zend/Pdf/Resource/Image/Tiff.php',
                 ),
+                array(
+                    'message' => '#^Parameter \#1 \$arr1 of function array_merge expects array, array\|string given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Pdf.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$arr1 of function array_merge expects array, array\<int, string\>\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/CommandLine/Package.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \.\.\.\$args of function array_merge expects array, SimpleXMLElement given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/CommandLine/Package.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \.\.\.\$args of function array_merge expects array, array\<int, string\>\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/CommandLine/Package.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#3 \.\.\.\$args of function array_merge expects array, array\<int, string\>\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/CommandLine/Package.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$search of function array_key_exists expects array, array\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Pdf.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$search of function array_key_exists expects array, array\|false given\.$#',
+                    'count' => 4,
+                    'path' => __DIR__ . '/library/Zend/Service/Console/Command/ParameterSource/ConfigFile.php',
+                ),
             )
         )
     );

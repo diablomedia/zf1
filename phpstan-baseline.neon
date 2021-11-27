@@ -10956,22 +10956,12 @@ parameters:
 			path: library/Zend/Pdf.php
 
 		-
-			message: "#^Parameter \\#1 \\$arr1 of function array_merge expects array, array\\|string given\\.$#"
-			count: 1
-			path: library/Zend/Pdf.php
-
-		-
 			message: "#^Parameter \\#1 \\$factory of method Zend_Pdf_Action\\:\\:dumpAction\\(\\) expects Zend_Pdf_ElementFactory, Zend_Pdf_ElementFactory_Interface given\\.$#"
 			count: 1
 			path: library/Zend/Pdf.php
 
 		-
 			message: "#^Parameter \\#1 \\$prefix of function uniqid expects string, int\\<0, max\\> given\\.$#"
-			count: 1
-			path: library/Zend/Pdf.php
-
-		-
-			message: "#^Parameter \\#2 \\$search of function array_key_exists expects array, array\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Pdf.php
 
@@ -17286,11 +17276,6 @@ parameters:
 			path: library/Zend/Service/Console/Command.php
 
 		-
-			message: "#^Parameter \\#2 \\$search of function array_key_exists expects array, array\\|false given\\.$#"
-			count: 4
-			path: library/Zend/Service/Console/Command/ParameterSource/ConfigFile.php
-
-		-
 			message: "#^Possibly invalid array key type \\(array\\|string\\)\\.$#"
 			count: 1
 			path: library/Zend/Service/Console/Command/ParameterSource/ConfigFile.php
@@ -19506,11 +19491,6 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
 
 		-
-			message: "#^Parameter \\#1 \\$arr1 of function array_merge expects array, array\\<int, string\\>\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
-
-		-
 			message: "#^Parameter \\#1 \\$directory of class RecursiveDirectoryIterator constructor expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
@@ -19527,21 +19507,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#2 \\$baseDirectory of method Phar\\:\\:buildFromIterator\\(\\) expects string, string\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
-
-		-
-			message: "#^Parameter \\#2 \\.\\.\\.\\$args of function array_merge expects array, SimpleXMLElement given\\.$#"
-			count: 2
-			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
-
-		-
-			message: "#^Parameter \\#2 \\.\\.\\.\\$args of function array_merge expects array, array\\<int, string\\>\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
-
-		-
-			message: "#^Parameter \\#3 \\.\\.\\.\\$args of function array_merge expects array, array\\<int, string\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/CommandLine/Package.php
 
