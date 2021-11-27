@@ -139,6 +139,71 @@ if (version_compare(PHP_VERSION, '8.0', '<')) {
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/XmlRpc/Server.php',
                 ),
+                array(
+                    'message' => '#^Parameter \#3 \$length of function substr expects int, int\<0, max\>\|false given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Amf/Server.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#3 \$length of function substr expects int, int\<0, max\>\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Gdata/App.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#3 \$length of function substr expects int, string given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Mobile/Push/Test/ApnsProxy.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#3 \$length of function substr expects int, float given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Pdf/Filter/Compression.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#3 \$length of function substr expects int, int\<0, max\>\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Storage/Table.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$var of function count expects array\|Countable, array\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Amf/Value/TraitsInfo.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$var of function count expects array\|Countable, array\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Pdf/ElementFactory.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$var of function count expects array\|Countable, array\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$var of function count expects array\|Countable, array\|null given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Index/SegmentInfo.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$var of function count expects array\|Countable, array\<int, string\>\|false given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Search/Query/Preprocessing/Fuzzy.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$var of function count expects array\|Countable, array\<int, array\<int, int\|string\>\>\|false given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Search/Query/Preprocessing/Term.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$var of function count expects array\|Countable, array\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Search/QueryLexer.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$var of function count expects array\|Countable, array\<SimpleXMLElement\>\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Management/Client.php',
+                ),
             )
         )
     );

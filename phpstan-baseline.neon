@@ -341,11 +341,6 @@ parameters:
 			path: library/Zend/Amf/Server.php
 
 		-
-			message: "#^Parameter \\#3 \\$length of function substr expects int, int\\<0, max\\>\\|false given\\.$#"
-			count: 2
-			path: library/Zend/Amf/Server.php
-
-		-
 			message: "#^Result of && is always false\\.$#"
 			count: 3
 			path: library/Zend/Amf/Server.php
@@ -397,11 +392,6 @@ parameters:
 
 		-
 			message: "#^Offset int does not exist on array\\|null\\.$#"
-			count: 1
-			path: library/Zend/Amf/Value/TraitsInfo.php
-
-		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Amf/Value/TraitsInfo.php
 
@@ -4198,11 +4188,6 @@ parameters:
 		-
 			message: "#^Parameter \\#3 \\$headers of method Zend_Gdata_App\\:\\:prepareRequest\\(\\) expects array, array\\|null given\\.$#"
 			count: 2
-			path: library/Zend/Gdata/App.php
-
-		-
-			message: "#^Parameter \\#3 \\$length of function substr expects int, int\\<0, max\\>\\|false given\\.$#"
-			count: 1
 			path: library/Zend/Gdata/App.php
 
 		-
@@ -10821,11 +10806,6 @@ parameters:
 			path: library/Zend/Mobile/Push/Test/ApnsProxy.php
 
 		-
-			message: "#^Parameter \\#3 \\$length of function substr expects int, string given\\.$#"
-			count: 1
-			path: library/Zend/Mobile/Push/Test/ApnsProxy.php
-
-		-
 			message: "#^Access to an undefined property RecursiveIterator\\:\\:\\$next\\.$#"
 			count: 1
 			path: library/Zend/Pdf.php
@@ -12001,11 +11981,6 @@ parameters:
 			path: library/Zend/Pdf/ElementFactory.php
 
 		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Pdf/ElementFactory.php
-
-		-
 			message: "#^Method Zend_Pdf_ElementFactory_Interface\\:\\:attach\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Pdf/ElementFactory/Interface.php
@@ -12563,11 +12538,6 @@ parameters:
 		-
 			message: "#^Parameter \\#2 \\$num of function array_fill expects int, float given\\.$#"
 			count: 2
-			path: library/Zend/Pdf/Filter/Compression.php
-
-		-
-			message: "#^Parameter \\#3 \\$length of function substr expects int, float given\\.$#"
-			count: 1
 			path: library/Zend/Pdf/Filter/Compression.php
 
 		-
@@ -14801,11 +14771,6 @@ parameters:
 			path: library/Zend/Search/Lucene.php
 
 		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Search/Lucene.php
-
-		-
 			message: "#^Parameter \\#2 \\$generation of static method Zend_Search_Lucene_Index_Writer\\:\\:createIndex\\(\\) expects int, float\\|int given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene.php
@@ -15447,11 +15412,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$offset of method Zend_Search_Lucene_Storage_File\\:\\:seek\\(\\) expects int, float\\|int given\\.$#"
-			count: 2
-			path: library/Zend/Search/Lucene/Index/SegmentInfo.php
-
-		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\|null given\\.$#"
 			count: 2
 			path: library/Zend/Search/Lucene/Index/SegmentInfo.php
 
@@ -16571,11 +16531,6 @@ parameters:
 			path: library/Zend/Search/Lucene/Search/Query/Preprocessing/Fuzzy.php
 
 		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\<int, string\\>\\|false given\\.$#"
-			count: 2
-			path: library/Zend/Search/Lucene/Search/Query/Preprocessing/Fuzzy.php
-
-		-
 			message: "#^Parameter \\#2 \\$subject of function preg_split expects string, string\\|false given\\.$#"
 			count: 2
 			path: library/Zend/Search/Lucene/Search/Query/Preprocessing/Fuzzy.php
@@ -16613,11 +16568,6 @@ parameters:
 		-
 			message: "#^Method Zend_Search_Lucene_Search_Query_Preprocessing_Term\\:\\:_highlightMatches\\(\\) has no return typehint specified\\.$#"
 			count: 1
-			path: library/Zend/Search/Lucene/Search/Query/Preprocessing/Term.php
-
-		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\<int, array\\<int, int\\|string\\>\\>\\|false given\\.$#"
-			count: 2
 			path: library/Zend/Search/Lucene/Search/Query/Preprocessing/Term.php
 
 		-
@@ -16777,11 +16727,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$char of method Zend_Search_Lucene_Search_QueryLexer\\:\\:_translateInput\\(\\) expects string, string\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Search/Lucene/Search/QueryLexer.php
-
-		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Search/QueryLexer.php
 
@@ -20926,11 +20871,6 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Management/Client.php
 
 		-
-			message: "#^Parameter \\#1 \\$var of function count expects array\\|Countable, array\\<SimpleXMLElement\\>\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/Management/Client.php
-
-		-
 			message: "#^Parameter \\#1 \\$xml of static method Zend_Xml_Security\\:\\:scan\\(\\) expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Management/Client.php
@@ -21787,11 +21727,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#2 \\$start of function substr expects int, int\\<0, max\\>\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/Storage/Table.php
-
-		-
-			message: "#^Parameter \\#3 \\$length of function substr expects int, int\\<0, max\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Table.php
 
