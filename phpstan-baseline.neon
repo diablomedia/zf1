@@ -316,11 +316,6 @@ parameters:
 			path: library/Zend/Amf/Server.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function base64_decode expects string, string\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Amf/Server.php
-
-		-
 			message: "#^Parameter \\#1 \\$string of function substr expects string, string\\|false given\\.$#"
 			count: 2
 			path: library/Zend/Amf/Server.php
@@ -1231,11 +1226,6 @@ parameters:
 			path: library/Zend/Cloud/Infrastructure/Adapter/Rackspace.php
 
 		-
-			message: "#^Parameter \\#2 \\$str of function explode expects string, array\\|string given\\.$#"
-			count: 1
-			path: library/Zend/Cloud/Infrastructure/Adapter/Rackspace.php
-
-		-
 			message: "#^Result of && is always false\\.$#"
 			count: 1
 			path: library/Zend/Cloud/Infrastructure/Adapter/Rackspace.php
@@ -1542,11 +1532,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$fp of function fwrite expects resource, resource\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Cloud/StorageService/Adapter/WindowsAzure.php
-
-		-
-			message: "#^Parameter \\#2 \\$str of function fwrite expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Cloud/StorageService/Adapter/WindowsAzure.php
 
@@ -2171,11 +2156,6 @@ parameters:
 			path: library/Zend/Feed/Pubsubhubbub/CallbackAbstract.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function trim expects string, string\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Feed/Pubsubhubbub/CallbackAbstract.php
-
-		-
 			message: "#^Result of && is always false\\.$#"
 			count: 1
 			path: library/Zend/Feed/Pubsubhubbub/CallbackAbstract.php
@@ -2237,6 +2217,11 @@ parameters:
 
 		-
 			message: "#^Method Zend_Feed_Pubsubhubbub_Subscriber\\:\\:unsubscribeAll\\(\\) has no return typehint specified\\.$#"
+			count: 1
+			path: library/Zend/Feed/Pubsubhubbub/Subscriber.php
+
+		-
+			message: "#^Parameter \\#1 \\$prefix of function uniqid expects string, int\\<0, max\\> given\\.$#"
 			count: 1
 			path: library/Zend/Feed/Pubsubhubbub/Subscriber.php
 
@@ -4291,11 +4276,6 @@ parameters:
 			path: library/Zend/Gdata/App/Base.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function trim expects string, string\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Gdata/App/Base.php
-
-		-
 			message: "#^Parameter \\#2 \\$qualifiedName of method DOMDocument\\:\\:createElementNS\\(\\) expects string, string\\|null given\\.$#"
 			count: 2
 			path: library/Zend/Gdata/App/Base.php
@@ -5043,11 +5023,6 @@ parameters:
 		-
 			message: "#^Method Zend_Gdata_AuthSub\\:\\:getHttpClient\\(\\) has no return typehint specified\\.$#"
 			count: 1
-			path: library/Zend/Gdata/AuthSub.php
-
-		-
-			message: "#^Parameter \\#1 \\$str of function urlencode expects string, int given\\.$#"
-			count: 2
 			path: library/Zend/Gdata/AuthSub.php
 
 		-
@@ -8306,11 +8281,6 @@ parameters:
 			path: library/Zend/Gdata/HttpAdapterStreamingSocket.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function strtolower expects string, string\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Gdata/HttpAdapterStreamingSocket.php
-
-		-
 			message: "#^Call to an undefined method Zend_Gdata_HttpClient\\:\\:_streamingRequest\\(\\)\\.$#"
 			count: 1
 			path: library/Zend/Gdata/HttpClient.php
@@ -10276,21 +10246,6 @@ parameters:
 			path: library/Zend/Measure/Number.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function str_split expects string, int given\\.$#"
-			count: 1
-			path: library/Zend/Measure/Number.php
-
-		-
-			message: "#^Parameter \\#1 \\$str of function strrev expects string, string\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Measure/Number.php
-
-		-
-			message: "#^Parameter \\#1 \\$str of function strtoupper expects string, int given\\.$#"
-			count: 4
-			path: library/Zend/Measure/Number.php
-
-		-
 			message: "#^Parameter \\#1 \\$string of function strlen expects string, int given\\.$#"
 			count: 1
 			path: library/Zend/Measure/Number.php
@@ -10542,11 +10497,6 @@ parameters:
 
 		-
 			message: "#^PHPDoc tag @throws with type Zend_MemoryException is not subtype of Throwable$#"
-			count: 1
-			path: library/Zend/Memory/Manager.php
-
-		-
-			message: "#^Parameter \\#1 \\$str of function trim expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Memory/Manager.php
 
@@ -11037,6 +10987,11 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$factory of method Zend_Pdf_Action\\:\\:dumpAction\\(\\) expects Zend_Pdf_ElementFactory, Zend_Pdf_ElementFactory_Interface given\\.$#"
+			count: 1
+			path: library/Zend/Pdf.php
+
+		-
+			message: "#^Parameter \\#1 \\$prefix of function uniqid expects string, int\\<0, max\\> given\\.$#"
 			count: 1
 			path: library/Zend/Pdf.php
 
@@ -13056,11 +13011,6 @@ parameters:
 			path: library/Zend/Pdf/Resource/Font/CidFont.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function iconv_strlen expects string, string\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Pdf/Resource/Font/CidFont.php
-
-		-
 			message: "#^Parameter \\#1 \\$string of function strlen expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Resource/Font/CidFont.php
@@ -13217,11 +13167,6 @@ parameters:
 
 		-
 			message: "#^Method Zend_Pdf_Resource_Font_Simple\\:\\:encodeString\\(\\) should return string but returns string\\|false\\.$#"
-			count: 1
-			path: library/Zend/Pdf/Resource/Font/Simple.php
-
-		-
-			message: "#^Parameter \\#1 \\$str of function iconv_strlen expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Resource/Font/Simple.php
 
@@ -14051,6 +13996,11 @@ parameters:
 			path: library/Zend/Queue/Adapter/Array.php
 
 		-
+			message: "#^Parameter \\#1 \\$prefix of function uniqid expects string, int\\<0, max\\> given\\.$#"
+			count: 2
+			path: library/Zend/Queue/Adapter/Array.php
+
+		-
 			message: "#^Access to an undefined property Zend_Db_Table_Row_Abstract\\:\\:\\$body\\.$#"
 			count: 1
 			path: library/Zend/Queue/Adapter/Db.php
@@ -14096,8 +14046,13 @@ parameters:
 			path: library/Zend/Queue/Adapter/Db.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function trim expects string, string\\|false given\\.$#"
+			message: "#^Parameter \\#1 \\$prefix of function uniqid expects string, int\\<0, max\\> given\\.$#"
 			count: 1
+			path: library/Zend/Queue/Adapter/Db.php
+
+		-
+			message: "#^Parameter \\#1 \\$prefix of function uniqid expects string, int\\<0, max\\> given\\.$#"
+			count: 2
 			path: library/Zend/Queue/Adapter/Memcacheq.php
 
 		-
@@ -14353,11 +14308,6 @@ parameters:
 		-
 			message: "#^Call to an undefined method Reflector\\:\\:getStartLine\\(\\)\\.$#"
 			count: 2
-			path: library/Zend/Reflection/Docblock.php
-
-		-
-			message: "#^Parameter \\#1 \\$str of function ltrim expects string, string\\|null given\\.$#"
-			count: 1
 			path: library/Zend/Reflection/Docblock.php
 
 		-
@@ -14801,11 +14751,6 @@ parameters:
 			path: library/Zend/Search/Lucene/Analysis/TokenFilter/StopWords.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function trim expects string, string\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Search/Lucene/Analysis/TokenFilter/StopWords.php
-
-		-
 			message: "#^Method Zend_Search_Lucene_Document\\:\\:getFieldUtf8Value\\(\\) has parameter \\$fieldName with no typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Document.php
@@ -14942,11 +14887,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#2 \\$subject of function preg_match expects string, string\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Search/Lucene/Document/Html.php
-
-		-
-			message: "#^Parameter \\#3 \\$str of function iconv expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Document/Html.php
 
@@ -17381,11 +17321,6 @@ parameters:
 			path: library/Zend/Service/Console/Command.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function strtolower expects string, string\\|true\\|null given\\.$#"
-			count: 2
-			path: library/Zend/Service/Console/Command/ParameterSource/Argv.php
-
-		-
 			message: "#^Parameter \\#2 \\$search of function array_key_exists expects array, array\\|false given\\.$#"
 			count: 4
 			path: library/Zend/Service/Console/Command/ParameterSource/ConfigFile.php
@@ -17399,21 +17334,6 @@ parameters:
 			message: "#^Call to function is_null\\(\\) with string\\|false will always evaluate to false\\.$#"
 			count: 1
 			path: library/Zend/Service/Console/Command/ParameterSource/Env.php
-
-		-
-			message: "#^Parameter \\#1 \\$str of function strtolower expects string, string\\|null given\\.$#"
-			count: 2
-			path: library/Zend/Service/Console/Command/ParameterSource/Env.php
-
-		-
-			message: "#^Parameter \\#1 \\$str of function trim expects string, string\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Service/Console/Command/ParameterSource/Prompt.php
-
-		-
-			message: "#^Parameter \\#1 \\$str of function rtrim expects string, string\\|false\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Service/Console/Command/ParameterSource/StdIn.php
 
 		-
 			message: "#^Cannot access property \\$childNodes on DOMElement\\|null\\.$#"
@@ -18071,11 +17991,6 @@ parameters:
 			path: library/Zend/Service/LiveDocx/MailMerge.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function base64_encode expects string, string\\|false given\\.$#"
-			count: 3
-			path: library/Zend/Service/LiveDocx/MailMerge.php
-
-		-
 			message: "#^Parameter \\#2 \\$value of method Zend_Service_LiveDocx_MailMerge\\:\\:setFieldValue\\(\\) expects array\\|string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Service/LiveDocx/MailMerge.php
@@ -18148,11 +18063,6 @@ parameters:
 		-
 			message: "#^Method Zend_Service_Rackspace_Files\\:\\:getCdnContainers\\(\\) should return array\\|bool but returns Zend_Service_Rackspace_Files_ContainerList\\.$#"
 			count: 1
-			path: library/Zend/Service/Rackspace/Files.php
-
-		-
-			message: "#^Parameter \\#1 \\$str of function strtolower expects string, string\\|null given\\.$#"
-			count: 2
 			path: library/Zend/Service/Rackspace/Files.php
 
 		-
@@ -18273,16 +18183,6 @@ parameters:
 		-
 			message: "#^Method Zend_Service_Rackspace_Servers\\:\\:shareIpAddress\\(\\) has parameter \\$configure with no typehint specified\\.$#"
 			count: 1
-			path: library/Zend/Service/Rackspace/Servers.php
-
-		-
-			message: "#^Parameter \\#1 \\$str of function base64_encode expects string, string\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Service/Rackspace/Servers.php
-
-		-
-			message: "#^Parameter \\#1 \\$str of function rawurlencode expects string, int\\<min, \\-1\\>\\|int\\<1, max\\> given\\.$#"
-			count: 2
 			path: library/Zend/Service/Rackspace/Servers.php
 
 		-
@@ -20741,11 +20641,6 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Management/Client.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function base64_encode expects string, string\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/Management/Client.php
-
-		-
 			message: "#^Parameter \\#1 \\$xml of static method Zend_Xml_Security\\:\\:scan\\(\\) expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Management/Client.php
@@ -21201,11 +21096,6 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function strtolower expects string, string\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
-
-		-
 			message: "#^Parameter \\#1 \\$string of function strlen expects string, array given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Blob.php
@@ -21639,16 +21529,6 @@ parameters:
 			message: "#^Parameter \\#1 \\$haystack of function strpos expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/TableEntity.php
-
-		-
-			message: "#^Parameter \\#2 \\$str of function explode expects string, string\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/Storage/TableEntity.php
-
-		-
-			message: "#^Parameter \\#1 \\$str of function addslashes expects string, string\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/Storage/TableEntityQuery.php
 
 		-
 			message: "#^Cannot access property \\$data on DOMNode\\|null\\.$#"
@@ -22097,11 +21977,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$registry of method Zend_Tool_Framework_Client_Console_HelpSystem\\:\\:setRegistry\\(\\) expects Zend_Tool_Framework_Registry_Interface, Zend_Tool_Framework_Registry_Interface\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Tool/Framework/Client/Console.php
-
-		-
-			message: "#^Parameter \\#1 \\$str of function rtrim expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Tool/Framework/Client/Console.php
 
@@ -23561,11 +23436,6 @@ parameters:
 			path: library/Zend/Tool/Project/Context/Zf/TestApplicationControllerFile.php
 
 		-
-			message: "#^Parameter \\#1 \\$str of function ltrim expects string, string\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Tool/Project/Context/Zf/TestLibraryFile.php
-
-		-
 			message: "#^Return type \\(string\\) of method Zend_Tool_Project_Context_Zf_TestLibraryFile\\:\\:getContents\\(\\) should be compatible with return type \\(null\\) of method Zend_Tool_Project_Context_Filesystem_File\\:\\:getContents\\(\\)$#"
 			count: 1
 			path: library/Zend/Tool/Project/Context/Zf/TestLibraryFile.php
@@ -23617,11 +23487,6 @@ parameters:
 
 		-
 			message: "#^Method Zend_Tool_Project_Context_Zf_ZfStandardLibraryDirectory\\:\\:create\\(\\) should return Zend_Tool_Project_Context_Filesystem_Directory but return statement is missing\\.$#"
-			count: 1
-			path: library/Zend/Tool/Project/Context/Zf/ZfStandardLibraryDirectory.php
-
-		-
-			message: "#^Parameter \\#1 \\$str of function preg_quote expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Tool/Project/Context/Zf/ZfStandardLibraryDirectory.php
 
@@ -24432,11 +24297,6 @@ parameters:
 
 		-
 			message: "#^Method Zend_Tool_Project_Provider_Project\\:\\:showInfo\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Tool/Project/Provider/Project.php
-
-		-
-			message: "#^Parameter \\#1 \\$str of function ltrim expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Tool/Project/Provider/Project.php
 

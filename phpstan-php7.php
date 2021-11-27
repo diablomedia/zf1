@@ -265,11 +265,6 @@ if (version_compare(PHP_VERSION, '8.0', '<')) {
                     'path' => __DIR__ . '/library/Zend/Feed/Pubsubhubbub/HttpResponse.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#1 \$prefix of function uniqid expects string, int\<0, max\> given\.$#',
-                    'count' => 1,
-                    'path' => __DIR__ . '/library/Zend/Feed/Pubsubhubbub/Subscriber.php',
-                ),
-                array(
                     'message' => '#^Parameter \#1 \$key of function array_key_exists expects int\|string, int\<0, max\>\|null given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Gdata/App/Util.php',
@@ -280,11 +275,6 @@ if (version_compare(PHP_VERSION, '8.0', '<')) {
                     'path' => __DIR__ . '/library/Zend/Measure/Number.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#1 \$prefix of function uniqid expects string, int\<0, max\> given\.$#',
-                    'count' => 1,
-                    'path' => __DIR__ . '/library/Zend/Pdf.php',
-                ),
-                array(
                     'message' => '#^Property Zend_Pdf_StringParser\:\:\$offset \(int\) does not accept int\<0, max\>\|false\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Pdf/Parser.php',
@@ -293,21 +283,6 @@ if (version_compare(PHP_VERSION, '8.0', '<')) {
                     'message' => '#^Parameter \#2 \$value of method Zend_Queue_Stomp_FrameInterface\:\:setHeader\(\) expects string, int\<0, max\> given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Queue/Adapter/Activemq.php',
-                ),
-                array(
-                    'message' => '#^Parameter \#1 \$prefix of function uniqid expects string, int\<0, max\> given\.$#',
-                    'count' => 2,
-                    'path' => __DIR__ . '/library/Zend/Queue/Adapter/Array.php',
-                ),
-                array(
-                    'message' => '#^Parameter \#1 \$prefix of function uniqid expects string, int\<0, max\> given\.$#',
-                    'count' => 1,
-                    'path' => __DIR__ . '/library/Zend/Queue/Adapter/Db.php',
-                ),
-                array(
-                    'message' => '#^Parameter \#1 \$prefix of function uniqid expects string, int\<0, max\> given\.$#',
-                    'count' => 2,
-                    'path' => __DIR__ . '/library/Zend/Queue/Adapter/Memcacheq.php',
                 ),
                 array(
                     'message' => '#^Parameter \#1 \$distance of method Zend_Search_Lucene_Search_Similarity\:\:sloppyFreq\(\) expects int, float\|int\<0, max\>\|null given\.$#',
@@ -333,6 +308,171 @@ if (version_compare(PHP_VERSION, '8.0', '<')) {
                     'message' => '#^Parameter \#2 \$start of function substr expects int, int\<0, max\>\|false given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Storage/Table.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function base64_decode expects string, string\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Amf/Server.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$str of function explode expects string, array\|string given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Cloud/Infrastructure/Adapter/Rackspace.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$str of function fwrite expects string, string\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Cloud/StorageService/Adapter/WindowsAzure.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function trim expects string, string\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Feed/Pubsubhubbub/CallbackAbstract.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function trim expects string, string\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Gdata/App/Base.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function urlencode expects string, int given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Gdata/AuthSub.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function strtolower expects string, string\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Gdata/HttpAdapterStreamingSocket.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function str_split expects string, int given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Measure/Number.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function strrev expects string, string\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Measure/Number.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function strtoupper expects string, int given\.$#',
+                    'count' => 4,
+                    'path' => __DIR__ . '/library/Zend/Measure/Number.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function trim expects string, string\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Memory/Manager.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function iconv_strlen expects string, string\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/CidFont.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function iconv_strlen expects string, string\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function trim expects string, string\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Queue/Adapter/Memcacheq.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function ltrim expects string, string\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Reflection/Docblock.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function trim expects string, string\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Analysis/TokenFilter/StopWords.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#3 \$str of function iconv expects string, string\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Document/Html.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function strtolower expects string, string\|true\|null given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Service/Console/Command/ParameterSource/Argv.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function strtolower expects string, string\|null given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Service/Console/Command/ParameterSource/Env.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function trim expects string, string\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/Console/Command/ParameterSource/Prompt.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function rtrim expects string, string\|false\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/Console/Command/ParameterSource/StdIn.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function base64_encode expects string, string\|false given\.$#',
+                    'count' => 3,
+                    'path' => __DIR__ . '/library/Zend/Service/LiveDocx/MailMerge.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function strtolower expects string, string\|null given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Service/Rackspace/Files.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function base64_encode expects string, string\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/Rackspace/Servers.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function rawurlencode expects string, int\<min, \-1\>\|int\<1, max\> given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Service/Rackspace/Servers.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function base64_encode expects string, string\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Management/Client.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function strtolower expects string, string\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Storage/Blob.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$str of function explode expects string, string\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Storage/TableEntity.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function addslashes expects string, string\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Storage/TableEntityQuery.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function rtrim expects string, string\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Tool/Framework/Client/Console.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function ltrim expects string, string\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Tool/Project/Context/Zf/TestLibraryFile.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function preg_quote expects string, string\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Tool/Project/Context/Zf/ZfStandardLibraryDirectory.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$str of function ltrim expects string, string\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Tool/Project/Provider/Project.php',
                 ),
             )
         )
