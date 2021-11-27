@@ -1521,16 +1521,6 @@ parameters:
 			path: library/Zend/Cloud/StorageService/Adapter/WindowsAzure.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function fclose expects resource, resource\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Cloud/StorageService/Adapter/WindowsAzure.php
-
-		-
-			message: "#^Parameter \\#1 \\$fp of function fwrite expects resource, resource\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Cloud/StorageService/Adapter/WindowsAzure.php
-
-		-
 			message: "#^Result of method Zend_Cloud_StorageService_Adapter_WindowsAzure\\:\\:moveItem\\(\\) \\(void\\) is used\\.$#"
 			count: 1
 			path: library/Zend/Cloud/StorageService/Adapter/WindowsAzure.php
@@ -4926,11 +4916,6 @@ parameters:
 			path: library/Zend/Gdata/App/LoggingHttpClientAdapterSocket.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function fwrite expects resource, resource\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Gdata/App/LoggingHttpClientAdapterSocket.php
-
-		-
 			message: "#^Property Zend_Gdata_App_LoggingHttpClientAdapterSocket\\:\\:\\$log_handle \\(resource\\|null\\) does not accept resource\\|false\\.$#"
 			count: 1
 			path: library/Zend/Gdata/App/LoggingHttpClientAdapterSocket.php
@@ -4949,16 +4934,6 @@ parameters:
 			message: "#^Method Zend_Gdata_App_MediaEntry\\:\\:__construct\\(\\) has parameter \\$mediaSource with no typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Gdata/App/MediaEntry.php
-
-		-
-			message: "#^Parameter \\#1 \\$fp of function fclose expects resource, resource\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Gdata/App/MediaFileSource.php
-
-		-
-			message: "#^Parameter \\#1 \\$fp of function fread expects resource, resource\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Gdata/App/MediaFileSource.php
 
 		-
 			message: "#^Parameter \\#2 \\$length of function fread expects int, int\\|false given\\.$#"
@@ -8232,11 +8207,6 @@ parameters:
 
 		-
 			message: "#^Cannot call method read\\(\\) on string\\.$#"
-			count: 2
-			path: library/Zend/Gdata/HttpAdapterStreamingProxy.php
-
-		-
-			message: "#^Parameter \\#1 \\$fp of function fwrite expects resource, resource\\|null given\\.$#"
 			count: 2
 			path: library/Zend/Gdata/HttpAdapterStreamingProxy.php
 
@@ -14136,21 +14106,6 @@ parameters:
 			path: library/Zend/Queue/Stomp/Client.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function feof expects resource, resource\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Queue/Stomp/Client/Connection.php
-
-		-
-			message: "#^Parameter \\#1 \\$fp of function fread expects resource, resource\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Queue/Stomp/Client/Connection.php
-
-		-
-			message: "#^Parameter \\#1 \\$fp of function fwrite expects resource, resource\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Queue/Stomp/Client/Connection.php
-
-		-
 			message: "#^Parameter \\#1 \\$read_streams of function stream_select expects array\\<resource\\>, array\\<int, resource\\|false\\> given\\.$#"
 			count: 1
 			path: library/Zend/Queue/Stomp/Client/Connection.php
@@ -16866,41 +16821,6 @@ parameters:
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
 
 		-
-			message: "#^Parameter \\#1 \\$fp of function feof expects resource, resource\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
-
-		-
-			message: "#^Parameter \\#1 \\$fp of function fflush expects resource, resource\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
-
-		-
-			message: "#^Parameter \\#1 \\$fp of function flock expects resource, resource\\|null given\\.$#"
-			count: 2
-			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
-
-		-
-			message: "#^Parameter \\#1 \\$fp of function fread expects resource, resource\\|null given\\.$#"
-			count: 2
-			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
-
-		-
-			message: "#^Parameter \\#1 \\$fp of function fseek expects resource, resource\\|null given\\.$#"
-			count: 3
-			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
-
-		-
-			message: "#^Parameter \\#1 \\$fp of function ftell expects resource, resource\\|null given\\.$#"
-			count: 3
-			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
-
-		-
-			message: "#^Parameter \\#1 \\$fp of function fwrite expects resource, resource\\|null given\\.$#"
-			count: 2
-			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
-
-		-
 			message: "#^Parameter \\#2 \\$offset of function fseek expects int, int\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
@@ -17317,11 +17237,6 @@ parameters:
 
 		-
 			message: "#^Method Zend_Service_Delicious\\:\\:createNewPost\\(\\) has parameter \\$url with no typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Service/Delicious.php
-
-		-
-			message: "#^Parameter \\#1 \\$micro_seconds of function usleep expects int, float given\\.$#"
 			count: 1
 			path: library/Zend/Service/Delicious.php
 
@@ -18452,11 +18367,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$name of method Zend_Service_Twitter\\:\\:validateScreenName\\(\\) expects string, int\\|string given\\.$#"
-			count: 1
-			path: library/Zend/Service/Twitter.php
-
-		-
-			message: "#^Parameter \\#1 \\$object of function method_exists expects object\\|string, Zend_Oauth_Consumer\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Service/Twitter.php
 
@@ -22721,11 +22631,6 @@ parameters:
 			path: library/Zend/Tool/Framework/Provider/Signature.php
 
 		-
-			message: "#^Parameter \\#1 \\$object of function method_exists expects object\\|string, Zend_Tool_Framework_Provider_Interface\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Tool/Framework/Provider/Signature.php
-
-		-
 			message: "#^Parameter \\#1 \\$string of function substr expects string, class\\-string\\<Zend_Tool_Framework_Provider_Interface\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Tool/Framework/Provider/Signature.php
@@ -23533,11 +23438,6 @@ parameters:
 		-
 			message: "#^Cannot call method setResource\\(\\) on class\\-string\\|object\\.$#"
 			count: 1
-			path: library/Zend/Tool/Project/Profile/Resource.php
-
-		-
-			message: "#^Parameter \\#1 \\$object of function method_exists expects object\\|string, string\\|Zend_Tool_Project_Context_Interface\\|null given\\.$#"
-			count: 2
 			path: library/Zend/Tool/Project/Profile/Resource.php
 
 		-

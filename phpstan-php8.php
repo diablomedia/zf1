@@ -603,6 +603,106 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'count' => 4,
                     'path' => __DIR__ . '/library/Zend/Service/Console/Command/ParameterSource/ConfigFile.php',
                 ),
+                array(
+			        'message' => '#^Parameter \#1 \$microseconds of function usleep expects int, float given\.$#',
+			        'count' => 1,
+			        'path' => __DIR__ . '/library/Zend/Service/Delicious.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$object_or_class of function method_exists expects object\|string, Zend_Oauth_Consumer\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/Twitter.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$object_or_class of function method_exists expects object\|string, Zend_Tool_Framework_Provider_Interface\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Tool/Framework/Provider/Signature.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$object_or_class of function method_exists expects object\|string, string\|Zend_Tool_Project_Context_Interface\|null given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Tool/Project/Profile/Resource.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$stream of function fclose expects resource, resource\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Cloud/StorageService/Adapter/WindowsAzure.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$stream of function fwrite expects resource, resource\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Cloud/StorageService/Adapter/WindowsAzure.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$stream of function fwrite expects resource, resource\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Gdata/App/LoggingHttpClientAdapterSocket.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$stream of function fclose expects resource, resource\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Gdata/App/MediaFileSource.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$stream of function fread expects resource, resource\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Gdata/App/MediaFileSource.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$stream of function fwrite expects resource, resource\|null given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Gdata/HttpAdapterStreamingProxy.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$stream of function feof expects resource, resource\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Queue/Stomp/Client/Connection.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$stream of function fread expects resource, resource\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Queue/Stomp/Client/Connection.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$stream of function fwrite expects resource, resource\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Queue/Stomp/Client/Connection.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$stream of function feof expects resource, resource\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Storage/File/Filesystem.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$stream of function fflush expects resource, resource\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Storage/File/Filesystem.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$stream of function flock expects resource, resource\|null given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Storage/File/Filesystem.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$stream of function fread expects resource, resource\|null given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Storage/File/Filesystem.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$stream of function fseek expects resource, resource\|null given\.$#',
+                    'count' => 3,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Storage/File/Filesystem.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$stream of function ftell expects resource, resource\|null given\.$#',
+                    'count' => 3,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Storage/File/Filesystem.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$stream of function fwrite expects resource, resource\|null given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Storage/File/Filesystem.php',
+                ),
             )
         )
     );
