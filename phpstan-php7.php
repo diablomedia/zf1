@@ -924,6 +924,11 @@ if (version_compare(PHP_VERSION, '8.0', '<')) {
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Search/Lucene/Document/OpenXml.php',
                 ),
+                array(
+                    'message' => '#^Parameter \#2 \$value of method Zend_Feed_Pubsubhubbub_HttpResponse\:\:setHeader\(\) expects string, int\<0, max\> given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Feed/Pubsubhubbub/HttpResponse.php',
+                ),
             )
         )
     );

@@ -785,7 +785,7 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                 ),
                 array(
                     'message' => '#^Parameter \#2 \$count of function array_fill expects int<0, max>, float given\.$#',
-                    'count' => 6,
+                    'count' => 2,
                     'path' => __DIR__ . '/library/Zend/Pdf/Filter/Compression.php',
                 ),
                 array(
@@ -905,7 +905,7 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                 ),
                 array(
                     'message' => '#^Parameter \#2 \$count of function array_fill expects int<0, max>, int given\.$#',
-                    'count' => 2,
+                    'count' => 6,
                     'path' => __DIR__ . '/library/Zend/Pdf/Filter/Compression.php',
                 ),
                 array(
