@@ -84,12 +84,12 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
                 ),
                 array(
-                    'message' => "#^Parameter \#1 \$result of function mysqli_num_fields expects mysqli_result, resource given\.$#",
+                    'message' => '#^Parameter \#1 \$result of function mysqli_num_fields expects mysqli_result, resource given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Amf/Parse/Resource/MysqliResult.php',
                 ),
                 array(
-			        'message' => "#^Parameter \#1 \$string of function ucwords expects string, string\|null given\.$#",
+			        'message' => '#^Parameter \#1 \$string of function ucwords expects string, string\|null given\.$#',
 			        'count' => 1,
 			        'path' => __DIR__ . '/library/Zend/Amf/Parse/TypeLoader.php',
                 ),
