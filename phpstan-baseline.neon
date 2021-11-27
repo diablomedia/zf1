@@ -2201,11 +2201,6 @@ parameters:
 			path: library/Zend/Feed/Pubsubhubbub/HttpResponse.php
 
 		-
-			message: "#^Parameter \\#2 \\$value of method Zend_Feed_Pubsubhubbub_HttpResponse\\:\\:setHeader\\(\\) expects string, int\\<0, max\\> given\\.$#"
-			count: 1
-			path: library/Zend/Feed/Pubsubhubbub/HttpResponse.php
-
-		-
 			message: "#^Cannot access property \\$created_time on Zend_Db_Table_Row_Abstract\\|null\\.$#"
 			count: 1
 			path: library/Zend/Feed/Pubsubhubbub/Model/Subscription.php
@@ -2242,11 +2237,6 @@ parameters:
 
 		-
 			message: "#^Method Zend_Feed_Pubsubhubbub_Subscriber\\:\\:unsubscribeAll\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Feed/Pubsubhubbub/Subscriber.php
-
-		-
-			message: "#^Parameter \\#1 \\$prefix of function uniqid expects string, int\\<0, max\\> given\\.$#"
 			count: 1
 			path: library/Zend/Feed/Pubsubhubbub/Subscriber.php
 
@@ -5027,11 +5017,6 @@ parameters:
 
 		-
 			message: "#^Method Zend_Gdata_App_Util\\:\\:formatTimestamp\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Gdata/App/Util.php
-
-		-
-			message: "#^Parameter \\#1 \\$key of function array_key_exists expects int\\|string, int\\<0, max\\>\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/App/Util.php
 
@@ -10266,11 +10251,6 @@ parameters:
 			path: library/Zend/Measure/Number.php
 
 		-
-			message: "#^Cannot access offset int\\<0, max\\> on array\\<int, string\\>\\|false\\.$#"
-			count: 2
-			path: library/Zend/Measure/Number.php
-
-		-
 			message: "#^Method Zend_Measure_Abstract\\:\\:getType\\(\\) invoked with 1 parameter, 0 required\\.$#"
 			count: 1
 			path: library/Zend/Measure/Number.php
@@ -11057,11 +11037,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$factory of method Zend_Pdf_Action\\:\\:dumpAction\\(\\) expects Zend_Pdf_ElementFactory, Zend_Pdf_ElementFactory_Interface given\\.$#"
-			count: 1
-			path: library/Zend/Pdf.php
-
-		-
-			message: "#^Parameter \\#1 \\$prefix of function uniqid expects string, int\\<0, max\\> given\\.$#"
 			count: 1
 			path: library/Zend/Pdf.php
 
@@ -12946,11 +12921,6 @@ parameters:
 			path: library/Zend/Pdf/Parser.php
 
 		-
-			message: "#^Property Zend_Pdf_StringParser\\:\\:\\$offset \\(int\\) does not accept int\\<0, max\\>\\|false\\.$#"
-			count: 1
-			path: library/Zend/Pdf/Parser.php
-
-		-
 			message: "#^Method Zend_Pdf_RecursivelyIteratableObjectsContainer\\:\\:next\\(\\) with return type void returns mixed but should not return anything\\.$#"
 			count: 1
 			path: library/Zend/Pdf/RecursivelyIteratableObjectsContainer.php
@@ -14056,11 +14026,6 @@ parameters:
 			path: library/Zend/Queue/Adapter/Activemq.php
 
 		-
-			message: "#^Parameter \\#2 \\$value of method Zend_Queue_Stomp_FrameInterface\\:\\:setHeader\\(\\) expects string, int\\<0, max\\> given\\.$#"
-			count: 1
-			path: library/Zend/Queue/Adapter/Activemq.php
-
-		-
 			message: "#^Return type \\(void\\) of method Zend_Queue_Adapter_Activemq\\:\\:create\\(\\) should be compatible with return type \\(bool\\) of method Zend_Queue_Adapter_AdapterInterface\\:\\:create\\(\\)$#"
 			count: 2
 			path: library/Zend/Queue/Adapter/Activemq.php
@@ -14083,11 +14048,6 @@ parameters:
 		-
 			message: "#^Access to an undefined property Zend_Queue_Message\\:\\:\\$queue_name\\.$#"
 			count: 1
-			path: library/Zend/Queue/Adapter/Array.php
-
-		-
-			message: "#^Parameter \\#1 \\$prefix of function uniqid expects string, int\\<0, max\\> given\\.$#"
-			count: 2
 			path: library/Zend/Queue/Adapter/Array.php
 
 		-
@@ -14134,16 +14094,6 @@ parameters:
 			message: "#^Cannot access property \\$queue_name on Zend_Db_Table_Row_Abstract\\|null\\.$#"
 			count: 1
 			path: library/Zend/Queue/Adapter/Db.php
-
-		-
-			message: "#^Parameter \\#1 \\$prefix of function uniqid expects string, int\\<0, max\\> given\\.$#"
-			count: 1
-			path: library/Zend/Queue/Adapter/Db.php
-
-		-
-			message: "#^Parameter \\#1 \\$prefix of function uniqid expects string, int\\<0, max\\> given\\.$#"
-			count: 2
-			path: library/Zend/Queue/Adapter/Memcacheq.php
 
 		-
 			message: "#^Parameter \\#1 \\$str of function trim expects string, string\\|false given\\.$#"
@@ -16467,11 +16417,6 @@ parameters:
 
 		-
 			message: "#^Method Zend_Search_Lucene_Search_Query_Phrase\\:\\:setWeight\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Search/Lucene/Search/Query/Phrase.php
-
-		-
-			message: "#^Parameter \\#1 \\$distance of method Zend_Search_Lucene_Search_Similarity\\:\\:sloppyFreq\\(\\) expects int, float\\|int\\<0, max\\>\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Search/Query/Phrase.php
 
@@ -20191,11 +20136,6 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Credentials/SharedAccessSignature.php
 
 		-
-			message: "#^Parameter \\#2 \\$start of function substr expects int, int\\<0, max\\>\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/Credentials/SharedAccessSignature.php
-
-		-
 			message: "#^Negated boolean expression is always true\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Credentials/SharedKey.php
@@ -20204,16 +20144,6 @@ parameters:
 			message: "#^Parameter \\#1 \\$array of method Zend_Service_WindowsAzure_Credentials_CredentialsAbstract\\:\\:_issetOr\\(\\) expects array, array\\|null given\\.$#"
 			count: 9
 			path: library/Zend/Service/WindowsAzure/Credentials/SharedKey.php
-
-		-
-			message: "#^Parameter \\#2 \\$start of function substr expects int, int\\<0, max\\>\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/Credentials/SharedKey.php
-
-		-
-			message: "#^Parameter \\#2 \\$start of function substr expects int, int\\<0, max\\>\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/Credentials/SharedKeyLite.php
 
 		-
 			message: "#^Method Zend_Service_WindowsAzure_Diagnostics_ConfigurationDirectories\\:\\:addSubscription\\(\\) has no return typehint specified\\.$#"
@@ -21668,11 +21598,6 @@ parameters:
 		-
 			message: "#^Parameter \\#1 \\$value of method Zend_Service_WindowsAzure_Storage_TableEntity\\:\\:setTimestamp\\(\\) expects DateTime, bool\\|DateTime given\\.$#"
 			count: 2
-			path: library/Zend/Service/WindowsAzure/Storage/Table.php
-
-		-
-			message: "#^Parameter \\#2 \\$start of function substr expects int, int\\<0, max\\>\\|false given\\.$#"
-			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Table.php
 
 		-

@@ -313,6 +313,81 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'count' => 2,
                     'path' => __DIR__ . '/library/Zend/Search/Lucene/Storage/File/Filesystem.php',
                 ),
+                array(
+                    'message' => '#^Parameter \#2 \$value of method Zend_Feed_Pubsubhubbub_HttpResponse\:\:setHeader\(\) expects string, int given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Feed/Pubsubhubbub/HttpResponse.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$prefix of function uniqid expects string, int given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Feed/Pubsubhubbub/Subscriber.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$key of function array_key_exists expects int\|string, int\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Gdata/App/Util.php',
+                ),
+                array(
+                    'message' => '#^Cannot access offset int on array\<int, string\>\|false\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Measure/Number.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$prefix of function uniqid expects string, int given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Pdf.php',
+                ),
+                array(
+                    'message' => '#^Property Zend_Pdf_StringParser\:\:\$offset \(int\) does not accept int\|false\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Pdf/Parser.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$value of method Zend_Queue_Stomp_FrameInterface\:\:setHeader\(\) expects string, int given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Queue/Adapter/Activemq.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$prefix of function uniqid expects string, int given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Queue/Adapter/Array.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$prefix of function uniqid expects string, int given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Queue/Adapter/Db.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$prefix of function uniqid expects string, int given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Queue/Adapter/Memcacheq.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$distance of method Zend_Search_Lucene_Search_Similarity\:\:sloppyFreq\(\) expects int, float\|int\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Search/Query/Phrase.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$start of function substr expects int, int\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Credentials/SharedAccessSignature.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$start of function substr expects int, int\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Credentials/SharedKey.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$start of function substr expects int, int\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Credentials/SharedKeyLite.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$start of function substr expects int, int\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Storage/Table.php',
+                ),
             )
         )
     );
