@@ -764,6 +764,51 @@ if (version_compare(PHP_VERSION, '8.0', '<')) {
                     'count' => 2,
                     'path' => __DIR__ . '/library/Zend/Serializer/Adapter/PythonPickle.php',
                 ),
+                array(
+                    'message' => '#^Parameter \#2 \$prefix of function http_build_query expects string, null given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Tool/Framework/System/Provider/Manifest.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$array_arg of function ksort expects array, array\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Pdf/ElementFactory.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$array_arg of function current expects array\|object, array\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Storage/Blob/Stream.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$array_arg of function next expects array\|object, array\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Storage/Blob/Stream.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$number of function base_convert expects string, int given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$number of function base_convert expects string, int given\.$#',
+                    'count' => 3,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Index/SegmentInfo.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$number of function base_convert expects string, int given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Index/Writer.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$mode of function chmod expects int, string given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/CommandLine/PackageScaffolder/PackageScaffolderAbstract.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$mode of function mkdir expects int, string given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/CommandLine/PackageScaffolder/PackageScaffolderAbstract.php',
+                ),
             )
         )
     );

@@ -719,11 +719,6 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#4 \$color of function imagepolygon expects int\null, int\|false given\.$#',
-                    'count' => 1,
-                    'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
-                ),
-                array(
                     'message' => '#^Parameter \#6 \$color of function imagefilledrectangle expects int, int\|false given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
@@ -794,7 +789,7 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'path' => __DIR__ . '/library/Zend/Measure/Number.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#2 \$count of function array_fill expects int, float given\.$#',
+                    'message' => '#^Parameter \#2 \$count of function array_fill expects int<0, max>, float given\.$#',
                     'count' => 2,
                     'path' => __DIR__ . '/library/Zend/Pdf/Filter/Compression.php',
                 ),
@@ -817,6 +812,51 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'message' => '#^Parameter \#1 \$num of function bcpow expects string, int given\.$#',
                     'count' => 2,
                     'path' => __DIR__ . '/library/Zend/Serializer/Adapter/PythonPickle.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$numeric_prefix of function http_build_query expects string, null given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Tool/Framework/System/Provider/Manifest.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$array of function ksort expects array, array\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Pdf/ElementFactory.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$array of function current expects array\|object, array\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Storage/Blob/Stream.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$array of function next expects array\|object, array\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Storage/Blob/Stream.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$num of function base_convert expects string, int given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$num of function base_convert expects string, int given\.$#',
+                    'count' => 3,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Index/SegmentInfo.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$num of function base_convert expects string, int given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Index/Writer.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$permissions of function chmod expects int, string given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/CommandLine/PackageScaffolder/PackageScaffolderAbstract.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$permissions of function mkdir expects int, string given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/CommandLine/PackageScaffolder/PackageScaffolderAbstract.php',
                 ),
             )
         )

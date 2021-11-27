@@ -11721,11 +11721,6 @@ parameters:
 			path: library/Zend/Pdf/ElementFactory.php
 
 		-
-			message: "#^Parameter \\#1 \\$array_arg of function ksort expects array, array\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Pdf/ElementFactory.php
-
-		-
 			message: "#^Method Zend_Pdf_ElementFactory_Interface\\:\\:attach\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Pdf/ElementFactory/Interface.php
@@ -14441,11 +14436,6 @@ parameters:
 			path: library/Zend/Search/Lucene.php
 
 		-
-			message: "#^Parameter \\#1 \\$number of function base_convert expects string, int given\\.$#"
-			count: 1
-			path: library/Zend/Search/Lucene.php
-
-		-
 			message: "#^Parameter \\#1 \\$termStreams of class Zend_Search_Lucene_TermStreamsPriorityQueue constructor expects array, array\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene.php
@@ -15076,11 +15066,6 @@ parameters:
 			path: library/Zend/Search/Lucene/Index/SegmentInfo.php
 
 		-
-			message: "#^Parameter \\#1 \\$number of function base_convert expects string, int given\\.$#"
-			count: 3
-			path: library/Zend/Search/Lucene/Index/SegmentInfo.php
-
-		-
 			message: "#^Parameter \\#1 \\$offset of method Zend_Search_Lucene_Storage_File\\:\\:seek\\(\\) expects int, float\\|int given\\.$#"
 			count: 2
 			path: library/Zend/Search/Lucene/Index/SegmentInfo.php
@@ -15358,11 +15343,6 @@ parameters:
 		-
 			message: "#^Parameter \\#1 \\$generation of static method Zend_Search_Lucene\\:\\:getSegmentFileName\\(\\) expects int, float\\|int given\\.$#"
 			count: 4
-			path: library/Zend/Search/Lucene/Index/Writer.php
-
-		-
-			message: "#^Parameter \\#1 \\$number of function base_convert expects string, int given\\.$#"
-			count: 1
 			path: library/Zend/Search/Lucene/Index/Writer.php
 
 		-
@@ -19361,16 +19341,6 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/CommandLine/PackageScaffolder/PackageScaffolderAbstract.php
 
 		-
-			message: "#^Parameter \\#2 \\$mode of function chmod expects int, string given\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/CommandLine/PackageScaffolder/PackageScaffolderAbstract.php
-
-		-
-			message: "#^Parameter \\#2 \\$mode of function mkdir expects int, string given\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/CommandLine/PackageScaffolder/PackageScaffolderAbstract.php
-
-		-
 			message: "#^Parameter \\#3 \\$subject of function str_replace expects array\\|string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/CommandLine/PackageScaffolder/PackageScaffolderAbstract.php
@@ -20957,16 +20927,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$array of function reset expects array\\|object, array\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/Storage/Blob/Stream.php
-
-		-
-			message: "#^Parameter \\#1 \\$array_arg of function current expects array\\|object, array\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/Storage/Blob/Stream.php
-
-		-
-			message: "#^Parameter \\#1 \\$array_arg of function next expects array\\|object, array\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/Blob/Stream.php
 
@@ -22628,11 +22588,6 @@ parameters:
 		-
 			message: "#^Method Zend_Tool_Framework_System_Provider_Manifest\\:\\:show\\(\\) has no return typehint specified\\.$#"
 			count: 1
-			path: library/Zend/Tool/Framework/System/Provider/Manifest.php
-
-		-
-			message: "#^Parameter \\#2 \\$prefix of function http_build_query expects string, null given\\.$#"
-			count: 2
 			path: library/Zend/Tool/Framework/System/Provider/Manifest.php
 
 		-
