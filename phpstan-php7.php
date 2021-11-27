@@ -704,6 +704,66 @@ if (version_compare(PHP_VERSION, '8.0', '<')) {
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Gdata/App/Util.php',
                 ),
+                array(
+                    'message' => '#^Parameter \#1 \$argument of class ReflectionClass constructor expects class\-string\<T of object\>\|T of object, string given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Gdata/App.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$argument of class ReflectionClass constructor expects class\-string\<T of object\>\|T of object, string given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Gdata/Gapps.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$argument of class ReflectionClass constructor expects class\-string\<T of object\>\|T of object, string given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Storage/TableEntity.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$argument of class ReflectionClass constructor expects class\-string\<T of object\>\|T of object, string given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Tool/Framework/System/Provider/Config.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$get_as_float of function microtime expects bool, int given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Gdata/MediaMimeStream.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$var of function sizeof expects array\|Countable, array\<int, string\>\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Measure/Number.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$hexadecimal_number of function hexdec expects string, float\|int\|string given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Measure/Number.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$num of function array_fill expects int, float given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Pdf/Filter/Compression.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$left_operand of function bcadd expects string, int\|string given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Serializer/Adapter/PythonPickle.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$left_operand of function bcmul expects string, int given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Serializer/Adapter/PythonPickle.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$left_operand of function bcsub expects string, int\|string given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Serializer/Adapter/PythonPickle.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$base of function bcpow expects string, int given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Serializer/Adapter/PythonPickle.php',
+                ),
             )
         )
     );

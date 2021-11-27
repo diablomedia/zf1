@@ -4016,11 +4016,6 @@ parameters:
 			path: library/Zend/Gdata/App.php
 
 		-
-			message: "#^Parameter \\#1 \\$argument of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
-			count: 1
-			path: library/Zend/Gdata/App.php
-
-		-
 			message: "#^Parameter \\#1 \\$client of method Zend_Gdata_App\\:\\:setHttpClient\\(\\) expects Zend_Http_Client, Zend_Http_Client\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/App.php
@@ -7181,11 +7176,6 @@ parameters:
 			path: library/Zend/Gdata/Gapps.php
 
 		-
-			message: "#^Parameter \\#1 \\$argument of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
-			count: 1
-			path: library/Zend/Gdata/Gapps.php
-
-		-
 			message: "#^Parameter \\#1 \\$feed of method Zend_Gdata_App\\:\\:retrieveAllEntriesForFeed\\(\\) expects object, string\\|Zend_Gdata_Gapps_EmailListFeed given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/Gapps.php
@@ -8796,11 +8786,6 @@ parameters:
 			path: library/Zend/Gdata/MediaMimeStream.php
 
 		-
-			message: "#^Parameter \\#1 \\$get_as_float of function microtime expects bool, int given\\.$#"
-			count: 1
-			path: library/Zend/Gdata/MediaMimeStream.php
-
-		-
 			message: "#^Property Zend_Gdata_MediaMimeStream\\:\\:\\$_fileHandle \\(resource\\) does not accept resource\\|false\\.$#"
 			count: 1
 			path: library/Zend/Gdata/MediaMimeStream.php
@@ -10121,11 +10106,6 @@ parameters:
 			path: library/Zend/Measure/Number.php
 
 		-
-			message: "#^Parameter \\#1 \\$hexadecimal_number of function hexdec expects string, float\\|int\\|string given\\.$#"
-			count: 1
-			path: library/Zend/Measure/Number.php
-
-		-
 			message: "#^Parameter \\#1 \\$input of method Zend_Measure_Number\\:\\:_toDecimal\\(\\) expects int, int\\|string given\\.$#"
 			count: 1
 			path: library/Zend/Measure/Number.php
@@ -10142,11 +10122,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$value of method Zend_Measure_Number\\:\\:_fromDecimal\\(\\) expects int, string given\\.$#"
-			count: 1
-			path: library/Zend/Measure/Number.php
-
-		-
-			message: "#^Parameter \\#1 \\$var of function sizeof expects array\\|Countable, array\\<int, string\\>\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Measure/Number.php
 
@@ -12303,11 +12278,6 @@ parameters:
 		-
 			message: "#^Parameter \\#1 \\$ascii of function chr expects int, float given\\.$#"
 			count: 1
-			path: library/Zend/Pdf/Filter/Compression.php
-
-		-
-			message: "#^Parameter \\#2 \\$num of function array_fill expects int, float given\\.$#"
-			count: 2
 			path: library/Zend/Pdf/Filter/Compression.php
 
 		-
@@ -16946,26 +16916,6 @@ parameters:
 			path: library/Zend/Serializer/Adapter/PythonPickle.php
 
 		-
-			message: "#^Parameter \\#1 \\$base of function bcpow expects string, int given\\.$#"
-			count: 2
-			path: library/Zend/Serializer/Adapter/PythonPickle.php
-
-		-
-			message: "#^Parameter \\#1 \\$left_operand of function bcadd expects string, int\\|string given\\.$#"
-			count: 1
-			path: library/Zend/Serializer/Adapter/PythonPickle.php
-
-		-
-			message: "#^Parameter \\#1 \\$left_operand of function bcmul expects string, int given\\.$#"
-			count: 1
-			path: library/Zend/Serializer/Adapter/PythonPickle.php
-
-		-
-			message: "#^Parameter \\#1 \\$left_operand of function bcsub expects string, int\\|string given\\.$#"
-			count: 1
-			path: library/Zend/Serializer/Adapter/PythonPickle.php
-
-		-
 			message: "#^Parameter \\#1 \\$num of function dechex expects int, float\\|int\\<1114112, max\\> given\\.$#"
 			count: 1
 			path: library/Zend/Serializer/Adapter/PythonPickle.php
@@ -21301,11 +21251,6 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Storage/TableEntity.php
 
 		-
-			message: "#^Parameter \\#1 \\$argument of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/Storage/TableEntity.php
-
-		-
 			message: "#^Parameter \\#1 \\$haystack of function strpos expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Storage/TableEntity.php
@@ -22663,11 +22608,6 @@ parameters:
 		-
 			message: "#^Method Zend_Tool_Framework_System_Provider_Config\\:\\:enableProvider\\(\\) has no return typehint specified\\.$#"
 			count: 1
-			path: library/Zend/Tool/Framework/System/Provider/Config.php
-
-		-
-			message: "#^Parameter \\#1 \\$argument of class ReflectionClass constructor expects class\\-string\\<T of object\\>\\|T of object, string given\\.$#"
-			count: 2
 			path: library/Zend/Tool/Framework/System/Provider/Config.php
 
 		-
