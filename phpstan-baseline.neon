@@ -301,16 +301,6 @@ parameters:
 			path: library/Zend/Amf/Server.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(string, string\\) given\\.$#"
-			count: 1
-			path: library/Zend/Amf/Server.php
-
-		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, string given\\.$#"
-			count: 1
-			path: library/Zend/Amf/Server.php
-
-		-
 			message: "#^Parameter \\#1 \\$message of class Zend_Amf_Value_Messaging_ErrorMessage constructor expects object, string given\\.$#"
 			count: 1
 			path: library/Zend/Amf/Server.php
@@ -2666,11 +2656,6 @@ parameters:
 			path: library/Zend/Feed/Reader/EntryAbstract.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, string\\) given\\.$#"
-			count: 1
-			path: library/Zend/Feed/Reader/EntryAbstract.php
-
-		-
 			message: "#^Property Zend_Feed_Reader_EntryAbstract\\:\\:\\$_domDocument \\(DOMDocument\\) does not accept DOMDocument\\|null\\.$#"
 			count: 1
 			path: library/Zend/Feed/Reader/EntryAbstract.php
@@ -3241,11 +3226,6 @@ parameters:
 			path: library/Zend/Feed/Reader/FeedAbstract.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, mixed\\) given\\.$#"
-			count: 1
-			path: library/Zend/Feed/Reader/FeedAbstract.php
-
-		-
 			message: "#^Parameter \\#2 \\$entryKey of class Zend_Feed_Reader_Entry_Rss constructor expects string, int given\\.$#"
 			count: 1
 			path: library/Zend/Feed/Reader/FeedAbstract.php
@@ -3656,11 +3636,6 @@ parameters:
 			path: library/Zend/Feed/Writer/Entry.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, string\\) given\\.$#"
-			count: 1
-			path: library/Zend/Feed/Writer/Entry.php
-
-		-
 			message: "#^Method Zend_Feed_Writer_Extension_ITunes_Entry\\:\\:setItunesBlock\\(\\) should return Zend_Feed_Writer_Extension_ITunes_Entry but return statement is missing\\.$#"
 			count: 1
 			path: library/Zend/Feed/Writer/Extension/ITunes/Entry.php
@@ -3862,11 +3837,6 @@ parameters:
 
 		-
 			message: "#^Method Zend_Feed_Writer_Feed_FeedAbstract\\:\\:setType\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Feed/Writer/Feed/FeedAbstract.php
-
-		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Feed/Writer/Feed/FeedAbstract.php
 
@@ -11801,11 +11771,6 @@ parameters:
 			path: library/Zend/Pdf/Element/Object.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(Zend_Pdf_Element\\|null, string\\) given\\.$#"
-			count: 1
-			path: library/Zend/Pdf/Element/Object.php
-
-		-
 			message: "#^Access to an undefined property Zend_Pdf_Element_Dictionary\\:\\:\\$Length\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Element/Object/Stream.php
@@ -11927,11 +11892,6 @@ parameters:
 
 		-
 			message: "#^Method Zend_Pdf_Element_Reference\\:\\:touch\\(\\) has no return typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Pdf/Element/Reference.php
-
-		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Element/Reference.php
 
@@ -16321,11 +16281,6 @@ parameters:
 			path: library/Zend/Search/Lucene/Proxy.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(Zend_Search_Lucene_Interface\\|null, 'find'\\) given\\.$#"
-			count: 1
-			path: library/Zend/Search/Lucene/Proxy.php
-
-		-
 			message: "#^Method Zend_Search_Lucene_Search_BooleanExpressionRecognizer\\:\\:emptyNotOperatorAction\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Search/BooleanExpressionRecognizer.php
@@ -17581,11 +17536,6 @@ parameters:
 			path: library/Zend/Service/Console/Command.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, mixed\\) given\\.$#"
-			count: 1
-			path: library/Zend/Service/Console/Command.php
-
-		-
 			message: "#^Parameter \\#2 \\$docComment of static method Zend_Service_Console_Command\\:\\:_findValueForDocComment\\(\\) expects string, string\\|false given\\.$#"
 			count: 8
 			path: library/Zend/Service/Console/Command.php
@@ -17912,11 +17862,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_Search_Result constructor expects DOMElement, DOMNode given\\.$#"
-			count: 1
-			path: library/Zend/Service/Ebay/Finding/Response/Items.php
-
-		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(Zend_Service_Ebay_Finding, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Service/Ebay/Finding/Response/Items.php
 
@@ -18781,11 +18726,6 @@ parameters:
 			path: library/Zend/Service/StrikeIron/Decorator.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(object, string\\) given\\.$#"
-			count: 1
-			path: library/Zend/Service/StrikeIron/Decorator.php
-
-		-
 			message: "#^Method Zend_Service_Twitter\\:\\:getHttpClient\\(\\) should return Zend_Http_Client but returns Zend_Http_Client\\|null\\.$#"
 			count: 1
 			path: library/Zend/Service/Twitter.php
@@ -18817,16 +18757,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$cookiejar of method Zend_Http_Client\\:\\:setCookieJar\\(\\) expects bool\\|Zend_Http_CookieJar, array\\|Zend_Http_CookieJar given\\.$#"
-			count: 1
-			path: library/Zend/Service/Twitter.php
-
-		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(\\$this\\(Zend_Service_Twitter\\), non\\-empty\\-string\\) given\\.$#"
-			count: 1
-			path: library/Zend/Service/Twitter.php
-
-		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(Zend_Oauth_Consumer\\|null, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Service/Twitter.php
 
@@ -21051,16 +20981,6 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Management/SubscriptionOperationInstance.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\|string given\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/RetryPolicy/NoRetry.php
-
-		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\|string given\\.$#"
-			count: 1
-			path: library/Zend/Service/WindowsAzure/RetryPolicy/RetryN.php
-
-		-
 			message: "#^Access to an undefined property Zend_Service_WindowsAzure_Storage_DynamicTableEntity\\:\\:\\$serializedData\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/SessionHandler.php
@@ -22262,16 +22182,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$client of method Zend_Tool_Framework_Client_Interactive_InputHandler\\:\\:setClient\\(\\) expects Zend_Tool_Framework_Client_Interactive_InputInterface, \\$this\\(Zend_Tool_Framework_Client_Abstract\\) given\\.$#"
-			count: 1
-			path: library/Zend/Tool/Framework/Client/Abstract.php
-
-		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, mixed\\) given\\.$#"
-			count: 1
-			path: library/Zend/Tool/Framework/Client/Abstract.php
-
-		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(mixed, non\\-empty\\-string\\) given\\.$#"
 			count: 1
 			path: library/Zend/Tool/Framework/Client/Abstract.php
 
@@ -24026,11 +23936,6 @@ parameters:
 			path: library/Zend/Tool/Project/Profile/Resource.php
 
 		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(string\\|Zend_Tool_Project_Context_Interface\\|null, string\\) given\\.$#"
-			count: 1
-			path: library/Zend/Tool/Project/Profile/Resource.php
-
-		-
 			message: "#^Parameter \\#1 \\$object of function method_exists expects object\\|string, string\\|Zend_Tool_Project_Context_Interface\\|null given\\.$#"
 			count: 2
 			path: library/Zend/Tool/Project/Profile/Resource.php
@@ -25032,11 +24937,6 @@ parameters:
 
 		-
 			message: "#^PHPDoc tag @throws with type Exception\\|Zend_XmlRpcServer_Exception is not subtype of Throwable$#"
-			count: 1
-			path: library/Zend/XmlRpc/Server.php
-
-		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\(Zend_XmlRpc_Server_System, string\\) given\\.$#"
 			count: 1
 			path: library/Zend/XmlRpc/Server.php
 
