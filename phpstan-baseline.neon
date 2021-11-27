@@ -1716,11 +1716,6 @@ parameters:
 			path: library/Zend/CodeGenerator/Php/Property/DefaultValue.php
 
 		-
-			message: "#^Parameter \\#1 \\$input of function str_repeat expects string, int\\|string given\\.$#"
-			count: 3
-			path: library/Zend/CodeGenerator/Php/Property/DefaultValue.php
-
-		-
 			message: "#^Method Zend_Console_Getopt\\:\\:checkRequiredArguments\\(\\) has no return typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Console/Getopt.php
@@ -13566,11 +13561,6 @@ parameters:
 			path: library/Zend/Pdf/Resource/Image/Png.php
 
 		-
-			message: "#^Parameter \\#2 \\$data of function unpack expects string, string\\|false given\\.$#"
-			count: 2
-			path: library/Zend/Pdf/Resource/Image/Png.php
-
-		-
 			message: "#^Property Zend_Pdf_Resource_Image_Png\\:\\:\\$_height has no typehint specified\\.$#"
 			count: 1
 			path: library/Zend/Pdf/Resource/Image/Png.php
@@ -13628,11 +13618,6 @@ parameters:
 		-
 			message: "#^Parameter \\#2 \\$bytes of method Zend_Pdf_Resource_Image_Tiff\\:\\:unpackBytes\\(\\) expects string, string\\|false given\\.$#"
 			count: 12
-			path: library/Zend/Pdf/Resource/Image/Tiff.php
-
-		-
-			message: "#^Parameter \\#2 \\$data of function unpack expects string, string\\|false given\\.$#"
-			count: 2
 			path: library/Zend/Pdf/Resource/Image/Tiff.php
 
 		-
@@ -20616,11 +20601,6 @@ parameters:
 			path: library/Zend/Service/WindowsAzure/Management/Client.php
 
 		-
-			message: "#^Parameter \\#1 \\$data of function utf8_decode expects string, string\\|false given\\.$#"
-			count: 5
-			path: library/Zend/Service/WindowsAzure/Management/Client.php
-
-		-
 			message: "#^Parameter \\#1 \\$xml of static method Zend_Xml_Security\\:\\:scan\\(\\) expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Service/WindowsAzure/Management/Client.php
@@ -23467,6 +23447,11 @@ parameters:
 
 		-
 			message: "#^Method Zend_Tool_Project_Context_Zf_ZfStandardLibraryDirectory\\:\\:create\\(\\) should return Zend_Tool_Project_Context_Filesystem_Directory but return statement is missing\\.$#"
+			count: 1
+			path: library/Zend/Tool/Project/Context/Zf/ZfStandardLibraryDirectory.php
+
+		-
+			message: "#^Parameter \\#1 \\$str of function preg_quote expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Tool/Project/Context/Zf/ZfStandardLibraryDirectory.php
 

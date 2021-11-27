@@ -374,7 +374,7 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'path' => __DIR__ . '/library/Zend/Cloud/Infrastructure/Adapter/Rackspace.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#2 \$string of function fwrite expects string, string\|false given\.$#',
+                    'message' => '#^Parameter \#2 \$stream of function fwrite expects string, string\|false given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Cloud/StorageService/Adapter/WindowsAzure.php',
                 ),
@@ -519,11 +519,6 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'path' => __DIR__ . '/library/Zend/Tool/Project/Context/Zf/TestLibraryFile.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#1 \$string of function preg_quote expects string, string\|false given\.$#',
-                    'count' => 1,
-                    'path' => __DIR__ . '/library/Zend/Tool/Project/Context/Zf/ZfStandardLibraryDirectory.php',
-                ),
-                array(
                     'message' => '#^Parameter \#1 \$string of function ltrim expects string, string\|false given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Tool/Project/Provider/Project.php',
@@ -552,6 +547,26 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'message' => '#^Parameter \#1 \$callback of function call_user_func expects callable\(\)\: mixed, array\(\(int\|string\), \'observe\'\) given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/XmlRpc/Server/Fault.php',
+                ),
+                array(
+			        'message' => '#^Parameter \#1 \$string of function str_repeat expects string, int\|string given\.$#',
+			        'count' => 3,
+			        'path' => __DIR__ . '/library/Zend/CodeGenerator/Php/Property/DefaultValue.php',
+                ),
+                array(
+			        'message' => '#^Parameter \#1 \$string of function utf8_decode expects string, string\|false given\.$#',
+			        'count' => 5,
+			        'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Management/Client.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$string of function unpack expects string, string\|false given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Pdf/Resource/Image/Png.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#2 \$string of function unpack expects string, string\|false given\.$#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Pdf/Resource/Image/Tiff.php',
                 ),
             )
         )
