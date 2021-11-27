@@ -146,11 +146,6 @@ parameters:
 			path: library/Zend/Amf/Parse/Resource/MysqliResult.php
 
 		-
-			message: "#^Parameter \\#1 \\$link of function mysqli_num_fields expects mysqli_result, resource given\\.$#"
-			count: 1
-			path: library/Zend/Amf/Parse/Resource/MysqliResult.php
-
-		-
 			message: "#^Parameter \\#1 \\$result of function mysqli_fetch_assoc expects mysqli_result, resource given\\.$#"
 			count: 1
 			path: library/Zend/Amf/Parse/Resource/MysqliResult.php
@@ -217,11 +212,6 @@ parameters:
 
 		-
 			message: "#^Negated boolean expression is always false\\.$#"
-			count: 1
-			path: library/Zend/Amf/Parse/TypeLoader.php
-
-		-
-			message: "#^Parameter \\#1 \\$str of function ucwords expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Amf/Parse/TypeLoader.php
 

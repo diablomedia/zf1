@@ -28,7 +28,17 @@ if (version_compare(PHP_VERSION, '8.0', '<')) {
                     'message' => '#^Property Zend_Barcode_Renderer_Image\:\:\$_resource \(resource\) does not accept resource\|false\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
-                )
+                ),
+                array(
+                    'message' => "#^Parameter \#1 \$link of function mysqli_num_fields expects mysqli_result, resource given\.$#",
+                    'count' => 1,
+                    'path' => 'library/Zend/Amf/Parse/Resource/MysqliResult.php',
+                ),
+                array(
+			        'message' => "#^Parameter \#1 \$str of function ucwords expects string, string\|null given\.$#",
+			        'count' => 1,
+			        'path' => 'library/Zend/Amf/Parse/TypeLoader.php',
+                ),
             )
         )
     );
