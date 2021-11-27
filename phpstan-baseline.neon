@@ -321,11 +321,6 @@ parameters:
 			path: library/Zend/Amf/Server.php
 
 		-
-			message: "#^Parameter \\#2 \\$needle of function strpos expects int\\|string, string\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Amf/Server.php
-
-		-
 			message: "#^Parameter \\#2 \\$responseUri of class Zend_Amf_Value_MessageBody constructor expects string, null given\\.$#"
 			count: 2
 			path: library/Zend/Amf/Server.php
@@ -756,16 +751,6 @@ parameters:
 			path: library/Zend/Barcode/Renderer/Image.php
 
 		-
-			message: "#^Parameter \\#1 \\$im of function imagecolorallocate expects resource, resource\\|false given\\.$#"
-			count: 3
-			path: library/Zend/Barcode/Renderer/Image.php
-
-		-
-			message: "#^Parameter \\#1 \\$im of function imagefilledrectangle expects resource, resource\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Barcode/Renderer/Image.php
-
-		-
 			message: "#^Parameter \\#2 \\$font of function imagestring expects int, int\\|string given\\.$#"
 			count: 1
 			path: library/Zend/Barcode/Renderer/Image.php
@@ -777,16 +762,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#3 \\$y1 of function imagefilledrectangle expects int, float\\|int given\\.$#"
-			count: 1
-			path: library/Zend/Barcode/Renderer/Image.php
-
-		-
-			message: "#^Parameter \\#4 \\$col of function imagefilledpolygon expects int, int\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Barcode/Renderer/Image.php
-
-		-
-			message: "#^Parameter \\#4 \\$col of function imagepolygon expects int, int\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Barcode/Renderer/Image.php
 
@@ -807,16 +782,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#5 \\$y2 of function imagefilledrectangle expects int, float\\|int given\\.$#"
-			count: 1
-			path: library/Zend/Barcode/Renderer/Image.php
-
-		-
-			message: "#^Parameter \\#6 \\$col of function imagefilledrectangle expects int, int\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Barcode/Renderer/Image.php
-
-		-
-			message: "#^Parameter \\#6 \\$col of function imagettftext expects int, int\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Barcode/Renderer/Image.php
 
@@ -1151,16 +1116,6 @@ parameters:
 			path: library/Zend/Cloud/Infrastructure/Adapter/AbstractAdapter.php
 
 		-
-			message: "#^Parameter \\#1 \\$socket of function stream_set_blocking expects resource, resource\\|false given\\.$#"
-			count: 5
-			path: library/Zend/Cloud/Infrastructure/Adapter/AbstractAdapter.php
-
-		-
-			message: "#^Parameter \\#1 \\$source of function stream_get_contents expects resource, resource\\|false given\\.$#"
-			count: 4
-			path: library/Zend/Cloud/Infrastructure/Adapter/AbstractAdapter.php
-
-		-
 			message: "#^Access to an undefined property Zend_Cloud_Infrastructure_Adapter_Ec2\\:\\:\\$error\\.$#"
 			count: 1
 			path: library/Zend/Cloud/Infrastructure/Adapter/Ec2.php
@@ -1386,11 +1341,6 @@ parameters:
 			path: library/Zend/Cloud/StorageService/Adapter/FileSystem.php
 
 		-
-			message: "#^Parameter \\#1 \\$arr1 of function array_diff expects array, array\\<int, string\\>\\|false given\\.$#"
-			count: 1
-			path: library/Zend/Cloud/StorageService/Adapter/FileSystem.php
-
-		-
 			message: "#^Parameter \\#1 \\$filename of function stat expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Cloud/StorageService/Adapter/FileSystem.php
@@ -1507,11 +1457,6 @@ parameters:
 
 		-
 			message: "#^Method Zend_Cloud_StorageService_Adapter_WindowsAzure\\:\\:storeMetadata\\(\\) has parameter \\$metadata with no typehint specified\\.$#"
-			count: 1
-			path: library/Zend/Cloud/StorageService/Adapter/WindowsAzure.php
-
-		-
-			message: "#^Parameter \\#1 \\$file of function file_put_contents expects string, string\\|false given\\.$#"
 			count: 1
 			path: library/Zend/Cloud/StorageService/Adapter/WindowsAzure.php
 
@@ -4956,7 +4901,7 @@ parameters:
 			path: library/Zend/Gdata/App/Util.php
 
 		-
-			message: "#^Parameter \\#1 \\$time of function strtotime expects string, int given\\.$#"
+			message: "#^Parameter \\#1 \\$key of function array_key_exists expects int\\|string, int\\<0, max\\>\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Gdata/App/Util.php
 

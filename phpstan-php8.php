@@ -319,11 +319,6 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'path' => __DIR__ . '/library/Zend/Feed/Pubsubhubbub/HttpResponse.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#1 \$key of function array_key_exists expects int\|string, int\|null given\.$#',
-                    'count' => 1,
-                    'path' => __DIR__ . '/library/Zend/Gdata/App/Util.php',
-                ),
-                array(
                     'message' => '#^Cannot access offset int on array\<int, string\>\|false\.$#',
                     'count' => 2,
                     'path' => __DIR__ . '/library/Zend/Measure/Number.php',
@@ -374,7 +369,7 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'path' => __DIR__ . '/library/Zend/Cloud/Infrastructure/Adapter/Rackspace.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#2 \$stream of function fwrite expects string, string\|false given\.$#',
+                    'message' => '#^Parameter \#2 \$data of function fwrite expects string, string\|false given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Cloud/StorageService/Adapter/WindowsAzure.php',
                 ),
@@ -702,6 +697,66 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'message' => '#^Parameter \#1 \$stream of function fwrite expects resource, resource\|null given\.$#',
                     'count' => 2,
                     'path' => __DIR__ . '/library/Zend/Search/Lucene/Storage/File/Filesystem.php',
+                ),
+                array(
+			        'message' => '#^Parameter \#2 \$needle of function strpos expects string, string\|false given\.$#',
+			        'count' => 1,
+			        'path' => __DIR__ . '/library/Zend/Amf/Server.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$image of function imagecolorallocate expects GdImage, GdImage\|false given\.$#',
+                    'count' => 3,
+                    'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$image of function imagefilledrectangle expects GdImage, GdImage\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#4 \$color of function imagefilledpolygon expects int, int\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#4 \$color of function imagepolygon expects int, int\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#6 \$color of function imagefilledrectangle expects int, int\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#6 \$color of function imagettftext expects int, int\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$stream of function stream_set_blocking expects resource, resource\|false given\.$#',
+                    'count' => 5,
+                    'path' => __DIR__ . '/library/Zend/Cloud/Infrastructure/Adapter/AbstractAdapter.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$stream of function stream_get_contents expects resource, resource\|false given\.$#',
+                    'count' => 4,
+                    'path' => __DIR__ . '/library/Zend/Cloud/Infrastructure/Adapter/AbstractAdapter.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$array of function array_diff expects array, array\<int, string\>\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Cloud/StorageService/Adapter/FileSystem.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$filename of function file_put_contents expects string, string\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Cloud/StorageService/Adapter/WindowsAzure.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$datetime of function strtotime expects string, int given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Gdata/App/Util.php',
                 ),
             )
         )
