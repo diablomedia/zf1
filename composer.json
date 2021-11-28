@@ -27,7 +27,7 @@
         "diablomedia/zendframework1-controller-action-helper-json": "^1.0.4",
         "diablomedia/zendframework1-crypt": "^1.0.4",
         "diablomedia/zendframework1-currency": "^1.0.4",
-        "diablomedia/zendframework1-date": "^1.0.4",
+        "diablomedia/zendframework1-date": "dev-php-81 as 1.0.4",
         "diablomedia/zendframework1-db": "^1.0.4",
         "diablomedia/zendframework1-dojo": "^1.0.4",
         "diablomedia/zendframework1-dom": "^1.0.4",
