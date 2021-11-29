@@ -20,7 +20,7 @@
         "diablomedia/zendframework1-cache": "^1.0.5",
         "diablomedia/zendframework1-captcha": "^1.0.5",
         "diablomedia/zendframework1-config": "dev-php-81 as 2.0.2",
-        "diablomedia/zendframework1-controller": "^1.0.5",
+        "diablomedia/zendframework1-controller": "dev-php-81 as 1.0.5",
         "diablomedia/zendframework1-controller-action-helper-ajaxcontext": "^1.0.4",
         "diablomedia/zendframework1-controller-action-helper-autocomplete": "^1.0.4",
         "diablomedia/zendframework1-controller-action-helper-contextswitch": "^1.0.5",
