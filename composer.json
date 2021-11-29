@@ -47,7 +47,7 @@
         "diablomedia/zendframework1-log-writer-db": "^1.0.4",
         "diablomedia/zendframework1-log-writer-firebug": "^1.0.4",
         "diablomedia/zendframework1-log-writer-mail": "^1.0.4",
-        "diablomedia/zendframework1-mail": "^1.0.4",
+        "diablomedia/zendframework1-mail": "dev-php-81 as 1.0.4",
         "diablomedia/zendframework1-mime": "^1.0.4",
         "diablomedia/zendframework1-navigation": "dev-php-81 as 1.0.4",
         "diablomedia/zendframework1-oauth": "^1.0.3",
