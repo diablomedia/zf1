@@ -91,6 +91,6 @@ class Zend_VersionTest extends PHPUnit\Framework\TestCase
             $this->markTestIncomplete('http://framework.zend.com/ may be down');
         }
 
-        $this->assertRegExp('/^[1-2](\.[0-9]+){2}/', $actual);
+        $this->assertMatchesRegularExpression('/^[1-2](\.[0-9]+){2}/', $actual);
     }
 }

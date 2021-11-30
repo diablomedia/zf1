@@ -54,8 +54,8 @@ class Zend_Service_StrikeIron_StrikeIronTest extends PHPUnit\Framework\TestCase
             $this->strikeIron->getService(array('class' => 'BadServiceNameHere'));
             $this->fail();
         } catch (Zend_Service_StrikeIron_Exception $e) {
-            $this->assertRegExp('/could not be loaded/i', $e->getMessage());
-            $this->assertRegExp('/not found/i', $e->getMessage());
+            $this->assertMatchesRegularExpression('/could not be loaded/i', $e->getMessage());
+            $this->assertMatchesRegularExpression('/not found/i', $e->getMessage());
         }
     }
 

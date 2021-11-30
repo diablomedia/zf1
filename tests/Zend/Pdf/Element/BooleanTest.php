@@ -46,7 +46,7 @@ class Zend_Pdf_Element_BooleanTest extends PHPUnit\Framework\TestCase
         try {
             $boolObj = new Zend_Pdf_Element_Boolean('some input');
         } catch (Zend_Pdf_Exception $e) {
-            $this->assertRegExp('/must be boolean/i', $e->getMessage());
+            $this->assertMatchesRegularExpression('/must be boolean/i', $e->getMessage());
             return;
         }
         $this->fail('Expected Zend_Pdf_Exception to be thrown');

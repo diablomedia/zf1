@@ -84,7 +84,7 @@ class Zend_Pdf_Element_ArrayTest extends PHPUnit\Framework\TestCase
         try {
             $arrayObj = new Zend_Pdf_Element_Array(346);
         } catch (Zend_Pdf_Exception $e) {
-            $this->assertRegExp('/must be an array/i', $e->getMessage());
+            $this->assertMatchesRegularExpression('/must be an array/i', $e->getMessage());
             return;
         }
         $this->fail('Expected Zend_Pdf_Exception to be thrown');
@@ -102,7 +102,7 @@ class Zend_Pdf_Element_ArrayTest extends PHPUnit\Framework\TestCase
             $srcArray[] = 24;
             $arrayObj = new Zend_Pdf_Element_Array($srcArray);
         } catch (Zend_Pdf_Exception $e) {
-            $this->assertRegExp('/must be Zend_Pdf_Element/i', $e->getMessage());
+            $this->assertMatchesRegularExpression('/must be Zend_Pdf_Element/i', $e->getMessage());
             return;
         }
         $this->fail('No exception thrown.');
@@ -150,7 +150,7 @@ class Zend_Pdf_Element_ArrayTest extends PHPUnit\Framework\TestCase
             $arrayObj = new ZPdfPDFArray();
             $arrayObj->add(100.426);
         } catch (Zend_Pdf_Exception $e) {
-            $this->assertRegExp('/must be Zend_Pdf_Element/i', $e->getMessage());
+            $this->assertMatchesRegularExpression('/must be Zend_Pdf_Element/i', $e->getMessage());
             return;
         }
         $this->fail('Expected Zend_Pdf_Exception to be thrown');

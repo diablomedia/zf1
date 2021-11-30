@@ -52,7 +52,7 @@ class Zend_Pdf_Element_ObjectTest extends PHPUnit\Framework\TestCase
         try {
             $obj2 = new Zend_Pdf_Element_Object($obj1, 1, 0, new Zend_Pdf_ElementFactory(1));
         } catch (Zend_Pdf_Exception $e) {
-            $this->assertRegExp('/must not be an instance of Zend_Pdf_Element_Object/i', $e->getMessage());
+            $this->assertMatchesRegularExpression('/must not be an instance of Zend_Pdf_Element_Object/i', $e->getMessage());
             return;
         }
         $this->fail('Expected Zend_Pdf_Exception to be thrown');
@@ -64,7 +64,7 @@ class Zend_Pdf_Element_ObjectTest extends PHPUnit\Framework\TestCase
             $intObj = new Zend_Pdf_Element_Numeric(100);
             $obj    = new Zend_Pdf_Element_Object($intObj, 1, -1, new Zend_Pdf_ElementFactory(1));
         } catch (Zend_Pdf_Exception $e) {
-            $this->assertRegExp('/non-negative integer/i', $e->getMessage());
+            $this->assertMatchesRegularExpression('/non-negative integer/i', $e->getMessage());
             return;
         }
         $this->fail('Expected Zend_Pdf_Exception to be thrown');
@@ -76,7 +76,7 @@ class Zend_Pdf_Element_ObjectTest extends PHPUnit\Framework\TestCase
             $intObj = new Zend_Pdf_Element_Numeric(100);
             $obj    = new Zend_Pdf_Element_Object($intObj, 1, 1.2, new Zend_Pdf_ElementFactory(1));
         } catch (Zend_Pdf_Exception $e) {
-            $this->assertRegExp('/non-negative integer/i', $e->getMessage());
+            $this->assertMatchesRegularExpression('/non-negative integer/i', $e->getMessage());
             return;
         }
         $this->fail('Expected Zend_Pdf_Exception to be thrown');
@@ -88,7 +88,7 @@ class Zend_Pdf_Element_ObjectTest extends PHPUnit\Framework\TestCase
             $intObj = new Zend_Pdf_Element_Numeric(100);
             $obj    = new Zend_Pdf_Element_Object($intObj, 0, 0, new Zend_Pdf_ElementFactory(1));
         } catch (Zend_Pdf_Exception $e) {
-            $this->assertRegExp('/positive integer/i', $e->getMessage());
+            $this->assertMatchesRegularExpression('/positive integer/i', $e->getMessage());
             return;
         }
         $this->fail('Expected Zend_Pdf_Exception to be thrown');
@@ -100,7 +100,7 @@ class Zend_Pdf_Element_ObjectTest extends PHPUnit\Framework\TestCase
             $intObj = new Zend_Pdf_Element_Numeric(100);
             $obj    = new Zend_Pdf_Element_Object($intObj, -1, 0, new Zend_Pdf_ElementFactory(1));
         } catch (Zend_Pdf_Exception $e) {
-            $this->assertRegExp('/positive integer/i', $e->getMessage());
+            $this->assertMatchesRegularExpression('/positive integer/i', $e->getMessage());
             return;
         }
         $this->fail('Expected Zend_Pdf_Exception to be thrown');
@@ -112,7 +112,7 @@ class Zend_Pdf_Element_ObjectTest extends PHPUnit\Framework\TestCase
             $intObj = new Zend_Pdf_Element_Numeric(100);
             $obj    = new Zend_Pdf_Element_Object($intObj, 1.2, 0, new Zend_Pdf_ElementFactory(1));
         } catch (Zend_Pdf_Exception $e) {
-            $this->assertRegExp('/positive integer/i', $e->getMessage());
+            $this->assertMatchesRegularExpression('/positive integer/i', $e->getMessage());
             return;
         }
         $this->fail('Expected Zend_Pdf_Exception to be thrown');

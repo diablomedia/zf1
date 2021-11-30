@@ -52,7 +52,7 @@ class Zend_DebugTest extends PHPUnit\Framework\TestCase
         $result = Zend_Debug::dump($data, null, false);
         $result = str_replace(array(PHP_EOL, "\n"), '_', $result);
         $expected = "__.*string\(6\) \"string\"__";
-        $this->assertRegExp('/^' . $expected . '$/', $result);
+        $this->assertMatchesRegularExpression('/^' . $expected . '$/', $result);
     }
 
     public function testDebugCgi()
@@ -61,7 +61,7 @@ class Zend_DebugTest extends PHPUnit\Framework\TestCase
         $data = 'string';
         $result = Zend_Debug::dump($data, null, false);
 
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/^<pre>.*string\(6\) ("|&quot;)string("|&quot;)' . "\n" . '<\/pre>$/s',
             $result
         );
@@ -88,7 +88,7 @@ class Zend_DebugTest extends PHPUnit\Framework\TestCase
         $result = Zend_Debug::dump($data, $label, false);
         $result = str_replace(array(PHP_EOL, "\n"), '_', $result);
         $expected = "_{$label} .*_string\(6\) \"string\"__";
-        $this->assertRegExp('/^' . $expected . '$/', $result);
+        $this->assertMatchesRegularExpression('/^' . $expected . '$/', $result);
     }
 
     /**

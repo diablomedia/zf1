@@ -98,7 +98,7 @@ class Zend_Service_StrikeIron_BaseTest extends PHPUnit\Framework\TestCase
                                                            'headers' => $invalidHeaders));
             $this->fail();
         } catch (Zend_Service_StrikeIron_Exception $e) {
-            $this->assertRegExp('/instance of soapheader/i', $e->getMessage());
+            $this->assertMatchesRegularExpression('/instance of soapheader/i', $e->getMessage());
         }
     }
 
@@ -110,7 +110,7 @@ class Zend_Service_StrikeIron_BaseTest extends PHPUnit\Framework\TestCase
                                                            'headers' => $invalidHeaders));
             $this->fail();
         } catch (Zend_Service_StrikeIron_Exception $e) {
-            $this->assertRegExp('/instance of soapheader/i', $e->getMessage());
+            $this->assertMatchesRegularExpression('/instance of soapheader/i', $e->getMessage());
         }
     }
 
@@ -251,7 +251,7 @@ class Zend_Service_StrikeIron_BaseTest extends PHPUnit\Framework\TestCase
             $this->base->getSubscriptionInfo(true, 'ReturnNoOutputHeaders');
             $this->fail();
         } catch (Zend_Service_StrikeIron_Exception $e) {
-            $this->assertRegExp('/no subscriptioninfo header/i', $e->getMessage());
+            $this->assertMatchesRegularExpression('/no subscriptioninfo header/i', $e->getMessage());
         }
     }
 }

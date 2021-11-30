@@ -1169,7 +1169,7 @@ class Zend_Amf_ServerTest extends PHPUnit\Framework\TestCase
         $employee = EmployeeService::$employee;
         $this->assertNotNull($employee);
         $this->assertNotEquals(1, $employee->id);
-        $this->assertRegExp('/[a-z0-9]{3,}/', $employee->id);
+        $this->assertMatchesRegularExpression('/[a-z0-9]{3,}/', $employee->id);
     }
 }
 

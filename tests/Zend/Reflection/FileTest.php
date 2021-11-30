@@ -103,7 +103,7 @@ class Zend_Reflection_FileTest extends PHPUnit\Framework\TestCase
         $reflectionFile = new Zend_Reflection_File('Zend/Version.php');
 
         // Make sure this test works on all platforms
-        $this->assertRegExp('#^.*Zend.Version.php$#i', $reflectionFile->getFileName());
+        $this->assertMatchesRegularExpression('#^.*Zend.Version.php$#i', $reflectionFile->getFileName());
     }
 
     public function testFileGetLineNumbersWorks()

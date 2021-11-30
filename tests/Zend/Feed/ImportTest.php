@@ -313,7 +313,7 @@ class Zend_Feed_ImportTest extends PHPUnit\Framework\TestCase
             $this->fail('Expected Zend_Feed_Exception not thrown');
         } catch (Zend_Feed_Exception $e) {
             $this->assertTrue($e instanceof Zend_Feed_Exception);
-            $this->assertRegExp('/(XDebug is running|Empty string)/', $e->getMessage());
+            $this->assertMatchesRegularExpression('/(XDebug is running|Empty string)/', $e->getMessage());
         }
     }
 

@@ -57,14 +57,22 @@ if (!empty($missingFiles)) {
     exit(1);
 }
 
-$configuration = \PHPUnit\Util\Configuration::getInstance($phpUnitXml);
-$testSuites = $configuration->getTestSuiteNames();
+$loader = new \PHPUnit\TextUI\XmlConfiguration\Loader();
+$configuration = $loader->load($phpUnitXml);
+$suites = $configuration->testSuite();
+$testSuites = [];
+
+foreach ($suites as $suite) {
+    $testSuites[] = $suite->name();
+}
 
 $result = 0;
 $failedSuites = [];
 
 foreach ($testSuites as $testSuite) {
-    echo "Executing Suite {$testSuite}" . PHP_EOL;
+    echo '-------------------------------------------------------------' . PHP_EOL;
+    echo "\033[33mExecuting Suite {$testSuite}\033[0m" . PHP_EOL;
+    echo '-------------------------------------------------------------' . PHP_EOL . PHP_EOL;
     if (isset($argv[1]) && $argv[1] === '--coverage') {
         system('php -dpcov.directory=../library ' . $PHPUNIT . ' --coverage-php=../build/coverage/' . escapeshellarg($testSuite) . '.cov --testsuite=' . escapeshellarg($testSuite), $c_result);
     } else {
@@ -76,9 +84,12 @@ foreach ($testSuites as $testSuite) {
         echo "Result of $testSuite is $c_result" . PHP_EOL;
         $result = $c_result;
         $failedSuites[] = $testSuite;
+        $color = "\033[31m";
+    } else {
+        $color = "\033[32m";
     }
 
-    echo "Finished executing {$testSuite} Suite" . PHP_EOL . PHP_EOL;
+    echo $color . "Finished executing {$testSuite} Suite\033[0m" . PHP_EOL . PHP_EOL;
 }
 
 echo PHP_EOL . "All done. Result: $result" . PHP_EOL;

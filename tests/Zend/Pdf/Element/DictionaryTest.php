@@ -59,7 +59,7 @@ class Zend_Pdf_Element_DictionaryTest extends PHPUnit\Framework\TestCase
         try {
             $arrayObj = new Zend_Pdf_Element_Dictionary(346);
         } catch (Zend_Pdf_Exception $e) {
-            $this->assertRegExp('/must be an array/i', $e->getMessage());
+            $this->assertMatchesRegularExpression('/must be an array/i', $e->getMessage());
             return;
         }
         $this->fail('Expected Zend_Pdf_Exception to be thrown');
@@ -77,7 +77,7 @@ class Zend_Pdf_Element_DictionaryTest extends PHPUnit\Framework\TestCase
             $srcArray['bad value'] = 24;
             $dictionaryObj = new Zend_Pdf_Element_Dictionary($srcArray);
         } catch (Zend_Pdf_Exception $e) {
-            $this->assertRegExp('/must be Zend_Pdf_Element/i', $e->getMessage());
+            $this->assertMatchesRegularExpression('/must be Zend_Pdf_Element/i', $e->getMessage());
             return;
         }
         $this->fail('Expected Zend_Pdf_Exception to be thrown');
@@ -95,7 +95,7 @@ class Zend_Pdf_Element_DictionaryTest extends PHPUnit\Framework\TestCase
             $srcArray[5] = new Zend_Pdf_Element_String('bad name');
             $dictionaryObj = new Zend_Pdf_Element_Dictionary($srcArray);
         } catch (Zend_Pdf_Exception $e) {
-            $this->assertRegExp('/keys must be strings/i', $e->getMessage());
+            $this->assertMatchesRegularExpression('/keys must be strings/i', $e->getMessage());
             return;
         }
         $this->fail('Expected Zend_Pdf_Exception to be thrown');
