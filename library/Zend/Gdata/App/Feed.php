@@ -120,6 +120,7 @@ class Zend_Gdata_App_Feed extends Zend_Gdata_App_FeedSourceParent
      *
      * @return integer Entry count.
      */
+    #[\ReturnTypeWillChange]
     public function count()
     {
         return count($this->_entry);
@@ -130,6 +131,7 @@ class Zend_Gdata_App_Feed extends Zend_Gdata_App_FeedSourceParent
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function rewind()
     {
         $this->_entryIndex = 0;
@@ -140,6 +142,7 @@ class Zend_Gdata_App_Feed extends Zend_Gdata_App_FeedSourceParent
      *
      * @return mixed The current row, or null if no rows.
      */
+    #[\ReturnTypeWillChange]
     public function current()
     {
         return $this->_entry[$this->_entryIndex];
@@ -150,6 +153,7 @@ class Zend_Gdata_App_Feed extends Zend_Gdata_App_FeedSourceParent
      *
      * @return mixed The current row number (starts at 0), or NULL if no rows
      */
+    #[\ReturnTypeWillChange]
     public function key()
     {
         return $this->_entryIndex;
@@ -160,6 +164,7 @@ class Zend_Gdata_App_Feed extends Zend_Gdata_App_FeedSourceParent
      *
      * @return mixed The next row, or null if no more rows.
      */
+    #[\ReturnTypeWillChange]
     public function next()
     {
         ++$this->_entryIndex;
@@ -170,6 +175,7 @@ class Zend_Gdata_App_Feed extends Zend_Gdata_App_FeedSourceParent
      *
      * @return boolean Whether the iteration is valid
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return 0 <= $this->_entryIndex && $this->_entryIndex < $this->count();
