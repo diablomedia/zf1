@@ -31,7 +31,7 @@
         "diablomedia/zendframework1-db": "dev-php-81 as 1.0.4",
         "diablomedia/zendframework1-dojo": "dev-php-81 as 1.0.4",
         "diablomedia/zendframework1-dom": "dev-php-81 as 1.0.4",
-        "diablomedia/zendframework1-eventmanager": "^1.0.4",
+        "diablomedia/zendframework1-eventmanager": "dev-php-81 as 1.0.4",
         "diablomedia/zendframework1-exception": "dev-master as 1.0.4",
         "diablomedia/zendframework1-file": "dev-php-81 as 1.0.4",
         "diablomedia/zendframework1-filter": "dev-php-81 as 1.0.4",
