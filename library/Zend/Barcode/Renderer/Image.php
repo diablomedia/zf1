@@ -267,8 +267,8 @@ class Zend_Barcode_Renderer_Image extends Zend_Barcode_Renderer_RendererAbstract
             $this->_resource,
             (int) $this->_leftOffset,
             (int) $this->_topOffset,
-            (int) $this->_leftOffset + $barcodeWidth - 1,
-            (int) $this->_topOffset + $barcodeHeight - 1,
+            (int) $this->_leftOffset + (int) $barcodeWidth - 1,
+            (int) $this->_topOffset + (int) $barcodeHeight - 1,
             (int) $this->_imageBackgroundColor
         );
     }
