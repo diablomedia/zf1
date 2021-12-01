@@ -756,32 +756,12 @@ parameters:
 			path: library/Zend/Barcode/Renderer/Image.php
 
 		-
-			message: "#^Parameter \\#2 \\$x1 of function imagefilledrectangle expects int, float\\|int given\\.$#"
-			count: 1
-			path: library/Zend/Barcode/Renderer/Image.php
-
-		-
-			message: "#^Parameter \\#3 \\$y1 of function imagefilledrectangle expects int, float\\|int given\\.$#"
-			count: 1
-			path: library/Zend/Barcode/Renderer/Image.php
-
-		-
 			message: "#^Parameter \\#4 \\$x of function imagettftext expects int, float given\\.$#"
 			count: 1
 			path: library/Zend/Barcode/Renderer/Image.php
 
 		-
-			message: "#^Parameter \\#4 \\$x2 of function imagefilledrectangle expects int, float\\|int given\\.$#"
-			count: 1
-			path: library/Zend/Barcode/Renderer/Image.php
-
-		-
 			message: "#^Parameter \\#5 \\$y of function imagettftext expects int, float given\\.$#"
-			count: 1
-			path: library/Zend/Barcode/Renderer/Image.php
-
-		-
-			message: "#^Parameter \\#5 \\$y2 of function imagefilledrectangle expects int, float\\|int given\\.$#"
 			count: 1
 			path: library/Zend/Barcode/Renderer/Image.php
 
