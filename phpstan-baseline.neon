@@ -1861,11 +1861,6 @@ parameters:
 			path: library/Zend/Feed/Builder/Header.php
 
 		-
-			message: "#^Cannot access property \\$actualEncoding on DOMDocument\\|null\\.$#"
-			count: 1
-			path: library/Zend/Feed/Element.php
-
-		-
 			message: "#^Cannot access property \\$childNodes on DOMDocument\\|DOMElement\\|string\\.$#"
 			count: 4
 			path: library/Zend/Feed/Element.php
@@ -1877,7 +1872,7 @@ parameters:
 
 		-
 			message: "#^Cannot access property \\$ownerDocument on DOMDocument\\|DOMElement\\|string\\.$#"
-			count: 8
+			count: 7
 			path: library/Zend/Feed/Element.php
 
 		-
@@ -1977,11 +1972,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$node of method DOMDocument\\:\\:importNode\\(\\) expects DOMNode, DOMDocument\\|DOMElement\\|string given\\.$#"
-			count: 1
-			path: library/Zend/Feed/Element.php
-
-		-
-			message: "#^Parameter \\#2 \\$encoding of class DOMDocument constructor expects string, string\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Feed/Element.php
 
@@ -10531,11 +10521,6 @@ parameters:
 			path: library/Zend/Mobile/Push/Test/ApnsProxy.php
 
 		-
-			message: "#^Parameter \\#1 \\$string of function substr expects string, string\\|null given\\.$#"
-			count: 1
-			path: library/Zend/Mobile/Push/Test/ApnsProxy.php
-
-		-
 			message: "#^Access to an undefined property RecursiveIterator\\:\\:\\$next\\.$#"
 			count: 1
 			path: library/Zend/Pdf.php
@@ -18117,11 +18102,6 @@ parameters:
 
 		-
 			message: "#^Parameter \\#1 \\$cookiejar of method Zend_Http_Client\\:\\:setCookieJar\\(\\) expects bool\\|Zend_Http_CookieJar, array\\|Zend_Http_CookieJar given\\.$#"
-			count: 1
-			path: library/Zend/Service/Twitter.php
-
-		-
-			message: "#^Parameter \\#1 \\$int of method Zend_Service_Twitter\\:\\:validInteger\\(\\) expects int\\|string, int\\|null given\\.$#"
 			count: 1
 			path: library/Zend/Service/Twitter.php
 

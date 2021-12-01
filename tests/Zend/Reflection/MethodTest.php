@@ -72,7 +72,7 @@ class Zend_Reflection_MethodTest extends PHPUnit\Framework\TestCase
         $reflectionMethod = new Zend_Reflection_Method('Zend_Reflection_TestSampleClass5', 'doSomething');
 
         $this->assertEquals($reflectionMethod->getStartLine(), 97);
-        $this->assertEquals($reflectionMethod->getStartLine(true), 80);
+        $this->assertEquals($reflectionMethod->getStartLine(true), 81);
     }
 
     public function testGetBodyReturnsCorrectBody()

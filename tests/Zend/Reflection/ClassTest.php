@@ -135,7 +135,7 @@ EOS;
         $reflectionClass = new Zend_Reflection_Class('Zend_Reflection_TestSampleClass5');
 
         $this->assertEquals(78, $reflectionClass->getStartLine());
-        $this->assertEquals(66, $reflectionClass->getStartLine(true));
+        $this->assertEquals(67, $reflectionClass->getStartLine(true));
     }
 
 

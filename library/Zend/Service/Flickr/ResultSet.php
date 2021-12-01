@@ -117,6 +117,7 @@ class Zend_Service_Flickr_ResultSet implements SeekableIterator
      *
      * @return Zend_Service_Flickr_Result
      */
+    #[\ReturnTypeWillChange]
     public function current()
     {
         return new Zend_Service_Flickr_Result($this->_results->item($this->_currentIndex), $this->_flickr);
@@ -127,6 +128,7 @@ class Zend_Service_Flickr_ResultSet implements SeekableIterator
      *
      * @return int
      */
+    #[\ReturnTypeWillChange]
     public function key()
     {
         return $this->_currentIndex;
@@ -137,6 +139,7 @@ class Zend_Service_Flickr_ResultSet implements SeekableIterator
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function next()
     {
         $this->_currentIndex += 1;
@@ -147,6 +150,7 @@ class Zend_Service_Flickr_ResultSet implements SeekableIterator
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function rewind()
     {
         $this->_currentIndex = 0;
@@ -159,6 +163,7 @@ class Zend_Service_Flickr_ResultSet implements SeekableIterator
      * @throws OutOfBoundsException
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function seek($index)
     {
         $indexInt = (int) $index;
@@ -174,6 +179,7 @@ class Zend_Service_Flickr_ResultSet implements SeekableIterator
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return null !== $this->_results && $this->_currentIndex < $this->_results->length;

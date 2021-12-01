@@ -80,7 +80,7 @@ class Zend_Mobile_Push_Test_ApnsProxy extends Zend_Mobile_Push_Apns
      * @return string
      */
     protected function _read($length) {
-        $ret = substr($this->_readResponse, 0, $length);
+        $ret = substr($this->_readResponse ?? '', 0, $length);
         $this->_readResponse = null;
         return $ret;
     }

@@ -1138,14 +1138,13 @@ class Zend_Service_Twitter
     /**
      * Protected function to validate that the integer is valid or return a 0
      *
-     * @param  int|string $int
-     * @throws Zend_Http_Client_Exception if HTTP request fails or times out
+     * @param  int|string|null $int
      * @return integer|string
      */
     protected function validInteger($int)
     {
-        if (preg_match("/(\d+)/", $int)) {
-            return $int;
+        if (preg_match("/^\d+$/", $int ?? '')) {
+            return $int ?? '';
         }
         return 0;
     }

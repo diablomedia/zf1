@@ -379,11 +379,6 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'path' => __DIR__ . '/library/Zend/Feed/Pubsubhubbub/CallbackAbstract.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#1 \$string of function trim expects string, string\|null given\.$#',
-                    'count' => 1,
-                    'path' => __DIR__ . '/library/Zend/Gdata/App/Base.php',
-                ),
-                array(
                     'message' => '#^Parameter \#1 \$string of function urlencode expects string, int given\.$#',
                     'count' => 2,
                     'path' => __DIR__ . '/library/Zend/Gdata/AuthSub.php',

@@ -218,6 +218,7 @@ abstract class Zend_Feed_Reader_FeedAbstract implements Zend_Feed_Reader_FeedInt
      *
      * @return int
      */
+    #[\ReturnTypeWillChange]
     public function key()
     {
         return $this->_entriesKey;
@@ -227,6 +228,7 @@ abstract class Zend_Feed_Reader_FeedAbstract implements Zend_Feed_Reader_FeedInt
      * Move the feed pointer forward
      *
      */
+    #[\ReturnTypeWillChange]
     public function next()
     {
         ++$this->_entriesKey;
@@ -236,6 +238,7 @@ abstract class Zend_Feed_Reader_FeedAbstract implements Zend_Feed_Reader_FeedInt
      * Reset the pointer in the feed object
      *
      */
+    #[\ReturnTypeWillChange]
     public function rewind()
     {
         $this->_entriesKey = 0;
@@ -246,6 +249,7 @@ abstract class Zend_Feed_Reader_FeedAbstract implements Zend_Feed_Reader_FeedInt
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return 0 <= $this->_entriesKey && $this->_entriesKey < $this->count();

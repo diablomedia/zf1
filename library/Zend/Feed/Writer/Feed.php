@@ -162,6 +162,7 @@ implements Iterator, Countable
      *
      * @return int
      */
+    #[\ReturnTypeWillChange]
     public function count()
     {
         return count($this->_entries);
@@ -172,6 +173,7 @@ implements Iterator, Countable
      *
      * @return Zend_Feed_Writer_Entry
      */
+    #[\ReturnTypeWillChange]
     public function current()
     {
         return $this->_entries[$this->key()];
@@ -182,6 +184,7 @@ implements Iterator, Countable
      *
      * @return int
      */
+    #[\ReturnTypeWillChange]
     public function key()
     {
         return $this->_entriesKey;
@@ -192,6 +195,7 @@ implements Iterator, Countable
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function next()
     {
         ++$this->_entriesKey;
@@ -202,6 +206,7 @@ implements Iterator, Countable
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function rewind()
     {
         $this->_entriesKey = 0;
@@ -212,6 +217,7 @@ implements Iterator, Countable
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return 0 <= $this->_entriesKey && $this->_entriesKey < $this->count();

@@ -225,6 +225,7 @@ class Zend_Gdata_App_Feed extends Zend_Gdata_App_FeedSourceParent
      * @param Zend_Gdata_App_Entry $value The value to set
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($key, $value)
     {
         $this->_entry[$key] = $value;
@@ -235,6 +236,7 @@ class Zend_Gdata_App_Feed extends Zend_Gdata_App_FeedSourceParent
      *
      * @param int $key The index to get
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($key)
     {
         if (array_key_exists($key, $this->_entry)) {
@@ -247,6 +249,7 @@ class Zend_Gdata_App_Feed extends Zend_Gdata_App_FeedSourceParent
      *
      * @param int $key The index to set
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($key)
     {
         if (array_key_exists($key, $this->_entry)) {
@@ -260,6 +263,7 @@ class Zend_Gdata_App_Feed extends Zend_Gdata_App_FeedSourceParent
      * @param int $key The index to check for existence
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($key)
     {
         return (array_key_exists($key, $this->_entry));

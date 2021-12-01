@@ -135,7 +135,7 @@ class Zend_Feed_Element implements ArrayAccess
     {
         // Return a complete document including XML prologue.
         $doc = new DOMDocument($this->_element->ownerDocument->version,
-                               $this->_element->ownerDocument->actualEncoding);
+                               $this->_element->ownerDocument->actualEncoding ?? '');
         $doc->appendChild($doc->importNode($this->_element, true));
         return $doc->saveXML();
     }
@@ -365,6 +365,7 @@ class Zend_Feed_Element implements ArrayAccess
      * @param  string $offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         if (strpos($offset, ':') !== false) {
@@ -382,6 +383,7 @@ class Zend_Feed_Element implements ArrayAccess
      * @param  string $offset
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         if (strpos($offset, ':') !== false) {
@@ -400,6 +402,7 @@ class Zend_Feed_Element implements ArrayAccess
      * @param  string $value
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         $this->ensureAppended();
@@ -420,6 +423,7 @@ class Zend_Feed_Element implements ArrayAccess
      * @param  string $offset
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         if (strpos($offset, ':') !== false) {

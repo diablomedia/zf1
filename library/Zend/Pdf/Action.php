@@ -291,6 +291,7 @@ abstract class Zend_Pdf_Action extends Zend_Pdf_Target implements RecursiveItera
      *
      * @return Zend_Pdf_Action
      */
+    #[\ReturnTypeWillChange]
     public function current()
     {
         return current($this->next);
@@ -301,6 +302,7 @@ abstract class Zend_Pdf_Action extends Zend_Pdf_Target implements RecursiveItera
      *
      * @return integer
      */
+    #[\ReturnTypeWillChange]
     public function key()
     {
         return key($this->next);
@@ -309,6 +311,7 @@ abstract class Zend_Pdf_Action extends Zend_Pdf_Target implements RecursiveItera
     /**
      * Go to next child
      */
+    #[\ReturnTypeWillChange]
     public function next()
     {
         return next($this->next);
@@ -317,6 +320,7 @@ abstract class Zend_Pdf_Action extends Zend_Pdf_Target implements RecursiveItera
     /**
      * Rewind children
      */
+    #[\ReturnTypeWillChange]
     public function rewind()
     {
         return reset($this->next);
@@ -327,6 +331,7 @@ abstract class Zend_Pdf_Action extends Zend_Pdf_Target implements RecursiveItera
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return current($this->next) !== false;
@@ -337,6 +342,7 @@ abstract class Zend_Pdf_Action extends Zend_Pdf_Target implements RecursiveItera
      *
      * @return Zend_Pdf_Action|null
      */
+    #[\ReturnTypeWillChange]
     public function getChildren()
     {
         return current($this->next);
@@ -347,6 +353,7 @@ abstract class Zend_Pdf_Action extends Zend_Pdf_Target implements RecursiveItera
      *
      * @return bool  whether container has any pages
      */
+    #[\ReturnTypeWillChange]
     public function hasChildren()
     {
         return count($this->next) > 0;
@@ -362,6 +369,7 @@ abstract class Zend_Pdf_Action extends Zend_Pdf_Target implements RecursiveItera
      *
      * @return int
      */
+    #[\ReturnTypeWillChange]
     public function count()
     {
         return count($this->childOutlines);
