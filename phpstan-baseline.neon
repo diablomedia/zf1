@@ -9926,11 +9926,6 @@ parameters:
 			path: library/Zend/Gdata/Spreadsheets/WorksheetEntry.php
 
 		-
-			message: "#^Parameter \\#4 \\$flags of function preg_match expects int, null given\\.$#"
-			count: 3
-			path: library/Zend/Markup/Parser/Bbcode.php
-
-		-
 			message: "#^Return type \\(Zend_Markup_TokenList\\) of method Zend_Markup_Parser_Bbcode\\:\\:parse\\(\\) should be compatible with return type \\(array\\) of method Zend_Markup_Parser_ParserInterface\\:\\:parse\\(\\)$#"
 			count: 1
 			path: library/Zend/Markup/Parser/Bbcode.php
