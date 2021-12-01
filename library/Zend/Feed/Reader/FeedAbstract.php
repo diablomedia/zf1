@@ -126,6 +126,7 @@ abstract class Zend_Feed_Reader_FeedAbstract implements Zend_Feed_Reader_FeedInt
      *
      * @return int
      */
+    #[\ReturnTypeWillChange]
     public function count()
     {
         return count($this->_entries);
@@ -136,6 +137,7 @@ abstract class Zend_Feed_Reader_FeedAbstract implements Zend_Feed_Reader_FeedInt
      *
      * @return Zend_Feed_Reader_EntryInterface
      */
+    #[\ReturnTypeWillChange]
     public function current()
     {
         if (substr($this->getType(), 0, 3) == 'rss') {
