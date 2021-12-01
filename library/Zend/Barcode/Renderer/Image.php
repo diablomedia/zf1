@@ -265,10 +265,10 @@ class Zend_Barcode_Renderer_Image extends Zend_Barcode_Renderer_RendererAbstract
         $this->_adjustPosition(imagesy($this->_resource), imagesx($this->_resource));
         imagefilledrectangle(
             $this->_resource,
-            $this->_leftOffset,
-            $this->_topOffset,
-            $this->_leftOffset + $barcodeWidth - 1,
-            $this->_topOffset + $barcodeHeight - 1,
+            (int) $this->_leftOffset,
+            (int) $this->_topOffset,
+            (int) $this->_leftOffset + $barcodeWidth - 1,
+            (int) $this->_topOffset + $barcodeHeight - 1,
             (int) $this->_imageBackgroundColor
         );
     }
