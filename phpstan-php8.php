@@ -65,11 +65,21 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                 ),
                 array(
                     'message' => '#Parameter \#1 \$image of function imagefilledpolygon expects GdImage, resource given\.#',
-                    'count' => 1,
+                    'count' => 2,
                     'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
                 ),
                 array(
                     'message' => '#Parameter \#1 \$image of function imagepolygon expects GdImage, resource given\.#',
+                    'count' => 2,
+                    'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
+                ),
+                array(
+                    'message' => '#Parameter \#3 \$num_points_or_color of function imagefilledpolygon expects int, int\|false given\.#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
+                ),
+                array(
+                    'message' => '#Parameter \#3 \$num_points_or_color of function imagepolygon expects int, int\|false given\.#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
                 ),

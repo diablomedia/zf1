@@ -924,6 +924,26 @@ if (version_compare(PHP_VERSION, '8.0', '<')) {
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Search/Lucene/Document/OpenXml.php',
                 ),
+                array(
+                    'message' => '#Function imagefilledpolygon invoked with 3 parameters, 4 required\.#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
+                ),
+                array(
+                    'message' => '#Parameter \#3 \$num_points of function imagefilledpolygon expects int, int\|false given\.#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
+                ),
+                array(
+                    'message' => '#Function imagepolygon invoked with 3 parameters, 4 required\.#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
+                ),
+                array(
+                    'message' => '#Parameter \#3 \$num_points of function imagepolygon expects int, int\|false given\.#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
+                ),
             )
         )
     );
