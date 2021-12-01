@@ -120,6 +120,7 @@ implements ArrayAccess
     /**
      * @see SPL ArrayAccess::offsetSet
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value) {
         if (! $value instanceof Custom_Message) {
             $msg = '$value must be a child or an instance of Custom_Messag';
@@ -137,6 +138,7 @@ implements ArrayAccess
     /**
      * @see SPL ArrayAccess::offsetGet
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset) {
         return $this->_data[$offset];
     }
@@ -144,6 +146,7 @@ implements ArrayAccess
     /**
      * @see SPL ArrayAccess::offsetUnset
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset) {
         if (! $this->_connected) {
             $msg = 'Cannot delete message after serialization';
@@ -161,6 +164,7 @@ implements ArrayAccess
     /**
      * @see SPL ArrayAccess::offsetExists
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset) {
         return isSet($this->_data[$offset]);
     }

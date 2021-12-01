@@ -34,6 +34,7 @@ class Zend_Reflection_TestSampleClass2 implements IteratorAggregate
         return $this->_prop2;
     }
 
+    #[\ReturnTypeWillChange]
     public function getIterator()
     {
         return array();

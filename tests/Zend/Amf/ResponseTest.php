@@ -45,8 +45,8 @@ class Zend_Amf_ResponseTest extends PHPUnit\Framework\TestCase
     public $responseURI = "/2/onResult";
 
     /**
-     * Zend_Amf_Request object
-     * @var Zend_Amf_Request
+     * Zend_Amf_Response object
+     * @var Zend_Amf_Response
      */
     protected $_response;
 

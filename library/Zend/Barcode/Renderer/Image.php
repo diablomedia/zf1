@@ -240,6 +240,9 @@ class Zend_Barcode_Renderer_Image extends Zend_Barcode_Renderer_RendererAbstract
                 $height = $this->_userHeight;
             }
 
+            $width = (int) $width;
+            $height = (int) $height;
+
             $foreColor       = $this->_barcode->getForeColor();
             $backgroundColor = $this->_barcode->getBackgroundColor();
             $this->_resource = imagecreatetruecolor($width, $height);
