@@ -156,7 +156,7 @@ class Zend_Amf_Adobe_Introspector
         foreach ($refclass->getMethods() as $method) {
             if (!$method->isPublic()
                 || $method->isConstructor()
-                || ('__' == substr($method->name, 0, 2))
+                || ('__' == substr($method->name ?? '', 0, 2))
             ) {
                 continue;
             }
