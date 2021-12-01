@@ -459,7 +459,7 @@ abstract class Zend_XmlRpc_Value
         if ($type === null && $value === false) {
             $namespaces = array('ex' => 'http://ws.apache.org/xmlrpc/namespaces/extensions');
             foreach ($namespaces as $namespaceName => $namespaceUri) {
-                $namespaceXml = $xml->children($namespaceUri);
+                $namespaceXml = (array) $xml->children($namespaceUri);
                 $type = key($namespaceXml);
                 $value = current($namespaceXml);
                 next($namespaceXml);
