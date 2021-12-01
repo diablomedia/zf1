@@ -218,14 +218,14 @@ class Zend_Tool_Project_ProfileTest extends PHPUnit\Framework\TestCase
         $publicIndexFile = $this->_standardProfileFromData->search('publicIndexFile');
         $publicIndexFile->getContext()->delete();
 
-        $this->assertFileDoesNotExist(($this->_projectDirectory . 'public/index.php');
+        $this->assertFileDoesNotExist($this->_projectDirectory . 'public/index.php');
 
         $appConfigFile = $this->_standardProfileFromData->search('applicationConfigFile');
         $appConfigFile->getContext()->delete();
         $configsDirectory = $this->_standardProfileFromData->search('configsDirectory');
         $configsDirectory->getContext()->delete();
 
-        $this->assertFileDoesNotExist(($this->_projectDirectory . 'application/configs');
+        $this->assertFileDoesNotExist($this->_projectDirectory . 'application/configs');
     }
 
     /**
