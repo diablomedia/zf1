@@ -11,3 +11,4 @@ bin/phpstan.phar
 bin/php-cs-fixer
 tests/.phpunit.result.cache
 .php_cs.cache
+.php-cs-fixer.cache
