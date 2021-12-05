@@ -894,11 +894,6 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'path' => __DIR__ . '/library/Zend/Serializer/Adapter/PythonPickle.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#2 \$count of function array_fill expects int<0, max>, int given\.$#',
-                    'count' => 6,
-                    'path' => __DIR__ . '/library/Zend/Pdf/Filter/Compression.php',
-                ),
-                array(
                     'message' => '#^Parameter \#1 \$read of function stream_select expects array\<resource\>\|null, array\<int, resource\|false\> given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Queue/Stomp/Client/Connection.php',
@@ -955,11 +950,6 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                 ),
                 array(
                     'message' => '#^Parameter \#1 \$callback of function set_exception_handler expects \(callable\(Throwable\)\: void\)\|null, array{\'Zend_Service…\', \'phpstdex\'} given\.$#',
-                    'count' => 1,
-                    'path' => __DIR__ . '/library/Zend/Service/Console/Command.php',
-                ),
-                array(
-                    'message' => '#^Parameter \#2 \$args of function call_user_func_array expects array\<int, mixed\>, array\<int\|string, mixed\> given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Service/Console/Command.php',
                 ),
