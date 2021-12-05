@@ -38,15 +38,9 @@ jobs:
             fail-fast: false
             matrix:
                 operating-system: [ubuntu-latest]
-                php-versions: ['7.4']
+                php-versions: ['7.4', '8.0']
                 composer-args: ['', '--prefer-lowest']
                 include:
-                    - operating-system: ubuntu-latest
-                      php-versions: '8.0'
-                      composer-args: '--ignore-platform-reqs'
-                    - operating-system: ubuntu-latest
-                      php-versions: '8.0'
-                      composer-args: '--prefer-lowest --ignore-platform-reqs'
                     - operating-system: ubuntu-latest
                       php-versions: '8.1'
                       composer-args: '--ignore-platform-reqs'
