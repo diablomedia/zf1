@@ -924,6 +924,16 @@ if (version_compare(PHP_VERSION, '8.0', '<')) {
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
                 ),
+                array(
+			        'message' => '#^Parameter \#3 \$length of function fwrite expects int<0, max>, int given\.$#',
+			        'count' => 1,
+			        'path' => __DIR__ . '/library/Zend/Search/Lucene/Storage/File/Filesystem.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$function of function call_user_func_array expects callable\(\)\: mixed, array\{object, mixed\} given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/Console/Command.php',
+                ),
             )
         )
     );

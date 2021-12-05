@@ -104,9 +104,9 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'path' => __DIR__ . '/library/Zend/Amf/Parse/Resource/MysqliResult.php',
                 ),
                 array(
-			        'message' => '#^Parameter \#1 \$string of function ucwords expects string, string\|null given\.$#',
-			        'count' => 1,
-			        'path' => __DIR__ . '/library/Zend/Amf/Parse/TypeLoader.php',
+                    'message' => '#^Parameter \#1 \$string of function ucwords expects string, string\|null given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Amf/Parse/TypeLoader.php',
                 ),
                 array(
                     'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array{string, string} given\.$#',
@@ -534,14 +534,14 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'path' => __DIR__ . '/library/Zend/XmlRpc/Server/Fault.php',
                 ),
                 array(
-			        'message' => '#^Parameter \#1 \$string of function str_repeat expects string, int\|string given\.$#',
-			        'count' => 3,
-			        'path' => __DIR__ . '/library/Zend/CodeGenerator/Php/Property/DefaultValue.php',
+                    'message' => '#^Parameter \#1 \$string of function str_repeat expects string, int\|string given\.$#',
+                    'count' => 3,
+                    'path' => __DIR__ . '/library/Zend/CodeGenerator/Php/Property/DefaultValue.php',
                 ),
                 array(
-			        'message' => '#^Parameter \#1 \$string of function utf8_decode expects string, string\|false given\.$#',
-			        'count' => 5,
-			        'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Management/Client.php',
+                    'message' => '#^Parameter \#1 \$string of function utf8_decode expects string, string\|false given\.$#',
+                    'count' => 5,
+                    'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Management/Client.php',
                 ),
                 array(
                     'message' => '#^Parameter \#2 \$string of function unpack expects string, string\|false given\.$#',
@@ -589,9 +589,9 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'path' => __DIR__ . '/library/Zend/Service/Console/Command/ParameterSource/ConfigFile.php',
                 ),
                 array(
-			        'message' => '#^Parameter \#1 \$microseconds of function usleep expects int, float given\.$#',
-			        'count' => 1,
-			        'path' => __DIR__ . '/library/Zend/Service/Delicious.php',
+                    'message' => '#^Parameter \#1 \$microseconds of function usleep expects int, float given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/Delicious.php',
                 ),
                 array(
                     'message' => '#^Parameter \#1 \$object_or_class of function method_exists expects object\|string, Zend_Oauth_Consumer\|null given\.$#',
@@ -689,9 +689,9 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'path' => __DIR__ . '/library/Zend/Search/Lucene/Storage/File/Filesystem.php',
                 ),
                 array(
-			        'message' => '#^Parameter \#2 \$needle of function strpos expects string, string\|false given\.$#',
-			        'count' => 1,
-			        'path' => __DIR__ . '/library/Zend/Amf/Server.php',
+                    'message' => '#^Parameter \#2 \$needle of function strpos expects string, string\|false given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Amf/Server.php',
                 ),
                 array(
                     'message' => '#^Parameter \#1 \$image of function imagecolorallocate expects GdImage, GdImage\|false given\.$#',
@@ -779,7 +779,7 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'path' => __DIR__ . '/library/Zend/Measure/Number.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#2 \$count of function array_fill expects int<0, max>, float given\.$#',
+                    'message' => '#^Parameter \#2 \$count of function array_fill expects int, float given\.$#',
                     'count' => 2,
                     'path' => __DIR__ . '/library/Zend/Pdf/Filter/Compression.php',
                 ),
@@ -967,6 +967,21 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'message' => '#^Parameter \#2 \$baseDirectory of method Phar\:\:buildFromIterator\(\) expects string\|null, string\|false given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/CommandLine/Package.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#3 \$length of function fwrite expects int<0, max>\|null, int given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Storage/File/Filesystem.php',
+                ),
+                array(
+                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array\{object, mixed\} given\.$#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Service/Console/Command.php',
+                ),
+                array(
+                    'message' => '#Parameter \#3 \$private_key of function openssl_sign expects array\|OpenSSLAsymmetricKey\|OpenSSLCertificate\|string, resource given\.#',
+                    'count' => 1,
+                    'path' => __DIR__ . '/library/Zend/Gdata/HttpClient.php',
                 ),
             )
         )

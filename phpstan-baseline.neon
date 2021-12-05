@@ -17131,11 +17131,6 @@ parameters:
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
 
 		-
-			message: "#^Parameter \\#3 \\$length of function fwrite expects int\\<0, max\\>, int given\\.$#"
-			count: 1
-			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
-
-		-
 			message: "#^Property Zend_Search_Lucene_Storage_File_Filesystem\\:\\:\\$_fileHandle \\(resource\\|null\\) does not accept resource\\|false\\.$#"
 			count: 1
 			path: library/Zend/Search/Lucene/Storage/File/Filesystem.php
@@ -17487,11 +17482,6 @@ parameters:
 
 		-
 			message: "#^Method Zend_Service_Console_Command\\:\\:stderr\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: library/Zend/Service/Console/Command.php
-
-		-
-			message: "#^Parameter \\#1 \\$function of function call_user_func_array expects callable\\(\\)\\: mixed, array\\{object, mixed\\} given\\.$#"
 			count: 1
 			path: library/Zend/Service/Console/Command.php
 
