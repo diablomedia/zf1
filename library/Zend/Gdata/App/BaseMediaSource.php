@@ -85,7 +85,7 @@ abstract class Zend_Gdata_App_BaseMediaSource implements Zend_Gdata_App_MediaSou
      * Sets the Slug header value.  Used by some services to determine the
      * title for the uploaded file.  A null value indicates no slug header.
      *
-     * @var string The slug value
+     * @param string The slug value
      * @return Zend_Gdata_App_MediaSource Provides a fluent interface
      */
     public function setSlug($value){

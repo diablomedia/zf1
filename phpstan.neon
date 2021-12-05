@@ -7,7 +7,7 @@ parameters:
     level: 8
     paths:
         - 'library'
-    excludes_analyse:
+    excludePaths:
         - 'library/Zend/EventManager/ResponseCollection.php'
         - 'library/Zend/Stdlib/SplPriorityQueue.php'
         - 'library/Zend/Tool/Framework/Provider/DocblockManifestable.php'

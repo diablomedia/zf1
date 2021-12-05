@@ -109,7 +109,7 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
 			        'path' => __DIR__ . '/library/Zend/Amf/Parse/TypeLoader.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array\(string, string\) given\.$#',
+                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array{string, string} given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Amf/Server.php',
                 ),
@@ -119,62 +119,57 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'path' => __DIR__ . '/library/Zend/Amf/Server.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array\(mixed, string\) given\.$#',
+                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array{mixed, string} given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Feed/Reader/EntryAbstract.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array\(mixed, mixed\) given\.$#',
+                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array{mixed, mixed} given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Feed/Reader/FeedAbstract.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array\(mixed, string\) given\.$#',
+                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array{mixed, string} given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Feed/Writer/Entry.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array\(mixed, string\) given\.$#',
+                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array{mixed, string} given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Feed/Writer/Feed/FeedAbstract.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array\(Zend_Pdf_Element\|null, string\) given\.$#',
+                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array{Zend_Pdf_Element\|null, string} given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Pdf/Element/Object.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array\(mixed, string\) given\.$#',
+                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array{mixed, string} given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Pdf/Element/Reference.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array\(Zend_Search_Lucene_Interface\|null, \'find\'\) given\.$#',
+                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array{Zend_Search_Lucene_Interface\|null, \'find\'} given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Search/Lucene/Proxy.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array\(mixed, mixed\) given\.$#',
-                    'count' => 1,
-                    'path' => __DIR__ . '/library/Zend/Service/Console/Command.php',
-                ),
-                array(
-                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array\(Zend_Service_Ebay_Finding, string\) given\.$#',
+                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array{Zend_Service_Ebay_Finding, string} given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Response/Items.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array\(object, string\) given\.$#',
+                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array{object, string} given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Service/StrikeIron/Decorator.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array\(\$this\(Zend_Service_Twitter\), non\-empty\-string\) given\.$#',
+                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array{\$this\(Zend_Service_Twitter\), non\-empty\-string} given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Service/Twitter.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array\(Zend_Oauth_Consumer\|null, string\) given\.$#',
+                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array{Zend_Oauth_Consumer\|null, string} given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Service/Twitter.php',
                 ),
@@ -189,22 +184,22 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/RetryPolicy/RetryN.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array\(mixed, mixed\) given\.$#',
+                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array{mixed, mixed} given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Tool/Framework/Client/Abstract.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array\(mixed, non\-empty\-string\) given\.$#',
+                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array{mixed, non\-empty\-string} given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Tool/Framework/Client/Abstract.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array\(string\|Zend_Tool_Project_Context_Interface\|null, string\) given\.$#',
+                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array{string\|Zend_Tool_Project_Context_Interface\|null, string} given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Tool/Project/Profile/Resource.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array\(Zend_XmlRpc_Server_System, string\) given\.$#',
+                    'message' => '#^Parameter \#1 \$callback of function call_user_func_array expects callable\(\)\: mixed, array{Zend_XmlRpc_Server_System, string} given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/XmlRpc/Server.php',
                 ),
@@ -519,22 +514,22 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#1 \$callback of function call_user_func expects callable\(\)\: mixed, array\(\$this\(Zend_Gdata_App_Base\), non\-empty\-string\) given\.$#',
+                    'message' => '#^Parameter \#1 \$callback of function call_user_func expects callable\(\)\: mixed, array{\$this\(Zend_Gdata_App_Base\), non\-empty\-string} given\.$#',
                     'count' => 2,
                     'path' => __DIR__ . '/library/Zend/Gdata/App/Base.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#1 \$callback of function call_user_func expects callable\(\)\: mixed, array\(\$this\(Zend_Gdata_App_BaseMediaSource\), non\-empty\-string\) given\.$#',
+                    'message' => '#^Parameter \#1 \$callback of function call_user_func expects callable\(\)\: mixed, array{\$this\(Zend_Gdata_App_BaseMediaSource\), non\-empty\-string} given\.$#',
                     'count' => 2,
                     'path' => __DIR__ . '/library/Zend/Gdata/App/BaseMediaSource.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#1 \$callback of function call_user_func expects callable\(\)\: mixed, array\(\$this\(Zend_Gdata_Query\), non\-empty\-string\) given\.$#',
+                    'message' => '#^Parameter \#1 \$callback of function call_user_func expects callable\(\)\: mixed, array{\$this\(Zend_Gdata_Query\), non\-empty\-string} given\.$#',
                     'count' => 2,
                     'path' => __DIR__ . '/library/Zend/Gdata/Query.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#1 \$callback of function call_user_func expects callable\(\)\: mixed, array\(\(int\|string\), \'observe\'\) given\.$#',
+                    'message' => '#^Parameter \#1 \$callback of function call_user_func expects callable\(\)\: mixed, array{\(int\|string\), \'observe\'} given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/XmlRpc/Server/Fault.php',
                 ),
@@ -854,11 +849,6 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/CommandLine/PackageScaffolder/PackageScaffolderAbstract.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#3 \$private_key of function openssl_sign expects array\|OpenSSLAsymmetricKey\|OpenSSLCertificate\|string, resource\|null given\.$#',
-                    'count' => 1,
-                    'path' => __DIR__ . '/library/Zend/Gdata/HttpClient.php',
-                ),
-                array(
                     'message' => '#^Property Zend_Gdata_HttpClient\:\:\$_authSubPrivateKeyId \(resource\|null\) does not accept OpenSSLAsymmetricKey\|false\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Gdata/HttpClient.php',
@@ -964,7 +954,7 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'path' => __DIR__ . '/library/Zend/Serializer.php',
                 ),
                 array(
-                    'message' => '#^Parameter \#1 \$callback of function set_exception_handler expects \(callable\(Throwable\)\: void\)\|null, array\(\'Zend_Service…\', \'phpstdex\'\) given\.$#',
+                    'message' => '#^Parameter \#1 \$callback of function set_exception_handler expects \(callable\(Throwable\)\: void\)\|null, array{\'Zend_Service…\', \'phpstdex\'} given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Service/Console/Command.php',
                 ),
@@ -977,11 +967,6 @@ if (version_compare(PHP_VERSION, '8.0', '>=')) {
                     'message' => '#^Parameter \#2 \$baseDirectory of method Phar\:\:buildFromIterator\(\) expects string\|null, string\|false given\.$#',
                     'count' => 1,
                     'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/CommandLine/Package.php',
-                ),
-                array(
-                    'message' => '#^Parameter \#2 \$callback of function array_filter expects \(callable\(mixed, mixed\)\: bool\)\|null, \'strlen\' given\.$#',
-                    'count' => 1,
-                    'path' => __DIR__ . '/library/Zend/Search/Lucene/Document/OpenXml.php',
                 ),
             )
         )

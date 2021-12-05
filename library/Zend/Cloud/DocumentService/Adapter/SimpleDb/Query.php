@@ -64,7 +64,7 @@ class Zend_Cloud_DocumentService_Adapter_SimpleDb_Query
     /**
      * Assemble the query into a format the adapter can utilize
      *
-     * @var    string $collectionName Name of collection from which to select
+     * @param    string $collectionName Name of collection from which to select
      * @return string
      */
     public function assemble($collectionName = null)

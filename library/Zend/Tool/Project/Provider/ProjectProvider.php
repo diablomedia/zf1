@@ -64,8 +64,8 @@ class Zend_Tool_Project_Provider_ProjectProvider extends Zend_Tool_Project_Provi
     /**
      * Create stub for Zend_Tool Project Provider
      *
-     * @var string       $name            class name for new Zend_Tool Project Provider
-     * @var array|string $actions         list of provider methods
+     * @param string       $name            class name for new Zend_Tool Project Provider
+     * @param array|string $actions         list of provider methods
      * @throws Zend_Tool_Project_Provider_Exception
      */
     public function create($name, $actions = null)
