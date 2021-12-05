@@ -291,6 +291,7 @@ abstract class Zend_Pdf_Outline implements RecursiveIterator, Countable
      *
      * @return Zend_Pdf_Outline
      */
+    #[\ReturnTypeWillChange]
     public function current()
     {
         return current($this->childOutlines);
@@ -301,6 +302,7 @@ abstract class Zend_Pdf_Outline implements RecursiveIterator, Countable
      *
      * @return integer
      */
+    #[\ReturnTypeWillChange]
     public function key()
     {
         return key($this->childOutlines);
@@ -309,6 +311,7 @@ abstract class Zend_Pdf_Outline implements RecursiveIterator, Countable
     /**
      * Go to next child
      */
+    #[\ReturnTypeWillChange]
     public function next()
     {
         return next($this->childOutlines);
@@ -317,6 +320,7 @@ abstract class Zend_Pdf_Outline implements RecursiveIterator, Countable
     /**
      * Rewind children
      */
+    #[\ReturnTypeWillChange]
     public function rewind()
     {
         return reset($this->childOutlines);
@@ -327,6 +331,7 @@ abstract class Zend_Pdf_Outline implements RecursiveIterator, Countable
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return current($this->childOutlines) !== false;
@@ -337,6 +342,7 @@ abstract class Zend_Pdf_Outline implements RecursiveIterator, Countable
      *
      * @return Zend_Pdf_Outline|null
      */
+    #[\ReturnTypeWillChange]
     public function getChildren()
     {
         return current($this->childOutlines);
@@ -347,6 +353,7 @@ abstract class Zend_Pdf_Outline implements RecursiveIterator, Countable
      *
      * @return bool  whether container has any pages
      */
+    #[\ReturnTypeWillChange]
     public function hasChildren()
     {
         return count($this->childOutlines) > 0;
@@ -362,6 +369,7 @@ abstract class Zend_Pdf_Outline implements RecursiveIterator, Countable
      *
      * @return int
      */
+    #[\ReturnTypeWillChange]
     public function count()
     {
         return count($this->childOutlines);

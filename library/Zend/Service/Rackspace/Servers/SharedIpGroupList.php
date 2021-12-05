@@ -105,6 +105,7 @@ class Zend_Service_Rackspace_Servers_SharedIpGroupList implements Countable, Ite
      *
      * @return int
      */
+    #[\ReturnTypeWillChange]
     public function count()
     {
         return count($this->shared);
@@ -116,6 +117,7 @@ class Zend_Service_Rackspace_Servers_SharedIpGroupList implements Countable, Ite
      *
      * @return Zend_Service_Rackspace_Servers_SharedIpGroup
      */
+    #[\ReturnTypeWillChange]
     public function current()
     {
         return $this->shared[$this->iteratorKey];
@@ -127,6 +129,7 @@ class Zend_Service_Rackspace_Servers_SharedIpGroupList implements Countable, Ite
      *
      * @return int
      */
+    #[\ReturnTypeWillChange]
     public function key()
     {
         return $this->iteratorKey;
@@ -138,6 +141,7 @@ class Zend_Service_Rackspace_Servers_SharedIpGroupList implements Countable, Ite
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function next()
     {
         $this->iteratorKey += 1;
@@ -149,6 +153,7 @@ class Zend_Service_Rackspace_Servers_SharedIpGroupList implements Countable, Ite
      *
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function rewind()
     {
         $this->iteratorKey = 0;
@@ -160,6 +165,7 @@ class Zend_Service_Rackspace_Servers_SharedIpGroupList implements Countable, Ite
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         $numItems = $this->count();
@@ -177,6 +183,7 @@ class Zend_Service_Rackspace_Servers_SharedIpGroupList implements Countable, Ite
      * @param   int     $offset
      * @return  boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return ($offset < $this->count());
@@ -190,6 +197,7 @@ class Zend_Service_Rackspace_Servers_SharedIpGroupList implements Countable, Ite
      * @throws  Zend_Service_Rackspace_Servers_Exception
      * @return  Zend_Service_Rackspace_Servers_SharedIpGroup
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         if ($this->offsetExists($offset)) {
@@ -208,6 +216,7 @@ class Zend_Service_Rackspace_Servers_SharedIpGroupList implements Countable, Ite
      * @param   string  $value
      * @throws  Zend_Service_Rackspace_Servers_Exception
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         throw new Zend_Service_Rackspace_Servers_Exception('You are trying to set read-only property');
@@ -221,6 +230,7 @@ class Zend_Service_Rackspace_Servers_SharedIpGroupList implements Countable, Ite
      * @param  int $offset
      * @throws Zend_Service_Rackspace_Servers_Exception
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         throw new Zend_Service_Rackspace_Servers_Exception('You are trying to unset read-only property');
