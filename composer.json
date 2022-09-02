@@ -156,7 +156,7 @@
         "phpunit/phpunit": "^9.5.10",
         "phpunit/phpcov": "^8.0",
         "phpstan/phpstan": "1.2.0",
-        "friendsofphp/php-cs-fixer": "3.10.0"
+        "friendsofphp/php-cs-fixer": "3.11.0"
     },
     "archive": {
         "exclude": [
