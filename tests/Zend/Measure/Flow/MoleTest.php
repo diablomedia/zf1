@@ -42,7 +42,7 @@ class Zend_Measure_Flow_MoleTest extends PHPUnit\Framework\TestCase
     public function testMoleInit()
     {
         $value = new Zend_Measure_Flow_Mole('100',Zend_Measure_Flow_Mole::STANDARD,'de');
-        $this->assertTrue($value instanceof Zend_Measure_Flow_Mole,'Zend_Measure_Flow_Mole Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Flow_Mole::class, $value,'Zend_Measure_Flow_Mole Object not returned');
     }
 
 

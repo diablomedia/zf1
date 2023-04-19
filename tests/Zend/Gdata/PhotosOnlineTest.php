@@ -192,7 +192,7 @@ class Zend_Gdata_PhotosOnlineTest extends PHPUnit\Framework\TestCase
         $updatedPhoto = $dataArray[0];
         $album = $dataArray[1];
 
-        $this->assertTrue($updatedPhoto instanceof Zend_Gdata_Photos_PhotoEntry);
+        $this->assertInstanceOf(Zend_Gdata_Photos_PhotoEntry::class, $updatedPhoto);
 
         // Clean up the mess
         $client->deletePhotoEntry($updatedPhoto, true);
@@ -240,45 +240,45 @@ class Zend_Gdata_PhotosOnlineTest extends PHPUnit\Framework\TestCase
         try {
             $userEntry = $client->getUserEntry(null);
         } catch (Exception $e) {
-            $this->assertTrue($e instanceof Zend_Gdata_App_InvalidArgumentException);
+            $this->assertInstanceOf(Zend_Gdata_App_InvalidArgumentException::class, $e);
         }
         try {
             $userEntry = $client->getAlbumEntry(null);
         } catch (Exception $e) {
-            $this->assertTrue($e instanceof Zend_Gdata_App_InvalidArgumentException);
+            $this->assertInstanceOf(Zend_Gdata_App_InvalidArgumentException::class, $e);
         }
         try {
             $photoEntry = $client->getPhotoEntry(null);
         } catch (Exception $e) {
-            $this->assertTrue($e instanceof Zend_Gdata_App_InvalidArgumentException);
+            $this->assertInstanceOf(Zend_Gdata_App_InvalidArgumentException::class, $e);
         }
         try {
             $tagEntry = $client->getTagEntry(null);
         } catch (Exception $e) {
-            $this->assertTrue($e instanceof Zend_Gdata_App_InvalidArgumentException);
+            $this->assertInstanceOf(Zend_Gdata_App_InvalidArgumentException::class, $e);
         }
         try {
             $commentEntry = $client->getCommentEntry(null);
         } catch (Exception $e) {
-            $this->assertTrue($e instanceof Zend_Gdata_App_InvalidArgumentException);
+            $this->assertInstanceOf(Zend_Gdata_App_InvalidArgumentException::class, $e);
         }
         try {
             $photo = new Zend_Gdata_Photos_PhotoEntry();
             $result = $client->insertPhotoEntry($photo, null);
         } catch (Exception $e) {
-            $this->assertTrue($e instanceof Zend_Gdata_App_InvalidArgumentException);
+            $this->assertInstanceOf(Zend_Gdata_App_InvalidArgumentException::class, $e);
         }
         try {
             $comment = new Zend_Gdata_Photos_CommentEntry();
             $result = $client->insertCommentEntry($comment, null);
         } catch (Exception $e) {
-            $this->assertTrue($e instanceof Zend_Gdata_App_InvalidArgumentException);
+            $this->assertInstanceOf(Zend_Gdata_App_InvalidArgumentException::class, $e);
         }
         try {
             $tag = new Zend_Gdata_Photos_TagEntry();
             $result = $client->insertTagEntry($tag, null);
         } catch (Exception $e) {
-            $this->assertTrue($e instanceof Zend_Gdata_App_InvalidArgumentException);
+            $this->assertInstanceOf(Zend_Gdata_App_InvalidArgumentException::class, $e);
         }
     }
 
@@ -289,7 +289,7 @@ class Zend_Gdata_PhotosOnlineTest extends PHPUnit\Framework\TestCase
         try {
             $albumFeed = $client->getAlbumFeed(null);
         } catch (Exception $e) {
-            $this->assertTrue($e instanceof Zend_Gdata_App_InvalidArgumentException);
+            $this->assertInstanceOf(Zend_Gdata_App_InvalidArgumentException::class, $e);
         }
     }
 

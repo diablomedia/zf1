@@ -205,7 +205,7 @@ class Zend_Pdf_DrawingTest extends PHPUnit\Framework\TestCase
         unset($pdf);
 
         $pdf1 = Zend_Pdf::load(dirname(__FILE__) . '/_files/output.pdf');
-        $this->assertTrue($pdf1 instanceof Zend_Pdf);
+        $this->assertInstanceOf(Zend_Pdf::class, $pdf1);
         unset($pdf1);
 
         unlink(dirname(__FILE__) . '/_files/output.pdf');
@@ -220,7 +220,7 @@ class Zend_Pdf_DrawingTest extends PHPUnit\Framework\TestCase
 
 
         $stampImagePNG = Zend_Pdf_Image::imageWithPath(dirname(__FILE__) . '/_files/stamp.png');
-        $this->assertTrue($stampImagePNG instanceof Zend_Pdf_Resource_Image);
+        $this->assertInstanceOf(Zend_Pdf_Resource_Image::class, $stampImagePNG);
 
         $page->saveGS()
              ->clipCircle(250, 500, 50)
@@ -229,7 +229,7 @@ class Zend_Pdf_DrawingTest extends PHPUnit\Framework\TestCase
 
 
         $stampImageTIFF = Zend_Pdf_Image::imageWithPath(dirname(__FILE__) . '/_files/stamp.tif');
-        $this->assertTrue($stampImageTIFF instanceof Zend_Pdf_Resource_Image);
+        $this->assertInstanceOf(Zend_Pdf_Resource_Image::class, $stampImageTIFF);
 
         $page->saveGS()
              ->clipCircle(325, 500, 50)
@@ -248,7 +248,7 @@ class Zend_Pdf_DrawingTest extends PHPUnit\Framework\TestCase
         if ($jpegSupported) {
             $stampImageJPG = Zend_Pdf_Image::imageWithPath(dirname(__FILE__) . '/_files/stamp.jpg');
 
-            $this->assertTrue($stampImageJPG instanceof Zend_Pdf_Resource_Image);
+            $this->assertInstanceOf(Zend_Pdf_Resource_Image::class, $stampImageJPG);
 
             $page->saveGS()
                  ->clipCircle(287.5, 440, 50)
@@ -266,7 +266,7 @@ class Zend_Pdf_DrawingTest extends PHPUnit\Framework\TestCase
         unset($pdf);
 
         $pdf1 = Zend_Pdf::load(dirname(__FILE__) . '/_files/output.pdf');
-        $this->assertTrue($pdf1 instanceof Zend_Pdf);
+        $this->assertInstanceOf(Zend_Pdf::class, $pdf1);
         unset($pdf1);
 
         unlink(dirname(__FILE__) . '/_files/output.pdf');
@@ -305,7 +305,7 @@ class Zend_Pdf_DrawingTest extends PHPUnit\Framework\TestCase
             $pdf->pages[] = ($page = $pdf->newPage(Zend_Pdf_Page::SIZE_A4_LANDSCAPE));
 
             $font = Zend_Pdf_Font::fontWithName($fontName);
-            $this->assertTrue($font instanceof Zend_Pdf_Resource_Font);
+            $this->assertInstanceOf(Zend_Pdf_Resource_Font::class, $font);
 
             $page->setFont($titleFont, 10)
                  ->drawText($font->getFontName(Zend_Pdf_Font::NAME_POSTSCRIPT, 'en') . ':', 100, 400);
@@ -358,7 +358,7 @@ class Zend_Pdf_DrawingTest extends PHPUnit\Framework\TestCase
             $pdf->pages[] = ($page = $pdf->newPage(Zend_Pdf_Page::SIZE_A4_LANDSCAPE));
 
             $font = Zend_Pdf_Font::fontWithName($fontName);
-            $this->assertTrue($font instanceof Zend_Pdf_Resource_Font);
+            $this->assertInstanceOf(Zend_Pdf_Resource_Font::class, $font);
 
             $page->setFont($titleFont, 10)
                  ->drawText($font->getFontName(Zend_Pdf_Font::NAME_POSTSCRIPT, 'en') . ':', 100, 400);
@@ -417,7 +417,7 @@ class Zend_Pdf_DrawingTest extends PHPUnit\Framework\TestCase
             $pdf->pages[] = ($page = $pdf->newPage(Zend_Pdf_Page::SIZE_A4_LANDSCAPE));
 
             $font = Zend_Pdf_Font::fontWithPath(dirname(__FILE__) . '/_fonts/' . $fontName);
-            $this->assertTrue($font instanceof Zend_Pdf_Resource_Font);
+            $this->assertInstanceOf(Zend_Pdf_Resource_Font::class, $font);
 
             $page->setFont($titleFont, 10)
                  ->drawText($font->getFontName(Zend_Pdf_Font::NAME_POSTSCRIPT, 'en') . ':', 100, 400);
@@ -464,7 +464,7 @@ class Zend_Pdf_DrawingTest extends PHPUnit\Framework\TestCase
         unset($pdf);
 
         $pdf1 = Zend_Pdf::load(dirname(__FILE__) . '/_files/output.pdf');
-        $this->assertTrue($pdf1 instanceof Zend_Pdf);
+        $this->assertInstanceOf(Zend_Pdf::class, $pdf1);
         unset($pdf1);
 
         unlink(dirname(__FILE__) . '/_files/output.pdf');
@@ -579,14 +579,14 @@ class Zend_Pdf_DrawingTest extends PHPUnit\Framework\TestCase
 
         $page = reset($pdf1->pages);
         $font = $page->extractFont(Zend_Pdf_Font::FONT_COURIER);
-        $this->assertTrue($font instanceof Zend_Pdf_Resource_Font_Extracted);
+        $this->assertInstanceOf(Zend_Pdf_Resource_Font_Extracted::class, $font);
 
         $font = $page->extractFont(Zend_Pdf_Font::FONT_TIMES_BOLD_ITALIC);
         $this->assertNull($font);
 
 
         $font = $pdf1->extractFont(Zend_Pdf_Font::FONT_TIMES_BOLD_ITALIC);
-        $this->assertTrue($font instanceof Zend_Pdf_Resource_Font_Extracted);
+        $this->assertInstanceOf(Zend_Pdf_Resource_Font_Extracted::class, $font);
 
         $font = $pdf1->extractFont(Zend_Pdf_Font::FONT_TIMES_ROMAN);
         $this->assertNull($font);
@@ -596,7 +596,7 @@ class Zend_Pdf_DrawingTest extends PHPUnit\Framework\TestCase
 
 
         $pdf2 = Zend_Pdf::load(dirname(__FILE__) . '/_files/output1.pdf');
-        $this->assertTrue($pdf2 instanceof Zend_Pdf);
+        $this->assertInstanceOf(Zend_Pdf::class, $pdf2);
         unset($pdf2);
 
         unlink(dirname(__FILE__) . '/_files/output.pdf');

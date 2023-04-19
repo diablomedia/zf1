@@ -65,9 +65,9 @@ class Zend_Gdata_SpreadsheetsOnlineTest extends PHPUnit\Framework\TestCase
         foreach($spreadsheets as $spreadsheet) {
             $spreadsheetCount++;
             $worksheetCount = 0;
-            $this->assertTrue($spreadsheet instanceof Zend_Gdata_Spreadsheets_SpreadsheetEntry, 'not instance of SpreadsheetEntry');
+            $this->assertInstanceOf(Zend_Gdata_Spreadsheets_SpreadsheetEntry::class, $spreadsheet, 'not instance of SpreadsheetEntry');
             foreach($spreadsheet->getWorksheets() as $worksheet) {
-                $this->assertTrue($worksheet instanceof Zend_Gdata_Spreadsheets_WorksheetEntry, 'not instance of WorksheetEntry');
+                $this->assertInstanceOf(Zend_Gdata_Spreadsheets_WorksheetEntry::class, $worksheet, 'not instance of WorksheetEntry');
                 $worksheetCount++;
                 if ($spreadsheet->getTitle()->getText() == 'PHP Unit Test Sheet') {
                     $testedContents = true;
@@ -90,25 +90,25 @@ class Zend_Gdata_SpreadsheetsOnlineTest extends PHPUnit\Framework\TestCase
     public function testGetSpreadsheetFeed()
     {
         $feed = $this->gdata->getSpreadsheetFeed();
-        $this->assertTrue($feed instanceof Zend_Gdata_Spreadsheets_SpreadsheetFeed);
+        $this->assertInstanceOf(Zend_Gdata_Spreadsheets_SpreadsheetFeed::class, $feed);
         foreach ($feed->entries as $entry) {
-            $this->assertTrue($entry instanceof Zend_Gdata_Spreadsheets_SpreadsheetEntry);
+            $this->assertInstanceOf(Zend_Gdata_Spreadsheets_SpreadsheetEntry::class, $entry);
             $this->assertTrue($entry->getHttpClient() == $feed->getHttpClient());
         }
 
         $query = new Zend_Gdata_Spreadsheets_DocumentQuery();
         $feed = $this->gdata->getSpreadsheetFeed($query);
-        $this->assertTrue($feed instanceof Zend_Gdata_Spreadsheets_SpreadsheetFeed);
+        $this->assertInstanceOf(Zend_Gdata_Spreadsheets_SpreadsheetFeed::class, $feed);
         foreach ($feed->entries as $entry) {
-            $this->assertTrue($entry instanceof Zend_Gdata_Spreadsheets_SpreadsheetEntry);
+            $this->assertInstanceOf(Zend_Gdata_Spreadsheets_SpreadsheetEntry::class, $entry);
             $this->assertTrue($entry->getHttpClient() == $feed->getHttpClient());
         }
 
         $uri = $query->getQueryUrl();
         $feed = $this->gdata->getSpreadsheetFeed($uri);
-        $this->assertTrue($feed instanceof Zend_Gdata_Spreadsheets_SpreadsheetFeed);
+        $this->assertInstanceOf(Zend_Gdata_Spreadsheets_SpreadsheetFeed::class, $feed);
         foreach ($feed->entries as $entry) {
-            $this->assertTrue($entry instanceof Zend_Gdata_Spreadsheets_SpreadsheetEntry);
+            $this->assertInstanceOf(Zend_Gdata_Spreadsheets_SpreadsheetEntry::class, $entry);
             $this->assertTrue($entry->getHttpClient() == $feed->getHttpClient());
         }
     }
@@ -118,17 +118,17 @@ class Zend_Gdata_SpreadsheetsOnlineTest extends PHPUnit\Framework\TestCase
         $query = new Zend_Gdata_Spreadsheets_DocumentQuery();
         $query->setSpreadsheetKey($this->sprKey);
         $feed = $this->gdata->getWorksheetFeed($query);
-        $this->assertTrue($feed instanceof Zend_Gdata_Spreadsheets_WorksheetFeed);
+        $this->assertInstanceOf(Zend_Gdata_Spreadsheets_WorksheetFeed::class, $feed);
         foreach ($feed->entries as $entry) {
-            $this->assertTrue($entry instanceof Zend_Gdata_Spreadsheets_WorksheetEntry);
+            $this->assertInstanceOf(Zend_Gdata_Spreadsheets_WorksheetEntry::class, $entry);
             $this->assertTrue($entry->getHttpClient() == $feed->getHttpClient());
         }
 
         $uri = $query->getQueryUrl();
         $feed = $this->gdata->getWorksheetFeed($uri);
-        $this->assertTrue($feed instanceof Zend_Gdata_Spreadsheets_WorksheetFeed);
+        $this->assertInstanceOf(Zend_Gdata_Spreadsheets_WorksheetFeed::class, $feed);
         foreach ($feed->entries as $entry) {
-            $this->assertTrue($entry instanceof Zend_Gdata_Spreadsheets_WorksheetEntry);
+            $this->assertInstanceOf(Zend_Gdata_Spreadsheets_WorksheetEntry::class, $entry);
             $this->assertTrue($entry->getHttpClient() == $feed->getHttpClient());
         }
     }
@@ -139,16 +139,16 @@ class Zend_Gdata_SpreadsheetsOnlineTest extends PHPUnit\Framework\TestCase
         $query->setSpreadsheetKey($this->sprKey);
         $query->setWorksheetId($this->wksId);
         $feed = $this->gdata->getCellFeed($query);
-        $this->assertTrue($feed instanceof Zend_Gdata_Spreadsheets_CellFeed);
+        $this->assertInstanceOf(Zend_Gdata_Spreadsheets_CellFeed::class, $feed);
         foreach ($feed->entries as $entry) {
-            $this->assertTrue($entry instanceof Zend_Gdata_Spreadsheets_CellEntry);
+            $this->assertInstanceOf(Zend_Gdata_Spreadsheets_CellEntry::class, $entry);
             $this->assertTrue($entry->getHttpClient() == $feed->getHttpClient());
         }
 
         $feed = $this->gdata->getCellFeed($query->getQueryUrl());
-        $this->assertTrue($feed instanceof Zend_Gdata_Spreadsheets_CellFeed);
+        $this->assertInstanceOf(Zend_Gdata_Spreadsheets_CellFeed::class, $feed);
         foreach ($feed->entries as $entry) {
-            $this->assertTrue($entry instanceof Zend_Gdata_Spreadsheets_CellEntry);
+            $this->assertInstanceOf(Zend_Gdata_Spreadsheets_CellEntry::class, $entry);
             $this->assertTrue($entry->getHttpClient() == $feed->getHttpClient());
         }
     }
@@ -159,16 +159,16 @@ class Zend_Gdata_SpreadsheetsOnlineTest extends PHPUnit\Framework\TestCase
         $query->setSpreadsheetKey($this->sprKey);
         $query->setWorksheetId($this->wksId);
         $feed = $this->gdata->getListFeed($query);
-        $this->assertTrue($feed instanceof Zend_Gdata_Spreadsheets_ListFeed);
+        $this->assertInstanceOf(Zend_Gdata_Spreadsheets_ListFeed::class, $feed);
         foreach ($feed->entries as $entry) {
-            $this->assertTrue($entry instanceof Zend_Gdata_Spreadsheets_ListEntry);
+            $this->assertInstanceOf(Zend_Gdata_Spreadsheets_ListEntry::class, $entry);
             $this->assertTrue($entry->getHttpClient() == $feed->getHttpClient());
         }
 
         $feed = $this->gdata->getListFeed($query->getQueryUrl());
-        $this->assertTrue($feed instanceof Zend_Gdata_Spreadsheets_ListFeed);
+        $this->assertInstanceOf(Zend_Gdata_Spreadsheets_ListFeed::class, $feed);
         foreach ($feed->entries as $entry) {
-            $this->assertTrue($entry instanceof Zend_Gdata_Spreadsheets_ListEntry);
+            $this->assertInstanceOf(Zend_Gdata_Spreadsheets_ListEntry::class, $entry);
             $this->assertTrue($entry->getHttpClient() == $feed->getHttpClient());
         }
     }
@@ -178,10 +178,10 @@ class Zend_Gdata_SpreadsheetsOnlineTest extends PHPUnit\Framework\TestCase
         $query = new Zend_Gdata_Spreadsheets_DocumentQuery();
         $query->setSpreadsheetKey($this->sprKey);
         $entry = $this->gdata->getSpreadsheetEntry($query);
-        $this->assertTrue($entry instanceof Zend_Gdata_Spreadsheets_SpreadsheetEntry);
+        $this->assertInstanceOf(Zend_Gdata_Spreadsheets_SpreadsheetEntry::class, $entry);
 
         $entry = $this->gdata->getSpreadsheetEntry($query->getQueryUrl());
-        $this->assertTrue($entry instanceof Zend_Gdata_Spreadsheets_SpreadsheetEntry);
+        $this->assertInstanceOf(Zend_Gdata_Spreadsheets_SpreadsheetEntry::class, $entry);
     }
 
     public function testGetWorksheetEntry()
@@ -190,10 +190,10 @@ class Zend_Gdata_SpreadsheetsOnlineTest extends PHPUnit\Framework\TestCase
         $query->setSpreadsheetKey($this->sprKey);
         $query->setWorksheetId($this->wksId);
         $entry = $this->gdata->getWorksheetEntry($query);
-        $this->assertTrue($entry instanceof Zend_Gdata_Spreadsheets_WorksheetEntry);
+        $this->assertInstanceOf(Zend_Gdata_Spreadsheets_WorksheetEntry::class, $entry);
 
         $entry = $this->gdata->getWorksheetEntry($query->getQueryUrl());
-        $this->assertTrue($entry instanceof Zend_Gdata_Spreadsheets_WorksheetEntry);
+        $this->assertInstanceOf(Zend_Gdata_Spreadsheets_WorksheetEntry::class, $entry);
     }
 
     public function testGetCellEntry()
@@ -202,10 +202,10 @@ class Zend_Gdata_SpreadsheetsOnlineTest extends PHPUnit\Framework\TestCase
         $query->setSpreadsheetKey($this->sprKey);
         $query->setCellId('R1C1');
         $entry = $this->gdata->getCellEntry($query);
-        $this->assertTrue($entry instanceof Zend_Gdata_Spreadsheets_CellEntry);
+        $this->assertInstanceOf(Zend_Gdata_Spreadsheets_CellEntry::class, $entry);
 
         $entry = $this->gdata->getCellEntry($query->getQueryUrl());
-        $this->assertTrue($entry instanceof Zend_Gdata_Spreadsheets_CellEntry);
+        $this->assertInstanceOf(Zend_Gdata_Spreadsheets_CellEntry::class, $entry);
     }
 
     public function testGetListEntry()
@@ -215,10 +215,10 @@ class Zend_Gdata_SpreadsheetsOnlineTest extends PHPUnit\Framework\TestCase
         $query->setStartIndex('1');
         $query->setMaxResults('1');
         $entry = $this->gdata->getListEntry($query);
-        $this->assertTrue($entry instanceof Zend_Gdata_Spreadsheets_ListEntry);
+        $this->assertInstanceOf(Zend_Gdata_Spreadsheets_ListEntry::class, $entry);
 
         $entry = $this->gdata->getListEntry($query->getQueryUrl());
-        $this->assertTrue($entry instanceof Zend_Gdata_Spreadsheets_ListEntry);
+        $this->assertInstanceOf(Zend_Gdata_Spreadsheets_ListEntry::class, $entry);
     }
 
     public function testUpdateCell()
@@ -229,7 +229,7 @@ class Zend_Gdata_SpreadsheetsOnlineTest extends PHPUnit\Framework\TestCase
         $query->setSpreadsheetKey($this->sprKey);
         $query->setCellId('R5C1');
         $entry = $this->gdata->getCellEntry($query);
-        $this->assertTrue($entry instanceof Zend_Gdata_Spreadsheets_CellEntry);
+        $this->assertInstanceOf(Zend_Gdata_Spreadsheets_CellEntry::class, $entry);
         $this->assertTrue($entry->cell->getText() == 'updated data');
 
         $this->gdata->updateCell(5, 1, '', $this->sprKey, $this->wksId);

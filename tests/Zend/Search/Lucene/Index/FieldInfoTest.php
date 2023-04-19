@@ -38,7 +38,7 @@ class Zend_Search_Lucene_Index_FieldInfoTest extends PHPUnit\Framework\TestCase
     public function testCreate()
     {
         $fieldInfo = new Zend_Search_Lucene_Index_FieldInfo('field_name', true, 3, false);
-        $this->assertTrue($fieldInfo instanceof Zend_Search_Lucene_Index_FieldInfo);
+        $this->assertInstanceOf(Zend_Search_Lucene_Index_FieldInfo::class, $fieldInfo);
 
         $this->assertEquals($fieldInfo->name, 'field_name');
         $this->assertEquals($fieldInfo->isIndexed, true);

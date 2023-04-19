@@ -44,7 +44,7 @@ class Zend_XmlRpc_Server_FaultTest extends PHPUnit\Framework\TestCase
         $e = new Zend_XmlRpc_Server_Exception('Testing fault', 411);
         $fault = Zend_XmlRpc_Server_Fault::getInstance($e);
 
-        $this->assertTrue($fault instanceof Zend_XmlRpc_Server_Fault);
+        $this->assertInstanceOf(Zend_XmlRpc_Server_Fault::class, $fault);
     }
 
     /**
@@ -139,7 +139,7 @@ class Zend_XmlRpc_Server_FaultTest extends PHPUnit\Framework\TestCase
 
         $this->assertTrue(!empty($observed));
         $f = array_shift($observed);
-        $this->assertTrue($f instanceof Zend_XmlRpc_Server_Fault);
+        $this->assertInstanceOf(Zend_XmlRpc_Server_Fault::class, $f);
         $this->assertEquals('Checking observers', $f->getMessage());
         $this->assertEquals(411, $f->getCode());
 

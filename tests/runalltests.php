@@ -69,6 +69,10 @@ foreach ($suites as $suite) {
 $result = 0;
 $failedSuites = [];
 
+if ($argv[1] && $argv[1] !== '--coverage') {
+    $testSuites = [$argv[1]];
+}
+
 foreach ($testSuites as $testSuite) {
     echo '-------------------------------------------------------------' . PHP_EOL;
     echo "\033[33mExecuting Suite {$testSuite}\033[0m" . PHP_EOL;

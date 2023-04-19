@@ -43,7 +43,7 @@ class Zend_Measure_AngleTest extends PHPUnit\Framework\TestCase
     public function testAngleInit()
     {
         $value = new Zend_Measure_Angle('100',Zend_Measure_Angle::STANDARD,'de');
-        $this->assertTrue($value instanceof Zend_Measure_Angle,'Zend_Measure_Angle Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Angle::class, $value,'Zend_Measure_Angle Object not returned');
     }
 
 

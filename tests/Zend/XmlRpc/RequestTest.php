@@ -269,7 +269,7 @@ class Zend_XmlRpc_RequestTest extends PHPUnit\Framework\TestCase
         $this->assertTrue(null === $fault);
         $this->_request->loadXml('foo');
         $fault = $this->_request->getFault();
-        $this->assertTrue($fault instanceof Zend_XmlRpc_Fault);
+        $this->assertInstanceOf(Zend_XmlRpc_Fault::class, $fault);
     }
 
     /**

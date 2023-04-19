@@ -43,7 +43,7 @@ class Zend_Measure_SpeedTest extends PHPUnit\Framework\TestCase
     public function testSpeedInit()
     {
         $value = new Zend_Measure_Speed('100',Zend_Measure_Speed::STANDARD,'de');
-        $this->assertTrue($value instanceof Zend_Measure_Speed,'Zend_Measure_Speed Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Speed::class, $value,'Zend_Measure_Speed Object not returned');
     }
 
 

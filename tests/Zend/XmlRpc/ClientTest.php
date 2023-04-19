@@ -55,6 +55,10 @@ class Zend_XmlRpc_ClientTest extends PHPUnit\Framework\TestCase
      */
     protected $xmlrpcClient;
 
+    protected $mockedIntrospector;
+
+    protected $mockedHttpClient;
+
     public function setUp(): void
     {
         $this->httpAdapter = new Zend_Http_Client_Adapter_Test();
@@ -71,7 +75,7 @@ class Zend_XmlRpc_ClientTest extends PHPUnit\Framework\TestCase
     {
         $xmlrpcClient = new Zend_XmlRpc_Client('http://foo');
         $httpClient = $xmlrpcClient->getHttpClient();
-        $this->assertTrue($httpClient instanceof Zend_Http_Client);
+        $this->assertInstanceOf(Zend_Http_Client::class, $httpClient);
         $this->assertSame($httpClient, $xmlrpcClient->getHttpClient());
     }
 
@@ -317,7 +321,7 @@ class Zend_XmlRpc_ClientTest extends PHPUnit\Framework\TestCase
             $this->xmlrpcClient->call('foo');
             $this->fail();
         } catch (Exception $e) {
-            $this->assertTrue($e instanceof Zend_XmlRpc_Client_HttpException);
+            $this->assertInstanceOf(Zend_XmlRpc_Client_HttpException::class, $e);
             $this->assertEquals($message, $e->getMessage());
             $this->assertEquals($status, $e->getCode());
         }
@@ -338,7 +342,7 @@ class Zend_XmlRpc_ClientTest extends PHPUnit\Framework\TestCase
             $this->xmlrpcClient->call('foo');
             $this->fail();
         } catch (Exception $e) {
-            $this->assertTrue($e instanceof Zend_XmlRpc_Client_FaultException);
+            $this->assertInstanceOf(Zend_XmlRpc_Client_FaultException::class, $e);
             $this->assertEquals($message, $e->getMessage());
             $this->assertEquals($code, $e->getCode());
         }
@@ -402,7 +406,7 @@ class Zend_XmlRpc_ClientTest extends PHPUnit\Framework\TestCase
     {
         $xmlrpcClient = new Zend_XmlRpc_Client('http://foo');
         $introspector = $xmlrpcClient->getIntrospector();
-        $this->assertTrue($introspector instanceof Zend_XmlRpc_Client_ServerIntrospection);
+        $this->assertInstanceOf(Zend_XmlRpc_Client_ServerIntrospection::class, $introspector);
         $this->assertSame($introspector, $xmlrpcClient->getIntrospector());
     }
 

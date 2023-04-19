@@ -38,7 +38,7 @@ class Zend_Pdf_Element_BooleanTest extends PHPUnit\Framework\TestCase
     public function testPDFBoolean()
     {
         $boolObj = new Zend_Pdf_Element_Boolean(false);
-        $this->assertTrue($boolObj instanceof Zend_Pdf_Element_Boolean);
+        $this->assertInstanceOf(Zend_Pdf_Element_Boolean::class, $boolObj);
     }
 
     public function testPDFBooleanBadArgument()

@@ -38,7 +38,7 @@ class Zend_Pdf_Element_StringTest extends PHPUnit\Framework\TestCase
     public function testPDFString()
     {
         $stringObj = new Zend_Pdf_Element_String('some text');
-        $this->assertTrue($stringObj instanceof Zend_Pdf_Element_String);
+        $this->assertInstanceOf(Zend_Pdf_Element_String::class, $stringObj);
     }
 
     public function testGetType()

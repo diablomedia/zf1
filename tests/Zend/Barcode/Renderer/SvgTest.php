@@ -104,7 +104,7 @@ class Zend_Barcode_Renderer_SvgTest extends Zend_Barcode_Renderer_TestCommon
         $barcode = new Zend_Barcode_Object_Code39(array('text' => '0123456789'));
         $this->_renderer->setBarcode($barcode);
         $resource = $this->_renderer->draw();
-        $this->assertTrue($resource instanceof DOMDocument);
+        $this->assertInstanceOf(DOMDocument::class, $resource);
         Zend_Barcode::setBarcodeFont('');
     }
 
@@ -122,7 +122,7 @@ class Zend_Barcode_Renderer_SvgTest extends Zend_Barcode_Renderer_TestCommon
         $svgResource->appendChild($rootElement);
         $this->_renderer->setResource($svgResource);
         $resource = $this->_renderer->draw();
-        $this->assertTrue($resource instanceof DOMDocument);
+        $this->assertInstanceOf(DOMDocument::class, $resource);
         $this->assertSame($resource, $svgResource);
         Zend_Barcode::setBarcodeFont('');
     }

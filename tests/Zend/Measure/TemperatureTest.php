@@ -68,7 +68,7 @@ class Zend_Measure_TemperatureTest extends PHPUnit\Framework\TestCase
     public function testTemperatureInit()
     {
         $value = new Zend_Measure_Temperature('100',Zend_Measure_Temperature::STANDARD,'de');
-        $this->assertTrue($value instanceof Zend_Measure_Temperature,'Zend_Measure_Temperature Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Temperature::class, $value,'Zend_Measure_Temperature Object not returned');
     }
 
 

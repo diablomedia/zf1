@@ -43,7 +43,7 @@ class Zend_Mobile_Push_Message_ApnsTest extends PHPUnit\Framework\TestCase
     {
         $text = 'my alert';
         $ret = $this->message->setAlert($text);
-        $this->assertTrue($ret instanceof Zend_Mobile_Push_Message_Apns);
+        $this->assertInstanceOf(Zend_Mobile_Push_Message_Apns::class, $ret);
         $checkText = $this->message->getAlert();
         $this->assertIsArray($checkText);
         $this->assertEquals($checkText['body'], $text);

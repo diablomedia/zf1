@@ -370,7 +370,7 @@ class Zend_Gdata_GappsOnlineTest extends PHPUnit\Framework\TestCase
 
         // Make sure that the user is subscribed to both groups
         $subscriptions = $this->gdata->retrieveGroups($this->id);
-        $this->assertEquals($groupCount, count($subscriptions->entry));
+        $this->assertCount($groupCount, $subscriptions->entry);
 
     }
 
@@ -690,7 +690,7 @@ class Zend_Gdata_GappsOnlineTest extends PHPUnit\Framework\TestCase
 
         // Make sure that the user is subscribed to both lists
         $subscriptions = $this->gdata->retrieveEmailLists($this->id);
-        $this->assertEquals($listCount, count($subscriptions->entry));
+        $this->assertCount($listCount, $subscriptions->entry);
     }
 
     public function testCanRetrievePageOfEmailLists() {

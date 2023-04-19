@@ -41,7 +41,7 @@ class Zend_Pdf_Element_ObjectTest extends PHPUnit\Framework\TestCase
         $intObj = new Zend_Pdf_Element_Numeric(100);
         $obj    = new Zend_Pdf_Element_Object($intObj, 1, 0, new Zend_Pdf_ElementFactory(1));
 
-        $this->assertTrue($obj instanceof Zend_Pdf_Element_Object);
+        $this->assertInstanceOf(Zend_Pdf_Element_Object::class, $obj);
     }
 
     public function testPDFObjectBadObjectType1()

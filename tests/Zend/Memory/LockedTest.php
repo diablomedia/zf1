@@ -40,7 +40,7 @@ class Zend_Memory_Container_LockedTest extends PHPUnit\Framework\TestCase
     {
         $memObject = new Zend_Memory_Container_Locked('0123456789');
 
-        $this->assertTrue($memObject instanceof Zend_Memory_Container_Locked);
+        $this->assertInstanceOf(Zend_Memory_Container_Locked::class, $memObject);
     }
 
 

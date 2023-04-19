@@ -59,7 +59,7 @@ class Zend_Search_Lucene_LuceneTest extends PHPUnit\Framework\TestCase
     public function testCreate()
     {
         $index = Zend_Search_Lucene::create(dirname(__FILE__) . '/_index/_files');
-        $this->assertTrue($index instanceof Zend_Search_Lucene_Interface);
+        $this->assertInstanceOf(Zend_Search_Lucene_Interface::class, $index);
         unset($index);
 
         $this->_clearDirectory(dirname(__FILE__) . '/_index/_files');
@@ -69,14 +69,14 @@ class Zend_Search_Lucene_LuceneTest extends PHPUnit\Framework\TestCase
     {
         $index = Zend_Search_Lucene::open(dirname(__FILE__) . '/_indexSample/_files');
 
-        $this->assertTrue($index instanceof Zend_Search_Lucene_Interface);
+        $this->assertInstanceOf(Zend_Search_Lucene_Interface::class, $index);
     }
 
     public function testOpenNonCompound()
     {
         $index = Zend_Search_Lucene::open(dirname(__FILE__) . '/_indexSample/_nonCompoundIndexFiles');
 
-        $this->assertTrue($index instanceof Zend_Search_Lucene_Interface);
+        $this->assertInstanceOf(Zend_Search_Lucene_Interface::class, $index);
     }
 
     public function testDefaultSearchField()
@@ -176,7 +176,7 @@ class Zend_Search_Lucene_LuceneTest extends PHPUnit\Framework\TestCase
 
         $doc = $index->getDocument(3);
 
-        $this->assertTrue($doc instanceof Zend_Search_Lucene_Document);
+        $this->assertInstanceOf(Zend_Search_Lucene_Document::class, $doc);
         $this->assertEquals($doc->path, 'IndexSource/about-pear.html');
     }
 
@@ -316,7 +316,7 @@ class Zend_Search_Lucene_LuceneTest extends PHPUnit\Framework\TestCase
         unset($index);
 
         $index1 = Zend_Search_Lucene::open(dirname(__FILE__) . '/_index/_files');
-        $this->assertTrue($index1 instanceof Zend_Search_Lucene_Interface);
+        $this->assertInstanceOf(Zend_Search_Lucene_Interface::class, $index1);
         unset($index1);
 
         $this->_clearDirectory(dirname(__FILE__) . '/_index/_files');
@@ -366,7 +366,7 @@ class Zend_Search_Lucene_LuceneTest extends PHPUnit\Framework\TestCase
         unset($index);
 
         $index1 = Zend_Search_Lucene::open(dirname(__FILE__) . '/_index/_files');
-        $this->assertTrue($index1 instanceof Zend_Search_Lucene_Interface);
+        $this->assertInstanceOf(Zend_Search_Lucene_Interface::class, $index1);
         $pathTerm = new Zend_Search_Lucene_Index_Term('IndexSource/contributing.html', 'path');
         $contributingDocs = $index1->termDocs($pathTerm);
         foreach ($contributingDocs as $id) {
@@ -376,7 +376,7 @@ class Zend_Search_Lucene_LuceneTest extends PHPUnit\Framework\TestCase
         unset($index1);
 
         $index2 = Zend_Search_Lucene::open(dirname(__FILE__) . '/_index/_files');
-        $this->assertTrue($index2 instanceof Zend_Search_Lucene_Interface);
+        $this->assertInstanceOf(Zend_Search_Lucene_Interface::class, $index2);
 
         $hits = $index2->find('submitting');
         $this->assertEquals(count($hits), 3);

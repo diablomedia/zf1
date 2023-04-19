@@ -42,7 +42,7 @@ class Zend_Measure_Cooking_VolumeTest extends PHPUnit\Framework\TestCase
     public function testMassInit()
     {
         $value = new Zend_Measure_Cooking_Volume('100',Zend_Measure_Cooking_Volume::STANDARD,'de');
-        $this->assertTrue($value instanceof Zend_Measure_Cooking_Volume,'Zend_Measure_Cooking_Volume Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Cooking_Volume::class, $value,'Zend_Measure_Cooking_Volume Object not returned');
     }
 
 

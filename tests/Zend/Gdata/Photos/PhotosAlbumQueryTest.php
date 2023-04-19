@@ -73,7 +73,7 @@ class Zend_Gdata_Photos_PhotosAlbumQueryTest extends PHPUnit\Framework\TestCase
         try {
             $generatedString = $query->getQueryUrl();
         } catch (Exception $e) {
-            $this->assertTrue($e instanceof Zend_Gdata_App_InvalidArgumentException);
+            $this->assertInstanceOf(Zend_Gdata_App_InvalidArgumentException::class, $e);
         }
 
         $query->setAlbumId("1");
@@ -82,7 +82,7 @@ class Zend_Gdata_Photos_PhotosAlbumQueryTest extends PHPUnit\Framework\TestCase
         try {
             $generatedString = $query->getQueryUrl();
         } catch (Exception $e) {
-            $this->assertTrue($e instanceof Zend_Gdata_App_InvalidArgumentException);
+            $this->assertInstanceOf(Zend_Gdata_App_InvalidArgumentException::class, $e);
         }
       }
 

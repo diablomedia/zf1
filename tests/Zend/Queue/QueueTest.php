@@ -92,7 +92,7 @@ class Zend_Queue_QueueTest extends PHPUnit\Framework\TestCase
         $zend_config = new Zend_Config($config);
 
         $obj = new Zend_Queue($config);
-        $this->assertTrue($obj instanceof Zend_Queue);
+        $this->assertInstanceOf(Zend_Queue::class, $obj);
 
         try {
             $obj = new Zend_Queue('ops');
@@ -156,7 +156,7 @@ class Zend_Queue_QueueTest extends PHPUnit\Framework\TestCase
         // isExists
         $queue = 'test';
         $new = $this->queue->createQueue($queue);
-        $this->assertTrue($new instanceof Zend_Queue);
+        $this->assertInstanceOf(Zend_Queue::class, $new);
         $this->assertFalse($this->queue->createQueue($queue));
 
         $this->assertTrue($new->deleteQueue());
@@ -196,7 +196,7 @@ class Zend_Queue_QueueTest extends PHPUnit\Framework\TestCase
         }
 
         $messages = $this->queue->receive();
-        $this->assertTrue($messages instanceof Zend_Queue_Message_Iterator);
+        $this->assertInstanceOf(Zend_Queue_Message_Iterator::class, $messages);
 
         // ------------------------------------ deleteMessage()
         foreach ($messages as $i => $message) {

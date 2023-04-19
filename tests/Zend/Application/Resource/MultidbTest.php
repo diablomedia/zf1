@@ -77,7 +77,7 @@ class Zend_Application_Resource_MultidbTest extends PHPUnit\Framework\TestCase
         $resource->setBootstrap($this->bootstrap);
         $resource->setOptions($this->_dbOptions);
         $res = $resource->init();
-        $this->assertTrue($res instanceof Zend_Application_Resource_Multidb);
+        $this->assertInstanceOf(Zend_Application_Resource_Multidb::class, $res);
     }
 
     public function testDbsAreSetupCorrectlyObject()

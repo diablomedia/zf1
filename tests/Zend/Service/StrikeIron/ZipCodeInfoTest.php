@@ -67,7 +67,7 @@ class Zend_Service_StrikeIron_ZipCodeInfoTest extends PHPUnit\Framework\TestCase
         $strikeIron = new Zend_Service_StrikeIron(array('client' => $this->soapClient));
         $client = $strikeIron->getService(array('class' => 'ZipCodeInfo'));
 
-        $this->assertTrue($client instanceof Zend_Service_StrikeIron_ZipCodeInfo);
+        $this->assertInstanceOf(Zend_Service_StrikeIron_ZipCodeInfo::class, $client);
     }
 
 }

@@ -272,7 +272,7 @@ class Zend_Gdata_AuthSubTest extends PHPUnit\Framework\TestCase
     public function testGetHttpClientProvidesNewClientWhenNullPassed()
     {
         $client = Zend_Gdata_AuthSub::getHttpClient($this->token);
-        $this->assertTrue($client instanceof Zend_Gdata_HttpClient);
+        $this->assertInstanceOf(Zend_Gdata_HttpClient::class, $client);
         $this->assertEquals($this->token, $client->getAuthSubToken());
     }
 

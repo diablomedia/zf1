@@ -77,7 +77,7 @@ class Zend_Gdata_Gapps_UserFeedTest extends PHPUnit\Framework\TestCase
         $entryCount = 0;
         foreach ($this->userFeed as $entry) {
             $entryCount++;
-            $this->assertTrue($entry instanceof Zend_Gdata_Gapps_UserEntry);
+            $this->assertInstanceOf(Zend_Gdata_Gapps_UserEntry::class, $entry);
         }
         $this->assertTrue($entryCount > 0);
 
@@ -87,7 +87,7 @@ class Zend_Gdata_Gapps_UserFeedTest extends PHPUnit\Framework\TestCase
         $newEntryCount = 0;
         foreach ($newUserFeed as $entry) {
             $newEntryCount++;
-            $this->assertTrue($entry instanceof Zend_Gdata_Gapps_UserEntry);
+            $this->assertInstanceOf(Zend_Gdata_Gapps_UserEntry::class, $entry);
         }
         $this->assertEquals($entryCount, $newEntryCount);
     }

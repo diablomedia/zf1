@@ -124,7 +124,7 @@ class Zend_Search_Lucene_SearchTest extends PHPUnit\Framework\TestCase
         foreach ($queries as $id => $queryString) {
             $query = Zend_Search_Lucene_Search_QueryParser::parse($queryString);
 
-            $this->assertTrue($query instanceof Zend_Search_Lucene_Search_Query);
+            $this->assertInstanceOf(Zend_Search_Lucene_Search_Query::class, $query);
             $this->assertEquals($query->rewrite($index)->__toString(), $rewrittenQueries[$id]);
         }
 
@@ -416,11 +416,11 @@ class Zend_Search_Lucene_SearchTest extends PHPUnit\Framework\TestCase
         $hits = $index->find('submitting AND wishlists');
         $hit = $hits[0];
 
-        $this->assertTrue($hit instanceof Zend_Search_Lucene_Search_QueryHit);
+        $this->assertInstanceOf(Zend_Search_Lucene_Search_QueryHit::class, $hit);
         $this->assertTrue($hit->getIndex() instanceof Zend_Search_Lucene_Interface);
 
         $doc = $hit->getDocument();
-        $this->assertTrue($doc instanceof Zend_Search_Lucene_Document);
+        $this->assertInstanceOf(Zend_Search_Lucene_Document::class, $doc);
 
         $this->assertEquals($doc->path, 'IndexSource/contributing.html');
     }
@@ -434,11 +434,11 @@ class Zend_Search_Lucene_SearchTest extends PHPUnit\Framework\TestCase
 
 
         $hit = $hits[0];
-        $this->assertTrue($hit instanceof Zend_Search_Lucene_Search_QueryHit);
+        $this->assertInstanceOf(Zend_Search_Lucene_Search_QueryHit::class, $hit);
         $this->assertTrue($hit->getIndex() instanceof Zend_Search_Lucene_Interface);
 
         $doc = $hit->getDocument();
-        $this->assertTrue($doc instanceof Zend_Search_Lucene_Document);
+        $this->assertInstanceOf(Zend_Search_Lucene_Document::class, $doc);
         $this->assertTrue($hit->getIndex() instanceof Zend_Search_Lucene_Interface);
 
         $this->assertEquals($doc->path, 'IndexSource/contributing.html');

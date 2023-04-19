@@ -69,7 +69,7 @@ class Zend_Barcode_Renderer_PdfTest extends Zend_Barcode_Renderer_TestCommon
         $barcode = new Zend_Barcode_Object_Code39(array('text' => '0123456789'));
         $this->_renderer->setBarcode($barcode);
         $resource = $this->_renderer->draw();
-        $this->assertTrue($resource instanceof Zend_Pdf);
+        $this->assertInstanceOf(Zend_Pdf::class, $resource);
         Zend_Barcode::setBarcodeFont('');
     }
 
@@ -81,7 +81,7 @@ class Zend_Barcode_Renderer_PdfTest extends Zend_Barcode_Renderer_TestCommon
         $pdfResource = new Zend_Pdf();
         $this->_renderer->setResource($pdfResource);
         $resource = $this->_renderer->draw();
-        $this->assertTrue($resource instanceof Zend_Pdf);
+        $this->assertInstanceOf(Zend_Pdf::class, $resource);
         $this->assertSame($resource, $pdfResource);
         Zend_Barcode::setBarcodeFont('');
     }

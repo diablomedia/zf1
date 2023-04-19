@@ -63,7 +63,7 @@ class Zend_Pdf_Element_ArrayTest extends PHPUnit\Framework\TestCase
     public function testPDFArray1()
     {
         $arrayObj = new Zend_Pdf_Element_Array();
-        $this->assertTrue($arrayObj instanceof Zend_Pdf_Element_Array);
+        $this->assertInstanceOf(Zend_Pdf_Element_Array::class, $arrayObj);
     }
 
     public function testPDFArray2()
@@ -76,7 +76,7 @@ class Zend_Pdf_Element_ArrayTest extends PHPUnit\Framework\TestCase
         $srcArray[] = new Zend_Pdf_Element_String_Binary('some text');
 
         $arrayObj = new Zend_Pdf_Element_Array($srcArray);
-        $this->assertTrue($arrayObj instanceof Zend_Pdf_Element_Array);
+        $this->assertInstanceOf(Zend_Pdf_Element_Array::class, $arrayObj);
     }
 
     public function testPDFArrayBadInput1()

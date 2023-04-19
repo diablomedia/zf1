@@ -80,7 +80,7 @@ class Zend_Application_Resource_DojoTest extends PHPUnit\Framework\TestCase
         $resource = new Zend_Application_Resource_Dojo(array());
         $resource->setBootstrap($this->bootstrap);
         $test = $resource->init();
-        $this->assertTrue($test instanceof Zend_Dojo_View_Helper_Dojo_Container);
+        $this->assertInstanceOf(Zend_Dojo_View_Helper_Dojo_Container::class, $test);
     }
 
     public function testOptionsPassedToResourceAreUsedToSetDojosContainerState()

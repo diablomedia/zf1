@@ -38,7 +38,7 @@ class Zend_Pdf_Element_NullTest extends PHPUnit\Framework\TestCase
     public function testPDFNull()
     {
         $nullObj = new Zend_Pdf_Element_Null();
-        $this->assertTrue($nullObj instanceof Zend_Pdf_Element_Null);
+        $this->assertInstanceOf(Zend_Pdf_Element_Null::class, $nullObj);
     }
 
     public function testGetType()

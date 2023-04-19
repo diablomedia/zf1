@@ -14,7 +14,9 @@ parameters:
     ignoreErrors:
 
 includes:
-    - phpstan-baseline.neon
+    - phpstan-baseline.php
     - phpstan-php7.php
     - phpstan-php8.php
-    - phpstan-lt-php8.1.php
+    - phpstan-php80.php
+    - phpstan-php-lt-81.php
+    - phpstan-php81.php

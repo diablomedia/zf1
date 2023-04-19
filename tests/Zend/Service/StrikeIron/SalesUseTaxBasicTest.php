@@ -68,6 +68,6 @@ class Zend_Service_StrikeIron_SalesUseTaxBasicTest extends PHPUnit\Framework\Tes
         $strikeIron = new Zend_Service_StrikeIron(array('client' => $this->soapClient));
         $client = $strikeIron->getService(array('class' => 'SalesUseTaxBasic'));
 
-        $this->assertTrue($client instanceof Zend_Service_StrikeIron_SalesUseTaxBasic);
+        $this->assertInstanceOf(Zend_Service_StrikeIron_SalesUseTaxBasic::class, $client);
     }
 }

@@ -43,7 +43,7 @@ class Zend_Measure_IlluminationTest extends PHPUnit\Framework\TestCase
     public function testIlluminationInit()
     {
         $value = new Zend_Measure_Illumination('100',Zend_Measure_Illumination::STANDARD,'de');
-        $this->assertTrue($value instanceof Zend_Measure_Illumination,'Zend_Measure_Illumination Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Illumination::class, $value,'Zend_Measure_Illumination Object not returned');
     }
 
 

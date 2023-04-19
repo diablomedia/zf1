@@ -121,12 +121,12 @@ class Zend_Queue_Adapter_PlatformJobQueueTest extends Zend_Queue_Adapter_Adapter
 
         $message = $queue->send(array('script' => 'info.php'));
 
-        $this->assertTrue($message instanceof Zend_Queue_Message);
+        $this->assertInstanceOf(Zend_Queue_Message::class, $message);
 
         $list = $queue->receive();
-        $this->assertTrue($list instanceof Zend_Queue_Message_Iterator);
+        $this->assertInstanceOf(Zend_Queue_Message_Iterator::class, $list);
         foreach ( $list as $message ) {
-            $this->assertTrue($message instanceof Zend_Queue_Message_PlatformJob);
+            $this->assertInstanceOf(Zend_Queue_Message_PlatformJob::class, $message);
             $queue->deleteMessage($message);
         }
 
@@ -142,13 +142,13 @@ class Zend_Queue_Adapter_PlatformJobQueueTest extends Zend_Queue_Adapter_Adapter
         $adapter = $queue->getAdapter();
 
         $message = $adapter->send(array('script' => 'info.php'));
-        $this->assertTrue($message instanceof Zend_Queue_Message);
+        $this->assertInstanceOf(Zend_Queue_Message::class, $message);
 
         $list = $queue->receive();
-        $this->assertTrue($list instanceof Zend_Queue_Message_Iterator);
+        $this->assertInstanceOf(Zend_Queue_Message_Iterator::class, $list);
 
         foreach ($list as $message) {
-            $this->assertTrue($message instanceof Zend_Queue_Message_PlatformJob);
+            $this->assertInstanceOf(Zend_Queue_Message_PlatformJob::class, $message);
             $queue->deleteMessage($message);
         }
 
@@ -175,12 +175,12 @@ class Zend_Queue_Adapter_PlatformJobQueueTest extends Zend_Queue_Adapter_Adapter
 
         // send the message
         $message = $adapter->send((array('script' => $scriptName)));
-        $this->assertTrue($message instanceof Zend_Queue_Message);
+        $this->assertInstanceOf(Zend_Queue_Message::class, $message);
 
         // get it back
         $list = $adapter->receive(1);
         $this->assertCount(1, $list);
-        $this->assertTrue($list instanceof Zend_Queue_Message_Iterator);
+        $this->assertInstanceOf(Zend_Queue_Message_Iterator::class, $list);
         $this->assertTrue($list->valid());
 
         $message = $list->current();
@@ -188,7 +188,7 @@ class Zend_Queue_Adapter_PlatformJobQueueTest extends Zend_Queue_Adapter_Adapter
             $adapter->deleteMessage($list->current());
         }
 
-        $this->assertTrue($message instanceof Zend_Queue_Message);
+        $this->assertInstanceOf(Zend_Queue_Message::class, $message);
         $this->assertEquals($message->getJob()->getScript(), $scriptName);
 
         // delete the queue we created
@@ -213,12 +213,12 @@ class Zend_Queue_Adapter_PlatformJobQueueTest extends Zend_Queue_Adapter_Adapter
 
         // send the message
         $message = $adapter->send((array('script' => $scriptName)));
-        $this->assertTrue($message instanceof Zend_Queue_Message);
+        $this->assertInstanceOf(Zend_Queue_Message::class, $message);
 
         // get it back
         $list = $adapter->receive(1);
         $this->assertCount(1, $list);
-        $this->assertTrue($list instanceof Zend_Queue_Message_Iterator);
+        $this->assertInstanceOf(Zend_Queue_Message_Iterator::class, $list);
         $this->assertTrue($list->valid());
 
         $message = $list->current();
@@ -226,7 +226,7 @@ class Zend_Queue_Adapter_PlatformJobQueueTest extends Zend_Queue_Adapter_Adapter
             $adapter->deleteMessage($list->current());
         }
 
-        $this->assertTrue($message instanceof Zend_Queue_Message);
+        $this->assertInstanceOf(Zend_Queue_Message::class, $message);
         $this->assertEquals($message->getJob()->getScript(), $scriptName);
 
         $id = $message->getJob()->getID();
@@ -286,7 +286,7 @@ class Zend_Queue_Adapter_PlatformJobQueueTest extends Zend_Queue_Adapter_Adapter
         if (!$queue = $this->createQueue(__FUNCTION__)) {
             return;
         }
-        $this->assertTrue($queue instanceof Zend_Queue);
+        $this->assertInstanceOf(Zend_Queue::class, $queue);
 
         $initCount = $queue->count();
 
@@ -309,7 +309,7 @@ class Zend_Queue_Adapter_PlatformJobQueueTest extends Zend_Queue_Adapter_Adapter
             $queue->deleteMessage($message);
         }
 
-        $this->assertEquals($initCount, count($queue));
+        $this->assertCount($initCount, $queue);
         $this->assertTrue($queue->deleteQueue());
 
         // delete the queue we created

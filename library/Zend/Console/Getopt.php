@@ -517,9 +517,9 @@ class Zend_Console_Getopt
         $doc->appendChild($optionsNode);
         foreach ($this->_options as $flag => $value) {
             $optionNode = $doc->createElement('option');
-            $optionNode->setAttribute('flag', utf8_encode($flag));
+            $optionNode->setAttribute('flag', iconv('ISO-8859-1', 'UTF-8', $flag));
             if ($value !== true) {
-                $optionNode->setAttribute('parameter', utf8_encode($value));
+                $optionNode->setAttribute('parameter', iconv('ISO-8859-1', 'UTF-8', $value));
             }
             $optionsNode->appendChild($optionNode);
         }

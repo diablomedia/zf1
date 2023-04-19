@@ -39,10 +39,10 @@ class Zend_Feed_Entry_RssTest extends PHPUnit\Framework\TestCase
     public function testContentEncodedSupport()
     {
         $feed = Zend_Feed::importFile(dirname(__FILE__) . '/../_files/TestFeedEntryRssContentEncoded.xml');
-        $this->assertTrue($feed instanceof Zend_Feed_Rss);
+        $this->assertInstanceOf(Zend_Feed_Rss::class, $feed);
 
         $item = $feed->current();
-        $this->assertTrue($item instanceof Zend_Feed_Entry_Rss);
+        $this->assertInstanceOf(Zend_Feed_Entry_Rss::class, $item);
 
         $this->assertTrue(isset($item->content));
         $this->assertStringContainsString(
@@ -60,11 +60,11 @@ class Zend_Feed_Entry_RssTest extends PHPUnit\Framework\TestCase
     public function testContentEncodedNullIfEmpty()
     {
         $feed = Zend_Feed::importFile(dirname(__FILE__) . '/../_files/TestFeedEntryRssContentEncoded.xml');
-        $this->assertTrue($feed instanceof Zend_Feed_Rss);
+        $this->assertInstanceOf(Zend_Feed_Rss::class, $feed);
 
         $feed->next();
         $item =  $feed->current();
-        $this->assertTrue($item instanceof Zend_Feed_Entry_Rss);
+        $this->assertInstanceOf(Zend_Feed_Entry_Rss::class, $item);
         $this->assertFalse(isset($item->content));
         $this->assertNull($item->content());
         // $this->assertNull($item->content); // always return DOMElement Object

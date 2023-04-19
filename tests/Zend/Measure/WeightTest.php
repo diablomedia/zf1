@@ -43,7 +43,7 @@ class Zend_Measure_WeightTest extends PHPUnit\Framework\TestCase
     public function testWeightInit()
     {
         $value = new Zend_Measure_Weight('100',Zend_Measure_Weight::STANDARD,'de');
-        $this->assertTrue($value instanceof Zend_Measure_Weight,'Zend_Measure_Weight Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Weight::class, $value,'Zend_Measure_Weight Object not returned');
     }
 
 

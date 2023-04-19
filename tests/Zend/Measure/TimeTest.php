@@ -42,7 +42,7 @@ class Zend_Measure_TimeTest extends PHPUnit\Framework\TestCase
     public function testTimeInit()
     {
         $value = new Zend_Measure_Time('100',Zend_Measure_Time::STANDARD,'de');
-        $this->assertTrue($value instanceof Zend_Measure_Time,'Zend_Measure_Time Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Time::class, $value,'Zend_Measure_Time Object not returned');
     }
 
     /**

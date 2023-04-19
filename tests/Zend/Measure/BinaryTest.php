@@ -42,7 +42,7 @@ class Zend_Measure_BinaryTest extends PHPUnit\Framework\TestCase
     public function testBinaryInit()
     {
         $value = new Zend_Measure_Binary('100',Zend_Measure_Binary::STANDARD,'de');
-        $this->assertTrue($value instanceof Zend_Measure_Binary,'Zend_Measure_Binary Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Binary::class, $value,'Zend_Measure_Binary Object not returned');
     }
 
     /**

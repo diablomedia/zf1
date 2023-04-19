@@ -42,7 +42,7 @@ class Zend_Measure_AreaTest extends PHPUnit\Framework\TestCase
     public function testAreaInit()
     {
         $value = new Zend_Measure_Area('100',Zend_Measure_Area::STANDARD,'de');
-        $this->assertTrue($value instanceof Zend_Measure_Area,'Zend_Measure_Area Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Area::class, $value,'Zend_Measure_Area Object not returned');
     }
 
     /**

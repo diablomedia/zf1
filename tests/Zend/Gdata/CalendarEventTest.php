@@ -92,7 +92,7 @@ class Zend_Gdata_CalendarEventTest extends PHPUnit\Framework\TestCase
         $entryCount = 0;
         foreach ($this->eventFeed as $entry) {
             $entryCount++;
-            $this->assertTrue($entry instanceof Zend_Gdata_Calendar_EventEntry);
+            $this->assertInstanceOf(Zend_Gdata_Calendar_EventEntry::class, $entry);
         }
         $this->assertTrue($entryCount > 0);
 
@@ -102,7 +102,7 @@ class Zend_Gdata_CalendarEventTest extends PHPUnit\Framework\TestCase
         $newEntryCount = 0;
         foreach ($newEventFeed as $entry) {
             $newEntryCount++;
-            $this->assertTrue($entry instanceof Zend_Gdata_Calendar_EventEntry);
+            $this->assertInstanceOf(Zend_Gdata_Calendar_EventEntry::class, $entry);
         }
         $this->assertEquals($entryCount, $newEntryCount);
     }
@@ -409,7 +409,7 @@ class Zend_Gdata_CalendarEventTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($entry->getWhen(), $entry->when);
         $this->assertCount(1, $when);
         $w = $when[0];
-        $this->assertTrue($w instanceof Zend_Gdata_Extension_When);
+        $this->assertInstanceOf(Zend_Gdata_Extension_When::class, $w);
         $this->verifyProperty($w, "startTime", "2007-03-24T12:00:00.000-07:00");
         $this->verifyProperty($w, "endTime", "2007-03-24T15:00:00.000-07:00");
 
@@ -449,7 +449,7 @@ class Zend_Gdata_CalendarEventTest extends PHPUnit\Framework\TestCase
         $entry = $feed[1];
         $who = $entry->getWho();
         foreach ($who as $w) {
-            $this->assertTrue($w instanceof Zend_Gdata_Extension_Who);
+            $this->assertInstanceOf(Zend_Gdata_Extension_Who::class, $w);
         }
         $this->assertCount(2, $who);
 
@@ -485,7 +485,7 @@ class Zend_Gdata_CalendarEventTest extends PHPUnit\Framework\TestCase
 
         // Assert that one of the event's QuickAdd entries is correct
         $quickAdd = $feed->entry[1]->getQuickAdd();
-        $this->assertTrue($quickAdd instanceof Zend_Gdata_Calendar_Extension_QuickAdd);
+        $this->assertInstanceOf(Zend_Gdata_Calendar_Extension_QuickAdd::class, $quickAdd);
         $this->verifyProperty($quickAdd, "value", true);
     }
 

@@ -38,14 +38,14 @@ jobs:
             fail-fast: false
             matrix:
                 operating-system: [ubuntu-latest]
-                php-versions: ['7.4', '8.0', '8.1']
+                php-versions: ['7.4', '8.0', '8.1', '8.2']
                 composer-args: ['', '--prefer-lowest']
         runs-on: ${{ matrix.operating-system }}
         steps:
             - name: Checkout
               uses: actions/checkout@v3
             - name: Setup PHP
-              uses: shivammathur/setup-php@2.21.2
+              uses: shivammathur/setup-php@2.24.0
               with:
                   php-version: ${{ matrix.php-versions }}
                   extensions: mbstring

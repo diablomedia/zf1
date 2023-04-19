@@ -43,7 +43,7 @@ class Zend_Measure_ForceTest extends PHPUnit\Framework\TestCase
     public function testForceInit()
     {
         $value = new Zend_Measure_Force('100',Zend_Measure_Force::STANDARD,'de');
-        $this->assertTrue($value instanceof Zend_Measure_Force,'Zend_Measure_Force Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Force::class, $value,'Zend_Measure_Force Object not returned');
     }
 
 

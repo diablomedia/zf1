@@ -43,7 +43,7 @@ class Zend_Measure_FrequencyTest extends PHPUnit\Framework\TestCase
     public function testFrequencyInit()
     {
         $value = new Zend_Measure_Frequency('100',Zend_Measure_Frequency::STANDARD,'de');
-        $this->assertTrue($value instanceof Zend_Measure_Frequency,'Zend_Measure_Frequency Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Frequency::class, $value,'Zend_Measure_Frequency Object not returned');
     }
 
 

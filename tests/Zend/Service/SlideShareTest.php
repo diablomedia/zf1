@@ -107,7 +107,7 @@ class Zend_Service_SlideShareTest extends PHPUnit\Framework\TestCase
             $this->fail("Exception Caught retrieving Slideshow");
         }
 
-        $this->assertTrue($result instanceof Zend_Service_SlideShare_SlideShow);
+        $this->assertInstanceOf(Zend_Service_SlideShare_SlideShow::class, $result);
     }
 
     public function testGetSlideShowByTag()
@@ -203,7 +203,7 @@ class Zend_Service_SlideShareTest extends PHPUnit\Framework\TestCase
             }
         }
 
-        $this->assertTrue($result instanceof Zend_Service_SlideShare_SlideShow);
+        $this->assertInstanceOf(Zend_Service_SlideShare_SlideShow::class, $result);
         $this->assertTrue($result->getId() > 0);
         $this->assertTrue($result->getTitle() === $title);
     }

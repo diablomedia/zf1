@@ -38,7 +38,7 @@ class Zend_Pdf_Element_NumericTest extends PHPUnit\Framework\TestCase
     public function testPDFNumeric()
     {
         $intObj = new Zend_Pdf_Element_Numeric(100);
-        $this->assertTrue($intObj instanceof Zend_Pdf_Element_Numeric);
+        $this->assertInstanceOf(Zend_Pdf_Element_Numeric::class, $intObj);
     }
 
     public function testPDFNumericBadArgument()

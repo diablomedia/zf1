@@ -80,7 +80,7 @@ class Zend_Gdata_CalendarOnlineTest extends PHPUnit\Framework\TestCase
                 !== false);
         $eventCount = 0;
         foreach ( $eventFeed as $event ) {
-            $this->assertTrue($event instanceof Zend_Gdata_Calendar_EventEntry);
+            $this->assertInstanceOf(Zend_Gdata_Calendar_EventEntry::class, $event);
             $eventCount++;
         }
         $this->assertTrue($eventCount > 0 );
@@ -96,8 +96,8 @@ class Zend_Gdata_CalendarOnlineTest extends PHPUnit\Framework\TestCase
         $query->setEvent($eventId);
 
         $eventEntry = $this->gdata->getCalendarEventEntry($query);
-        $this->assertTrue(
-                $eventEntry instanceof Zend_Gdata_Calendar_EventEntry);
+        $this->assertInstanceOf(
+                Zend_Gdata_Calendar_EventEntry::class, $eventEntry);
         return $eventEntry;
     }
 

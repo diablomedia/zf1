@@ -59,7 +59,7 @@ class Zend_Serializer_SerializerTest extends PHPUnit\Framework\TestCase
     public function testFactoryValidCall()
     {
         $serializer = Zend_Serializer::factory('PhpSerialize');
-        $this->assertTrue($serializer instanceof Zend_Serializer_Adapter_PhpSerialize);
+        $this->assertInstanceOf(Zend_Serializer_Adapter_PhpSerialize::class, $serializer);
     }
 
     public function testFactoryUnknownAdapter()
@@ -80,7 +80,7 @@ class Zend_Serializer_SerializerTest extends PHPUnit\Framework\TestCase
     public function testDefaultAdapter()
     {
         $adapter = Zend_Serializer::getDefaultAdapter();
-        $this->assertTrue($adapter instanceof Zend_Serializer_Adapter_AdapterInterface);
+        $this->assertInstanceOf(Zend_Serializer_Adapter_AdapterInterface::class, $adapter);
     }
 
     public function testChangeDefaultAdapterWithString()

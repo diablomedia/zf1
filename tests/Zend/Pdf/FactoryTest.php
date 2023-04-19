@@ -41,6 +41,6 @@ class Zend_Pdf_FactoryTest extends PHPUnit\Framework\TestCase
         $pdf = new Zend_Pdf();
         $page = $pdf->newPage(Zend_Pdf_Page::SIZE_A4);
 
-        $this->assertTrue($page instanceof Zend_Pdf_Page);
+        $this->assertInstanceOf(Zend_Pdf_Page::class, $page);
     }
 }

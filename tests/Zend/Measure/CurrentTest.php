@@ -42,7 +42,7 @@ class Zend_Measure_CurrentTest extends PHPUnit\Framework\TestCase
     public function testCurrentInit()
     {
         $value = new Zend_Measure_Current('100',Zend_Measure_Current::STANDARD,'de');
-        $this->assertTrue($value instanceof Zend_Measure_Current,'Zend_Measure_Current Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Current::class, $value,'Zend_Measure_Current Object not returned');
     }
 
 

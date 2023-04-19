@@ -92,7 +92,7 @@ class Zend_Gdata_CalendarFeedCompositeTest extends PHPUnit\Framework\TestCase
         $entryCount = 0;
         foreach ($this->eventFeed as $entry) {
             $entryCount++;
-            $this->assertTrue($entry instanceof Zend_Gdata_Calendar_EventEntry);
+            $this->assertInstanceOf(Zend_Gdata_Calendar_EventEntry::class, $entry);
         }
         $this->assertTrue($entryCount > 0);
 
@@ -102,7 +102,7 @@ class Zend_Gdata_CalendarFeedCompositeTest extends PHPUnit\Framework\TestCase
         $newEntryCount = 0;
         foreach ($newEventFeed as $entry) {
             $newEntryCount++;
-            $this->assertTrue($entry instanceof Zend_Gdata_Calendar_EventEntry);
+            $this->assertInstanceOf(Zend_Gdata_Calendar_EventEntry::class, $entry);
         }
         $this->assertEquals($entryCount, $newEntryCount);
     }
@@ -395,17 +395,17 @@ class Zend_Gdata_CalendarFeedCompositeTest extends PHPUnit\Framework\TestCase
         $entry = $feed[2];
         $c = $entry->getComments();
         $this->assertEquals($c, $entry->comments);
-        $this->assertTrue($c instanceof Zend_Gdata_Extension_Comments);
+        $this->assertInstanceOf(Zend_Gdata_Extension_Comments::class, $c);
 
         // Make sure that the feedLink looks right
         $fl = $c->getFeedLink();
-        $this->assertTrue($fl instanceof Zend_Gdata_Extension_FeedLink);
+        $this->assertInstanceOf(Zend_Gdata_Extension_FeedLink::class, $fl);
         $this->assertEquals($fl, $c->feedLink);
         $this->verifyProperty($fl, "href", "http://www.google.com/calendar/feeds/default/private/full/lq2ai6imsbq209q3aeturho50g/comments");
 
         // Make sure the embedded feed looks right
         $cFeed = $fl->getFeed();
-        $this->assertTrue($cFeed instanceof Zend_Gdata_App_Feed);
+        $this->assertInstanceOf(Zend_Gdata_App_Feed::class, $cFeed);
         $this->assertEquals($cFeed, $fl->feed);
 
         // Verify the remainder of the comment feed metadata
@@ -419,7 +419,7 @@ class Zend_Gdata_CalendarFeedCompositeTest extends PHPUnit\Framework\TestCase
         $commentCount = 0;
         foreach ($cFeed as $entry)
         {
-            $this->assertTrue($entry instanceof Zend_Gdata_Entry);
+            $this->assertInstanceOf(Zend_Gdata_Entry::class, $entry);
             $commentCount++;
         }
         $this->assertEquals(2, $commentCount);

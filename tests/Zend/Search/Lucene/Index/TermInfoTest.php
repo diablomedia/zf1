@@ -38,7 +38,7 @@ class Zend_Search_Lucene_Index_TermInfoTest extends PHPUnit\Framework\TestCase
     public function testCreate()
     {
         $termInfo = new Zend_Search_Lucene_Index_TermInfo(0, 1, 2, 3);
-        $this->assertTrue($termInfo instanceof Zend_Search_Lucene_Index_TermInfo);
+        $this->assertInstanceOf(Zend_Search_Lucene_Index_TermInfo::class, $termInfo);
 
         $this->assertEquals($termInfo->docFreq,      0);
         $this->assertEquals($termInfo->freqPointer,  1);

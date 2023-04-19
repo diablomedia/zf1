@@ -42,7 +42,7 @@ class Zend_Measure_EnergyTest extends PHPUnit\Framework\TestCase
     public function testEnergyInit()
     {
         $value = new Zend_Measure_Energy('100',Zend_Measure_Energy::STANDARD,'de');
-        $this->assertTrue($value instanceof Zend_Measure_Energy,'Zend_Measure_Energy Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Energy::class, $value,'Zend_Measure_Energy Object not returned');
     }
 
 

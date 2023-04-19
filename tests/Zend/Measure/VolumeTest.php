@@ -49,7 +49,7 @@ class Zend_Measure_VolumeTest extends PHPUnit\Framework\TestCase
     public function testVolumeInit()
     {
         $value = new Zend_Measure_Volume('100',Zend_Measure_Volume::STANDARD,'de');
-        $this->assertTrue($value instanceof Zend_Measure_Volume,'Zend_Measure_Volume Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Volume::class, $value,'Zend_Measure_Volume Object not returned');
     }
 
 

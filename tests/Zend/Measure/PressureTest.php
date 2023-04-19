@@ -43,7 +43,7 @@ class Zend_Measure_PressureTest extends PHPUnit\Framework\TestCase
     public function testPressureInit()
     {
         $value = new Zend_Measure_Pressure('100',Zend_Measure_Pressure::STANDARD,'de');
-        $this->assertTrue($value instanceof Zend_Measure_Pressure,'Zend_Measure_Pressure Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Pressure::class, $value,'Zend_Measure_Pressure Object not returned');
     }
 
 

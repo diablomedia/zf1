@@ -118,7 +118,7 @@ class Zend_Application_Resource_DbTest extends PHPUnit\Framework\TestCase
         $resource = new Zend_Application_Resource_Db($config);
         $resource->init();
         $db = $resource->getDbAdapter();
-        $this->assertTrue($db instanceof Zend_Db_Adapter_Pdo_Sqlite);
+        $this->assertInstanceOf(Zend_Db_Adapter_Pdo_Sqlite::class, $db);
     }
 
     /**

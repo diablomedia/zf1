@@ -47,6 +47,6 @@ class Zend_Service_StrikeIron_ExceptionTest extends PHPUnit\Framework\TestCase
     public function testInheritsFromZendException()
     {
         $exception = new Zend_Service_StrikeIron_Exception();
-        $this->assertTrue($exception instanceof Zend_Exception);
+        $this->assertInstanceOf(Zend_Exception::class, $exception);
     }
 }

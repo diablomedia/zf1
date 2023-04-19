@@ -71,7 +71,7 @@ class Zend_CodeGenerator_Php_MethodTest extends PHPUnit\Framework\TestCase
             ));
         $params = $codeGen->getParameters();
         $param = array_shift($params);
-        $this->assertTrue($param instanceof Zend_CodeGenerator_Php_Parameter, 'Failed because $param was not instance of Zend_CodeGenerator_Php_Property');
+        $this->assertInstanceOf(Zend_CodeGenerator_Php_Parameter::class, $param, 'Failed because $param was not instance of Zend_CodeGenerator_Php_Property');
     }
 
     public function testMethodBodyGetterAndSetter()

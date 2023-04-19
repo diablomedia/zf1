@@ -37,7 +37,7 @@ class Zend_Gdata_GdataTest extends PHPUnit\Framework\TestCase
     {
         $gdata = new Zend_Gdata();
         $client = $gdata->getHttpClient();
-        $this->assertTrue($client instanceof Zend_Http_Client,
+        $this->assertInstanceOf(Zend_Http_Client::class, $client,
             'Expecting object of type Zend_Http_Client, got '
             . (gettype($client) == 'object' ? get_class($client) : gettype($client))
         );
@@ -48,7 +48,7 @@ class Zend_Gdata_GdataTest extends PHPUnit\Framework\TestCase
         $client = new Zend_Http_Client();
         $gdata = new Zend_Gdata($client);
         $client2 = $gdata->getHttpClient();
-        $this->assertTrue($client2 instanceof Zend_Http_Client,
+        $this->assertInstanceOf(Zend_Http_Client::class, $client2,
             'Expecting object of type Zend_Http_Client, got '
             . (gettype($client) == 'object' ? get_class($client) : gettype($client))
         );
@@ -77,7 +77,7 @@ class Zend_Gdata_GdataTest extends PHPUnit\Framework\TestCase
             $feed = $gdata->getFeed(new stdClass());
             $this->fail('Expecting to catch Zend_Gdata_App_InvalidArgumentException');
         } catch (Zend_Exception $e) {
-            $this->assertTrue($e instanceof Zend_Gdata_App_InvalidArgumentException,
+            $this->assertInstanceOf(Zend_Gdata_App_InvalidArgumentException::class, $e,
                 'Expecting Zend_Gdata_App_InvalidArgumentException, got '.get_class($e));
             $this->assertEquals('You must specify the location as either a string URI or a child of Zend_Gdata_Query', $e->getMessage());
         }
@@ -92,7 +92,7 @@ class Zend_Gdata_GdataTest extends PHPUnit\Framework\TestCase
             $feed = $gdata->getEntry(new stdClass());
             $this->fail('Expecting to catch Zend_Gdata_App_InvalidArgumentException');
         } catch (Zend_Exception $e) {
-            $this->assertTrue($e instanceof Zend_Gdata_App_InvalidArgumentException,
+            $this->assertInstanceOf(Zend_Gdata_App_InvalidArgumentException::class, $e,
                 'Expecting Zend_Gdata_App_InvalidArgumentException, got '.get_class($e));
             $this->assertEquals('You must specify the location as either a string URI or a child of Zend_Gdata_Query', $e->getMessage());
         }

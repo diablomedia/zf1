@@ -38,7 +38,7 @@ class Zend_Pdf_Element_String_BinaryTest extends PHPUnit\Framework\TestCase
     public function testPDFBinaryString()
     {
         $stringObj = new Zend_Pdf_Element_String_Binary('some text');
-        $this->assertTrue($stringObj instanceof Zend_Pdf_Element_String_Binary);
+        $this->assertInstanceOf(Zend_Pdf_Element_String_Binary::class, $stringObj);
     }
 
     public function testGetType()

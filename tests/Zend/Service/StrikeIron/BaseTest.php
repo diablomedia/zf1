@@ -84,7 +84,7 @@ class Zend_Service_StrikeIron_BaseTest extends PHPUnit\Framework\TestCase
         $this->assertCount(1, $headers);
         $header = $headers[0];
 
-        $this->assertTrue($header instanceof SoapHeader);
+        $this->assertInstanceOf(SoapHeader::class, $header);
         $this->assertEquals('LicenseInfo', $header->name);
         $this->assertEquals('user', $header->data['RegisteredUser']['UserID']);
         $this->assertEquals('pass', $header->data['RegisteredUser']['Password']);
@@ -143,7 +143,7 @@ class Zend_Service_StrikeIron_BaseTest extends PHPUnit\Framework\TestCase
         $this->assertCount(1, $headers);
         $header = $headers[0];
 
-        $this->assertTrue($header instanceof SoapHeader);
+        $this->assertInstanceOf(SoapHeader::class, $header);
         $this->assertEquals('LicenseInfo', $header->name);
         $this->assertEquals('foo', $header->data['RegisteredUser']['UserID']);
         $this->assertEquals('bar', $header->data['RegisteredUser']['Password']);
@@ -193,7 +193,7 @@ class Zend_Service_StrikeIron_BaseTest extends PHPUnit\Framework\TestCase
             $this->base->throwTheException();
             $this->fail();
         } catch (Exception $e) {
-            $this->assertTrue($e instanceof Zend_Service_StrikeIron_Exception);
+            $this->assertInstanceOf(Zend_Service_StrikeIron_Exception::class, $e);
             $this->assertEquals('Exception: foo', $e->getMessage());
             $this->assertEquals(43, $e->getCode());
         }

@@ -69,13 +69,13 @@ class Zend_Memory_MemoryTest extends PHPUnit\Framework\TestCase
     {
         /** 'None' backend */
         $memoryManager = Zend_Memory::factory('None');
-        $this->assertTrue($memoryManager instanceof Zend_Memory_Manager);
+        $this->assertInstanceOf(Zend_Memory_Manager::class, $memoryManager);
         unset($memoryManager);
 
         /** 'File' backend */
         $backendOptions = array('cache_dir' => $this->cacheDir); // Directory where to put the cache files
         $memoryManager = Zend_Memory::factory('File', $backendOptions);
-        $this->assertTrue($memoryManager instanceof Zend_Memory_Manager);
+        $this->assertInstanceOf(Zend_Memory_Manager::class, $memoryManager);
         unset($memoryManager);
     }
 
@@ -90,7 +90,7 @@ class Zend_Memory_MemoryTest extends PHPUnit\Framework\TestCase
         } catch(Zend_Cache_Exception $exception) {
             $this->markTestSkipped($exception->getMessage());
         }
-        $this->assertTrue($memoryManager instanceof Zend_Memory_Manager);
+        $this->assertInstanceOf(Zend_Memory_Manager::class, $memoryManager);
     }
 
     /**

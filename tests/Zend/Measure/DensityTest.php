@@ -42,7 +42,7 @@ class Zend_Measure_DensityTest extends PHPUnit\Framework\TestCase
     public function testDensityInit()
     {
         $value = new Zend_Measure_Density('100',Zend_Measure_Density::STANDARD,'de');
-        $this->assertTrue($value instanceof Zend_Measure_Density,'Zend_Measure_Density Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Density::class, $value,'Zend_Measure_Density Object not returned');
     }
 
 

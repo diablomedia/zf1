@@ -43,7 +43,7 @@ class Zend_Measure_PowerTest extends PHPUnit\Framework\TestCase
     public function testPowerInit()
     {
         $value = new Zend_Measure_Power('100',Zend_Measure_Power::STANDARD,'de');
-        $this->assertTrue($value instanceof Zend_Measure_Power,'Zend_Measure_Power Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Power::class, $value,'Zend_Measure_Power Object not returned');
     }
 
 

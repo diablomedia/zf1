@@ -70,7 +70,7 @@ class Zend_Memory_MemoryManagerTest extends PHPUnit\Framework\TestCase
         /** 'File' backend */
         $backendOptions = array('cache_dir' => $this->cacheDir); // Directory where to put the cache files
         $memoryManager = Zend_Memory::factory('File', $backendOptions);
-        $this->assertTrue($memoryManager instanceof Zend_Memory_Manager);
+        $this->assertInstanceOf(Zend_Memory_Manager::class, $memoryManager);
     }
 
 
@@ -116,19 +116,19 @@ class Zend_Memory_MemoryManagerTest extends PHPUnit\Framework\TestCase
         $memoryManager = Zend_Memory::factory('File', $backendOptions);
 
         $memObject1 = $memoryManager->create('Value of object 1');
-        $this->assertTrue($memObject1 instanceof Zend_Memory_AccessController);
+        $this->assertInstanceOf(Zend_Memory_AccessController::class, $memObject1);
         $this->assertEquals($memObject1->getRef(), 'Value of object 1');
 
         $memObject2 = $memoryManager->create();
-        $this->assertTrue($memObject2 instanceof Zend_Memory_AccessController);
+        $this->assertInstanceOf(Zend_Memory_AccessController::class, $memObject2);
         $this->assertEquals($memObject2->getRef(), '');
 
         $memObject3 = $memoryManager->createLocked('Value of object 3');
-        $this->assertTrue($memObject3 instanceof Zend_Memory_Container_Locked);
+        $this->assertInstanceOf(Zend_Memory_Container_Locked::class, $memObject3);
         $this->assertEquals($memObject3->getRef(), 'Value of object 3');
 
         $memObject4 = $memoryManager->createLocked();
-        $this->assertTrue($memObject4 instanceof Zend_Memory_Container_Locked);
+        $this->assertInstanceOf(Zend_Memory_Container_Locked::class, $memObject4);
         $this->assertEquals($memObject4->getRef(), '');
     }
 

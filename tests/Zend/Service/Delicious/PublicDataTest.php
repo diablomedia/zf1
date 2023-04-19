@@ -130,12 +130,12 @@ class Zend_Service_Delicious_PublicDataTest extends PHPUnit\Framework\TestCase
     {
         $posts = $this->_delicious->getUserPosts(self::TEST_UNAME, 10);
 
-        $this->assertTrue($posts instanceof Zend_Service_Delicious_PostList);
+        $this->assertInstanceOf(Zend_Service_Delicious_PostList::class, $posts);
 
         // check if all objects in returned Zend_Service_Delicious_PostList
         // are instances of Zend_Service_Delicious_SimplePost
         foreach ($posts as $post) {
-            $this->assertTrue($post instanceof Zend_Service_Delicious_SimplePost);
+            $this->assertInstanceOf(Zend_Service_Delicious_SimplePost::class, $post);
         }
 
         // test filtering of Zend_Service_Delicious_PostList by tag name

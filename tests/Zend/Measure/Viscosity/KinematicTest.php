@@ -42,7 +42,7 @@ class Zend_Measure_Viscosity_KinematicTest extends PHPUnit\Framework\TestCase
     public function testMassInit()
     {
         $value = new Zend_Measure_Viscosity_Kinematic('100',Zend_Measure_Viscosity_Kinematic::STANDARD,'de');
-        $this->assertTrue($value instanceof Zend_Measure_Viscosity_Kinematic,'Zend_Measure_Viscosity_Kinematic Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Viscosity_Kinematic::class, $value,'Zend_Measure_Viscosity_Kinematic Object not returned');
     }
 
 

@@ -117,7 +117,7 @@ class Zend_Pdf_ProcessingTest extends PHPUnit\Framework\TestCase
 
         $pdf1 = Zend_Pdf::load(dirname(__FILE__) . '/_files/output.pdf');
 
-        $this->assertTrue($pdf1 instanceof Zend_Pdf);
+        $this->assertInstanceOf(Zend_Pdf::class, $pdf1);
         unset($pdf1);
 
         unlink(dirname(__FILE__) . '/_files/output.pdf');
@@ -224,7 +224,7 @@ class Zend_Pdf_ProcessingTest extends PHPUnit\Framework\TestCase
 
         $pdf1 = Zend_Pdf::load(dirname(__FILE__) . '/_files/output.pdf');
 
-        $this->assertTrue($pdf1 instanceof Zend_Pdf);
+        $this->assertInstanceOf(Zend_Pdf::class, $pdf1);
         unset($pdf1);
 
         unlink(dirname(__FILE__) . '/_files/output.pdf');
@@ -329,7 +329,7 @@ class Zend_Pdf_ProcessingTest extends PHPUnit\Framework\TestCase
 
         $pdf1 = Zend_Pdf::load(dirname(__FILE__) . '/_files/output.pdf');
 
-        $this->assertTrue($pdf1 instanceof Zend_Pdf);
+        $this->assertInstanceOf(Zend_Pdf::class, $pdf1);
         $this->assertEquals($srcPageCount*2, count($pdf1->pages));
         unset($pdf1);
 

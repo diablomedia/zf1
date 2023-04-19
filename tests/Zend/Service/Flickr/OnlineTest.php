@@ -109,7 +109,7 @@ class Zend_Service_Flickr_OnlineTest extends PHPUnit\Framework\TestCase
 
         $count = 0;
         foreach ($resultSet as $result) {
-            $this->assertTrue($result instanceof Zend_Service_Flickr_Result);
+            $this->assertInstanceOf(Zend_Service_Flickr_Result::class, $result);
             $count++;
         }
 
@@ -156,7 +156,7 @@ class Zend_Service_Flickr_OnlineTest extends PHPUnit\Framework\TestCase
 
         $count = 0;
         foreach ($resultSet as $result) {
-            $this->assertTrue($result instanceof Zend_Service_Flickr_Result);
+            $this->assertInstanceOf(Zend_Service_Flickr_Result::class, $result);
             $count++;
         }
 
@@ -197,7 +197,7 @@ class Zend_Service_Flickr_OnlineTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(1, $resultSet->firstResultPosition);
 
         foreach ($resultSet as $result) {
-            $this->assertTrue($result instanceof Zend_Service_Flickr_Result);
+            $this->assertInstanceOf(Zend_Service_Flickr_Result::class, $result);
             if (isset($dateTakenPrevious)) {
                 $this->assertTrue(strcmp($result->datetaken, $dateTakenPrevious) > 0);
             }

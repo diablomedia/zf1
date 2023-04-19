@@ -66,7 +66,7 @@ class Zend_Memory_ValueTest extends PHPUnit\Framework\TestCase
     public function testCreation()
     {
         $valueObject = new Zend_Memory_Value('data data data ...', new Zend_Memory_Container_Movable_Dummy());
-        $this->assertTrue($valueObject instanceof Zend_Memory_Value);
+        $this->assertInstanceOf(Zend_Memory_Value::class, $valueObject);
         $this->assertEquals($valueObject->getRef(), 'data data data ...');
     }
 

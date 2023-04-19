@@ -43,7 +43,7 @@ class Zend_Measure_TorqueTest extends PHPUnit\Framework\TestCase
     public function testTorqueInit()
     {
         $value = new Zend_Measure_Torque('100',Zend_Measure_Torque::STANDARD,'de');
-        $this->assertTrue($value instanceof Zend_Measure_Torque,'Zend_Measure_Torque Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Torque::class, $value,'Zend_Measure_Torque Object not returned');
     }
 
 

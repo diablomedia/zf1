@@ -59,7 +59,7 @@ class Zend_Search_Lucene_Index_SegmentMergerTest extends PHPUnit\Framework\TestC
         }
 
         $mergedSegment = $segmentMerger->merge();
-        $this->assertTrue($mergedSegment instanceof Zend_Search_Lucene_Index_SegmentInfo);
+        $this->assertInstanceOf(Zend_Search_Lucene_Index_SegmentInfo::class, $mergedSegment);
         unset($mergedSegment);
 
         $mergedFile = $outputDirectory->getFileObject('mergedSegment.cfs');

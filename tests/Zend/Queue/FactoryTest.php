@@ -65,7 +65,7 @@ class Zend_Queue_FactoryTest extends PHPUnit\Framework\TestCase
 
         $adapter = new Zend_Queue('Db', $config);
 
-        $this->assertTrue($adapter instanceof Zend_Queue);
+        $this->assertInstanceOf(Zend_Queue::class, $adapter);
     }
 
     public function testMemcacheq()
@@ -81,7 +81,7 @@ class Zend_Queue_FactoryTest extends PHPUnit\Framework\TestCase
 
         $adapter = new Zend_Queue('Memcacheq', $config);
 
-        $this->assertTrue($adapter instanceof Zend_Queue);
+        $this->assertInstanceOf(Zend_Queue::class, $adapter);
     }
 
     public function testActivemq()
@@ -101,7 +101,7 @@ class Zend_Queue_FactoryTest extends PHPUnit\Framework\TestCase
 
         $adapter = new Zend_Queue('Activemq', $config);
 
-        $this->assertTrue($adapter instanceof Zend_Queue);
+        $this->assertInstanceOf(Zend_Queue::class, $adapter);
     }
 
     public function testArray()
@@ -111,6 +111,6 @@ class Zend_Queue_FactoryTest extends PHPUnit\Framework\TestCase
 
         $adapter = new Zend_Queue('Array', $config);
 
-        $this->assertTrue($adapter instanceof Zend_Queue);
+        $this->assertInstanceOf(Zend_Queue::class, $adapter);
     }
 }

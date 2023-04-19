@@ -67,6 +67,8 @@
  */
 class Zend_XmlRpc_Server extends Zend_Server_Abstract
 {
+    public $_system;
+
     /**
      * Character encoding
      * @var string

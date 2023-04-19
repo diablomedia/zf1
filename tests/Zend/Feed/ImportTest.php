@@ -202,7 +202,7 @@ class Zend_Feed_ImportTest extends PHPUnit\Framework\TestCase
     public function testRssImportFullArray()
     {
         $feed = Zend_Feed::importArray($this->_getFullArray(), 'rss');
-        $this->assertTrue($feed instanceof Zend_Feed_Rss);
+        $this->assertInstanceOf(Zend_Feed_Rss::class, $feed);
     }
 
     /**
@@ -230,7 +230,7 @@ class Zend_Feed_ImportTest extends PHPUnit\Framework\TestCase
     public function testRssImportFullBuilder()
     {
         $feed = Zend_Feed::importBuilder(new Zend_Feed_Builder($this->_getFullArray()), 'rss');
-        $this->assertTrue($feed instanceof Zend_Feed_Rss);
+        $this->assertInstanceOf(Zend_Feed_Rss::class, $feed);
     }
 
     /**
@@ -249,7 +249,7 @@ class Zend_Feed_ImportTest extends PHPUnit\Framework\TestCase
         $array['itunes']['block'] = 'no';
         $array['itunes']['new-feed-url'] = 'http://www.example/itunes.xml';
         $feed = Zend_Feed::importBuilder(new Zend_Feed_Builder($array), 'rss');
-        $this->assertTrue($feed instanceof Zend_Feed_Rss);
+        $this->assertInstanceOf(Zend_Feed_Rss::class, $feed);
     }
 
     /**
@@ -268,7 +268,7 @@ class Zend_Feed_ImportTest extends PHPUnit\Framework\TestCase
         $feed = Zend_Feed::importBuilder(new Zend_Feed_Builder($this->_getFullArray()), 'atom');
 
         $feed = Zend_Feed::importString($feed->saveXml());
-        $this->assertTrue($feed instanceof Zend_Feed_Atom);
+        $this->assertInstanceOf(Zend_Feed_Atom::class, $feed);
     }
 
     /**
@@ -277,9 +277,9 @@ class Zend_Feed_ImportTest extends PHPUnit\Framework\TestCase
     public function testRssImportFullBuilderValid()
     {
         $feed = Zend_Feed::importBuilder(new Zend_Feed_Builder($this->_getFullArray()), 'rss');
-        $this->assertTrue($feed instanceof Zend_Feed_Rss);
+        $this->assertInstanceOf(Zend_Feed_Rss::class, $feed);
         $feed = Zend_Feed::importString($feed->saveXml());
-        $this->assertTrue($feed instanceof Zend_Feed_Rss);
+        $this->assertInstanceOf(Zend_Feed_Rss::class, $feed);
     }
 
     /**
@@ -288,9 +288,9 @@ class Zend_Feed_ImportTest extends PHPUnit\Framework\TestCase
     public function testAtomGetLink()
     {
         $feed = Zend_Feed::importBuilder(new Zend_Feed_Builder($this->_getFullArray()), 'atom');
-        $this->assertTrue($feed instanceof Zend_Feed_Atom);
+        $this->assertInstanceOf(Zend_Feed_Atom::class, $feed);
         $feed = Zend_Feed::importString($feed->saveXml());
-        $this->assertTrue($feed instanceof Zend_Feed_Atom);
+        $this->assertInstanceOf(Zend_Feed_Atom::class, $feed);
         $href = $feed->link('self');
         $this->assertEquals('http://www.example.com', $href);
     }
@@ -312,7 +312,7 @@ class Zend_Feed_ImportTest extends PHPUnit\Framework\TestCase
             $feed = Zend_Feed::import('http://localhost');
             $this->fail('Expected Zend_Feed_Exception not thrown');
         } catch (Zend_Feed_Exception $e) {
-            $this->assertTrue($e instanceof Zend_Feed_Exception);
+            $this->assertInstanceOf(Zend_Feed_Exception::class, $e);
             $this->assertMatchesRegularExpression('/(XDebug is running|Empty string)/', $e->getMessage());
         }
     }
@@ -405,7 +405,7 @@ class Zend_Feed_ImportTest extends PHPUnit\Framework\TestCase
         $this->_adapter->setResponse($response);
 
         $feed = Zend_Feed::import('http://localhost');
-        $this->assertTrue($feed instanceof Zend_Feed_Atom);
+        $this->assertInstanceOf(Zend_Feed_Atom::class, $feed);
     }
 
     /**
@@ -417,7 +417,7 @@ class Zend_Feed_ImportTest extends PHPUnit\Framework\TestCase
         $this->_adapter->setResponse($response);
 
         $feed = Zend_Feed::import('http://localhost');
-        $this->assertTrue($feed instanceof Zend_Feed_Rss);
+        $this->assertInstanceOf(Zend_Feed_Rss::class, $feed);
         return $feed;
     }
 
@@ -433,7 +433,7 @@ class Zend_Feed_ImportTest extends PHPUnit\Framework\TestCase
             $feed = Zend_Feed::import('http://localhost');
             $this->fail('Expected Zend_Feed_Exception not thrown');
         } catch (Zend_Feed_Exception $e) {
-            $this->assertTrue($e instanceof Zend_Feed_Exception);
+            $this->assertInstanceOf(Zend_Feed_Exception::class, $e);
         }
     }
 

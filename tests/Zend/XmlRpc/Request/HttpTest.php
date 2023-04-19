@@ -35,6 +35,10 @@ require_once 'Zend/XmlRpc/Request/Http.php';
  */
 class Zend_XmlRpc_Request_HttpTest extends PHPUnit\Framework\TestCase
 {
+    protected $xml;
+    protected $request;
+    protected $server;
+
     /**
      * Setup environment
      */
@@ -168,6 +172,9 @@ EOT;
 
 class Zend_XmlRpc_Request_HttpTest_Extension extends Zend_XmlRpc_Request_Http
 {
+    public $method;
+    public $params;
+
     public function __construct($method = null, $params = null)
     {
         $this->method = $method;

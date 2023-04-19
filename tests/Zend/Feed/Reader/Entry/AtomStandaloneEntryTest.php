@@ -96,7 +96,7 @@ class Zend_Feed_Reader_Entry_AtomStandaloneEntryTest extends PHPUnit\Framework\T
         $object = Zend_Feed_Reader::importString(
             file_get_contents($this->_feedSamplePath . '/id/atom10.xml')
         );
-        $this->assertTrue($object instanceof Zend_Feed_Reader_Entry_Atom);
+        $this->assertInstanceOf(Zend_Feed_Reader_Entry_Atom::class, $object);
     }
 
     /**

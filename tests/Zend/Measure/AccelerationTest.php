@@ -43,11 +43,11 @@ class Zend_Measure_AccelerationTest extends PHPUnit\Framework\TestCase
     public function testAccelerationInit()
     {
         $value = new Zend_Measure_Acceleration('100',Zend_Measure_Acceleration::STANDARD,'de');
-        $this->assertTrue($value instanceof Zend_Measure_Acceleration,'Zend_Measure_Acceleration Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Acceleration::class, $value,'Zend_Measure_Acceleration Object not returned');
         $this->assertEquals(100, $value->getValue(), 'Zend_Measure_Acceleration value expected to be a positive integer');
         // no type
         $value = new Zend_Measure_Acceleration('100','de');
-        $this->assertTrue($value instanceof Zend_Measure_Acceleration,'Zend_Measure_Acceleration Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Acceleration::class, $value,'Zend_Measure_Acceleration Object not returned');
         // unknown type
         try {
             $value = new Zend_Measure_Acceleration('100','Acceleration::UNKNOWN','de');

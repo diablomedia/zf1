@@ -91,7 +91,7 @@ class Zend_Queue_Message_IteratorTest extends PHPUnit\Framework\TestCase
         $this->assertIsArray($this->options);
 
         foreach ($this->messages as $i => $message) {
-            $this->assertTrue($message instanceof Zend_Queue_Message);
+            $this->assertInstanceOf(Zend_Queue_Message::class, $message);
             $this->assertEquals('Hello world', $message->body);
         }
     }
@@ -135,7 +135,7 @@ class Zend_Queue_Message_IteratorTest extends PHPUnit\Framework\TestCase
     public function test_get_setQueue()
     {
         $queue = $this->messages->getQueue();
-        $this->assertTrue($queue instanceof Zend_Queue);
+        $this->assertInstanceOf(Zend_Queue::class, $queue);
 
         $this->assertTrue($this->messages->setQueue($queue));
     }

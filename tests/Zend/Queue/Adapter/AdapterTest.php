@@ -239,7 +239,7 @@ abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit\Framework\TestCase
             return;
         }
         $obj = new $class($queue->getOptions(), $queue);
-        $this->assertTrue($obj instanceof Zend_Queue_Adapter_AdapterInterface);
+        $this->assertInstanceOf(Zend_Queue_Adapter_AdapterInterface::class, $obj);
     }
 
     // this tests the configuration option $config['messageClass']
@@ -266,12 +266,12 @@ abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit\Framework\TestCase
         $body = 'this is a test message';
         $message = $queue->send($body);
 
-        $this->assertTrue($message instanceof Zend_Queue_Message);
+        $this->assertInstanceOf(Zend_Queue_Message::class, $message);
 
         $list = $queue->receive();
-        $this->assertTrue($list instanceof Zend_Queue_Message_Iterator);
+        $this->assertInstanceOf(Zend_Queue_Message_Iterator::class, $list);
         foreach ( $list as $i => $message ) {
-            $this->assertTrue($message instanceof Zend_Queue_Message_Test);
+            $this->assertInstanceOf(Zend_Queue_Message_Test::class, $message);
             $queue->deleteMessage($message);
         }
 
@@ -387,13 +387,13 @@ abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit\Framework\TestCase
 
         $body = 'this is a test message';
         $message = $adapter->send($body);
-        $this->assertTrue($message instanceof Zend_Queue_Message);
+        $this->assertInstanceOf(Zend_Queue_Message::class, $message);
 
         // receive the record we created.
         if (! $adapter->isSupported('receive')) {
             $messages = $adapter->receive();
             foreach ( $list as $i => $message ) {
-                $this->assertTrue($message instanceof Zend_Queue_Message_Test);
+                $this->assertInstanceOf(Zend_Queue_Message_Test::class, $message);
                 $queue->deleteMessage($message);
             }
         }
@@ -419,12 +419,12 @@ abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit\Framework\TestCase
         // send the message
         $body = 'this is a test message 2';
         $message = $adapter->send($body);
-        $this->assertTrue($message instanceof Zend_Queue_Message);
+        $this->assertInstanceOf(Zend_Queue_Message::class, $message);
 
         // get it back
         $list = $adapter->receive(1);
         $this->assertCount(1, $list);
-        $this->assertTrue($list instanceof Zend_Queue_Message_Iterator);
+        $this->assertInstanceOf(Zend_Queue_Message_Iterator::class, $list);
         $this->assertTrue($list->valid());
 
         $message = $list->current();
@@ -432,7 +432,7 @@ abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit\Framework\TestCase
             $adapter->deleteMessage($list->current());
         }
 
-        $this->assertTrue($message instanceof Zend_Queue_Message);
+        $this->assertInstanceOf(Zend_Queue_Message::class, $message);
         $this->assertEquals($message->body, $body);
 
         // delete the queue we created
@@ -461,14 +461,14 @@ abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit\Framework\TestCase
 
         $body = 'this is a test message';
         $message = $adapter->send($body);
-        $this->assertTrue($message instanceof Zend_Queue_Message);
+        $this->assertInstanceOf(Zend_Queue_Message::class, $message);
 
         $list = $adapter->receive();
-        $this->assertTrue($list instanceof Zend_Queue_Message_Iterator);
+        $this->assertInstanceOf(Zend_Queue_Message_Iterator::class, $list);
         $this->assertTrue($list->valid());
 
         $message = $list->current();
-        $this->assertTrue($message instanceof Zend_Queue_Message);
+        $this->assertInstanceOf(Zend_Queue_Message::class, $message);
 
         $this->assertTrue($adapter->deleteMessage($message));
 
@@ -629,7 +629,7 @@ abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit\Framework\TestCase
         if (!$queue = $this->createQueue(__FUNCTION__)) {
             return;
         }
-        $this->assertTrue($queue instanceof Zend_Queue);
+        $this->assertInstanceOf(Zend_Queue::class, $queue);
 
         if ($queue->isSupported('send')) {
             $msg = 1;
@@ -710,7 +710,7 @@ abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit\Framework\TestCase
         $start = microtime(true);
         $end = 0;
 
-        $this->assertTrue($messages instanceof Zend_Queue_Message_Iterator);
+        $this->assertInstanceOf(Zend_Queue_Message_Iterator::class, $messages);
 
         $timeout = $config['timeout'] + $start + $extra_delay;
         $found = false;

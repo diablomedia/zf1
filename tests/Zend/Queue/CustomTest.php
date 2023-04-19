@@ -74,7 +74,7 @@ class Zend_Queue_CustomTest extends PHPUnit\Framework\TestCase
         $objects = array();
 
         $queue = new Custom_Queue('Array', array('name'=>'ObjectA'));
-        $this->assertTrue($queue instanceof Custom_Queue);
+        $this->assertInstanceOf(Custom_Queue::class, $queue);
 
         // ------------------------------------------------ send
 
@@ -95,14 +95,14 @@ class Zend_Queue_CustomTest extends PHPUnit\Framework\TestCase
         }
         $queue->send($messages);
 
-        $this->assertEquals($object_count, count($queue));
+        $this->assertCount($object_count, $queue);
         unset($messages);
 
         // ------------------------------------------------ receive
 
         // get the first 5 doing 0-4
         $receive = $queue->receive(5);
-        $this->assertTrue($receive instanceof Custom_Messages);
+        $this->assertInstanceOf(Custom_Messages::class, $receive);
         $this->assertCount(5, $receive);
 
         // test them
@@ -121,7 +121,7 @@ class Zend_Queue_CustomTest extends PHPUnit\Framework\TestCase
         // get 1 doing $objects[5]
         $receive = $queue->receive();
         $index++;
-        $this->assertTrue($receive instanceof Custom_Messages);
+        $this->assertInstanceOf(Custom_Messages::class, $receive);
         $this->assertCount(1, $receive);
 
         // testing Custom_Messages::__deconstruct()
@@ -131,7 +131,7 @@ class Zend_Queue_CustomTest extends PHPUnit\Framework\TestCase
 
         // get all the rest doing 6-20
         $receive = $queue->receive($object_count - $index);
-        $this->assertTrue($receive instanceof Custom_Messages);
+        $this->assertInstanceOf(Custom_Messages::class, $receive);
         $this->assertEquals($object_count - $index, count($receive));
 
         // test them

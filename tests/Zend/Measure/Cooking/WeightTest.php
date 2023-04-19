@@ -42,7 +42,7 @@ class Zend_Measure_Cooking_WeightTest extends PHPUnit\Framework\TestCase
     public function testCooking_WeightInit()
     {
         $value = new Zend_Measure_Cooking_Weight('100',Zend_Measure_Cooking_Weight::STANDARD,'de');
-        $this->assertTrue($value instanceof Zend_Measure_Cooking_Weight,'Zend_Measure_Cooking_Weight Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Cooking_Weight::class, $value,'Zend_Measure_Cooking_Weight Object not returned');
     }
 
 

@@ -52,11 +52,11 @@ class Zend_Search_Lucene_Storage_DirectoryTest extends PHPUnit\Framework\TestCas
 
         $directory = new Zend_Search_Lucene_Storage_Directory_Filesystem($tempPath);
 
-        $this->assertTrue($directory instanceof Zend_Search_Lucene_Storage_Directory);
+        $this->assertInstanceOf(Zend_Search_Lucene_Storage_Directory::class, $directory);
         $this->assertEquals(count($directory->fileList()), 0);
 
         $fileObject = $directory->createFile('file1');
-        $this->assertTrue($fileObject instanceof Zend_Search_Lucene_Storage_File);
+        $this->assertInstanceOf(Zend_Search_Lucene_Storage_File::class, $fileObject);
         unset($fileObject);
         $this->assertEquals($directory->fileLength('file1'), 0);
 
@@ -105,7 +105,7 @@ class Zend_Search_Lucene_Storage_DirectoryTest extends PHPUnit\Framework\TestCas
     public function testFilesystemSubfoldersAutoCreation()
     {
         $directory = new Zend_Search_Lucene_Storage_Directory_Filesystem(dirname(__FILE__) . '/_tempFiles/_files/dir1/dir2/dir3');
-        $this->assertTrue($directory instanceof Zend_Search_Lucene_Storage_Directory);
+        $this->assertInstanceOf(Zend_Search_Lucene_Storage_Directory::class, $directory);
         $directory->close();
 
         rmdir(dirname(__FILE__) . '/_tempFiles/_files/dir1/dir2/dir3');

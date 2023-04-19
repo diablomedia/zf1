@@ -43,9 +43,9 @@ class Zend_Measure_NumberTest extends PHPUnit\Framework\TestCase
     public function testNumberInit()
     {
         $value = new Zend_Measure_Number('100',Zend_Measure_Number::STANDARD,'de');
-        $this->assertTrue($value instanceof Zend_Measure_Number,'Zend_Measure_Number Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Number::class, $value,'Zend_Measure_Number Object not returned');
         $value = new Zend_Measure_Number('100','de');
-        $this->assertTrue($value instanceof Zend_Measure_Number,'Zend_Measure_Number Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Number::class, $value,'Zend_Measure_Number Object not returned');
         $value = new Zend_Measure_Number('100',Zend_Measure_Number::STANDARD);
         $this->assertEquals(100, $value->getValue(),'Zend_Measure_Number value expected');
         $value = new Zend_Measure_Number('100',Zend_Measure_Number::STANDARD,'de');

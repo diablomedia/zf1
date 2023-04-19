@@ -42,7 +42,7 @@ class Zend_Measure_CapacitanceTest extends PHPUnit\Framework\TestCase
     public function testCapacitanceInit()
     {
         $value = new Zend_Measure_Capacitance('100',Zend_Measure_Capacitance::STANDARD,'de');
-        $this->assertTrue($value instanceof Zend_Measure_Capacitance,'Zend_Measure_Capacitance Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Capacitance::class, $value,'Zend_Measure_Capacitance Object not returned');
     }
 
 

@@ -48,7 +48,7 @@ class Zend_Gdata_Docs_DocumentListFeedTest extends PHPUnit\Framework\TestCase
         $this->assertTrue($this->docFeed->entries->count() == 2);
         foreach($this->docFeed->entries as $entry)
         {
-            $this->assertTrue($entry instanceof Zend_Gdata_Docs_DocumentListEntry);
+            $this->assertInstanceOf(Zend_Gdata_Docs_DocumentListEntry::class, $entry);
         }
 
         $newDocFeed = new Zend_Gdata_Docs_DocumentListFeed();
@@ -59,7 +59,7 @@ class Zend_Gdata_Docs_DocumentListFeedTest extends PHPUnit\Framework\TestCase
         $this->assertTrue(count($newDocFeed->entries) == count($this->docFeed->entries));
         foreach($newDocFeed->entries as $entry)
         {
-            $this->assertTrue($entry instanceof Zend_Gdata_Docs_DocumentListEntry);
+            $this->assertInstanceOf(Zend_Gdata_Docs_DocumentListEntry::class, $entry);
         }
     }
 

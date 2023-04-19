@@ -216,7 +216,7 @@ class Zend_Feed_ReaderTest extends PHPUnit\Framework\TestCase
             return;
         }
         $links = Zend_Feed_Reader::findFeedLinks('http://www.planet-php.net');
-        $this->assertTrue($links instanceof Zend_Feed_Reader_FeedSet);
+        $this->assertInstanceOf(Zend_Feed_Reader_FeedSet::class, $links);
         $this->assertEquals(array(
             'rel' => 'alternate', 'type' => 'application/rss+xml', 'href' => 'http://www.planet-php.org/rss/'
         ), (array) $links->getIterator()->current());

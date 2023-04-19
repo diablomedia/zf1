@@ -155,7 +155,7 @@ class Zend_Service_Flickr_OfflineTest extends PHPUnit\Framework\TestCase
         foreach ($resultSetIds as $resultSetId) {
             $this->_httpClientAdapterTest->setResponse($this->_loadResponse(__FUNCTION__ . "-result_$resultSetId"));
             $result = $resultSet->current();
-            $this->assertTrue($result instanceof Zend_Service_Flickr_Result);
+            $this->assertInstanceOf(Zend_Service_Flickr_Result::class, $result);
             $resultSet->next();
         }
 
@@ -403,7 +403,7 @@ class Zend_Service_Flickr_OfflineTest extends PHPUnit\Framework\TestCase
         foreach ($resultSetIds as $resultSetId) {
             $this->_httpClientAdapterTest->setResponse($this->_loadResponse(__FUNCTION__ . "-result_$resultSetId"));
             $result = $resultSet->current();
-            $this->assertTrue($result instanceof Zend_Service_Flickr_Result);
+            $this->assertInstanceOf(Zend_Service_Flickr_Result::class, $result);
             $resultSet->next();
         }
 

@@ -43,7 +43,7 @@ class Zend_Measure_LightnessTest extends PHPUnit\Framework\TestCase
     public function testLightnessInit()
     {
         $value = new Zend_Measure_Lightness('100',Zend_Measure_Lightness::STANDARD,'de');
-        $this->assertTrue($value instanceof Zend_Measure_Lightness,'Zend_Measure_Lightness Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Lightness::class, $value,'Zend_Measure_Lightness Object not returned');
     }
 
 

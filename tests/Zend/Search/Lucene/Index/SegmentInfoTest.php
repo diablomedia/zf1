@@ -41,7 +41,7 @@ class Zend_Search_Lucene_Index_SegmentInfoTest extends PHPUnit\Framework\TestCas
 
         $segmentInfo = new Zend_Search_Lucene_Index_SegmentInfo($directory, '_1', 2);
 
-        $this->assertTrue($segmentInfo instanceof Zend_Search_Lucene_Index_SegmentInfo);
+        $this->assertInstanceOf(Zend_Search_Lucene_Index_SegmentInfo::class, $segmentInfo);
     }
 
     public function testOpenCompoundFile()
@@ -50,15 +50,15 @@ class Zend_Search_Lucene_Index_SegmentInfoTest extends PHPUnit\Framework\TestCas
         $segmentInfo = new Zend_Search_Lucene_Index_SegmentInfo($directory, '_1', 2);
 
         $file1 = $segmentInfo->openCompoundFile('.fnm');
-        $this->assertTrue($file1 instanceof Zend_Search_Lucene_Storage_File);
+        $this->assertInstanceOf(Zend_Search_Lucene_Storage_File::class, $file1);
 
         $file2 = $segmentInfo->openCompoundFile('.tii');
         $file3 = $segmentInfo->openCompoundFile('.tii');
         $file4 = $segmentInfo->openCompoundFile('.tii', false);
 
-        $this->assertTrue($file2 instanceof Zend_Search_Lucene_Storage_File);
+        $this->assertInstanceOf(Zend_Search_Lucene_Storage_File::class, $file2);
         $this->assertTrue($file2 === $file3);
-        $this->assertTrue($file4 instanceof Zend_Search_Lucene_Storage_File);
+        $this->assertInstanceOf(Zend_Search_Lucene_Storage_File::class, $file4);
         $this->assertTrue($file2 !== $file4);
     }
 

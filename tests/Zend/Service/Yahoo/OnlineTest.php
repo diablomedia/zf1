@@ -80,7 +80,7 @@ class Zend_Service_Yahoo_OnlineTest extends PHPUnit\Framework\TestCase
     {
         $inlinkDataResultSet = $this->_yahoo->inlinkDataSearch('http://framework.zend.com/');
 
-        $this->assertTrue($inlinkDataResultSet instanceof Zend_Service_Yahoo_InlinkDataResultSet);
+        $this->assertInstanceOf(Zend_Service_Yahoo_InlinkDataResultSet::class, $inlinkDataResultSet);
         $this->assertTrue($inlinkDataResultSet->totalResultsAvailable > 10);
         $this->assertEquals(50, $inlinkDataResultSet->totalResultsReturned);
         $this->assertEquals(50, $inlinkDataResultSet->totalResults());
@@ -95,7 +95,7 @@ class Zend_Service_Yahoo_OnlineTest extends PHPUnit\Framework\TestCase
         }
 
         foreach ($inlinkDataResultSet as $inlinkDataResult) {
-            $this->assertTrue($inlinkDataResult instanceof Zend_Service_Yahoo_InlinkDataResult);
+            $this->assertInstanceOf(Zend_Service_Yahoo_InlinkDataResult::class, $inlinkDataResult);
         }
 
         $this->assertEquals(50, $inlinkDataResultSet->key());
@@ -112,7 +112,7 @@ class Zend_Service_Yahoo_OnlineTest extends PHPUnit\Framework\TestCase
     {
         $imageResultSet = $this->_yahoo->imageSearch('php');
 
-        $this->assertTrue($imageResultSet instanceof Zend_Service_Yahoo_ImageResultSet);
+        $this->assertInstanceOf(Zend_Service_Yahoo_ImageResultSet::class, $imageResultSet);
         $this->assertTrue($imageResultSet->totalResultsAvailable > 10);
         $this->assertEquals(10, $imageResultSet->totalResultsReturned);
         $this->assertEquals(10, $imageResultSet->totalResults());
@@ -127,7 +127,7 @@ class Zend_Service_Yahoo_OnlineTest extends PHPUnit\Framework\TestCase
         }
 
         foreach ($imageResultSet as $imageResult) {
-            $this->assertTrue($imageResult instanceof Zend_Service_Yahoo_ImageResult);
+            $this->assertInstanceOf(Zend_Service_Yahoo_ImageResult::class, $imageResult);
         }
 
         $this->assertEquals(10, $imageResultSet->key());
@@ -159,7 +159,7 @@ class Zend_Service_Yahoo_OnlineTest extends PHPUnit\Framework\TestCase
     {
         $localResultSet = $this->_yahoo->localSearch('restaurants', array('zip' => '95014'));
 
-        $this->assertTrue($localResultSet instanceof Zend_Service_Yahoo_LocalResultSet);
+        $this->assertInstanceOf(Zend_Service_Yahoo_LocalResultSet::class, $localResultSet);
 
         $this->assertTrue($localResultSet->totalResultsAvailable > 10);
         $this->assertEquals(10, $localResultSet->totalResultsReturned);
@@ -167,7 +167,7 @@ class Zend_Service_Yahoo_OnlineTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(1, $localResultSet->firstResultPosition);
 
         foreach ($localResultSet as $localResult) {
-            $this->assertTrue($localResult instanceof Zend_Service_Yahoo_LocalResult);
+            $this->assertInstanceOf(Zend_Service_Yahoo_LocalResult::class, $localResult);
         }
     }
 
@@ -195,7 +195,7 @@ class Zend_Service_Yahoo_OnlineTest extends PHPUnit\Framework\TestCase
     {
         $newsResultSet = $this->_yahoo->newsSearch('php');
 
-        $this->assertTrue($newsResultSet instanceof Zend_Service_Yahoo_NewsResultSet);
+        $this->assertInstanceOf(Zend_Service_Yahoo_NewsResultSet::class, $newsResultSet);
 
         $this->assertTrue($newsResultSet->totalResultsAvailable > 10);
         $this->assertEquals(10, $newsResultSet->totalResultsReturned);
@@ -203,7 +203,7 @@ class Zend_Service_Yahoo_OnlineTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(1, $newsResultSet->firstResultPosition);
 
         foreach ($newsResultSet as $newsResult) {
-            $this->assertTrue($newsResult instanceof Zend_Service_Yahoo_NewsResult);
+            $this->assertInstanceOf(Zend_Service_Yahoo_NewsResult::class, $newsResult);
         }
     }
 
@@ -216,7 +216,7 @@ class Zend_Service_Yahoo_OnlineTest extends PHPUnit\Framework\TestCase
     {
         $pageDataResultSet = $this->_yahoo->pageDataSearch('http://framework.zend.com/');
 
-        $this->assertTrue($pageDataResultSet instanceof Zend_Service_Yahoo_PageDataResultSet);
+        $this->assertInstanceOf(Zend_Service_Yahoo_PageDataResultSet::class, $pageDataResultSet);
         $this->assertTrue($pageDataResultSet->totalResultsAvailable > 10);
         $this->assertEquals(50, $pageDataResultSet->totalResultsReturned);
         $this->assertEquals(50, $pageDataResultSet->totalResults());
@@ -231,7 +231,7 @@ class Zend_Service_Yahoo_OnlineTest extends PHPUnit\Framework\TestCase
         }
 
         foreach ($pageDataResultSet as $pageDataResult) {
-            $this->assertTrue($pageDataResult instanceof Zend_Service_Yahoo_PageDataResult);
+            $this->assertInstanceOf(Zend_Service_Yahoo_PageDataResult::class, $pageDataResult);
         }
 
         $this->assertEquals(50, $pageDataResultSet->key());
@@ -248,7 +248,7 @@ class Zend_Service_Yahoo_OnlineTest extends PHPUnit\Framework\TestCase
     {
         $videoResultSet = $this->_yahoo->videoSearch('php');
 
-        $this->assertTrue($videoResultSet instanceof Zend_Service_Yahoo_VideoResultSet);
+        $this->assertInstanceOf(Zend_Service_Yahoo_VideoResultSet::class, $videoResultSet);
         $this->assertTrue($videoResultSet->totalResultsAvailable > 10);
         $this->assertEquals(10, $videoResultSet->totalResultsReturned);
         $this->assertEquals(10, $videoResultSet->totalResults());
@@ -263,7 +263,7 @@ class Zend_Service_Yahoo_OnlineTest extends PHPUnit\Framework\TestCase
         }
 
         foreach ($videoResultSet as $videoResult) {
-            $this->assertTrue($videoResult instanceof Zend_Service_Yahoo_VideoResult);
+            $this->assertInstanceOf(Zend_Service_Yahoo_VideoResult::class, $videoResult);
         }
 
         $this->assertEquals(10, $videoResultSet->key());
@@ -280,7 +280,7 @@ class Zend_Service_Yahoo_OnlineTest extends PHPUnit\Framework\TestCase
     {
         $webResultSet = $this->_yahoo->webSearch('php');
 
-        $this->assertTrue($webResultSet instanceof Zend_Service_Yahoo_WebResultSet);
+        $this->assertInstanceOf(Zend_Service_Yahoo_WebResultSet::class, $webResultSet);
 
         $this->assertTrue($webResultSet->totalResultsAvailable > 10);
         $this->assertEquals(10, $webResultSet->totalResultsReturned);
@@ -288,7 +288,7 @@ class Zend_Service_Yahoo_OnlineTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(1, $webResultSet->firstResultPosition);
 
         foreach ($webResultSet as $webResult) {
-            $this->assertTrue($webResult instanceof Zend_Service_Yahoo_WebResult);
+            $this->assertInstanceOf(Zend_Service_Yahoo_WebResult::class, $webResult);
         }
     }
 
@@ -349,7 +349,7 @@ class Zend_Service_Yahoo_OnlineTest extends PHPUnit\Framework\TestCase
     {
         $webResultSet = $this->_yahoo->webSearch('php', array('site' => 'www.php.net'));
 
-        $this->assertTrue($webResultSet instanceof Zend_Service_Yahoo_WebResultSet);
+        $this->assertInstanceOf(Zend_Service_Yahoo_WebResultSet::class, $webResultSet);
 
         $this->assertTrue($webResultSet->totalResultsAvailable > 10);
         $this->assertEquals(10, $webResultSet->totalResultsReturned);
@@ -357,7 +357,7 @@ class Zend_Service_Yahoo_OnlineTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(1, $webResultSet->firstResultPosition);
 
         foreach ($webResultSet as $webResult) {
-            $this->assertTrue($webResult instanceof Zend_Service_Yahoo_WebResult);
+            $this->assertInstanceOf(Zend_Service_Yahoo_WebResult::class, $webResult);
         }
     }
 }

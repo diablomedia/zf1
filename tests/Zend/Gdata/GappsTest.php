@@ -45,19 +45,19 @@ class Zend_Gdata_GappsTest extends PHPUnit\Framework\TestCase
 
     public function testMagicFactoryProvidesQueriesWithDomains() {
         $userQ = $this->gdata->newUserQuery();
-        $this->assertTrue($userQ instanceof Zend_Gdata_Gapps_UserQuery);
+        $this->assertInstanceOf(Zend_Gdata_Gapps_UserQuery::class, $userQ);
         $this->assertEquals(self::TEST_DOMAIN, $userQ->getDomain());
         $this->assertEquals(null, $userQ->getUsername());
 
         $userQ = $this->gdata->newUserQuery('foo');
-        $this->assertTrue($userQ instanceof Zend_Gdata_Gapps_UserQuery);
+        $this->assertInstanceOf(Zend_Gdata_Gapps_UserQuery::class, $userQ);
         $this->assertEquals(self::TEST_DOMAIN, $userQ->getDomain());
         $this->assertEquals('foo', $userQ->getUsername());
     }
 
     public function testMagicFactoryLeavesNonQueriesAlone() {
         $login = $this->gdata->newLogin('blah');
-        $this->assertTrue($login instanceof Zend_Gdata_Gapps_Extension_Login);
+        $this->assertInstanceOf(Zend_Gdata_Gapps_Extension_Login::class, $login);
         $this->assertEquals('blah', $login->username);
     }
 

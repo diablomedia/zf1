@@ -38,7 +38,7 @@ class Zend_Search_Lucene_AnalysisTest extends PHPUnit\Framework\TestCase
     public function testAnalyzer()
     {
         $currentAnalyzer = Zend_Search_Lucene_Analysis_Analyzer::getDefault();
-        $this->assertTrue($currentAnalyzer instanceof Zend_Search_Lucene_Analysis_Analyzer);
+        $this->assertInstanceOf(Zend_Search_Lucene_Analysis_Analyzer::class, $currentAnalyzer);
 
         /** Zend_Search_Lucene_Analysis_Analyzer_Common_Utf8Num */
         require_once 'Zend/Search/Lucene/Analysis/Analyzer/Common/Utf8Num.php';

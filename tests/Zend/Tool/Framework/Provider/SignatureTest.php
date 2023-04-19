@@ -143,10 +143,10 @@ class Zend_Tool_Framework_Provider_SignatureTest extends PHPUnit\Framework\TestC
     {
         $actionArray = $this->_targetSignature->getActions();
         $action = array_shift($actionArray);
-        $this->assertTrue($action instanceof Zend_Tool_Framework_Action_Base);
+        $this->assertInstanceOf(Zend_Tool_Framework_Action_Base::class, $action);
         $this->assertEquals('Say', $action->getName());
         $action = array_shift($actionArray);
-        $this->assertTrue($action instanceof Zend_Tool_Framework_Action_Base);
+        $this->assertInstanceOf(Zend_Tool_Framework_Action_Base::class, $action);
         $this->assertEquals('Scream', $action->getName());
     }
 

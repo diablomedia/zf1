@@ -92,7 +92,7 @@ class Zend_Memory_Container_AccessControllerTest extends PHPUnit\Framework\TestC
         $memoryManager  = $this->_getMemoryManager();
         $memObject      = $memoryManager->create('012345678');
 
-        $this->assertTrue($memObject instanceof Zend_Memory_AccessController);
+        $this->assertInstanceOf(Zend_Memory_AccessController::class, $memObject);
     }
 
 

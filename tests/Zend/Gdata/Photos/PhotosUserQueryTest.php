@@ -81,7 +81,7 @@ class Zend_Gdata_Photos_PhotosUserQueryTest extends PHPUnit\Framework\TestCase
         try {
             $generatedString = $query->getQueryUrl();
         } catch (Exception $e) {
-            $this->assertTrue($e instanceof Zend_Gdata_App_InvalidArgumentException);
+            $this->assertInstanceOf(Zend_Gdata_App_InvalidArgumentException::class, $e);
         }
 
         $query->setProjection("api");
@@ -90,7 +90,7 @@ class Zend_Gdata_Photos_PhotosUserQueryTest extends PHPUnit\Framework\TestCase
         try {
             $generatedString = $query->getQueryUrl();
         } catch (Exception $e) {
-            $this->assertTrue($e instanceof Zend_Gdata_App_InvalidArgumentException);
+            $this->assertInstanceOf(Zend_Gdata_App_InvalidArgumentException::class, $e);
         }
       }
 

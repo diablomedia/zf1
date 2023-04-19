@@ -386,7 +386,7 @@ class Zend_Pdf_ActionTest extends PHPUnit\Framework\TestCase
 
         $action = Zend_Pdf_Action::load($dictionary);
 
-        $this->assertTrue($action instanceof Zend_Pdf_Action_URI);
+        $this->assertInstanceOf(Zend_Pdf_Action_URI::class, $action);
     }
 
     public function testActionURILoad2()
@@ -408,7 +408,7 @@ class Zend_Pdf_ActionTest extends PHPUnit\Framework\TestCase
     {
         $action = Zend_Pdf_Action_URI::create('http://somehost/');
 
-        $this->assertTrue($action instanceof Zend_Pdf_Action_URI);
+        $this->assertInstanceOf(Zend_Pdf_Action_URI::class, $action);
 
         $this->assertEquals($action->getResource()->toString(),
                             '<</Type /Action /S /URI /URI (http://somehost/) >>');

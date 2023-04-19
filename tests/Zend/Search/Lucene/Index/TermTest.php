@@ -38,7 +38,7 @@ class Zend_Search_Lucene_Index_TermTest extends PHPUnit\Framework\TestCase
     public function testCreate()
     {
         $term = new Zend_Search_Lucene_Index_Term('term_text');
-        $this->assertTrue($term instanceof Zend_Search_Lucene_Index_Term);
+        $this->assertInstanceOf(Zend_Search_Lucene_Index_Term::class, $term);
 
         $this->assertEquals($term->text,  'term_text');
         $this->assertEquals($term->field, null);

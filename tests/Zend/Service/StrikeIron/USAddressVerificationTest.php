@@ -67,6 +67,6 @@ class Zend_Service_StrikeIron_USAddressVerificationTest extends PHPUnit\Framewor
         $strikeIron = new Zend_Service_StrikeIron(array('client' => $this->soapClient));
         $client = $strikeIron->getService(array('class' => 'USAddressVerification'));
 
-        $this->assertTrue($client instanceof Zend_Service_StrikeIron_USAddressVerification);
+        $this->assertInstanceOf(Zend_Service_StrikeIron_USAddressVerification::class, $client);
     }
 }

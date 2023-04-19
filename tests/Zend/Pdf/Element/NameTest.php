@@ -38,7 +38,7 @@ class Zend_Pdf_Element_NameTest extends PHPUnit\Framework\TestCase
     public function testPDFName()
     {
         $nameObj = new Zend_Pdf_Element_Name('MyName');
-        $this->assertTrue($nameObj instanceof Zend_Pdf_Element_Name);
+        $this->assertInstanceOf(Zend_Pdf_Element_Name::class, $nameObj);
     }
 
     public function testPDFNameBadString()

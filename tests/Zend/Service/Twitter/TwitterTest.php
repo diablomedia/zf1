@@ -182,7 +182,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
             array('screen_name' => 'mwop')
         ));
         $response = $twitter->users->show('mwop');
-        $this->assertTrue($response instanceof Zend_Service_Twitter_Response);
+        $this->assertInstanceOf(Zend_Service_Twitter_Response::class, $response);
         $exists = $response->id !== null;
         $this->assertTrue($exists);
     }
@@ -290,7 +290,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
             'account/verify_credentials.json', Zend_Http_Client::GET, 'account.verify_credentials.json'
         ));
         $response = $twitter->account->verifyCredentials();
-        $this->assertTrue($response instanceof Zend_Service_Twitter_Response);
+        $this->assertInstanceOf(Zend_Service_Twitter_Response::class, $response);
     }
 
     public function testSampleTimelineStatusReturnsResults()
@@ -300,7 +300,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
             'statuses/sample.json', Zend_Http_Client::GET, 'statuses.sample.json'
         ));
         $response = $twitter->statuses->sample();
-        $this->assertTrue($response instanceof Zend_Service_Twitter_Response);
+        $this->assertInstanceOf(Zend_Service_Twitter_Response::class, $response);
     }
 
     public function testRateLimitStatusReturnsResults()
@@ -310,7 +310,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
             'application/rate_limit_status.json', Zend_Http_Client::GET, 'application.rate_limit_status.json'
         ));
         $response = $twitter->application->rateLimitStatus();
-        $this->assertTrue($response instanceof Zend_Service_Twitter_Response);
+        $this->assertInstanceOf(Zend_Service_Twitter_Response::class, $response);
     }
 
     public function testRateLimitStatusHasHitsLeft()
@@ -336,7 +336,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
             array('screen_name' => 'twitter')
         ));
         $response = $twitter->friendships->create('twitter');
-        $this->assertTrue($response instanceof Zend_Service_Twitter_Response);
+        $this->assertInstanceOf(Zend_Service_Twitter_Response::class, $response);
     }
 
     public function testHomeTimelineWithCountReturnsResults()
@@ -347,7 +347,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
             array('count' => 3)
         ));
         $response = $twitter->statuses->homeTimeline(array('count' => 3));
-        $this->assertTrue($response instanceof Zend_Service_Twitter_Response);
+        $this->assertInstanceOf(Zend_Service_Twitter_Response::class, $response);
     }
 
     /**
@@ -361,7 +361,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
             array('screen_name' => 'mwop')
         ));
         $response = $twitter->statuses->userTimeline(array('screen_name' => 'mwop'));
-        $this->assertTrue($response instanceof Zend_Service_Twitter_Response);
+        $this->assertInstanceOf(Zend_Service_Twitter_Response::class, $response);
     }
 
     /**
@@ -375,7 +375,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
             array('status'=>'Test Message 1')
         ));
         $response = $twitter->statuses->update('Test Message 1');
-        $this->assertTrue($response instanceof Zend_Service_Twitter_Response);
+        $this->assertInstanceOf(Zend_Service_Twitter_Response::class, $response);
     }
 
     public function testPostStatusUpdateToLongShouldThrowException()
@@ -399,7 +399,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
             'statuses/show/307529814640840705.json', Zend_Http_Client::GET, 'statuses.show.json'
         ));
         $response = $twitter->statuses->show('307529814640840705');
-        $this->assertTrue($response instanceof Zend_Service_Twitter_Response);
+        $this->assertInstanceOf(Zend_Service_Twitter_Response::class, $response);
     }
 
     public function testCreateFavoriteStatusReturnsResponse()
@@ -410,7 +410,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
             array('id' => 15042159587)
         ));
         $response = $twitter->favorites->create(15042159587);
-        $this->assertTrue($response instanceof Zend_Service_Twitter_Response);
+        $this->assertInstanceOf(Zend_Service_Twitter_Response::class, $response);
     }
 
     public function testFavoritesListReturnsResponse()
@@ -420,7 +420,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
             'favorites/list.json', Zend_Http_Client::GET, 'favorites.list.json'
         ));
         $response = $twitter->favorites->list();
-        $this->assertTrue($response instanceof Zend_Service_Twitter_Response);
+        $this->assertInstanceOf(Zend_Service_Twitter_Response::class, $response);
     }
 
     public function testDestroyFavoriteReturnsResponse()
@@ -431,7 +431,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
             array('id' => 15042159587)
         ));
         $response = $twitter->favorites->destroy(15042159587);
-        $this->assertTrue($response instanceof Zend_Service_Twitter_Response);
+        $this->assertInstanceOf(Zend_Service_Twitter_Response::class, $response);
     }
 
     public function testStatusDestroyReturnsResult()
@@ -441,7 +441,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
             'statuses/destroy/15042159587.json', Zend_Http_Client::POST, 'statuses.destroy.json'
         ));
         $response = $twitter->statuses->destroy(15042159587);
-        $this->assertTrue($response instanceof Zend_Service_Twitter_Response);
+        $this->assertInstanceOf(Zend_Service_Twitter_Response::class, $response);
     }
 
     public function testStatusHomeTimelineWithNoOptionsReturnsResults()
@@ -451,7 +451,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
             'statuses/home_timeline.json', Zend_Http_Client::GET, 'statuses.home_timeline.page.json'
         ));
         $response = $twitter->statuses->homeTimeline();
-        $this->assertTrue($response instanceof Zend_Service_Twitter_Response);
+        $this->assertInstanceOf(Zend_Service_Twitter_Response::class, $response);
     }
 
     public function testUserShowByIdReturnsResults()
@@ -462,7 +462,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
             array('screen_name' => 'mwop')
         ));
         $response = $twitter->users->show('mwop');
-        $this->assertTrue($response instanceof Zend_Service_Twitter_Response);
+        $this->assertInstanceOf(Zend_Service_Twitter_Response::class, $response);
     }
 
     /**
@@ -476,7 +476,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
             'statuses/mentions_timeline.json', Zend_Http_Client::GET, 'statuses.mentions_timeline.json'
         ));
         $response = $twitter->statuses->mentionsTimeline();
-        $this->assertTrue($response instanceof Zend_Service_Twitter_Response);
+        $this->assertInstanceOf(Zend_Service_Twitter_Response::class, $response);
     }
 
     /**
@@ -490,7 +490,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
             array('screen_name' => 'twitter')
         ));
         $response = $twitter->friendships->destroy('twitter');
-        $this->assertTrue($response instanceof Zend_Service_Twitter_Response);
+        $this->assertInstanceOf(Zend_Service_Twitter_Response::class, $response);
     }
 
     public function testBlockingCreate()
@@ -501,7 +501,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
             array('screen_name' => 'twitter')
         ));
         $response = $twitter->blocks->create('twitter');
-        $this->assertTrue($response instanceof Zend_Service_Twitter_Response);
+        $this->assertInstanceOf(Zend_Service_Twitter_Response::class, $response);
     }
 
     public function testBlockingList()
@@ -512,7 +512,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
             array('cursor' => -1)
         ));
         $response = $twitter->blocks->list();
-        $this->assertTrue($response instanceof Zend_Service_Twitter_Response);
+        $this->assertInstanceOf(Zend_Service_Twitter_Response::class, $response);
     }
 
     public function testBlockingIds()
@@ -523,7 +523,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
             array('cursor' => -1)
         ));
         $response = $twitter->blocks->ids();
-        $this->assertTrue($response instanceof Zend_Service_Twitter_Response);
+        $this->assertInstanceOf(Zend_Service_Twitter_Response::class, $response);
         $this->assertContains('23836616', $response->ids);
     }
 
@@ -535,7 +535,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
             array('screen_name' => 'twitter')
         ));
         $response = $twitter->blocks->destroy('twitter');
-        $this->assertTrue($response instanceof Zend_Service_Twitter_Response);
+        $this->assertInstanceOf(Zend_Service_Twitter_Response::class, $response);
     }
 
     /**
@@ -556,7 +556,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
             array('q' => '#zf2')
         ));
         $response = $twitter->search->tweets('#zf2');
-        $this->assertTrue($response instanceof Zend_Service_Twitter_Response);
+        $this->assertInstanceOf(Zend_Service_Twitter_Response::class, $response);
     }
 
     public function testUsersSearch()
@@ -567,6 +567,6 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
             array('q' => 'Zend')
         ));
         $response = $twitter->users->search('Zend');
-        $this->assertTrue($response instanceof Zend_Service_Twitter_Response);
+        $this->assertInstanceOf(Zend_Service_Twitter_Response::class, $response);
     }
 }

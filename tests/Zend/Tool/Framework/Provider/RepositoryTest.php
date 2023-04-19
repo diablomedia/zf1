@@ -116,7 +116,7 @@ class Zend_Tool_Framework_Provider_RepositoryTest extends PHPUnit\Framework\Test
         $this->_repository->process();
         $this->assertCount(2, $this->_repository);
         foreach ($this->_repository->getProviders() as $provider) {
-            $this->assertTrue($provider instanceof Zend_Tool_Framework_Provider_Interface);
+            $this->assertInstanceOf(Zend_Tool_Framework_Provider_Interface::class, $provider);
         }
 
     }
@@ -128,7 +128,7 @@ class Zend_Tool_Framework_Provider_RepositoryTest extends PHPUnit\Framework\Test
         $this->_repository->process();
         $this->assertCount(2, $this->_repository);
         foreach ($this->_repository->getProviderSignatures() as $providerSignature) {
-            $this->assertTrue($providerSignature instanceof Zend_Tool_Framework_Provider_Signature);
+            $this->assertInstanceOf(Zend_Tool_Framework_Provider_Signature::class, $providerSignature);
         }
 
     }

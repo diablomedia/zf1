@@ -173,7 +173,7 @@ class Zend_Service_Ebay_OfflineTest extends PHPUnit\Framework\TestCase
         // general attributes
         $response->searchResult->item->seek(0);
         $object = $response->searchResult->item->current();
-        $this->assertTrue($object instanceof Zend_Service_Ebay_Finding_Search_Item);
+        $this->assertInstanceOf(Zend_Service_Ebay_Finding_Search_Item::class, $object);
         $this->assertNotNull($object->autoPay);
         $this->assertNotNull($object->country);
         $this->assertIsArray($object->galleryPlusPictureURL);
@@ -336,7 +336,7 @@ class Zend_Service_Ebay_OfflineTest extends PHPUnit\Framework\TestCase
 
         // Zend_Service_Ebay_Finding_Category_Histogram
         $object = $object->categoryHistogram->current();
-        $this->assertTrue($object instanceof Zend_Service_Ebay_Finding_Category_Histogram);
+        $this->assertInstanceOf(Zend_Service_Ebay_Finding_Category_Histogram::class, $object);
         $this->assertTrue($object->childCategoryHistogram instanceof Zend_Service_Ebay_Finding_Category_Histogram_Set);
         $this->assertNotNull($object->count);
     }

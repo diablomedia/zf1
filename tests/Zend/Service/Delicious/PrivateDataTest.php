@@ -201,7 +201,7 @@ class Zend_Service_Delicious_PrivateDataTest extends PHPUnit\Framework\TestCase
     public function testGetAllPosts()
     {
         $posts = $this->_delicious->getAllPosts('zfSite');
-        $this->assertTrue($posts instanceof Zend_Service_Delicious_PostList);
+        $this->assertInstanceOf(Zend_Service_Delicious_PostList::class, $posts);
 
         foreach ($posts as $post) {
             $this->assertStringContainsString('zfSite', $post->getTags());
@@ -216,7 +216,7 @@ class Zend_Service_Delicious_PrivateDataTest extends PHPUnit\Framework\TestCase
     public function testGetRecentPosts()
     {
         $posts = $this->_delicious->getRecentPosts('zfSite', 10);
-        $this->assertTrue($posts instanceof Zend_Service_Delicious_PostList);
+        $this->assertInstanceOf(Zend_Service_Delicious_PostList::class, $posts);
         $this->assertTrue(count($posts) <= 10);
 
         foreach ($posts as $post) {
@@ -232,7 +232,7 @@ class Zend_Service_Delicious_PrivateDataTest extends PHPUnit\Framework\TestCase
     public function testGetPosts()
     {
         $posts = $this->_delicious->getPosts('zfSite', new Zend_Date(), 'help');
-        $this->assertTrue($posts instanceof Zend_Service_Delicious_PostList);
+        $this->assertInstanceOf(Zend_Service_Delicious_PostList::class, $posts);
         $this->assertTrue(count($posts) <= 10);
 
         foreach ($posts as $post) {

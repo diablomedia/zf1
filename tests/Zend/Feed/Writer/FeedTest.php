@@ -766,7 +766,7 @@ class Zend_Feed_Writer_FeedTest extends PHPUnit\Framework\TestCase
     {
         $writer = new Zend_Feed_Writer_Feed;
         $entry = $writer->createEntry();
-        $this->assertTrue($entry instanceof Zend_Feed_Writer_Entry);
+        $this->assertInstanceOf(Zend_Feed_Writer_Entry::class, $entry);
     }
 
     public function testAddsCategory()

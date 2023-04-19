@@ -77,7 +77,7 @@ class Zend_Gdata_Gapps_EmailListRecipientFeedTest extends PHPUnit\Framework\Test
         $entryCount = 0;
         foreach ($this->emailListRecipientFeed as $entry) {
             $entryCount++;
-            $this->assertTrue($entry instanceof Zend_Gdata_Gapps_EmailListRecipientEntry);
+            $this->assertInstanceOf(Zend_Gdata_Gapps_EmailListRecipientEntry::class, $entry);
         }
         $this->assertTrue($entryCount > 0);
 
@@ -87,7 +87,7 @@ class Zend_Gdata_Gapps_EmailListRecipientFeedTest extends PHPUnit\Framework\Test
         $newEntryCount = 0;
         foreach ($newEmailListRecipientFeed as $entry) {
             $newEntryCount++;
-            $this->assertTrue($entry instanceof Zend_Gdata_Gapps_EmailListRecipientEntry);
+            $this->assertInstanceOf(Zend_Gdata_Gapps_EmailListRecipientEntry::class, $entry);
         }
         $this->assertEquals($entryCount, $newEntryCount);
     }

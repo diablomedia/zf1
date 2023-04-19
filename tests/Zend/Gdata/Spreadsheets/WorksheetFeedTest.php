@@ -46,7 +46,7 @@ class Zend_Gdata_Spreadsheets_WorksheetFeedTest extends PHPUnit\Framework\TestCa
         $this->assertTrue(count($this->wksFeed->entries) == 1);
         foreach($this->wksFeed->entries as $entry)
         {
-            $this->assertTrue($entry instanceof Zend_Gdata_Spreadsheets_WorksheetEntry);
+            $this->assertInstanceOf(Zend_Gdata_Spreadsheets_WorksheetEntry::class, $entry);
         }
 
         $newWksFeed = new Zend_Gdata_Spreadsheets_WorksheetFeed();
@@ -57,7 +57,7 @@ class Zend_Gdata_Spreadsheets_WorksheetFeedTest extends PHPUnit\Framework\TestCa
         $this->assertTrue(count($newWksFeed->entries) == 1);
         foreach($newWksFeed->entries as $entry)
         {
-            $this->assertTrue($entry instanceof Zend_Gdata_Spreadsheets_WorksheetEntry);
+            $this->assertInstanceOf(Zend_Gdata_Spreadsheets_WorksheetEntry::class, $entry);
         }
     }
 

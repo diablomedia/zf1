@@ -55,7 +55,7 @@ class Zend_Gdata_Analytics_DataFeedTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(count($this->dataFeed->entries), $count);
         $this->assertEquals($this->dataFeed->entries->count(), $count);
         foreach ($this->dataFeed->entries as $entry) {
-            $this->assertTrue($entry instanceof Zend_Gdata_Analytics_DataEntry);
+            $this->assertInstanceOf(Zend_Gdata_Analytics_DataEntry::class, $entry);
         }
     }
 

@@ -62,7 +62,7 @@ class Zend_Pdf_DestinationTest extends PHPUnit\Framework\TestCase
 
         $destination = Zend_Pdf_Destination::load($destArray);
 
-        $this->assertTrue($destination instanceof Zend_Pdf_Destination_Zoom);
+        $this->assertInstanceOf(Zend_Pdf_Destination_Zoom::class, $destination);
         $this->assertEquals($destination->getResource()->toString(), '[4 0 R /XYZ 0 842 1 ]');
 
 
@@ -73,7 +73,7 @@ class Zend_Pdf_DestinationTest extends PHPUnit\Framework\TestCase
 
         $destination = Zend_Pdf_Destination::load($destArray);
 
-        $this->assertTrue($destination instanceof Zend_Pdf_Destination_Fit);
+        $this->assertInstanceOf(Zend_Pdf_Destination_Fit::class, $destination);
         $this->assertEquals($destination->getResource()->toString(), '[4 0 R /Fit ]');
 
 
@@ -85,7 +85,7 @@ class Zend_Pdf_DestinationTest extends PHPUnit\Framework\TestCase
 
         $destination = Zend_Pdf_Destination::load($destArray);
 
-        $this->assertTrue($destination instanceof Zend_Pdf_Destination_FitHorizontally);
+        $this->assertInstanceOf(Zend_Pdf_Destination_FitHorizontally::class, $destination);
         $this->assertEquals($destination->getResource()->toString(), '[4 0 R /FitH 842 ]');
 
 
@@ -97,7 +97,7 @@ class Zend_Pdf_DestinationTest extends PHPUnit\Framework\TestCase
 
         $destination = Zend_Pdf_Destination::load($destArray);
 
-        $this->assertTrue($destination instanceof Zend_Pdf_Destination_FitVertically);
+        $this->assertInstanceOf(Zend_Pdf_Destination_FitVertically::class, $destination);
         $this->assertEquals($destination->getResource()->toString(), '[4 0 R /FitV 0 ]');
 
 
@@ -112,7 +112,7 @@ class Zend_Pdf_DestinationTest extends PHPUnit\Framework\TestCase
 
         $destination = Zend_Pdf_Destination::load($destArray);
 
-        $this->assertTrue($destination instanceof Zend_Pdf_Destination_FitRectangle);
+        $this->assertInstanceOf(Zend_Pdf_Destination_FitRectangle::class, $destination);
         $this->assertEquals($destination->getResource()->toString(), '[4 0 R /FitR 0 10 595 842 ]');
 
 
@@ -123,7 +123,7 @@ class Zend_Pdf_DestinationTest extends PHPUnit\Framework\TestCase
 
         $destination = Zend_Pdf_Destination::load($destArray);
 
-        $this->assertTrue($destination instanceof Zend_Pdf_Destination_FitBoundingBox);
+        $this->assertInstanceOf(Zend_Pdf_Destination_FitBoundingBox::class, $destination);
         $this->assertEquals($destination->getResource()->toString(), '[4 0 R /FitB ]');
 
 
@@ -135,7 +135,7 @@ class Zend_Pdf_DestinationTest extends PHPUnit\Framework\TestCase
 
         $destination = Zend_Pdf_Destination::load($destArray);
 
-        $this->assertTrue($destination instanceof Zend_Pdf_Destination_FitBoundingBoxHorizontally);
+        $this->assertInstanceOf(Zend_Pdf_Destination_FitBoundingBoxHorizontally::class, $destination);
         $this->assertEquals($destination->getResource()->toString(), '[4 0 R /FitBH 842 ]');
 
 
@@ -147,7 +147,7 @@ class Zend_Pdf_DestinationTest extends PHPUnit\Framework\TestCase
 
         $destination = Zend_Pdf_Destination::load($destArray);
 
-        $this->assertTrue($destination instanceof Zend_Pdf_Destination_FitBoundingBoxVertically);
+        $this->assertInstanceOf(Zend_Pdf_Destination_FitBoundingBoxVertically::class, $destination);
         $this->assertEquals($destination->getResource()->toString(), '[4 0 R /FitBV 0 ]');
     }
 
@@ -268,35 +268,35 @@ class Zend_Pdf_DestinationTest extends PHPUnit\Framework\TestCase
         $page2 = $pdf->newPage(Zend_Pdf_Page::SIZE_A4);
 
         $destination = Zend_Pdf_Destination_Zoom::create($page2, 0, 842, 0.5);
-        $this->assertTrue($destination instanceof Zend_Pdf_Destination_Zoom);
+        $this->assertInstanceOf(Zend_Pdf_Destination_Zoom::class, $destination);
         $this->assertEquals($destination->getResource()->toString(), '[4 0 R /XYZ 0 842 0.5 ]');
 
         $destination = Zend_Pdf_Destination_Fit::create($page2);
-        $this->assertTrue($destination instanceof Zend_Pdf_Destination_Fit);
+        $this->assertInstanceOf(Zend_Pdf_Destination_Fit::class, $destination);
         $this->assertEquals($destination->getResource()->toString(), '[4 0 R /Fit ]');
 
         $destination = Zend_Pdf_Destination_FitHorizontally::create($page2, 842);
-        $this->assertTrue($destination instanceof Zend_Pdf_Destination_FitHorizontally);
+        $this->assertInstanceOf(Zend_Pdf_Destination_FitHorizontally::class, $destination);
         $this->assertEquals($destination->getResource()->toString(), '[4 0 R /FitH 842 ]');
 
         $destination = Zend_Pdf_Destination_FitVertically::create(2, 0);
-        $this->assertTrue($destination instanceof Zend_Pdf_Destination_FitVertically);
+        $this->assertInstanceOf(Zend_Pdf_Destination_FitVertically::class, $destination);
         $this->assertEquals($destination->getResource()->toString(), '[2 /FitV 0 ]');
 
         $destination = Zend_Pdf_Destination_FitRectangle::create($page1, 0, 10, 595, 842);
-        $this->assertTrue($destination instanceof Zend_Pdf_Destination_FitRectangle);
+        $this->assertInstanceOf(Zend_Pdf_Destination_FitRectangle::class, $destination);
         $this->assertEquals($destination->getResource()->toString(), '[3 0 R /FitR 0 10 595 842 ]');
 
         $destination = Zend_Pdf_Destination_FitBoundingBox::create(1);
-        $this->assertTrue($destination instanceof Zend_Pdf_Destination_FitBoundingBox);
+        $this->assertInstanceOf(Zend_Pdf_Destination_FitBoundingBox::class, $destination);
         $this->assertEquals($destination->getResource()->toString(), '[1 /FitB ]');
 
         $destination = Zend_Pdf_Destination_FitBoundingBoxHorizontally::create($page2, 842);
-        $this->assertTrue($destination instanceof Zend_Pdf_Destination_FitBoundingBoxHorizontally);
+        $this->assertInstanceOf(Zend_Pdf_Destination_FitBoundingBoxHorizontally::class, $destination);
         $this->assertEquals($destination->getResource()->toString(), '[4 0 R /FitBH 842 ]');
 
         $destination = Zend_Pdf_Destination_FitBoundingBoxVertically::create($page2, 0);
-        $this->assertTrue($destination instanceof Zend_Pdf_Destination_FitBoundingBoxVertically);
+        $this->assertInstanceOf(Zend_Pdf_Destination_FitBoundingBoxVertically::class, $destination);
         $this->assertEquals($destination->getResource()->toString(), '[4 0 R /FitBV 0 ]');
     }
 }

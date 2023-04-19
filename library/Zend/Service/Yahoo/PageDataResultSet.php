@@ -43,6 +43,7 @@ class Zend_Service_Yahoo_PageDataResultSet extends Zend_Service_Yahoo_ResultSet
      *
      * @return Zend_Service_Yahoo_PageDataResult
      */
+    #[\ReturnTypeWillChange]
     public function current()
     {
         return new Zend_Service_Yahoo_PageDataResult($this->_results->item($this->_currentIndex));

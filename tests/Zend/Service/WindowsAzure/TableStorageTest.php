@@ -358,7 +358,7 @@ class Zend_Service_WindowsAzure_TableStorageTest extends PHPUnit\Framework\TestC
 
             $result = $storageClient->retrieveEntityById($tableName, $entity->getPartitionKey(), $entity->getRowKey());
             $this->assertEquals($entity->FullName, $result->Name);
-            $this->assertTrue($result instanceof Zend_Service_WindowsAzure_Storage_DynamicTableEntity);
+            $this->assertInstanceOf(Zend_Service_WindowsAzure_Storage_DynamicTableEntity::class, $result);
         }
     }
 
@@ -524,7 +524,7 @@ class Zend_Service_WindowsAzure_TableStorageTest extends PHPUnit\Framework\TestC
 
             foreach ($result as $item)
             {
-                $this->assertTrue($item instanceof Zend_Service_WindowsAzure_Storage_DynamicTableEntity);
+                $this->assertInstanceOf(Zend_Service_WindowsAzure_Storage_DynamicTableEntity::class, $item);
             }
         }
     }
@@ -656,7 +656,7 @@ class Zend_Service_WindowsAzure_TableStorageTest extends PHPUnit\Framework\TestC
 
             // Start batch
             $batch = $storageClient->startBatch();
-            $this->assertTrue($batch instanceof Zend_Service_WindowsAzure_Storage_Batch);
+            $this->assertInstanceOf(Zend_Service_WindowsAzure_Storage_Batch::class, $batch);
 
             // Insert entities in batch
             foreach ($entities2 as $entity)
@@ -693,7 +693,7 @@ class Zend_Service_WindowsAzure_TableStorageTest extends PHPUnit\Framework\TestC
 
             // Start batch
             $batch = $storageClient->startBatch();
-            $this->assertTrue($batch instanceof Zend_Service_WindowsAzure_Storage_Batch);
+            $this->assertInstanceOf(Zend_Service_WindowsAzure_Storage_Batch::class, $batch);
 
             // Insert entities in batch
             foreach ($entities as $entity)
@@ -735,7 +735,7 @@ class Zend_Service_WindowsAzure_TableStorageTest extends PHPUnit\Framework\TestC
 
             // Start batch
             $batch = $storageClient->startBatch();
-            $this->assertTrue($batch instanceof Zend_Service_WindowsAzure_Storage_Batch);
+            $this->assertInstanceOf(Zend_Service_WindowsAzure_Storage_Batch::class, $batch);
 
             // Update entities in batch
             $storageClient->updateEntity($tableName, $entities[0], true);
@@ -767,7 +767,7 @@ class Zend_Service_WindowsAzure_TableStorageTest extends PHPUnit\Framework\TestC
 
             // Start batch
             $batch = $storageClient->startBatch();
-            $this->assertTrue($batch instanceof Zend_Service_WindowsAzure_Storage_Batch);
+            $this->assertInstanceOf(Zend_Service_WindowsAzure_Storage_Batch::class, $batch);
 
             // Insert entities in batch
             foreach ($entities as $entity)

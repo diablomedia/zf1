@@ -67,7 +67,7 @@ class Zend_Service_Ebay_Finding_OnlineTest extends PHPUnit\Framework\TestCase
             $response = $this->_finding->findItemsByKeywords('harry+potter');
             $this->fail('No exception found');
         } catch (Exception $e) {
-            $this->assertTrue($e instanceof Zend_Service_Ebay_Finding_Exception);
+            $this->assertInstanceOf(Zend_Service_Ebay_Finding_Exception::class, $e);
             $this->assertStringContainsString('eBay error', $e->getMessage());
         }
     }
@@ -85,7 +85,7 @@ class Zend_Service_Ebay_Finding_OnlineTest extends PHPUnit\Framework\TestCase
         $store    = null;
         foreach ($services as $service => $params) {
             $response = call_user_func_array(array($this->_finding, $service), $params);
-            $this->assertTrue($response instanceof Zend_Service_Ebay_Finding_Response_Items);
+            $this->assertInstanceOf(Zend_Service_Ebay_Finding_Response_Items::class, $response);
             if (!$item && $response->attributes('searchResult', 'count') > 0) {
                 $item = $response->searchResult->item->current();
             }
@@ -106,25 +106,25 @@ class Zend_Service_Ebay_Finding_OnlineTest extends PHPUnit\Framework\TestCase
         }
 
         $response2 = $item->findItemsByProduct($this->_finding);
-        $this->assertTrue($response2 instanceof Zend_Service_Ebay_Finding_Response_Items);
+        $this->assertInstanceOf(Zend_Service_Ebay_Finding_Response_Items::class, $response2);
 
         $response3 = $category->findItems($this->_finding, array());
-        $this->assertTrue($response3 instanceof Zend_Service_Ebay_Finding_Response_Items);
+        $this->assertInstanceOf(Zend_Service_Ebay_Finding_Response_Items::class, $response3);
 
         $response4 = $store->findItems($this->_finding, array());
-        $this->assertTrue($response4 instanceof Zend_Service_Ebay_Finding_Response_Items);
+        $this->assertInstanceOf(Zend_Service_Ebay_Finding_Response_Items::class, $response4);
     }
 
     public function testResponseTypeGets()
     {
         $response = $this->_finding->getSearchKeywordsRecommendation('hary');
-        $this->assertTrue($response instanceof Zend_Service_Ebay_Finding_Response_Keywords);
+        $this->assertInstanceOf(Zend_Service_Ebay_Finding_Response_Keywords::class, $response);
 
         $response2 = $response->findItems($this->_finding, array());
-        $this->assertTrue($response2 instanceof Zend_Service_Ebay_Finding_Response_Items);
+        $this->assertInstanceOf(Zend_Service_Ebay_Finding_Response_Items::class, $response2);
 
         $response3 = $this->_finding->getHistograms('11233');
-        $this->assertTrue($response3 instanceof Zend_Service_Ebay_Finding_Response_Histograms);
+        $this->assertInstanceOf(Zend_Service_Ebay_Finding_Response_Histograms::class, $response3);
     }
 
     public function testItemsPagination()
@@ -139,7 +139,7 @@ class Zend_Service_Ebay_Finding_OnlineTest extends PHPUnit\Framework\TestCase
             $page1->page($this->_finding, 0);
             $this->fail('No exception found for page #0');
         } catch (Exception $e) {
-            $this->assertTrue($e instanceof Zend_Service_Ebay_Finding_Exception);
+            $this->assertInstanceOf(Zend_Service_Ebay_Finding_Exception::class, $e);
             $this->assertStringContainsString('Page number ', $e->getMessage());
         }
 
@@ -149,7 +149,7 @@ class Zend_Service_Ebay_Finding_OnlineTest extends PHPUnit\Framework\TestCase
             $page1->page($this->_finding, $number);
             $this->fail("No exception found for page out of range #$number");
         } catch (Exception $e) {
-            $this->assertTrue($e instanceof Zend_Service_Ebay_Finding_Exception);
+            $this->assertInstanceOf(Zend_Service_Ebay_Finding_Exception::class, $e);
             $this->assertStringContainsString('Page number ', $e->getMessage());
         }
 

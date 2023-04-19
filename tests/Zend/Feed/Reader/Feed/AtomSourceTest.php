@@ -98,7 +98,7 @@ class Zend_Feed_Reader_Feed_AtomSourceTest extends PHPUnit\Framework\TestCase
             file_get_contents($this->_feedSamplePath.'/title/atom10.xml')
         );
         $source = $feed->current()->getSource();
-        $this->assertTrue($source instanceof Zend_Feed_Reader_Feed_Atom_Source);
+        $this->assertInstanceOf(Zend_Feed_Reader_Feed_Atom_Source::class, $source);
     }
 
     /**

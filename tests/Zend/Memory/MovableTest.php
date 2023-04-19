@@ -83,7 +83,7 @@ class Zend_Memory_Container_MovableTest extends PHPUnit\Framework\TestCase
         $memoryManager = new Zend_Memory_Manager_Dummy();
         $memObject = new Zend_Memory_Container_Movable($memoryManager, 10, '0123456789');
 
-        $this->assertTrue($memObject instanceof Zend_Memory_Container_Movable);
+        $this->assertInstanceOf(Zend_Memory_Container_Movable::class, $memObject);
     }
 
 

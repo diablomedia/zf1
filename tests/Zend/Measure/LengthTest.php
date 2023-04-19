@@ -43,7 +43,7 @@ class Zend_Measure_LengthTest extends PHPUnit\Framework\TestCase
     public function testLengthInit()
     {
         $value = new Zend_Measure_Length('100',Zend_Measure_Length::STANDARD,'de');
-        $this->assertTrue($value instanceof Zend_Measure_Length,'Zend_Measure_Length Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Length::class, $value,'Zend_Measure_Length Object not returned');
     }
 
 

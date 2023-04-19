@@ -123,7 +123,7 @@ class Zend_Search_Lucene_FSMTest extends PHPUnit\Framework\TestCase
     {
         $doorFSM = new Zend_Search_Lucene_FSM_testFSMClass();
 
-        $this->assertTrue($doorFSM instanceof Zend_Search_Lucene_FSM);
+        $this->assertInstanceOf(Zend_Search_Lucene_FSM::class, $doorFSM);
         $this->assertEquals($doorFSM->getState(), Zend_Search_Lucene_FSM_testFSMClass::OPENED);
     }
 

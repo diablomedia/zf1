@@ -38,7 +38,7 @@ class Zend_Pdf_Element_DictionaryTest extends PHPUnit\Framework\TestCase
     public function testPDFDictionary1()
     {
         $dictionaryObj = new Zend_Pdf_Element_Dictionary();
-        $this->assertTrue($dictionaryObj instanceof Zend_Pdf_Element_Dictionary);
+        $this->assertInstanceOf(Zend_Pdf_Element_Dictionary::class, $dictionaryObj);
     }
 
     public function testPDFDictionary2()
@@ -51,7 +51,7 @@ class Zend_Pdf_Element_DictionaryTest extends PHPUnit\Framework\TestCase
         $srcArray['BinaryText'] = new Zend_Pdf_Element_String_Binary('some text');
 
         $dictionaryObj = new Zend_Pdf_Element_Dictionary($srcArray);
-        $this->assertTrue($dictionaryObj instanceof Zend_Pdf_Element_Dictionary);
+        $this->assertInstanceOf(Zend_Pdf_Element_Dictionary::class, $dictionaryObj);
     }
 
     public function testPDFDictionaryBadInput1()

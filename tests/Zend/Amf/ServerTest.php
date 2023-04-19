@@ -312,7 +312,7 @@ class Zend_Amf_ServerTest extends PHPUnit\Framework\TestCase
         // Now check if the return data was properly set.
         $acknowledgeMessage = $responseBody[0]->getData();
         // check that we have a message beening returned
-        $this->assertTrue($acknowledgeMessage instanceof Zend_Amf_Value_Messaging_AcknowledgeMessage);
+        $this->assertInstanceOf(Zend_Amf_Value_Messaging_AcknowledgeMessage::class, $acknowledgeMessage);
         // Check the message body is the expected data to be returned
         $this->assertEquals("String: 12345", $acknowledgeMessage->body);
     }
@@ -347,7 +347,7 @@ class Zend_Amf_ServerTest extends PHPUnit\Framework\TestCase
         // Now check if the return data was properly set.
         $acknowledgeMessage = $responseBody[0]->getData();
         // check that we have a message beening returned
-        $this->assertTrue($acknowledgeMessage instanceof Zend_Amf_Value_Messaging_AcknowledgeMessage);
+        $this->assertInstanceOf(Zend_Amf_Value_Messaging_AcknowledgeMessage::class, $acknowledgeMessage);
         // Check the message body is the expected data to be returned
         $this->assertEquals("myMenuB", $acknowledgeMessage->body);
     }
@@ -376,7 +376,7 @@ class Zend_Amf_ServerTest extends PHPUnit\Framework\TestCase
         // Now check if the return data was properly set.
         $acknowledgeMessage = $responseBody[0]->getData();
         // check that we have a message beening returned
-        $this->assertTrue($acknowledgeMessage instanceof Zend_Amf_Value_Messaging_AcknowledgeMessage);
+        $this->assertInstanceOf(Zend_Amf_Value_Messaging_AcknowledgeMessage::class, $acknowledgeMessage);
         // Check that the MessageID was not corrupeted when set to the correlationId
         $this->assertEquals($acknowledgeMessage->correlationId, $message->messageId);
     }
@@ -434,7 +434,7 @@ class Zend_Amf_ServerTest extends PHPUnit\Framework\TestCase
         $message = $responseBody[0]->getData();
 
         // check that we have a message beening returned
-        $this->assertTrue($message instanceof Zend_Amf_Value_Messaging_ErrorMessage);
+        $this->assertInstanceOf(Zend_Amf_Value_Messaging_ErrorMessage::class, $message);
     }
 
     /**
@@ -708,7 +708,7 @@ class Zend_Amf_ServerTest extends PHPUnit\Framework\TestCase
         $result  = $this->_server->handle();
         $content = ob_get_clean();
         $request = $this->_server->getRequest();
-        $this->assertTrue($request instanceof Zend_Amf_Request_Http);
+        $this->assertInstanceOf(Zend_Amf_Request_Http::class, $request);
         $bodies  = $request->getAmfBodies();
         $this->assertCount(0, $bodies);
         $this->assertStringContainsString('Endpoint', $content);
@@ -718,8 +718,8 @@ class Zend_Amf_ServerTest extends PHPUnit\Framework\TestCase
     {
         $this->_server->setRequest('Zend_Amf_Request');
         $request = $this->_server->getRequest();
-        $this->assertTrue($request instanceof Zend_Amf_Request);
-        $this->assertFalse($request instanceof Zend_Amf_Request_Http);
+        $this->assertInstanceOf(Zend_Amf_Request::class, $request);
+        $this->assertNotInstanceOf(Zend_Amf_Request_Http::class, $request);
     }
 
     /**
@@ -753,8 +753,8 @@ class Zend_Amf_ServerTest extends PHPUnit\Framework\TestCase
     {
         $this->_server->setResponse('Zend_Amf_Response');
         $response = $this->_server->getResponse();
-        $this->assertTrue($response instanceof Zend_Amf_Response);
-        $this->assertFalse($response instanceof Zend_Amf_Response_Http);
+        $this->assertInstanceOf(Zend_Amf_Response::class, $response);
+        $this->assertNotInstanceOf(Zend_Amf_Response_Http::class, $response);
     }
 
     /**
@@ -797,7 +797,7 @@ class Zend_Amf_ServerTest extends PHPUnit\Framework\TestCase
             $this->assertTrue(strstr($key, '.') ? true : false, $key);
             $ns = substr($key, 0, strpos($key, '.'));
             $this->assertContains($ns, $namespaces, $key);
-            $this->assertTrue($value instanceof Zend_Server_Reflection_Function_Abstract);
+            $this->assertInstanceOf(Zend_Server_Reflection_Function_Abstract::class, $value);
         }
     }
 
@@ -845,7 +845,7 @@ class Zend_Amf_ServerTest extends PHPUnit\Framework\TestCase
         // Now check if the return data was properly set.
         $acknowledgeMessage = $responseBody[0]->getData();
         // check that we have a message beening returned
-        $this->assertTrue($acknowledgeMessage instanceof Zend_Amf_Value_Messaging_AcknowledgeMessage);
+        $this->assertInstanceOf(Zend_Amf_Value_Messaging_AcknowledgeMessage::class, $acknowledgeMessage);
         // Check the message body is the expected data to be returned
         $this->assertTrue($acknowledgeMessage->body);
     }
@@ -901,7 +901,7 @@ class Zend_Amf_ServerTest extends PHPUnit\Framework\TestCase
         // Now check if the return data was properly set.
         $acknowledgeMessage = $responseBody[0]->getData();
         // check that we have a message beening returned
-        $this->assertTrue($acknowledgeMessage instanceof Zend_Amf_Value_Messaging_AcknowledgeMessage);
+        $this->assertInstanceOf(Zend_Amf_Value_Messaging_AcknowledgeMessage::class, $acknowledgeMessage);
         // Check the message body is the expected data to be returned
         $this->assertCount(4, $acknowledgeMessage->body);
     }
@@ -957,7 +957,7 @@ class Zend_Amf_ServerTest extends PHPUnit\Framework\TestCase
         // Now check if the return data was properly set.
         $acknowledgeMessage = $responseBody[0]->getData();
         // check that we have a message beening returned
-        $this->assertTrue($acknowledgeMessage instanceof Zend_Amf_Value_Messaging_AcknowledgeMessage);
+        $this->assertInstanceOf(Zend_Amf_Value_Messaging_AcknowledgeMessage::class, $acknowledgeMessage);
         // Check the message body is the expected data to be returned
         $this->assertCount(4, $acknowledgeMessage->body);
     }

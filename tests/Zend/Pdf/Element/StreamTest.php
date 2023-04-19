@@ -38,7 +38,7 @@ class Zend_Pdf_Element_StreamTest extends PHPUnit\Framework\TestCase
     public function testPDFStream()
     {
         $streamObj = new Zend_Pdf_Element_Stream('some text');
-        $this->assertTrue($streamObj instanceof Zend_Pdf_Element_Stream);
+        $this->assertInstanceOf(Zend_Pdf_Element_Stream::class, $streamObj);
     }
 
     public function testGetType()

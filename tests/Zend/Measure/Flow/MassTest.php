@@ -42,7 +42,7 @@ class Zend_Measure_Flow_MassTest extends PHPUnit\Framework\TestCase
     public function testMassInit()
     {
         $value = new Zend_Measure_Flow_Mass('100',Zend_Measure_Flow_Mass::STANDARD,'de');
-        $this->assertTrue($value instanceof Zend_Measure_Flow_Mass,'Zend_Measure_Flow_Mass Object not returned');
+        $this->assertInstanceOf(Zend_Measure_Flow_Mass::class, $value,'Zend_Measure_Flow_Mass Object not returned');
     }
 
 
