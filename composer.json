@@ -169,6 +169,7 @@
         "zendframework/zendframework1": ">=1.12.20"
     },
     "scripts": {
-        "phpstan": "phpstan analyse --memory-limit=1024M -c phpstan.neon --ansi"
+        "phpstan": "phpstan analyse --memory-limit=1024M -c phpstan.neon --ansi",
+        "style-check": "php-cs-fixer fix --dry-run -vv"
     }
 }
