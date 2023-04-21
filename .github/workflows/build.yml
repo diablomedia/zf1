@@ -56,7 +56,7 @@ jobs:
               run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
             - name: Get composer cache directory
               id: composer-cache
-              run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+              run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
             - name: Cache dependencies
               uses: actions/cache@v3
               with:
@@ -68,6 +68,10 @@ jobs:
                   composer update --no-progress --no-suggest --prefer-stable --optimize-autoloader ${{ matrix.composer-args }}
             - name: PHPStan
               run: composer phpstan
+            - name: Code Style Check
+              env:
+                  PHP_CS_FIXER_IGNORE_ENV: true
+              run: composer style-check -- --format=checkstyle | cs2pr
             - name: Test
               run: cd tests/ && php runalltests.php --coverage
             - name: Merge Coverage
