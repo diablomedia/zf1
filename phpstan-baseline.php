@@ -7,11 +7,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Amf/Adobe/Auth.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Amf_Adobe_Introspector\\:\\:\\$_ops\\.$#',
-	'count' => 2,
-	'path' => __DIR__ . '/library/Zend/Amf/Adobe/Introspector.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Cannot call method getDescription\\(\\) on Zend_Reflection_Docblock_Tag\\|false\\.$#',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Amf/Adobe/Introspector.php',
@@ -57,11 +52,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Amf/Parse/Amf0/Deserializer.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Amf_Parse_Amf0_Serializer\\:\\:\\$_mbStringFunctionsOverloaded\\.$#',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Amf/Parse/Amf0/Serializer.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Argument of an invalid type object supplied for foreach, only iterables are supported\\.$#',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Amf/Parse/Amf0/Serializer.php',
@@ -90,11 +80,6 @@ $ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$date of class Zend_Date constructor expects array\\|int\\|string\\|Zend_Date\\|Zend_TimeSync_Protocol\\|null, float given\\.$#',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Amf/Parse/Amf3/Deserializer.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Amf_Parse_Amf3_Serializer\\:\\:\\$_mbStringFunctionsOverloaded\\.$#',
-	'count' => 2,
-	'path' => __DIR__ . '/library/Zend/Amf/Parse/Amf3/Serializer.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Binary operation "\\*" between string and 1000 results in an error\\.$#',
@@ -190,11 +175,6 @@ $ignoreErrors[] = [
 	'message' => '#^Method Zend_Amf_Parse_Resource_Stream\\:\\:parse\\(\\) should return array but returns string\\|false\\.$#',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Amf/Parse/Resource/Stream.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Amf_Parse_Serializer\\:\\:\\$_mbStringFunctionsOverloaded\\.$#',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Amf/Parse/Serializer.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Array has 2 duplicate keys with value \'flex\\.messaging\\.messages\\.ErrorMessage\' \\(\'flex\\.messaging\\.messages\\.ErrorMessage\', \'flex\\.messaging\\.messages\\.ErrorMessage\'\\)\\.$#',
@@ -1195,11 +1175,6 @@ $ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$session of function ssh2_exec expects resource, resource\\|false given\\.$#',
 	'count' => 2,
 	'path' => __DIR__ . '/library/Zend/Cloud/Infrastructure/Adapter/AbstractAdapter.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Cloud_Infrastructure_Adapter_Ec2\\:\\:\\$error\\.$#',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Cloud/Infrastructure/Adapter/Ec2.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Method Zend_Cloud_Infrastructure_Adapter_Ec2\\:\\:convertAttributes\\(\\) never returns bool so it can be removed from the return type\\.$#',
@@ -3760,11 +3735,6 @@ $ignoreErrors[] = [
 	'message' => '#^Method Zend_Feed_Writer_Feed\\:\\:removeEntry\\(\\) has no return type specified\\.$#',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Feed/Writer/Feed.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Feed_Writer_Feed_FeedAbstract\\:\\:\\$_extensions\\.$#',
-	'count' => 2,
-	'path' => __DIR__ . '/library/Zend/Feed/Writer/Feed/FeedAbstract.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Call to an undefined method object\\:\\:setEncoding\\(\\)\\.$#',
@@ -9942,11 +9912,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Gdata/Query.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Gdata_Spreadsheets\\:\\:\\$_server\\.$#',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Gdata/Spreadsheets.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Call to an undefined method Zend_Gdata_App_Base\\:\\:setColumnName\\(\\)\\.$#',
 	'count' => 2,
 	'path' => __DIR__ . '/library/Zend/Gdata/Spreadsheets.php',
@@ -10955,11 +10920,6 @@ $ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$length \\(string\\) of method Zend_Mobile_Push_Test_ApnsProxy\\:\\:_read\\(\\) should be compatible with parameter \\$length \\(int\\) of method Zend_Mobile_Push_Apns\\:\\:_read\\(\\)$#',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Mobile/Push/Test/ApnsProxy.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Pdf\\:\\:\\$_pdfHeaderVersion\\.$#',
-	'count' => 2,
-	'path' => __DIR__ . '/library/Zend/Pdf.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Access to an undefined property Zend_Pdf_Element\\:\\:\\$items\\.$#',
@@ -13232,11 +13192,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/CidFont.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Pdf_Resource_Font_CidFont\\:\\:\\$_isMonospaced\\.$#',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/CidFont.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Binary operation "\\+" between int\\|string and 1 results in an error\\.$#',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/CidFont.php',
@@ -13452,11 +13407,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Parsed.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Pdf_Resource_Font_Simple_Parsed\\:\\:\\$_isMonospaced\\.$#',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Parsed.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$val of class Zend_Pdf_Element_Name constructor expects string, string\\|null given\\.$#',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Parsed.php',
@@ -13487,17 +13437,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/Courier.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Pdf_Resource_Font_Simple_Standard_Courier\\:\\:\\$_isMonospaced\\.$#',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/Courier.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Access to an undefined property Zend_Pdf_Element_Object\\:\\:\\$BaseFont\\.$#',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/CourierBold.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Pdf_Resource_Font_Simple_Standard_CourierBold\\:\\:\\$_isMonospaced\\.$#',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/CourierBold.php',
 ];
@@ -13507,17 +13447,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/CourierBoldOblique.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Pdf_Resource_Font_Simple_Standard_CourierBoldOblique\\:\\:\\$_isMonospaced\\.$#',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/CourierBoldOblique.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Access to an undefined property Zend_Pdf_Element_Object\\:\\:\\$BaseFont\\.$#',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/CourierOblique.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Pdf_Resource_Font_Simple_Standard_CourierOblique\\:\\:\\$_isMonospaced\\.$#',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/CourierOblique.php',
 ];
@@ -13527,17 +13457,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/Helvetica.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Pdf_Resource_Font_Simple_Standard_Helvetica\\:\\:\\$_isMonospaced\\.$#',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/Helvetica.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Access to an undefined property Zend_Pdf_Element_Object\\:\\:\\$BaseFont\\.$#',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/HelveticaBold.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Pdf_Resource_Font_Simple_Standard_HelveticaBold\\:\\:\\$_isMonospaced\\.$#',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/HelveticaBold.php',
 ];
@@ -13547,17 +13467,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/HelveticaBoldOblique.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Pdf_Resource_Font_Simple_Standard_HelveticaBoldOblique\\:\\:\\$_isMonospaced\\.$#',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/HelveticaBoldOblique.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Access to an undefined property Zend_Pdf_Element_Object\\:\\:\\$BaseFont\\.$#',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/HelveticaOblique.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Pdf_Resource_Font_Simple_Standard_HelveticaOblique\\:\\:\\$_isMonospaced\\.$#',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/HelveticaOblique.php',
 ];
@@ -13568,11 +13478,6 @@ $ignoreErrors[] = [
 ];
 $ignoreErrors[] = [
 	'message' => '#^Access to an undefined property Zend_Pdf_Element_Object\\:\\:\\$Encoding\\.$#',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/Symbol.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Pdf_Resource_Font_Simple_Standard_Symbol\\:\\:\\$_isMonospaced\\.$#',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/Symbol.php',
 ];
@@ -13607,17 +13512,12 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/TimesBold.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Pdf_Resource_Font_Simple_Standard_TimesBold\\:\\:\\$_isMonospaced\\.$#',
+	'message' => '#^Access to an undefined property Zend_Pdf_Resource_Font_Simple_Parsed\\:\\:\\$_isMonospaced\\.$#',
 	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/TimesBold.php',
+	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Parsed.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Access to an undefined property Zend_Pdf_Element_Object\\:\\:\\$BaseFont\\.$#',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/TimesBoldItalic.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Pdf_Resource_Font_Simple_Standard_TimesBoldItalic\\:\\:\\$_isMonospaced\\.$#',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/TimesBoldItalic.php',
 ];
@@ -13627,17 +13527,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/TimesItalic.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Pdf_Resource_Font_Simple_Standard_TimesItalic\\:\\:\\$_isMonospaced\\.$#',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/TimesItalic.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Access to an undefined property Zend_Pdf_Element_Object\\:\\:\\$BaseFont\\.$#',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/TimesRoman.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Pdf_Resource_Font_Simple_Standard_TimesRoman\\:\\:\\$_isMonospaced\\.$#',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/TimesRoman.php',
 ];
@@ -13648,11 +13538,6 @@ $ignoreErrors[] = [
 ];
 $ignoreErrors[] = [
 	'message' => '#^Access to an undefined property Zend_Pdf_Element_Object\\:\\:\\$Encoding\\.$#',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/ZapfDingbats.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Pdf_Resource_Font_Simple_Standard_ZapfDingbats\\:\\:\\$_isMonospaced\\.$#',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Simple/Standard/ZapfDingbats.php',
 ];
@@ -13703,11 +13588,6 @@ $ignoreErrors[] = [
 ];
 $ignoreErrors[] = [
 	'message' => '#^Access to an undefined property Zend_Pdf_Element_Object\\:\\:\\$ToUnicode\\.$#',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Type0.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Pdf_Resource_Font_Type0\\:\\:\\$_isMonospaced\\.$#',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Pdf/Resource/Font/Type0.php',
 ];
@@ -14640,11 +14520,6 @@ $ignoreErrors[] = [
 	'message' => '#^Right side of && is always true\\.$#',
 	'count' => 2,
 	'path' => __DIR__ . '/library/Zend/Reflection/Extension.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Reflection_File\\:\\:\\$_fileName\\.$#',
-	'count' => 2,
-	'path' => __DIR__ . '/library/Zend/Reflection/File.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Property Zend_Reflection_File\\:\\:\\$_classes \\(array\\<Zend_Reflection_Class\\>\\) does not accept array\\<string\\|Zend_Reflection_Class\\>\\.$#',
@@ -17090,11 +16965,6 @@ $ignoreErrors[] = [
 	'message' => '#^Property Zend_Search_Lucene_Search_Weight_MultiTerm\\:\\:\\$_reader is never read, only written\\.$#',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Search/Lucene/Search/Weight/MultiTerm.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Search_Lucene_Search_Weight_Phrase\\:\\:\\$_queryWeight\\.$#',
-	'count' => 2,
-	'path' => __DIR__ . '/library/Zend/Search/Lucene/Search/Weight/Phrase.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Method Zend_Search_Lucene_Search_Weight_Phrase\\:\\:normalize\\(\\) has no return type specified\\.$#',
@@ -23357,11 +23227,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Tool/Project/Context/Zf/ActionMethod.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Tool_Project_Context_Zf_ApplicationConfigFile\\:\\:\\$_type\\.$#',
-	'count' => 2,
-	'path' => __DIR__ . '/library/Zend/Tool/Project/Context/Zf/ApplicationConfigFile.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Argument of an invalid type array\\<int, string\\>\\|false supplied for foreach, only iterables are supported\\.$#',
 	'count' => 2,
 	'path' => __DIR__ . '/library/Zend/Tool/Project/Context/Zf/ApplicationConfigFile.php',
@@ -23680,11 +23545,6 @@ $ignoreErrors[] = [
 	'message' => '#^Parameter \\#3 \\$subject of function preg_replace expects array\\|string, string\\|false given\\.$#',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Tool/Project/Context/Zf/ZfStandardLibraryDirectory.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Access to an undefined property Zend_Tool_Project_Profile\\:\\:\\$_topResources\\.$#',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Tool/Project/Profile.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Method Zend_Tool_Project_Profile\\:\\:loadFromData\\(\\) has no return type specified\\.$#',

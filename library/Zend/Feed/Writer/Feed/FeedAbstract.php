@@ -44,6 +44,9 @@ class Zend_Feed_Writer_Feed_FeedAbstract
      */
     protected $_type = null;
 
+    /**
+     * @var array
+     */
     protected $_extensions;
 
     /**
