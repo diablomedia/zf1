@@ -34,6 +34,8 @@ require_once 'Zend/Gdata/Docs/DocumentListEntry.php';
  */
 class Zend_Gdata_Docs_DocumentListEntryTest extends PHPUnit\Framework\TestCase
 {
+    protected $doc;
+    protected $docsClient;
 
     public function setUp(): void
     {

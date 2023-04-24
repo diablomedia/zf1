@@ -34,6 +34,7 @@ require_once 'Zend/Gdata/Gapps/UserQuery.php';
  */
 class Zend_Gdata_Gapps_UserQueryTest extends PHPUnit\Framework\TestCase
 {
+    protected $query;
 
     public function setUp(): void
     {

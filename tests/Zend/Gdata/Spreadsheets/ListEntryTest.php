@@ -33,6 +33,8 @@ require_once 'Zend/Gdata/Spreadsheets.php';
  */
 class Zend_Gdata_Spreadsheets_ListEntryTest extends PHPUnit\Framework\TestCase
 {
+    protected $listEntry;
+    protected $rowData;
 
     public function setUp(): void
     {

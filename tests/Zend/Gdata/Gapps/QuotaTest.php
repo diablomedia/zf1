@@ -34,6 +34,8 @@ require_once 'Zend/Gdata.php';
  */
 class Zend_Gdata_Gapps_QuotaTest extends PHPUnit\Framework\TestCase
 {
+    protected $quota;
+    protected $quotaText;
 
     public function setUp(): void {
         $this->quotaText = file_get_contents(

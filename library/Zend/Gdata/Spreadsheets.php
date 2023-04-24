@@ -41,6 +41,8 @@ class Zend_Gdata_Spreadsheets extends Zend_Gdata
     const CELL_FEED_LINK_URI = 'http://schemas.google.com/spreadsheets/2006#cellsfeed';
     const AUTH_SERVICE_NAME = 'wise';
 
+    protected $_server;
+
     /**
      * Namespaces used for Zend_Gdata_Photos
      *

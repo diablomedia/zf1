@@ -36,6 +36,10 @@ require_once 'Zend/Service/Akismet.php';
  */
 class Zend_Service_AkismetTest extends PHPUnit\Framework\TestCase
 {
+    protected $akismet;
+    protected $adapter;
+    protected $comment;
+
     public function setUp(): void
     {
         $this->akismet = new Zend_Service_Akismet('somebogusapikey', 'http://framework.zend.com/wiki/');

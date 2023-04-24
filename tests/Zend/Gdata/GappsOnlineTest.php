@@ -36,11 +36,15 @@ require_once 'Zend/Gdata/ClientLogin.php';
  */
 class Zend_Gdata_GappsOnlineTest extends PHPUnit\Framework\TestCase
 {
-
     const GIVEN_NAME = 'Zend_Gdata';
     const FAMILY_NAME = 'Automated Test Account';
     const PASSWORD = '4ohtladfl;';
     const PASSWORD_HASH = 'SHA-1';
+
+    protected $id;
+    protected $domain;
+    protected $gdata;
+    protected $autoDeletePool;
 
     public function setUp(): void
     {

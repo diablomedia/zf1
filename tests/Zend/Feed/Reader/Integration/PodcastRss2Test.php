@@ -34,6 +34,7 @@ require_once 'Zend/Feed/Reader.php';
 class Zend_Feed_Reader_Integration_PodcastRss2Test extends PHPUnit\Framework\TestCase
 {
     protected $_feedSamplePath = null;
+    protected $_options;
 
     public function setUp(): void
     {

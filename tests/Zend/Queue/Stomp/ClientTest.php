@@ -48,6 +48,8 @@ require_once 'Zend/Queue/Stomp/Client/Connection.php';
 class Zend_Queue_Stomp_Connection_Mock
     extends Zend_Queue_Stomp_Client_Connection
 {
+    protected $_buffer;
+
     /**
      * open() opens a socket to the Stomp server
      *

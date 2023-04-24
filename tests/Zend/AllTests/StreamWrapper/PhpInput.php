@@ -59,6 +59,8 @@ class Zend_AllTests_StreamWrapper_PhpInput
 
     protected $_position = 0;
 
+    public $context;
+
     public static function mockInput($data)
     {
         stream_wrapper_unregister('php');

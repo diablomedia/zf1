@@ -33,6 +33,8 @@ require_once 'Zend/Gdata.php';
  */
 class Zend_Gdata_EntryLinkTest extends PHPUnit\Framework\TestCase
 {
+    protected $entryLinkText;
+    protected $entryLink;
 
     public function setUp(): void {
         $this->entryLinkText = file_get_contents(

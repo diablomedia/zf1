@@ -1036,10 +1036,10 @@ class Zend_Gdata_App
                 return $instance;
             } else {
                 throw new Zend_Gdata_App_Exception(
-                        "Unable to find '${class}' in registered packages");
+                        "Unable to find '{$class}' in registered packages");
             }
         } else {
-            throw new Zend_Gdata_App_Exception("No such method ${method}");
+            throw new Zend_Gdata_App_Exception("No such method {$method}");
         }
     }
 

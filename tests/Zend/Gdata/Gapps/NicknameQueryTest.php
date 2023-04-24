@@ -34,6 +34,7 @@ require_once 'Zend/Gdata/Gapps/NicknameQuery.php';
  */
 class Zend_Gdata_Gapps_NicknameQueryTest extends PHPUnit\Framework\TestCase
 {
+    protected $query;
 
     public function setUp(): void
     {

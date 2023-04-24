@@ -38,6 +38,8 @@ class Zend_Gdata_GdataOnlineTest extends PHPUnit\Framework\TestCase
 {
     private $blog = null; // blog ID from config
 
+    protected $gdata;
+
     public function setUp(): void
     {
         if (!(defined('TESTS_ZEND_GDATA_ONLINE_ENABLED') &&

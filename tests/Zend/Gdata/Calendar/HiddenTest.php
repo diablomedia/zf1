@@ -34,6 +34,8 @@ require_once 'Zend/Gdata/Calendar.php';
  */
 class Zend_Gdata_Calendar_HiddenTest extends PHPUnit\Framework\TestCase
 {
+    protected $hidden;
+    protected $hiddenText;
 
     public function setUp(): void {
         $this->hiddenText = file_get_contents(

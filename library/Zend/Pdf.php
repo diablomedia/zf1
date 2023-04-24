@@ -188,6 +188,11 @@ class Zend_Pdf
     protected $_isNewDocument = true;
 
     /**
+     * @var string
+     */
+    protected $_pdfHeaderVersion;
+
+    /**
      * Request used memory manager
      *
      * @return Zend_Memory_Manager

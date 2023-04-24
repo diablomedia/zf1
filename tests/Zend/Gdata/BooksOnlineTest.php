@@ -34,6 +34,8 @@ require_once 'Zend/Gdata/ClientLogin.php';
  */
 class Zend_Gdata_BooksOnlineTest extends PHPUnit\Framework\TestCase
 {
+    protected $gdata;
+
     public function setUp(): void
     {
         if (!(defined('TESTS_ZEND_GDATA_ONLINE_ENABLED') &&

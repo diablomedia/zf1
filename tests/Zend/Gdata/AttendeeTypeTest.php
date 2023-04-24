@@ -33,6 +33,9 @@ require_once 'Zend/Gdata.php';
  */
 class Zend_Gdata_AttendeeTypeTest extends PHPUnit\Framework\TestCase
 {
+    protected $attendeeTypeText;
+    protected $attendeeType;
+
     public function setUp(): void
     {
         $this->attendeeTypeText = file_get_contents(

@@ -35,6 +35,9 @@ require_once 'Zend/Gdata/ClientLogin.php';
  */
 class Zend_Gdata_App_HttpExceptionTest extends PHPUnit\Framework\TestCase
 {
+    protected $gdata;
+    protected $sprKey;
+    protected $wksId;
 
     public function setUp(): void
     {

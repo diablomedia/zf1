@@ -34,6 +34,15 @@ require_once 'Zend/Gdata/App/Util.php';
  */
 class Zend_Gdata_FeedTest extends PHPUnit\Framework\TestCase
 {
+    protected $feed;
+    protected $feedTextV1;
+    protected $feedTextV2;
+    protected $etagLocalName;
+    protected $expectedEtag;
+    protected $expectedMismatchExceptionMessage;
+    protected $gdNamespace;
+    protected $openSearchNamespacev1;
+    protected $openSearchNamespacev2;
 
     public function setUp(): void {
         $this->etagLocalName = 'etag';

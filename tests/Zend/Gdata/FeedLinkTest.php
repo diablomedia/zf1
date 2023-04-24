@@ -33,6 +33,8 @@ require_once 'Zend/Gdata.php';
  */
 class Zend_Gdata_FeedLinkTest extends PHPUnit\Framework\TestCase
 {
+    protected $feedLinkText;
+    protected $feedLink;
 
     public function setUp(): void {
         $this->feedLinkText = file_get_contents(

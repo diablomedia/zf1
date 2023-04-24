@@ -35,6 +35,8 @@ require_once 'Zend/Measure/Temperature.php';
  */
 class Zend_Measure_TemperatureTest extends PHPUnit\Framework\TestCase
 {
+    protected $_locale;
+
     public function setUp(): void
     {
         if (Zend_Registry::isRegistered('Zend_Locale')) {

@@ -49,6 +49,11 @@ require_once 'Zend/Queue/Adapter/Null.php';
  */
 class Zend_Queue_MessageTest extends PHPUnit\Framework\TestCase
 {
+    protected $queue;
+    protected $options;
+    protected $message;
+    protected $data;
+
     public function setUp(): void
     {
         // Test Zend_Config

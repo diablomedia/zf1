@@ -34,8 +34,9 @@ require_once 'Zend/Gdata/Calendar/EventQuery.php';
  */
 class Zend_Gdata_Calendar_EventQueryExceptionTest extends PHPUnit\Framework\TestCase
 {
-
     const GOOGLE_DEVELOPER_CALENDAR = 'developer-calendar@google.com';
+
+    protected $query;
 
     public function setUp(): void
     {

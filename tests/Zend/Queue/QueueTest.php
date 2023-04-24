@@ -52,6 +52,8 @@ class Zend_Queue_QueueTest extends PHPUnit\Framework\TestCase
      */
     protected $queue;
 
+    protected $config;
+
     public function setUp(): void
     {
         // Test Zend_Config

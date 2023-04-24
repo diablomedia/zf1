@@ -67,6 +67,10 @@ abstract class Zend_Pdf_Resource_Font_CidFont extends Zend_Pdf_Resource_Font
      */
     protected $_missingCharWidth = 0;
 
+    /**
+     * @var bool
+     */
+    protected $_isMonospaced;
 
     /**
      * Object constructor

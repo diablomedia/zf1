@@ -36,6 +36,8 @@ class Zend_Gdata_GappsTest extends PHPUnit\Framework\TestCase
 {
     const TEST_DOMAIN = 'nowhere.invalid';
 
+    protected $gdata;
+
     public function setUp(): void
     {
         // These tests shouldn't be doing anything online, so we can use

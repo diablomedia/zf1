@@ -52,6 +52,11 @@ class Zend_Search_Lucene_Search_Weight_Phrase extends Zend_Search_Lucene_Search_
     private $_idf;
 
     /**
+     * @var float
+     */
+    protected $_queryWeight;
+
+    /**
      * Zend_Search_Lucene_Search_Weight_Phrase constructor
      *
      * @param Zend_Search_Lucene_Search_Query_Phrase $query

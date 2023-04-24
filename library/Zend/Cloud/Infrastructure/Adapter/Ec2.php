@@ -75,6 +75,8 @@ class Zend_Cloud_Infrastructure_Adapter_Ec2 extends Zend_Cloud_Infrastructure_Ad
      */
     protected $region;
 
+    public $error;
+
     /**
      * Map array between EC2 and Infrastructure status
      *

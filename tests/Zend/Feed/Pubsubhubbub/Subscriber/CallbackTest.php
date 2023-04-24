@@ -34,6 +34,11 @@ require_once 'Zend/Feed/Pubsubhubbub/Model/Subscription.php';
 class Zend_Feed_Pubsubhubbub_Subscriber_CallbackTest extends PHPUnit\Framework\TestCase
 {
     protected $_originalServer = null;
+    protected $_callback;
+    protected $_adapter;
+    protected $_tableGateway;
+    protected $_rowset;
+    protected $_get;
 
     public function setUp(): void
     {

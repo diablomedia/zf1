@@ -34,6 +34,8 @@ require_once 'Zend/Gdata/App.php';
  */
 class Zend_Gdata_App_CategoryTest extends PHPUnit\Framework\TestCase
 {
+    protected $category;
+    protected $categoryText;
 
     public function setUp(): void {
         $this->categoryText = file_get_contents(

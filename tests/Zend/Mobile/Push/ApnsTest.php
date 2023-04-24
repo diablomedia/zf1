@@ -35,6 +35,8 @@ require_once 'Zend/Mobile/Push/Test/ApnsProxy.php';
  */
 class Zend_Mobile_Push_ApnsTest extends PHPUnit\Framework\TestCase
 {
+    protected $apns;
+    protected $message;
 
     public function setUp(): void
     {

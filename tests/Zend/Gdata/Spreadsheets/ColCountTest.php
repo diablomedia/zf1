@@ -33,6 +33,7 @@ require_once 'Zend/Gdata/Spreadsheets.php';
  */
 class Zend_Gdata_Spreadsheets_ColCountTest extends PHPUnit\Framework\TestCase
 {
+    protected $colCount;
 
     public function setUp(): void
     {

@@ -33,6 +33,8 @@ require_once 'Zend/Gdata.php';
  */
 class Zend_Gdata_OriginalEventTest extends PHPUnit\Framework\TestCase
 {
+    protected $originalEventText;
+    protected $originalEvent;
 
     public function setUp(): void {
         $this->originalEventText = file_get_contents(

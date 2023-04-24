@@ -383,6 +383,8 @@ class Zend_Service_Ebay_Finding extends Zend_Service_Ebay_Abstract
         // it allows service_ebay_finding classes use this
         $dom->ebayFindingXPath = $xpath;
 
+        var_dump($xpath);
+
         return $dom;
     }
 }

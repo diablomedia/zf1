@@ -33,6 +33,8 @@ require_once 'Zend/Gdata.php';
  */
 class Zend_Gdata_ReminderTest extends PHPUnit\Framework\TestCase
 {
+    protected $reminderText;
+    protected $reminder;
 
     public function setUp(): void {
         $this->reminderText = file_get_contents(

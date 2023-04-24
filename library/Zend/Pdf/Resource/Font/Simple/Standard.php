@@ -57,6 +57,11 @@
  */
 abstract class Zend_Pdf_Resource_Font_Simple_Standard extends Zend_Pdf_Resource_Font_Simple
 {
+    /**
+     * @var bool
+     */
+    protected $_isMonospaced;
+
   /**** Public Interface ****/
 
 

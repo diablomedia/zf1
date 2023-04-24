@@ -34,6 +34,7 @@ require_once 'Zend/Gdata/Books/CollectionFeed.php';
  */
 class Zend_Gdata_Books_CollectionFeedTest extends PHPUnit\Framework\TestCase
 {
+    protected $gdata;
 
     public function setUp(): void
     {

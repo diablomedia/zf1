@@ -37,6 +37,9 @@ require_once 'Zend/Mobile/Push/Message/Mpns/Toast.php';
  */
 class Zend_Mobile_Push_MpnsTest extends PHPUnit\Framework\TestCase
 {
+    protected $adapter;
+    protected $client;
+    protected $mpns;
 
     public function setUp(): void
     {

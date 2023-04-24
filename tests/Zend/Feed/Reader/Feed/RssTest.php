@@ -41,6 +41,8 @@ class Zend_Feed_Reader_Feed_RssTest extends PHPUnit\Framework\TestCase
 
     protected $_expectedCatsAtom = array();
 
+    protected $_options;
+
     public function setUp(): void
     {
         Zend_Feed_Reader::reset();

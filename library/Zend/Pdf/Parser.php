@@ -51,6 +51,10 @@ class Zend_Pdf_Parser
      */
     private $_pdfVersion;
 
+    /**
+     * @var array
+     */
+    protected $_refTable;
 
     /**
      * Get length of source PDF

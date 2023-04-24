@@ -33,6 +33,8 @@ require_once 'Zend/Gdata.php';
  */
 class Zend_Gdata_WhereTest extends PHPUnit\Framework\TestCase
 {
+    protected $where;
+    protected $whereText;
 
     public function setUp(): void {
         $this->whereText = file_get_contents(

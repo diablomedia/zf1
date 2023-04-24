@@ -34,6 +34,8 @@ require_once 'Zend/Gdata/ClientLogin.php';
  */
 class Zend_Gdata_DocsOnlineTest extends PHPUnit\Framework\TestCase
 {
+    protected $gdata;
+    protected $docTitle;
 
     public function setUp(): void
     {

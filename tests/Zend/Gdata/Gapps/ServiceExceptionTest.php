@@ -37,6 +37,7 @@ class Zend_Gdata_Gapps_ServiceExceptionTest extends PHPUnit\Framework\TestCase
 {
     protected $fixture;
     protected $data;
+    protected $xmlSample;
 
     public function setUp(): void {
         $this->xmlSample = file_get_contents(

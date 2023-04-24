@@ -36,6 +36,7 @@ require_once 'Zend/Amf/Value/Messaging/RemotingMessage.php';
  */
 class Zend_Amf_AuthTest extends PHPUnit\Framework\TestCase
 {
+    protected $_acl;
 
     /**
      * Enter description here...
@@ -282,6 +283,9 @@ class WrongPassword extends Zend_Amf_Auth_Abstract
 
 class RightPassword extends Zend_Amf_Auth_Abstract
 {
+    protected $_role;
+    protected $_name;
+
     public function __construct($name, $role)
     {
         $this->_name = $name;

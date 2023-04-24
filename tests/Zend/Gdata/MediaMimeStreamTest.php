@@ -32,6 +32,11 @@ require_once 'Zend/Gdata/MediaMimeStream.php';
  */
 class Zend_Gdata_MediaMimeStreamTest extends PHPUnit\Framework\TestCase
 {
+    protected $locationOfFakeBinary;
+    protected $smallXMLString;
+    protected $testMediaType;
+    protected $mediaMimeStream;
+    protected $exceptedLenOfMimeMessage;
 
     public function setUp(): void
     {

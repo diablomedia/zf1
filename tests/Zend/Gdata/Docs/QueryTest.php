@@ -34,6 +34,7 @@ require_once 'Zend/Gdata/Docs/Query.php';
  */
 class Zend_Gdata_Docs_QueryTest extends PHPUnit\Framework\TestCase
 {
+    protected $docQuery;
 
     public function setUp(): void
     {

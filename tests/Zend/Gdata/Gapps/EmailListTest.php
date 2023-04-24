@@ -34,6 +34,8 @@ require_once 'Zend/Gdata.php';
  */
 class Zend_Gdata_Gapps_EmailListTest extends PHPUnit\Framework\TestCase
 {
+    protected $emailListText;
+    protected $emailList;
 
     public function setUp(): void {
         $this->emailListText = file_get_contents(

@@ -34,11 +34,13 @@ require_once 'Zend/Gdata/Calendar/EventQuery.php';
  */
 class Zend_Gdata_Calendar_EventQueryTest extends PHPUnit\Framework\TestCase
 {
-
     const GOOGLE_DEVELOPER_CALENDAR = 'developer-calendar@google.com';
     const ZEND_CONFERENCE_EVENT = 'bn2h4o4mc3a03ci4t48j3m56pg';
     const ZEND_CONFERENCE_EVENT_COMMENT = 'i9q87onko1uphfs7i21elnnb4g';
     const SAMPLE_RFC3339 = "2007-06-05T18:38:00";
+
+    protected $query;
+
     public function setUp(): void
     {
         $this->query = new Zend_Gdata_Calendar_EventQuery();

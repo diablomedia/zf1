@@ -34,6 +34,18 @@ require_once 'Zend/Gdata/HttpClient.php';
  */
 class Zend_Gdata_AppTest extends PHPUnit\Framework\TestCase
 {
+    protected $adapter;
+    protected $client;
+    protected $service;
+    protected $fileName;
+    protected $expectedEtag;
+    protected $expectedMajorProtocolVersion;
+    protected $expectedMinorProtocolVersion;
+    protected $httpEntrySample;
+    protected $httpEntrySampleWithoutVersion;
+    protected $httpFeedSample;
+    protected $httpFeedSampleWithoutVersion;
+
     public function setUp(): void
     {
         $this->fileName = 'Zend/Gdata/App/_files/FeedSample1.xml';

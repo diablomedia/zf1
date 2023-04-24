@@ -34,6 +34,8 @@ require_once 'Zend/Gdata.php';
  */
 class Zend_Gdata_Gapps_LoginTest extends PHPUnit\Framework\TestCase
 {
+    protected $loginText;
+    protected $login;
 
     public function setUp(): void {
         $this->loginText = file_get_contents(

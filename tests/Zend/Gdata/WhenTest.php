@@ -33,6 +33,8 @@ require_once 'Zend/Gdata.php';
  */
 class Zend_Gdata_WhenTest extends PHPUnit\Framework\TestCase
 {
+    protected $when;
+    protected $whenText;
 
     public function setUp(): void {
         $this->whenText = file_get_contents(

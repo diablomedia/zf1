@@ -33,6 +33,8 @@ require_once 'Zend/Gdata.php';
  */
 class Zend_Gdata_VisibilityTest extends PHPUnit\Framework\TestCase
 {
+    protected $visibility;
+    protected $visibilityText;
 
     public function setUp(): void {
         $this->visibilityText = file_get_contents(

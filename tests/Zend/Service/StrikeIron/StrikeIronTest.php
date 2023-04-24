@@ -36,6 +36,10 @@ require_once 'Zend/Service/StrikeIron.php';
  */
 class Zend_Service_StrikeIron_StrikeIronTest extends PHPUnit\Framework\TestCase
 {
+    protected $strikeIron;
+    protected $soapClient;
+    protected $options;
+
     public function setUp(): void
     {
         if (!extension_loaded('soap')) {
@@ -113,6 +117,8 @@ class Zend_Service_StrikeIron_StrikeIronTest extends PHPUnit\Framework\TestCase
  */
 class Zend_Service_StrikeIron_StrikeIronTest_StubbedBase
 {
+    public $options;
+
     public function __construct($options)
     {
         $this->options = $options;

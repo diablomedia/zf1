@@ -41,6 +41,8 @@ require_once 'Zend/Queue/QueueBaseTest.php';
  */
 class Zend_Queue_Queue2Test extends Zend_Queue_QueueBaseTest
 {
+    protected $config;
+
     public function setUp(): void
     {
         // Test Zend_Config

@@ -33,6 +33,8 @@ require_once 'Zend/Memory.php';
  */
 class Zend_Memory_MemoryManagerTest extends PHPUnit\Framework\TestCase
 {
+    protected $cacheDir;
+
     public function setUp(): void
     {
         $tmpDir = sys_get_temp_dir() . '/zend_memory';

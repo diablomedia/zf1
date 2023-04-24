@@ -40,6 +40,8 @@ class Zend_Feed_Reader_Entry_AtomStandaloneEntryTest extends PHPUnit\Framework\T
 
     protected $_expectedCatsDc = array();
 
+    protected $_options;
+
     public function setUp(): void
     {
         Zend_Feed_Reader::reset();

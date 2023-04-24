@@ -32,6 +32,14 @@ require_once 'Zend/Gdata/Entry.php';
  */
 class Zend_Gdata_EntryTest extends PHPUnit\Framework\TestCase
 {
+    protected $entry;
+    protected $entryText;
+    protected $etagLocalName;
+    protected $expectedEtag;
+    protected $expectedMismatchExceptionMessage;
+    protected $gdNamespace;
+    protected $openSearchNamespacev1;
+    protected $openSearchNamespacev2;
 
     public function setUp(): void {
         $this->entry = new Zend_Gdata_Entry();

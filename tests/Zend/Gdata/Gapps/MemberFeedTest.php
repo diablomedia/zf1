@@ -35,6 +35,7 @@ require_once 'Zend/Gdata/Gapps/MemberFeed.php';
 class Zend_Gdata_Gapps_MemberFeedTest extends PHPUnit\Framework\TestCase
 {
     protected $memberFeed = null;
+    protected $emptyMemberFeed = null;
 
     /**
       * Called before each test to setup any fixtures.

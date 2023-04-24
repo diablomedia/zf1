@@ -33,6 +33,8 @@ require_once 'Zend/Gdata.php';
  */
 class Zend_Gdata_CommentsTest extends PHPUnit\Framework\TestCase
 {
+    protected $commentsText;
+    protected $comments;
 
     public function setUp(): void {
         $this->commentsText = file_get_contents(

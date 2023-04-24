@@ -50,6 +50,9 @@ class Zend_Amf_ResponseTest extends PHPUnit\Framework\TestCase
      */
     protected $_response;
 
+    protected $header1;
+    protected $header2;
+
     /**
      * Setup environment
      */

@@ -33,6 +33,7 @@ require_once 'Zend/Gdata/Spreadsheets.php';
  */
 class Zend_Gdata_Spreadsheets_ListFeedTest extends PHPUnit\Framework\TestCase
 {
+    protected $listFeed;
 
     public function setUp(): void
     {

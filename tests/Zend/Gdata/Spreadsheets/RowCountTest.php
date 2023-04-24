@@ -33,6 +33,7 @@ require_once 'Zend/Gdata/Spreadsheets.php';
  */
 class Zend_Gdata_Spreadsheets_RowCountTest extends PHPUnit\Framework\TestCase
 {
+    protected $rowCount;
 
     public function setUp(): void
     {

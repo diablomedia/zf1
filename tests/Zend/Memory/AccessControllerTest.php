@@ -33,6 +33,8 @@ require_once 'Zend/Memory.php';
  */
 class Zend_Memory_Container_AccessControllerTest extends PHPUnit\Framework\TestCase
 {
+    protected $cacheDir;
+
     /**
      * Memory manager, used for tests
      *

@@ -34,6 +34,8 @@ require_once 'Zend/Gdata.php';
  */
 class Zend_Gdata_OpenSearchItemsPerPageTest extends PHPUnit\Framework\TestCase
 {
+    protected $openSearchItemsPerPageText;
+    protected $openSearchItemsPerPage;
 
     public function setUp(): void {
         $this->openSearchItemsPerPageText = file_get_contents(

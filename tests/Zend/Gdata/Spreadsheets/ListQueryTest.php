@@ -33,6 +33,7 @@ require_once 'Zend/Gdata/Spreadsheets.php';
  */
 class Zend_Gdata_Spreadsheets_ListQueryTest extends PHPUnit\Framework\TestCase
 {
+    protected $docQuery;
 
     public function setUp(): void
     {

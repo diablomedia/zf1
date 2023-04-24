@@ -34,6 +34,8 @@ require_once 'Zend/Gdata/Gapps.php';
  */
 class Zend_Gdata_Gapps_UserEntryTest extends PHPUnit\Framework\TestCase
 {
+    protected $entryText;
+    protected $entry;
 
     public function setUp(): void {
         $this->entryText = file_get_contents(

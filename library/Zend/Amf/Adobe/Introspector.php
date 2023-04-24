@@ -53,6 +53,8 @@ class Zend_Amf_Adobe_Introspector
      */
     protected $_xml;
 
+    protected $_ops;
+
     /**
      * Constructor
      *

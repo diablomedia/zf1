@@ -35,6 +35,7 @@ require_once 'Zend/Gdata/Gapps/OwnerFeed.php';
 class Zend_Gdata_Gapps_OwnerFeedTest extends PHPUnit\Framework\TestCase
 {
     protected $ownerFeed = null;
+    protected $emptyOwnerFeed;
 
     /**
       * Called before each test to setup any fixtures.

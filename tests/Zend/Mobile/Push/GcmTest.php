@@ -34,6 +34,10 @@ require_once 'Zend/Mobile/Push/Gcm.php';
  */
 class Zend_Mobile_Push_gcmTest extends PHPUnit\Framework\TestCase
 {
+    protected $adapter;
+    protected $client;
+    protected $gcm;
+    protected $message;
 
     protected function _createJSONResponse($id, $success, $failure, $ids, $results)
     {

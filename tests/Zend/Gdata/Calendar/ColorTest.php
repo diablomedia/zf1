@@ -34,6 +34,8 @@ require_once 'Zend/Gdata/Calendar.php';
  */
 class Zend_Gdata_Calendar_ColorTest extends PHPUnit\Framework\TestCase
 {
+    protected $color;
+    protected $colorText;
 
     public function setUp(): void {
         $this->colorText = file_get_contents(

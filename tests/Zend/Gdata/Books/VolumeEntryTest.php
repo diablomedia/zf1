@@ -34,6 +34,8 @@ require_once 'Zend/Gdata/Books.php';
  */
 class Zend_Gdata_Books_VolumeEntryTest extends PHPUnit\Framework\TestCase
 {
+    protected $entryText;
+    protected $entry;
 
     public function setUp(): void {
         $this->entryText = file_get_contents(

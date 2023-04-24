@@ -35,6 +35,7 @@ require_once 'Zend/Gdata/Gapps/EmailListFeed.php';
 class Zend_Gdata_Gapps_EmailListFeedTest extends PHPUnit\Framework\TestCase
 {
     protected $emailListFeed = null;
+    protected $emptyEmailListFeed;
 
     /**
       * Called before each test to setup any fixtures.

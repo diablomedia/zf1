@@ -35,6 +35,8 @@ require_once 'Zend/Gdata/App.php';
  */
 class Zend_Gdata_App_GeneratorTest extends PHPUnit\Framework\TestCase
 {
+    protected $generator;
+    protected $generatorText;
 
     public function setUp(): void {
         $this->generatorText = file_get_contents(

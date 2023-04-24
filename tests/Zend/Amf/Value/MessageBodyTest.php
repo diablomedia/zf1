@@ -34,6 +34,8 @@ require_once 'Zend/Amf/Value/MessageBody.php';
  */
 class Zend_Amf_Value_MessageBodyTest extends PHPUnit\Framework\TestCase
 {
+    protected $body;
+
     public function setUp(): void
     {
         $this->body = new Zend_Amf_Value_MessageBody('/foo', '/bar', 'data');

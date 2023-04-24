@@ -50,6 +50,8 @@ require_once 'Iterator2.php';
  */
 abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit\Framework\TestCase
 {
+    protected $error;
+
     public function tearDown(): void
     {
         $this->error = false;
@@ -145,7 +147,7 @@ abstract class Zend_Queue_Adapter_AdapterTest extends PHPUnit\Framework\TestCase
         // (misconfigured test? undefined constant?)
         if ($this->error) {
             $err = error_get_last();
-            $this->markTestFailed($err['message']);
+            $this->fail($err['message']);
             restore_error_handler();
             return false;
         }

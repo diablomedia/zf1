@@ -69,7 +69,7 @@ foreach ($suites as $suite) {
 $result = 0;
 $failedSuites = [];
 
-if ($argv[1] && $argv[1] !== '--coverage') {
+if (isset($argv[1]) && $argv[1] !== '--coverage') {
     $testSuites = [$argv[1]];
 }
 

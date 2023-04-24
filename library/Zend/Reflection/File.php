@@ -68,6 +68,11 @@ class Zend_Reflection_File implements Reflector
     protected $_contents        = null;
 
     /**
+     * @var string
+     */
+    protected $_fileName;
+
+    /**
      * Constructor
      *
      * @param  string $file

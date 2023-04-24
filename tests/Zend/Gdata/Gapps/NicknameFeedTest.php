@@ -35,6 +35,7 @@ require_once 'Zend/Gdata/Gapps/NicknameFeed.php';
 class Zend_Gdata_Gapps_NicknameFeedTest extends PHPUnit\Framework\TestCase
 {
     protected $nicknameFeed = null;
+    protected $emptyNicknameFeed = null;
 
     /**
       * Called before each test to setup any fixtures.

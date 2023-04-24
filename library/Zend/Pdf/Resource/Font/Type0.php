@@ -63,6 +63,10 @@ class Zend_Pdf_Resource_Font_Type0 extends Zend_Pdf_Resource_Font
      */
     private $_descendantFont;
 
+    /**
+     * @var bool
+     */
+    protected $_isMonospaced;
 
     /**
      * Generate ToUnicode character map data

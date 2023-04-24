@@ -35,6 +35,8 @@ require_once 'Zend/Amf/Adobe/Introspector.php';
  */
 class Zend_Amf_Adobe_IntrospectorTest extends PHPUnit\Framework\TestCase
 {
+    protected $introspector;
+
     public function setUp(): void
     {
         $this->introspector = new Zend_Amf_Adobe_Introspector();

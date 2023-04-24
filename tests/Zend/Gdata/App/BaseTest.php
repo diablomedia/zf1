@@ -31,6 +31,9 @@
  */
 class Zend_Gdata_App_BaseTest extends PHPUnit\Framework\TestCase
 {
+    protected $base;
+    protected $fileName;
+
     public function setUp(): void
     {
         $this->fileName = 'Zend/Gdata/App/_files/FeedSample1.xml';

@@ -33,6 +33,7 @@ require_once 'Zend/Gdata/Docs.php';
  */
 class Zend_Gdata_Docs_DocumentListFeedTest extends PHPUnit\Framework\TestCase
 {
+    protected $docFeed;
 
     public function setUp(): void
     {

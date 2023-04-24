@@ -34,6 +34,7 @@ require_once 'Zend/Gdata/Gapps/EmailListRecipientQuery.php';
  */
 class Zend_Gdata_Gapps_EmailListRecipientQueryTest extends PHPUnit\Framework\TestCase
 {
+    protected $query;
 
     public function setUp(): void
     {

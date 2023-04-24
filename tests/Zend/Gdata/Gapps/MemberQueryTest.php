@@ -34,6 +34,7 @@ require_once 'Zend/Gdata/Gapps/MemberQuery.php';
  */
 class Zend_Gdata_Gapps_MemberQueryTest extends PHPUnit\Framework\TestCase
 {
+    protected $query;
 
     public function setUp(): void
     {

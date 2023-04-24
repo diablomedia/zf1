@@ -34,6 +34,9 @@ require_once 'Zend/Gdata/ClientLogin.php';
  */
 class Zend_Gdata_SpreadsheetsOnlineTest extends PHPUnit\Framework\TestCase
 {
+    protected $sprKey;
+    protected $wksId;
+    protected $gdata;
 
     public function setUp(): void
     {

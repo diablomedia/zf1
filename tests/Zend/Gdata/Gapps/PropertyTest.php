@@ -34,6 +34,8 @@ require_once 'Zend/Gdata.php';
  */
 class Zend_Gdata_Gapps_PropertyTest extends PHPUnit\Framework\TestCase
 {
+    protected $thePropertyText;
+    protected $theProperty;
 
     public function setUp(): void {
         $this->thePropertyText = file_get_contents(

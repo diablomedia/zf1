@@ -33,6 +33,7 @@ require_once 'Zend/Gdata/Spreadsheets.php';
  */
 class Zend_Gdata_Spreadsheets_CellTest extends PHPUnit\Framework\TestCase
 {
+    protected $cell;
 
     public function setUp(): void
     {

@@ -35,6 +35,12 @@ require_once 'Zend/Gdata/HttpClient.php';
  */
 class Zend_Gdata_App_EntryTest extends PHPUnit\Framework\TestCase
 {
+    protected $enryText;
+    protected $httpEntrySample;
+    protected $enry;
+    protected $adapter;
+    protected $client;
+    protected $service;
 
     public function setUp(): void
     {

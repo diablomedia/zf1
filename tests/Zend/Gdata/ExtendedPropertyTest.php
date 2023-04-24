@@ -33,6 +33,8 @@ require_once 'Zend/Gdata.php';
  */
 class Zend_Gdata_ExtendedPropertyTest extends PHPUnit\Framework\TestCase
 {
+    protected $extendedPropertyText;
+    protected $extendedProperty;
 
     public function setUp(): void {
         $this->extendedPropertyText = file_get_contents(

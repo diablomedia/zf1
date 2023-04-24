@@ -34,6 +34,8 @@ require_once 'Zend/Gdata/Calendar.php';
  */
 class Zend_Gdata_Calendar_SendEventNotificationsTest extends PHPUnit\Framework\TestCase
 {
+    protected $sendEventNotifications;
+    protected $sendEventNotificationsText;
 
     public function setUp(): void {
         $this->sendEventNotificationsText = file_get_contents(

@@ -34,6 +34,8 @@ require_once 'Zend/Gdata/Calendar.php';
  */
 class Zend_Gdata_Calendar_WebContentTest extends PHPUnit\Framework\TestCase
 {
+    protected $webContent;
+    protected $webContentText;
 
     public function setUp(): void {
         $this->webContentText = file_get_contents(

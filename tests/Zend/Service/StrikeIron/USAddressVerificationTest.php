@@ -42,6 +42,9 @@ require_once 'Zend/Service/StrikeIron/USAddressVerification.php';
  */
 class Zend_Service_StrikeIron_USAddressVerificationTest extends PHPUnit\Framework\TestCase
 {
+    protected $soapClient;
+    protected $service;
+
     public function setUp(): void
     {
         if (!extension_loaded('soap')) {
