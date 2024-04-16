@@ -1,82 +1,82 @@
 name: Build
 on:
-    push:
-        branches:
-            - master
-    pull_request:
-        branches:
-            - master
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 jobs:
-    build:
-        name: PHP ${{ matrix.php-versions }} ${{ matrix.composer-args }}
-        services:
-            mysql:
-                image: mysql/mysql-server:5.7
-                env:
-                    MYSQL_DATABASE: zftest
-                    MYSQL_USER: github
-                    MYSQL_PASSWORD: githubpass
-                ports:
-                    - 3306:3306
-                options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=10s --health-retries=10
-            postgres:
-                image: postgres:10
-                env:
-                    POSTGRES_DB: zftest
-                    POSTGRES_USER: github
-                    POSTGRES_PASSWORD: githubpass
-                ports:
-                    - 5432:5432
-                options: --health-cmd=pg_isready --health-interval=10s --health-timeout=5s --health-retries=5
-            memcached:
-                image: memcached:latest
-                ports:
-                    - 11211:11211
-                # needed because the memcached container does not provide a healthcheck
-                options: --health-cmd "timeout 5 bash -c 'cat < /dev/null > /dev/udp/127.0.0.1/11211'" --health-interval 10s --health-timeout 5s --health-retries 5
-        strategy:
-            fail-fast: false
-            matrix:
-                operating-system: [ubuntu-latest]
-                php-versions: ['7.4', '8.0', '8.1', '8.2']
-                composer-args: ['', '--prefer-lowest']
-        runs-on: ${{ matrix.operating-system }}
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v3
-            - name: Setup PHP
-              uses: shivammathur/setup-php@2.26.0
-              with:
-                  php-version: ${{ matrix.php-versions }}
-                  extensions: mbstring
-                  coverage: pcov
-                  tools: cs2pr
-                  ini-values: session.save_path="/tmp",memory_limit=1024M
-            - name: Setup problem matchers for PHPUnit
-              run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
-            - name: Get composer cache directory
-              id: composer-cache
-              run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
-            - name: Cache dependencies
-              uses: actions/cache@v3
-              with:
-                  path: ${{ steps.composer-cache.outputs.dir }}
-                  key: php${{ matrix.php-versions }}-composer-${{ matrix.composer-args }}-${{ hashFiles('**/composer.json') }}
-                  restore-keys: php${{ matrix.php-versions }}-composer-${{ matrix.composer-args }}-
-            - name: Install Dependencies
-              run: |
-                  composer update --no-progress --no-suggest --prefer-stable --optimize-autoloader ${{ matrix.composer-args }}
-            - name: PHPStan
-              run: composer phpstan
-            - name: Code Style Check
-              env:
-                  PHP_CS_FIXER_IGNORE_ENV: true
-              run: composer style-check -- --format=checkstyle | cs2pr
-            - name: Test
-              run: cd tests/ && php runalltests.php --coverage
-            - name: Merge Coverage
-              run: ./bin/phpcov merge ./build/coverage --clover=./build/coverage/clover.xml
-            - name: Upload Coverage
-              uses: codecov/codecov-action@v3
-              with:
-                  files: ./build/coverage/clover.xml
+  build:
+    name: PHP ${{ matrix.php-versions }} ${{ matrix.composer-args }}
+    services:
+      mysql:
+        image: mysql/mysql-server:5.7
+        env:
+          MYSQL_DATABASE: zftest
+          MYSQL_USER: github
+          MYSQL_PASSWORD: githubpass
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=10s --health-retries=10
+      postgres:
+        image: postgres:10
+        env:
+          POSTGRES_DB: zftest
+          POSTGRES_USER: github
+          POSTGRES_PASSWORD: githubpass
+        ports:
+          - 5432:5432
+        options: --health-cmd=pg_isready --health-interval=10s --health-timeout=5s --health-retries=5
+      memcached:
+        image: memcached:latest
+        ports:
+          - 11211:11211
+        # needed because the memcached container does not provide a healthcheck
+        options: --health-cmd "timeout 5 bash -c 'cat < /dev/null > /dev/udp/127.0.0.1/11211'" --health-interval 10s --health-timeout 5s --health-retries 5
+    strategy:
+      fail-fast: false
+      matrix:
+        operating-system: [ubuntu-latest]
+        php-versions: ["8.0", "8.1", "8.2", "8.3"]
+        composer-args: ["", "--prefer-lowest"]
+    runs-on: ${{ matrix.operating-system }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup PHP
+        uses: shivammathur/setup-php@2.30.2
+        with:
+          php-version: ${{ matrix.php-versions }}
+          extensions: mbstring
+          coverage: pcov
+          tools: cs2pr
+          ini-values: session.save_path="/tmp",memory_limit=1024M
+      - name: Setup problem matchers for PHPUnit
+        run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
+      - name: Get composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: php${{ matrix.php-versions }}-composer-${{ matrix.composer-args }}-${{ hashFiles('**/composer.json') }}
+          restore-keys: php${{ matrix.php-versions }}-composer-${{ matrix.composer-args }}-
+      - name: Install Dependencies
+        run: |
+          composer update --no-progress --no-suggest --prefer-stable --optimize-autoloader ${{ matrix.composer-args }}
+      - name: PHPStan
+        run: composer phpstan
+      - name: Code Style Check
+        env:
+          PHP_CS_FIXER_IGNORE_ENV: true
+        run: composer style-check -- --format=checkstyle | cs2pr
+      - name: Test
+        run: cd tests/ && php runalltests.php --coverage
+      - name: Merge Coverage
+        run: ./bin/phpcov merge ./build/coverage --clover=./build/coverage/clover.xml
+      - name: Upload Coverage
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./build/coverage/clover.xml
