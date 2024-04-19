@@ -245,7 +245,12 @@ class Zend_Markup_BbcodeAndHtmlTest extends PHPUnit\Framework\TestCase
     public function testFailureAfterCodeTag()
     {
         $input = "[code][b][/code][list][*]Foo[/*][/list]";
-        $expected = "<code><span style=\"color: #000000\">\n[b]</span>\n</code><ul><li>Foo</li></ul>";
+        // PHP 8.3 changed the structure of the HTML returned by `highlight_string`
+        if (version_compare(PHP_VERSION, '8.3', '<')) {
+            $expected = "<code><span style=\"color: #000000\">\n[b]</span>\n</code><ul><li>Foo</li></ul>";
+        } else {
+            $expected = "<pre><code style=\"color: #000000\">[b]</code></pre><ul><li>Foo</li></ul>";
+        }
         $this->assertEquals($expected, $this->_markup->render($input));
     }
 
@@ -298,10 +303,15 @@ class Zend_Markup_BbcodeAndHtmlTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('<span style="color: red;">foo</span>', $m->render('[color=red]foo[/color]'));
         $this->assertEquals('<span style="color: #00FF00;">foo</span>', $m->render('[color=#00FF00]foo[/color]'));
 
-        $expected = '<code><span style="color: #000000">' . "\n"
+        // PHP 8.3 changed the structure of the HTML returned by `highlight_string`
+        if (version_compare(PHP_VERSION, '8.3', '<')) {
+            $expected = '<code><span style="color: #000000">' . "\n"
                   . '<span style="color: #0000BB">&lt;?php<br /></span>'
                   . "<span style=\"color: #007700\">exit;</span>\n</span>\n</code>";
-
+        } else {
+            $expected = "<pre><code style=\"color: #000000\"><span style=\"color: #0000BB\">&lt;?php\n</span><span style=\"color: #007700\">exit;</span></code></pre>";
+        }
+        
         $this->assertEquals($expected, $m->render("[code]<?php\nexit;[/code]"));
         $this->assertEquals('<p>I</p>', $m->render('[p]I[/p]'));
         $this->assertEquals('N',

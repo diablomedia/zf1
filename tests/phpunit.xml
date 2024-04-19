@@ -6,7 +6,7 @@
     </include>
   </coverage>
   <php>
-    <includePath>../vendor:../vendor/diablomedia/zendframework1-application/tests:../vendor/diablomedia/zendframework1-loader/tests:../vendor/diablomedia/zendframework1-db/tests:../vendor/diablomedia/zendframework1-paginator/tests</includePath>
+    <includePath>../vendor:../vendor/diablomedia/zendframework1-application/tests:../vendor/diablomedia/zendframework1-loader/tests:../vendor/diablomedia/zendframework1-loader/tests/Zend:../vendor/diablomedia/zendframework1-db/tests:../vendor/diablomedia/zendframework1-paginator/tests</includePath>
   </php>
   <testsuites>
     <testsuite name="ZFTest_Zend_Acl">
