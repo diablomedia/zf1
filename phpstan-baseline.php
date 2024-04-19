@@ -787,16 +787,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#4 \\$x of function imagettftext expects int, float given\\.$#',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#5 \\$y of function imagettftext expects int, float given\\.$#',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Property Zend_Barcode_Renderer_Image\\:\\:\\$_imageBackgroundColor \\(int\\) does not accept int\\|false\\.$#',
 	'count' => 2,
 	'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
@@ -24898,11 +24888,6 @@ $ignoreErrors[] = [
 ];
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#6 \\$color of function imagefilledrectangle expects int, int\\|false given\\.$#',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#6 \\$color of function imagettftext expects int, int\\|false given\\.$#',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
 ];
