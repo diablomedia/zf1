@@ -77,6 +77,6 @@ jobs:
       - name: Merge Coverage
         run: ./bin/phpcov merge ./build/coverage --clover=./build/coverage/clover.xml
       - name: Upload Coverage
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           files: ./build/coverage/clover.xml
