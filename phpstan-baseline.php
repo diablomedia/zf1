@@ -958,7 +958,7 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$image of function imagefilledpolygon expects GdImage, resource given\\.$#',
 	'identifier' => 'argument.type',
-	'count' => 2,
+	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
 ];
 $ignoreErrors[] = [
@@ -970,7 +970,7 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$image of function imagepolygon expects GdImage, resource given\\.$#',
 	'identifier' => 'argument.type',
-	'count' => 2,
+	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
 ];
 $ignoreErrors[] = [
@@ -1029,18 +1029,6 @@ $ignoreErrors[] = [
 ];
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#3 \\$num_points_or_color of function imagepolygon expects int, int\\<0, max\\>\\|false given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#4 \\$color of function imagefilledpolygon expects int\\|null, int\\<0, max\\>\\|false given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#4 \\$color of function imagepolygon expects int\\|null, int\\<0, max\\>\\|false given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
@@ -13144,7 +13132,7 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
 	'message' => '#^Method Zend_Mobile_Push_Message_Gcm\\:\\:toJson\\(\\) should return string but returns string\\|false\\.$#',
 	'identifier' => 'return.type',
-	'count' => 2,
+	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Mobile/Push/Message/Gcm.php',
 ];
 $ignoreErrors[] = [
