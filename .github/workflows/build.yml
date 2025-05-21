@@ -38,14 +38,14 @@ jobs:
       fail-fast: false
       matrix:
         operating-system: [ubuntu-latest]
-        php-versions: ["8.0", "8.1", "8.2", "8.3"]
+        php-versions: ["8.1", "8.2", "8.3", "8.4"]
         composer-args: ["", "--prefer-lowest"]
     runs-on: ${{ matrix.operating-system }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup PHP
-        uses: shivammathur/setup-php@2.30.4
+        uses: shivammathur/setup-php@2.33.0
         with:
           php-version: ${{ matrix.php-versions }}
           extensions: mbstring
@@ -77,6 +77,6 @@ jobs:
       - name: Merge Coverage
         run: ./bin/phpcov merge ./build/coverage --clover=./build/coverage/clover.xml
       - name: Upload Coverage
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v5
         with:
           files: ./build/coverage/clover.xml

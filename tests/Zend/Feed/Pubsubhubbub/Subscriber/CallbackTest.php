@@ -156,23 +156,23 @@ class Zend_Feed_Pubsubhubbub_Subscriber_CallbackTest extends PHPUnit\Framework\T
 
     public function testValidatesValidHttpGetData()
     {
-        $mockReturnValue = $this->getMockBuilder('Result')
-            ->setMethods(['toArray'])
-            ->getMock();
-        $mockReturnValue->expects($this->any())->method('toArray')->will($this->returnValue(array(
-                'verify_token' => hash('sha256', 'cba')
-            )));
+        $mock = new class {
+            public function toArray()
+            {
+                return ['verify_token' => hash('sha256', 'cba')];
+            }
+        };
 
         $this->_tableGateway->expects($this->any())
             ->method('find')
             ->with($this->equalTo('verifytokenkey'))
-            ->will($this->returnValue($this->_rowset));
+            ->willReturn($this->_rowset);
         $this->_rowset->expects($this->any())
             ->method('current')
-            ->will($this->returnValue($mockReturnValue));
+            ->willReturn($mock);
         $this->_rowset->expects($this->any())
             ->method('count')
-            ->will($this->returnValue(1));
+            ->willReturn(1);
 
         $this->assertTrue($this->_callback->isValidHubVerification($this->_get));
     }
@@ -209,25 +209,25 @@ class Zend_Feed_Pubsubhubbub_Subscriber_CallbackTest extends PHPUnit\Framework\T
 
     public function testReturnsTrueIfModeSetAsUnsubscribeFromHttpGetData()
     {
-        $mockReturnValue = $this->getMockBuilder('Result')
-            ->setMethods(['toArray'])
-            ->getMock();
-        $mockReturnValue->expects($this->any())->method('toArray')->will($this->returnValue(array(
-                'verify_token' => hash('sha256', 'cba')
-            )));
+        $mock = new class {
+            public function toArray()
+            {
+                return ['verify_token' => hash('sha256', 'cba')];
+            }
+        };
 
         $this->_get['hub_mode'] = 'unsubscribe';
         $this->_tableGateway->expects($this->any())
             ->method('find')
             ->with($this->equalTo('verifytokenkey'))
-            ->will($this->returnValue($this->_rowset));
+            ->willReturn($this->_rowset);
         $this->_rowset->expects($this->any())
             ->method('current')
-            ->will($this->returnValue($mockReturnValue));
+            ->willReturn($mock);
         // require for the count call on the rowset in Model/Subscription
         $this->_rowset->expects($this->any())
             ->method('count')
-            ->will($this->returnValue(1));
+            ->willReturn(1);
 
         $this->assertTrue($this->_callback->isValidHubVerification($this->_get));
     }
@@ -281,7 +281,7 @@ class Zend_Feed_Pubsubhubbub_Subscriber_CallbackTest extends PHPUnit\Framework\T
         $this->_tableGateway->expects($this->any())
             ->method('find')
             ->with($this->equalTo('verifytokenkey'))
-            ->will($this->returnValue($this->_rowset));
+            ->willReturn($this->_rowset);
 
         $t = new Zend_Date;
         $rowdata = array(
@@ -295,11 +295,11 @@ class Zend_Feed_Pubsubhubbub_Subscriber_CallbackTest extends PHPUnit\Framework\T
 
         $this->_rowset->expects($this->any())
             ->method('current')
-            ->will($this->returnValue($row));
+            ->willReturn($row);
         // require for the count call on the rowset in Model/Subscription
         $this->_rowset->expects($this->any())
             ->method('count')
-            ->will($this->returnValue(1));
+            ->willReturn(1);
 
         $this->_tableGateway->expects($this->once())
             ->method('update')
@@ -310,7 +310,7 @@ class Zend_Feed_Pubsubhubbub_Subscriber_CallbackTest extends PHPUnit\Framework\T
         $this->_adapter->expects($this->once())
             ->method('quoteInto')
             ->with($this->equalTo('id = ?'), $this->equalTo('verifytokenkey'))
-            ->will($this->returnValue('id = \'verifytokenkey\''));
+            ->willReturn('id = \'verifytokenkey\'');
 
         $this->_callback->handle($this->_get);
         $this->assertTrue($this->_callback->getHttpResponse()->getHttpResponseCode() == 200);
@@ -327,7 +327,7 @@ class Zend_Feed_Pubsubhubbub_Subscriber_CallbackTest extends PHPUnit\Framework\T
         $this->_tableGateway->expects($this->any())
             ->method('find')
             ->with($this->equalTo('verifytokenkey'))
-            ->will($this->returnValue($this->_rowset));
+            ->willReturn($this->_rowset);
 
         $t = new Zend_Date;
         $rowdata = array(
@@ -341,11 +341,11 @@ class Zend_Feed_Pubsubhubbub_Subscriber_CallbackTest extends PHPUnit\Framework\T
 
         $this->_rowset->expects($this->any())
             ->method('current')
-            ->will($this->returnValue($row));
+            ->willReturn($row);
         // require for the count call on the rowset in Model/Subscription
         $this->_rowset->expects($this->any())
             ->method('count')
-            ->will($this->returnValue(1));
+            ->willReturn(1);
 
         $this->_tableGateway->expects($this->once())
             ->method('update')
@@ -356,7 +356,7 @@ class Zend_Feed_Pubsubhubbub_Subscriber_CallbackTest extends PHPUnit\Framework\T
         $this->_adapter->expects($this->once())
             ->method('quoteInto')
             ->with($this->equalTo('id = ?'), $this->equalTo('verifytokenkey'))
-            ->will($this->returnValue('id = \'verifytokenkey\''));
+            ->willReturn('id = \'verifytokenkey\'');
         $this->_callback->handle($this->_get);
         $this->assertTrue($this->_callback->getHttpResponse()->getBody() == 'abc');
     }
@@ -372,7 +372,7 @@ class Zend_Feed_Pubsubhubbub_Subscriber_CallbackTest extends PHPUnit\Framework\T
         $this->_tableGateway->expects($this->any())
             ->method('find')
             ->with($this->equalTo('verifytokenkey'))
-            ->will($this->returnValue($this->_rowset));
+            ->willReturn($this->_rowset);
 
         $t = new Zend_Date;
         $rowdata = array(
@@ -385,11 +385,11 @@ class Zend_Feed_Pubsubhubbub_Subscriber_CallbackTest extends PHPUnit\Framework\T
 
         $this->_rowset->expects($this->any())
             ->method('current')
-            ->will($this->returnValue($row));
+            ->willReturn($row);
         // require for the count call on the rowset in Model/Subscription
         $this->_rowset->expects($this->any())
             ->method('count')
-            ->will($this->returnValue(1));
+            ->willReturn(1);
 
         $this->_callback->handle(array());
         $this->assertTrue($this->_callback->getHttpResponse()->getHttpResponseCode() == 200);
@@ -435,7 +435,7 @@ class Zend_Feed_Pubsubhubbub_Subscriber_CallbackTest extends PHPUnit\Framework\T
         $this->_tableGateway->expects($this->any())
             ->method('find')
             ->with($this->equalTo('verifytokenkey'))
-            ->will($this->returnValue($this->_rowset));
+            ->willReturn($this->_rowset);
 
         $rowdata = array(
             'id' => 'verifytokenkey',
@@ -448,11 +448,11 @@ class Zend_Feed_Pubsubhubbub_Subscriber_CallbackTest extends PHPUnit\Framework\T
 
         $this->_rowset->expects($this->any())
             ->method('current')
-            ->will($this->returnValue($row));
+            ->willReturn($row);
         // require for the count call on the rowset in Model/Subscription
         $this->_rowset->expects($this->any())
             ->method('count')
-            ->will($this->returnValue(1));
+            ->willReturn(1);
 
         $this->_callback->handle(array());
         $this->assertTrue($this->_callback->getHttpResponse()->getHttpResponseCode() == 200);
@@ -469,7 +469,7 @@ class Zend_Feed_Pubsubhubbub_Subscriber_CallbackTest extends PHPUnit\Framework\T
         $this->_tableGateway->expects($this->any())
             ->method('find')
             ->with($this->equalTo('verifytokenkey'))
-            ->will($this->returnValue($this->_rowset));
+            ->willReturn($this->_rowset);
 
         $rowdata = array(
             'id' => 'verifytokenkey',
@@ -482,11 +482,11 @@ class Zend_Feed_Pubsubhubbub_Subscriber_CallbackTest extends PHPUnit\Framework\T
 
         $this->_rowset->expects($this->any())
             ->method('current')
-            ->will($this->returnValue($row));
+            ->willReturn($row);
         // require for the count call on the rowset in Model/Subscription
         $this->_rowset->expects($this->any())
             ->method('count')
-            ->will($this->returnValue(1));
+            ->willReturn(1);
 
         $this->_callback->handle(array());
         $this->assertTrue($this->_callback->getHttpResponse()->getHeader('X-Hub-On-Behalf-Of') == 1);
@@ -504,7 +504,7 @@ class Zend_Feed_Pubsubhubbub_Subscriber_CallbackTest extends PHPUnit\Framework\T
             }
         }
         $mocked = $this->getMockBuilder($className)
-            ->setMethods($stubMethods)
+            ->onlyMethods($stubMethods)
             ->setMockClassName($className . '_PubsubSubscriberMock_' . uniqid())
             ->disableOriginalConstructor()
             ->getMock();

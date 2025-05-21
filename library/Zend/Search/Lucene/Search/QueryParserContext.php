@@ -266,7 +266,7 @@ class Zend_Search_Lucene_Search_QueryParserContext
      * 'term1 and term2   or   term3 and (<subquery1>) and not (<subquery2>)'
      *
      * @return Zend_Search_Lucene_Search_Query
-     * @throws Zend_Search_Lucene
+     * @throws Zend_Search_Lucene_Exception
      */
     private function _booleanExpressionQuery()
     {
@@ -301,7 +301,7 @@ class Zend_Search_Lucene_Search_QueryParserContext
                             break;
 
                         default:
-                            throw new Zend_Search_Lucene('Boolean expression error. Unknown operator type.');
+                            throw new Zend_Search_Lucene_Exception('Boolean expression error. Unknown operator type.');
                     }
                 }
             }

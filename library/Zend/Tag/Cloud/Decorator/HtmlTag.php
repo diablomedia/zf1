@@ -89,7 +89,7 @@ class Zend_Tag_Cloud_Decorator_HtmlTag extends Zend_Tag_Cloud_Decorator_Tag
      * @throws Zend_Tag_Cloud_Decorator_Exception When the classlist contains an invalid classname
      * @return Zend_Tag_Cloud_Decorator_HtmlTag
      */
-    public function setClassList(array $classList = null)
+    public function setClassList(?array $classList = null)
     {
         if (is_array($classList)) {
             if (count($classList) === 0) {

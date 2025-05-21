@@ -413,7 +413,7 @@
       <file>./Zend/Feed/Reader/Integration/WordpressRss2DcAtomTest.php</file>
       <file>./Zend/Feed/Reader/Integration/WordpressAtom10Test.php</file>
       <file>./Zend/Feed/Reader/Integration/LautDeRdfTest.php</file>
-      <file>./Zend/Feed/Reader/Integration/H-OnlineComAtom10Test.php</file>
+      <file>./Zend/Feed/Reader/Integration/HOnlineComAtom10Test.php</file>
       <file>./Zend/Feed/Reader/Integration/PodcastRss2Test.php</file>
       <file>./Zend/Feed/Writer/FeedTest.php</file>
       <file>./Zend/Feed/Writer/EntryTest.php</file>
@@ -1155,7 +1155,7 @@
       <file>./Zend/Tool/Framework/Provider/SignatureTest.php</file>
       <file>./Zend/Tool/Project/Provider/ControllerTest.php</file>
       <file>./Zend/Tool/Project/ProfileTest.php</file>
-      <file>./Zend/Tool/Project/Context/RegistryTest.php</file>
+      <file>./Zend/Tool/Project/Context/RepositoryTest.php</file>
     </testsuite>
     <testsuite name="ZFTest_Zend_Translate">
       <file>../vendor/diablomedia/zendframework1-translate/tests/Zend/Translate/Adapter/ArrayTest.php</file>

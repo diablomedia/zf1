@@ -69,7 +69,7 @@ class Zend_Cloud_Infrastructure_Adapter_RackspaceTest extends PHPUnit\Framework\
 
         // load the HTTP response (from a file)
         $shortClassName = 'RackspaceTest';
-        $filename= dirname(__FILE__) . '/_files/' . $shortClassName . '_'. $this->getName().'.response';
+        $filename= dirname(__FILE__) . '/_files/' . $shortClassName . '_' . str_replace($this::class . '::', '', $this->toString()) . '.response';
 
         if (file_exists($filename)) {
             // authentication (from file)

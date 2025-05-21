@@ -70,7 +70,7 @@ class Zend_Service_WindowsAzure_Log_Writer_WindowsAzure
      * @param string                                  $tableName
      * @param bool                                    $createTable create the Windows Azure table for logging if it does not exist
      * @param bool                                    $bufferMessages
-     * @throws Zend_Service_Log_Exception
+     * @throws Zend_Log_Exception
      */
     public function __construct(
         Zend_Service_WindowsAzure_Storage_Table $tableStorageConnection,
@@ -132,7 +132,7 @@ class Zend_Service_WindowsAzure_Log_Writer_WindowsAzure
      *
      * @param  array $config
      * @return Zend_Service_WindowsAzure_Log_Writer_WindowsAzure
-     * @throws Zend_Service_Log_Exception
+     * @throws Zend_Log_Exception
      */
     static public function factory($config)
     {

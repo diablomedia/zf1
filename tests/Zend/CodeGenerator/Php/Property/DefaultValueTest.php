@@ -38,7 +38,7 @@ class Zend_CodeGenerator_Php_Property_DefaultValueTest extends PHPUnit\Framework
     public function testPropertyDefaultValueConstructor()
     {
         $propDefaultValue = new Zend_CodeGenerator_Php_Property_DefaultValue();
-        $this->isInstanceOf($propDefaultValue, 'Zend_CodeGenerator_Php_Property_DefaultValue');
+        $this->assertInstanceOf('Zend_CodeGenerator_Php_Property_DefaultValue', $propDefaultValue);
     }
 
     public function testPropertyDefaultValueIsSettable()

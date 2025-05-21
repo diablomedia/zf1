@@ -75,7 +75,7 @@ interface Zend_Cloud_Infrastructure_Adapter
      *
      * @param  string $name
      * @param  array $options
-     * @return boolean
+     * @return Zend_Cloud_Infrastructure_Instance
      */
     public function createInstance($name, $options);
 

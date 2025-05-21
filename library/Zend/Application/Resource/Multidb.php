@@ -166,7 +166,7 @@ class Zend_Application_Resource_Multidb extends Zend_Application_Resource_Resour
     /**
      * Set the default db adapter
      *
-     * @var Zend_Db_Adapter_Abstract $adapter Adapter to set as default
+     * @param Zend_Db_Adapter_Abstract $adapter Adapter to set as default
      */
     protected function _setDefault(Zend_Db_Adapter_Abstract $adapter)
     {

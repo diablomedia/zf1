@@ -127,7 +127,7 @@ class Zend_Feed_Pubsubhubbub_SubscriberHttpTest extends PHPUnit\Framework\TestCa
             }
         }
         $mocked = $this->getMockBuilder($className)
-            ->setMethods($stubMethods)
+            ->onlyMethods($stubMethods)
             ->setMockClassName($className . '_SubscriberHttpTestMock_' . uniqid())
             ->disableOriginalConstructor()
             ->getMock();

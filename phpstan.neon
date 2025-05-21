@@ -1,19 +1,21 @@
 parameters:
-    checkMissingIterableValueType: false
-    checkGenericClassInNonGenericObjectType: false
     inferPrivatePropertyTypeFromConstructor: true
+    treatPhpDocTypesAsCertain: false
     bootstrapFiles:
         - phpstan-bootstrap.php
     level: 8
     paths:
         - 'library'
     excludePaths:
-        - 'library/Zend/EventManager/ResponseCollection.php'
-        - 'library/Zend/Stdlib/SplPriorityQueue.php'
         - 'library/Zend/Tool/Framework/Provider/DocblockManifestable.php'
     ignoreErrors:
+        -
+            identifier: missingType.iterableValue
+        -
+            identifier: missingType.generics
 
 includes:
     - phpstan-baseline.php
     - phpstan-php80.php
     - phpstan-php81.php
+    - phpstan-php84.php
