@@ -12,6 +12,7 @@ $finder = PhpCsFixer\Finder::create()
 $config = new PhpCsFixer\Config();
 return $config->setRules([
         '@PHPUnit84Migration:risky' => true,
+        'short_scalar_cast'         => true,
     ])
     ->setRiskyAllowed(true)
     ->setFinder($finder)
