@@ -16,6 +16,8 @@ parameters:
 
 includes:
     - phpstan-baseline.php
-    - phpstan-php80.php
-    - phpstan-php81.php
+    - phpstan-php81-only.php
+    - phpstan-php82.php
+    - phpstan-php83.php
     - phpstan-php84.php
+    - phpstan-php85.php

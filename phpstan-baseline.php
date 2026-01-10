@@ -116,6 +116,12 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Amf/Parse/Amf3/Deserializer.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Possibly invalid array key type float\\|int\\.$#',
+	'identifier' => 'offsetAccess.invalidOffset',
+	'count' => 9,
+	'path' => __DIR__ . '/library/Zend/Amf/Parse/Amf3/Deserializer.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Binary operation "\\*" between string and 1000 results in an error\\.$#',
 	'identifier' => 'binaryOp.invalid',
 	'count' => 1,
@@ -236,7 +242,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Amf/Parse/Resource/MysqliResult.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Method Zend_Amf_Parse_Resource_Stream\\:\\:parse\\(\\) should return array but returns string\\|false\\.$#',
+	'message' => '#^Method Zend_Amf_Parse_Resource_Stream\\:\\:parse\\(\\) should return array but returns \\(string\\|false\\)\\.$#',
 	'identifier' => 'return.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Amf/Parse/Resource/Stream.php',
@@ -674,6 +680,18 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Barcode/Object/ObjectAbstract.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Comparison operation "\\<\\=" between \\*NEVER\\* and 5 results in an error\\.$#',
+	'identifier' => 'smallerOrEqual.invalid',
+	'count' => 1,
+	'path' => __DIR__ . '/library/Zend/Barcode/Object/ObjectAbstract.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Comparison operation "\\>\\=" between \\*NEVER\\* and 1 results in an error\\.$#',
+	'identifier' => 'greaterOrEqual.invalid',
+	'count' => 1,
+	'path' => __DIR__ . '/library/Zend/Barcode/Object/ObjectAbstract.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Method Zend_Barcode_Object_ObjectAbstract\\:\\:_addInstruction\\(\\) has no return type specified\\.$#',
 	'identifier' => 'missingType.return',
 	'count' => 1,
@@ -854,18 +872,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Barcode/Object/ObjectAbstract.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Binary operation "\\*" between string and 0\\.5 results in an error\\.$#',
-	'identifier' => 'binaryOp.invalid',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Barcode/Object/Postnet.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Binary operation "%%" between string and 2 results in an error\\.$#',
-	'identifier' => 'binaryOp.invalid',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Barcode/Object/Royalmail.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Method Zend_Barcode_Object_Royalmail\\:\\:getChecksum\\(\\) should return int but returns int\\|string\\|false\\.$#',
 	'identifier' => 'return.type',
 	'count' => 1,
@@ -944,6 +950,18 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Parameter \\#1 \\$font of function imagefontheight expects GdFont\\|int, int\\|string given\\.$#',
+	'identifier' => 'argument.type',
+	'count' => 1,
+	'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Parameter \\#1 \\$font of function imagefontwidth expects GdFont\\|int, int\\|string given\\.$#',
+	'identifier' => 'argument.type',
+	'count' => 1,
+	'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$image of function imagecolorallocate expects GdImage, resource given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 4,
@@ -1011,6 +1029,12 @@ $ignoreErrors[] = [
 ];
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$width of function imagecreatetruecolor expects int\\<1, max\\>, int given\\.$#',
+	'identifier' => 'argument.type',
+	'count' => 1,
+	'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Parameter \\#2 \\$font of function imagestring expects GdFont\\|int, int\\|string given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Barcode/Renderer/Image.php',
@@ -1454,7 +1478,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Cloud/Exception.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Method Zend_Cloud_Infrastructure_Adapter_AbstractAdapter\\:\\:deployInstance\\(\\) should return array\\|string but returns array\\<bool\\|string\\>\\|string\\|false\\.$#',
+	'message' => '#^Method Zend_Cloud_Infrastructure_Adapter_AbstractAdapter\\:\\:deployInstance\\(\\) should return array\\|string but returns array\\<\\(bool\\|string\\)\\>\\|string\\|false\\.$#',
 	'identifier' => 'return.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Cloud/Infrastructure/Adapter/AbstractAdapter.php',
@@ -1600,7 +1624,7 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
 	'message' => '#^Invalid array key type array\\.$#',
 	'identifier' => 'offsetAccess.invalidOffset',
-	'count' => 1,
+	'count' => 2,
 	'path' => __DIR__ . '/library/Zend/Cloud/Infrastructure/Image.php',
 ];
 $ignoreErrors[] = [
@@ -1618,13 +1642,31 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
 	'message' => '#^Invalid array key type array\\.$#',
 	'identifier' => 'offsetAccess.invalidOffset',
-	'count' => 1,
+	'count' => 2,
 	'path' => __DIR__ . '/library/Zend/Cloud/Infrastructure/Instance.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Method Zend_Cloud_QueueService_Adapter\\:\\:getClient\\(\\) has no return type specified\\.$#',
 	'identifier' => 'missingType.return',
 	'count' => 1,
+	'path' => __DIR__ . '/library/Zend/Cloud/QueueService/Adapter.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Method Zend_Cloud_QueueService_Adapter\\:\\:peekMessages\\(\\) has no return type specified\\.$#',
+	'identifier' => 'missingType.return',
+	'count' => 1,
+	'path' => __DIR__ . '/library/Zend/Cloud/QueueService/Adapter.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Method Zend_Cloud_QueueService_Adapter\\:\\:receiveMessages\\(\\) has no return type specified\\.$#',
+	'identifier' => 'missingType.return',
+	'count' => 1,
+	'path' => __DIR__ . '/library/Zend/Cloud/QueueService/Adapter.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^PHPDoc tag @return contains unresolvable type\\.$#',
+	'identifier' => 'return.unresolvableType',
+	'count' => 2,
 	'path' => __DIR__ . '/library/Zend/Cloud/QueueService/Adapter.php',
 ];
 $ignoreErrors[] = [
@@ -2078,12 +2120,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/CodeGenerator/Php/File.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Possibly invalid array key type \\(list\\<string\\>\\|string\\)\\.$#',
-	'identifier' => 'offsetAccess.invalidOffset',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/CodeGenerator/Php/File.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Property Zend_CodeGenerator_Php_File\\:\\:\\$_markerClass has no type specified\\.$#',
 	'identifier' => 'missingType.property',
 	'count' => 1,
@@ -2252,12 +2288,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Feed.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$string of function rtrim expects string, string\\|false given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Feed.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Undefined variable\\: \\$php_errormsg$#',
 	'identifier' => 'variable.undefined',
 	'count' => 2,
@@ -2390,13 +2420,19 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Feed/Atom.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Parameter \\#1 \\$version of class DOMDocument constructor expects string, string\\|null given\\.$#',
+	'identifier' => 'argument.type',
+	'count' => 2,
+	'path' => __DIR__ . '/library/Zend/Feed/Atom.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Parameter \\#2 \\$encoding of class DOMDocument constructor expects string, string\\|null given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 2,
 	'path' => __DIR__ . '/library/Zend/Feed/Atom.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Property Zend_Feed_Element\\:\\:\\$_element \\(DOMDocument\\|DOMElement\\|string\\) does not accept DOMNode\\.$#',
+	'message' => '#^Property Zend_Feed_Element\\:\\:\\$_element \\(DOMDocument\\|DOMElement\\|string\\) does not accept DOMElement\\|\\(TNode of DOMNode\\)\\|false\\.$#',
 	'identifier' => 'assign.propertyType',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Feed/Atom.php',
@@ -2559,6 +2595,12 @@ $ignoreErrors[] = [
 ];
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$node of method DOMDocument\\:\\:importNode\\(\\) expects DOMNode, DOMDocument\\|DOMElement\\|string given\\.$#',
+	'identifier' => 'argument.type',
+	'count' => 1,
+	'path' => __DIR__ . '/library/Zend/Feed/Element.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Parameter \\#1 \\$version of class DOMDocument constructor expects string, string\\|null given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Feed/Element.php',
@@ -2732,12 +2774,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Feed/Pubsubhubbub/Publisher.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot assign new offset to list\\<string\\>\\|string\\.$#',
-	'identifier' => 'offsetAssign.dimType',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Feed/Pubsubhubbub/Subscriber.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Method Zend_Feed_Pubsubhubbub_Subscriber\\:\\:_doRequest\\(\\) has no return type specified\\.$#',
 	'identifier' => 'missingType.return',
 	'count' => 1,
@@ -2804,7 +2840,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Feed/Pubsubhubbub/Subscriber/Callback.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#2 \\$value of method (Zend_Feed_Pubsubhubbub_HttpResponse|Zend_Controller_Response_Abstract)\\:\\:setHeader\\(\\) expects string, int given\\.$#',
+	'message' => '#^Parameter \\#2 \\$value of method Zend_Controller_Response_Abstract\\:\\:setHeader\\(\\) expects string, int given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Feed/Pubsubhubbub/Subscriber/Callback.php',
@@ -2834,7 +2870,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Feed/Reader.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 13,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader.php',
@@ -3062,25 +3098,25 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Entry/Atom.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Argument of an invalid type DOMNodeList\\<DOMNode\\>\\|false supplied for foreach, only iterables are supported\\.$#',
+	'message' => '#^Argument of an invalid type DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false supplied for foreach, only iterables are supported\\.$#',
 	'identifier' => 'foreach.nonIterable',
 	'count' => 3,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Entry/Rss.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Call to an undefined method DOMNode\\:\\:getAttribute\\(\\)\\.$#',
+	'message' => '#^Call to an undefined method DOMNameSpaceNode\\|DOMNode\\:\\:getAttribute\\(\\)\\.$#',
 	'identifier' => 'method.notFound',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Entry/Rss.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 4,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Entry/Rss.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot call method getAttribute\\(\\) on DOMNode\\|null\\.$#',
+	'message' => '#^Cannot call method getAttribute\\(\\) on DOMNameSpaceNode\\|DOMNode\\|null\\.$#',
 	'identifier' => 'method.nonObject',
 	'count' => 3,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Entry/Rss.php',
@@ -3164,7 +3200,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Entry/Rss.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'method.nonObject',
 	'count' => 3,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Entry/Rss.php',
@@ -3230,13 +3266,13 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/EntryAbstract.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Access to an undefined property DOMNode\\:\\:\\$value\\.$#',
+	'message' => '#^Access to an undefined property DOMNameSpaceNode\\|DOMNode\\:\\:\\$value\\.$#',
 	'identifier' => 'property.notFound',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Atom/Entry.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Argument of an invalid type DOMNodeList\\<DOMNode\\>\\|false supplied for foreach, only iterables are supported\\.$#',
+	'message' => '#^Argument of an invalid type DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false supplied for foreach, only iterables are supported\\.$#',
 	'identifier' => 'foreach.nonIterable',
 	'count' => 3,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Atom/Entry.php',
@@ -3254,13 +3290,13 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Atom/Entry.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Call to an undefined method DOMNode\\:\\:getAttribute\\(\\)\\.$#',
+	'message' => '#^Call to an undefined method DOMNameSpaceNode\\|DOMNode\\:\\:getAttribute\\(\\)\\.$#',
 	'identifier' => 'method.notFound',
 	'count' => 3,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Atom/Entry.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 10,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Atom/Entry.php',
@@ -3272,25 +3308,25 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Atom/Entry.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$nodeValue on DOMNode\\|null\\.$#',
+	'message' => '#^Cannot access property \\$nodeValue on DOMNameSpaceNode\\|DOMNode\\|null\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Atom/Entry.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$value on DOMNode\\|null\\.$#',
+	'message' => '#^Cannot access property \\$value on DOMNameSpaceNode\\|DOMNode\\|null\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 3,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Atom/Entry.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot call method getAttribute\\(\\) on DOMNode\\|null\\.$#',
+	'message' => '#^Cannot call method getAttribute\\(\\) on DOMNameSpaceNode\\|DOMNode\\|null\\.$#',
 	'identifier' => 'method.nonObject',
 	'count' => 4,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Atom/Entry.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'method.nonObject',
 	'count' => 9,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Atom/Entry.php',
@@ -3374,19 +3410,19 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Atom/Entry.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$element of method Zend_Feed_Reader_Extension_Atom_Entry\\:\\:_getAuthor\\(\\) expects DOMElement, DOMNode given\\.$#',
+	'message' => '#^Parameter \\#1 \\$element of method Zend_Feed_Reader_Extension_Atom_Entry\\:\\:_getAuthor\\(\\) expects DOMElement, DOMNameSpaceNode\\|DOMNode given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Atom/Entry.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$node of method DOMDocument\\:\\:importNode\\(\\) expects DOMNode, DOMNode\\|null given\\.$#',
+	'message' => '#^Parameter \\#1 \\$node of method DOMDocument\\:\\:importNode\\(\\) expects DOMNode, DOMNameSpaceNode\\|DOMNode\\|null given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Atom/Entry.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$source of class Zend_Feed_Reader_Feed_Atom_Source constructor expects DOMElement, DOMNode\\|null given\\.$#',
+	'message' => '#^Parameter \\#1 \\$source of class Zend_Feed_Reader_Feed_Atom_Source constructor expects DOMElement, DOMNameSpaceNode\\|DOMNode\\|null given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Atom/Entry.php',
@@ -3398,19 +3434,19 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Atom/Entry.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Argument of an invalid type DOMNodeList\\<DOMNode\\>\\|false supplied for foreach, only iterables are supported\\.$#',
+	'message' => '#^Argument of an invalid type DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false supplied for foreach, only iterables are supported\\.$#',
 	'identifier' => 'foreach.nonIterable',
 	'count' => 3,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Atom/Feed.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Call to an undefined method DOMNode\\:\\:getAttribute\\(\\)\\.$#',
+	'message' => '#^Call to an undefined method DOMNameSpaceNode\\|DOMNode\\:\\:getAttribute\\(\\)\\.$#',
 	'identifier' => 'method.notFound',
 	'count' => 3,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Atom/Feed.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 4,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Atom/Feed.php',
@@ -3422,13 +3458,13 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Atom/Feed.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$nodeValue on DOMNode\\|null\\.$#',
+	'message' => '#^Cannot access property \\$nodeValue on DOMNameSpaceNode\\|DOMNode\\|null\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Atom/Feed.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'method.nonObject',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Atom/Feed.php',
@@ -3470,7 +3506,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Atom/Feed.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$element of method Zend_Feed_Reader_Extension_Atom_Feed\\:\\:_getAuthor\\(\\) expects DOMElement, DOMNode given\\.$#',
+	'message' => '#^Parameter \\#1 \\$element of method Zend_Feed_Reader_Extension_Atom_Feed\\:\\:_getAuthor\\(\\) expects DOMElement, DOMNameSpaceNode\\|DOMNode given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Atom/Feed.php',
@@ -3512,13 +3548,13 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/DublinCore/Entry.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Argument of an invalid type DOMNodeList\\<DOMNode\\>\\|false supplied for foreach, only iterables are supported\\.$#',
+	'message' => '#^Argument of an invalid type DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false supplied for foreach, only iterables are supported\\.$#',
 	'identifier' => 'foreach.nonIterable',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/DublinCore/Feed.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 4,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/DublinCore/Feed.php',
@@ -3572,19 +3608,31 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/FeedAbstract.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Argument of an invalid type DOMNodeList\\<DOMNode\\>\\|false supplied for foreach, only iterables are supported\\.$#',
+	'message' => '#^Access to an undefined property DOMNameSpaceNode\\|DOMNode\\:\\:\\$childNodes\\.$#',
+	'identifier' => 'property.notFound',
+	'count' => 2,
+	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Podcast/Feed.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Argument of an invalid type DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false supplied for foreach, only iterables are supported\\.$#',
 	'identifier' => 'foreach.nonIterable',
+	'count' => 1,
+	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Podcast/Feed.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Call to an undefined method DOMNameSpaceNode\\|DOMNode\\:\\:getAttribute\\(\\)\\.$#',
+	'identifier' => 'method.notFound',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Podcast/Feed.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Call to an undefined method DOMNode\\:\\:getAttribute\\(\\)\\.$#',
 	'identifier' => 'method.notFound',
-	'count' => 2,
+	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Podcast/Feed.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Extension/Podcast/Feed.php',
@@ -3764,13 +3812,13 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Feed/Atom/Source.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Argument of an invalid type DOMNodeList\\<DOMNode\\>\\|false supplied for foreach, only iterables are supported\\.$#',
+	'message' => '#^Argument of an invalid type DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false supplied for foreach, only iterables are supported\\.$#',
 	'identifier' => 'foreach.nonIterable',
 	'count' => 2,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Feed/Rss.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Call to an undefined method DOMNode\\:\\:getAttribute\\(\\)\\.$#',
+	'message' => '#^Call to an undefined method DOMNameSpaceNode\\|DOMNode\\:\\:getAttribute\\(\\)\\.$#',
 	'identifier' => 'method.notFound',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Feed/Rss.php',
@@ -3806,7 +3854,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Feed/Rss.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 3,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/Feed/Rss.php',
@@ -3986,7 +4034,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/FeedAbstract.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Call to an undefined method DOMNode\\:\\:getAttribute\\(\\)\\.$#',
+	'message' => '#^Call to an undefined method DOMNameSpaceNode\\|DOMNode\\:\\:getAttribute\\(\\)\\.$#',
 	'identifier' => 'method.notFound',
 	'count' => 11,
 	'path' => __DIR__ . '/library/Zend/Feed/Reader/FeedSet.php',
@@ -4119,6 +4167,12 @@ $ignoreErrors[] = [
 ];
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$node of method DOMDocument\\:\\:importNode\\(\\) expects DOMNode, DOMDocument\\|DOMElement\\|string given\\.$#',
+	'identifier' => 'argument.type',
+	'count' => 1,
+	'path' => __DIR__ . '/library/Zend/Feed/Rss.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Parameter \\#1 \\$version of class DOMDocument constructor expects string, string\\|null given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Feed/Rss.php',
@@ -5390,7 +5444,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Gdata/App/Base.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Argument of an invalid type DOMNamedNodeMap\\|null supplied for foreach, only iterables are supported\\.$#',
+	'message' => '#^Argument of an invalid type DOMNamedNodeMap\\<DOMAttr\\>\\|null supplied for foreach, only iterables are supported\\.$#',
 	'identifier' => 'foreach.nonIterable',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Gdata/App/Base.php',
@@ -9050,12 +9104,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Gdata/Gapps.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Method Zend_Gdata_Gapps\\:\\:restoreUser\\(\\) has Zend_Gdata_Gapps_ServiceException in PHPDoc @throws tag but it\'s not thrown\\.$#',
-	'identifier' => 'throws.unusedType',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Gdata/Gapps.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Method Zend_Gdata_Gapps\\:\\:restoreUser\\(\\) should return Zend_Gdata_Gapps_UserEntry but returns Zend_Gdata_App_Entry\\.$#',
 	'identifier' => 'return.type',
 	'count' => 1,
@@ -9064,12 +9112,6 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
 	'message' => '#^Method Zend_Gdata_Gapps\\:\\:setDomain\\(\\) has no return type specified\\.$#',
 	'identifier' => 'missingType.return',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Gdata/Gapps.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Method Zend_Gdata_Gapps\\:\\:suspendUser\\(\\) has Zend_Gdata_Gapps_ServiceException in PHPDoc @throws tag but it\'s not thrown\\.$#',
-	'identifier' => 'throws.unusedType',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Gdata/Gapps.php',
 ];
@@ -9088,12 +9130,6 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
 	'message' => '#^Method Zend_Gdata_Gapps\\:\\:updateGroup\\(\\) should return Zend_Gdata_Gapps_GroupEntry but returns Zend_Gdata_App_Entry\\.$#',
 	'identifier' => 'return.type',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Gdata/Gapps.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Method Zend_Gdata_Gapps\\:\\:updateUser\\(\\) has Zend_Gdata_Gapps_ServiceException in PHPDoc @throws tag but it\'s not thrown\\.$#',
-	'identifier' => 'throws.unusedType',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Gdata/Gapps.php',
 ];
@@ -11019,18 +11055,6 @@ $ignoreErrors[] = [
 ];
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$filename of function file_exists expects string, string\\|null given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Gdata/MediaMimeStream.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$filename of function filesize expects string, string\\|null given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Gdata/MediaMimeStream.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$filename of function fopen expects string, string\\|null given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Gdata/MediaMimeStream.php',
@@ -13580,6 +13604,12 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Pdf.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Strict comparison using \\!\\=\\= between mixed and null will always evaluate to true\\.$#',
+	'identifier' => 'notIdentical.alwaysTrue',
+	'count' => 1,
+	'path' => __DIR__ . '/library/Zend/Pdf.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Unreachable statement \\- code above always terminates\\.$#',
 	'identifier' => 'deadCode.unreachable',
 	'count' => 1,
@@ -14074,12 +14104,6 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
 	'message' => '#^Method Zend_Pdf_Canvas_Abstract\\:\\:getStyle\\(\\) should return Zend_Pdf_Style but returns Zend_Pdf_Style\\|null\\.$#',
 	'identifier' => 'return.type',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Pdf/Canvas/Abstract.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Method Zend_Pdf_Canvas_Abstract\\:\\:pathClose\\(\\) has Zend_Pdf_Exception in PHPDoc @throws tag but it\'s not thrown\\.$#',
-	'identifier' => 'throws.unusedType',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Pdf/Canvas/Abstract.php',
 ];
@@ -15282,6 +15306,12 @@ $ignoreErrors[] = [
 	'identifier' => 'variable.undefined',
 	'count' => 2,
 	'path' => __DIR__ . '/library/Zend/Pdf/Filter/AsciiHex.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Invalid array key type float\\.$#',
+	'identifier' => 'offsetAccess.invalidOffset',
+	'count' => 1,
+	'path' => __DIR__ . '/library/Zend/Pdf/Filter/Compression.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Offset float might not exist on array\\{\\}\\|array\\{int\\<0, 255\\>\\}\\.$#',
@@ -17168,12 +17198,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Queue/Adapter/Db.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Method Zend_Queue_Adapter_Db\\:\\:isExists\\(\\) has Zend_Queue_Exception in PHPDoc @throws tag but it\'s not thrown\\.$#',
-	'identifier' => 'throws.unusedType',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Queue/Adapter/Db.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Method Zend_Queue_Adapter_Db\\:\\:receive\\(\\) should return Zend_Queue_Message_Iterator but returns object\\.$#',
 	'identifier' => 'return.type',
 	'count' => 1,
@@ -18158,19 +18182,19 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Search/Lucene/Document/Docx.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Argument of an invalid type DOMNodeList\\<DOMNode\\>\\|false supplied for foreach, only iterables are supported\\.$#',
+	'message' => '#^Argument of an invalid type DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false supplied for foreach, only iterables are supported\\.$#',
 	'identifier' => 'foreach.nonIterable',
 	'count' => 5,
 	'path' => __DIR__ . '/library/Zend/Search/Lucene/Document/Html.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Call to an undefined method DOMNode\\:\\:getAttribute\\(\\)\\.$#',
+	'message' => '#^Call to an undefined method DOMNameSpaceNode\\|DOMNode\\:\\:getAttribute\\(\\)\\.$#',
 	'identifier' => 'method.notFound',
 	'count' => 3,
 	'path' => __DIR__ . '/library/Zend/Search/Lucene/Document/Html.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$childNodes on DOMNode\\|null\\.$#',
+	'message' => '#^Cannot access property \\$childNodes on DOMNameSpaceNode\\|DOMNode\\|null\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 2,
 	'path' => __DIR__ . '/library/Zend/Search/Lucene/Document/Html.php',
@@ -18182,7 +18206,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Search/Lucene/Document/Html.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$parentNode on DOMNode\\|null\\.$#',
+	'message' => '#^Cannot access property \\$parentNode on DOMNameSpaceNode\\|DOMNode\\|null\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Search/Lucene/Document/Html.php',
@@ -18200,7 +18224,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Search/Lucene/Document/Html.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'method.nonObject',
 	'count' => 3,
 	'path' => __DIR__ . '/library/Zend/Search/Lucene/Document/Html.php',
@@ -18260,6 +18284,12 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Search/Lucene/Document/Html.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Parameter \\#1 \\$contextNode of method Zend_Search_Lucene_Document_Html\\:\\:_highlightNodeRecursive\\(\\) expects DOMNode, DOMNameSpaceNode\\|DOMNode given\\.$#',
+	'identifier' => 'argument.type',
+	'count' => 1,
+	'path' => __DIR__ . '/library/Zend/Search/Lucene/Document/Html.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$data of method Zend_Search_Lucene_Analysis_Analyzer\\:\\:setInput\\(\\) expects string, string\\|null given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
@@ -18273,6 +18303,12 @@ $ignoreErrors[] = [
 ];
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$node of method Zend_Search_Lucene_Document_Html\\:\\:_highlightTextNode\\(\\) expects DOMText, DOMNode given\\.$#',
+	'identifier' => 'argument.type',
+	'count' => 1,
+	'path' => __DIR__ . '/library/Zend/Search/Lucene/Document/Html.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Parameter \\#1 \\$node of method Zend_Search_Lucene_Document_Html\\:\\:_retrieveNodeText\\(\\) expects DOMNode, DOMNameSpaceNode\\|DOMNode given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Search/Lucene/Document/Html.php',
@@ -18746,6 +18782,12 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Search/Lucene/Index/SegmentInfo.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Possibly invalid array key type float\\|int\\.$#',
+	'identifier' => 'offsetAccess.invalidOffset',
+	'count' => 7,
+	'path' => __DIR__ . '/library/Zend/Search/Lucene/Index/SegmentInfo.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Property Zend_Search_Lucene_Index_SegmentInfo\\:\\:\\$_sharedDocStoreOptions has no type specified\\.$#',
 	'identifier' => 'missingType.property',
 	'count' => 1,
@@ -18766,7 +18808,7 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
 	'message' => '#^Variable \\$dataOffset might not be defined\\.$#',
 	'identifier' => 'variable.undefined',
-	'count' => 2,
+	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Search/Lucene/Index/SegmentInfo.php',
 ];
 $ignoreErrors[] = [
@@ -19862,6 +19904,18 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Search/Lucene/Search/Query/Boolean.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Call to an undefined method object\\:\\:getBoost\\(\\)\\.$#',
+	'identifier' => 'method.notFound',
+	'count' => 1,
+	'path' => __DIR__ . '/library/Zend/Search/Lucene/Search/Query/Boolean.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Call to an undefined method object\\:\\:setBoost\\(\\)\\.$#',
+	'identifier' => 'method.notFound',
+	'count' => 1,
+	'path' => __DIR__ . '/library/Zend/Search/Lucene/Search/Query/Boolean.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Method Zend_Search_Lucene_Search_Query_Boolean\\:\\:_calculateConjunctionResult\\(\\) has no return type specified\\.$#',
 	'identifier' => 'missingType.return',
 	'count' => 1,
@@ -19893,6 +19947,12 @@ $ignoreErrors[] = [
 ];
 $ignoreErrors[] = [
 	'message' => '#^Method Zend_Search_Lucene_Search_Query_Boolean\\:\\:matchedDocs\\(\\) should return array but returns array\\|null\\.$#',
+	'identifier' => 'return.type',
+	'count' => 1,
+	'path' => __DIR__ . '/library/Zend/Search/Lucene/Search/Query/Boolean.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Method Zend_Search_Lucene_Search_Query_Boolean\\:\\:optimize\\(\\) should return Zend_Search_Lucene_Search_Query but returns object\\.$#',
 	'identifier' => 'return.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Search/Lucene/Search/Query/Boolean.php',
@@ -20588,7 +20648,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Search/Lucene/Storage/Directory/Filesystem.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Method Zend_Search_Lucene_Storage_Directory_Filesystem\\:\\:fileModified\\(\\) should return int but returns int\\|false\\.$#',
+	'message' => '#^Method Zend_Search_Lucene_Storage_Directory_Filesystem\\:\\:fileModified\\(\\) should return int but returns int\\<0, max\\>\\|false\\.$#',
 	'identifier' => 'return.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Search/Lucene/Storage/Directory/Filesystem.php',
@@ -21248,19 +21308,13 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/Console/Command/ParameterSource/ConfigFile.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Possibly invalid array key type \\(list\\<string\\>\\|string\\)\\.$#',
-	'identifier' => 'offsetAccess.invalidOffset',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Service/Console/Command/ParameterSource/ConfigFile.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Call to function is_null\\(\\) with array\\<string, string\\>\\|string\\|false will always evaluate to false\\.$#',
 	'identifier' => 'function.impossibleType',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Console/Command/ParameterSource/Env.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$string of function strtolower expects string, string\\|null given\\.$#',
+	'message' => '#^Parameter \\#1 \\$string of function strtolower expects string, array\\<string, string\\>\\|string\\|null given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 2,
 	'path' => __DIR__ . '/library/Zend/Service/Console/Command/ParameterSource/Env.php',
@@ -21344,13 +21398,13 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/Delicious/Post.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$nodeName on DOMNode\\|null\\.$#',
+	'message' => '#^Cannot access property \\$nodeName on DOMNameSpaceNode\\|DOMNode\\|null\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Delicious/PostList.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#2 \\$values of class Zend_Service_Delicious_Post constructor expects array\\|DOMElement, DOMNode\\|null given\\.$#',
+	'message' => '#^Parameter \\#2 \\$values of class Zend_Service_Delicious_Post constructor expects array\\|DOMElement, DOMNameSpaceNode\\|DOMNode\\|null given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Delicious/PostList.php',
@@ -21368,7 +21422,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'method.nonObject',
 	'count' => 3,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding.php',
@@ -21434,7 +21488,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Argument of an invalid type DOMNodeList\\<DOMNode\\>\\|false supplied for foreach, only iterables are supported\\.$#',
+	'message' => '#^Argument of an invalid type DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false supplied for foreach, only iterables are supported\\.$#',
 	'identifier' => 'foreach.nonIterable',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Abstract.php',
@@ -21458,13 +21512,13 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Abstract.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Aspect.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$nodes of class Zend_Service_Ebay_Finding_Aspect_Histogram_Value_Set constructor expects DOMNodeList, DOMNodeList\\<DOMNode\\>\\|false given\\.$#',
+	'message' => '#^Parameter \\#1 \\$nodes of class Zend_Service_Ebay_Finding_Aspect_Histogram_Value_Set constructor expects DOMNodeList, DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Aspect.php',
@@ -21476,13 +21530,13 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Aspect.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Aspect/Histogram/Container.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$nodes of class Zend_Service_Ebay_Finding_Aspect_Set constructor expects DOMNodeList, DOMNodeList\\<DOMNode\\>\\|false given\\.$#',
+	'message' => '#^Parameter \\#1 \\$nodes of class Zend_Service_Ebay_Finding_Aspect_Set constructor expects DOMNodeList, DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Aspect/Histogram/Container.php',
@@ -21494,13 +21548,13 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Aspect/Histogram/Container.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_Aspect_Histogram_Value constructor expects DOMElement, DOMNode given\\.$#',
+	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_Aspect_Histogram_Value constructor expects DOMElement, DOMNameSpaceNode\\|DOMNode given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Aspect/Histogram/Value/Set.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_Aspect constructor expects DOMElement, DOMNode given\\.$#',
+	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_Aspect constructor expects DOMElement, DOMNameSpaceNode\\|DOMNode given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Aspect/Set.php',
@@ -21512,31 +21566,31 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Category.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Category/Histogram.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$nodes of class Zend_Service_Ebay_Finding_Category_Histogram_Set constructor expects DOMNodeList, DOMNodeList\\<DOMNode\\>\\|false given\\.$#',
+	'message' => '#^Parameter \\#1 \\$nodes of class Zend_Service_Ebay_Finding_Category_Histogram_Set constructor expects DOMNodeList, DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Category/Histogram.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Category/Histogram/Container.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$nodes of class Zend_Service_Ebay_Finding_Category_Histogram_Set constructor expects DOMNodeList, DOMNodeList\\<DOMNode\\>\\|false given\\.$#',
+	'message' => '#^Parameter \\#1 \\$nodes of class Zend_Service_Ebay_Finding_Category_Histogram_Set constructor expects DOMNodeList, DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Category/Histogram/Container.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_Category_Histogram constructor expects DOMElement, DOMNode given\\.$#',
+	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_Category_Histogram constructor expects DOMElement, DOMNameSpaceNode\\|DOMNode given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Category/Histogram/Set.php',
@@ -21548,67 +21602,67 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Error/Data.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_Error_Data constructor expects DOMElement, DOMNode given\\.$#',
+	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_Error_Data constructor expects DOMElement, DOMNameSpaceNode\\|DOMNode given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Error/Data/Set.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Error/Message.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$nodes of class Zend_Service_Ebay_Finding_Error_Data_Set constructor expects DOMNodeList, DOMNodeList\\<DOMNode\\>\\|false given\\.$#',
+	'message' => '#^Parameter \\#1 \\$nodes of class Zend_Service_Ebay_Finding_Error_Data_Set constructor expects DOMNodeList, DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Error/Message.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'method.nonObject',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Response/Abstract.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_Error_Message constructor expects DOMElement, DOMNode given\\.$#',
+	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_Error_Message constructor expects DOMElement, DOMNameSpaceNode\\|DOMNode given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Response/Abstract.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'method.nonObject',
 	'count' => 2,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Response/Histograms.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_Aspect_Histogram_Container constructor expects DOMElement, DOMNode given\\.$#',
+	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_Aspect_Histogram_Container constructor expects DOMElement, DOMNameSpaceNode\\|DOMNode given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Response/Histograms.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_Category_Histogram_Container constructor expects DOMElement, DOMNode given\\.$#',
+	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_Category_Histogram_Container constructor expects DOMElement, DOMNameSpaceNode\\|DOMNode given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Response/Histograms.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'method.nonObject',
 	'count' => 2,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Response/Items.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_PaginationOutput constructor expects DOMElement, DOMNode given\\.$#',
+	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_PaginationOutput constructor expects DOMElement, DOMNameSpaceNode\\|DOMNode given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Response/Items.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_Search_Result constructor expects DOMElement, DOMNode given\\.$#',
+	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_Search_Result constructor expects DOMElement, DOMNameSpaceNode\\|DOMNode given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Response/Items.php',
@@ -21620,43 +21674,43 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Response/Keywords.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'method.nonObject',
 	'count' => 7,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Search/Item.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_Category constructor expects DOMElement, DOMNode given\\.$#',
+	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_Category constructor expects DOMElement, DOMNameSpaceNode\\|DOMNode given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 2,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Search/Item.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_ListingInfo constructor expects DOMElement, DOMNode given\\.$#',
+	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_ListingInfo constructor expects DOMElement, DOMNameSpaceNode\\|DOMNode given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Search/Item.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_SellerInfo constructor expects DOMElement, DOMNode given\\.$#',
+	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_SellerInfo constructor expects DOMElement, DOMNameSpaceNode\\|DOMNode given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Search/Item.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_SellingStatus constructor expects DOMElement, DOMNode given\\.$#',
+	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_SellingStatus constructor expects DOMElement, DOMNameSpaceNode\\|DOMNode given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Search/Item.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_ShippingInfo constructor expects DOMElement, DOMNode given\\.$#',
+	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_ShippingInfo constructor expects DOMElement, DOMNameSpaceNode\\|DOMNode given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Search/Item.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_Storefront constructor expects DOMElement, DOMNode given\\.$#',
+	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_Storefront constructor expects DOMElement, DOMNameSpaceNode\\|DOMNode given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Search/Item.php',
@@ -21674,7 +21728,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Search/Item.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_Search_Item constructor expects DOMElement, DOMNode given\\.$#',
+	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Ebay_Finding_Search_Item constructor expects DOMElement, DOMNameSpaceNode\\|DOMNode given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/Search/Item/Set.php',
@@ -21686,13 +21740,13 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/Ebay/Finding/ShippingInfo.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Argument of an invalid type DOMNodeList\\<DOMNode\\>\\|false supplied for foreach, only iterables are supported\\.$#',
+	'message' => '#^Argument of an invalid type DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false supplied for foreach, only iterables are supported\\.$#',
 	'identifier' => 'foreach.nonIterable',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Flickr.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Call to an undefined method DOMNode\\:\\:getAttribute\\(\\)\\.$#',
+	'message' => '#^Call to an undefined method DOMNameSpaceNode\\|DOMNode\\:\\:getAttribute\\(\\)\\.$#',
 	'identifier' => 'method.notFound',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Flickr.php',
@@ -21704,13 +21758,13 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/Flickr.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot call method getAttribute\\(\\) on DOMNode\\|null\\.$#',
+	'message' => '#^Cannot call method getAttribute\\(\\) on DOMNameSpaceNode\\|DOMNode\\|null\\.$#',
 	'identifier' => 'method.nonObject',
 	'count' => 4,
 	'path' => __DIR__ . '/library/Zend/Service/Flickr.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'method.nonObject',
 	'count' => 3,
 	'path' => __DIR__ . '/library/Zend/Service/Flickr.php',
@@ -21734,7 +21788,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/Flickr.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$image of class Zend_Service_Flickr_Image constructor expects DOMElement, DOMNode given\\.$#',
+	'message' => '#^Parameter \\#1 \\$image of class Zend_Service_Flickr_Image constructor expects DOMElement, DOMNameSpaceNode\\|DOMNode given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Flickr.php',
@@ -21746,19 +21800,19 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/Flickr.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Access to an undefined property DOMNode\\:\\:\\$name\\.$#',
+	'message' => '#^Access to an undefined property DOMNameSpaceNode\\|DOMNode\\:\\:\\$name\\.$#',
 	'identifier' => 'property.notFound',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Flickr/Result.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Access to an undefined property DOMNode\\:\\:\\$value\\.$#',
+	'message' => '#^Access to an undefined property DOMNameSpaceNode\\|DOMNode\\:\\:\\$value\\.$#',
 	'identifier' => 'property.notFound',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Flickr/Result.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Argument of an invalid type DOMNodeList\\<DOMNode\\>\\|false supplied for foreach, only iterables are supported\\.$#',
+	'message' => '#^Argument of an invalid type DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false supplied for foreach, only iterables are supported\\.$#',
 	'identifier' => 'foreach.nonIterable',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Flickr/Result.php',
@@ -21770,25 +21824,25 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/Flickr/Result.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot call method getAttribute\\(\\) on DOMNode\\|null\\.$#',
+	'message' => '#^Cannot call method getAttribute\\(\\) on DOMNameSpaceNode\\|DOMNode\\|null\\.$#',
 	'identifier' => 'method.nonObject',
 	'count' => 4,
 	'path' => __DIR__ . '/library/Zend/Service/Flickr/ResultSet.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'method.nonObject',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Flickr/ResultSet.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$image of class Zend_Service_Flickr_Result constructor expects DOMElement, DOMNode\\|null given\\.$#',
+	'message' => '#^Parameter \\#1 \\$image of class Zend_Service_Flickr_Result constructor expects DOMElement, DOMNameSpaceNode\\|DOMNode\\|null given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Flickr/ResultSet.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Property Zend_Service_Flickr_ResultSet\\:\\:\\$_results \\(DOMNodeList\\) does not accept DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Property Zend_Service_Flickr_ResultSet\\:\\:\\$_results \\(DOMNodeList\\) does not accept DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'assign.propertyType',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Flickr/ResultSet.php',
@@ -22388,7 +22442,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/SlideShare.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$node of method Zend_Service_SlideShare\\:\\:_slideShowNodeToObject\\(\\) expects SimpleXMLElement, DOMDocument\\|SimpleXMLElement\\|false given\\.$#',
+	'message' => '#^Parameter \\#1 \\$node of method Zend_Service_SlideShare\\:\\:_slideShowNodeToObject\\(\\) expects SimpleXMLElement, DOMDocument\\|SimpleXMLElement given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/SlideShare.php',
@@ -24404,7 +24458,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Credentials/SharedKey.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$array of method Zend_Service_WindowsAzure_Credentials_CredentialsAbstract\\:\\:_issetOr\\(\\) expects array, array\\|null given\\.$#',
+	'message' => '#^Parameter \\#1 \\$array of method Zend_Service_WindowsAzure_Credentials_CredentialsAbstract\\:\\:_issetOr\\(\\) expects array, array\\<mixed\\>\\|null given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 9,
 	'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Credentials/SharedKey.php',
@@ -24788,9 +24842,21 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Management/Client.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Cannot access property \\$Label on SimpleXMLElement\\|null\\.$#',
+	'identifier' => 'property.nonObject',
+	'count' => 1,
+	'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Management/Client.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Cannot access property \\$Location on SimpleXMLElement\\|false\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 5,
+	'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Management/Client.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Cannot access property \\$Name on SimpleXMLElement\\|null\\.$#',
+	'identifier' => 'property.nonObject',
+	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Management/Client.php',
 ];
 $ignoreErrors[] = [
@@ -25520,24 +25586,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Storage/Blob.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$Etag on SimpleXMLElement\\|null\\.$#',
-	'identifier' => 'property.nonObject',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Storage/Blob.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$LastModified on SimpleXMLElement\\|null\\.$#',
-	'identifier' => 'property.nonObject',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Storage/Blob.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$Name on SimpleXMLElement\\|null\\.$#',
-	'identifier' => 'property.nonObject',
-	'count' => 3,
-	'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Storage/Blob.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Cannot access property \\$NextMarker on SimpleXMLElement\\|false\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 2,
@@ -25550,27 +25598,9 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Storage/Blob.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$Properties on SimpleXMLElement\\|null\\.$#',
-	'identifier' => 'property.nonObject',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Storage/Blob.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$Snapshot on SimpleXMLElement\\|null\\.$#',
-	'identifier' => 'property.nonObject',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Storage/Blob.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Cannot access property \\$UncommittedBlocks on SimpleXMLElement\\|false\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 2,
-	'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Storage/Blob.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$Url on SimpleXMLElement\\|null\\.$#',
-	'identifier' => 'property.nonObject',
-	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Storage/Blob.php',
 ];
 $ignoreErrors[] = [
@@ -25880,12 +25910,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Storage/Queue.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$Name on SimpleXMLElement\\|null\\.$#',
-	'identifier' => 'property.nonObject',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Storage/Queue.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Cannot access property \\$NextMarker on SimpleXMLElement\\|false\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 1,
@@ -26174,19 +26198,19 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/WindowsAzure/Storage/TableEntityQuery.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$data on DOMNode\\|null\\.$#',
+	'message' => '#^Cannot access property \\$data on DOMNameSpaceNode\\|DOMNode\\|null\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Yahoo.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Yahoo.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'method.nonObject',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Yahoo.php',
@@ -26246,13 +26270,13 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/Yahoo.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$data on DOMNode\\|null\\.$#',
+	'message' => '#^Cannot access property \\$data on DOMNameSpaceNode\\|DOMNode\\|null\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 3,
 	'path' => __DIR__ . '/library/Zend/Service/Yahoo/Image.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'method.nonObject',
 	'count' => 3,
 	'path' => __DIR__ . '/library/Zend/Service/Yahoo/Image.php',
@@ -26264,43 +26288,43 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/Yahoo/Image.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$result of class Zend_Service_Yahoo_ImageResult constructor expects DOMElement, DOMNode\\|null given\\.$#',
+	'message' => '#^Parameter \\#1 \\$result of class Zend_Service_Yahoo_ImageResult constructor expects DOMElement, DOMNameSpaceNode\\|DOMNode\\|null given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Yahoo/ImageResultSet.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$result of class Zend_Service_Yahoo_InlinkDataResult constructor expects DOMElement, DOMNode\\|null given\\.$#',
+	'message' => '#^Parameter \\#1 \\$result of class Zend_Service_Yahoo_InlinkDataResult constructor expects DOMElement, DOMNameSpaceNode\\|DOMNode\\|null given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Yahoo/InlinkDataResultSet.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$data on DOMNode\\|null\\.$#',
+	'message' => '#^Cannot access property \\$data on DOMNameSpaceNode\\|DOMNode\\|null\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Yahoo/LocalResultSet.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'method.nonObject',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Yahoo/LocalResultSet.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$result of class Zend_Service_Yahoo_LocalResult constructor expects DOMElement, DOMNode\\|null given\\.$#',
+	'message' => '#^Parameter \\#1 \\$result of class Zend_Service_Yahoo_LocalResult constructor expects DOMElement, DOMNameSpaceNode\\|DOMNode\\|null given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Yahoo/LocalResultSet.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$result of class Zend_Service_Yahoo_NewsResult constructor expects DOMElement, DOMNode\\|null given\\.$#',
+	'message' => '#^Parameter \\#1 \\$result of class Zend_Service_Yahoo_NewsResult constructor expects DOMElement, DOMNameSpaceNode\\|DOMNode\\|null given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Yahoo/NewsResultSet.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$result of class Zend_Service_Yahoo_PageDataResult constructor expects DOMElement, DOMNode\\|null given\\.$#',
+	'message' => '#^Parameter \\#1 \\$result of class Zend_Service_Yahoo_PageDataResult constructor expects DOMElement, DOMNameSpaceNode\\|DOMNode\\|null given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Yahoo/PageDataResultSet.php',
@@ -26318,19 +26342,19 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/Yahoo/Result.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$data on DOMNode\\|null\\.$#',
+	'message' => '#^Cannot access property \\$data on DOMNameSpaceNode\\|DOMNode\\|null\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Yahoo/Result.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot access property \\$length on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 2,
 	'path' => __DIR__ . '/library/Zend/Service/Yahoo/Result.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'method.nonObject',
 	'count' => 2,
 	'path' => __DIR__ . '/library/Zend/Service/Yahoo/Result.php',
@@ -26342,7 +26366,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/Yahoo/Result.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Yahoo_Image constructor expects DOMNode, DOMNode\\|null given\\.$#',
+	'message' => '#^Parameter \\#1 \\$dom of class Zend_Service_Yahoo_Image constructor expects DOMNode, DOMNameSpaceNode\\|DOMNode\\|null given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Yahoo/Result.php',
@@ -26360,13 +26384,13 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/Yahoo/ResultSet.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Property Zend_Service_Yahoo_ResultSet\\:\\:\\$_results \\(DOMNodeList\\) does not accept DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Property Zend_Service_Yahoo_ResultSet\\:\\:\\$_results \\(DOMNodeList\\) does not accept DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'assign.propertyType',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Yahoo/ResultSet.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$result of class Zend_Service_Yahoo_VideoResult constructor expects DOMElement, DOMNode\\|null given\\.$#',
+	'message' => '#^Parameter \\#1 \\$result of class Zend_Service_Yahoo_VideoResult constructor expects DOMElement, DOMNameSpaceNode\\|DOMNode\\|null given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Yahoo/VideoResultSet.php',
@@ -26378,7 +26402,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/Yahoo/WebResult.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNode\\>\\|false\\.$#',
+	'message' => '#^Cannot call method item\\(\\) on DOMNodeList\\<DOMNameSpaceNode\\|DOMNode\\>\\|false\\.$#',
 	'identifier' => 'method.nonObject',
 	'count' => 2,
 	'path' => __DIR__ . '/library/Zend/Service/Yahoo/WebResult.php',
@@ -26390,7 +26414,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/Yahoo/WebResult.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$result of class Zend_Service_Yahoo_WebResult constructor expects DOMElement, DOMNode\\|null given\\.$#',
+	'message' => '#^Parameter \\#1 \\$result of class Zend_Service_Yahoo_WebResult constructor expects DOMElement, DOMNameSpaceNode\\|DOMNode\\|null given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/Yahoo/WebResultSet.php',
@@ -28862,6 +28886,12 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Tool/Project/Provider/Abstract.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Parameter \\#1 \\$string of function ltrim expects string, string\\|false given\\.$#',
+	'identifier' => 'argument.type',
+	'count' => 1,
+	'path' => __DIR__ . '/library/Zend/Tool/Project/Provider/Abstract.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Property Zend_Tool_Project_Provider_Abstract\\:\\:\\$_projectPath has no type specified\\.$#',
 	'identifier' => 'missingType.property',
 	'count' => 1,
@@ -29672,20 +29702,8 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Tool/Project/Provider/View.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Method Zend_Version\\:\\:getLatest\\(\\) should return string but returns string\\|false\\.$#',
-	'identifier' => 'return.type',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Version.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$version1 of function version_compare expects string, string\\|null given\\.$#',
 	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/library/Zend/Version.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Static property Zend_Version\\:\\:\\$_latestVersion \\(string\\) does not accept string\\|false\\.$#',
-	'identifier' => 'assign.propertyType',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Version.php',
 ];
@@ -29886,6 +29904,12 @@ $ignoreErrors[] = [
 	'identifier' => 'method.childReturnType',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/XmlRpc/Server.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Instanceof between Exception and \\(int\\|string\\) results in an error\\.$#',
+	'identifier' => 'instanceof.invalidExprType',
+	'count' => 1,
+	'path' => __DIR__ . '/library/Zend/XmlRpc/Server/Fault.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$callback of function call_user_func expects callable\\(\\)\\: mixed, array\\{\\(int\\|string\\), \'observe\'\\} given\\.$#',
