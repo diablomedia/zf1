@@ -25,8 +25,8 @@ date_default_timezone_set('UTC');
 /**
  * Test helpers
  */
-require_once dirname(__FILE__) . '/../../../../TestHelper.php';
-require_once dirname(__FILE__) . '/../../../../TestConfiguration.php.dist';
+//require_once dirname(__FILE__) . '/../../../../TestHelper.php';
+//require_once dirname(__FILE__) . '/../../../../TestConfiguration.php.dist';
 
 /** Zend_Service_WindowsAzure_Management_Client */
 require_once 'Zend/Service/WindowsAzure/Management/Client.php';
