@@ -2840,7 +2840,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Feed/Pubsubhubbub/Subscriber/Callback.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#2 \\$value of method Zend_Feed_Pubsubhubbub_HttpResponse\\:\\:setHeader\\(\\) expects string, int given\\.$#',
+	'message' => '#^Parameter \\#2 \\$value of method Zend_Controller_Response_Abstract\\:\\:setHeader\\(\\) expects string, int given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Feed/Pubsubhubbub/Subscriber/Callback.php',
@@ -22394,7 +22394,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/library/Zend/Service/ShortUrl/MetamarkNet.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot call method getAttribute\\(\\) on DOMNode\\|null\\.$#',
+	'message' => '#^Cannot call method getAttribute\\(\\) on DOMNameSpaceNode\\|DOMNode\\|null\\.$#',
 	'identifier' => 'method.nonObject',
 	'count' => 1,
 	'path' => __DIR__ . '/library/Zend/Service/ShortUrl/TinyUrlCom.php',
