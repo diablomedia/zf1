@@ -129,8 +129,8 @@ class Zend_Gdata_Gapps extends Zend_Gdata
      * response. If conversion fails, throw the original error.
      *
      * @param Zend_Gdata_App_Exception $e The exception to convert.
-     * @throws Zend_Gdata_Gapps_ServiceException
-     * @throws mixed
+     * @throws Zend_Gdata_App_Exception
+     * @throws Zend_Gdata_App_IOException
      */
     public static function throwServiceExceptionIfDetected($e) {
         // Check to make sure that there actually response!
@@ -169,7 +169,6 @@ class Zend_Gdata_Gapps extends Zend_Gdata
      *          return type
      * @throws Zend_Gdata_App_Exception
      * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
      * @return Zend_Gdata_App_Feed|string
      */
     public static function import($uri, $client = null, $className='Zend_Gdata_App_Feed', $useObjectMapping = true)
@@ -190,7 +189,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
      * @param array $extraHeaders Extra headers to add to the request, as an
      *        array of string-based key/value pairs.
      * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
+     * @throws Zend_Gdata_App_Exception
      * @return Zend_Http_Response
      */
     public function get($uri, $extraHeaders = array())
@@ -215,7 +214,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
      * @return Zend_Http_Response
      * @throws Zend_Gdata_App_HttpException
      * @throws Zend_Gdata_App_InvalidArgumentException
-     * @throws Zend_Gdata_Gapps_ServiceException
+     * @throws Zend_Gdata_App_Exception
      */
     public function post($data, $uri = null, $remainingRedirects = null,
             $contentType = null, $extraHeaders = null)
@@ -240,7 +239,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
      * @return Zend_Http_Response
      * @throws Zend_Gdata_App_HttpException
      * @throws Zend_Gdata_App_InvalidArgumentException
-     * @throws Zend_Gdata_Gapps_ServiceException
+     * @throws Zend_Gdata_App_Exception
      */
     public function put($data, $uri = null, $remainingRedirects = null,
             $contentType = null, $extraHeaders = null)
@@ -262,7 +261,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
      * @return Zend_Http_Response
      * @throws Zend_Gdata_App_HttpException
      * @throws Zend_Gdata_App_InvalidArgumentException
-     * @throws Zend_Gdata_Gapps_ServiceException
+     * @throws Zend_Gdata_App_Exception
      */
     public function delete($data, $remainingRedirects = null)
     {
@@ -1007,7 +1006,6 @@ class Zend_Gdata_Gapps extends Zend_Gdata
      *          should be deleted.
      * @throws Zend_Gdata_App_Exception
      * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
      */
     public function deleteUser($username) {
         $this->delete($this->getBaseUrl() . self::APPS_USER_PATH . '/' .
@@ -1024,7 +1022,6 @@ class Zend_Gdata_Gapps extends Zend_Gdata
      *          created by the server.
      * @throws Zend_Gdata_App_Exception
      * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
      */
     public function createNickname($username, $nickname) {
         $entry = $this->newNicknameEntry();
@@ -1042,7 +1039,6 @@ class Zend_Gdata_Gapps extends Zend_Gdata
      * @return Zend_Gdata_Gapps_NicknameEntry|null|string The requested nickname entry.
      * @throws Zend_Gdata_App_Exception
      * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
      */
     public function retrieveNickname($nickname) {
         $query = $this->newNicknameQuery();
@@ -1120,7 +1116,6 @@ class Zend_Gdata_Gapps extends Zend_Gdata
      * @param string $nickname The name of the nickname to be deleted.
      * @throws Zend_Gdata_App_Exception
      * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
      */
     public function deleteNickname($nickname) {
         $this->delete($this->getBaseUrl() . self::APPS_NICKNAME_PATH . '/' . $nickname);
@@ -1554,7 +1549,6 @@ class Zend_Gdata_Gapps extends Zend_Gdata
      * @param string $emailList The name of the emailList to be deleted.
      * @throws Zend_Gdata_App_Exception
      * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
      */
     public function deleteEmailList($emailList) {
         $this->delete($this->getBaseUrl() . self::APPS_EMAIL_LIST_PATH . '/'
@@ -1633,7 +1627,6 @@ class Zend_Gdata_Gapps extends Zend_Gdata
      *              be removed.
      * @throws Zend_Gdata_App_Exception
      * @throws Zend_Gdata_App_HttpException
-     * @throws Zend_Gdata_Gapps_ServiceException
      */
     public function removeRecipientFromEmailList($recipientAddress, $emailList) {
         $this->delete($this->getBaseUrl() . self::APPS_EMAIL_LIST_PATH . '/'

@@ -11,7 +11,9 @@ $finder = PhpCsFixer\Finder::create()
 
 $config = new PhpCsFixer\Config();
 return $config->setRules([
-        '@PHPUnit84Migration:risky' => true,
+        '@PHPUnit84Migration:risky'      => true,
+        'short_scalar_cast'              => true,
+        'switch_case_semicolon_to_colon' => true,
     ])
     ->setRiskyAllowed(true)
     ->setFinder($finder)

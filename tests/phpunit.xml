@@ -1,12 +1,8 @@
 <?xml version="1.0"?>
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="./TestHelper.php" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" beStrictAboutTestsThatDoNotTestAnything="false" backupGlobals="true" stderr="true" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
-  <coverage includeUncoveredFiles="true">
-    <include>
-      <directory suffix=".php">../library/Zend</directory>
-    </include>
-  </coverage>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="./TestHelper.php" beStrictAboutTestsThatDoNotTestAnything="false" backupGlobals="true" stderr="true" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd" cacheDirectory=".phpunit.cache">
   <php>
     <includePath>../vendor:../vendor/diablomedia/zendframework1-application/tests:../vendor/diablomedia/zendframework1-loader/tests:../vendor/diablomedia/zendframework1-loader/tests/Zend:../vendor/diablomedia/zendframework1-db/tests:../vendor/diablomedia/zendframework1-paginator/tests</includePath>
+    <ini name="error_reporting" value="E_ALL"/>
   </php>
   <testsuites>
     <testsuite name="ZFTest_Zend_Acl">
@@ -413,7 +409,7 @@
       <file>./Zend/Feed/Reader/Integration/WordpressRss2DcAtomTest.php</file>
       <file>./Zend/Feed/Reader/Integration/WordpressAtom10Test.php</file>
       <file>./Zend/Feed/Reader/Integration/LautDeRdfTest.php</file>
-      <file>./Zend/Feed/Reader/Integration/H-OnlineComAtom10Test.php</file>
+      <file>./Zend/Feed/Reader/Integration/HOnlineComAtom10Test.php</file>
       <file>./Zend/Feed/Reader/Integration/PodcastRss2Test.php</file>
       <file>./Zend/Feed/Writer/FeedTest.php</file>
       <file>./Zend/Feed/Writer/EntryTest.php</file>
@@ -1155,7 +1151,7 @@
       <file>./Zend/Tool/Framework/Provider/SignatureTest.php</file>
       <file>./Zend/Tool/Project/Provider/ControllerTest.php</file>
       <file>./Zend/Tool/Project/ProfileTest.php</file>
-      <file>./Zend/Tool/Project/Context/RegistryTest.php</file>
+      <file>./Zend/Tool/Project/Context/RepositoryTest.php</file>
     </testsuite>
     <testsuite name="ZFTest_Zend_Translate">
       <file>../vendor/diablomedia/zendframework1-translate/tests/Zend/Translate/Adapter/ArrayTest.php</file>
@@ -1311,4 +1307,9 @@
       <file>./resources/languages/Zend_ValidateTest.php</file>
     </testsuite>
   </testsuites>
+  <source>
+    <include>
+      <directory suffix=".php">../library/Zend</directory>
+    </include>
+  </source>
 </phpunit>

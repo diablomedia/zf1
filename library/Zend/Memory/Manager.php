@@ -158,7 +158,7 @@ class Zend_Memory_Manager
 
         $memoryLimitStr = trim(ini_get('memory_limit'));
         if ($memoryLimitStr != ''  &&  $memoryLimitStr != -1) {
-            $this->_memoryLimit = (integer)$memoryLimitStr;
+            $this->_memoryLimit = (int)$memoryLimitStr;
             switch (strtolower($memoryLimitStr[strlen($memoryLimitStr)-1])) {
                 case 'g':
                     $this->_memoryLimit *= 1024;
@@ -375,7 +375,7 @@ class Zend_Memory_Manager
     /**
      * Check and swap objects if necessary
      *
-     * @throws Zend_MemoryException
+     * @throws Zend_Memory_Exception
      */
     private function _swapCheck()
     {

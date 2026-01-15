@@ -224,7 +224,7 @@ class Zend_Queue_Stomp_Client_Connection
      * This must be a Zend_Queue_Stomp_FrameInterface.
      *
      * @param  string $classname - class is an instance of Zend_Queue_Stomp_FrameInterface
-     * @return $this;
+     * @return $this
      */
     public function setFrameClass($classname)
     {

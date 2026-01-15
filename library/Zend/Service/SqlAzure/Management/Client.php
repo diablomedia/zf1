@@ -103,7 +103,7 @@ class Zend_Service_SqlAzure_Management_Client
 		$subscriptionId,
 		$certificatePath,
 		$certificatePassphrase,
-		Zend_Service_WindowsAzure_RetryPolicy_RetryPolicyAbstract $retryPolicy = null
+		?Zend_Service_WindowsAzure_RetryPolicy_RetryPolicyAbstract $retryPolicy = null
 	) {
 		$this->_subscriptionId = $subscriptionId;
 		$this->_certificatePath = $certificatePath;
@@ -253,7 +253,7 @@ class Zend_Service_SqlAzure_Management_Client
 	 * @return SimpleXMLElement|false
 	 * @throws Zend_Service_WindowsAzure_Exception
 	 */
-	protected function _parseResponse(Zend_Http_Response $response = null)
+	protected function _parseResponse(?Zend_Http_Response $response = null)
 	{
 		if (is_null($response)) {
 			throw new Zend_Service_SqlAzure_Exception('Response should not be null.');

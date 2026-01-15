@@ -43,7 +43,7 @@ class Zend_Queue_Adapter_PlatformJobQueue extends Zend_Queue_Adapter_AdapterAbst
      * @param  Zend_Queue|null $queue
      * @return void
      */
-    public function __construct($options, Zend_Queue $queue = null)
+    public function __construct($options, ?Zend_Queue $queue = null)
     {
         parent::__construct($options, $queue);
 
@@ -136,7 +136,7 @@ class Zend_Queue_Adapter_PlatformJobQueue extends Zend_Queue_Adapter_AdapterAbst
      * @param  Zend_Queue|null $queue
      * @return integer
      */
-    public function count(Zend_Queue $queue = null)
+    public function count(?Zend_Queue $queue = null)
     {
         if ($queue !== null) {
             throw new Zend_Queue_Exception('Queue parameter is not supported');
@@ -157,7 +157,7 @@ class Zend_Queue_Adapter_PlatformJobQueue extends Zend_Queue_Adapter_AdapterAbst
      * @return Zend_Queue_Message
      * @throws Zend_Queue_Exception
      */
-    public function send($message, Zend_Queue $queue = null)
+    public function send($message, ?Zend_Queue $queue = null)
     {
         if ($queue !== null) {
             throw new Zend_Queue_Exception('Queue parameter is not supported');
@@ -198,7 +198,7 @@ class Zend_Queue_Adapter_PlatformJobQueue extends Zend_Queue_Adapter_AdapterAbst
      * @throws Zend_Queue_Exception
      * @return ArrayIterator
      */
-    public function receive($maxMessages = null, $timeout = null, Zend_Queue $queue = null)
+    public function receive($maxMessages = null, $timeout = null, ?Zend_Queue $queue = null)
     {
         if ($maxMessages === null) {
             $maxMessages = 1;

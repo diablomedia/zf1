@@ -364,12 +364,7 @@ class Zend_Barcode_FactoryTest extends PHPUnit\Framework\TestCase
         }
         $resource = Zend_Barcode::draw('code25', 'image');
 
-        if (version_compare(PHP_VERSION, '8.0', '<')) {
-            $this->assertTrue(gettype($resource) == 'resource', 'Image must be a resource');
-            $this->assertTrue(get_resource_type($resource) == 'gd', 'Image must be a GD resource');
-        } else {
-            $this->assertInstanceOf(GdImage::class, $resource);
-        }
+        $this->assertInstanceOf(GdImage::class, $resource);
     }
 
     public function testProxyBarcodeRendererDrawAsPdf()

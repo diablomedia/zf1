@@ -106,7 +106,7 @@ class Zend_Service_WindowsAzure_Management_Client
 		$subscriptionId,
 		$certificatePath,
 		$certificatePassphrase,
-		Zend_Service_WindowsAzure_RetryPolicy_RetryPolicyAbstract $retryPolicy = null
+		?Zend_Service_WindowsAzure_RetryPolicy_RetryPolicyAbstract $retryPolicy = null
 	) {
 		$this->_subscriptionId = $subscriptionId;
 		$this->_certificatePath = $certificatePath;
@@ -256,7 +256,7 @@ class Zend_Service_WindowsAzure_Management_Client
 	 * @return SimpleXMLElement|false
 	 * @throws Zend_Service_WindowsAzure_Exception
 	 */
-	protected function _parseResponse(Zend_Http_Response $response = null)
+	protected function _parseResponse(?Zend_Http_Response $response = null)
 	{
 		if (is_null($response)) {
 			throw new Zend_Service_WindowsAzure_Exception('Response should not be null.');
@@ -474,7 +474,7 @@ class Zend_Service_WindowsAzure_Management_Client
 	 * @param Zend_Service_WindowsAzure_RetryPolicy_RetryPolicyAbstract $retryPolicy Retry policy to use when making requests
 	 * @return Zend_Service_WindowsAzure_Storage_Blob
 	 */
-	public function createBlobClientForService($serviceName, Zend_Service_WindowsAzure_RetryPolicy_RetryPolicyAbstract $retryPolicy = null)
+	public function createBlobClientForService($serviceName, ?Zend_Service_WindowsAzure_RetryPolicy_RetryPolicyAbstract $retryPolicy = null)
 	{
 		if ($serviceName == '' || is_null($serviceName)) {
     		throw new Zend_Service_WindowsAzure_Management_Exception('Service name should be specified.');
@@ -500,7 +500,7 @@ class Zend_Service_WindowsAzure_Management_Client
 	 * @param Zend_Service_WindowsAzure_RetryPolicy_RetryPolicyAbstract $retryPolicy Retry policy to use when making requests
 	 * @return Zend_Service_WindowsAzure_Storage_Table
 	 */
-	public function createTableClientForService($serviceName, Zend_Service_WindowsAzure_RetryPolicy_RetryPolicyAbstract $retryPolicy = null)
+	public function createTableClientForService($serviceName, ?Zend_Service_WindowsAzure_RetryPolicy_RetryPolicyAbstract $retryPolicy = null)
 	{
 		if ($serviceName == '' || is_null($serviceName)) {
     		throw new Zend_Service_WindowsAzure_Management_Exception('Service name should be specified.');
@@ -524,7 +524,7 @@ class Zend_Service_WindowsAzure_Management_Client
 	 * @param Zend_Service_WindowsAzure_RetryPolicy_RetryPolicyAbstract $retryPolicy Retry policy to use when making requests
 	 * @return Zend_Service_WindowsAzure_Storage_Queue
 	 */
-	public function createQueueClientForService($serviceName, Zend_Service_WindowsAzure_RetryPolicy_RetryPolicyAbstract $retryPolicy = null)
+	public function createQueueClientForService($serviceName, ?Zend_Service_WindowsAzure_RetryPolicy_RetryPolicyAbstract $retryPolicy = null)
 	{
 		if ($serviceName == '' || is_null($serviceName)) {
     		throw new Zend_Service_WindowsAzure_Management_Exception('Service name should be specified.');

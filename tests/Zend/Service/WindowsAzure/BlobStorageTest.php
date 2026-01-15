@@ -20,12 +20,6 @@
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
-/**
- * Test helpers
- */
-require_once dirname(__FILE__) . '/../../../TestHelper.php';
-require_once dirname(__FILE__) . '/../../../TestConfiguration.php.dist';
-
 /** Zend_Service_WindowsAzure_Storage_Blob */
 require_once 'Zend/Service/WindowsAzure/Storage/Blob.php';
 

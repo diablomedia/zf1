@@ -41,7 +41,7 @@ class Zend_CodeGenerator_Php_ClassTest extends PHPUnit\Framework\TestCase
     public function testConstruction()
     {
         $class = new Zend_CodeGenerator_Php_Class();
-        $this->isInstanceOf($class, 'Zend_CodeGenerator_Php_Class');
+        $this->assertInstanceOf('Zend_CodeGenerator_Php_Class', $class);
     }
 
     public function testNameAccessors()
@@ -90,10 +90,10 @@ class Zend_CodeGenerator_Php_ClassTest extends PHPUnit\Framework\TestCase
 
         $properties = $codeGenClass->getProperties();
         $this->assertEquals(count($properties), 2);
-        $this->isInstanceOf(current((array) $properties), 'Zend_CodeGenerator_Php_Property');
+        $this->assertInstanceOf('Zend_CodeGenerator_Php_Property', current((array) $properties));
 
         $property = $codeGenClass->getProperty('propTwo');
-        $this->isInstanceOf($property, 'Zend_CodeGenerator_Php_Property');
+        $this->assertInstanceOf('Zend_CodeGenerator_Php_Property', $property);
         $this->assertEquals($property->getName(), 'propTwo');
 
         // add a new property
@@ -129,10 +129,10 @@ class Zend_CodeGenerator_Php_ClassTest extends PHPUnit\Framework\TestCase
 
         $methods = $codeGenClass->getMethods();
         $this->assertEquals(count($methods), 2);
-        $this->isInstanceOf(current((array) $methods), 'Zend_CodeGenerator_Php_Method');
+        $this->assertInstanceOf('Zend_CodeGenerator_Php_Method', current((array) $methods));
 
         $method = $codeGenClass->getMethod('methodOne');
-        $this->isInstanceOf($method, 'Zend_CodeGenerator_Php_Method');
+        $this->assertInstanceOf('Zend_CodeGenerator_Php_Method', $method);
         $this->assertEquals($method->getName(), 'methodOne');
 
         // add a new property

@@ -102,11 +102,6 @@ class Zend_Memory_Container_MovableTest extends PHPUnit\Framework\TestCase
         $valueRef[3] = '_';
         $this->assertEquals($memObject->getRef(), '012_456789');
 
-        if (version_compare(PHP_VERSION, '5.2') < 0) {
-            // Skip next tests for PHP versions before 5.2
-            return;
-        }
-
         // value property
         $this->assertEquals((string)$memObject->value, '012_456789');
 
@@ -127,13 +122,13 @@ class Zend_Memory_Container_MovableTest extends PHPUnit\Framework\TestCase
         $memoryManager = new Zend_Memory_Manager_Dummy();
         $memObject = new Zend_Memory_Container_Movable($memoryManager, 10, '0123456789');
 
-        $this->assertFalse((boolean)$memObject->isLocked());
+        $this->assertFalse((bool)$memObject->isLocked());
 
         $memObject->lock();
-        $this->assertTrue((boolean)$memObject->isLocked());
+        $this->assertTrue((bool)$memObject->isLocked());
 
         $memObject->unlock();
-        $this->assertFalse((boolean)$memObject->isLocked());
+        $this->assertFalse((bool)$memObject->isLocked());
     }
 
     /**
@@ -158,11 +153,6 @@ class Zend_Memory_Container_MovableTest extends PHPUnit\Framework\TestCase
      */
     public function testValueUpdateTracing()
     {
-        if (version_compare(PHP_VERSION, '5.2') < 0) {
-            // Skip next tests for PHP versions before 5.2
-            return;
-        }
-
         $memoryManager = new Zend_Memory_Manager_Dummy();
         $memObject = new Zend_Memory_Container_Movable($memoryManager, 10, '0123456789');
 

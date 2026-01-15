@@ -51,13 +51,13 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
      * @param array $params Expected GET/POST parameters for the request
      * @return Zend_Http_Client
      */
-    protected function stubTwitter($path, $method, $responseFile = null, array $params = null)
+    protected function stubTwitter($path, $method, $responseFile = null, ?array $params = null)
     {
         $client = $this->getMockBuilder('Zend_Oauth_Client')
             ->disableOriginalConstructor()
             ->getMock();
         $client->expects($this->any())->method('resetParameters')
-            ->will($this->returnValue($client));
+            ->willReturn($client);
         $client->expects($this->once())->method('setUri')
             ->with('https://api.twitter.com/1.1/' . $path);
         $response = $this->getMockBuilder('Zend_Http_Response')
@@ -68,11 +68,11 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
             $client->expects($this->once())->method($setter)->with($params);
         }
         $client->expects($this->once())->method('request')->with()
-            ->will($this->returnValue($response));
+            ->willReturn($response);
         $response->expects($this->any())->method('getBody')
-            ->will($this->returnValue(
+            ->willReturn(
                 isset($responseFile) ? file_get_contents(dirname(__FILE__) . '/_files/' . $responseFile) : ''
-            ));
+            );
         return $client;
     }
 
@@ -90,7 +90,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
             ->getMock();
         $token->expects($this->once())->method('getHttpClient')
             ->with(array('token'=>$token, 'siteUrl'=>'https://api.twitter.com/oauth'))
-            ->will($this->returnValue($client));
+            ->willReturn($client);
 
         $twitter = new Zend_Service_Twitter(array('accessToken'=>$token, 'opt1'=>'val1'));
         $this->assertTrue($client === $twitter->getHttpClient());
@@ -112,7 +112,7 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
             ->getMock();
         $token->expects($this->once())->method('getHttpClient')
             ->with(array('token'=>$token, 'siteUrl'=>'https://api.twitter.com/oauth'))
-            ->will($this->returnValue($client));
+            ->willReturn($client);
 
         $twitter = new Zend_Service_Twitter(array('accessToken'=>$token));
         $this->assertTrue($twitter->isAuthorised());
@@ -123,11 +123,11 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
         $oauth = $this->getMockBuilder('Zend_Oauth_Consumer')
             ->disableOriginalConstructor()
             ->getMock();
-        $oauth->expects($this->once())->method('getRequestToken')->will($this->returnValue('foo'));
-        $oauth->expects($this->once())->method('getRedirectUrl')->will($this->returnValue('foo'));
-        $oauth->expects($this->once())->method('redirect')->will($this->returnValue('foo'));
-        $oauth->expects($this->once())->method('getAccessToken')->will($this->returnValue('foo'));
-        $oauth->expects($this->once())->method('getToken')->will($this->returnValue('foo'));
+        $oauth->expects($this->once())->method('getRequestToken')->willReturn('foo');
+        $oauth->expects($this->once())->method('getRedirectUrl')->willReturn('foo');
+        $oauth->expects($this->once())->method('redirect')->willReturn('foo');
+        $oauth->expects($this->once())->method('getAccessToken')->willReturn('foo');
+        $oauth->expects($this->once())->method('getToken')->willReturn('foo');
 
         $twitter = new Zend_Service_Twitter(array('opt1'=>'val1'), $oauth);
         $this->assertEquals('foo', $twitter->getRequestToken());
@@ -152,8 +152,8 @@ class Zend_Service_Twitter_TwitterTest extends PHPUnit\Framework\TestCase
         $token = $this->getMockBuilder('Zend_Oauth_Token_Access')
             ->disableOriginalConstructor()
             ->getMock();
-        $token->expects($this->once())->method('getHttpClient')->will($this->returnValue($client));
-        $oauth->expects($this->once())->method('getAccessToken')->will($this->returnValue($token));
+        $token->expects($this->once())->method('getHttpClient')->willReturn($client);
+        $oauth->expects($this->once())->method('getAccessToken')->willReturn($token);
         $client->expects($this->once())->method('setHeaders')->with('Accept-Charset', 'ISO-8859-1,utf-8');
 
         $twitter = new Zend_Service_Twitter(array(), $oauth);

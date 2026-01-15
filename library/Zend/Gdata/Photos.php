@@ -435,7 +435,7 @@ class Zend_Gdata_Photos extends Zend_Gdata
      *          delete.
      * @param boolean $catch Whether to catch an exception when
      *            modified and re-delete or throw
-     * @return void.
+     * @return void
      * @throws Zend_Gdata_App_Exception
      * @throws Zend_Gdata_App_HttpException
      */
@@ -464,7 +464,7 @@ class Zend_Gdata_Photos extends Zend_Gdata
      *          delete.
      * @param boolean $catch Whether to catch an exception when
      *            modified and re-delete or throw
-     * @return void.
+     * @return void
      * @throws Zend_Gdata_App_Exception
      * @throws Zend_Gdata_App_HttpException
      */
@@ -493,7 +493,7 @@ class Zend_Gdata_Photos extends Zend_Gdata
      *          delete.
      * @param boolean $catch Whether to catch an exception when
      *            modified and re-delete or throw
-     * @return void.
+     * @return void
      * @throws Zend_Gdata_App_Exception
      * @throws Zend_Gdata_App_HttpException
      */
@@ -522,7 +522,7 @@ class Zend_Gdata_Photos extends Zend_Gdata
      *          delete.
      * @param boolean $catch Whether to catch an exception when
      *            modified and re-delete or throw
-     * @return void.
+     * @return void
      * @throws Zend_Gdata_App_Exception
      * @throws Zend_Gdata_App_HttpException
      */
