@@ -6,6 +6,9 @@
 [![Total Downloads](https://poser.pugx.org/diablomedia/zendframework1/downloads)](https://packagist.org/packages/diablomedia/zendframework1)
 [![License](https://poser.pugx.org/diablomedia/zendframework1/license)](https://packagist.org/packages/diablomedia/zendframework1)
 
+> [!WARNING]  
+> We've archived this repo (and dependent Zend Framework 1 repos) as we're no longer using or maintaining Zend Framework 1
+
 This is a fork of Zend Framework 1 that we'll maintain as long as we're using it, mainly just to keep it working on new versions of PHP as they're released.
 
 This fork is based on the final release of the original project (version 1.12.20), and releases will follow [semantic versioning](https://semver.org/). The first release of this fork is version 2.0.0.
